@@ -1,8 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
-<project name="EM_Report" default="all" xmlns="http://nant.sf.net/release/0.91-rc1/nant.xsd">
-    <include buildfile="default.build"/>
-
-    <property name="iis.application.name" value="Default Web Site/emsquared_qa"/>
-    <property name="connectionString" value="Data Source=aswsyddev01;Initial Catalog=em_report;User ID=emsquaredteam;Password=emdbdev123"/>
-    <property name="informationTipBox.text" value="QA"/>
-</project>

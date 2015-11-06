@@ -1,1 +1,0 @@
-DBrelease.bat -name lle -pwd "House 25 Run" -url https://10.9.1.1/svn/repo/Projects/Dart -branchName /Tags/1.5  -urlpath /DB/Dart_Database -from 44278 -to HEAD -dest D:\Work\Project\Dart\Tags\1.5\Tool\DBRelease\Dart\SQLoutput

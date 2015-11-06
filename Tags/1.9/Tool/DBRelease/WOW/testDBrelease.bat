@@ -1,1 +1,0 @@
-DBrelease.bat -name lle -pwd "House 25 Run" -url https://10.9.1.1/svn/repo/Projects/Dart/Branches/Dart -branchName /DB -urlpath WOW_Database -from 52183 -to HEAD -dest D:\Work\Project\Dart\Branches\Dart\Tool\DBRelease\WOW\SQLoutput

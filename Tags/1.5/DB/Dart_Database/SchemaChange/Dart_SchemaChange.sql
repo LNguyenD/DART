@@ -1,3 +1,0 @@
----Update old data with mapping given by harry for agency, sub, policy_no---
---update TMF_RTW set AgencyName=tmfwebrep.dbo.udf_GetAgencyNameByPolicyNo(POLICY_NO)
---,Sub_Category=tmfwebrep.dbo.udf_GetSubCategoryByPolicyNo(POLICY_NO)

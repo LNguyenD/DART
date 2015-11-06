@@ -1,1 +1,0 @@
-D:\Working\ecommerce\em-reporting\trunk\WebAppProject\DeployRS\bin\Debug\DeployRS.exe --rs=http://localhost/reportserver --domain=ASWLAP04 --username=admin --password=!QAZ@WSX --path=/EMReporting/Reports --sv=/reportservice2005.asmx

@@ -1,8 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<RptDataSource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="emiprod">
-  <ConnectionProperties>
-    <Extension>SQL</Extension>
-    <ConnectString>Data Source=10.9.0.21;Initial Catalog=emiprod;user id=vnteam;password=vnteam;</ConnectString>
-  </ConnectionProperties>
-  <DataSourceID>238d07df-513d-416a-9e78-adb17cfa74da</DataSourceID>
-</RptDataSource>
