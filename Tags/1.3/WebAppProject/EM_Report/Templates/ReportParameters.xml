@@ -1,0 +1,153 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ReportParam>
+  <LocalRenderFormats>
+  <Format>
+    <Name>XML file with report data</Name>
+    <Value>XML</Value>    
+  </Format>
+  <Format>
+    <Name>CSV (comma delimiter)</Name>
+    <Value>CSV</Value>
+  </Format>
+  <Format>
+    <Name>Data Feed</Name>
+    <Value>Atom</Value>
+  </Format>
+  <Format>
+    <Name>PDF</Name>
+    <Value>PDF</Value>
+  </Format>
+  <Format>
+    <Name>HTML 4.0</Name>
+    <Value>HTML 4.0</Value>
+  </Format>
+  <Format>
+    <Name>MHTML (web archive)</Name>
+    <Value>MHTML</Value>
+  </Format>
+  <Format>
+    <Name>Excel</Name>
+    <Value>Excel</Value>
+  </Format>
+  <Format>
+    <Name>RPL Render</Name>
+    <Value>RPL</Value>
+  </Format>
+  <Format>
+    <Name>TIFF file</Name>
+    <Value>TIFF</Value>
+  </Format>
+  <Format>
+    <Name>Word</Name>
+    <Value>Word</Value>
+  </Format>
+</LocalRenderFormats>
+
+  <EmailRenderFormats>
+    <Format>
+      <Name>XML file with report data</Name>
+      <Value>XML</Value>
+    </Format>
+    <Format>
+      <Name>CSV (comma delimiter)</Name>
+      <Value>CSV</Value>
+    </Format>
+    <Format>
+      <Name>PDF</Name>
+      <Value>PDF</Value>
+    </Format>
+    <Format>
+      <Name>MHTML (web archive)</Name>
+      <Value>MHTML</Value>
+    </Format>
+    <Format>
+      <Name>Excel</Name>
+      <Value>Excel</Value>
+    </Format>
+    <Format>
+      <Name>TIFF file</Name>
+      <Value>TIFF</Value>
+    </Format>
+    <Format>
+      <Name>Word</Name>
+      <Value>Word</Value>
+    </Format>
+  </EmailRenderFormats>
+
+  <ScheduleTypes>
+    <Schedule>
+      <Name>Hour</Name>
+      <Value>Hour</Value>
+    </Schedule>
+    <Schedule>
+      <Name>Day</Name>
+      <Value>Day</Value>
+    </Schedule>
+    <Schedule>
+      <Name>Week</Name>
+      <Value>Week</Value>
+    </Schedule>
+    <Schedule>
+      <Name>Month</Name>
+      <Value>Month</Value>
+    </Schedule>
+    <Schedule>
+      <Name>Once</Name>
+      <Value>Once</Value>
+    </Schedule>
+  </ScheduleTypes>
+
+  <DayOfWeeks>
+    <Day>
+      <Name>Sun</Name>
+      <Value>Sun</Value>
+    </Day>
+    <Day>
+      <Name>Sun</Name>
+      <Value>Sun</Value>
+    </Day>
+    <Day>
+      <Name>Sun</Name>
+      <Value>Sun</Value>
+    </Day>
+    <Day>
+      <Name>Sun</Name>
+      <Value>Sun</Value>
+    </Day>
+    <Day>
+      <Name>Sun</Name>
+      <Value>Sun</Value>
+    </Day>
+    <Day>
+      <Name>Sun</Name>
+      <Value>Sun</Value>
+    </Day>
+    <Day>
+      <Name>Sun</Name>
+      <Value>Sun</Value>
+    </Day>
+  </DayOfWeeks>
+
+  <WeekOfMonths>
+    <Week>
+      <Name>1st</Name>
+      <Value>1</Value>
+    </Week>
+    <Week>
+      <Name>2nd</Name>
+      <Value>2</Value>
+    </Week>
+    <Week>
+      <Name>3rd</Name>
+      <Value>3</Value>
+    </Week>
+    <Week>
+      <Name>4th</Name>
+      <Value>4</Value>
+    </Week>
+    <Week>
+      <Name>Last</Name>
+      <Value>5</Value>
+    </Week>
+  </WeekOfMonths>
+</ReportParam>

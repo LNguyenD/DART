@@ -1,0 +1,46 @@
+.viewDescContent {
+    position: absolute;
+    background: url(../images/pixel_000_70.png) repeat;
+    width: 350px;
+    padding: 5px 15px 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    display: none;
+    background-color: White;
+}
+
+    .viewDescContent p {
+        color: #EEE;
+        font-weight: normal;
+        outline: 0;
+        border: 0;
+        padding: 0;
+        margin: 0 0 15px;
+        font-family: 'lato_regular', Arial, Helvetica, sans-serif;
+        font-size: 12px;
+    }
+
+    .viewDescContent h1 {
+        color: #4fb8e7;
+        font-family: 'lato_regular', Arial, Helvetica, sans-serif;
+        font-size: 18px;
+        font-weight: normal;
+    }
+
+.hoverCell {
+    background-color: #037baf !important;
+}
+
+    .hoverCell div a {
+        color: white !important;
+        /font-weight: bold !important;
+    }
+
+.vertical-align {
+    position: relative;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}

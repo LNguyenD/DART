@@ -1,0 +1,319 @@
+﻿@using EM_Report.Domain;
+@using EM_Report.SSRS;
+@{
+    ViewBag.Title = "Portfolio";
+    Layout = Request.IsAjaxRequest() ? null : "~/Views/Shared/_Master.cshtml";
+    ViewBag.Title = "Report";
+    ViewBag.Heading = "Report >> Portfolio";   
+}
+
+<body>
+    <div class="w_100p" style="margin: 0 !important;">
+        @Html.Partial("~/Views/Dashboard/RawDataWrap.cshtml")
+        @Html.Partial("../Dashboard/TimeAccess")
+        @Html.Hidden("System", Request["System"].ToUpper())
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+            <ul class="tab">
+                @{
+            var systemName = ViewBag.SystemName == "EML" ? "WCNSW" : ViewBag.SystemName == "HEM" ? "Hospitality" : ViewBag.SystemName;
+            var systemSubTitle = systemName == "TMF" ? "Agencies" : systemName == "Hospitality" ? "Portfolios" : "Employer sizes";
+            var systemSubValue = systemName == "TMF" ? "agency" : systemName == "Hospitality" ? "portfolio" : "employer_size";
+            var type = Request["Type"].ToLower() ?? string.Empty;
+
+            var isAgencyType = type == "employer_size" || type == "agency" || type == "portfolio" || type == "";
+            var isGroupType = type == "group";
+            var isAccountManagerType = type == "account_manager";
+                }
+                <li @(isAgencyType ? "class=tab_current" : "") id="tab_agencies" data-reportcontainerid="Agency" data-reporttype="@systemSubValue">
+                    <a>@systemName by @systemSubTitle.ToLower()</a>
+                </li>
+                <li @(isGroupType ? "class=tab_current" : "") id="tab_group" data-reportcontainerid="Group" data-reporttype="group">
+                    <a>@systemName by groups</a>
+                </li>
+                @if (systemName == "WCNSW" /*|| systemName == "Hospitality"*/)
+                {
+                    <li @(isAccountManagerType ? "class=tab_current" : "") id="tab_account_manager" data-reportcontainerid="AccountManager" data-reporttype="account_manager">
+                        <a>@systemName by account managers</a>
+                    </li>
+                }
+            </ul>
+            <div class="tab_content" style="margin-bottom: 10px; height: 100%">
+                @Html.Hidden("ReportParameterData", (string)ViewBag.ReportParameterData)
+                <div style="width: 95%; margin: 30px; margin-bottom:0px; margin-top: 30px">
+                    <div class="portfolioParameterSection" style="width: 97.5%; margin: 0px">
+                        <div style="margin: 15px">
+                            <div style="border-bottom: 1px solid #E1E1E1; height: 30px">
+                                <a style="cursor: pointer;" class="show">Hide Parameter List</a>
+                            </div>
+                            <div>
+                                <div class="showOrg" style="margin-top: 10px">
+                                    <div id="ReportParameterSection">
+                                        @Html.Partial("ReportParameter", (ItemParameter)ViewBag.ReportParams)
+                                    </div>
+                                </div>
+                                <div class="clear">
+                                </div>
+                            </div>
+
+                            <div style="border-bottom: 1px solid #E1E1E1; margin-top: 8px; height: 1px"></div>
+                            <div class="clear">
+                            </div>
+                            <div style="float: left; margin-top: 15px">
+                                <span class="btnPurple">
+                                    <input type="button" value="View report" onclick="reloadReport()" />
+                                </span>
+                            </div>
+                            <div class="clear">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clear">
+                    </div>
+                    <div id="portfolioReportSection" class="w_100p" style="/*margin: 0 !important; */ margin: 20px 0px 0px 0px">
+                        @{
+                var url = "~/Reports/CPR/Report.aspx";
+                string strQuery = "";
+                foreach (String key in Request.QueryString.AllKeys)
+                {
+                    strQuery = strQuery + "&" + key + "=" + Request.QueryString[key];
+                }
+                strQuery = "?" + strQuery.TrimStart('&');
+                url = url + strQuery;
+                        }
+                        <div id="@(isAgencyType ? "ifReportCover_Agency" : isGroupType ? "ifReportCover_Group" : "ifReportCover_AccountManager")">
+                            <iframe id="@(isAgencyType ? "ifReport_Agency" : isGroupType ? "ifReport_Group" : "ifReport_AccountManager")"
+                                    src="@Url.Content(@url)" width="100%" height="100%" frameborder="0" scrolling="no" style="display:inline"></iframe>
+                        </div>
+                    </div>
+                    <div class="clear">
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</body>
+<script type="text/javascript">
+    $(document).ready(function () {
+        FixCalendar();
+
+        //// Do not allow copy-cut-paste working on Start Date
+        //$('#prmStart_Date').bind("cut copy paste", function (e) {
+        //    e.preventDefault();
+        //});
+        //// Do not allow copy-cut-paste working on End Date
+        //$('#prmEnd_Date').bind("cut copy paste", function (e) {
+        //    e.preventDefault();
+        //});
+
+        $('body').on('cut copy paste', 'input', function (e) { e.preventDefault(); });
+
+        $(window).resize(function () {
+            $('iframe').each(function () {
+                var iframe = $(this);
+                var portfolioTable = iframe.contents().find("table[alt*='portfolio']");
+
+                //adjustPortfolioReportSize(iframe, portfolioTable);
+                adjustPortfolioTableWidth(iframe, portfolioTable);
+
+                if ($.browser.msie) {
+                    // fix grey space on the right when click minimized button on IE
+                    $('.top').css('min-width', '');
+                }                
+            });
+        });
+    });
+   
+    function adjustPortfolioReportSize(iframe, portfolioTable) {      
+        // increase height to remove vertical scrollbar
+        //var portfolioTable = iframe.contents().find("table[alt*='portfolio']");
+        var portfolioAlt = portfolioTable.attr('alt');
+        if (typeof (portfolioAlt) === 'undefined')
+            return;
+
+        if ($.browser.msie && $.browser.version.substr(0, 1) == 9 && document.documentMode != 7) {
+            iframe.height(portfolioTable.height() + 35);
+        }
+        else {
+            iframe.height(portfolioTable.height() + 25);
+        }
+
+        // remove redundant vertical scrollbar
+        if ($.browser.msie) {
+            portfolioTable.parents('div:lt(2)').css('min-height', portfolioTable.height() + 'px');
+        }
+        else {
+            portfolioTable.parents('table:lt(2)').height(portfolioTable.height());
+        }
+
+        var iframeHeight = iframe.height();
+        if ($.browser.version.substr(0, 1) == 7 && document.documentMode == 8) { // browser mode IE 9 Compat, Doc 8
+            iframe.contents().find('#divViewer').height(iframeHeight);
+            iframe.contents().find('#rvwReportViewer').height(iframeHeight);
+            iframe.contents().find('#rvwReportViewer_ct109').closest('td').height(iframeHeight);
+        }
+        else {
+            iframe.contents().find('#divViewer').height(iframeHeight);
+            iframe.contents().find('#rvwReportViewer').height(iframeHeight);
+            iframe.contents().find('#rvwReportViewer_ct109').closest('td').height(iframeHeight);
+        }
+
+		adjustPortfolioTableWidth(iframe, portfolioTable);
+		
+    }
+
+	function adjustPortfolioTableWidth(iframe, portfolioTable) {
+        // adjust width to align with parameter section
+        var iframeWidth = iframe.parent().parent().width();
+        //var iframeWidth = $(window).width() - 95;
+        iframe.width(iframeWidth);
+        var portfolioTableWidth = iframeWidth - 2;
+        portfolioTable.width(portfolioTableWidth);
+
+        // remove unnecessary long horizontal scrollbar 
+        if ($.browser.msie) {
+            iframe.contents().find('#VisibleReportContentrvwReportViewer_ctl09').width(portfolioTableWidth);
+            iframe.contents().find('#VisibleReportContentrvwReportViewer_ctl10').width(portfolioTableWidth); 
+
+            portfolioTable.width(portfolioTableWidth); // tricky workaround that reassign table width to correct table width
+                                                       // not happens in IE9 document mode
+            portfolioTable.parents('div:lt(2)').css('min-width', portfolioTableWidth).width(portfolioTableWidth);
+			
+			//fix the table left border
+            portfolioTable.css('margin-left','1px');
+        }
+        else {
+            portfolioTable.parents('table:lt(2)').css('min-width', portfolioTableWidth).width(portfolioTableWidth);
+        }
+
+        // fixed column width
+        portfolioTable.css('table-layout', 'fixed');
+
+        var iframeSrc = iframe.attr('src').toLowerCase();
+        if (iframeSrc.indexOf('subvalue') > -1 && iframeSrc.indexOf('subvalue=all') < 0) {
+            fixTotalColumnWidth(portfolioTable, true);
+        }
+        else {
+            fixTotalColumnWidth(portfolioTable, false);
+        }
+    }
+	
+    var loadedL2Tab1 = false;
+    var loadedL2SecondTab = 0;
+    var loadedL2EndTab = 0;
+
+    var canTabClick = true;
+    var DataContentL2Tab1;
+    var DataContentL2Tab2;
+    var DataContentL2Tab3;
+
+    var loadedDescriptionCount = 0;
+    var systemSub = "";
+    var systemName = '@Request["System"].ToUpper()';
+    var value = '&Value=' + '@Request["Value"]';
+    var subValue = '&SubValue=' + '@Request["SubValue"]';
+
+    function Load_Second_Tab() {
+        var Href_2 = $('iframe:eq(0)').attr('src');
+        Href_2 = Href_2.replace(value, "");
+        Href_2 = Href_2.replace(subValue, "");
+
+        //determine agency or employer_size or porfolio base on system name
+        if (Href_2.toLowerCase().indexOf("tmf") >= 0) {
+            systemSub = "agency";
+        }
+        else if (Href_2.toLowerCase().indexOf("eml") >= 0) {
+            systemSub = "employer_size";
+        }
+        else if (Href_2.toLowerCase().indexOf("hem") >= 0) {
+            systemSub = "portfolio";
+        }
+
+        var ifReportCount = 0;
+        $('iframe').each(function (i, e) {
+            if ($(this).attr("id").indexOf("_Agency") >= 0
+            || $(this).attr("id").indexOf("_Group") >= 0
+            || $(this).attr("id").indexOf("_AccountManager") >= 0) {
+                ifReportCount++;
+            }
+        });
+
+        // set url for TMF Groups Tab
+        if (Href_2.indexOf("Type=" + systemSub) >= 0) {
+            Href_2 = Href_2.replace("Type=" + systemSub, "Type=group");
+            if (ifReportCount == 1) {
+                var appendContent = '<div id="' + (Href_2.indexOf("Type=" + systemSub) >= 0 ? "ifReportCover_Agency" : "ifReportCover_Group")
+                + '" style="height:0px;"><iframe id="' + (Href_2.indexOf("Type=" + systemSub) >= 0 ? "ifReport_Agency" : "ifReport_Group")
+                + '" src="' + Href_2 + '" width="100%" height="100%" frameborder="0" scrolling="no" style="visibility:hidden;"></iframe></div>';
+                $("#portfolioReportSection").prepend(appendContent);
+                $("#portfolioReportSection").append('<div class="clear" style="height:10px;"></div>');
+            }
+        }
+        else if (Href_2.indexOf("Type=group") >= 0) {
+            Href_2 = Href_2.replace("Type=group", "Type=" + systemSub);
+            if (ifReportCount == 1) {
+                var appendContent = '<div id="' + (Href_2.indexOf("Type=" + systemSub) >= 0 ? "ifReportCover_Agency" : "ifReportCover_Group")
+                + '" style="height:0px;"><iframe id="' + (Href_2.indexOf("Type=" + systemSub) >= 0 ? "ifReport_Agency" : "ifReport_Group")
+                + '" src="' + Href_2 + '" width="100%" height="100%" frameborder="0" scrolling="no" style="visibility:hidden;"></iframe></div>';
+                $("#portfolioReportSection").prepend(appendContent);
+                $("#portfolioReportSection").append('<div class="clear" style="height:10px;"></div>');
+            }
+        }
+        else if (Href_2.indexOf("Type=account_manager") >= 0) {
+            Href_2 = Href_2.replace("Type=account_manager", "Type=group");
+            if (ifReportCount == 1) {
+                var appendContent = '<div id="ifReportCover_Group" style="height:0px;"><iframe id="ifReport_Group" src="'
+                + Href_2 + '" width="100%" height="100%" frameborder="0" scrolling="no" style="visibility:hidden;"></iframe></div>';
+                $("#portfolioReportSection").prepend(appendContent);
+                $("#portfolioReportSection").append('<div class="clear" style="height:10px;"></div>');
+            }
+        }
+    }
+
+    function Load_Third_Tab() {
+        var Href_3 = $('iframe:eq(0)').attr('src');
+        Href_3 = Href_3.replace(value, "");
+        Href_3 = Href_3.replace(subValue, "");
+
+        //determine agency or employer_size or porfolio base on system name
+        if (Href_3.toLowerCase().indexOf("tmf") >= 0) {
+            systemSub = "agency";
+        }
+        else if (Href_3.toLowerCase().indexOf("eml") >= 0) {
+            systemSub = "employer_size";
+        }
+        else if (Href_3.toLowerCase().indexOf("hem") >= 0) {
+            systemSub = "portfolio";
+        }
+
+        if (Href_3.indexOf("Type=" + systemSub) >= 0) {
+            Href_3 = Href_3.replace("Type=" + systemSub, "Type=account_manager");
+            Href_3 = Href_3.replace(subValue,"");
+            var appendContent = '<div id="ifReportCover_AccountManager" style="height:0px;"><iframe id="ifReport_AccountManager" src="'
+            + Href_3 + '" width="100%" height="100%" frameborder="0" scrolling="no" style="visibility:hidden;"></iframe></div>';
+            $("#portfolioReportSection").prepend(appendContent);
+            $("#portfolioReportSection").append('<div class="clear" style="height:10px;"></div>');
+        }
+        else if (Href_3.indexOf("Type=group") >= 0) {
+
+            if ($("div#ifReportCover_Agency").length > 0) {
+                Href_3 = Href_3.replace("Type=group", "Type=account_manager");
+                var appendContent = '<div id="ifReportCover_AccountManager" style="height:0px;"><iframe id="ifReport_AccountManager" src="'
+                + Href_3 + '" width="100%" height="100%" frameborder="0" scrolling="no" style="visibility:hidden;"></iframe></div>';
+                $("#portfolioReportSection").prepend(appendContent);
+                $("#portfolioReportSection").append('<div class="clear" style="height:10px;"></div>');
+            }
+            else if ($("div#ifReportCover_AccountManager").length > 0) {
+                Href_3 = Href_3.replace("Type=group", "Type=" + systemSub);
+                var appendContent = '<div id="ifReportCover_Agency" style="height:0px;"><iframe id="ifReport_Agency" src="'
+                + Href_3 + '" width="100%" height="100%" frameborder="0" scrolling="no" style="visibility:hidden;"></iframe></div>';
+                $("#portfolioReportSection").prepend(appendContent);
+                $("#portfolioReportSection").append('<div class="clear" style="height:10px;"></div>');
+            }
+        }
+    }
+</script>
+
+<script src="@Url.ContentV("~/Scripts/iPortfolio.js")" type="text/javascript"></script>
+<script src="@Url.ContentV("~/Scripts/jquery.columnmanager.min.js")" type="text/javascript"></script>

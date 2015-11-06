@@ -1,0 +1,15 @@
+﻿@model IEnumerable<EM_Report.Models.ReportModel>
+@{
+    ViewBag.Title = "Reports";
+    ViewBag.Heading = "Report >> Report list";
+    Layout = Request.IsAjaxRequest() ? null : "~/Views/Shared/_Master.cshtml";
+}
+@if (EM_Report.Helpers.Base.LoginSession.isSystemUser)
+{    
+    @Html.Partial("UCIndex", Model)
+}
+else
+{
+    Layout = Request.IsAjaxRequest() ? null : "~/Views/Shared/_MasterReport.cshtml";
+    @Html.Partial("UCIndexReport", Model)
+}

@@ -1,0 +1,40 @@
+DART v1.5:
+·         Removed the table on small graphs
+·         Updated the Print graph to display all on large graph
+·         Fixed the view on dashboard so it would show all graph
+·         Consistency in graph legend colors
+·         Remember me is now functional
+·         For Level 3 & 5, the lines for the displaying of small graphs was now reduced from 3 rows to 2 rows.
+·         CPR Dashboard will be implemented
+·         Update Executive View to include Print all graphs
+·         Update Executive view include traffic light & graphs for CPR 
+·         Remove the small graph legend in Level 3 & 5
+·         CPR crumb trails to follow the same format as implemented in RTW and AWC
+·         Additional unreadable items are removed for the small graphs.
+·         Implementing additional items for the graph of Claims Portfolio Report
+·         NCMM tasks for "This Week and Next Week" between the vertical view and horizontal view
+ 
+·         Default Sort for CPR Data
+ 
+·         Allow user can hide/show the rows
+ 
+·         New metric light on RTW/AWC allow user jump to CPR
+ 
+·         CPR Dashboard Print function
+ 
+·         Reformat CPR Dashboard layout
+ 
+·         Redirect the links in the CPR Dashboard main table to jump in the lower level
+ 
+·         Show TMF RTW Group 4, 6, 9
+ 
+·         Display 1 more option for CPR Table which user can switch between last two week and last month
+ 
+·         Apply the logic of CPR Validation for Last 2 weeks / Last month
+ 
+·         Added CPR the Re-Opened Claims: Still Open
+ 
+·         Added the link to Level 3 graph from Executive Level dashboard graph
+ 
+·         Added Overall number for CPR Level 4, 6
+-------------------------------------------------

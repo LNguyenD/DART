@@ -1,0 +1,182 @@
+﻿<error errorId="ee1df848-bcf5-431b-ad95-1cdc7058cc9d" application="/LM/W3SVC/1/ROOT/Dart" host="ASWVNWKS103" type="System.ServiceModel.CommunicationException" message="The inactivity timeout of (00:10:00) has been exceeded." source="mscorlib" detail="System.ServiceModel.CommunicationException: The inactivity timeout of (00:10:00) has been exceeded.&#xD;&#xA;&#xD;&#xA;Server stack trace: &#xD;&#xA;   at System.ServiceModel.Channels.ReliableRequestSessionChannel.SyncRequest.WaitForReply(TimeSpan timeout)&#xD;&#xA;   at System.ServiceModel.Channels.RequestChannel.Request(Message message, TimeSpan timeout)&#xD;&#xA;   at System.ServiceModel.Channels.ServiceChannel.Call(String action, Boolean oneway, ProxyOperationRuntime operation, Object[] ins, Object[] outs, TimeSpan timeout)&#xD;&#xA;   at System.ServiceModel.Channels.ServiceChannelProxy.InvokeService(IMethodCallMessage methodCall, ProxyOperationRuntime operation)&#xD;&#xA;   at System.ServiceModel.Channels.ServiceChannelProxy.Invoke(IMessage message)&#xD;&#xA;&#xD;&#xA;Exception rethrown at [0]: &#xD;&#xA;   at System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)&#xD;&#xA;   at System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData&amp; msgData, Int32 type)&#xD;&#xA;   at EM_Report.ActionServiceReference.IActionService.GetPortfolio(PortfolioRequest request)&#xD;&#xA;   at EM_Report.ActionServiceReference.ActionServiceClient.GetPortfolio(PortfolioRequest request) in d:\Work\Project\Dart\branches\WebAppProject\EM_Report\Service References\ActionServiceReference\Reference.cs:line 4740&#xD;&#xA;   at EM_Report.Repositories.PortfolioReportRepository.GetSystemValues(String systemName, SystemValueType valueType) in d:\Work\Project\Dart\branches\WebAppProject\EM_Report\Repositories\PortfolioReportRepository.cs:line 28&#xD;&#xA;   at EM_Report.Helpers.ReportParametersHelper.GetValuesList(String systemName, String valueType) in d:\Work\Project\Dart\branches\WebAppProject\EM_Report\Helpers\ReportParametersHelper.cs:line 203&#xD;&#xA;   at EM_Report.Helpers.ReportParametersHelper.PopulateParametersData(PortfolioReportParameters paramData, String&amp; reportParameterData) in d:\Work\Project\Dart\branches\WebAppProject\EM_Report\Helpers\ReportParametersHelper.cs:line 24&#xD;&#xA;   at EM_Report.Controllers.ReportController.PopulateParametersData(PortfolioReportParameters paramData) in d:\Work\Project\Dart\branches\WebAppProject\EM_Report\Controllers\ReportController.cs:line 371&#xD;&#xA;   at EM_Report.Controllers.ReportController.ViewInfo(PortfolioReportParameters paramData, String reportpath) in d:\Work\Project\Dart\branches\WebAppProject\EM_Report\Controllers\ReportController.cs:line 712&#xD;&#xA;   at lambda_method(Closure , ControllerBase , Object[] )&#xD;&#xA;   at System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)&#xD;&#xA;   at System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)&#xD;&#xA;   at System.Web.Mvc.ControllerActionInvoker.&lt;&gt;c__DisplayClass15.&lt;InvokeActionMethodWithFilters&gt;b__12()&#xD;&#xA;   at System.Web.Mvc.ControllerActionInvoker.InvokeActionMethodFilter(IActionFilter filter, ActionExecutingContext preContext, Func`1 continuation)&#xD;&#xA;   at System.Web.Mvc.ControllerActionInvoker.InvokeActionMethodWithFilters(ControllerContext controllerContext, IList`1 filters, ActionDescriptor actionDescriptor, IDictionary`2 parameters)&#xD;&#xA;   at System.Web.Mvc.ControllerActionInvoker.InvokeAction(ControllerContext controllerContext, String actionName)&#xD;&#xA;   at System.Web.Mvc.Controller.ExecuteCore()&#xD;&#xA;   at System.Web.Mvc.ControllerBase.Execute(RequestContext requestContext)&#xD;&#xA;   at System.Web.Mvc.MvcHandler.&lt;&gt;c__DisplayClass6.&lt;&gt;c__DisplayClassb.&lt;BeginProcessRequest&gt;b__5()&#xD;&#xA;   at System.Web.Mvc.Async.AsyncResultWrapper.&lt;&gt;c__DisplayClass1.&lt;MakeVoidDelegate&gt;b__0()&#xD;&#xA;   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()&#xD;&#xA;   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean&amp; completedSynchronously)" time="2014-07-21T01:43:00.3516062Z">
+  <serverVariables>
+    <item name="ALL_HTTP">
+      <value string="HTTP_CACHE_CONTROL:max-age=0&#xD;&#xA;HTTP_CONNECTION:keep-alive&#xD;&#xA;HTTP_ACCEPT:text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8&#xD;&#xA;HTTP_ACCEPT_ENCODING:gzip,deflate,sdch&#xD;&#xA;HTTP_ACCEPT_LANGUAGE:en-US,en;q=0.8&#xD;&#xA;HTTP_COOKIE:__RequestVerificationToken_L0RhcnQ_=j1fgSBDRGMrZJkdZ6AL3RxqXxsVerz9e8KDM4JcIsXGZhWeRoYqrlp2MSz+g/Xh2/GampI5NXb0Q+/FTnOgYLAnRKKvfbui+uGlbiFu/nJHvFMJSzDZXks2XLyPelxscgMMqvYweV74JQ4wrjZi5plc3WK6YsEwE0bn3zYCCIRM=; UserInfoSecurity=admin@aswigsolutions.com|x/r4zsVD2y5FTpKYCQGMUw==#####|179; sqlAuthCookie=A703E13A005F52DC07A376C48DB4FBB6F9D34C2BBB3930049F9E44188EC78E20EE8460C08EBA79773CDC47D51AEB2721ECABC3FB1CE55431FB5DA302857248BEDCA7481C69499C3A0D9C4FB71A318662982DD21B313CBE24259024FB92A0E207F791EB5509FDC0D58CFE9BC697F76E1A69FACB51; ASP.NET_SessionId=b4cscbbukw3xzquiz1d5z3m2&#xD;&#xA;HTTP_HOST:localhost&#xD;&#xA;HTTP_USER_AGENT:Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/34.0.1847.11 Safari/537.36&#xD;&#xA;" />
+    </item>
+    <item name="ALL_RAW">
+      <value string="Cache-Control: max-age=0&#xD;&#xA;Connection: keep-alive&#xD;&#xA;Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8&#xD;&#xA;Accept-Encoding: gzip,deflate,sdch&#xD;&#xA;Accept-Language: en-US,en;q=0.8&#xD;&#xA;Cookie: __RequestVerificationToken_L0RhcnQ_=j1fgSBDRGMrZJkdZ6AL3RxqXxsVerz9e8KDM4JcIsXGZhWeRoYqrlp2MSz+g/Xh2/GampI5NXb0Q+/FTnOgYLAnRKKvfbui+uGlbiFu/nJHvFMJSzDZXks2XLyPelxscgMMqvYweV74JQ4wrjZi5plc3WK6YsEwE0bn3zYCCIRM=; UserInfoSecurity=admin@aswigsolutions.com|x/r4zsVD2y5FTpKYCQGMUw==#####|179; sqlAuthCookie=A703E13A005F52DC07A376C48DB4FBB6F9D34C2BBB3930049F9E44188EC78E20EE8460C08EBA79773CDC47D51AEB2721ECABC3FB1CE55431FB5DA302857248BEDCA7481C69499C3A0D9C4FB71A318662982DD21B313CBE24259024FB92A0E207F791EB5509FDC0D58CFE9BC697F76E1A69FACB51; ASP.NET_SessionId=b4cscbbukw3xzquiz1d5z3m2&#xD;&#xA;Host: localhost&#xD;&#xA;User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/34.0.1847.11 Safari/537.36&#xD;&#xA;" />
+    </item>
+    <item name="APPL_MD_PATH">
+      <value string="/LM/W3SVC/1/ROOT/Dart" />
+    </item>
+    <item name="APPL_PHYSICAL_PATH">
+      <value string="D:\Work\Project\Dart\branches\WebAppProject\EM_Report\" />
+    </item>
+    <item name="AUTH_TYPE">
+      <value string="" />
+    </item>
+    <item name="AUTH_USER">
+      <value string="" />
+    </item>
+    <item name="AUTH_PASSWORD">
+      <value string="" />
+    </item>
+    <item name="LOGON_USER">
+      <value string="" />
+    </item>
+    <item name="REMOTE_USER">
+      <value string="" />
+    </item>
+    <item name="CERT_COOKIE">
+      <value string="" />
+    </item>
+    <item name="CERT_FLAGS">
+      <value string="" />
+    </item>
+    <item name="CERT_ISSUER">
+      <value string="" />
+    </item>
+    <item name="CERT_KEYSIZE">
+      <value string="128" />
+    </item>
+    <item name="CERT_SECRETKEYSIZE">
+      <value string="2048" />
+    </item>
+    <item name="CERT_SERIALNUMBER">
+      <value string="" />
+    </item>
+    <item name="CERT_SERVER_ISSUER">
+      <value string="CN=ASWVNWKS103.aswigsyd.int" />
+    </item>
+    <item name="CERT_SERVER_SUBJECT">
+      <value string="CN=ASWVNWKS103.aswigsyd.int" />
+    </item>
+    <item name="CERT_SUBJECT">
+      <value string="" />
+    </item>
+    <item name="CONTENT_LENGTH">
+      <value string="0" />
+    </item>
+    <item name="CONTENT_TYPE">
+      <value string="" />
+    </item>
+    <item name="GATEWAY_INTERFACE">
+      <value string="CGI/1.1" />
+    </item>
+    <item name="HTTPS">
+      <value string="on" />
+    </item>
+    <item name="HTTPS_KEYSIZE">
+      <value string="128" />
+    </item>
+    <item name="HTTPS_SECRETKEYSIZE">
+      <value string="2048" />
+    </item>
+    <item name="HTTPS_SERVER_ISSUER">
+      <value string="CN=ASWVNWKS103.aswigsyd.int" />
+    </item>
+    <item name="HTTPS_SERVER_SUBJECT">
+      <value string="CN=ASWVNWKS103.aswigsyd.int" />
+    </item>
+    <item name="INSTANCE_ID">
+      <value string="1" />
+    </item>
+    <item name="INSTANCE_META_PATH">
+      <value string="/LM/W3SVC/1" />
+    </item>
+    <item name="LOCAL_ADDR">
+      <value string="::1" />
+    </item>
+    <item name="PATH_INFO">
+      <value string="/Dart/Report/ViewInfo" />
+    </item>
+    <item name="PATH_TRANSLATED">
+      <value string="D:\Work\Project\Dart\branches\WebAppProject\EM_Report\Report\ViewInfo" />
+    </item>
+    <item name="QUERY_STRING">
+      <value string="System=tmf&amp;Type=agency&amp;reportpath=/emreporting/reports/PORT" />
+    </item>
+    <item name="REMOTE_ADDR">
+      <value string="::1" />
+    </item>
+    <item name="REMOTE_HOST">
+      <value string="::1" />
+    </item>
+    <item name="REMOTE_PORT">
+      <value string="1486" />
+    </item>
+    <item name="REQUEST_METHOD">
+      <value string="GET" />
+    </item>
+    <item name="SCRIPT_NAME">
+      <value string="/Dart/Report/ViewInfo" />
+    </item>
+    <item name="SERVER_NAME">
+      <value string="localhost" />
+    </item>
+    <item name="SERVER_PORT">
+      <value string="443" />
+    </item>
+    <item name="SERVER_PORT_SECURE">
+      <value string="1" />
+    </item>
+    <item name="SERVER_PROTOCOL">
+      <value string="HTTP/1.1" />
+    </item>
+    <item name="SERVER_SOFTWARE">
+      <value string="Microsoft-IIS/7.5" />
+    </item>
+    <item name="URL">
+      <value string="/Dart/Report/ViewInfo" />
+    </item>
+    <item name="HTTP_CACHE_CONTROL">
+      <value string="max-age=0" />
+    </item>
+    <item name="HTTP_CONNECTION">
+      <value string="keep-alive" />
+    </item>
+    <item name="HTTP_ACCEPT">
+      <value string="text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8" />
+    </item>
+    <item name="HTTP_ACCEPT_ENCODING">
+      <value string="gzip,deflate,sdch" />
+    </item>
+    <item name="HTTP_ACCEPT_LANGUAGE">
+      <value string="en-US,en;q=0.8" />
+    </item>
+    <item name="HTTP_COOKIE">
+      <value string="__RequestVerificationToken_L0RhcnQ_=j1fgSBDRGMrZJkdZ6AL3RxqXxsVerz9e8KDM4JcIsXGZhWeRoYqrlp2MSz+g/Xh2/GampI5NXb0Q+/FTnOgYLAnRKKvfbui+uGlbiFu/nJHvFMJSzDZXks2XLyPelxscgMMqvYweV74JQ4wrjZi5plc3WK6YsEwE0bn3zYCCIRM=; UserInfoSecurity=admin@aswigsolutions.com|x/r4zsVD2y5FTpKYCQGMUw==#####|179; sqlAuthCookie=A703E13A005F52DC07A376C48DB4FBB6F9D34C2BBB3930049F9E44188EC78E20EE8460C08EBA79773CDC47D51AEB2721ECABC3FB1CE55431FB5DA302857248BEDCA7481C69499C3A0D9C4FB71A318662982DD21B313CBE24259024FB92A0E207F791EB5509FDC0D58CFE9BC697F76E1A69FACB51; ASP.NET_SessionId=b4cscbbukw3xzquiz1d5z3m2" />
+    </item>
+    <item name="HTTP_HOST">
+      <value string="localhost" />
+    </item>
+    <item name="HTTP_USER_AGENT">
+      <value string="Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/34.0.1847.11 Safari/537.36" />
+    </item>
+  </serverVariables>
+  <queryString>
+    <item name="System">
+      <value string="tmf" />
+    </item>
+    <item name="Type">
+      <value string="agency" />
+    </item>
+    <item name="reportpath">
+      <value string="/emreporting/reports/PORT" />
+    </item>
+  </queryString>
+  <cookies>
+    <item name="__RequestVerificationToken_L0RhcnQ_">
+      <value string="j1fgSBDRGMrZJkdZ6AL3RxqXxsVerz9e8KDM4JcIsXGZhWeRoYqrlp2MSz+g/Xh2/GampI5NXb0Q+/FTnOgYLAnRKKvfbui+uGlbiFu/nJHvFMJSzDZXks2XLyPelxscgMMqvYweV74JQ4wrjZi5plc3WK6YsEwE0bn3zYCCIRM=" />
+    </item>
+    <item name="UserInfoSecurity">
+      <value string="admin@aswigsolutions.com|x/r4zsVD2y5FTpKYCQGMUw==#####|179" />
+    </item>
+    <item name="sqlAuthCookie">
+      <value string="A703E13A005F52DC07A376C48DB4FBB6F9D34C2BBB3930049F9E44188EC78E20EE8460C08EBA79773CDC47D51AEB2721ECABC3FB1CE55431FB5DA302857248BEDCA7481C69499C3A0D9C4FB71A318662982DD21B313CBE24259024FB92A0E207F791EB5509FDC0D58CFE9BC697F76E1A69FACB51" />
+    </item>
+    <item name="ASP.NET_SessionId">
+      <value string="b4cscbbukw3xzquiz1d5z3m2" />
+    </item>
+  </cookies>
+</error>

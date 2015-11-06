@@ -1,0 +1,194 @@
+﻿<error errorId="0bcb2420-4b38-4443-b10a-c6d806aabec6" application="/LM/W3SVC/1/ROOT/Dart" host="ASWVNWKS103" type="System.NullReferenceException" message="Object reference not set to an instance of an object." source="EM_Report" detail="System.NullReferenceException: Object reference not set to an instance of an object.&#xD;&#xA;   at EM_Report.Repositories.UserRepository.GetSystemList() in d:\Work\Project\Dart\branches\WebAppProject\EM_Report\Repositories\UserRepository.cs:line 311&#xD;&#xA;   at EM_Report.Repositories.UserRepository.GetSystemIdByName(String systemname) in d:\Work\Project\Dart\branches\WebAppProject\EM_Report\Repositories\UserRepository.cs:line 352&#xD;&#xA;   at EM_Report.Controllers.ReportController.GetFileCabinetReports(String system, String level, String type, String value, String subValue) in d:\Work\Project\Dart\branches\WebAppProject\EM_Report\Controllers\ReportController.cs:line 761&#xD;&#xA;   at lambda_method(Closure , ControllerBase , Object[] )&#xD;&#xA;   at System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)&#xD;&#xA;   at System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)&#xD;&#xA;   at System.Web.Mvc.ControllerActionInvoker.&lt;&gt;c__DisplayClass15.&lt;InvokeActionMethodWithFilters&gt;b__12()&#xD;&#xA;   at System.Web.Mvc.ControllerActionInvoker.InvokeActionMethodFilter(IActionFilter filter, ActionExecutingContext preContext, Func`1 continuation)&#xD;&#xA;   at System.Web.Mvc.ControllerActionInvoker.InvokeActionMethodWithFilters(ControllerContext controllerContext, IList`1 filters, ActionDescriptor actionDescriptor, IDictionary`2 parameters)&#xD;&#xA;   at System.Web.Mvc.ControllerActionInvoker.InvokeAction(ControllerContext controllerContext, String actionName)&#xD;&#xA;   at System.Web.Mvc.Controller.ExecuteCore()&#xD;&#xA;   at System.Web.Mvc.ControllerBase.Execute(RequestContext requestContext)&#xD;&#xA;   at System.Web.Mvc.MvcHandler.&lt;&gt;c__DisplayClass6.&lt;&gt;c__DisplayClassb.&lt;BeginProcessRequest&gt;b__5()&#xD;&#xA;   at System.Web.Mvc.Async.AsyncResultWrapper.&lt;&gt;c__DisplayClass1.&lt;MakeVoidDelegate&gt;b__0()&#xD;&#xA;   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()&#xD;&#xA;   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean&amp; completedSynchronously)" time="2014-07-21T07:14:57.6190451Z">
+  <serverVariables>
+    <item name="ALL_HTTP">
+      <value string="HTTP_CONNECTION:keep-alive&#xD;&#xA;HTTP_ACCEPT:*/*&#xD;&#xA;HTTP_ACCEPT_ENCODING:gzip,deflate,sdch&#xD;&#xA;HTTP_ACCEPT_LANGUAGE:en-US,en;q=0.8,vi;q=0.6,en-GB;q=0.4&#xD;&#xA;HTTP_COOKIE:SystemId_admin=2; __RequestVerificationToken_L0RhcnQ_=lsDhEqUA43PEo0ctd5zz/XA90BsNRfKK4PF3RDIqmVTbwj8VKLGIql6czh45kYq5dScFQDi0GVXHILQtQkcnUejZTl++M7XFM2LjNW5Y9KYNWDINubJVFtd9cDA+X1W20oD6Vn/y+15Ow5ryAeDYw50y+1avj9CL3tVWri1oBW0=; ASP.NET_SessionId=zdobomgtgkphoyzjgbx4fl2v; UserInfoSecurity=S.Niven@employersmutual.com.au|x/r4zsVD2y5FTpKYCQGMUw==#####|3237; sqlAuthCookie=62052CD289356A32F98561C420A157A6D050E710F0F04EAD707D9D1E7F3130C02DE89A6CA746E175F6A87E1189E070A102F2ED091A470AD3063CEA76B2796D8A413DC702F8449AF96065F53AD75C78FD02048B2A393C96770B0737FA988A3538E98B5E8B22F5943762F5074EF7DDDF4A628D7D47&#xD;&#xA;HTTP_HOST:aswvnwks103&#xD;&#xA;HTTP_REFERER:https://aswvnwks103/dart/dashboard/level2?IsVisible=all&amp;Type=agency&amp;Measure=26&amp;reportpath=/emreporting/reports/tmf_rtw_level2&#xD;&#xA;HTTP_USER_AGENT:Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36&#xD;&#xA;HTTP_X_REQUESTED_WITH:XMLHttpRequest&#xD;&#xA;" />
+    </item>
+    <item name="ALL_RAW">
+      <value string="Connection: keep-alive&#xD;&#xA;Accept: */*&#xD;&#xA;Accept-Encoding: gzip,deflate,sdch&#xD;&#xA;Accept-Language: en-US,en;q=0.8,vi;q=0.6,en-GB;q=0.4&#xD;&#xA;Cookie: SystemId_admin=2; __RequestVerificationToken_L0RhcnQ_=lsDhEqUA43PEo0ctd5zz/XA90BsNRfKK4PF3RDIqmVTbwj8VKLGIql6czh45kYq5dScFQDi0GVXHILQtQkcnUejZTl++M7XFM2LjNW5Y9KYNWDINubJVFtd9cDA+X1W20oD6Vn/y+15Ow5ryAeDYw50y+1avj9CL3tVWri1oBW0=; ASP.NET_SessionId=zdobomgtgkphoyzjgbx4fl2v; UserInfoSecurity=S.Niven@employersmutual.com.au|x/r4zsVD2y5FTpKYCQGMUw==#####|3237; sqlAuthCookie=62052CD289356A32F98561C420A157A6D050E710F0F04EAD707D9D1E7F3130C02DE89A6CA746E175F6A87E1189E070A102F2ED091A470AD3063CEA76B2796D8A413DC702F8449AF96065F53AD75C78FD02048B2A393C96770B0737FA988A3538E98B5E8B22F5943762F5074EF7DDDF4A628D7D47&#xD;&#xA;Host: aswvnwks103&#xD;&#xA;Referer: https://aswvnwks103/dart/dashboard/level2?IsVisible=all&amp;Type=agency&amp;Measure=26&amp;reportpath=/emreporting/reports/tmf_rtw_level2&#xD;&#xA;User-Agent: Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36&#xD;&#xA;X-Requested-With: XMLHttpRequest&#xD;&#xA;" />
+    </item>
+    <item name="APPL_MD_PATH">
+      <value string="/LM/W3SVC/1/ROOT/Dart" />
+    </item>
+    <item name="APPL_PHYSICAL_PATH">
+      <value string="D:\Work\Project\Dart\branches\WebAppProject\EM_Report\" />
+    </item>
+    <item name="AUTH_TYPE">
+      <value string="" />
+    </item>
+    <item name="AUTH_USER">
+      <value string="" />
+    </item>
+    <item name="AUTH_PASSWORD">
+      <value string="" />
+    </item>
+    <item name="LOGON_USER">
+      <value string="" />
+    </item>
+    <item name="REMOTE_USER">
+      <value string="" />
+    </item>
+    <item name="CERT_COOKIE">
+      <value string="" />
+    </item>
+    <item name="CERT_FLAGS">
+      <value string="" />
+    </item>
+    <item name="CERT_ISSUER">
+      <value string="" />
+    </item>
+    <item name="CERT_KEYSIZE">
+      <value string="128" />
+    </item>
+    <item name="CERT_SECRETKEYSIZE">
+      <value string="2048" />
+    </item>
+    <item name="CERT_SERIALNUMBER">
+      <value string="" />
+    </item>
+    <item name="CERT_SERVER_ISSUER">
+      <value string="CN=ASWVNWKS103.aswigsyd.int" />
+    </item>
+    <item name="CERT_SERVER_SUBJECT">
+      <value string="CN=ASWVNWKS103.aswigsyd.int" />
+    </item>
+    <item name="CERT_SUBJECT">
+      <value string="" />
+    </item>
+    <item name="CONTENT_LENGTH">
+      <value string="0" />
+    </item>
+    <item name="CONTENT_TYPE">
+      <value string="" />
+    </item>
+    <item name="GATEWAY_INTERFACE">
+      <value string="CGI/1.1" />
+    </item>
+    <item name="HTTPS">
+      <value string="on" />
+    </item>
+    <item name="HTTPS_KEYSIZE">
+      <value string="128" />
+    </item>
+    <item name="HTTPS_SECRETKEYSIZE">
+      <value string="2048" />
+    </item>
+    <item name="HTTPS_SERVER_ISSUER">
+      <value string="CN=ASWVNWKS103.aswigsyd.int" />
+    </item>
+    <item name="HTTPS_SERVER_SUBJECT">
+      <value string="CN=ASWVNWKS103.aswigsyd.int" />
+    </item>
+    <item name="INSTANCE_ID">
+      <value string="1" />
+    </item>
+    <item name="INSTANCE_META_PATH">
+      <value string="/LM/W3SVC/1" />
+    </item>
+    <item name="LOCAL_ADDR">
+      <value string="10.9.1.147" />
+    </item>
+    <item name="PATH_INFO">
+      <value string="/Dart/Report/GetFileCabinetReports" />
+    </item>
+    <item name="PATH_TRANSLATED">
+      <value string="D:\Work\Project\Dart\branches\WebAppProject\EM_Report\Report\GetFileCabinetReports" />
+    </item>
+    <item name="QUERY_STRING">
+      <value string="system=tmf&amp;level=2&amp;type=agency&amp;value=&amp;subvalue=" />
+    </item>
+    <item name="REMOTE_ADDR">
+      <value string="10.9.1.161" />
+    </item>
+    <item name="REMOTE_HOST">
+      <value string="10.9.1.161" />
+    </item>
+    <item name="REMOTE_PORT">
+      <value string="31895" />
+    </item>
+    <item name="REQUEST_METHOD">
+      <value string="GET" />
+    </item>
+    <item name="SCRIPT_NAME">
+      <value string="/Dart/Report/GetFileCabinetReports" />
+    </item>
+    <item name="SERVER_NAME">
+      <value string="aswvnwks103" />
+    </item>
+    <item name="SERVER_PORT">
+      <value string="443" />
+    </item>
+    <item name="SERVER_PORT_SECURE">
+      <value string="1" />
+    </item>
+    <item name="SERVER_PROTOCOL">
+      <value string="HTTP/1.1" />
+    </item>
+    <item name="SERVER_SOFTWARE">
+      <value string="Microsoft-IIS/7.5" />
+    </item>
+    <item name="URL">
+      <value string="/Dart/Report/GetFileCabinetReports" />
+    </item>
+    <item name="HTTP_CONNECTION">
+      <value string="keep-alive" />
+    </item>
+    <item name="HTTP_ACCEPT">
+      <value string="*/*" />
+    </item>
+    <item name="HTTP_ACCEPT_ENCODING">
+      <value string="gzip,deflate,sdch" />
+    </item>
+    <item name="HTTP_ACCEPT_LANGUAGE">
+      <value string="en-US,en;q=0.8,vi;q=0.6,en-GB;q=0.4" />
+    </item>
+    <item name="HTTP_COOKIE">
+      <value string="SystemId_admin=2; __RequestVerificationToken_L0RhcnQ_=lsDhEqUA43PEo0ctd5zz/XA90BsNRfKK4PF3RDIqmVTbwj8VKLGIql6czh45kYq5dScFQDi0GVXHILQtQkcnUejZTl++M7XFM2LjNW5Y9KYNWDINubJVFtd9cDA+X1W20oD6Vn/y+15Ow5ryAeDYw50y+1avj9CL3tVWri1oBW0=; ASP.NET_SessionId=zdobomgtgkphoyzjgbx4fl2v; UserInfoSecurity=S.Niven@employersmutual.com.au|x/r4zsVD2y5FTpKYCQGMUw==#####|3237; sqlAuthCookie=62052CD289356A32F98561C420A157A6D050E710F0F04EAD707D9D1E7F3130C02DE89A6CA746E175F6A87E1189E070A102F2ED091A470AD3063CEA76B2796D8A413DC702F8449AF96065F53AD75C78FD02048B2A393C96770B0737FA988A3538E98B5E8B22F5943762F5074EF7DDDF4A628D7D47" />
+    </item>
+    <item name="HTTP_HOST">
+      <value string="aswvnwks103" />
+    </item>
+    <item name="HTTP_REFERER">
+      <value string="https://aswvnwks103/dart/dashboard/level2?IsVisible=all&amp;Type=agency&amp;Measure=26&amp;reportpath=/emreporting/reports/tmf_rtw_level2" />
+    </item>
+    <item name="HTTP_USER_AGENT">
+      <value string="Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36" />
+    </item>
+    <item name="HTTP_X_REQUESTED_WITH">
+      <value string="XMLHttpRequest" />
+    </item>
+  </serverVariables>
+  <queryString>
+    <item name="system">
+      <value string="tmf" />
+    </item>
+    <item name="level">
+      <value string="2" />
+    </item>
+    <item name="type">
+      <value string="agency" />
+    </item>
+    <item name="value">
+      <value string="" />
+    </item>
+    <item name="subvalue">
+      <value string="" />
+    </item>
+  </queryString>
+  <cookies>
+    <item name="SystemId_admin">
+      <value string="2" />
+    </item>
+    <item name="__RequestVerificationToken_L0RhcnQ_">
+      <value string="lsDhEqUA43PEo0ctd5zz/XA90BsNRfKK4PF3RDIqmVTbwj8VKLGIql6czh45kYq5dScFQDi0GVXHILQtQkcnUejZTl++M7XFM2LjNW5Y9KYNWDINubJVFtd9cDA+X1W20oD6Vn/y+15Ow5ryAeDYw50y+1avj9CL3tVWri1oBW0=" />
+    </item>
+    <item name="ASP.NET_SessionId">
+      <value string="zdobomgtgkphoyzjgbx4fl2v" />
+    </item>
+    <item name="UserInfoSecurity">
+      <value string="S.Niven@employersmutual.com.au|x/r4zsVD2y5FTpKYCQGMUw==#####|3237" />
+    </item>
+    <item name="sqlAuthCookie">
+      <value string="62052CD289356A32F98561C420A157A6D050E710F0F04EAD707D9D1E7F3130C02DE89A6CA746E175F6A87E1189E070A102F2ED091A470AD3063CEA76B2796D8A413DC702F8449AF96065F53AD75C78FD02048B2A393C96770B0737FA988A3538E98B5E8B22F5943762F5074EF7DDDF4A628D7D47" />
+    </item>
+  </cookies>
+</error>

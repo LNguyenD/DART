@@ -1,0 +1,1575 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner" xmlns:cl="http://schemas.microsoft.com/sqlserver/reporting/2010/01/componentdefinition" xmlns="http://schemas.microsoft.com/sqlserver/reporting/2010/01/reportdefinition">
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="DART">
+      <DataSourceReference>DART</DataSourceReference>
+      <rd:SecurityType>None</rd:SecurityType>
+      <rd:DataSourceID>931b2dc0-5273-4834-825e-ac453032e466</rd:DataSourceID>
+    </DataSource>
+  </DataSources>
+  <DataSets>
+    <DataSet Name="ds_TMF_RTW_Agency_Group_Compares_To_Same_Time_Last_Year_Current">
+      <SharedDataSet>
+        <SharedDataSetReference>TMF_RTW_Agency_Group_Compares_To_Same_Time_Last_Year_Current</SharedDataSetReference>
+      </SharedDataSet>
+      <Fields>
+        <Field Name="Agency_Group">
+          <DataField>Agency_Group</DataField>
+          <rd:UserDefined>true</rd:UserDefined>
+        </Field>
+        <Field Name="LT">
+          <DataField>LT</DataField>
+          <rd:UserDefined>true</rd:UserDefined>
+        </Field>
+        <Field Name="Type">
+          <DataField>Type</DataField>
+          <rd:UserDefined>true</rd:UserDefined>
+        </Field>
+        <Field Name="Measure_months">
+          <DataField>Measure_months</DataField>
+          <rd:UserDefined>true</rd:UserDefined>
+        </Field>
+        <Field Name="AVGDURN">
+          <DataField>AVGDURN</DataField>
+          <rd:UserDefined>true</rd:UserDefined>
+        </Field>
+        <Field Name="WGT">
+          <DataField>WGT</DataField>
+          <rd:UserDefined>true</rd:UserDefined>
+        </Field>
+        <Field Name="Month_period">
+          <DataField>Month_period</DataField>
+          <rd:UserDefined>true</rd:UserDefined>
+        </Field>
+        <Field Name="Target">
+          <DataField>Target</DataField>
+          <rd:UserDefined>true</rd:UserDefined>
+        </Field>
+        <Field Name="Parents">
+          <Value>=Switch(Fields!Agency_Group.Value = "HEALTH", "HEALTH &amp; OTHER",
+		Fields!Agency_Group.Value = "OTHER", "HEALTH &amp; OTHER",
+		Fields!Agency_Group.Value = "POLICE", "POLICE &amp; FIRE &amp; RFS",
+		Fields!Agency_Group.Value = "FIRE", "POLICE &amp; FIRE &amp; RFS",
+		Fields!Agency_Group.Value = "RFS", "POLICE &amp; FIRE &amp; RFS")</Value>
+        </Field>
+        <Field Name="Order1">
+          <Value>=iif(LCASE(Fields!Agency_Group.Value) = "tmf",2,
+	iif(LCASE(Fields!Agency_Group.Value) = "miscellaneous" , 1,0))</Value>
+        </Field>
+        <Field Name="Order2">
+          <Value>=iif(LCASE(Fields!Agency_Group.Value) = "other","health1",
+	iif(LCASE(Fields!Agency_Group.Value) = "health &amp; other","health2",
+		iif(LCASE(Fields!Agency_Group.Value) = "fire","police1",
+			iif(LCASE(Fields!Agency_Group.Value) = "rfs","police2",
+				iif(LCASE(Fields!Agency_Group.Value) = "police &amp; emergency services","police3",Fields!Agency_Group.Value)))))</Value>
+        </Field>
+      </Fields>
+      <Filters>
+        <Filter>
+          <FilterExpression>=Fields!Month_period.Value</FilterExpression>
+          <Operator>Equal</Operator>
+          <FilterValues>
+            <FilterValue DataType="Integer">12</FilterValue>
+          </FilterValues>
+        </Filter>
+      </Filters>
+    </DataSet>
+    <DataSet Name="ds_TMF_AWC_Agency_Group_Summary">
+      <SharedDataSet>
+        <SharedDataSetReference>TMF_AWC_Agency_Group_Summary</SharedDataSetReference>
+      </SharedDataSet>
+      <Fields>
+        <Field Name="Agency_Group">
+          <DataField>Agency_Group</DataField>
+          <rd:UserDefined>true</rd:UserDefined>
+        </Field>
+        <Field Name="No_Of_Active_Weekly_Claims">
+          <DataField>No_Of_Active_Weekly_Claims</DataField>
+          <rd:UserDefined>true</rd:UserDefined>
+        </Field>
+        <Field Name="Projection">
+          <DataField>Projection</DataField>
+          <rd:UserDefined>true</rd:UserDefined>
+        </Field>
+        <Field Name="Type">
+          <DataField>Type</DataField>
+          <rd:UserDefined>true</rd:UserDefined>
+        </Field>
+      </Fields>
+    </DataSet>
+  </DataSets>
+  <ReportSections>
+    <ReportSection>
+      <Body>
+        <ReportItems>
+          <Textbox Name="Textbox11">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>TMF by agencies</Value>
+                    <Style>
+                      <FontWeight>Bold</FontWeight>
+                      <Color>#037baf</Color>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Left</TextAlign>
+                </Style>
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox11</rd:DefaultName>
+            <Top>0.12664in</Top>
+            <Height>0.32973in</Height>
+            <Width>6.08057in</Width>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <VerticalAlign>Middle</VerticalAlign>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="Textbox14">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>TMF by groups</Value>
+                    <Style>
+                      <FontWeight>Bold</FontWeight>
+                      <Color>#037baf</Color>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Left</TextAlign>
+                </Style>
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox11</rd:DefaultName>
+            <Top>1.31332in</Top>
+            <Height>0.25in</Height>
+            <Width>6.08057in</Width>
+            <ZIndex>1</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <VerticalAlign>Middle</VerticalAlign>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Tablix Name="Tablix4">
+            <TablixCorner>
+              <TablixCornerRows>
+                <TablixCornerRow>
+                  <TablixCornerCell>
+                    <CellContents>
+                      <Textbox Name="Textbox23">
+                        <CanGrow>true</CanGrow>
+                        <KeepTogether>true</KeepTogether>
+                        <Paragraphs>
+                          <Paragraph>
+                            <TextRuns>
+                              <TextRun>
+                                <Value />
+                                <Style>
+                                  <Color>#747474</Color>
+                                </Style>
+                              </TextRun>
+                            </TextRuns>
+                            <Style>
+                              <TextAlign>Center</TextAlign>
+                            </Style>
+                          </Paragraph>
+                        </Paragraphs>
+                        <rd:DefaultName>Textbox22</rd:DefaultName>
+                        <ToolTip>="[image_header_tablix]"</ToolTip>
+                        <Style>
+                          <Border>
+                            <Color>LightGrey</Color>
+                            <Style>Solid</Style>
+                          </Border>
+                          <BackgroundColor>CornflowerBlue</BackgroundColor>
+                          <VerticalAlign>Middle</VerticalAlign>
+                          <PaddingLeft>2pt</PaddingLeft>
+                          <PaddingRight>2pt</PaddingRight>
+                          <PaddingTop>2pt</PaddingTop>
+                          <PaddingBottom>2pt</PaddingBottom>
+                        </Style>
+                      </Textbox>
+                    </CellContents>
+                  </TablixCornerCell>
+                </TablixCornerRow>
+              </TablixCornerRows>
+            </TablixCorner>
+            <TablixBody>
+              <TablixColumns>
+                <TablixColumn>
+                  <Width>0.58236in</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>0.54267in</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>0.54267in</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>0.54267in</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>0.98425in</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>0.62253in</Width>
+                </TablixColumn>
+              </TablixColumns>
+              <TablixRows>
+                <TablixRow>
+                  <Height>0.29509in</Height>
+                  <TablixCells>
+                    <TablixCell>
+                      <CellContents>
+                        <Rectangle Name="Rectangle20">
+                          <ReportItems>
+                            <Image Name="Image27">
+                              <Source>External</Source>
+                              <Value>=""</Value>
+                              <ActionInfo>
+                                <Actions>
+                                  <Action>
+                                    <Hyperlink>="javascript:void(parent.window.location=[parent.window.location.protocol, '//', parent.window.location.host, parent.window.location.pathname.toLowerCase().replace('level1/','level1')].join('').replace(/level1/g,'level2?IsVisible=all&amp;Type=group&amp;Measure=26&amp;reportpath=/emreporting/reports/tmf_rtw_level2_group'))"</Hyperlink>
+                                  </Action>
+                                </Actions>
+                              </ActionInfo>
+                              <Top>0.01719in</Top>
+                              <Left>0.27468in</Left>
+                              <Height>0.27507in</Height>
+                              <Width>0.26799in</Width>
+                              <ToolTip>="[" 
+ &amp; "RTW_" 
+ &amp; FormatNumber(
+				Lookup(
+						Fields!Agency_Group.Value &amp; "_12_26"
+						,Fields!Agency_Group.Value &amp; "_" &amp; Fields!Month_period.Value &amp; "_" &amp; Fields!Measure_months.Value
+						,Fields!AVGDURN.Value, "ds_TMF_RTW_Agency_Group_Compares_To_Same_Time_Last_Year_Current"
+						)
+				, 2
+				) 
+ &amp; "_"
+ &amp; Lookup(
+			Fields!Agency_Group.Value &amp; "_12_26"
+			,Fields!Agency_Group.Value &amp; "_" &amp; Fields!Month_period.Value &amp; "_" &amp; Fields!Measure_months.Value
+			,Fields!Target.Value, "ds_TMF_RTW_Agency_Group_Compares_To_Same_Time_Last_Year_Current"
+		)
+ &amp; "]"</ToolTip>
+                              <Style>
+                                <Border>
+                                  <Style>None</Style>
+                                </Border>
+                              </Style>
+                            </Image>
+                          </ReportItems>
+                          <KeepTogether>true</KeepTogether>
+                          <ToolTip>="[image_header_tablix]"</ToolTip>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>=IIF(RunningValue(Fields!Agency_Group.Value, CountDistinct, nothing) Mod 2, "#FFFFFF", "#EDF2F6")</BackgroundColor>
+                          </Style>
+                        </Rectangle>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Rectangle Name="Rectangle21">
+                          <ReportItems>
+                            <Image Name="Image28">
+                              <Source>External</Source>
+                              <Value>=""</Value>
+                              <ActionInfo>
+                                <Actions>
+                                  <Action>
+                                    <Hyperlink>="javascript:void(parent.window.location=[parent.window.location.protocol, '//', parent.window.location.host, parent.window.location.pathname.toLowerCase().replace('level1/','level1')].join('').replace(/level1/g,'level2?IsVisible=all&amp;Type=group&amp;Measure=52&amp;reportpath=/emreporting/reports/tmf_rtw_level2_group'))"</Hyperlink>
+                                  </Action>
+                                </Actions>
+                              </ActionInfo>
+                              <Top>0.01719in</Top>
+                              <Left>0.27468in</Left>
+                              <Height>0.27507in</Height>
+                              <Width>0.26799in</Width>
+                              <ToolTip>="[" 
+ &amp; "RTW_" 
+ &amp; FormatNumber(
+				Lookup(
+						Fields!Agency_Group.Value &amp; "_12_52"
+						,Fields!Agency_Group.Value &amp; "_" &amp; Fields!Month_period.Value &amp; "_" &amp; Fields!Measure_months.Value
+						,Fields!AVGDURN.Value, "ds_TMF_RTW_Agency_Group_Compares_To_Same_Time_Last_Year_Current"
+						)
+				, 2
+				) 
+ &amp; "_" 
+ &amp; Lookup(
+			Fields!Agency_Group.Value &amp; "_12_52"
+			,Fields!Agency_Group.Value &amp; "_" &amp; Fields!Month_period.Value &amp; "_" &amp; Fields!Measure_months.Value
+			,Fields!Target.Value, "ds_TMF_RTW_Agency_Group_Compares_To_Same_Time_Last_Year_Current"
+		)
+ &amp; "]"</ToolTip>
+                              <Style>
+                                <Border>
+                                  <Style>None</Style>
+                                </Border>
+                              </Style>
+                            </Image>
+                          </ReportItems>
+                          <KeepTogether>true</KeepTogether>
+                          <ToolTip>="[image_header_tablix]"</ToolTip>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>=IIF(RunningValue(Fields!Agency_Group.Value, CountDistinct, nothing) Mod 2, "#FFFFFF", "#EDF2F6")</BackgroundColor>
+                          </Style>
+                        </Rectangle>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Rectangle Name="Rectangle22">
+                          <ReportItems>
+                            <Image Name="Image29">
+                              <Source>External</Source>
+                              <Value>=""</Value>
+                              <ActionInfo>
+                                <Actions>
+                                  <Action>
+                                    <Hyperlink>="javascript:void(parent.window.location=[parent.window.location.protocol, '//', parent.window.location.host, parent.window.location.pathname.toLowerCase().replace('level1/','level1')].join('').replace(/level1/g,'level2?IsVisible=all&amp;Type=group&amp;Measure=78&amp;reportpath=/emreporting/reports/tmf_rtw_level2_group'))"</Hyperlink>
+                                  </Action>
+                                </Actions>
+                              </ActionInfo>
+                              <Top>0.01719in</Top>
+                              <Left>0.27468in</Left>
+                              <Height>0.27507in</Height>
+                              <Width>0.26799in</Width>
+                              <ToolTip>="[" 
+ &amp; "RTW_" 
+ &amp; FormatNumber(
+				Lookup(
+						Fields!Agency_Group.Value &amp; "_12_78"
+						,Fields!Agency_Group.Value &amp; "_" &amp; Fields!Month_period.Value &amp; "_" &amp; Fields!Measure_months.Value
+						,Fields!AVGDURN.Value, "ds_TMF_RTW_Agency_Group_Compares_To_Same_Time_Last_Year_Current"
+						)
+				, 2
+				) 
+ &amp; "_" 
+ &amp; Lookup(
+			Fields!Agency_Group.Value &amp; "_12_78"
+			,Fields!Agency_Group.Value &amp; "_" &amp; Fields!Month_period.Value &amp; "_" &amp; Fields!Measure_months.Value
+			,Fields!Target.Value, "ds_TMF_RTW_Agency_Group_Compares_To_Same_Time_Last_Year_Current"
+		)
+ &amp; "]"</ToolTip>
+                              <Style>
+                                <Border>
+                                  <Style>None</Style>
+                                </Border>
+                              </Style>
+                            </Image>
+                          </ReportItems>
+                          <KeepTogether>true</KeepTogether>
+                          <ToolTip>="[image_header_tablix]"</ToolTip>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>=IIF(RunningValue(Fields!Agency_Group.Value, CountDistinct, nothing) Mod 2, "#FFFFFF", "#EDF2F6")</BackgroundColor>
+                          </Style>
+                        </Rectangle>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Rectangle Name="Rectangle31">
+                          <ReportItems>
+                            <Image Name="Image34">
+                              <Source>External</Source>
+                              <Value>=""</Value>
+                              <ActionInfo>
+                                <Actions>
+                                  <Action>
+                                    <Hyperlink>="javascript:void(parent.window.location=[parent.window.location.protocol, '//', parent.window.location.host, parent.window.location.pathname.toLowerCase().replace('level1/','level1')].join('').replace(/level1/g,'level2?IsVisible=all&amp;Type=group&amp;Measure=104&amp;reportpath=/emreporting/reports/tmf_rtw_level2_group'))"</Hyperlink>
+                                  </Action>
+                                </Actions>
+                              </ActionInfo>
+                              <Top>0.01719in</Top>
+                              <Left>0.27468in</Left>
+                              <Height>0.27507in</Height>
+                              <Width>0.26799in</Width>
+                              <ToolTip>="[" &amp; "RTW_" &amp; FormatNumber(Lookup(Fields!Agency_Group.Value &amp; "_12_104", Fields!Agency_Group.Value &amp; "_" &amp; Fields!Month_period.Value &amp; "_" &amp; Fields!Measure_months.Value, Fields!AVGDURN.Value, "ds_TMF_RTW_Agency_Group_Compares_To_Same_Time_Last_Year_Current"), 2) &amp; "_" &amp; Lookup(Fields!Agency_Group.Value &amp; "_12_104", Fields!Agency_Group.Value &amp; "_" &amp; Fields!Month_period.Value &amp; "_" &amp; Fields!Measure_months.Value, Fields!Target.Value, "ds_TMF_RTW_Agency_Group_Compares_To_Same_Time_Last_Year_Current") &amp; "]"</ToolTip>
+                              <Style>
+                                <Border>
+                                  <Style>None</Style>
+                                </Border>
+                              </Style>
+                            </Image>
+                          </ReportItems>
+                          <KeepTogether>true</KeepTogether>
+                          <ToolTip>="[image_header_tablix]"</ToolTip>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>=IIF(RunningValue(Fields!Agency_Group.Value, CountDistinct, nothing) Mod 2, "#FFFFFF", "#EDF2F6")</BackgroundColor>
+                          </Style>
+                        </Rectangle>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Rectangle Name="Rectangle23">
+                          <ReportItems>
+                            <Image Name="Image14">
+                              <Source>External</Source>
+                              <Value>=""</Value>
+                              <ActionInfo>
+                                <Actions>
+                                  <Action>
+                                    <Hyperlink>="javascript:void(parent.window.location=[parent.window.location.protocol, '//', parent.window.location.host, parent.window.location.pathname.toLowerCase().replace('level1/','level1')].join('').replace(/level1/g,'level2?reportpath=/emreporting/reports/tmf_awc_level2&amp;Type=group&amp;ReportType=1-2'))"</Hyperlink>
+                                  </Action>
+                                </Actions>
+                              </ActionInfo>
+                              <Top>0.0067in</Top>
+                              <Left>0.36171in</Left>
+                              <Height>0.28169in</Height>
+                              <Width>0.26082in</Width>
+                              <ToolTip>="["
+ &amp; "AWC_"
+ &amp; FormatNumber(Lookup(Fields!Agency_Group.Value &amp; "_" &amp; Fields!Type.Value, Fields!Agency_Group.Value &amp; "_" &amp; Fields!Type.Value, Fields!No_Of_Active_Weekly_Claims.Value, "ds_TMF_AWC_Agency_Group_Summary"), 0)
+ &amp; "_" &amp; Lookup(Fields!Agency_Group.Value &amp; "_" &amp; Fields!Type.Value, Fields!Agency_Group.Value &amp; "_" &amp; Fields!Type.Value, Fields!Projection.Value, "ds_TMF_AWC_Agency_Group_Summary") 
+ &amp; "]"</ToolTip>
+                              <Style>
+                                <Border>
+                                  <Style>None</Style>
+                                </Border>
+                              </Style>
+                            </Image>
+                          </ReportItems>
+                          <KeepTogether>true</KeepTogether>
+                          <ToolTip>="[image_header_tablix]"</ToolTip>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>=IIF(RunningValue(Fields!Agency_Group.Value, CountDistinct, nothing) Mod 2, "#FFFFFF", "#EDF2F6")</BackgroundColor>
+                          </Style>
+                        </Rectangle>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Rectangle Name="Rectangle34">
+                          <ReportItems>
+                            <Image Name="Image20">
+                              <Source>External</Source>
+                              <Value>=""</Value>
+                              <ActionInfo>
+                                <Actions>
+                                  <Action>
+                                    <Hyperlink>="javascript:void(parent.window.location=[parent.window.location.protocol, '//', parent.window.location.host, parent.window.location.pathname.toLowerCase().replace('level1/','level1')].join('').replace(/level1/g,'level2?Type=group&amp;reportpath=/emreporting/reports/tmf_cpr_week_month_summary'))"</Hyperlink>
+                                  </Action>
+                                </Actions>
+                              </ActionInfo>
+                              <Top>0.0067in</Top>
+                              <Left>0.36171in</Left>
+                              <Height>0.28169in</Height>
+                              <Width>0.26082in</Width>
+                              <ToolTip>="[CPR_]"</ToolTip>
+                              <Style>
+                                <Border>
+                                  <Style>None</Style>
+                                </Border>
+                              </Style>
+                            </Image>
+                          </ReportItems>
+                          <KeepTogether>true</KeepTogether>
+                          <ToolTip>="[image_header_tablix]"</ToolTip>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>=IIF(RunningValue(Fields!Agency_Group.Value, CountDistinct, nothing) Mod 2, "#FFFFFF", "#EDF2F6")</BackgroundColor>
+                          </Style>
+                        </Rectangle>
+                      </CellContents>
+                    </TablixCell>
+                  </TablixCells>
+                </TablixRow>
+              </TablixRows>
+            </TablixBody>
+            <TablixColumnHierarchy>
+              <TablixMembers>
+                <TablixMember>
+                  <TablixHeader>
+                    <Size>0.38146in</Size>
+                    <CellContents>
+                      <Textbox Name="Textbox26">
+                        <CanGrow>true</CanGrow>
+                        <KeepTogether>true</KeepTogether>
+                        <Paragraphs>
+                          <Paragraph>
+                            <TextRuns>
+                              <TextRun>
+                                <Value>RTW 26</Value>
+                                <Style>
+                                  <Color>#747474</Color>
+                                </Style>
+                              </TextRun>
+                            </TextRuns>
+                            <Style>
+                              <TextAlign>Center</TextAlign>
+                            </Style>
+                          </Paragraph>
+                        </Paragraphs>
+                        <rd:DefaultName>Textbox14</rd:DefaultName>
+                        <ToolTip>="[image_header_tablix]"</ToolTip>
+                        <Style>
+                          <Border>
+                            <Color>LightGrey</Color>
+                            <Style>Solid</Style>
+                          </Border>
+                          <BackgroundColor>CornflowerBlue</BackgroundColor>
+                          <VerticalAlign>Middle</VerticalAlign>
+                          <PaddingLeft>2pt</PaddingLeft>
+                          <PaddingRight>2pt</PaddingRight>
+                          <PaddingTop>2pt</PaddingTop>
+                          <PaddingBottom>2pt</PaddingBottom>
+                        </Style>
+                      </Textbox>
+                    </CellContents>
+                  </TablixHeader>
+                </TablixMember>
+                <TablixMember>
+                  <TablixHeader>
+                    <Size>0.38146in</Size>
+                    <CellContents>
+                      <Textbox Name="Textbox29">
+                        <CanGrow>true</CanGrow>
+                        <KeepTogether>true</KeepTogether>
+                        <Paragraphs>
+                          <Paragraph>
+                            <TextRuns>
+                              <TextRun>
+                                <Value>RTW 52</Value>
+                                <Style>
+                                  <Color>#747474</Color>
+                                </Style>
+                              </TextRun>
+                            </TextRuns>
+                            <Style>
+                              <TextAlign>Center</TextAlign>
+                            </Style>
+                          </Paragraph>
+                        </Paragraphs>
+                        <rd:DefaultName>Textbox14</rd:DefaultName>
+                        <ToolTip>="[image_header_tablix]"</ToolTip>
+                        <Style>
+                          <Border>
+                            <Color>LightGrey</Color>
+                            <Style>Solid</Style>
+                          </Border>
+                          <BackgroundColor>CornflowerBlue</BackgroundColor>
+                          <VerticalAlign>Middle</VerticalAlign>
+                          <PaddingLeft>2pt</PaddingLeft>
+                          <PaddingRight>2pt</PaddingRight>
+                          <PaddingTop>2pt</PaddingTop>
+                          <PaddingBottom>2pt</PaddingBottom>
+                        </Style>
+                      </Textbox>
+                    </CellContents>
+                  </TablixHeader>
+                </TablixMember>
+                <TablixMember>
+                  <TablixHeader>
+                    <Size>0.38146in</Size>
+                    <CellContents>
+                      <Textbox Name="Textbox30">
+                        <CanGrow>true</CanGrow>
+                        <KeepTogether>true</KeepTogether>
+                        <Paragraphs>
+                          <Paragraph>
+                            <TextRuns>
+                              <TextRun>
+                                <Value>RTW 78</Value>
+                                <Style>
+                                  <Color>#747474</Color>
+                                </Style>
+                              </TextRun>
+                            </TextRuns>
+                            <Style>
+                              <TextAlign>Center</TextAlign>
+                            </Style>
+                          </Paragraph>
+                        </Paragraphs>
+                        <rd:DefaultName>Textbox14</rd:DefaultName>
+                        <ToolTip>="[image_header_tablix]"</ToolTip>
+                        <Style>
+                          <Border>
+                            <Color>LightGrey</Color>
+                            <Style>Solid</Style>
+                          </Border>
+                          <BackgroundColor>CornflowerBlue</BackgroundColor>
+                          <VerticalAlign>Middle</VerticalAlign>
+                          <PaddingLeft>2pt</PaddingLeft>
+                          <PaddingRight>2pt</PaddingRight>
+                          <PaddingTop>2pt</PaddingTop>
+                          <PaddingBottom>2pt</PaddingBottom>
+                        </Style>
+                      </Textbox>
+                    </CellContents>
+                  </TablixHeader>
+                </TablixMember>
+                <TablixMember>
+                  <TablixHeader>
+                    <Size>0.38146in</Size>
+                    <CellContents>
+                      <Textbox Name="Textbox5">
+                        <CanGrow>true</CanGrow>
+                        <KeepTogether>true</KeepTogether>
+                        <Paragraphs>
+                          <Paragraph>
+                            <TextRuns>
+                              <TextRun>
+                                <Value>RTW 104</Value>
+                                <Style>
+                                  <Color>#747474</Color>
+                                </Style>
+                              </TextRun>
+                            </TextRuns>
+                            <Style>
+                              <TextAlign>Center</TextAlign>
+                            </Style>
+                          </Paragraph>
+                        </Paragraphs>
+                        <rd:DefaultName>Textbox5</rd:DefaultName>
+                        <ToolTip>="[image_header_tablix]"</ToolTip>
+                        <Style>
+                          <Border>
+                            <Color>LightGrey</Color>
+                            <Style>Solid</Style>
+                          </Border>
+                          <BackgroundColor>CornflowerBlue</BackgroundColor>
+                          <VerticalAlign>Middle</VerticalAlign>
+                          <PaddingLeft>2pt</PaddingLeft>
+                          <PaddingRight>2pt</PaddingRight>
+                          <PaddingTop>2pt</PaddingTop>
+                          <PaddingBottom>2pt</PaddingBottom>
+                        </Style>
+                      </Textbox>
+                    </CellContents>
+                  </TablixHeader>
+                </TablixMember>
+                <TablixMember>
+                  <TablixHeader>
+                    <Size>0.38146in</Size>
+                    <CellContents>
+                      <Textbox Name="Textbox16">
+                        <CanGrow>true</CanGrow>
+                        <KeepTogether>true</KeepTogether>
+                        <Paragraphs>
+                          <Paragraph>
+                            <TextRuns>
+                              <TextRun>
+                                <Value>No. of active weekly claims</Value>
+                                <Style>
+                                  <Color>#747474</Color>
+                                </Style>
+                              </TextRun>
+                            </TextRuns>
+                            <Style>
+                              <TextAlign>Center</TextAlign>
+                            </Style>
+                          </Paragraph>
+                        </Paragraphs>
+                        <rd:DefaultName>Textbox10</rd:DefaultName>
+                        <ToolTip>="[image_header_tablix]"</ToolTip>
+                        <Style>
+                          <Border>
+                            <Color>LightGrey</Color>
+                            <Style>Solid</Style>
+                          </Border>
+                          <BackgroundColor>CornflowerBlue</BackgroundColor>
+                          <VerticalAlign>Middle</VerticalAlign>
+                          <PaddingLeft>2pt</PaddingLeft>
+                          <PaddingRight>2pt</PaddingRight>
+                          <PaddingTop>2pt</PaddingTop>
+                          <PaddingBottom>2pt</PaddingBottom>
+                        </Style>
+                      </Textbox>
+                    </CellContents>
+                  </TablixHeader>
+                </TablixMember>
+                <TablixMember>
+                  <TablixHeader>
+                    <Size>0.38146in</Size>
+                    <CellContents>
+                      <Textbox Name="Textbox9">
+                        <CanGrow>true</CanGrow>
+                        <KeepTogether>true</KeepTogether>
+                        <Paragraphs>
+                          <Paragraph>
+                            <TextRuns>
+                              <TextRun>
+                                <Value>Claims portfolio report</Value>
+                                <Style>
+                                  <Color>#747474</Color>
+                                </Style>
+                              </TextRun>
+                            </TextRuns>
+                            <Style>
+                              <TextAlign>Center</TextAlign>
+                            </Style>
+                          </Paragraph>
+                        </Paragraphs>
+                        <rd:DefaultName>Textbox9</rd:DefaultName>
+                        <ToolTip>="[image_header_tablix]"</ToolTip>
+                        <Style>
+                          <Border>
+                            <Color>LightGrey</Color>
+                            <Style>Solid</Style>
+                          </Border>
+                          <BackgroundColor>CornflowerBlue</BackgroundColor>
+                          <VerticalAlign>Middle</VerticalAlign>
+                          <PaddingLeft>2pt</PaddingLeft>
+                          <PaddingRight>2pt</PaddingRight>
+                          <PaddingTop>2pt</PaddingTop>
+                          <PaddingBottom>2pt</PaddingBottom>
+                        </Style>
+                      </Textbox>
+                    </CellContents>
+                  </TablixHeader>
+                </TablixMember>
+              </TablixMembers>
+            </TablixColumnHierarchy>
+            <TablixRowHierarchy>
+              <TablixMembers>
+                <TablixMember>
+                  <Group Name="Agency_Group2">
+                    <GroupExpressions>
+                      <GroupExpression>=Fields!Agency_Group.Value</GroupExpression>
+                    </GroupExpressions>
+                  </Group>
+                  <SortExpressions>
+                    <SortExpression>
+                      <Value>=Fields!Order1.Value</Value>
+                    </SortExpression>
+                  </SortExpressions>
+                  <TablixMembers>
+                    <TablixMember>
+                      <TablixHeader>
+                        <Size>2.26342in</Size>
+                        <CellContents>
+                          <Textbox Name="Agency_Group2">
+                            <CanGrow>true</CanGrow>
+                            <KeepTogether>true</KeepTogether>
+                            <Paragraphs>
+                              <Paragraph>
+                                <TextRuns>
+                                  <TextRun>
+                                    <Value>=Fields!Agency_Group.Value</Value>
+                                    <Style>
+                                      <Color>#747474</Color>
+                                    </Style>
+                                  </TextRun>
+                                </TextRuns>
+                                <Style>
+                                  <TextAlign>Center</TextAlign>
+                                </Style>
+                              </Paragraph>
+                            </Paragraphs>
+                            <rd:DefaultName>Agency_Group</rd:DefaultName>
+                            <Style>
+                              <Border>
+                                <Color>LightGrey</Color>
+                                <Style>Solid</Style>
+                              </Border>
+                              <BackgroundColor>=IIF(RunningValue(Fields!Agency_Group.Value, CountDistinct, nothing) Mod 2, "#FFFFFF", "#EDF2F6")</BackgroundColor>
+                              <VerticalAlign>Middle</VerticalAlign>
+                              <PaddingLeft>2pt</PaddingLeft>
+                              <PaddingRight>2pt</PaddingRight>
+                              <PaddingTop>2pt</PaddingTop>
+                              <PaddingBottom>2pt</PaddingBottom>
+                            </Style>
+                          </Textbox>
+                        </CellContents>
+                      </TablixHeader>
+                    </TablixMember>
+                  </TablixMembers>
+                </TablixMember>
+              </TablixMembers>
+            </TablixRowHierarchy>
+            <DataSetName>ds_TMF_RTW_Agency_Group_Compares_To_Same_Time_Last_Year_Current</DataSetName>
+            <Filters>
+              <Filter>
+                <FilterExpression>=iif(LCASE(trim(Fields!Type.Value)) = "group", "X", "Z")</FilterExpression>
+                <Operator>Equal</Operator>
+                <FilterValues>
+                  <FilterValue>="X"</FilterValue>
+                </FilterValues>
+              </Filter>
+              <Filter>
+                <FilterExpression>=iif(LCASE(trim(Fields!Agency_Group.Value)) &lt;&gt; "tmf", "X", "Z")</FilterExpression>
+                <Operator>Equal</Operator>
+                <FilterValues>
+                  <FilterValue>="X"</FilterValue>
+                </FilterValues>
+              </Filter>
+            </Filters>
+            <SortExpressions>
+              <SortExpression>
+                <Value>=iif(isnumeric(Fields!Agency_Group.Value),CINT(iif(isnumeric(Fields!Agency_Group.Value),Fields!Agency_Group.Value,0)),99999)</Value>
+              </SortExpression>
+              <SortExpression>
+                <Value>=iif(not isnumeric(Fields!Agency_Group.Value),Fields!Agency_Group.Value,"")</Value>
+              </SortExpression>
+            </SortExpressions>
+            <Top>1.56332in</Top>
+            <Height>0.67655in</Height>
+            <Width>6.08057in</Width>
+            <ZIndex>2</ZIndex>
+            <ToolTip>level1_table2</ToolTip>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+            </Style>
+          </Tablix>
+          <Tablix Name="Tablix5">
+            <TablixCorner>
+              <TablixCornerRows>
+                <TablixCornerRow>
+                  <TablixCornerCell>
+                    <CellContents>
+                      <Textbox Name="Textbox24">
+                        <CanGrow>true</CanGrow>
+                        <KeepTogether>true</KeepTogether>
+                        <Paragraphs>
+                          <Paragraph>
+                            <TextRuns>
+                              <TextRun>
+                                <Value />
+                                <Style>
+                                  <Color>#747474</Color>
+                                </Style>
+                              </TextRun>
+                            </TextRuns>
+                            <Style>
+                              <TextAlign>Center</TextAlign>
+                            </Style>
+                          </Paragraph>
+                        </Paragraphs>
+                        <rd:DefaultName>Textbox22</rd:DefaultName>
+                        <ToolTip>="[image_header_tablix]"</ToolTip>
+                        <Style>
+                          <Border>
+                            <Color>LightGrey</Color>
+                            <Style>Solid</Style>
+                          </Border>
+                          <BackgroundColor>CornflowerBlue</BackgroundColor>
+                          <VerticalAlign>Middle</VerticalAlign>
+                          <PaddingLeft>2pt</PaddingLeft>
+                          <PaddingRight>2pt</PaddingRight>
+                          <PaddingTop>2pt</PaddingTop>
+                          <PaddingBottom>2pt</PaddingBottom>
+                        </Style>
+                      </Textbox>
+                    </CellContents>
+                  </TablixCornerCell>
+                </TablixCornerRow>
+              </TablixCornerRows>
+            </TablixCorner>
+            <TablixBody>
+              <TablixColumns>
+                <TablixColumn>
+                  <Width>0.58959in</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>0.54267in</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>0.54267in</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>0.54267in</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>0.97752in</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>0.62253in</Width>
+                </TablixColumn>
+              </TablixColumns>
+              <TablixRows>
+                <TablixRow>
+                  <Height>0.29509in</Height>
+                  <TablixCells>
+                    <TablixCell>
+                      <CellContents>
+                        <Rectangle Name="Rectangle24">
+                          <ReportItems>
+                            <Image Name="Image30">
+                              <Source>External</Source>
+                              <Value>=""</Value>
+                              <ActionInfo>
+                                <Actions>
+                                  <Action>
+                                    <Hyperlink>="javascript:void(parent.window.location=[parent.window.location.protocol, '//', parent.window.location.host, parent.window.location.pathname.toLowerCase().replace('level1/','level1')].join('').replace(/level1/g,'level2?IsVisible=all&amp;Type=agency&amp;Measure=26&amp;reportpath=/emreporting/reports/tmf_rtw_level2_agency'))"</Hyperlink>
+                                  </Action>
+                                </Actions>
+                              </ActionInfo>
+                              <Top>0.01719in</Top>
+                              <Left>0.27468in</Left>
+                              <Height>0.27507in</Height>
+                              <Width>0.26799in</Width>
+                              <ToolTip>="[" 
+ &amp; "RTW_" 
+ &amp; FormatNumber(
+				Lookup(
+						Fields!Agency_Group.Value &amp; "_12_26"
+						,Fields!Agency_Group.Value &amp; "_" &amp; Fields!Month_period.Value &amp; "_" &amp; Fields!Measure_months.Value
+						,Fields!AVGDURN.Value, "ds_TMF_RTW_Agency_Group_Compares_To_Same_Time_Last_Year_Current"
+						)
+				, 2
+				) 
+ &amp; "_" 
+ &amp; Lookup(
+			Fields!Agency_Group.Value &amp; "_12_26"
+			,Fields!Agency_Group.Value &amp; "_" &amp; Fields!Month_period.Value &amp; "_" &amp; Fields!Measure_months.Value
+			,Fields!Target.Value, "ds_TMF_RTW_Agency_Group_Compares_To_Same_Time_Last_Year_Current"
+		)
+ &amp; "]"</ToolTip>
+                              <Style>
+                                <Border>
+                                  <Style>None</Style>
+                                </Border>
+                              </Style>
+                            </Image>
+                          </ReportItems>
+                          <KeepTogether>true</KeepTogether>
+                          <ToolTip>="[image_header_tablix]"</ToolTip>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>=IIF(RunningValue(Fields!Agency_Group.Value, CountDistinct, nothing) Mod 2, "#FFFFFF", "#EDF2F6")</BackgroundColor>
+                          </Style>
+                        </Rectangle>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Rectangle Name="Rectangle25">
+                          <ReportItems>
+                            <Image Name="Image31">
+                              <Source>External</Source>
+                              <Value>=""</Value>
+                              <ActionInfo>
+                                <Actions>
+                                  <Action>
+                                    <Hyperlink>="javascript:void(parent.window.location=[parent.window.location.protocol, '//', parent.window.location.host, parent.window.location.pathname.toLowerCase().replace('level1/','level1')].join('').replace(/level1/g,'level2?IsVisible=all&amp;Type=agency&amp;Measure=52&amp;reportpath=/emreporting/reports/tmf_rtw_level2_agency'))"</Hyperlink>
+                                  </Action>
+                                </Actions>
+                              </ActionInfo>
+                              <Top>0.01719in</Top>
+                              <Left>0.27468in</Left>
+                              <Height>0.27507in</Height>
+                              <Width>0.26799in</Width>
+                              <ToolTip>="[" 
+ &amp; "RTW_" 
+ &amp; FormatNumber(
+				Lookup(
+						Fields!Agency_Group.Value &amp; "_12_52"
+						,Fields!Agency_Group.Value &amp; "_" &amp; Fields!Month_period.Value &amp; "_" &amp; Fields!Measure_months.Value
+						,Fields!AVGDURN.Value, "ds_TMF_RTW_Agency_Group_Compares_To_Same_Time_Last_Year_Current"
+						)
+				, 2
+				) 
+ &amp; "_" 
+ &amp; Lookup(
+			Fields!Agency_Group.Value &amp; "_12_52"
+			,Fields!Agency_Group.Value &amp; "_" &amp; Fields!Month_period.Value &amp; "_" &amp; Fields!Measure_months.Value
+			,Fields!Target.Value, "ds_TMF_RTW_Agency_Group_Compares_To_Same_Time_Last_Year_Current"
+		)
+ &amp; "]"</ToolTip>
+                              <Style>
+                                <Border>
+                                  <Style>None</Style>
+                                </Border>
+                              </Style>
+                            </Image>
+                          </ReportItems>
+                          <KeepTogether>true</KeepTogether>
+                          <ToolTip>="[image_header_tablix]"</ToolTip>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>=IIF(RunningValue(Fields!Agency_Group.Value, CountDistinct, nothing) Mod 2, "#FFFFFF", "#EDF2F6")</BackgroundColor>
+                          </Style>
+                        </Rectangle>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Rectangle Name="Rectangle26">
+                          <ReportItems>
+                            <Image Name="Image32">
+                              <Source>External</Source>
+                              <Value>=""</Value>
+                              <ActionInfo>
+                                <Actions>
+                                  <Action>
+                                    <Hyperlink>="javascript:void(parent.window.location=[parent.window.location.protocol, '//', parent.window.location.host, parent.window.location.pathname.toLowerCase().replace('level1/','level1')].join('').replace(/level1/g,'level2?IsVisible=all&amp;Type=agency&amp;Measure=78&amp;reportpath=/emreporting/reports/tmf_rtw_level2_agency'))"</Hyperlink>
+                                  </Action>
+                                </Actions>
+                              </ActionInfo>
+                              <Top>0.01719in</Top>
+                              <Left>0.27468in</Left>
+                              <Height>0.27507in</Height>
+                              <Width>0.26799in</Width>
+                              <ToolTip>="[" 
+ &amp; "RTW_" 
+ &amp; FormatNumber(
+				Lookup(
+						Fields!Agency_Group.Value &amp; "_12_78"
+						,Fields!Agency_Group.Value &amp; "_" &amp; Fields!Month_period.Value &amp; "_" &amp; Fields!Measure_months.Value
+						,Fields!AVGDURN.Value, "ds_TMF_RTW_Agency_Group_Compares_To_Same_Time_Last_Year_Current"
+						)
+				, 2
+				) 
+ &amp; "_" 
+ &amp; Lookup(
+			Fields!Agency_Group.Value &amp; "_12_78"
+			,Fields!Agency_Group.Value &amp; "_" &amp; Fields!Month_period.Value &amp; "_" &amp; Fields!Measure_months.Value
+			,Fields!Target.Value, "ds_TMF_RTW_Agency_Group_Compares_To_Same_Time_Last_Year_Current"
+		)
+ &amp; "]"</ToolTip>
+                              <Style>
+                                <Border>
+                                  <Style>None</Style>
+                                </Border>
+                              </Style>
+                            </Image>
+                          </ReportItems>
+                          <KeepTogether>true</KeepTogether>
+                          <ToolTip>="[image_header_tablix]"</ToolTip>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>=IIF(RunningValue(Fields!Agency_Group.Value, CountDistinct, nothing) Mod 2, "#FFFFFF", "#EDF2F6")</BackgroundColor>
+                          </Style>
+                        </Rectangle>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Rectangle Name="Rectangle30">
+                          <ReportItems>
+                            <Image Name="Image33">
+                              <Source>External</Source>
+                              <Value>=""</Value>
+                              <ActionInfo>
+                                <Actions>
+                                  <Action>
+                                    <Hyperlink>="javascript:void(parent.window.location=[parent.window.location.protocol, '//', parent.window.location.host, parent.window.location.pathname.toLowerCase().replace('level1/','level1')].join('').replace(/level1/g,'level2?IsVisible=all&amp;Type=agency&amp;Measure=104&amp;reportpath=/emreporting/reports/tmf_rtw_level2_agency'))"</Hyperlink>
+                                  </Action>
+                                </Actions>
+                              </ActionInfo>
+                              <Top>0.01719in</Top>
+                              <Left>0.27468in</Left>
+                              <Height>0.27507in</Height>
+                              <Width>0.26799in</Width>
+                              <ToolTip>="[" &amp; "RTW_" &amp; Microsoft.VisualBasic.Strings.FormatNumber(Lookup(Fields!Agency_Group.Value &amp; "_12_104", Fields!Agency_Group.Value &amp; "_" &amp; Fields!Month_period.Value &amp; "_" &amp; Fields!Measure_months.Value, Fields!AVGDURN.Value, "ds_TMF_RTW_Agency_Group_Compares_To_Same_Time_Last_Year_Current"), 2) &amp; "_" &amp; Lookup(Fields!Agency_Group.Value &amp; "_12_104", Fields!Agency_Group.Value &amp; "_" &amp; Fields!Month_period.Value &amp; "_" &amp; Fields!Measure_months.Value, Fields!Target.Value, "ds_TMF_RTW_Agency_Group_Compares_To_Same_Time_Last_Year_Current") &amp; "]"</ToolTip>
+                              <Style>
+                                <Border>
+                                  <Style>None</Style>
+                                </Border>
+                              </Style>
+                            </Image>
+                          </ReportItems>
+                          <KeepTogether>true</KeepTogether>
+                          <ToolTip>="[image_header_tablix]"</ToolTip>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>=IIF(RunningValue(Fields!Agency_Group.Value, CountDistinct, nothing) Mod 2, "#FFFFFF", "#EDF2F6")</BackgroundColor>
+                          </Style>
+                        </Rectangle>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Rectangle Name="Rectangle27">
+                          <ReportItems>
+                            <Image Name="Image15">
+                              <Source>External</Source>
+                              <Value>=""</Value>
+                              <ActionInfo>
+                                <Actions>
+                                  <Action>
+                                    <Hyperlink>="javascript:void(parent.window.location=[parent.window.location.protocol, '//', parent.window.location.host, parent.window.location.pathname.toLowerCase().replace('level1/','level1')].join('').replace(/level1/g,'level2?reportpath=/emreporting/reports/tmf_awc_level2&amp;Type=agency&amp;ReportType=1-2'))"</Hyperlink>
+                                  </Action>
+                                </Actions>
+                              </ActionInfo>
+                              <Top>0.0067in</Top>
+                              <Left>0.36171in</Left>
+                              <Height>0.28169in</Height>
+                              <Width>0.26082in</Width>
+                              <ToolTip>="["
+ &amp; "AWC_"
+ &amp; FormatNumber(Lookup(Fields!Agency_Group.Value &amp; "_" &amp; Fields!Type.Value, Fields!Agency_Group.Value &amp; "_" &amp; Fields!Type.Value, Fields!No_Of_Active_Weekly_Claims.Value, "ds_TMF_AWC_Agency_Group_Summary"), 0)
+ &amp; "_" &amp; Lookup(Fields!Agency_Group.Value &amp; "_" &amp; Fields!Type.Value, Fields!Agency_Group.Value &amp; "_" &amp; Fields!Type.Value, Fields!Projection.Value, "ds_TMF_AWC_Agency_Group_Summary") 
+ &amp; "]"</ToolTip>
+                              <Style>
+                                <Border>
+                                  <Style>None</Style>
+                                </Border>
+                              </Style>
+                            </Image>
+                          </ReportItems>
+                          <KeepTogether>true</KeepTogether>
+                          <ToolTip>="[image_header_tablix]"</ToolTip>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>=IIF(RunningValue(Fields!Agency_Group.Value, CountDistinct, nothing) Mod 2, "#FFFFFF", "#EDF2F6")</BackgroundColor>
+                          </Style>
+                        </Rectangle>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Rectangle Name="Rectangle32">
+                          <ReportItems>
+                            <Image Name="Image18">
+                              <Source>External</Source>
+                              <Value>=""</Value>
+                              <ActionInfo>
+                                <Actions>
+                                  <Action>
+                                    <Hyperlink>="javascript:void(parent.window.location=[parent.window.location.protocol, '//', parent.window.location.host, parent.window.location.pathname.toLowerCase().replace('level1/','level1')].join('').replace(/level1/g,'level2?Type=agency&amp;reportpath=/emreporting/reports/tmf_cpr_week_month_summary'))"</Hyperlink>
+                                  </Action>
+                                </Actions>
+                              </ActionInfo>
+                              <Top>0.0067in</Top>
+                              <Left>0.36171in</Left>
+                              <Height>0.28169in</Height>
+                              <Width>0.26082in</Width>
+                              <ToolTip>="[CPR_]"</ToolTip>
+                              <Style>
+                                <Border>
+                                  <Style>None</Style>
+                                </Border>
+                              </Style>
+                            </Image>
+                          </ReportItems>
+                          <KeepTogether>true</KeepTogether>
+                          <ToolTip>="[image_header_tablix]"</ToolTip>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>=IIF(RunningValue(Fields!Agency_Group.Value, CountDistinct, nothing) Mod 2, "#FFFFFF", "#EDF2F6")</BackgroundColor>
+                          </Style>
+                        </Rectangle>
+                      </CellContents>
+                    </TablixCell>
+                  </TablixCells>
+                </TablixRow>
+              </TablixRows>
+            </TablixBody>
+            <TablixColumnHierarchy>
+              <TablixMembers>
+                <TablixMember>
+                  <TablixHeader>
+                    <Size>0.38146in</Size>
+                    <CellContents>
+                      <Textbox Name="Textbox31">
+                        <CanGrow>true</CanGrow>
+                        <KeepTogether>true</KeepTogether>
+                        <Paragraphs>
+                          <Paragraph>
+                            <TextRuns>
+                              <TextRun>
+                                <Value>RTW 26</Value>
+                                <Style>
+                                  <Color>#747474</Color>
+                                </Style>
+                              </TextRun>
+                            </TextRuns>
+                            <Style>
+                              <TextAlign>Center</TextAlign>
+                            </Style>
+                          </Paragraph>
+                        </Paragraphs>
+                        <rd:DefaultName>Textbox14</rd:DefaultName>
+                        <ToolTip>="[image_header_tablix]"</ToolTip>
+                        <Style>
+                          <Border>
+                            <Color>LightGrey</Color>
+                            <Style>Solid</Style>
+                          </Border>
+                          <BackgroundColor>CornflowerBlue</BackgroundColor>
+                          <VerticalAlign>Middle</VerticalAlign>
+                          <PaddingLeft>2pt</PaddingLeft>
+                          <PaddingRight>2pt</PaddingRight>
+                          <PaddingTop>2pt</PaddingTop>
+                          <PaddingBottom>2pt</PaddingBottom>
+                        </Style>
+                      </Textbox>
+                    </CellContents>
+                  </TablixHeader>
+                </TablixMember>
+                <TablixMember>
+                  <TablixHeader>
+                    <Size>0.38146in</Size>
+                    <CellContents>
+                      <Textbox Name="Textbox32">
+                        <CanGrow>true</CanGrow>
+                        <KeepTogether>true</KeepTogether>
+                        <Paragraphs>
+                          <Paragraph>
+                            <TextRuns>
+                              <TextRun>
+                                <Value>RTW 52</Value>
+                                <Style>
+                                  <Color>#747474</Color>
+                                </Style>
+                              </TextRun>
+                            </TextRuns>
+                            <Style>
+                              <TextAlign>Center</TextAlign>
+                            </Style>
+                          </Paragraph>
+                        </Paragraphs>
+                        <rd:DefaultName>Textbox14</rd:DefaultName>
+                        <ToolTip>="[image_header_tablix]"</ToolTip>
+                        <Style>
+                          <Border>
+                            <Color>LightGrey</Color>
+                            <Style>Solid</Style>
+                          </Border>
+                          <BackgroundColor>CornflowerBlue</BackgroundColor>
+                          <VerticalAlign>Middle</VerticalAlign>
+                          <PaddingLeft>2pt</PaddingLeft>
+                          <PaddingRight>2pt</PaddingRight>
+                          <PaddingTop>2pt</PaddingTop>
+                          <PaddingBottom>2pt</PaddingBottom>
+                        </Style>
+                      </Textbox>
+                    </CellContents>
+                  </TablixHeader>
+                </TablixMember>
+                <TablixMember>
+                  <TablixHeader>
+                    <Size>0.38146in</Size>
+                    <CellContents>
+                      <Textbox Name="Textbox33">
+                        <CanGrow>true</CanGrow>
+                        <KeepTogether>true</KeepTogether>
+                        <Paragraphs>
+                          <Paragraph>
+                            <TextRuns>
+                              <TextRun>
+                                <Value>RTW 78</Value>
+                                <Style>
+                                  <Color>#747474</Color>
+                                </Style>
+                              </TextRun>
+                            </TextRuns>
+                            <Style>
+                              <TextAlign>Center</TextAlign>
+                            </Style>
+                          </Paragraph>
+                        </Paragraphs>
+                        <rd:DefaultName>Textbox14</rd:DefaultName>
+                        <ToolTip>="[image_header_tablix]"</ToolTip>
+                        <Style>
+                          <Border>
+                            <Color>LightGrey</Color>
+                            <Style>Solid</Style>
+                          </Border>
+                          <BackgroundColor>CornflowerBlue</BackgroundColor>
+                          <VerticalAlign>Middle</VerticalAlign>
+                          <PaddingLeft>2pt</PaddingLeft>
+                          <PaddingRight>2pt</PaddingRight>
+                          <PaddingTop>2pt</PaddingTop>
+                          <PaddingBottom>2pt</PaddingBottom>
+                        </Style>
+                      </Textbox>
+                    </CellContents>
+                  </TablixHeader>
+                </TablixMember>
+                <TablixMember>
+                  <TablixHeader>
+                    <Size>0.38146in</Size>
+                    <CellContents>
+                      <Textbox Name="Textbox2">
+                        <CanGrow>true</CanGrow>
+                        <KeepTogether>true</KeepTogether>
+                        <Paragraphs>
+                          <Paragraph>
+                            <TextRuns>
+                              <TextRun>
+                                <Value>RTW 104</Value>
+                                <Style>
+                                  <Color>#747474</Color>
+                                </Style>
+                              </TextRun>
+                            </TextRuns>
+                            <Style>
+                              <TextAlign>Center</TextAlign>
+                            </Style>
+                          </Paragraph>
+                        </Paragraphs>
+                        <rd:DefaultName>Textbox2</rd:DefaultName>
+                        <ToolTip>="[image_header_tablix]"</ToolTip>
+                        <Style>
+                          <Border>
+                            <Color>LightGrey</Color>
+                            <Style>Solid</Style>
+                          </Border>
+                          <BackgroundColor>CornflowerBlue</BackgroundColor>
+                          <VerticalAlign>Middle</VerticalAlign>
+                          <PaddingLeft>2pt</PaddingLeft>
+                          <PaddingRight>2pt</PaddingRight>
+                          <PaddingTop>2pt</PaddingTop>
+                          <PaddingBottom>2pt</PaddingBottom>
+                        </Style>
+                      </Textbox>
+                    </CellContents>
+                  </TablixHeader>
+                </TablixMember>
+                <TablixMember>
+                  <TablixHeader>
+                    <Size>0.38146in</Size>
+                    <CellContents>
+                      <Textbox Name="Textbox17">
+                        <CanGrow>true</CanGrow>
+                        <KeepTogether>true</KeepTogether>
+                        <Paragraphs>
+                          <Paragraph>
+                            <TextRuns>
+                              <TextRun>
+                                <Value>No. of active weekly claims</Value>
+                                <Style>
+                                  <Color>#747474</Color>
+                                </Style>
+                              </TextRun>
+                            </TextRuns>
+                            <Style>
+                              <TextAlign>Center</TextAlign>
+                            </Style>
+                          </Paragraph>
+                        </Paragraphs>
+                        <rd:DefaultName>Textbox10</rd:DefaultName>
+                        <ToolTip>="[image_header_tablix]"</ToolTip>
+                        <Style>
+                          <Border>
+                            <Color>LightGrey</Color>
+                            <Style>Solid</Style>
+                          </Border>
+                          <BackgroundColor>CornflowerBlue</BackgroundColor>
+                          <VerticalAlign>Middle</VerticalAlign>
+                          <PaddingLeft>2pt</PaddingLeft>
+                          <PaddingRight>2pt</PaddingRight>
+                          <PaddingTop>2pt</PaddingTop>
+                          <PaddingBottom>2pt</PaddingBottom>
+                        </Style>
+                      </Textbox>
+                    </CellContents>
+                  </TablixHeader>
+                </TablixMember>
+                <TablixMember>
+                  <TablixHeader>
+                    <Size>0.38146in</Size>
+                    <CellContents>
+                      <Textbox Name="Textbox4">
+                        <CanGrow>true</CanGrow>
+                        <KeepTogether>true</KeepTogether>
+                        <Paragraphs>
+                          <Paragraph>
+                            <TextRuns>
+                              <TextRun>
+                                <Value>Claims portfolio report</Value>
+                                <Style>
+                                  <Color>#747474</Color>
+                                </Style>
+                              </TextRun>
+                            </TextRuns>
+                            <Style>
+                              <TextAlign>Center</TextAlign>
+                            </Style>
+                          </Paragraph>
+                        </Paragraphs>
+                        <rd:DefaultName>Textbox4</rd:DefaultName>
+                        <ToolTip>="[image_header_tablix]"</ToolTip>
+                        <Style>
+                          <Border>
+                            <Color>LightGrey</Color>
+                            <Style>Solid</Style>
+                          </Border>
+                          <BackgroundColor>CornflowerBlue</BackgroundColor>
+                          <VerticalAlign>Middle</VerticalAlign>
+                          <PaddingLeft>2pt</PaddingLeft>
+                          <PaddingRight>2pt</PaddingRight>
+                          <PaddingTop>2pt</PaddingTop>
+                          <PaddingBottom>2pt</PaddingBottom>
+                        </Style>
+                      </Textbox>
+                    </CellContents>
+                  </TablixHeader>
+                </TablixMember>
+              </TablixMembers>
+            </TablixColumnHierarchy>
+            <TablixRowHierarchy>
+              <TablixMembers>
+                <TablixMember>
+                  <Group Name="Agency_Group3">
+                    <GroupExpressions>
+                      <GroupExpression>=Fields!Agency_Group.Value</GroupExpression>
+                    </GroupExpressions>
+                  </Group>
+                  <SortExpressions>
+                    <SortExpression>
+                      <Value>=Fields!Order1.Value</Value>
+                    </SortExpression>
+                    <SortExpression>
+                      <Value>=Fields!Order2.Value</Value>
+                    </SortExpression>
+                  </SortExpressions>
+                  <TablixMembers>
+                    <TablixMember>
+                      <TablixHeader>
+                        <Size>2.26292in</Size>
+                        <CellContents>
+                          <Textbox Name="Agency_Group3">
+                            <CanGrow>true</CanGrow>
+                            <KeepTogether>true</KeepTogether>
+                            <Paragraphs>
+                              <Paragraph>
+                                <TextRuns>
+                                  <TextRun>
+                                    <Value>=Fields!Agency_Group.Value</Value>
+                                    <Style>
+                                      <Color>#747474</Color>
+                                    </Style>
+                                  </TextRun>
+                                </TextRuns>
+                                <Style>
+                                  <TextAlign>Center</TextAlign>
+                                </Style>
+                              </Paragraph>
+                            </Paragraphs>
+                            <rd:DefaultName>Agency_Group</rd:DefaultName>
+                            <Style>
+                              <Border>
+                                <Color>LightGrey</Color>
+                                <Style>Solid</Style>
+                              </Border>
+                              <BackgroundColor>=IIF(RunningValue(Fields!Agency_Group.Value, CountDistinct, nothing) Mod 2, "#FFFFFF", "#EDF2F6")</BackgroundColor>
+                              <VerticalAlign>Middle</VerticalAlign>
+                              <PaddingLeft>2pt</PaddingLeft>
+                              <PaddingRight>2pt</PaddingRight>
+                              <PaddingTop>2pt</PaddingTop>
+                              <PaddingBottom>2pt</PaddingBottom>
+                            </Style>
+                          </Textbox>
+                        </CellContents>
+                      </TablixHeader>
+                    </TablixMember>
+                  </TablixMembers>
+                </TablixMember>
+              </TablixMembers>
+            </TablixRowHierarchy>
+            <DataSetName>ds_TMF_RTW_Agency_Group_Compares_To_Same_Time_Last_Year_Current</DataSetName>
+            <Filters>
+              <Filter>
+                <FilterExpression>=iif(LCASE(trim(Fields!Type.Value)) = "agency", "X", "Z")</FilterExpression>
+                <Operator>Equal</Operator>
+                <FilterValues>
+                  <FilterValue>="X"</FilterValue>
+                </FilterValues>
+              </Filter>
+            </Filters>
+            <SortExpressions>
+              <SortExpression>
+                <Value>=iif(LCASE(RTRIM(Fields!Agency_Group.Value)) &lt;&gt; "tmf"
+	and LCASE(RTRIM(Fields!Agency_Group.Value)) &lt;&gt; "miscellaneous"
+	and LCASE(RTRIM(Fields!Agency_Group.Value)) &lt;&gt; "fire"
+	and LCASE(RTRIM(Fields!Agency_Group.Value)) &lt;&gt; "police"
+	and LCASE(RTRIM(Fields!Agency_Group.Value)) &lt;&gt; "rfs"
+	,Fields!Agency_Group.Value,"")</Value>
+              </SortExpression>
+              <SortExpression>
+                <Value>=iif(LCASE(RTRIM(Fields!Agency_Group.Value)) = "fire"
+	or LCASE(RTRIM(Fields!Agency_Group.Value)) = "police"
+	or LCASE(RTRIM(Fields!Agency_Group.Value)) = "rfs"
+	,Fields!Agency_Group.Value,"")</Value>
+                <Direction>Descending</Direction>
+              </SortExpression>
+            </SortExpressions>
+            <Top>0.45637in</Top>
+            <Height>0.67655in</Height>
+            <Width>6.08057in</Width>
+            <ZIndex>3</ZIndex>
+            <ToolTip>level1_table1</ToolTip>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+            </Style>
+          </Tablix>
+        </ReportItems>
+        <Height>2.36013in</Height>
+        <Style />
+      </Body>
+      <Width>6.08057in</Width>
+      <Page>
+        <PageHeight>29.7cm</PageHeight>
+        <PageWidth>21cm</PageWidth>
+        <ColumnSpacing>0.13cm</ColumnSpacing>
+        <Style />
+      </Page>
+    </ReportSection>
+  </ReportSections>
+  <rd:ReportUnitType>Cm</rd:ReportUnitType>
+  <rd:ReportID>ea7e221e-9e3f-498f-9ef6-5eb32040461c</rd:ReportID>
+</Report>

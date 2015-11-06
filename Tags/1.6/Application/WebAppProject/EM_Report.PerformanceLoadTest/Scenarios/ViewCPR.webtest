@@ -1,0 +1,671 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<WebTest Name="ViewCPR" Id="615513b3-bba6-4ce0-bc21-6832eec29791" Owner="" Priority="2147483647" Enabled="True" CssProjectStructure="" CssIteration="" Timeout="0" WorkItemIds="" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010" Description="" CredentialUserName="" CredentialPassword="" PreAuthenticate="True" Proxy="default" StopOnError="False" RecordedResultFile="WebTest1.b57fcecc-becd-4cee-857d-8a430ce9224a.rec.webtestresult" ResultsLocale="">
+  <Items>
+    <Request Method="GET" Guid="555cbe87-c819-4444-8ce2-c7c66a4462e1" Version="1.1" Url="https://localhost/Dart/account/login" ThinkTime="1" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False" />
+    <Request Method="GET" Guid="a0a36b73-a6b2-439c-9e8e-f6b6ef11810e" Version="1.1" Url="https://localhost/Dart/account/login" ThinkTime="4" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <ExtractionRules>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractHiddenFields, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="1" DisplayName="Extract Hidden Fields" Description="Extract all hidden fields from the response and place them into the test context.">
+          <RuleParameters>
+            <RuleParameter Name="Required" Value="True" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+          </RuleParameters>
+        </ExtractionRule>
+      </ExtractionRules>
+      <CorrelationExtractionRules>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractFormField, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam20.Is_RememberMe" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="Name" Value="chkRememberMe" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+            <RuleParameter Name="Index" Value="0" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam21.Password" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="ass=&quot;" />
+            <RuleParameter Name="EndsWith" Value="&quot; dat" />
+            <RuleParameter Name="Index" Value="10" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+      </CorrelationExtractionRules>
+    </Request>
+    <Request Method="POST" Guid="60acac2c-cc54-49c6-a7ab-cfb545c7e06a" Version="1.1" Url="https://localhost/Dart/account/login" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="https://localhost/Dart/dashboard/level0?reportpath=/emreporting/reports/level0" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Referer" Value="https://localhost/Dart/account/login" />
+      </Headers>
+      <CorrelationExtractionRules>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="QueryStringParam94.ReportPath" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="&amp;amp;ReportPath=" />
+            <RuleParameter Name="EndsWith" Value="&quot;" />
+            <RuleParameter Name="Index" Value="0" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam22.__ASYNCPOST" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="val=&quot;" />
+            <RuleParameter Name="EndsWith" Value="&quot; dat" />
+            <RuleParameter Name="Index" Value="0" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+      </CorrelationExtractionRules>
+      <FormPostHttpBody>
+        <FormPostParameter Name="__RequestVerificationToken" Value="{{$HIDDEN1.__RequestVerificationToken}}" RecordedValue="nRXuy4P5tdvWHoJyo7WZDy8qLgg4utNyn112hlC8qjhZ+BMXd/5pZjoaQLpcsVKsOJVE+RXRYv/mmBvoJPyYjyussbhkshZWwtxQXot0jMYEBRBG/A0No6dH8ujF6h67gaL50qWrJWtIiN273jkoc4/OMwYRxjT+dA44+sS2Gu4=" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="Email" Value="admin@aswigsolutions.com" RecordedValue="admin@aswigsolutions.com" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="Password" Value="password" RecordedValue="password" CorrelationBinding="{{FormPostParam21.Password}}" UrlEncode="True" />
+        <FormPostParameter Name="Is_RememberMe" Value="true" RecordedValue="true" CorrelationBinding="{{FormPostParam20.Is_RememberMe}}" UrlEncode="True" />
+        <FormPostParameter Name="Is_RememberMe" Value="{{$HIDDEN1.Is_RememberMe}}" RecordedValue="false" CorrelationBinding="" UrlEncode="True" />
+      </FormPostHttpBody>
+    </Request>
+    <Request Method="GET" Guid="aeab4034-c743-44f1-9950-fcf58074e7e5" Version="1.1" Url="https://localhost/Dart/Report/ViewInfo" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <ExtractionRules>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractHiddenFields, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="1" DisplayName="Extract Hidden Fields" Description="Extract all hidden fields from the response and place them into the test context.">
+          <RuleParameters>
+            <RuleParameter Name="Required" Value="True" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+          </RuleParameters>
+        </ExtractionRule>
+      </ExtractionRules>
+      <CorrelationExtractionRules>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="QueryStringParam121.Type" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="&amp;amp;Type=" />
+            <RuleParameter Name="EndsWith" Value="&amp;" />
+            <RuleParameter Name="Index" Value="0" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="QueryStringParam122.Value" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="&amp;amp;Value=" />
+            <RuleParameter Name="EndsWith" Value="&amp;" />
+            <RuleParameter Name="Index" Value="0" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="QueryStringParam123.reportpath" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="&amp;amp;reportpath=" />
+            <RuleParameter Name="EndsWith" Value="&quot;" />
+            <RuleParameter Name="Index" Value="0" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="QueryStringParam138.reportpath" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="&amp;amp;reportpath=" />
+            <RuleParameter Name="EndsWith" Value="&quot;" />
+            <RuleParameter Name="Index" Value="0" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+      </CorrelationExtractionRules>
+      <QueryStringParameters>
+        <QueryStringParameter Name="System" Value="tmf" RecordedValue="tmf" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="Type" Value="agency" RecordedValue="agency" CorrelationBinding="{{QueryStringParam106.Type}}" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="Value" Value="all" RecordedValue="all" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="reportpath" Value="/emreporting/reports/PORT" RecordedValue="/emreporting/reports/PORT" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+      </QueryStringParameters>
+    </Request>
+    <Request Method="GET" Guid="8315e95d-d7c2-42e5-ad52-8da4eb67d9b0" Version="1.1" Url="https://localhost/Dart/Reports/CPR/Report.aspx" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Referer" Value="https://localhost/Dart/Report/ViewInfo?System=tmf&amp;Type=agency&amp;Value=all&amp;reportpath=/emreporting/reports/PORT" />
+      </Headers>
+      <ExtractionRules>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="QueryStringParam125.ControlID" DisplayName="Extract Text" Description="Extract text from the response and place it into the test context.">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="\u0026ControlID=" />
+            <RuleParameter Name="EndsWith" Value="\" />
+            <RuleParameter Name="Index" Value="0" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam23.__VIEWSTATE" DisplayName="Extract Text" Description="Extract text from the response and place it into the test context.">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="lue=&quot;" />
+            <RuleParameter Name="EndsWith" Value="&quot; /&gt;&#xD;" />
+            <RuleParameter Name="Index" Value="2" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam25.__EVENTVALIDATION" DisplayName="Extract Text" Description="Extract text from the response and place it into the test context.">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="lue=&quot;" />
+            <RuleParameter Name="EndsWith" Value="&quot; /&gt;&#xD;" />
+            <RuleParameter Name="Index" Value="4" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+      </ExtractionRules>
+      <CorrelationExtractionRules>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="QueryStringParam124.OpType" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="?OpType=" />
+            <RuleParameter Name="EndsWith" Value="\" />
+            <RuleParameter Name="Index" Value="4" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="QueryStringParam130.System" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="?System=" />
+            <RuleParameter Name="EndsWith" Value="&amp;" />
+            <RuleParameter Name="Index" Value="0" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="QueryStringParam131.Type" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="&amp;amp;Type=" />
+            <RuleParameter Name="EndsWith" Value="&amp;" />
+            <RuleParameter Name="Index" Value="0" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="QueryStringParam132.Value" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="&amp;amp;Value=" />
+            <RuleParameter Name="EndsWith" Value="&amp;" />
+            <RuleParameter Name="Index" Value="0" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="QueryStringParam133.reportpath" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="&amp;amp;reportpath=" />
+            <RuleParameter Name="EndsWith" Value="&quot;" />
+            <RuleParameter Name="Index" Value="0" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam24.__VIEWSTATEGENERATOR" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="lue=&quot;" />
+            <RuleParameter Name="EndsWith" Value="&quot; /&gt;&#xD;" />
+            <RuleParameter Name="Index" Value="3" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam26.rvwReportViewer$AsyncWait$HiddenCancelField" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="lue=&quot;" />
+            <RuleParameter Name="EndsWith" Value="&quot; /&gt;&lt;" />
+            <RuleParameter Name="Index" Value="5" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam27.rvwReportViewer$ToggleParam$collapse" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="lue=&quot;" />
+            <RuleParameter Name="EndsWith" Value="&quot; /&gt;&#xD;" />
+            <RuleParameter Name="Index" Value="6" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam28.rvwReportViewer$ctl07$collapse" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="lue=&quot;" />
+            <RuleParameter Name="EndsWith" Value="&quot; /&gt;&#xD;" />
+            <RuleParameter Name="Index" Value="6" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam29.rvwReportViewer$ctl09$VisibilityState$ctl00" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="lue=&quot;" />
+            <RuleParameter Name="EndsWith" Value="&quot; /&gt;&#xD;" />
+            <RuleParameter Name="Index" Value="8" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam30.rvwReportViewer$ctl09$ReportControl$ctl04" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="lue=&quot;" />
+            <RuleParameter Name="EndsWith" Value="&quot; /&gt;&#xD;" />
+            <RuleParameter Name="Index" Value="9" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+      </CorrelationExtractionRules>
+      <QueryStringParameters>
+        <QueryStringParameter Name="System" Value="{{$HIDDEN1.System}}" RecordedValue="tmf" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="Type" Value="agency" RecordedValue="agency" CorrelationBinding="{{QueryStringParam121.Type}}" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="Value" Value="all" RecordedValue="all" CorrelationBinding="{{QueryStringParam122.Value}}" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="reportpath" Value="/emreporting/reports/PORT" RecordedValue="/emreporting/reports/PORT" CorrelationBinding="{{QueryStringParam123.reportpath}}" UrlEncode="False" UseToGroupResults="False" />
+      </QueryStringParameters>
+    </Request>
+    <Request Method="POST" Guid="f0c05596-0467-47a0-8779-021c967c6916" Version="1.1" Url="https://localhost/Dart/Reserved.ReportViewerWebControl.axd" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="X-Requested-With" Value="XMLHttpRequest" />
+        <Header Name="Referer" Value="https://localhost/Dart/Reports/CPR/Report.aspx?System=tmf&amp;Type=agency&amp;Value=all&amp;reportpath=/emreporting/reports/PORT" />
+      </Headers>
+      <QueryStringParameters>
+        <QueryStringParameter Name="OpType" Value="SessionKeepAlive" RecordedValue="SessionKeepAlive" CorrelationBinding="{{QueryStringParam124.OpType}}" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="ControlID" Value="{{QueryStringParam125.ControlID}}" RecordedValue="a69e26c5d8ae42cbb067dc6b25544225" CorrelationBinding="{{QueryStringParam125.ControlID}}" UrlEncode="False" UseToGroupResults="False" />
+      </QueryStringParameters>
+      <FormPostHttpBody />
+    </Request>
+    <Request Method="POST" Guid="f494e0a9-1272-4858-a0a7-abffa1a2e33d" Version="1.1" Url="https://localhost/Dart/Reports/CPR/Report.aspx" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="X-Requested-With" Value="XMLHttpRequest" />
+        <Header Name="X-MicrosoftAjax" Value="Delta=true" />
+        <Header Name="Referer" Value="https://localhost/Dart/Reports/CPR/Report.aspx?System=tmf&amp;Type=agency&amp;Value=all&amp;reportpath=/emreporting/reports/PORT" />
+      </Headers>
+      <CorrelationExtractionRules>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="QueryStringParam134.OpType" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="?OpType=" />
+            <RuleParameter Name="EndsWith" Value="&amp;" />
+            <RuleParameter Name="Index" Value="0" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="QueryStringParam135.Version" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="&amp;Version=" />
+            <RuleParameter Name="EndsWith" Value="&amp;" />
+            <RuleParameter Name="Index" Value="0" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="QueryStringParam136.Name" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="&amp;Name=" />
+            <RuleParameter Name="EndsWith" Value="|" />
+            <RuleParameter Name="Index" Value="0" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+      </CorrelationExtractionRules>
+      <QueryStringParameters>
+        <QueryStringParameter Name="System" Value="tmf" RecordedValue="tmf" CorrelationBinding="{{QueryStringParam130.System}}" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="Type" Value="agency" RecordedValue="agency" CorrelationBinding="{{QueryStringParam131.Type}}" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="Value" Value="all" RecordedValue="all" CorrelationBinding="{{QueryStringParam132.Value}}" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="reportpath" Value="%2femreporting%2freports%2fPORT" RecordedValue="%2femreporting%2freports%2fPORT" CorrelationBinding="{{QueryStringParam133.reportpath}}" UrlEncode="False" UseToGroupResults="False" />
+      </QueryStringParameters>
+      <FormPostHttpBody>
+        <FormPostParameter Name="ScriptManager1" Value="ScriptManager1|rvwReportViewer$ctl09$Reserved_AsyncLoadTarget" RecordedValue="ScriptManager1|rvwReportViewer$ctl09$Reserved_AsyncLoadTarget" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="__EVENTTARGET" Value="rvwReportViewer$ctl09$Reserved_AsyncLoadTarget" RecordedValue="rvwReportViewer$ctl09$Reserved_AsyncLoadTarget" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="__EVENTARGUMENT" Value="" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="__VIEWSTATE" Value="{{FormPostParam23.__VIEWSTATE}}" RecordedValue="/wEPDwUJLTQxNTA1NDc1D2QWAgIBD2QWAgIDDxQrAAUPFgYeDlByb2Nlc3NpbmdNb2RlCymQAU1pY3Jvc29mdC5SZXBvcnRpbmcuV2ViRm9ybXMuUHJvY2Vzc2luZ01vZGUsIE1pY3Jvc29mdC5SZXBvcnRWaWV3ZXIuV2ViRm9ybXMsIFZlcnNpb249MTAuMC4wLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49YjAzZjVmN2YxMWQ1MGEzYQEeDlJlbmRlcmluZ1N0YXRlCymWAU1pY3Jvc29mdC5SZXBvcnRpbmcuV2ViRm9ybXMuUmVwb3J0UmVuZGVyaW5nU3RhdGUsIE1pY3Jvc29mdC5SZXBvcnRWaWV3ZXIuV2ViRm9ybXMsIFZlcnNpb249MTAuMC4wLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49YjAzZjVmN2YxMWQ1MGEzYQMeDFNjcm9sbFRhcmdldGRkKClYU3lzdGVtLkd1aWQsIG1zY29ybGliLCBWZXJzaW9uPTQuMC4wLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49Yjc3YTVjNTYxOTM0ZTA4OSRhNjllMjZjNS1kOGFlLTQyY2ItYjA2Ny1kYzZiMjU1NDQyMjUCARQrAAEUKwAEAgFkFCsAAygpclN5c3RlbS5EcmF3aW5nLlByaW50aW5nLk1hcmdpbnMsIFN5c3RlbS5EcmF3aW5nLCBWZXJzaW9uPTQuMC4wLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49YjAzZjVmN2YxMWQ1MGEzYQowLCAwLCAwLCAwMsUCAAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAACFTeXN0ZW0uRHJhd2luZy5QcmludGluZy5QYXBlclNpemUFAAAABGtpbmQEbmFtZQV3aWR0aAZoZWlnaHQbY3JlYXRlZEJ5RGVmYXVsdENvbnN0cnVjdG9yBAEAAAAhU3lzdGVtLkRyYXdpbmcuUHJpbnRpbmcuUGFwZXJLaW5kAgAAAAgIAQIAAAAF/f///yFTeXN0ZW0uRHJhd2luZy5QcmludGluZy5QYXBlcktpbmQBAAAAB3ZhbHVlX18ACAIAAAAAAAAABgQAAAAAOwMAAJEEAAAAC2hkZBYCAgEPZBYCZg9kFgJmD2QWDAIBDw8WAh4HVmlzaWJsZWhkFhQCAw9kFgQCAQ8PFgIeBFRleHQFCjEwLzAyLzIwMTVkZAIEDxAPFgIeB0NoZWNrZWRoZGRkZAIFD2QWBgIBDw8WAh8EBRYyNC8wMi8yMDE1IDExOjU5OjAwIFBNZGQCAw8WAh4Jc2Nyb2xsaW5nBQJub2QCBA8QDxYCHwVoZGRkZAIHD2QWBAIBDw8WAh8EBQNhbGxkZAICDxAPFgIfBWhkZGRkAgkPZBYEAgEPDxYCHwQFA2FsbGRkAgIPEA8WAh8FaGRkZGQCCw9kFgQCAQ8PFgIfBAUDYWxsZGQCAg8QDxYCHwVoZGRkZAIND2QWBAIBDw8WAh8EBQNhbGxkZAICDxAPFgIfBWhkZGRkAg8PZBYEAgEPDxYCHwQFA2FsbGRkAgIPEA8WAh8FaGRkZGQCEQ9kFgQCAQ8PFgIfBAUDYWxsZGQCAg8QDxYCHwVoZGRkZAITD2QWBAIBDw8WAh8EBQNhbGxkZAICDxAPFgIfBWhkZGRkAhUPZBYEAgEPDxYCHwQFA2FsbGRkAgIPEA8WAh8FaGRkZGQCAg9kFgICAg8WAh4FVmFsdWUFBWZhbHNlZAIDDw8WAh8DaGRkAgUPZBYCAgIPFgIfBwUFZmFsc2VkAgYPZBYCZg9kFgJmD2QWBGYPD2QWAh4Fc3R5bGUFEHZpc2liaWxpdHk6bm9uZTtkAgMPZBYEAgEPFgIeB0VuYWJsZWRoZAIEDxYCHwcFAzEwMGQCCg9kFgICAQ8WAh8HBQVGYWxzZWQYAQUeX19Db250cm9sc1JlcXVpcmVQb3N0QmFja0tleV9fFgIFH3J2d1JlcG9ydFZpZXdlciRUb2dnbGVQYXJhbSRpbWcFGXJ2d1JlcG9ydFZpZXdlciRjdGwwNyRpbWe4IRWXh482lDibbCep5XfdHtk+nhavulO3E5En5eAgiQ==" CorrelationBinding="{{FormPostParam23.__VIEWSTATE}}" UrlEncode="True" />
+        <FormPostParameter Name="__VIEWSTATEGENERATOR" Value="FF04F383" RecordedValue="FF04F383" CorrelationBinding="{{FormPostParam24.__VIEWSTATEGENERATOR}}" UrlEncode="True" />
+        <FormPostParameter Name="__EVENTVALIDATION" Value="{{FormPostParam25.__EVENTVALIDATION}}" RecordedValue="/wEdABLg57CTpjtFKcOCs68yc0cyiL5tvO33TBMw/SHOHOh5/jnjQ/F8G45zjMUMhl8zfiByza/tGrWfTIyJxs+9Y3XyplAZzZW7jcOTEKJgC5zu4ChnQE+L65/DMUeQ19rviLyJM8Zb6u7E+UUtNuY+pLfx2wxPF42und9ZHPWUNMh3tN8Uqe6B8nZvHiyghI97r0F95EbOJ+a5RxmyDcY+L6BhQ02kggy2suozN3DRHLt+b4FANEhjavv/BHBzBvVXT726E4hbML/RQ3feTwEWlir8yNySZ/nEFdbn0MSwWHk/TQjgktAR+MJfsP29vyIRq33WpswWJbdhwDm9LMQytlpkNTodg3y88jIrsVU5omN7lqFjuj055CYLqwdvd0wVi5/cQqGpguBYME+WhSmAsN+IL+AXuXKAz86esZNOj1ozYQ==" CorrelationBinding="{{FormPostParam25.__EVENTVALIDATION}}" UrlEncode="True" />
+        <FormPostParameter Name="rvwReportViewer$ctl03$ctl00" Value="" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="rvwReportViewer$ctl03$ctl01" Value="" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="rvwReportViewer$ctl10" Value="" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="rvwReportViewer$ctl11" Value="standards" RecordedValue="standards" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="rvwReportViewer$AsyncWait$HiddenCancelField" Value="False" RecordedValue="False" CorrelationBinding="{{FormPostParam26.rvwReportViewer$AsyncWait$HiddenCancelField}}" UrlEncode="True" />
+        <FormPostParameter Name="rvwReportViewer$ToggleParam$store" Value="" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="rvwReportViewer$ToggleParam$collapse" Value="false" RecordedValue="false" CorrelationBinding="{{FormPostParam27.rvwReportViewer$ToggleParam$collapse}}" UrlEncode="True" />
+        <FormPostParameter Name="rvwReportViewer$ctl08$ClientClickedId" Value="" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="rvwReportViewer$ctl07$store" Value="" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="rvwReportViewer$ctl07$collapse" Value="false" RecordedValue="false" CorrelationBinding="{{FormPostParam28.rvwReportViewer$ctl07$collapse}}" UrlEncode="True" />
+        <FormPostParameter Name="rvwReportViewer$ctl09$VisibilityState$ctl00" Value="None" RecordedValue="None" CorrelationBinding="{{FormPostParam29.rvwReportViewer$ctl09$VisibilityState$ctl00}}" UrlEncode="True" />
+        <FormPostParameter Name="rvwReportViewer$ctl09$ScrollPosition" Value="" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="rvwReportViewer$ctl09$ReportControl$ctl02" Value="" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="rvwReportViewer$ctl09$ReportControl$ctl03" Value="" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="rvwReportViewer$ctl09$ReportControl$ctl04" Value="100" RecordedValue="100" CorrelationBinding="{{FormPostParam30.rvwReportViewer$ctl09$ReportControl$ctl04}}" UrlEncode="True" />
+        <FormPostParameter Name="__ASYNCPOST" Value="true" RecordedValue="true" CorrelationBinding="{{FormPostParam31.__ASYNCPOST}}" UrlEncode="True" />
+      </FormPostHttpBody>
+    </Request>
+    <Request Method="GET" Guid="0d023fbf-d907-4146-a223-44e4c4ab6454" Version="1.1" Url="https://localhost/Dart/Reserved.ReportViewerWebControl.axd" ThinkTime="2" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Referer" Value="https://localhost/Dart/Reports/CPR/Report.aspx?System=tmf&amp;Type=agency&amp;Value=all&amp;reportpath=/emreporting/reports/PORT" />
+      </Headers>
+      <QueryStringParameters>
+        <QueryStringParameter Name="OpType" Value="Resource" RecordedValue="Resource" CorrelationBinding="{{QueryStringParam134.OpType}}" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="Version" Value="10.0.40219.329" RecordedValue="10.0.40219.329" CorrelationBinding="{{QueryStringParam135.Version}}" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="Name" Value="ViewerScript" RecordedValue="ViewerScript" CorrelationBinding="{{QueryStringParam136.Name}}" UrlEncode="False" UseToGroupResults="False" />
+      </QueryStringParameters>
+    </Request>
+    <Request Method="GET" Guid="70ed3b17-22bf-4da9-b01e-19022f5f0287" Version="1.1" Url="https://localhost/Dart/Reports/CPR/Report.aspx" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Referer" Value="https://localhost/Dart/Report/ViewInfo?System=tmf&amp;Type=agency&amp;Value=all&amp;reportpath=/emreporting/reports/PORT" />
+      </Headers>
+      <ExtractionRules>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="QueryStringParam147.ControlID" DisplayName="Extract Text" Description="Extract text from the response and place it into the test context.">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="\u0026ControlID=" />
+            <RuleParameter Name="EndsWith" Value="\" />
+            <RuleParameter Name="Index" Value="0" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam32.__VIEWSTATE" DisplayName="Extract Text" Description="Extract text from the response and place it into the test context.">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="lue=&quot;" />
+            <RuleParameter Name="EndsWith" Value="&quot; /&gt;&#xD;" />
+            <RuleParameter Name="Index" Value="2" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam34.__EVENTVALIDATION" DisplayName="Extract Text" Description="Extract text from the response and place it into the test context.">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="lue=&quot;" />
+            <RuleParameter Name="EndsWith" Value="&quot; /&gt;&#xD;" />
+            <RuleParameter Name="Index" Value="4" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+      </ExtractionRules>
+      <CorrelationExtractionRules>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="QueryStringParam146.OpType" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="?OpType=" />
+            <RuleParameter Name="EndsWith" Value="\" />
+            <RuleParameter Name="Index" Value="4" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="QueryStringParam151.System" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="?System=" />
+            <RuleParameter Name="EndsWith" Value="&amp;" />
+            <RuleParameter Name="Index" Value="0" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="QueryStringParam152.Type" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="&amp;amp;Type=" />
+            <RuleParameter Name="EndsWith" Value="&amp;" />
+            <RuleParameter Name="Index" Value="0" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="QueryStringParam153.reportpath" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="&amp;amp;reportpath=" />
+            <RuleParameter Name="EndsWith" Value="&quot;" />
+            <RuleParameter Name="Index" Value="0" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam33.__VIEWSTATEGENERATOR" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="lue=&quot;" />
+            <RuleParameter Name="EndsWith" Value="&quot; /&gt;&#xD;" />
+            <RuleParameter Name="Index" Value="3" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam35.rvwReportViewer$AsyncWait$HiddenCancelField" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="lue=&quot;" />
+            <RuleParameter Name="EndsWith" Value="&quot; /&gt;&lt;" />
+            <RuleParameter Name="Index" Value="5" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam36.rvwReportViewer$ToggleParam$collapse" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="lue=&quot;" />
+            <RuleParameter Name="EndsWith" Value="&quot; /&gt;&#xD;" />
+            <RuleParameter Name="Index" Value="6" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam37.rvwReportViewer$ctl07$collapse" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="lue=&quot;" />
+            <RuleParameter Name="EndsWith" Value="&quot; /&gt;&#xD;" />
+            <RuleParameter Name="Index" Value="6" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam38.rvwReportViewer$ctl09$VisibilityState$ctl00" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="lue=&quot;" />
+            <RuleParameter Name="EndsWith" Value="&quot; /&gt;&#xD;" />
+            <RuleParameter Name="Index" Value="8" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam39.rvwReportViewer$ctl09$ReportControl$ctl04" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="lue=&quot;" />
+            <RuleParameter Name="EndsWith" Value="&quot; /&gt;&#xD;" />
+            <RuleParameter Name="Index" Value="9" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+      </CorrelationExtractionRules>
+      <QueryStringParameters>
+        <QueryStringParameter Name="System" Value="{{$HIDDEN1.System}}" RecordedValue="tmf" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="Type" Value="group" RecordedValue="group" CorrelationBinding="{{QueryStringParam145.Type}}" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="reportpath" Value="/emreporting/reports/PORT" RecordedValue="/emreporting/reports/PORT" CorrelationBinding="{{QueryStringParam138.reportpath}}" UrlEncode="False" UseToGroupResults="False" />
+      </QueryStringParameters>
+    </Request>
+    <Request Method="POST" Guid="d159830b-1e5b-4109-8f02-3f1ea652a0f5" Version="1.1" Url="https://localhost/Dart/Reserved.ReportViewerWebControl.axd" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="X-Requested-With" Value="XMLHttpRequest" />
+        <Header Name="Referer" Value="https://localhost/Dart/Reports/CPR/Report.aspx?System=tmf&amp;Type=group&amp;reportpath=/emreporting/reports/PORT" />
+      </Headers>
+      <QueryStringParameters>
+        <QueryStringParameter Name="OpType" Value="SessionKeepAlive" RecordedValue="SessionKeepAlive" CorrelationBinding="{{QueryStringParam146.OpType}}" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="ControlID" Value="{{QueryStringParam147.ControlID}}" RecordedValue="5c25416db24e4cd6907472473e3c63a4" CorrelationBinding="{{QueryStringParam147.ControlID}}" UrlEncode="False" UseToGroupResults="False" />
+      </QueryStringParameters>
+      <FormPostHttpBody />
+    </Request>
+    <Request Method="POST" Guid="816d8418-ba0d-4c25-affb-2d6b256cae62" Version="1.1" Url="https://localhost/Dart/Reports/CPR/Report.aspx" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="X-Requested-With" Value="XMLHttpRequest" />
+        <Header Name="X-MicrosoftAjax" Value="Delta=true" />
+        <Header Name="Referer" Value="https://localhost/Dart/Reports/CPR/Report.aspx?System=tmf&amp;Type=group&amp;reportpath=/emreporting/reports/PORT" />
+      </Headers>
+      <CorrelationExtractionRules>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="QueryStringParam172.OpType" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="?OpType=" />
+            <RuleParameter Name="EndsWith" Value="&amp;" />
+            <RuleParameter Name="Index" Value="0" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="QueryStringParam173.Version" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="&amp;Version=" />
+            <RuleParameter Name="EndsWith" Value="&amp;" />
+            <RuleParameter Name="Index" Value="0" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="QueryStringParam174.Name" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="&amp;Name=" />
+            <RuleParameter Name="EndsWith" Value="|" />
+            <RuleParameter Name="Index" Value="0" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+      </CorrelationExtractionRules>
+      <QueryStringParameters>
+        <QueryStringParameter Name="System" Value="tmf" RecordedValue="tmf" CorrelationBinding="{{QueryStringParam151.System}}" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="Type" Value="group" RecordedValue="group" CorrelationBinding="{{QueryStringParam152.Type}}" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="reportpath" Value="%2femreporting%2freports%2fPORT" RecordedValue="%2femreporting%2freports%2fPORT" CorrelationBinding="{{QueryStringParam153.reportpath}}" UrlEncode="False" UseToGroupResults="False" />
+      </QueryStringParameters>
+      <FormPostHttpBody>
+        <FormPostParameter Name="ScriptManager1" Value="ScriptManager1|rvwReportViewer$ctl09$Reserved_AsyncLoadTarget" RecordedValue="ScriptManager1|rvwReportViewer$ctl09$Reserved_AsyncLoadTarget" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="__EVENTTARGET" Value="rvwReportViewer$ctl09$Reserved_AsyncLoadTarget" RecordedValue="rvwReportViewer$ctl09$Reserved_AsyncLoadTarget" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="__EVENTARGUMENT" Value="" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="__VIEWSTATE" Value="{{FormPostParam32.__VIEWSTATE}}" RecordedValue="/wEPDwUJLTQxNTA1NDc1D2QWAgIBD2QWAgIDDxQrAAUPFgYeDlByb2Nlc3NpbmdNb2RlCymQAU1pY3Jvc29mdC5SZXBvcnRpbmcuV2ViRm9ybXMuUHJvY2Vzc2luZ01vZGUsIE1pY3Jvc29mdC5SZXBvcnRWaWV3ZXIuV2ViRm9ybXMsIFZlcnNpb249MTAuMC4wLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49YjAzZjVmN2YxMWQ1MGEzYQEeDlJlbmRlcmluZ1N0YXRlCymWAU1pY3Jvc29mdC5SZXBvcnRpbmcuV2ViRm9ybXMuUmVwb3J0UmVuZGVyaW5nU3RhdGUsIE1pY3Jvc29mdC5SZXBvcnRWaWV3ZXIuV2ViRm9ybXMsIFZlcnNpb249MTAuMC4wLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49YjAzZjVmN2YxMWQ1MGEzYQMeDFNjcm9sbFRhcmdldGRkKClYU3lzdGVtLkd1aWQsIG1zY29ybGliLCBWZXJzaW9uPTQuMC4wLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49Yjc3YTVjNTYxOTM0ZTA4OSQ1YzI1NDE2ZC1iMjRlLTRjZDYtOTA3NC03MjQ3M2UzYzYzYTQCARQrAAEUKwAEAgFkFCsAAygpclN5c3RlbS5EcmF3aW5nLlByaW50aW5nLk1hcmdpbnMsIFN5c3RlbS5EcmF3aW5nLCBWZXJzaW9uPTQuMC4wLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49YjAzZjVmN2YxMWQ1MGEzYQowLCAwLCAwLCAwMsUCAAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAACFTeXN0ZW0uRHJhd2luZy5QcmludGluZy5QYXBlclNpemUFAAAABGtpbmQEbmFtZQV3aWR0aAZoZWlnaHQbY3JlYXRlZEJ5RGVmYXVsdENvbnN0cnVjdG9yBAEAAAAhU3lzdGVtLkRyYXdpbmcuUHJpbnRpbmcuUGFwZXJLaW5kAgAAAAgIAQIAAAAF/f///yFTeXN0ZW0uRHJhd2luZy5QcmludGluZy5QYXBlcktpbmQBAAAAB3ZhbHVlX18ACAIAAAAAAAAABgQAAAAAOwMAAJEEAAAAC2hkZBYCAgEPZBYCZg9kFgJmD2QWDAIBDw8WAh4HVmlzaWJsZWhkFhYCAw9kFgQCAQ8PFgIeBFRleHQFA2FsbGRkAgIPEA8WAh4HQ2hlY2tlZGhkZGRkAgUPZBYEAgEPDxYCHwQFCjEwLzAyLzIwMTVkZAIEDxAPFgIfBWhkZGRkAgcPZBYGAgEPDxYCHwQFFjI0LzAyLzIwMTUgMTE6NTk6MDAgUE1kZAIDDxYCHglzY3JvbGxpbmcFAm5vZAIEDxAPFgIfBWhkZGRkAgkPZBYEAgEPDxYCHwQFA2FsbGRkAgIPEA8WAh8FaGRkZGQCCw9kFgQCAQ8PFgIfBAUDYWxsZGQCAg8QDxYCHwVoZGRkZAIND2QWBAIBDw8WAh8EBQNhbGxkZAICDxAPFgIfBWhkZGRkAg8PZBYEAgEPDxYCHwQFA2FsbGRkAgIPEA8WAh8FaGRkZGQCEQ9kFgQCAQ8PFgIfBAUDYWxsZGQCAg8QDxYCHwVoZGRkZAITD2QWBAIBDw8WAh8EBQNhbGxkZAICDxAPFgIfBWhkZGRkAhUPZBYEAgEPDxYCHwQFA2FsbGRkAgIPEA8WAh8FaGRkZGQCFw9kFgQCAQ8PFgIfBAUDYWxsZGQCAg8QDxYCHwVoZGRkZAICD2QWAgICDxYCHgVWYWx1ZQUFZmFsc2VkAgMPDxYCHwNoZGQCBQ9kFgICAg8WAh8HBQVmYWxzZWQCBg9kFgJmD2QWAmYPZBYEZg8PZBYCHgVzdHlsZQUQdmlzaWJpbGl0eTpub25lO2QCAw9kFgQCAQ8WAh4HRW5hYmxlZGhkAgQPFgIfBwUDMTAwZAIKD2QWAgIBDxYCHwcFBUZhbHNlZBgBBR5fX0NvbnRyb2xzUmVxdWlyZVBvc3RCYWNrS2V5X18WAgUfcnZ3UmVwb3J0Vmlld2VyJFRvZ2dsZVBhcmFtJGltZwUZcnZ3UmVwb3J0Vmlld2VyJGN0bDA3JGltZ+bQO07+2DU1kHVzy3xaTIIIMeM73G7RDHIiqyxmyOM6" CorrelationBinding="{{FormPostParam32.__VIEWSTATE}}" UrlEncode="True" />
+        <FormPostParameter Name="__VIEWSTATEGENERATOR" Value="FF04F383" RecordedValue="FF04F383" CorrelationBinding="{{FormPostParam33.__VIEWSTATEGENERATOR}}" UrlEncode="True" />
+        <FormPostParameter Name="__EVENTVALIDATION" Value="{{FormPostParam34.__EVENTVALIDATION}}" RecordedValue="/wEdABIlIclFqeLaK8pwqtrI6plOiL5tvO33TBMw/SHOHOh5/jnjQ/F8G45zjMUMhl8zfiByza/tGrWfTIyJxs+9Y3XyplAZzZW7jcOTEKJgC5zu4ChnQE+L65/DMUeQ19rviLyJM8Zb6u7E+UUtNuY+pLfx2wxPF42und9ZHPWUNMh3tN8Uqe6B8nZvHiyghI97r0F95EbOJ+a5RxmyDcY+L6BhQ02kggy2suozN3DRHLt+b4FANEhjavv/BHBzBvVXT726E4hbML/RQ3feTwEWlir8yNySZ/nEFdbn0MSwWHk/TQjgktAR+MJfsP29vyIRq33WpswWJbdhwDm9LMQytlpkNTodg3y88jIrsVU5omN7lqFjuj055CYLqwdvd0wVi5/Be1vgiC1XGrcs7xg5svGhbhscg7/GxXQK0kGCQWSINg==" CorrelationBinding="{{FormPostParam34.__EVENTVALIDATION}}" UrlEncode="True" />
+        <FormPostParameter Name="rvwReportViewer$ctl03$ctl00" Value="" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="rvwReportViewer$ctl03$ctl01" Value="" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="rvwReportViewer$ctl10" Value="" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="rvwReportViewer$ctl11" Value="standards" RecordedValue="standards" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="rvwReportViewer$AsyncWait$HiddenCancelField" Value="False" RecordedValue="False" CorrelationBinding="{{FormPostParam35.rvwReportViewer$AsyncWait$HiddenCancelField}}" UrlEncode="True" />
+        <FormPostParameter Name="rvwReportViewer$ToggleParam$store" Value="" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="rvwReportViewer$ToggleParam$collapse" Value="false" RecordedValue="false" CorrelationBinding="{{FormPostParam36.rvwReportViewer$ToggleParam$collapse}}" UrlEncode="True" />
+        <FormPostParameter Name="rvwReportViewer$ctl08$ClientClickedId" Value="" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="rvwReportViewer$ctl07$store" Value="" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="rvwReportViewer$ctl07$collapse" Value="false" RecordedValue="false" CorrelationBinding="{{FormPostParam37.rvwReportViewer$ctl07$collapse}}" UrlEncode="True" />
+        <FormPostParameter Name="rvwReportViewer$ctl09$VisibilityState$ctl00" Value="None" RecordedValue="None" CorrelationBinding="{{FormPostParam38.rvwReportViewer$ctl09$VisibilityState$ctl00}}" UrlEncode="True" />
+        <FormPostParameter Name="rvwReportViewer$ctl09$ScrollPosition" Value="" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="rvwReportViewer$ctl09$ReportControl$ctl02" Value="" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="rvwReportViewer$ctl09$ReportControl$ctl03" Value="" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="rvwReportViewer$ctl09$ReportControl$ctl04" Value="100" RecordedValue="100" CorrelationBinding="{{FormPostParam39.rvwReportViewer$ctl09$ReportControl$ctl04}}" UrlEncode="True" />
+        <FormPostParameter Name="__ASYNCPOST" Value="true" RecordedValue="true" CorrelationBinding="{{FormPostParam40.__ASYNCPOST}}" UrlEncode="True" />
+      </FormPostHttpBody>
+    </Request>
+    <Request Method="GET" Guid="0f35d285-318b-40d1-8e94-18a5aac9474b" Version="1.1" Url="https://localhost/Dart/Report/GetReportParameter" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Accept" Value="*/*" />
+        <Header Name="X-Requested-With" Value="XMLHttpRequest" />
+        <Header Name="Referer" Value="https://localhost/Dart/Report/ViewInfo?System=tmf&amp;Type=agency&amp;Value=all&amp;reportpath=/emreporting/reports/PORT" />
+      </Headers>
+      <QueryStringParameters>
+        <QueryStringParameter Name="reportParameterData" Value="System%7CTMF%3BType%7Cgroup%3BValue%7CAll%3BStart_Date%7C%3BEnd_Date%7C%3BClaim_Liability_Indicator%7CAll%3BPsychological_Claims%7CAll%3BInactive_Claims%7CAll%3BMedically_Discharged%7CAll%3BExempt_From_Reform%7CAll%3BReactivation%7CAll%3B" RecordedValue="System%7CTMF%3BType%7Cgroup%3BValue%7CAll%3BStart_Date%7C%3BEnd_Date%7C%3BClaim_Liability_Indicator%7CAll%3BPsychological_Claims%7CAll%3BInactive_Claims%7CAll%3BMedically_Discharged%7CAll%3BExempt_From_Reform%7CAll%3BReactivation%7CAll%3B" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+      </QueryStringParameters>
+    </Request>
+    <Request Method="GET" Guid="a48ac6cd-3ad5-4dd0-b1b8-6a23fc20f41a" Version="1.1" Url="https://localhost/Dart/Reserved.ReportViewerWebControl.axd" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Referer" Value="https://localhost/Dart/Reports/CPR/Report.aspx?System=tmf&amp;Type=group&amp;reportpath=/emreporting/reports/PORT" />
+      </Headers>
+      <QueryStringParameters>
+        <QueryStringParameter Name="OpType" Value="Resource" RecordedValue="Resource" CorrelationBinding="{{QueryStringParam172.OpType}}" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="Version" Value="10.0.40219.329" RecordedValue="10.0.40219.329" CorrelationBinding="{{QueryStringParam173.Version}}" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="Name" Value="ViewerScript" RecordedValue="ViewerScript" CorrelationBinding="{{QueryStringParam174.Name}}" UrlEncode="False" UseToGroupResults="False" />
+      </QueryStringParameters>
+    </Request>
+    <Request Method="GET" Guid="f96e4668-c483-4522-a6ae-d7044992ce47" Version="1.1" Url="https://localhost/Dart/account/login" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Referer" Value="https://localhost/Dart/dashboard/level0?reportpath=/emreporting/reports/level0" />
+      </Headers>
+      <QueryStringParameters>
+        <QueryStringParameter Name="logout" Value="true" RecordedValue="true" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+      </QueryStringParameters>
+    </Request>
+  </Items>
+  <ValidationRules>
+    <ValidationRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ValidationRuleResponseTimeGoal, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" DisplayName="Response Time Goal" Description="Validates that the response time for the request is less than or equal to the response time goal as specified on the request.  Response time goals of zero will be ignored." Level="Low" ExectuionOrder="AfterDependents">
+      <RuleParameters>
+        <RuleParameter Name="Tolerance" Value="0" />
+      </RuleParameters>
+    </ValidationRule>
+  </ValidationRules>
+</WebTest>

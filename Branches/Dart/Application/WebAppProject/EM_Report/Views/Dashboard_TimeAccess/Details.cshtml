@@ -1,0 +1,79 @@
+﻿@model EM_Report.Domain.Dashboard_TimeAccess             
+@using EM_Report.Common.Utilities;
+@using EM_Report.Helpers;
+@using EM_Report.Repositories;
+@using EM_Report.Domain;
+@{    
+    ViewBag.Title = "Dashboard_Traffic_Light_Rules";
+    Layout = Request.IsAjaxRequest() ? null : "~/Views/Shared/_Master.cshtml";
+}
+
+@functions {  
+	public bool IsNew()
+	{
+		return (Model != null && Model.Id > 0) ? false : true;
+	}
+
+	public string AddButtonText()
+	{
+		return IsNew() ? "add" : "save";
+	}
+}
+<div class="wrapper">
+    <div class="w_100p">  
+    @using (Html.BeginForm())
+    {          
+        @Html.AntiForgeryToken()
+        <div class="formWrap">
+            @Html.Hidden("action")
+            @if (!IsNew())
+            {
+                @Html.HiddenFor(e => e.Id)                
+            }              
+            <h1>@(IsNew() ? "Dashboard_Traffic_Light_Rules Add" : "Dashboard_Traffic_Light_Rules Edit")</h1>    
+               
+            @Html.Partial("_ShowMessage")               
+             <div class="formInline">
+                <label>Url</label>
+                @Html.TextBoxFor(e => e.Url, new { id = "txtUrl", name = "txtUrl", @class = "Text" })
+				@Html.ValidationMessageFor(e => e.Url) 
+
+            </div>   
+            <div class="clear"></div>     
+             <div class="formInline">
+                <label>UserId</label>
+                @Html.TextBoxFor(e => e.UserId, new { id = "txtEmail", @class = "Text" })
+				@Html.ValidationMessageFor(e => e.UserId) 
+            </div>
+            <div class="clear"></div>
+             <div class="formInline">
+                <label>Start time</label>
+                @Html.TextBoxFor(e => e.StartTime, new { id = "txtStartTime", @class = "Text" })
+				@Html.ValidationMessageFor(e => e.StartTime) 
+            </div>
+            <div class="clear"></div>
+             <div class="formInline">
+                <label>End Time</label>
+                @Html.TextBoxFor(e => e.EndTime, new { id = "txtEndTime", @class = "Text" })
+				@Html.ValidationMessageFor(e => e.EndTime) 
+            </div>
+            <div class="clear"></div>
+           
+            <div class="formInline formInlineBtn">      
+                @if (Login.AuthorizeSystemPermission(ResourcesHelper.System_Report, ResourcesHelper.Permission_Add))
+                {
+                    <span class="btnPurple"><input type="button" id="cmdSave" onclick="SubmitTeamForm();" value="Save" /></span>                    
+                }
+                <span class="btnPurple"><input type="button" value="Back To List" onclick="window.location = ('@Url.Action("index", "Dashboard_TimeAccess", new { systemid = Request["systemid"] })')"/></span>
+            </div>
+            <div class="clear"></div>       
+        </div>          
+    }
+</div>
+</div>
+
+<script type="text/javascript" language="javascript">
+    function SubmitTeamForm() {
+        actionClick('save', false);      
+    }
+</script>

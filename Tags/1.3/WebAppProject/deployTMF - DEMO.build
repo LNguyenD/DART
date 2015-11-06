@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<project name="EM_Report_DeployTMF" default="all" xmlns="http://nant.sf.net/release/0.91/nant.xsd">
+  <property name="framework-get-assembly-directory" value="${framework::get-assembly-directory('net-4.0')}" />
+  <property name="dotNetReferenceAssemblyPath" value="${framework-get-assembly-directory}\" />
+  <property name="nant.settings.currentframework" value="net-4.0" />
+
+  <property name="solution.configuration" value="Debug" overwrite="false" />
+
+  <property name="solution.name" value="EM_Report"/>
+  <property name="solution.EM_Report.project.name" value="EM_Report"/>
+  <property name="solution.EM_Report.BLL.project.name" value="EM_Report.BLL"/>
+  <property name="solution.EM_Report.DAL.project.name" value="EM_Report.DAL"/>
+  <property name="solution.EM_Report.Models.project.name" value="EM_Report.Models"/>
+  <property name="solution.EM_Report.Tests.project.name" value="EM_Report.Tests"/>
+  <property name="solution.deploymentProject.name" value="${solution.EM_Report.project.name}"/>
+
+  <property name="solution.EM_Report.credentials.name" value="credentials.config"/>
+
+  <property name="iis.application.name" value="Default Web Site/emreportingTMF-DEMO"/>
+  <property name="connectionString" value="Data Source=aswsyddev01;Initial Catalog=TMF_Reporting_DEMO;Persist Security Info=True;User ID=emreportingteam;Password=emdbdev123"/>
+  <property name="rsConnectionString" value="Data Source=10.9.0.26;Initial Catalog=tmfprod;User ID=kct;Password=password"/>
+  <property name="rsServer" value="http://10.9.0.26/reportserver"/>
+  <property name="MainSSRSAccount_Domain" value="aswvnsql01"/>
+  <property name="MainSSRSAccount_UserName" value="reportAdmin"/>
+  <property name="MainSSRSAccount_Password" value="!QAZ@WSX"/>
+  <property name="ReportPathPrefix" value="/EMReportingDEMO/Reports/"/>
+  <property name="informationTipBox.text" value="trunk build"/>
+
+  <property name="deploymentPackages.directory.name" value="DeploymentPackages"/>
+  <property name="deploymentPackages.directory.path" value="${path::get-full-path(deploymentPackages.directory.name)}"/>
+  <property name="deploymentPackages.scriptFile.path" value="${deploymentPackages.directory.path}\_PublishedWebsites\${solution.deploymentProject.name}_Package\${solution.deploymentProject.name}.deploy.cmd"/>
+  <property name="deploymentPackages.parameterFile.path" value="${deploymentPackages.directory.path}\_PublishedWebsites\${solution.deploymentProject.name}_Package\${solution.deploymentProject.name}.SetParameters.xml"/>
+
+  <!-- a dummy test target -->
+  <target name="dummy">
+    <echo message="${project::get-name()} is located at: ${nant::get-base-directory()}"/>
+    <echo message="${solution.name}.sln"/>
+  </target>
+
+  <target name="setup">
+    <xmlpoke file="${solution.EM_Report.project.name}/${solution.EM_Report.credentials.name}"
+              xpath="/connectionStrings/add[@name = 'EM_ReportConnectionString']/@connectionString"
+              value="${connectionString}"/>
+    <xmlpoke file="${solution.EM_Report.project.name}/${solution.EM_Report.credentials.name}"
+                  xpath="/connectionStrings/add[@name = 'RS_ConnectionString']/@connectionString"
+                  value="${rsConnectionString}"/>
+    <xmlpoke file="${solution.EM_Report.project.name}/web.config"
+                 xpath="/configuration/appSettings/add[@key = 'ReportServerUrl']/@value"
+                 value="${rsServer}"/>
+    <xmlpoke file="${solution.EM_Report.project.name}/web.config"
+                xpath="/configuration/appSettings/add[@key = 'MainSSRSAccount_Domain']/@value"
+                value="${MainSSRSAccount_Domain}"/>
+    <xmlpoke file="${solution.EM_Report.project.name}/web.config"
+             xpath="/configuration/appSettings/add[@key = 'MainSSRSAccount_UserName']/@value"
+             value="${MainSSRSAccount_UserName}"/>
+    <xmlpoke file="${solution.EM_Report.project.name}/web.config"
+             xpath="/configuration/appSettings/add[@key = 'MainSSRSAccount_Password']/@value"
+             value="${MainSSRSAccount_Password}"/>
+	<xmlpoke file="${solution.EM_Report.project.name}/web.config"
+                 xpath="/configuration/appSettings/add[@key = 'ReportPathPrefix']/@value"
+                 value="${ReportPathPrefix}"/>
+    <!--<solution configuration="${solution.configuration}" solutionfile="${solution.name}.sln" />-->
+    <msbuild target="build" project="${solution.name}.sln">
+      <property name="configuration" value="${solution.configuration}"/>
+      <property name="Platform" value="Any CPU"/>
+    </msbuild>
+  </target>
+
+  <target name="package">
+    <!-- update connection string -->
+    <xmlpoke file="${solution.EM_Report.project.name}/${solution.EM_Report.credentials.name}"
+              xpath="/connectionStrings/add[@name = 'EM_ReportConnectionString']/@connectionString"
+              value="${connectionString}"/>
+    <xmlpoke file="${solution.EM_Report.project.name}/web.config" xpath="/configuration/appSettings/add[@key = 'Site']/@value" value="TMF"/>
+    
+    <!-- delete deployment package directory -->
+    <delete dir="${deploymentPackages.directory.name}"/>
+
+    <!-- invoke msbuild -->
+    <msbuild target="package" project="${solution.deploymentProject.name}/${solution.deploymentProject.name}.csproj">
+      <property name="configuration" value="${solution.configuration}"/>
+      <property name="outputpath" value="${deploymentPackages.directory.path}"/>
+    </msbuild>
+
+    <!-- define application name on IIS before deploying -->
+    <xmlpoke file="${deploymentPackages.parameterFile.path}" xpath="/parameters/setParameter[@name = 'IIS Web Application Name']/@value" value="${iis.application.name}" />
+  </target>
+
+  <target name="deploy">
+    <exec program="${deploymentPackages.scriptFile.path}">
+      <!-- confirm deployment -->
+      <arg value="/Y"/>
+    </exec>
+  </target>
+
+  <target name="all" depends="setup,package, deploy">
+  </target>
+</project>

@@ -1,0 +1,148 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{CE9A948C-8F2D-4125-923D-7A10463BCAED}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>EM_Report.ServiceContract</RootNamespace>
+    <AssemblyName>EM_Report.ServiceContract</AssemblyName>
+    <ProjectTypeGuids>{3D9AD99F-2412-4246-B90B-4EAA41C64699};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <StartArguments>/client:"WcfTestClient.exe"</StartArguments>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <WcfConfigValidationEnabled>True</WcfConfigValidationEnabled>
+    <XsdCodeGenEnabled>True</XsdCodeGenEnabled>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Criteria\Criteria.cs" />
+    <Compile Include="MessageBase\AcknowledgeType.cs" />
+    <Compile Include="MessageBase\PersistType.cs" />
+    <Compile Include="MessageBase\RequestBase.cs" />
+    <Compile Include="MessageBase\ResponseBase.cs" />
+    <Compile Include="Messages\ChangePasswordRequest.cs" />
+    <Compile Include="Messages\ChangePasswordResponse.cs" />
+    <Compile Include="Messages\CONTROLRequest.cs" />
+    <Compile Include="Messages\CONTROLResponse.cs" />
+    <Compile Include="Messages\DashboardExternal_GroupsRequest.cs" />
+    <Compile Include="Messages\DashboardExternal_GroupsResponse.cs" />
+    <Compile Include="Messages\DashboardRequest.cs" />
+    <Compile Include="Messages\DashboardResponse.cs" />
+    <Compile Include="Messages\Dashboard_FavoursRequest.cs" />
+    <Compile Include="Messages\Dashboard_FavoursResponse.cs" />
+    <Compile Include="Messages\Dashboard_Graph_DescriptionRequest.cs" />
+    <Compile Include="Messages\Dashboard_Graph_DescriptionResponse.cs" />
+    <Compile Include="Messages\Dashboard_LevelsRequest.cs" />
+    <Compile Include="Messages\Dashboard_LevelsResponse.cs" />
+    <Compile Include="Messages\Dashboard_OrganisationRole_LevelsRequest.cs" />
+    <Compile Include="Messages\Dashboard_OrganisationRole_LevelsResponse.cs" />
+    <Compile Include="Messages\Dashboard_ProjectionRequest.cs" />
+    <Compile Include="Messages\Dashboard_ProjectionResponse.cs" />
+    <Compile Include="Messages\Dashboard_Target_BaseRequest.cs" />
+    <Compile Include="Messages\Dashboard_Target_BaseResponse.cs" />
+    <Compile Include="Messages\Dashboard_TimeAccessRequest.cs" />
+    <Compile Include="Messages\Dashboard_TimeAccessResponse.cs" />
+    <Compile Include="Messages\Dashboard_Traffic_Light_RulesRequest.cs" />
+    <Compile Include="Messages\Dashboard_Traffic_Light_RulesResponse.cs" />
+    <Compile Include="Messages\External_GroupRequest.cs" />
+    <Compile Include="Messages\External_GroupResponse.cs" />
+    <Compile Include="Messages\LoginRequest.cs" />
+    <Compile Include="Messages\LoginResponse.cs" />
+    <Compile Include="Messages\LogoutRequest.cs" />
+    <Compile Include="Messages\LogoutResponse.cs" />
+    <Compile Include="Messages\Organisation_LevelsRequest.cs" />
+    <Compile Include="Messages\Organisation_LevelsResponse.cs" />
+    <Compile Include="Messages\Organisation_RolesRequest.cs" />
+    <Compile Include="Messages\Organisation_RolesResponse.cs" />
+    <Compile Include="Messages\PermissionRequest.cs" />
+    <Compile Include="Messages\PermissionResponse.cs" />
+    <Compile Include="Messages\PortfolioRequest.cs" />
+    <Compile Include="Messages\PortfolioResponse.cs" />
+    <Compile Include="Messages\ReportCategoryRequest.cs" />
+    <Compile Include="Messages\ReportCategoryResponse.cs" />
+    <Compile Include="Messages\ReportPermissionRequest.cs" />
+    <Compile Include="Messages\ReportPermissionResponse.cs" />
+    <Compile Include="Messages\ReportRequest.cs" />
+    <Compile Include="Messages\ReportResponse.cs" />
+    <Compile Include="Messages\Report_External_AccessRequest.cs" />
+    <Compile Include="Messages\Report_External_AccessResponse.cs" />
+    <Compile Include="Messages\Report_Organisation_LevelsRequest.cs" />
+    <Compile Include="Messages\Report_Organisation_LevelsResponse.cs" />
+    <Compile Include="Messages\ResetPasswordRequest.cs" />
+    <Compile Include="Messages\ResetPasswordResponse.cs" />
+    <Compile Include="Messages\StatusRequest.cs" />
+    <Compile Include="Messages\StatusResponse.cs" />
+    <Compile Include="Messages\SystemRole_PermissionsRequest.cs" />
+    <Compile Include="Messages\SystemRole_PermissionsResponse.cs" />
+    <Compile Include="Messages\System_PermissionRequest.cs" />
+    <Compile Include="Messages\System_PermissionResponse.cs" />
+    <Compile Include="Messages\System_RolesRequest.cs" />
+    <Compile Include="Messages\System_RolesResponse.cs" />
+    <Compile Include="Messages\TeamRequest.cs" />
+    <Compile Include="Messages\TeamResponse.cs" />
+    <Compile Include="Messages\UserRequest.cs" />
+    <Compile Include="Messages\UserResponse.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ServiceContracts\IActionService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\EM_Report.Domain\EM_Report.Domain.csproj">
+      <Project>{81989c30-6be4-4f31-90f6-57820b5d85ae}</Project>
+      <Name>EM_Report.Domain</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!--<PropertyGroup>
+    <VSToolsPath Condition="'$(VSToolsPath)' == '' and '$(VisualStudioVersion)' != '' and '$(VisualStudioVersion)' != '11.0'">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio</VSToolsPath>
+    <WcfServiceModelTargetPath>$(VSToolsPath)\WCF</WcfServiceModelTargetPath>
+  </PropertyGroup>
+  <Import Project="$(WcfServiceModelTargetPath)\Microsoft.VisualStudio.ServiceModel.targets" />-->
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{3D9AD99F-2412-4246-B90B-4EAA41C64699}">
+        <WcfProjectProperties>
+          <AutoStart>True</AutoStart>
+        </WcfProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

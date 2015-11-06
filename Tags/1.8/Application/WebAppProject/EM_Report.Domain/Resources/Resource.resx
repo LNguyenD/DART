@@ -1,0 +1,525 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Action_Active" xml:space="preserve">
+    <value>Active</value>
+  </data>
+  <data name="Action_AddNew" xml:space="preserve">
+    <value>Add New</value>
+  </data>
+  <data name="Action_AddOrRemoveFavorite" xml:space="preserve">
+    <value>AddOrRemoveFavorite</value>
+  </data>
+  <data name="Action_AddRecentlyReport" xml:space="preserve">
+    <value>AddRecentlyReport</value>
+  </data>
+  <data name="Action_CanAccessReport" xml:space="preserve">
+    <value>CanAccessReport</value>
+  </data>
+  <data name="Action_Create" xml:space="preserve">
+    <value>Create</value>
+  </data>
+  <data name="Action_Delete" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="Action_DeleteByID" xml:space="preserve">
+    <value>Delete By ID</value>
+  </data>
+  <data name="Action_InActive" xml:space="preserve">
+    <value>InActive</value>
+  </data>
+  <data name="Action_ReArrange" xml:space="preserve">
+    <value>ReArrange</value>
+  </data>
+  <data name="Action_Save" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="Action_Update" xml:space="preserve">
+    <value>Update</value>
+  </data>
+  <data name="Action_UpdateLevel" xml:space="preserve">
+    <value>UpdateLevel</value>
+  </data>
+  <data name="Action_UpdateScheduleType" xml:space="preserve">
+    <value>UpdateScheduleType</value>
+  </data>
+  <data name="Action_UpdateStatus" xml:space="preserve">
+    <value>UpdateStatus</value>
+  </data>
+  <data name="btnAdd" xml:space="preserve">
+    <value>Add</value>
+  </data>
+  <data name="btnAssign" xml:space="preserve">
+    <value>Assign</value>
+  </data>
+  <data name="btnDelete" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="btnEdit" xml:space="preserve">
+    <value>Edit</value>
+  </data>
+  <data name="btnRemove" xml:space="preserve">
+    <value>Remove</value>
+  </data>
+  <data name="btnSave" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="GetField" xml:space="preserve">
+    <value>GetField</value>
+  </data>
+  <data name="GetFields" xml:space="preserve">
+    <value>GetFields</value>
+  </data>
+  <data name="GetInvisibleParameter" xml:space="preserve">
+    <value>GetInvisibleParameter</value>
+  </data>
+  <data name="GetInvisibleParameterValue" xml:space="preserve">
+    <value>GetInvisibleParameterValue</value>
+  </data>
+  <data name="GetUser_By_UserNameOrEmail" xml:space="preserve">
+    <value>GetUser_By_UserNameOrEmail</value>
+  </data>
+  <data name="GetVisibleParametersInfo" xml:space="preserve">
+    <value>GetVisibleParametersInfo</value>
+  </data>
+  <data name="Get_CreateSchedule" xml:space="preserve">
+    <value>Create</value>
+  </data>
+  <data name="Get_DashBoardRegion_ByDashboardId" xml:space="preserve">
+    <value>ByDashBoardId</value>
+  </data>
+  <data name="Get_DashBoardRegion_ByDashboardRegionID" xml:space="preserve">
+    <value>ByDashBoardRegionId</value>
+  </data>
+  <data name="Get_Dashboard_ByDashBoardID" xml:space="preserve">
+    <value>Get Dashboard by DashboardId</value>
+  </data>
+  <data name="Get_Dashboard_ByReportId" xml:space="preserve">
+    <value>ReportId</value>
+  </data>
+  <data name="Get_Dashboard_ByUserId" xml:space="preserve">
+    <value>UserID</value>
+  </data>
+  <data name="Get_List_System" xml:space="preserve">
+    <value>Get_List_System</value>
+  </data>
+  <data name="Get_Option_List" xml:space="preserve">
+    <value>List</value>
+  </data>
+  <data name="Get_Option_List_ByCategory" xml:space="preserve">
+    <value>ListByCategory</value>
+  </data>
+  <data name="Get_Option_List_Favourite" xml:space="preserve">
+    <value>Favourite_Report</value>
+  </data>
+  <data name="Get_Option_List_Recently" xml:space="preserve">
+    <value>Recently_Report</value>
+  </data>
+  <data name="Get_Option_List_RolesOfLevel" xml:space="preserve">
+    <value>ListRolesOfLevel</value>
+  </data>
+  <data name="Get_Option_List_UserCanAccess" xml:space="preserve">
+    <value>List_Report_UserCanAccess</value>
+  </data>
+  <data name="Get_Option_Single" xml:space="preserve">
+    <value>Single</value>
+  </data>
+  <data name="Get_Option_Single_Detail" xml:space="preserve">
+    <value>SingleDetail</value>
+  </data>
+  <data name="Get_PauseSchedule" xml:space="preserve">
+    <value>PauseSchedule</value>
+  </data>
+  <data name="Get_ResumeSchedule" xml:space="preserve">
+    <value>ResumeSchedule</value>
+  </data>
+  <data name="Get_SerializeSchedule" xml:space="preserve">
+    <value>SerializeSchedule</value>
+  </data>
+  <data name="Get_SetSchedule" xml:space="preserve">
+    <value>SetSchedule</value>
+  </data>
+  <data name="Get_SystemRolePermission_By_SystemRoleId" xml:space="preserve">
+    <value>Get_SystemRolePermission_By_SystemRoleId</value>
+  </data>
+  <data name="Get_Week" xml:space="preserve">
+    <value>Week</value>
+  </data>
+  <data name="IsRig" xml:space="preserve">
+    <value>IsRig</value>
+  </data>
+  <data name="IsTeamLeader" xml:space="preserve">
+    <value>IsTeamLeader</value>
+  </data>
+  <data name="msg404" xml:space="preserve">
+    <value>Sorry, the request page does not exist.</value>
+  </data>
+  <data name="msg500" xml:space="preserve">
+    <value>Sorry, an error occurred while processing your request.</value>
+  </data>
+  <data name="msgAcessdenied" xml:space="preserve">
+    <value>You don't have permission to access this page or this feature.</value>
+  </data>
+  <data name="msgBlockedLogin" xml:space="preserve">
+    <value>This account was locked. Please contact Service Desk for assistance.</value>
+  </data>
+  <data name="msgDeleteError" xml:space="preserve">
+    <value>Error when delete item</value>
+  </data>
+  <data name="msgFooter" xml:space="preserve">
+    <value>Copyright 2011 ASWIG. IT REPORT. All rights reserved.</value>
+  </data>
+  <data name="msgInvalidCurrentPassword" xml:space="preserve">
+    <value>The current password is incorrect or the new password is similar with current password.</value>
+  </data>
+  <data name="msgInvalidInput" xml:space="preserve">
+    <value>Invalid inputs. Please check your data again!</value>
+  </data>
+  <data name="msgInvalidUserNameOrEmail" xml:space="preserve">
+    <value>The username or email is incorrect.</value>
+  </data>
+  <data name="msgInvalidEmail" xml:space="preserve">
+    <value>The email is incorrect.</value>
+  </data>
+  <data name="msgInvalidUrlVerification" xml:space="preserve">
+    <value>The verification link is incorrect.</value>
+  </data>
+  <data name="msgInvalidUserNameOrPassLogin" xml:space="preserve">
+    <value>The email or password provided is incorrect.</value>
+  </data>
+  <data name="msgLoadError" xml:space="preserve">
+    <value>Error when load item</value>
+  </data>
+  <data name="msgLoadSuccess" xml:space="preserve">
+    <value>Loaded successfully. Click on this box to close it</value>
+  </data>
+  <data name="msgSaveFail" xml:space="preserve">
+    <value>Saved fail!</value>
+  </data>
+  <data name="msgSaveSuccess" xml:space="preserve">
+    <value>Saved successfully!</value>
+  </data>
+  <data name="msgSendMailError" xml:space="preserve">
+    <value>Sending email failed. Please try again.</value>
+  </data>
+  <data name="msgSendMailSuccess" xml:space="preserve">
+    <value>Email sent successfully.</value>
+  </data>
+  <data name="msgUpdateError" xml:space="preserve">
+    <value>Error when update item</value>
+  </data>
+  <data name="msgUserDuplicate" xml:space="preserve">
+    <value>The user name or email already exists.</value>
+  </data>
+  <data name="ReportPathPrefix" xml:space="preserve">
+    <value>/EMReporting/Reports/</value>
+  </data>
+  <data name="strDestinationTimeZoneIdServer" xml:space="preserve">
+    <value>AUS Eastern Standard Time</value>
+  </data>
+  <data name="Sub_Validate_EndDate_After_StartDate" xml:space="preserve">
+    <value>The EndDate field for the schedule must occur after the StartDate field.</value>
+  </data>
+  <data name="Sub_Validate_StartDate" xml:space="preserve">
+    <value>The EndDate field is required.</value>
+  </data>
+  <data name="txtAddReportToGroup" xml:space="preserve">
+    <value>Add report to group: </value>
+  </data>
+  <data name="txtAssignPermissionToReport" xml:space="preserve">
+    <value>Assign permission to report:</value>
+  </data>
+  <data name="txtAuditActionList" xml:space="preserve">
+    <value>Audit Trial List</value>
+  </data>
+  <data name="txtAuditHeader" xml:space="preserve">
+    <value>Audit Trial</value>
+  </data>
+  <data name="txtCategoryAdd" xml:space="preserve">
+    <value>Add Category</value>
+  </data>
+  <data name="txtCategoryEdit" xml:space="preserve">
+    <value>Edit Category</value>
+  </data>
+  <data name="txtCategoryList" xml:space="preserve">
+    <value>Category List</value>
+  </data>
+  <data name="txtCreatedOn" xml:space="preserve">
+    <value>Created On</value>
+  </data>
+  <data name="txtDescription" xml:space="preserve">
+    <value>Description:</value>
+  </data>
+  <data name="txtEmptyFilter" xml:space="preserve">
+    <value>No data found !</value>
+  </data>
+  <data name="txtFilterValue" xml:space="preserve">
+    <value>Input value is invalid</value>
+  </data>
+  <data name="txtGroupHeader" xml:space="preserve">
+    <value>Group Management</value>
+  </data>
+  <data name="txtItems" xml:space="preserve">
+    <value>items</value>
+  </data>
+  <data name="txtName" xml:space="preserve">
+    <value>Name:</value>
+  </data>
+  <data name="txtOwner" xml:space="preserve">
+    <value>Owner</value>
+  </data>
+  <data name="txtPermissionActionAdd" xml:space="preserve">
+    <value>Add Permission</value>
+  </data>
+  <data name="txtPermissionActionEdit" xml:space="preserve">
+    <value>Edit Permission</value>
+  </data>
+  <data name="txtPermissionActionList" xml:space="preserve">
+    <value>Permission List</value>
+  </data>
+  <data name="txtPermissionHeader" xml:space="preserve">
+    <value>Permission Management</value>
+  </data>
+  <data name="txtPermissionName" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="txtReportActionAdd" xml:space="preserve">
+    <value>Add Report</value>
+  </data>
+  <data name="txtReportActionEdit" xml:space="preserve">
+    <value>Edit Report</value>
+  </data>
+  <data name="txtReportActionList" xml:space="preserve">
+    <value>Report List</value>
+  </data>
+  <data name="txtReportCategory" xml:space="preserve">
+    <value>Category:</value>
+  </data>
+  <data name="txtReportFromDate" xml:space="preserve">
+    <value>From Date:</value>
+  </data>
+  <data name="txtReportGroup" xml:space="preserve">
+    <value>Group:</value>
+  </data>
+  <data name="txtReportHeader" xml:space="preserve">
+    <value>Report Management</value>
+  </data>
+  <data name="txtReportPermission" xml:space="preserve">
+    <value>Permissions:</value>
+  </data>
+  <data name="txtReportToDate" xml:space="preserve">
+    <value>To Date:</value>
+  </data>
+  <data name="txtReportUrl" xml:space="preserve">
+    <value>Url:</value>
+  </data>
+  <data name="txtReportView" xml:space="preserve">
+    <value>Report Details:</value>
+  </data>
+  <data name="txtSearch" xml:space="preserve">
+    <value>Search</value>
+  </data>
+  <data name="txtShowItems" xml:space="preserve">
+    <value>Showing {0} to {1} of {2} items</value>
+  </data>
+  <data name="txtStatus" xml:space="preserve">
+    <value>Status:</value>
+  </data>
+  <data name="txtValidateDuplicationFilter" xml:space="preserve">
+    <value>Column is duplicated, please change it..!!</value>
+  </data>
+  <data name="Get_Option_List_Traffic_Light" xml:space="preserve">
+    <value>Get_Option_List_Traffic_Light</value>
+  </data>
+  <data name="msgOrganisationRole_Require" xml:space="preserve">
+    <value>You must select at least one organisation of one system</value>
+  </data>
+  <data name="msgExternalGroup_Require" xml:space="preserve">
+    <value>You must select at least one External Group</value>
+  </data>
+  <data name="msgLevelDuplicate" xml:space="preserve">
+    <value>This level is already exist</value>
+  </data>
+  <data name="Show_Bookmark" xml:space="preserve">
+    <value>Show bookmark</value>
+  </data>
+  <data name="Hide_Bookmark" xml:space="preserve">
+    <value>Hide bookmark</value>
+  </data>
+  <data name="Action_ImportExcel" xml:space="preserve">
+    <value>Import Excel</value>
+  </data>
+  <data name="msgProcessImportingData_Require" xml:space="preserve">
+    <value>You must process the importing data first.</value>
+  </data>
+  <data name="msgImportSuccess" xml:space="preserve">
+    <value>Imported successfully!</value>
+  </data>
+  <data name="Get_Portfolio_Param_ClaimLiabilityIndicators" xml:space="preserve">
+    <value>Get_Portfolio_Param_ClaimLiabilityIndicators</value>
+  </data>
+  <data name="Get_Portfolio_Param_ClaimOfficers" xml:space="preserve">
+    <value>Get_Portfolio_Param_ClaimOfficers</value>
+  </data>
+  <data name="Get_Portfolio_Param_SubValues" xml:space="preserve">
+    <value>Get_Portfolio_Param_SubValues</value>
+  </data>
+  <data name="Get_Portfolio_Param_Values" xml:space="preserve">
+    <value>Get_Portfolio_Param_Values</value>
+  </data>
+  <data name="Action_DeleteAll" xml:space="preserve">
+    <value>Delete all records in table</value>
+  </data>
+  <data name="msgInvalidDomainAccount" xml:space="preserve">
+    <value>This domain account was locked or the username/password provided is incorrect. Please try again or contact Service Desk for assistance.</value>
+  </data>
+  <data name="GetMaxRptDate" xml:space="preserve">
+    <value>Get Max Reporting Date</value>
+  </data>
+  <data name="GetUserNameByEmail" xml:space="preserve">
+    <value>GetUserNameByEmail</value>
+  </data>
+  <data name="Verify_URL_Reset_Password" xml:space="preserve">
+    <value>Verify_URL_Reset_Password</value>
+  </data>
+  <data name="Request_Reset_Password" xml:space="preserve">
+    <value>Request_Reset_Password</value>
+  </data>
+  <data name="Reset_Password" xml:space="preserve">
+    <value>Reset_Password</value>
+  </data>
+  <data name="Get_Option_Single_External_User_Permission" xml:space="preserve">
+    <value>External User Permission</value>
+  </data>
+  <data name="Get_Option_Single_Internal_User_Permission" xml:space="preserve">
+    <value>Internal User Permission</value>
+  </data>
+  <data name="Get_Option_List_External_User_Permission" xml:space="preserve">
+    <value>List of External User Permission</value>
+  </data>
+  <data name="Get_Option_List_Internal_User_Permission" xml:space="preserve">
+    <value>List of Internal User Permission</value>
+  </data>
+  <data name="msgInvalidResetPasswordRequest" xml:space="preserve">
+    <value>Please log into your email and click on the link</value>
+  </data>
+  <data name="Get_System_User_by_CronJob" xml:space="preserve">
+    <value>Get_System_User_by_CronJob</value>
+  </data>
+</root>

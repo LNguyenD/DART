@@ -1,0 +1,49 @@
+﻿@using EM_Report.Domain.Enums;
+@using EM_Report.Helpers;
+@model EM_Report.Domain.FileCabinet
+
+<div style="background-color: White; margin-top: 10px; height: 200px; overflow: auto;">
+    <table id="normalReport" class="tblPopup" cellspacing="0" cellpadding="0">
+        <thead>
+            <tr>
+                <td class="col_55">
+                    Dart reports
+                </td>
+                <td class="col_45">
+                    Created date
+                </td>
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model.NormalReports.Any())
+            {
+                foreach (var report in Model.NormalReports)
+                {
+                    <tr>
+                        <td>
+                            <a href="@report.Url">@report.Name</a>    
+                        </td>
+                        <td>@report.Create_Date
+                        </td>
+                    </tr>
+                }
+            }
+            else
+            {
+                <tr>
+                    <td colspan='2'>
+                        <span>No items</span>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+<br />
+@if (Base.LoginType == LoginType.Internal)
+{
+<div id="actuarialItems" style="background-color: White; margin-top: 10px; height: 200px; overflow: auto;">
+    @Html.Partial("ActuarialItems", Model.ReportFolders)
+</div>
+<br />
+}

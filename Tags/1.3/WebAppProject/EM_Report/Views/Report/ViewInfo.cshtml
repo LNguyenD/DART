@@ -1,0 +1,116 @@
+﻿@model EM_Report.Models.ReportModel
+
+@{
+    ViewBag.Title = "View Report";
+    Layout = "~/Views/Shared/_Master.cshtml";
+    ViewBag.Heading = "View Report";  
+}
+
+@using (Ajax.BeginForm("ViewInfo", new AjaxOptions { OnBegin = "showLoading", OnComplete = "hideLoading" }))
+{    
+    <div class="Wrapper">
+        @{
+    var url = "~/EMReports/Report.aspx?ReportPath=" + System.Web.HttpUtility.UrlEncode((string)(ViewBag.ReportPath));
+        }
+        @*@Html.Partial("_HackIE7") *@
+        <h4 id="rptName">Name: @ViewBag.ReportName</h4>
+        <input type="hidden" id="rptId" value="@ViewBag.ReportId"/>
+        <div class="">
+            <ul class="tabs">
+                <li><a href="#">Report Parameters</a></li>
+                <li><a href="#" id="lnkViewerTab">Report Viewer</a></li>
+                <li><a href="#" id="lnkSendMail">Send Mail</a></li>
+            </ul>
+        </div>
+        <div class="BoxContent">        
+            <div class="FormWrapper" id="wrapper">
+                @if (ViewBag.ErrorAccess != null && ViewBag.ErrorAccess != "")
+                {
+                    @Html.Raw(ViewBag.ErrorAccess);
+                }
+                else
+                {
+                <div class="panes">
+                    <div class="tab1" id="rpParamTab">
+                        <div id="ReportParameterFrame">
+                            @Html.Partial("ReportParameter", ((EM_Report.Models.ReportParameterModel)ViewBag.ReportParams))
+                        </div>
+                        <div class="LineWrapper SameLine">
+                            <span class="Button">
+                            <a class="SmallButton" href="#" id="btnViewReport" onclick="viewreport(); return false;">view report</a>
+                                
+                            </span>
+                        </div>
+                        <input id="ReportId" type="hidden" name="ReportId" value="@ViewBag.ReportId" />
+                        @Html.Hidden("ReportParameterValue", "")
+                    </div>
+                    <div class="tab2 Hide" id="rpViewerTab">
+                        <iframe id="ifReport" runat="server" src="@Url.Content(@url)" width="100%" style="border: none; min-height: 610px; margin-bottom: 50px;" scrolling="no"></iframe>                    
+                    </div>
+                    <div class="tab3 Hide" id="sendMailTab">
+                        @Html.Partial("SendMail")
+                    </div>
+                </div>
+                }
+            </div>
+            <div class="CommandWrapper">
+                <a class="ButtonBack" href="@Url.Action("index", "report")">Back to report list</a>
+            </div>
+        </div>  
+    </div>
+    <div id="msgSuccess"></div>
+}
+<div id="searchPolicy" class="Overlay"></div>
+<div id="searchPaymentType" class="Overlay"></div>
+<div id="searchCreditor" class="Overlay"></div>
+<div id="searchBroker" class="Overlay"></div>
+<div id="searchProvider" class="Overlay"></div>
+<div id="sendMailLoadingReport" class="Overlay" style="width: 565px;"></div>
+
+<script type="text/javascript" language="javascript">    
+    // perform JavaScript after the document is scriptable.
+    $(document).ready(function () {
+        // setup ul.tabs to work as tabs for each div directly under div.panes
+        $("ul.tabs").tabs("div.panes > div", function (event, index) {
+            if (index == 1) { //report viewer tab
+                $("#rpViewerTab").toggleClass("Hide Show");
+                $("#sendMailTab").removeClass("Hide Show");
+                $("#sendMailTab").addClass("Hide");
+                $("#wrapper").addClass("ViewReport");
+
+                if ($.browser.msie && parseInt($.browser.version, 10) === 7) {
+                    $("#ifReport").show();
+                }
+            } else if (index == 2) {
+                $("#rpViewerTab").removeClass("Hide Show");
+                $("#rpViewerTab").addClass("Hide");
+                $("#sendMailTab").toggleClass("Hide Show");
+                $("#wrapper").removeClass("ViewReport");
+
+                if ($.browser.msie && parseInt($.browser.version, 10) === 7) {
+                    $("#ifReport").hide();
+                }
+            } else {
+                $("#rpViewerTab").removeClass("Hide Show");
+                $("#rpViewerTab").addClass("Hide");
+                $("#sendMailTab").removeClass("Hide Show");
+                $("#sendMailTab").addClass("Hide");
+                $("#wrapper").removeClass("ViewReport");
+
+                if ($.browser.msie && parseInt($.browser.version, 10) === 7) {
+                    $("#ifReport").hide();
+                }
+            }
+
+        });
+        //create dialog - overlay
+        CreateOverlay("#searchPolicy");
+        CreateOverlay("#searchPaymentType");
+        CreateOverlay("#searchCreditor");
+        CreateOverlay("#searchBroker");
+        CreateOverlay("#searchProvider");
+        CreateOverlay("#sendMailLoadingReport");
+        
+    });
+        
+</script>

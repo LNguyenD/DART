@@ -1,0 +1,136 @@
+﻿@using EM_Report.Helpers;
+@using EM_Report.Common.Utilities;
+
+@if (!Request.IsAjaxRequest() || (Request.IsAjaxRequest() && !Base.LoginSession.isSystemUser))
+{
+    <ul id="dock">  
+                                                                                                     
+        @{ var lstSystems = Base.LoginSession.lstSystems == null ? new List<EM_Report.Domain.Systems>() : Base.LoginSession.lstSystems.ToList(); }
+        @if (Base.LoginSession.isSystemUser && Login.AuthorizeSystemPermission(ResourcesHelper.System_Report, ResourcesHelper.Permission_Add))
+        {
+        <li class="navReports">Reports
+            <ul class="free">
+                @{
+                    foreach (var system in lstSystems)
+                    {
+                    <li><a><span>@(system.Name == "EML" ? "WCNSW" : system.Name == "HEM" ? "Hospitality" : system.Name)</span></a>
+                        <ul class="SubNav">
+                            <li><a href="@Base.AbsoluteUrl("~/report/category")" class="NavFirstItem">
+                                Report category</a></li>
+                            <li><a href="@Base.AbsoluteUrl("~/report?systemid=" + system.SystemId)">
+                                Report list</a></li>                           
+                            @if (Login.AuthorizeSystemPermission(ResourcesHelper.System_Report, ResourcesHelper.Permission_Add))
+                            {
+                                <li><a href="@Base.AbsoluteUrl("~/report/details?systemid=" + system.SystemId)" class="NavLastItem">
+                                    Add report</a></li>
+                            }
+                        </ul>
+                    </li>
+                    }
+                }
+            </ul>
+        </li>
+        }
+        <li class="navDashboard">Dashboard
+            <ul class="free">
+                @{
+                    foreach (var system in lstSystems)
+                    {
+                    <li><a><span>@(system.Name == "EML" ? "WCNSW" : system.Name == "HEM" ? "Hospitality" : system.Name)</span></a>
+                        <ul class="SubNav">
+                            <li><a href="@Base.AbsoluteUrl("~/dashboard/level1?reportpath=/emreporting/reports/" + @system.Name + "_Level1")" class="NavFirstItem">
+                                View dashboard</a></li>
+                            @if (Base.LoginSession.isSystemUser && Login.AuthorizeSystemPermission(ResourcesHelper.System_Dashboard, ResourcesHelper.Permission_Update))
+                            {
+                                <li><a href="@Base.AbsoluteUrl("~/dashboard?systemid=" + system.SystemId)">
+                                    Dashboard list</a></li>
+                                <li><a href="@Base.AbsoluteUrl("~/dashboard/details?systemid=" + system.SystemId)">
+                                    Add dashboard</a></li>
+                                <li><a href="@Base.AbsoluteUrl("~/dashboardlevel")" class="NavLastItem">
+                                    Dashboard level list</a></li>
+                                <li><a href="@Base.AbsoluteUrl("~/dashboardlevel/details")">Add dashboard
+                                    level</a></li>
+                                <li><a href="@Base.AbsoluteUrl("~/dashboard_graph_description?systemid=" + system.SystemId)">
+                                    Graph description list</a></li>
+                                <li><a href="@Base.AbsoluteUrl("~/dashboard_projection?systemid=" + system.SystemId)">
+                                    Projection list</a></li>
+                                <li><a href="@Base.AbsoluteUrl("~/dashboard_traffic_light_rules?systemid=" + system.SystemId)">
+                                    Metric light list</a></li>
+                                <li><a href="@Base.AbsoluteUrl("~/dashboard_target_base?systemid=" + system.SystemId)">
+                                    Target base list</a></li>
+                            }
+                        </ul>
+                    </li>
+                    }
+                }
+            </ul>
+        </li>
+        @if (!Base.LoginSession.isExternal && Login.AuthorizeSystemPermission(ResourcesHelper.System_User, ResourcesHelper.Permission_View))
+        {
+            <li class="navUsers">Users management
+                <ul class="free">
+                    @{
+                        foreach (var system in lstSystems)
+                        {
+                            <li><a><span>@(system.Name == "EML" ? "WCNSW" : system.Name == "HEM" ? "Hospitality" : system.Name)</span></a>
+                                <ul class="SubNav">
+                                    @if (!Base.LoginSession.isExternal && Login.AuthorizeSystemPermission(ResourcesHelper.System_User, ResourcesHelper.Permission_View))
+                                    {
+                                        <li><a href="@Base.AbsoluteUrl("~/user?systemid=" + system.SystemId)">User
+                                            list</a></li>
+                                    }
+                                    @if (!Base.LoginSession.isExternal && Login.AuthorizeSystemPermission(ResourcesHelper.System_User, ResourcesHelper.Permission_Add))
+                                    {
+                                        <li><a href="@Base.AbsoluteUrl("~/user/details?systemid=" + system.SystemId)" class="NavLastItem">Add
+                                            user</a></li>
+                                    }
+                                </ul>
+                            </li>
+                        }
+                    }
+                </ul>
+            </li>
+        }
+        @if (!Base.LoginSession.isExternal && Login.AuthorizeSystemPermission(ResourcesHelper.System_Role, ResourcesHelper.Permission_View))
+        {
+            <li class="navPermission">Permission
+                <ul class="free">
+                    @if (!Base.LoginSession.isExternal && Login.AuthorizeSystemPermission(ResourcesHelper.System_Role, ResourcesHelper.Permission_View))
+                    {
+                        <li><a href="@Base.AbsoluteUrl("~/systemrole")">System role list</a></li>
+                    }
+                    @if (!Base.LoginSession.isExternal && Login.AuthorizeSystemPermission(ResourcesHelper.System_Role, ResourcesHelper.Permission_Add))
+                    {
+                        <li><a href="@Base.AbsoluteUrl("~/systemrole/details")" class="NavLastItem">
+                            Add system role</a></li>
+                    }
+                </ul>
+            </li>
+        }
+        @if (!Base.LoginSession.isExternal && Login.AuthorizeSystemPermission(ResourcesHelper.System_Group, ResourcesHelper.Permission_View))
+        {
+            <li class="navGroup">Group management
+                <ul class="free">
+                    @{
+            foreach (var system in lstSystems)
+            {
+                        <li><a><span>@(system.Name == "EML" ? "WCNSW" : system.Name == "HEM" ? "Hospitality" : system.Name)</span></a>
+                            <ul class="SubNav">
+                                @if (!Base.LoginSession.isExternal && Login.AuthorizeSystemPermission(ResourcesHelper.System_Group, ResourcesHelper.Permission_View))
+                                {
+                                    <li><a href="@Base.AbsoluteUrl("~/organisation_level?systemid=" + system.SystemId)">
+                                        Organisation level list</a></li>
+                                    <li><a href="@Base.AbsoluteUrl("~/external")">External group list</a></li>
+                                    <li><a href="@Base.AbsoluteUrl("~/team?systemid=" + system.SystemId)" class="NavLastItem">
+                                        Team list</a></li>
+                                }
+                            </ul>
+                        </li>
+            }
+                    }
+                </ul>
+            </li>
+        }
+        <li class="navHelp" onclick="location.href='@Base.GetConfig("HelpFile")'">Help</li>
+    </ul>
+}

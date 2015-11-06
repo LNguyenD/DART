@@ -1,0 +1,62 @@
+﻿@model EM_Report.Models.AddressBookModel
+@using EM_Report.BLL.Commons;           
+@using EM_Report.Helpers;
+@using EM_Report.Models;
+@{
+	ViewBag.Title = "Contacts";
+	Layout = Request.IsAjaxRequest() ? null : "~/Views/Shared/_Layout.cshtml";
+}
+@functions {  
+	public bool IsNew()
+	{
+		return (Model != null && Model.Id > 0) ? false : true;
+	}
+
+	public string AddButtonText()
+	{
+		return IsNew() ? "add" : "save";
+	}
+}
+<script src="@Url.Content("~/scripts/jsReport.js")" type="text/javascript"></script>
+<div class="column full ui-sortable">
+	<div class="box">
+		<h2 class="box-header">report > @(IsNew()?"add contact":"edit contact")</h2>
+		<div class="box-content">
+			@using (Html.BeginForm())
+			{
+				<div class="left-form-col">
+					@Html.Hidden("action")
+					@Html.HiddenFor(e => e.Id)
+					@Html.HiddenFor(e => e.UserId)
+					@Html.Partial("_ShowMessage")      
+					<label class="form-label">first name</label>
+					@Html.TextBoxFor(e => e.FirstName, new { id = "txtFirstName", @class = "form-field half" })
+					<label class="form-label">middle name</label>
+					@Html.TextBoxFor(e => e.MiddleName, new { id = "txtMiddleName", @class = "form-field half" })
+					<label class="form-label">last name</label>
+					@Html.TextBoxFor(e => e.LastName, new { id = "txtLastName", @class = "form-field half" })
+					<label class="form-label">email</label>
+					@Html.TextBoxFor(e => e.Email, new { id = "txtEmail", @class = "form-field half" })
+					@Html.ValidationMessageFor(m => m.Email)     
+					<label class="form-label">business phone</label>
+					@Html.TextBoxFor(e => e.BusinessPhone, new { id = "txtBusinessPhone", @class = "form-field half" })
+					<label class="form-label">home phone</label>
+					@Html.TextBoxFor(e => e.HomePhone, new { id = "txtHomePhone", @class = "form-field half" })
+					<label class="form-label">mobile phone</label>
+					@Html.TextBoxFor(e => e.MobilePhone, new { id = "txtMobilePhone", @class = "form-field half" })
+					<br />
+				</div>
+
+				<div class="clear"></div>
+				<hr />
+				<a id="btnSave" class="button white" onclick="actionClick('save', false);"><span class="icon_text save"></span>@AddButtonText()</a>
+				<a href="@Url.Action("index", "addressbook")" class="button white"><span class="icon_text back"></span>back to list</a>
+				if (!IsNew())
+				{
+					<a id="btnDelete" class="button white" onclick="actionClick('delete', false);"><span class="icon_text cancel"></span>Remove</a>
+				}
+				<div class="clear"></div>
+			}
+		</div>
+	</div>
+</div>

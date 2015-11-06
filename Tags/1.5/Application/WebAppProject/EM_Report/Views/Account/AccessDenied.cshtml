@@ -1,0 +1,17 @@
+﻿@using EM_Report.Domain.Resources;
+@using EM_Report.Helpers;
+@{    
+    ViewBag.Title = "Access Denied";
+    Layout = Request.IsAjaxRequest() ? null : (Base.LoginSession == null ? "~/Views/Shared/_MasterWithoutLogin.cshtml" : "~/Views/Shared/_Master.cshtml");
+}
+<div class="wrapper">
+    <div class="container">
+    	<div class="w_100p">
+            <div class="formWrap">
+            	<h1>Access Denied</h1>
+                <hr /><br />
+                <p>@Resource.msgAcessdenied</p>
+            </div>
+        </div>
+    </div>
+</div>

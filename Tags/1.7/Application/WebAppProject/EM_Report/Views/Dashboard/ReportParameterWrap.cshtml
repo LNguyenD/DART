@@ -1,0 +1,31 @@
+﻿@using EM_Report.SSRS;
+
+@Html.Hidden("ReportParameterData", (string)ViewBag.ReportParameterData)
+<div class="portfolioParameterSection" style="width: 97.5%; margin: 0px">
+    <div style="margin: 15px">
+        <div style="border-bottom: 1px solid #E1E1E1; height: 30px">
+            <a style="cursor: pointer;" class="show">Hide Parameter List</a>
+        </div>
+        <div>
+            <div class="showOrg" style="margin-top: 10px">
+                <div id="ReportParameterSection">
+                    @Html.Partial("ReportParameter", (ItemParameter)ViewBag.ReportParams)
+                </div>
+            </div>
+            <div class="clear">
+            </div>
+        </div>
+
+        <div style="border-bottom: 1px solid #E1E1E1; margin-top: 8px; height: 1px"></div>
+        <div class="clear">
+        </div>
+        <div style="float: left; margin-top: 15px">
+            <span class="btnPurple">
+                <input type="button" value="View report" onclick="reloadReport()" />
+            </span>
+        </div>
+        <div class="clear">
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,1120 @@
+﻿
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <title>User</title>
+
+    <link rel="shortcut icon" href="images/EML/favicon.ico" />
+       
+    <link href="css/main.css" rel="stylesheet" type="text/css" />    
+
+    <script src="scripts/jquery-1.7.2.min.js" type="text/javascript"></script>
+
+    <script src="scripts/jquery-v1.2.7.tools.min.js" type="text/javascript"></script>
+
+    <script src="scripts/jquery.validate.min.js" type="text/javascript"></script>
+
+    <script src="scripts/jquery.validate.unobtrusive.min.js" type="text/javascript"></script>      
+
+    <script type="text/javascript" src="scripts/jquery.unobtrusive-ajax.min.js"></script>
+
+    <script language="javascript" type="text/javascript" src="scripts/MicrosoftAjax.js"></script>
+
+    <script language="javascript" type="text/javascript" src="scripts/MicrosoftMvcAjax.js"></script>
+
+    <script src="scripts/jquery-ui-1.8.16.custom.min.js" type="text/javascript"></script>
+
+    <script src="scripts/jquery.ui.dialog.js" type="text/javascript"></script>    
+
+          
+
+    <!-- <script type="text/javascript" src="Scripts\menu.js"></script> -->
+    <!-- Menu  -->
+    <script type='text/javascript' src='Scripts/jquery.hoverIntent.minified.js'></script>
+    <script type='text/javascript' src='Scripts/jquery.dcjqaccordion.2.7.min.js'></script>
+	<script type='text/javascript' src='Scripts/jquery.cookie.js'></script>
+    <script type="text/javascript">
+    $(document).ready(function($){		
+		$('#mainNav').dcAccordion({
+			eventType: 'hover',
+			autoClose: true,
+			saveState: true,
+			disableLink: true,
+			menuClose: true,
+			speed: 'fast',
+			showCount: false
+		});
+  	});
+    </script>
+    <!-- Menu  -->
+
+    <script src="scripts/iMain.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+        window.g_baseUrl = '/';
+        window.g_baseUrl = window.g_baseUrl.substring(0, window.g_baseUrl.length - 1);
+
+</script>      
+
+</head>
+
+<body>
+
+    <div id="main">
+
+        <div id="header">
+
+            <ul class="HeaderMenu">
+
+                <li class="LastItem"><a href="/account/changepassword">Change password</a></li>
+
+                <li><a href="/account/login?logout=true">Log out</a></li>
+
+                <li>Last login on Mon May 21 st, 2012 at 05:17 PM</li>
+
+                <li>Hello: admin</li>
+
+            </ul>
+
+            <div id="logo">
+
+                <h1>Employer Mutual</h1>
+
+            </div>
+
+            <div class="HdBox"><h3>User &gt;&gt; User list</h3></div>
+
+        </div>
+
+        <div class="Divider"></div>
+
+        <div class="Container">
+
+            <div id="navigation">
+
+    <ul id="mainNav">                   
+
+        <li>
+
+            <a href="/report" title="Report management"><img src="images/eml/report-icon.png" alt="Report management" width="40px" height="50px" /><span>Report management</span></a>
+
+            <ul class="SubNav">
+
+                <li><a href="/report/category" class="NavFirstItem">Report category</a></li>
+
+                <li><a href="/report">Report list</a></li>
+
+                <li><a href="/subscription">Report subscription</a></li>
+
+                <li><a href="/report/details" class="NavLastItem">Add Report</a></li>
+
+            </ul>
+
+        </li>
+
+        <li>
+
+            <a href="/user" title="User management"><img src="images/eml/user-icon.png" alt="User management" width="40px" height="50px" /><span>User management</span></a>
+
+            <ul class="SubNav">
+
+                <li><a href="/user">user list</a></li>
+
+                <li><a href="/user/details" class="NavLastItem">user add</a></li>
+
+            </ul>
+
+        </li>
+
+        <li>
+
+            <a href="/systemrole" title="Permission management"><img src="images/eml/role-icon.png" alt="Permission management" width="40px" height="50px"/><span>Permission management</span></a>
+
+            <ul class="SubNav">
+
+                <li><a href="/systemrole">system role list</a></li>
+
+                <li><a href="/systemrole/details" class="NavLastItem">add system role</a></li>
+
+            </ul>
+
+        </li>
+
+        <li>
+
+            <a href="/organisation_level" title="Group management"><img src="images/eml/group-icon.png" alt="Group management" width="40px" height="50px"/><span>Group management</span></a>
+
+            <ul class="SubNav">
+
+                <li><a href="/organisation_level">organisation level list</a></li>
+
+                <li><a href="/external">external group list</a></li>
+
+                <li><a href="/team" class="NavLastItem">team list</a></li>
+
+            </ul>
+
+        </li>
+
+        <li><a href="/audittrail" title="Audit Trail"><img src="images/eml/group-icon.png" alt="Audit Trail" width="40px" height="50px"/><span>Audit Trail</span></a></li>
+
+        <li><a href="/addressbook" title="Address Book"><img src="images/eml/group-icon.png" alt="Address Book" width="40px" height="50px"/><span>Address Book</span></a></li>                   
+
+    </ul>
+
+    <ul id="secondNav" style="display: none">
+
+        <li>
+
+            <a href="#" title="report categories"><img src="images/eml/group-icon.png" alt="report categories" width="40px" height="50px"/><span>report cateagories</span></a>
+
+            <ul class="SubNav">
+
+                <li><a href="#">cateogories 1</a></li>
+
+                <li><a href="#">cateogories 2</a></li>
+
+                <li><a href="#" class="NavLastItem">cateogories 3</a></li>
+
+            </ul>
+
+        </li>
+
+        <li>
+
+            <a href="#" title="report categories"><img src="images/eml/group-icon.png" alt="report categories" width="40px" height="50px"/><span>report cateagories</span></a>
+
+            <ul class="SubNav">
+
+                <li><a href="#">cateogories 1</a></li>
+
+                <li><a href="#">cateogories 2</a></li>
+
+                <li><a href="#" class="NavLastItem">cateogories 3</a></li>
+
+            </ul>
+
+        </li>
+
+        <li>
+
+            <a href="#" title="report categories"><img src="images/eml/group-icon.png" alt="report categories" width="40px" height="50px"/><span>report cateagories</span></a>
+
+            <ul class="SubNav">
+
+                <li><a href="#">cateogories 1</a></li>
+
+                <li><a href="#">cateogories 2</a></li>
+
+                <li><a href="#" class="NavLastItem">cateogories 3</a></li>
+
+            </ul>
+
+        </li>
+
+    </ul>
+
+</div>
+
+    
+
+            <div id="content">
+
+                <div class="Wrapper">
+
+<form action="/user" data-ajax="true" data-ajax-begin="showLoading" data-ajax-complete="hideLoading" data-ajax-mode="replace" data-ajax-update="#content" id="form0" method="post">        <script src="scripts/iReport.js" type="text/javascript"></script>
+
+        <link href="/report.css" rel="stylesheet" type="text/css" />    
+
+        <div class="BoxHeader">
+
+        <div class="DisplayEntry">
+
+            <div><label>Show </label>&nbsp;</div>
+
+            <div class="WrapperSelectBox">   
+
+                <select id="cboDisplayEntry" name="cboDisplayEntry"><option selected="selected">10</option>
+
+<option>20</option>
+
+<option>50</option>
+
+</select> items                
+
+            </div>
+
+            <div>&nbsp;&nbsp;<label>items</label>
+
+            </div>
+
+        </div>
+
+        <div class="SearchBox">                                              
+
+            
+
+            <div class="SearchInput">
+
+                &nbsp;&nbsp;<label>Search: </label><input type="text" id="txtInput" name="search_input" value="" />                             
+
+                    <input id="btnSearch" type="image" title="Search" src="images/eml/btnSearch.png" />
+
+            </div>                 
+
+        </div>
+
+    </div>
+
+        <div class="BoxContent" style="border: 1px solid #C8C8C8;">
+
+            <table id="tbGrid" name="tbGrid" style="width:100%;">           
+
+                <tr><td colspan="3" style="height:30px;"></td></tr>
+
+                            <tr style="margin-bottom:50px;">
+
+                                                <td style="width:33.3%" valign="top">
+
+                                                    <table style="border:0;width:100%">
+
+                                                        <tr>
+
+                                                            <td valign="top" style="width:10%">
+
+                                                                <table style="border:0;" >
+
+                                                                    <tr>
+
+                                                                        <td align="center"><input type="image" src="images/eml/no-avatar.png" /></td>
+
+                                                                    </tr>
+
+                                                                    <tr>
+
+                                                                        <td align="center"><input type="checkbox" name="chkItem" value="1" /></td>
+
+                                                                    </tr>
+
+                                                                </table>
+
+                                                            </td>
+
+                                                            <td  valign="top" style="width:90%;vertical-align: top;">
+
+                                                                <table  style="border:0;width:100%" id="tbWrapper_User" >
+
+                                                                    <tr>
+
+                                                                        <td><b>Arnold Acosta</b></td>
+
+                                                                    </tr>
+
+                                                                    <tr>
+
+                                                                        <td><b>User Name:</b> <a href="/user/details/1"><strong>AA5</strong></a></td>
+
+                                                                    </tr>
+
+                                                                    <tr>
+
+                                                                        <td><b>Email:</b> A.Acosta@employersmutual.com.au</td>
+
+                                                                    </tr>
+
+                                                                    <tr>
+
+                                                                        <td><b>Phone:</b> </td>
+
+                                                                    </tr>
+
+                                                                    <tr>
+
+                                                                        <td><b>User Type:</b> Report</td>
+
+                                                                    </tr>
+
+                                                                    <tr>
+
+                                                                        <td><b>Status:</b> Active</td>
+
+                                                                    </tr>
+
+                                                                </table>
+
+                                                            </td>
+
+                                                        </tr>
+
+                                                    </table>
+
+                                                </td>                                                
+
+                                                <td style="width:33.3%" valign="top">
+
+                                                    <table style="border:0;width:100%">
+
+                                                        <tr>
+
+                                                            <td valign="top" style="width:10%">
+
+                                                                <table style="border:0;" >
+
+                                                                    <tr>
+
+                                                                        <td align="center"><input type="image" src="images/eml/no-avatar.png" /></td>
+
+                                                                    </tr>
+
+                                                                    <tr>
+
+                                                                        <td align="center"><input type="checkbox" name="chkItem" value="2" /></td>
+
+                                                                    </tr>
+
+                                                                </table>
+
+                                                            </td>
+
+                                                            <td  valign="top" style="width:90%;vertical-align: top;">
+
+                                                                <table  style="border:0;width:100%" id="tbWrapper_User" >
+
+                                                                    <tr>
+
+                                                                        <td><b>Antonia Simone</b></td>
+
+                                                                    </tr>
+
+                                                                    <tr>
+
+                                                                        <td><b>User Name:</b> <a href="/user/details/2"><strong>AA6</strong></a></td>
+
+                                                                    </tr>
+
+                                                                    <tr>
+
+                                                                        <td><b>Email:</b> A.Simone@employersmutual.com.au</td>
+
+                                                                    </tr>
+
+                                                                    <tr>
+
+                                                                        <td><b>Phone:</b> </td>
+
+                                                                    </tr>
+
+                                                                    <tr>
+
+                                                                        <td><b>User Type:</b> Report</td>
+
+                                                                    </tr>
+
+                                                                    <tr>
+
+                                                                        <td><b>Status:</b> Active</td>
+
+                                                                    </tr>
+
+                                                                </table>
+
+                                                            </td>
+
+                                                        </tr>
+
+                                                    </table>
+
+                                                </td>                                                
+
+                                                <td style="width:33.3%" valign="top">
+
+                                                    <table style="border:0;width:100%">
+
+                                                        <tr>
+
+                                                            <td valign="top" style="width:10%">
+
+                                                                <table style="border:0;" >
+
+                                                                    <tr>
+
+                                                                        <td align="center"><input type="image" src="images/eml/no-avatar.png" /></td>
+
+                                                                    </tr>
+
+                                                                    <tr>
+
+                                                                        <td align="center"><input type="checkbox" name="chkItem" value="3" /></td>
+
+                                                                    </tr>
+
+                                                                </table>
+
+                                                            </td>
+
+                                                            <td  valign="top" style="width:90%;vertical-align: top;">
+
+                                                                <table  style="border:0;width:100%" id="tbWrapper_User" >
+
+                                                                    <tr>
+
+                                                                        <td><b>Alicia Bottin</b></td>
+
+                                                                    </tr>
+
+                                                                    <tr>
+
+                                                                        <td><b>User Name:</b> <a href="/user/details/3"><strong>AAB</strong></a></td>
+
+                                                                    </tr>
+
+                                                                    <tr>
+
+                                                                        <td><b>Email:</b> A.Bottin@employersmutual.com.au</td>
+
+                                                                    </tr>
+
+                                                                    <tr>
+
+                                                                        <td><b>Phone:</b> 0249690266</td>
+
+                                                                    </tr>
+
+                                                                    <tr>
+
+                                                                        <td><b>User Type:</b> Report</td>
+
+                                                                    </tr>
+
+                                                                    <tr>
+
+                                                                        <td><b>Status:</b> Active</td>
+
+                                                                    </tr>
+
+                                                                </table>
+
+                                                            </td>
+
+                                                        </tr>
+
+                                                    </table>
+
+                                                </td>                                                
+
+                            </tr>
+
+                            <tr><td colspan="3" style="height:30px;"></td></tr>
+
+                            <tr style="margin-bottom:50px;">
+
+                                                <td style="width:33.3%" valign="top">
+
+                                                    <table style="border:0;width:100%">
+
+                                                        <tr>
+
+                                                            <td valign="top" style="width:10%">
+
+                                                                <table style="border:0;" >
+
+                                                                    <tr>
+
+                                                                        <td align="center"><input type="image" src="images/eml/no-avatar.png" /></td>
+
+                                                                    </tr>
+
+                                                                    <tr>
+
+                                                                        <td align="center"><input type="checkbox" name="chkItem" value="4" /></td>
+
+                                                                    </tr>
+
+                                                                </table>
+
+                                                            </td>
+
+                                                            <td  valign="top" style="width:90%;vertical-align: top;">
+
+                                                                <table  style="border:0;width:100%" id="tbWrapper_User" >
+
+                                                                    <tr>
+
+                                                                        <td><b>Alma Begic</b></td>
+
+                                                                    </tr>
+
+                                                                    <tr>
+
+                                                                        <td><b>User Name:</b> <a href="/user/details/4"><strong>AB3</strong></a></td>
+
+                                                                    </tr>
+
+                                                                    <tr>
+
+                                                                        <td><b>Email:</b> A.Begic@employersmutual.com.au</td>
+
+                                                                    </tr>
+
+                                                                    <tr>
+
+                                                                        <td><b>Phone:</b> 0282519149</td>
+
+                                                                    </tr>
+
+                                                                    <tr>
+
+                                                                        <td><b>User Type:</b> Report</td>
+
+                                                                    </tr>
+
+                                                                    <tr>
+
+                                                                        <td><b>Status:</b> Active</td>
+
+                                                                    </tr>
+
+                                                                </table>
+
+                                                            </td>
+
+                                                        </tr>
+
+                                                    </table>
+
+                                                </td>                                                
+
+                                                <td style="width:33.3%" valign="top">
+
+                                                    <table style="border:0;width:100%">
+
+                                                        <tr>
+
+                                                            <td valign="top" style="width:10%">
+
+                                                                <table style="border:0;" >
+
+                                                                    <tr>
+
+                                                                        <td align="center"><input type="image" src="images/eml/no-avatar.png" /></td>
+
+                                                                    </tr>
+
+                                                                    <tr>
+
+                                                                        <td align="center"><input type="checkbox" name="chkItem" value="5" /></td>
+
+                                                                    </tr>
+
+                                                                </table>
+
+                                                            </td>
+
+                                                            <td  valign="top" style="width:90%;vertical-align: top;">
+
+                                                                <table  style="border:0;width:100%" id="tbWrapper_User" >
+
+                                                                    <tr>
+
+                                                                        <td><b>Abby Bakon</b></td>
+
+                                                                    </tr>
+
+                                                                    <tr>
+
+                                                                        <td><b>User Name:</b> <a href="/user/details/5"><strong>AB8</strong></a></td>
+
+                                                                    </tr>
+
+                                                                    <tr>
+
+                                                                        <td><b>Email:</b> A.Bakon@employersmutual.com.au</td>
+
+                                                                    </tr>
+
+                                                                    <tr>
+
+                                                                        <td><b>Phone:</b> </td>
+
+                                                                    </tr>
+
+                                                                    <tr>
+
+                                                                        <td><b>User Type:</b> Report</td>
+
+                                                                    </tr>
+
+                                                                    <tr>
+
+                                                                        <td><b>Status:</b> Inactive</td>
+
+                                                                    </tr>
+
+                                                                </table>
+
+                                                            </td>
+
+                                                        </tr>
+
+                                                    </table>
+
+                                                </td>                                                
+
+                                                <td style="width:33.3%" valign="top">
+
+                                                    <table style="border:0;width:100%">
+
+                                                        <tr>
+
+                                                            <td valign="top" style="width:10%">
+
+                                                                <table style="border:0;" >
+
+                                                                    <tr>
+
+                                                                        <td align="center"><input type="image" src="images/eml/no-avatar.png" /></td>
+
+                                                                    </tr>
+
+                                                                    <tr>
+
+                                                                        <td align="center"><input type="checkbox" name="chkItem" value="6" /></td>
+
+                                                                    </tr>
+
+                                                                </table>
+
+                                                            </td>
+
+                                                            <td  valign="top" style="width:90%;vertical-align: top;">
+
+                                                                <table  style="border:0;width:100%" id="tbWrapper_User" >
+
+                                                                    <tr>
+
+                                                                        <td><b>Ashlea Benson</b></td>
+
+                                                                    </tr>
+
+                                                                    <tr>
+
+                                                                        <td><b>User Name:</b> <a href="/user/details/6"><strong>ABA</strong></a></td>
+
+                                                                    </tr>
+
+                                                                    <tr>
+
+                                                                        <td><b>Email:</b> A.Benson@employersmutual.com.au</td>
+
+                                                                    </tr>
+
+                                                                    <tr>
+
+                                                                        <td><b>Phone:</b> </td>
+
+                                                                    </tr>
+
+                                                                    <tr>
+
+                                                                        <td><b>User Type:</b> Report</td>
+
+                                                                    </tr>
+
+                                                                    <tr>
+
+                                                                        <td><b>Status:</b> Active</td>
+
+                                                                    </tr>
+
+                                                                </table>
+
+                                                            </td>
+
+                                                        </tr>
+
+                                                    </table>
+
+                                                </td>                                                
+
+                            </tr>
+
+                            <tr><td colspan="3" style="height:30px;"></td></tr>
+
+                            <tr style="margin-bottom:50px;">
+
+                                                <td style="width:33.3%" valign="top">
+
+                                                    <table style="border:0;width:100%">
+
+                                                        <tr>
+
+                                                            <td valign="top" style="width:10%">
+
+                                                                <table style="border:0;" >
+
+                                                                    <tr>
+
+                                                                        <td align="center"><input type="image" src="images/eml/no-avatar.png" /></td>
+
+                                                                    </tr>
+
+                                                                    <tr>
+
+                                                                        <td align="center"><input type="checkbox" name="chkItem" value="7" /></td>
+
+                                                                    </tr>
+
+                                                                </table>
+
+                                                            </td>
+
+                                                            <td  valign="top" style="width:90%;vertical-align: top;">
+
+                                                                <table  style="border:0;width:100%" id="tbWrapper_User" >
+
+                                                                    <tr>
+
+                                                                        <td><b>Allan Coombes</b></td>
+
+                                                                    </tr>
+
+                                                                    <tr>
+
+                                                                        <td><b>User Name:</b> <a href="/user/details/7"><strong>AC5</strong></a></td>
+
+                                                                    </tr>
+
+                                                                    <tr>
+
+                                                                        <td><b>Email:</b> A.Coombes@employersmutual.com.au</td>
+
+                                                                    </tr>
+
+                                                                    <tr>
+
+                                                                        <td><b>Phone:</b> (02) 8251 9145</td>
+
+                                                                    </tr>
+
+                                                                    <tr>
+
+                                                                        <td><b>User Type:</b> Report</td>
+
+                                                                    </tr>
+
+                                                                    <tr>
+
+                                                                        <td><b>Status:</b> Active</td>
+
+                                                                    </tr>
+
+                                                                </table>
+
+                                                            </td>
+
+                                                        </tr>
+
+                                                    </table>
+
+                                                </td>                                                
+
+                                                <td style="width:33.3%" valign="top">
+
+                                                    <table style="border:0;width:100%">
+
+                                                        <tr>
+
+                                                            <td valign="top" style="width:10%">
+
+                                                                <table style="border:0;" >
+
+                                                                    <tr>
+
+                                                                        <td align="center"><input type="image" src="images/eml/no-avatar.png" /></td>
+
+                                                                    </tr>
+
+                                                                    <tr>
+
+                                                                        <td align="center"><input type="checkbox" name="chkItem" value="8" /></td>
+
+                                                                    </tr>
+
+                                                                </table>
+
+                                                            </td>
+
+                                                            <td  valign="top" style="width:90%;vertical-align: top;">
+
+                                                                <table  style="border:0;width:100%" id="tbWrapper_User" >
+
+                                                                    <tr>
+
+                                                                        <td><b>Abhishek Chaudhary</b></td>
+
+                                                                    </tr>
+
+                                                                    <tr>
+
+                                                                        <td><b>User Name:</b> <a href="/user/details/8"><strong>AC7</strong></a></td>
+
+                                                                    </tr>
+
+                                                                    <tr>
+
+                                                                        <td><b>Email:</b> A.Chaudhary@employersmutual.com.au</td>
+
+                                                                    </tr>
+
+                                                                    <tr>
+
+                                                                        <td><b>Phone:</b> 02 8251 9849</td>
+
+                                                                    </tr>
+
+                                                                    <tr>
+
+                                                                        <td><b>User Type:</b> Report</td>
+
+                                                                    </tr>
+
+                                                                    <tr>
+
+                                                                        <td><b>Status:</b> Active</td>
+
+                                                                    </tr>
+
+                                                                </table>
+
+                                                            </td>
+
+                                                        </tr>
+
+                                                    </table>
+
+                                                </td>                                                
+
+                                                <td style="width:33.3%" valign="top">
+
+                                                    <table style="border:0;width:100%">
+
+                                                        <tr>
+
+                                                            <td valign="top" style="width:10%">
+
+                                                                <table style="border:0;" >
+
+                                                                    <tr>
+
+                                                                        <td align="center"><input type="image" src="images/eml/no-avatar.png" /></td>
+
+                                                                    </tr>
+
+                                                                    <tr>
+
+                                                                        <td align="center"><input type="checkbox" name="chkItem" value="9" /></td>
+
+                                                                    </tr>
+
+                                                                </table>
+
+                                                            </td>
+
+                                                            <td  valign="top" style="width:90%;vertical-align: top;">
+
+                                                                <table  style="border:0;width:100%" id="tbWrapper_User" >
+
+                                                                    <tr>
+
+                                                                        <td><b>Abbie Cordova</b></td>
+
+                                                                    </tr>
+
+                                                                    <tr>
+
+                                                                        <td><b>User Name:</b> <a href="/user/details/9"><strong>AC8</strong></a></td>
+
+                                                                    </tr>
+
+                                                                    <tr>
+
+                                                                        <td><b>Email:</b> A.Cordova@employersmutual.com.au</td>
+
+                                                                    </tr>
+
+                                                                    <tr>
+
+                                                                        <td><b>Phone:</b> (02) 8098 6348</td>
+
+                                                                    </tr>
+
+                                                                    <tr>
+
+                                                                        <td><b>User Type:</b> Report</td>
+
+                                                                    </tr>
+
+                                                                    <tr>
+
+                                                                        <td><b>Status:</b> Active</td>
+
+                                                                    </tr>
+
+                                                                </table>
+
+                                                            </td>
+
+                                                        </tr>
+
+                                                    </table>
+
+                                                </td>                                                
+
+                            </tr>
+
+                            <tr><td colspan="3" style="height:30px;"></td></tr>
+
+                            <tr style="margin-bottom:50px;">
+
+                                                <td style="width:33.3%" valign="top">
+
+                                                    <table style="border:0;width:100%">
+
+                                                        <tr>
+
+                                                            <td valign="top" style="width:10%">
+
+                                                                <table style="border:0;" >
+
+                                                                    <tr>
+
+                                                                        <td align="center"><input type="image" src="images/eml/no-avatar.png" /></td>
+
+                                                                    </tr>
+
+                                                                    <tr>
+
+                                                                        <td align="center"><input type="checkbox" name="chkItem" value="10" /></td>
+
+                                                                    </tr>
+
+                                                                </table>
+
+                                                            </td>
+
+                                                            <td  valign="top" style="width:90%;vertical-align: top;">
+
+                                                                <table  style="border:0;width:100%" id="tbWrapper_User" >
+
+                                                                    <tr>
+
+                                                                        <td><b>Andrew Cole</b></td>
+
+                                                                    </tr>
+
+                                                                    <tr>
+
+                                                                        <td><b>User Name:</b> <a href="/user/details/10"><strong>ACA</strong></a></td>
+
+                                                                    </tr>
+
+                                                                    <tr>
+
+                                                                        <td><b>Email:</b> a.cole@employersmutual.com.au</td>
+
+                                                                    </tr>
+
+                                                                    <tr>
+
+                                                                        <td><b>Phone:</b> </td>
+
+                                                                    </tr>
+
+                                                                    <tr>
+
+                                                                        <td><b>User Type:</b> Report</td>
+
+                                                                    </tr>
+
+                                                                    <tr>
+
+                                                                        <td><b>Status:</b> Active</td>
+
+                                                                    </tr>
+
+                                                                </table>
+
+                                                            </td>
+
+                                                        </tr>
+
+                                                    </table>
+
+                                                </td>                                                
+
+                            </tr>
+
+                            <tr><td colspan="3" style="height:30px;"></td></tr>
+
+            </table>        
+
+        </div>
+
+        <div class="Paging">
+                <div style="float:left;">
+                    <span class="Button"><a class="Disable">First</a></span>
+                    <span class="Button"><a class="Disable">Prev</a></span>
+                    <span class="Button"><a class="Disable">1</a></span>
+                    <span class="Button"><a>2</a></span>
+                    <span class="Button"><a>3</a></span>
+                    <span class="Button"><a>...</a></span>
+                    <span class="Button"><a>Next</a></span>
+                    <span class="Button"><a>Last</a></span>
+                </div>
+                <div style="float:right">
+
+                    <a class="CmdButton Add" href="/user/details">Add New</a>
+
+                    <a id="cmdActive" class="CmdButton Active" value="1">Active</a>
+
+                    <a id="cmdInActive" class="CmdButton InActive" value="2">InActive</a>
+
+                </div>
+
+        </div>    
+
+        <input type="hidden" id="hddSort" name="hddSort" value="" />
+
+        <input type="hidden" id="hddAction" name="hddAction"/>
+
+        <input type="hidden" id="hddPaging" name="hddPaging" value="1" /> 
+
+</form></div>
+
+
+
+
+
+            </div>
+
+            <div class="ClearItem"></div>
+
+        </div>
+
+    </div>
+
+    <div id="footer">Copyright 2011 ASWIG.IT REPORT. All rights reserved.</div>
+
+    <div id="dialog-confirm" style="display:none;"></div>
+
+    <div id="loading" class"loading"><img src="images/EML/ajax-loader.gif" alt="loading" width="200px" height="100%" /></div>
+
+</body>
+
+</html>
+

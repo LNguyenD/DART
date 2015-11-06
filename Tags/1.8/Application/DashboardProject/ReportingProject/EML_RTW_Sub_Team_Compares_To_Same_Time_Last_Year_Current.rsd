@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SharedDataSet xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner" xmlns="http://schemas.microsoft.com/sqlserver/reporting/2010/01/shareddatasetdefinition">
+  <DataSet Name="">
+    <Query>
+      <DataSourceReference>DART</DataSourceReference>
+      <CommandText>="select * from dbo.uv_EML_RTW_Sub_Team_Compares_To_Same_Time_Last_Year_Current"</CommandText>
+    </Query>
+    <Fields>
+      <Field Name="Team_Sub">
+        <DataField>Team_Sub</DataField>
+        <rd:UserDefined>true</rd:UserDefined>
+      </Field>
+      <Field Name="EmployerSize_Group">
+        <DataField>EmployerSize_Group</DataField>
+        <rd:UserDefined>true</rd:UserDefined>
+      </Field>
+      <Field Name="Remuneration">
+        <DataField>Remuneration</DataField>
+        <rd:UserDefined>true</rd:UserDefined>
+      </Field>
+      <Field Name="LT">
+        <DataField>LT</DataField>
+        <rd:UserDefined>true</rd:UserDefined>
+      </Field>
+      <Field Name="Type">
+        <DataField>Type</DataField>
+        <rd:UserDefined>true</rd:UserDefined>
+      </Field>
+      <Field Name="Measure_months">
+        <DataField>Measure_months</DataField>
+        <rd:UserDefined>true</rd:UserDefined>
+      </Field>
+      <Field Name="Month_period">
+        <DataField>Month_period</DataField>
+        <rd:UserDefined>true</rd:UserDefined>
+      </Field>
+      <Field Name="AVGDURN">
+        <DataField>AVGDURN</DataField>
+        <rd:UserDefined>true</rd:UserDefined>
+      </Field>
+      <Field Name="WGT">
+        <DataField>WGT</DataField>
+        <rd:UserDefined>true</rd:UserDefined>
+      </Field>
+      <Field Name="Target">
+        <DataField>Target</DataField>
+        <rd:UserDefined>true</rd:UserDefined>
+      </Field>
+    </Fields>
+  </DataSet>
+</SharedDataSet>

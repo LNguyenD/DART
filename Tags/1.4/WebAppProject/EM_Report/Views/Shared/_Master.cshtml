@@ -1,0 +1,62 @@
+﻿@using EM_Report.Helpers;
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=9; IE=8; IE=7; IE=EDGE" />
+	<title>@ViewBag.Title</title>
+    
+	<script src="@Url.Content("~/Scripts/jquery-1.7.2.min.js")" type="text/javascript"></script>
+	
+	<script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+	<script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
+	<script type="text/javascript" src="@Url.Content("~/Scripts/jquery.unobtrusive-ajax.min.js")"></script>    
+	<script language="javascript" type="text/javascript" src="@Url.Content("~/Scripts/MicrosoftAjax.js")"></script>
+	<script language="javascript" type="text/javascript" src="@Url.Content("~/Scripts/MicrosoftMvcAjax.js")"></script>  
+     	
+	<script src="@Url.Content("~/Scripts/jquery-v1.2.7.tools.min.js")" type="text/javascript"></script>     
+	<script src="@Url.Content("~/Scripts/jquery.cookie.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/jquery.reveal.js")" type="text/javascript"></script>
+	<script src="@Url.ContentV("~/Scripts/iMain.js")" type="text/javascript"></script>
+    
+
+	<link href="@Url.ContentV("~/Css/main.css")" rel="stylesheet" type="text/css" />
+	<link href="@Url.ContentV("~/Css/custom_main.css")" rel="stylesheet" type="text/css" />
+	<link href="@Url.Content("~/Css/prettyForms.css")" rel="stylesheet" type="text/css" />
+	<link href="@Url.ContentV("~/Css/jquery.selectbox.css")" rel="stylesheet" type="text/css" />
+	<link href="@Url.Content("~/Css/reveal.css")" rel="stylesheet" type="text/css" />
+	
+	@if ((Base.GetController.ToLower() == "report" && Base.GetAction.ToLower() == "viewinfo"))
+	{
+		<link href="@Url.ContentV("~/Css/calendar.css")" rel="stylesheet" type="text/css" />		
+	}    
+	
+	<script type="text/javascript">
+		window.g_baseUrl = '@Url.Content("~")';
+		window.g_baseUrl = window.g_baseUrl.substring(0, window.g_baseUrl.length - 1);		
+	</script>
+	<script src="@Url.Content("~/Scripts/prettyForms.js")" type="text/javascript"></script>
+	<script src="@Url.Content("~/Scripts/jquery.selectbox-0.2.js")" type="text/javascript"></script>
+</head>
+<body>  
+    @Html.Hidden("SystemId", Request["systemid"])
+	@Html.Partial("_Top")
+	@Html.Partial("_Menu")  
+
+	<div id="wrapper">
+		@Html.Partial("_Header")
+		<div id="content" class="container">
+			@RenderBody()            
+		</div>
+	</div>
+		
+	<script type="text/javascript" src="@Url.Content("~/scripts/slideDock.js")"></script>
+	<script type="text/javascript" src="@Url.ContentV("~/scripts/custom_javascript.js")"></script>
+	@Html.Partial("_Dialog")
+	@Html.Partial("_Loading")
+
+    @if (Base.GetController.ToLower() == "dashboard" && Base.GetAction.ToLower().Contains("level"))
+    {      
+        @Html.Partial("~/Views/Shared/_Friendly_Printing.cshtml")
+    }
+</body>
+</html>

@@ -1,0 +1,29 @@
+﻿@model System.Web.Mvc.HandleErrorInfo
+@using EM_Report.Helpers;
+
+@{
+    ViewBag.Title = "Welcome";
+    Layout = Request.IsAjaxRequest() ? null : (Base.LoginSession == null ? "~/Views/Shared/_MasterWithoutLogin.cshtml" : "~/Views/Shared/_Master.cshtml");
+}
+@functions
+{
+    public bool IsLogin()
+    {
+        return Base.LoginSession == null ? false : true;
+    }
+}
+
+<div class="wrapper">
+    <div class="container">
+    	<div class="w_100p">
+            @if (!IsLogin())
+            {
+                <div class="header"></div>
+            }
+            <div class="formWrap" style=" top:auto;">
+            	<h1>Welcome to dashboard analytics reporting tool.</h1>
+                <hr /><br />
+            </div>
+        </div>
+    </div>
+</div>

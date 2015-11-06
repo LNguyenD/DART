@@ -1,0 +1,527 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <title>User</title>
+
+    <link rel="shortcut icon" href="images/EML/favicon.ico" />
+
+    <link href="css/jquery/jquery.ui.all.css" rel="stylesheet" type="text/css" />     
+
+    <link href="css/main.css" rel="stylesheet" type="text/css" />    
+
+    <script src="Scripts/jquery-1.7.2.min.js" type="text/javascript"></script>
+
+    <script src="Scripts/jquery-v1.2.7.tools.min.js" type="text/javascript"></script>
+
+    <script src="scripts/jquery.validate.min.js" type="text/javascript"></script>
+
+    <script src="scripts/jquery.validate.unobtrusive.min.js" type="text/javascript"></script>      
+
+    <script type="text/javascript" src="Scripts/jquery.unobtrusive-ajax.min.js"></script>
+
+    <script language="javascript" type="text/javascript" src="Scripts/MicrosoftAjax.js"></script>
+
+    <script language="javascript" type="text/javascript" src="Scripts/MicrosoftMvcAjax.js"></script>
+
+    
+
+   
+
+          
+
+    <!-- <script type="text/javascript" src="Scripts\menu.js"></script> -->
+    <!-- Menu  -->
+    <script type='text/javascript' src='Scripts/jquery.hoverIntent.minified.js'></script>
+    <script type='text/javascript' src='Scripts/jquery.dcjqaccordion.2.7.min.js'></script>
+	<script type='text/javascript' src='Scripts/jquery.cookie.js'></script>
+    <script type="text/javascript">
+    $(document).ready(function($){		
+		$('#mainNav').dcAccordion({
+			eventType: 'hover',
+			autoClose: true,
+			saveState: true,
+			disableLink: true,
+			menuClose: true,
+			speed: 'fast',
+			showCount: false
+		});
+  	});
+    </script>
+    <!-- Menu  -->
+
+    <script src="scripts/iMain.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+        window.g_baseUrl = '';
+        window.g_baseUrl = window.g_baseUrl.substring(0, window.g_baseUrl.length - 1);
+
+</script>      
+
+</head>
+
+<body>
+
+    <div id="main">
+
+        <div id="header">
+
+            <ul class="HeaderMenu">
+
+                <li class="LastItem"><a href="account/changepassword">Change password</a></li>
+
+                <li><a href="account/login?logout=true">Log out</a></li>
+
+                <li>Last login on Tue May 22 nd, 2012 at 02:25 PM</li>
+
+                <li>Hello: admin</li>
+
+            </ul>
+
+            <div id="logo">
+
+                <h1>Employer Mutual</h1>
+
+            </div>
+
+            <div class="HdBox"><h3></h3></div>
+
+        </div>
+
+        <div class="Divider"></div>
+
+        <div class="Container">
+
+            <div id="navigation">
+
+    <ul id="mainNav">                   
+
+        <li>
+
+            <a href="report" title="Report management"><img src="images/EML/report-icon.png" alt="Report management" width="40px" height="50px" /><span>Report management</span></a>
+
+            <ul class="SubNav">
+
+                <li><a href="report/category" class="NavFirstItem">Report category</a></li>
+
+                <li><a href="report">Report list</a></li>
+
+                <li><a href="subscription">Report subscription</a></li>
+
+                <li><a href="report/details" class="NavLastItem">Add Report</a></li>
+
+            </ul>
+
+        </li>
+
+        <li>
+
+            <a href="user" title="User management"><img src="images/EML/user-icon.png" alt="User management" width="40px" height="50px" /><span>User management</span></a>
+
+            <ul class="SubNav">
+
+                <li><a href="user">user list</a></li>
+
+                <li><a href="user/details" class="NavLastItem">user add</a></li>
+
+            </ul>
+
+        </li>
+
+        <li>
+
+            <a href="systemrole" title="Permission management"><img src="images/EML/role-icon.png" alt="Permission management" width="40px" height="50px"/><span>Permission management</span></a>
+
+            <ul class="SubNav">
+
+                <li><a href="systemrole">system role list</a></li>
+
+                <li><a href="systemrole/details" class="NavLastItem">add system role</a></li>
+
+            </ul>
+
+        </li>
+
+        <li>
+
+            <a href="organisation_level" title="Group management"><img src="images/EML/group-icon.png" alt="Group management" width="40px" height="50px"/><span>Group management</span></a>
+
+            <ul class="SubNav">
+
+                <li><a href="organisation_level">organisation level list</a></li>
+
+                <li><a href="external">external group list</a></li>
+
+                <li><a href="team" class="NavLastItem">team list</a></li>
+
+            </ul>
+
+        </li>
+
+        <li><a href="audittrail" title="Audit Trail"><img src="images/EML/group-icon.png" alt="Audit Trail" width="40px" height="50px"/><span>Audit Trail</span></a></li>
+
+        <li><a href="addressbook" title="Address Book"><img src="images/EML/group-icon.png" alt="Address Book" width="40px" height="50px"/><span>Address Book</span></a></li>                   
+
+    </ul>
+
+</div>
+
+    
+
+            <div id="content">
+
+                
+
+<script src="scripts/iReport.js" type="text/javascript"></script>
+
+<div class="Wrapper">
+
+    <div class="BoxHeader">
+
+        <span>User >> Edit User</span>
+
+    </div>
+
+    <div class="BoxContent">
+
+<form action="user/details/1" method="post">            <div class="FormWrapper">              
+
+<input data-val="true" data-val-number="The field UserId must be a number." data-val-required="*" id="UserId" name="UserId" type="hidden" value="1" />			                          
+
+                <div class="LineWrapper First SameLine">
+
+                    <label>User Name</label>                    
+
+                    <input class="Text" data-val="true" data-val-length="The username must be under 256 characters long." data-val-length-max="256" data-val-required="*" id="txtUserName" name="UserName" type="text" value="admin" />
+
+                    <span class="field-validation-valid" data-valmsg-for="UserName" data-valmsg-replace="true"></span>  
+
+                </div>
+
+                <div class="LineWrapper SameLine">
+
+                    <label>Password</label>
+
+                    <input class="Text" data-val="true" data-val-length="The password must be at least 6 and under 256 characters long." data-val-length-max="256" data-val-length-min="6" data-val-required="*" id="txtPassword" name="Password" type="password" value="6Nx0M207QM8sWqmWWZoiiQ==" />
+
+                    <span class="field-validation-valid" data-valmsg-for="Password" data-valmsg-replace="true"></span> 
+
+                </div>
+
+                <div class="LineWrapper SameLine">
+
+                    <label>Confirm Password</label>
+
+                    <input class="Text" data-val="true" data-val-equalto="The password and confirmation password do not match." data-val-equalto-other="*.Password" data-val-required="*" id="txtConfirmPassword" name="ConfirmPassword" type="password" value="6Nx0M207QM8sWqmWWZoiiQ==" />
+
+                    <span class="field-validation-valid" data-valmsg-for="ConfirmPassword" data-valmsg-replace="true"></span>     
+
+                </div>
+
+                <div class="LineWrapper SameLine">
+
+                    <label>First Name</label>
+
+                     <input class="Text" data-val="true" data-val-length="The first name must be under 256 characters long." data-val-length-max="256" data-val-required="*" id="txtFirstName" name="FirstName" type="text" value="admin" />
+
+                     <span class="field-validation-valid" data-valmsg-for="FirstName" data-valmsg-replace="true"></span> 
+
+                </div>
+
+                <div class="LineWrapper SameLine">
+
+                    <label>Last Name</label>
+
+                     <input class="Text" data-val="true" data-val-length="The last name must be under 256 characters long." data-val-length-max="256" data-val-required="*" id="txtLastName" name="LastName" type="text" value="" />
+
+                     <span class="field-validation-valid" data-valmsg-for="LastName" data-valmsg-replace="true"></span> 
+
+                </div>
+
+                <div class="LineWrapper SameLine">
+
+                    <label>Email</label>
+
+                     <input class="Text" data-val="true" data-val-length="The email must be under 256 characters long." data-val-length-max="256" data-val-regex="Invalid the email address." data-val-regex-pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}" data-val-required="*" id="txtEmail" name="Email" type="text" value="" />
+
+                     <span class="field-validation-valid" data-valmsg-for="Email" data-valmsg-replace="true"></span> 
+
+                </div>
+
+                <div class="LineWrapper SameLine">
+
+                    <label>Phone</label>
+
+                     <input class="Text" data-val="true" data-val-length="The phone number must be under 30 characters long." data-val-length-max="30" data-val-regex="The phone number must be in numeric." data-val-regex-pattern="(^([0-9]*|\d*\d{1}?\d*)$)" id="txtPhone" name="Phone" type="text" value="" />
+
+                     <span class="field-validation-valid" data-valmsg-for="Phone" data-valmsg-replace="true"></span> 
+
+                </div>
+
+                <div class="LineWrapper SameLine">
+
+                    <label>Address</label>
+
+                     <input class="Text" data-val="true" data-val-length="The address must be under 256 characters long." data-val-length-max="256" id="txtAddress" name="Address" type="text" value="" />
+
+                     <span class="field-validation-valid" data-valmsg-for="Address" data-valmsg-replace="true"></span> 
+
+                </div>
+
+                <div class="LineWrapper SameLine">
+
+                    <label>Status</label>
+
+                    <div class="WrapperSelectBox SelectForm">
+
+                          <select data-val="true" data-val-number="The field Status must be a number." data-val-required="The Status field is required." id="cboStatus" name="Status"><option selected="selected" value="1">Active</option>
+
+<option value="2">Inactive</option>
+
+<option value="3">Deleted</option>
+
+<option value="4">Blocked</option>
+
+</select> 
+
+                          <span class="field-validation-valid" data-valmsg-for="Status" data-valmsg-replace="true"></span>  
+
+                    </div>
+
+                </div>
+
+                
+
+                <div class="LineWrapper SameLine">
+
+                    <label>User Type</label>
+
+                    <div class="LineWrapper SameLine" style="vertical-align: top;">
+
+                         <input checked="True" data-val="true" data-val-required="The Is_System_User field is required." id="Is_System_User" name="Is_System_User" style="top: -5px;position: relative;" type="radio" value="True" /> System User     
+
+                         <input id="Is_System_User" name="Is_System_User" style="top: -5px;position: relative;" type="radio" value="False" /> Report User
+
+                    </div>
+
+                </div>
+
+                 <table cellpadding ="5" cellspacing="5" border="0" style="font-size:1.2em">                                     
+
+                        <tr>
+
+                            <td id="divReportUser" style="padding-left:40px;display:none;vertical-align: top;">                                
+
+                                <input checked="True" data-val="true" data-val-required="The Is_External_User field is required." id="Is_External_User" name="Is_External_User" style="top: -5px;position: relative;" type="radio" value="False" />                                
+
+                                Internal User<br />                                
+
+                                <div id="divInternal" class="LineWrapper SameLine" style="padding:0px 0px 20px 50px;">
+
+                                    <label>Organisation</label>
+
+                                    <div class="WrapperSelectBox SelectForm">
+
+                                        <select data-val="true" data-val-number="The field Organisation_RoleId must be a number." id="cboOrganisation_Roles" name="Organisation_RoleId"><option value="17">Administration Assistant</option>
+
+<option value="3">Case Manager</option>
+
+<option value="2">Claims Assessor</option>
+
+<option value="4">Claims Manager - Commercial</option>
+
+<option value="6">Claims Manager - Corporate</option>
+
+<option value="5">Claims Manager - Legal</option>
+
+<option value="12">Group Case Manager</option>
+
+<option value="8">Injury Management Advisor</option>
+
+<option value="16">Junior Team Assistant</option>
+
+<option value="7">Manager - Newcastle</option>
+
+<option value="10">Senior Case Manager</option>
+
+<option value="1">Senior Claims Assessor</option>
+
+<option value="13">Senior Group Case Manager</option>
+
+<option value="14">Senior Injury Management Advisor</option>
+
+<option value="15">Senior Team Assistant</option>
+
+<option value="11">Team Leader</option>
+
+<option value="9">Team Leader - Injury Management</option>
+
+</select>
+
+                                    </div>
+
+                                    <br />
+
+                                    <label>Team</label>
+
+                                    <div class="WrapperSelectBox SelectForm">
+
+                                        <select data-val="true" data-val-number="The field TeamId must be a number." id="cboTeams" name="TeamId"><option value="">--Select--</option>
+
+<option value="1">RIG</option>
+
+<option value="2">RIGA</option>
+
+<option value="6">ruud t&#233;t  hể  ruud t&#233;t hể  ruud t&#233;t hể  ruud t&#233;t hể  ruud t&#233;t hể  ruud t&#233;t hể  ruud t&#233;t hể  ruud t&#233;t hể  ruud t&#233;t hể  ruud t&#233;t hể  ruud t&#233;t hể  ruud t&#233;t hể  ruud t&#233;t hể  ruud t&#233;t hể  ruud t&#233;t hể  ruud t&#233;t hể  ruud t&#233;t hể  ruud t&#233;t hể </option>
+
+</select>
+
+                                    </div>
+
+                                </div>
+
+                                <input id="Is_External_User" name="Is_External_User" style="top: -5px;position: relative;" type="radio" value="True" /> 
+
+                                External User<br />                                
+
+                                <div id="divExternal" style="display:none;padding-left:50px;" class="LineWrapper SameLine">
+
+                                    <label>External Group</label>
+
+                                    <div class="WrapperSelectBox SelectForm">
+
+                                        <select data-val="true" data-val-number="The field External_GroupId must be a number." id="cboExternal_Groups" name="External_GroupId"><option value="">--Select--</option>
+
+<option value="3">External Group 4</option>
+
+<option value="1">External Group1</option>
+
+<option value="2">External Group2</option>
+
+<option value="4">ruud new ruud new ruud new ruud new ruud new ruud new ruud new ruud new ruud new ruud new ruud new ruud new ruud new ruud new  ruud new ruud new ruud new ruud new ruud new ruud new ruud new </option>
+
+</select>
+
+                                    </div>
+
+                                </div>
+
+                            </td>
+
+                        </tr>
+
+                        <tr>
+
+                            <td id="divSystemUser" style="padding-left:40px;vertical-align: top;">                                
+
+                                <div class="LineWrapper SameLine">
+
+                                    <label>System Role</label>
+
+                                    <div class="WrapperSelectBox SelectForm">
+
+                                        <select data-val="true" data-val-number="The field System_RoleId must be a number." id="cboSystem_Roles" name="System_RoleId"><option value="9">ccZvVZVvZVZVZVafsdgasgasgag agasgasgagddfsh shsdhsdhsdhsd hsdhsdhsdhsdhsdhsd hsdhsddfhdhdfhsdhsh</option>
+
+<option value="5">Guest</option>
+
+<option value="2">Power user</option>
+
+<option value="3">Report manager</option>
+
+<option value="4">Standard user</option>
+
+<option selected="selected" value="1">Super</option>
+
+</select>                                
+
+                                    </div>
+
+                                </div>
+
+                            </td>
+
+                        </tr>                                                 
+
+                    </table>
+
+                
+
+                <div class="LineWrapper SameLine">
+
+                    <label>Last Online Login Date</label>
+
+                     <input class="Text" disabled="disable" id="Last_Online_Login_Date" name="Last_Online_Login_Date" readonly="True" type="text" value="22/05/2012 2:46:53 PM" />                     
+
+                </div>
+
+                <div class="LineWrapper SameLine">
+
+                    <label>Online No Of Login Attempts</label>
+
+                     <input class="Text" data-val="true" data-val-number="The field Online_No_Of_Login_Attempts must be a number." disabled="disable" id="Online_No_Of_Login_Attempts" name="Online_No_Of_Login_Attempts" readonly="True" type="text" value="1113" />  
+
+                </div>
+
+                <div class="LineWrapper SameLine">
+
+                    <label>Online Locked Until Datetime</label>
+
+                     <input class="Text" disabled="disable" id="Online_Locked_Until_Datetime" name="Online_Locked_Until_Datetime" readonly="True" type="text" value="" />
+
+                </div>
+
+                <div class="LineWrapper SameLine">
+
+                    <label>Created Date</label>
+
+                    <input class="Text" disabled="disable" id="Create_Date" name="Create_Date" readonly="True" type="text" value="2/12/2011 12:00:00 AM" />
+
+                </div>
+
+                <div class="LineWrapper SameLine">
+
+                    <label>Created By</label>
+
+                    <input class="Text" disabled="disable" id="OwnerName" name="OwnerName" readonly="True" type="text" value="admin" />
+
+                </div>
+
+            </div>
+
+            <div class="CommandWrapper">                
+
+                <a id="cmdSave" class="ButtonSave">Save</a>
+
+                <a class="ButtonBack" href="user">Back To List</a>                
+
+            </div>
+
+</form>    </div>  
+
+</div>
+
+
+
+            </div>
+
+            <div class="ClearItem"></div>
+
+        </div>
+
+    </div>
+
+    <div id="footer">Copyright 2011 ASWIG.IT REPORT. All rights reserved.</div>
+
+    <div id="dialog-confirm" style="display:none;"></div>
+
+    <div id="loading" class="loading"><img src="images/EML/ajax-loader.gif" alt="loading" width="200px" height="100%" /></div>
+
+</body>
+
+</html>
+

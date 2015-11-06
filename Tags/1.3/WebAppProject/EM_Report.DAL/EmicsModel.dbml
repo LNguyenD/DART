@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="hemprod" Class="EmicsModelDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=ASWSYDDEV01;Initial Catalog=hemprod;Persist Security Info=True;User ID=vnteam" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="hemprodConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.uvBROKER" Member="BROKERs">
+    <Type Name="BROKER">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="BROKER_NO" Type="System.String" DbType="Char(8) NOT NULL" CanBeNull="false" />
+      <Column Name="NAME" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="is_deleted" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Parent_Broker" Type="System.String" DbType="Char(8)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.uvPOLICY_TERM_DETAIL" Member="POLICY_TERM_DETAILs">
+    <Type Name="POLICY_TERM_DETAIL">
+      <Column Name="POLICY_NO" Type="System.String" DbType="Char(19) NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="LEGAL_NAME" Type="System.String" DbType="VarChar(75)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="TRADING_NAME" Type="System.String" DbType="VarChar(75)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="ACN_ARBN" Type="System.Int32" DbType="Int" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="POLICY_STATUS" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="START_YEAR" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="ABN" Type="System.Double" DbType="Float" CanBeNull="true" UpdateCheck="Never" />
+    </Type>
+  </Table>
+  <Table Name="dbo.uvPAYMENT_TYPE" Member="PAYMENT_TYPEs">
+    <Type Name="PAYMENT_TYPE">
+      <Column Name="Payment_Type" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="Payment_Group" Type="System.String" DbType="Char(3) NOT NULL" CanBeNull="false" />
+      <Column Name="Active_From_Date" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Active_To_Date" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.uvPROVIDER" Member="providers">
+    <Type Name="provider">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="wc_reg_no" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="type" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
+      <Column Name="firstname" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="lastname" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="organisation_name" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="is_deleted" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.uvPAYMENT_RECOVERY" Member="Payment_Recoveries">
+    <Type Name="Payment_Recovery">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Claim_No" Type="System.String" DbType="Char(19) NOT NULL" CanBeNull="false" />
+      <Column Name="Payment_no" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Transaction_date" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Estimate_type" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="provider_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="provider_type" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="Payment_Type" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="cid" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Service_Provider_Id" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Service_Provider_Type" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="wc_service_provider_id" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.uvPERSON" Member="persons">
+    <Type Name="person">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="FIRSTNAME" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="LASTNAME" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.uvCONTACT_EXTENSION" Member="contact_extensions">
+    <Type Name="contact_extension">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="person_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="object_ref" Type="System.String" DbType="Char(19)" CanBeNull="true" />
+      <Column Name="is_primary" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.uvPAYMENT_DESCRIPTION" Member="Payment_Descriptions">
+    <Type Name="Payment_Description">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Payment_Type" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="Sub_Type" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.uvCREDITOR" Member="CREDITORs">
+    <Type Name="CREDITOR">
+      <Column Name="cid" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Creditor_no" Type="System.String" DbType="Char(8) NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="is_deleted" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Inactive" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="ABN" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="WC_Provider_Code" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Send_Chqs_To_Creditor" Type="System.String" DbType="Char(8)" CanBeNull="true" />
+      <Column Name="AKA" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="CN2Pay" Type="System.String" DbType="Char(8)" CanBeNull="true" />
+      <Column Name="HC_Number" Type="System.String" DbType="Char(8)" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>

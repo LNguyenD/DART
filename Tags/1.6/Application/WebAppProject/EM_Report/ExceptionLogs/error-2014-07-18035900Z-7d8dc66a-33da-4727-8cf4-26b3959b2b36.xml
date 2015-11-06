@@ -1,0 +1,197 @@
+﻿<error errorId="7d8dc66a-33da-4727-8cf4-26b3959b2b36" application="/LM/W3SVC/1/ROOT/Dart" host="ASWVNWKS103" type="System.NullReferenceException" message="Object reference not set to an instance of an object." source="EM_Report" detail="System.NullReferenceException: Object reference not set to an instance of an object.&#xD;&#xA;   at EM_Report.Controllers.Dashboard_TimeAccessController.Details(String url, String starttime, String endtime) in D:\Work\Project\Dart\branches\WebAppProject\EM_Report\Controllers\Dashboard_TimeAccessController.cs:line 79&#xD;&#xA;   at lambda_method(Closure , ControllerBase , Object[] )&#xD;&#xA;   at System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)&#xD;&#xA;   at System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)&#xD;&#xA;   at System.Web.Mvc.ControllerActionInvoker.&lt;&gt;c__DisplayClass15.&lt;InvokeActionMethodWithFilters&gt;b__12()&#xD;&#xA;   at System.Web.Mvc.ControllerActionInvoker.InvokeActionMethodFilter(IActionFilter filter, ActionExecutingContext preContext, Func`1 continuation)&#xD;&#xA;   at System.Web.Mvc.ControllerActionInvoker.InvokeActionMethodWithFilters(ControllerContext controllerContext, IList`1 filters, ActionDescriptor actionDescriptor, IDictionary`2 parameters)&#xD;&#xA;   at System.Web.Mvc.ControllerActionInvoker.InvokeAction(ControllerContext controllerContext, String actionName)&#xD;&#xA;   at System.Web.Mvc.Controller.ExecuteCore()&#xD;&#xA;   at System.Web.Mvc.ControllerBase.Execute(RequestContext requestContext)&#xD;&#xA;   at System.Web.Mvc.MvcHandler.&lt;&gt;c__DisplayClass6.&lt;&gt;c__DisplayClassb.&lt;BeginProcessRequest&gt;b__5()&#xD;&#xA;   at System.Web.Mvc.Async.AsyncResultWrapper.&lt;&gt;c__DisplayClass1.&lt;MakeVoidDelegate&gt;b__0()&#xD;&#xA;   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()&#xD;&#xA;   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean&amp; completedSynchronously)" time="2014-07-18T03:59:00.1627072Z">
+  <serverVariables>
+    <item name="ALL_HTTP">
+      <value string="HTTP_CONNECTION:keep-alive&#xD;&#xA;HTTP_CONTENT_LENGTH:419&#xD;&#xA;HTTP_CONTENT_TYPE:application/x-www-form-urlencoded; charset=UTF-8&#xD;&#xA;HTTP_ACCEPT:*/*&#xD;&#xA;HTTP_ACCEPT_ENCODING:gzip,deflate,sdch&#xD;&#xA;HTTP_ACCEPT_LANGUAGE:en-US,en;q=0.8,vi;q=0.6,en-GB;q=0.4&#xD;&#xA;HTTP_COOKIE:SystemId_admin=2; __RequestVerificationToken_L0RhcnQ_=+o6gbRbxyJqkoZ/MOnka6oemaVtiMD7Ihn9HURdwjoebzWtB5CtGaYUi4asWMJ7ttqkr4/54cc63QBIvi5XU2l2bQJFTr0SHMW36RrYdBt7CXLRyu8eM6PXRUPgo5l58IUCkrhKCg0h/pQwmSL+ReKTM00NVtvyM0jxj72YUXmU=; ASP.NET_SessionId=4jpwwmmujmqrjgsts1jxdj0c; sqlAuthCookie=BDEBC6A3C3B13C5AF0C72EE655572F0903655301E85B0EADD66824F265748D549C24F4C1B374A28C2CBD3948E1F2192126419719C629A4F7FA7A56448E80BB29E241A9A9BFDFCFE58C518331262E3085F75C294FBF6F0522129AA60B67A25AC179FAB85540314063BCE729A6E50045758E39422E&#xD;&#xA;HTTP_HOST:aswvnwks103&#xD;&#xA;HTTP_REFERER:https://aswvnwks103/dart/dashboard/level2?reportpath=/emreporting/reports/tmf_awc_level2&amp;Type=agency&amp;ReportType=1-2&#xD;&#xA;HTTP_USER_AGENT:Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36&#xD;&#xA;HTTP_ORIGIN:https://aswvnwks103&#xD;&#xA;HTTP_X_REQUESTED_WITH:XMLHttpRequest&#xD;&#xA;" />
+    </item>
+    <item name="ALL_RAW">
+      <value string="Connection: keep-alive&#xD;&#xA;Content-Length: 419&#xD;&#xA;Content-Type: application/x-www-form-urlencoded; charset=UTF-8&#xD;&#xA;Accept: */*&#xD;&#xA;Accept-Encoding: gzip,deflate,sdch&#xD;&#xA;Accept-Language: en-US,en;q=0.8,vi;q=0.6,en-GB;q=0.4&#xD;&#xA;Cookie: SystemId_admin=2; __RequestVerificationToken_L0RhcnQ_=+o6gbRbxyJqkoZ/MOnka6oemaVtiMD7Ihn9HURdwjoebzWtB5CtGaYUi4asWMJ7ttqkr4/54cc63QBIvi5XU2l2bQJFTr0SHMW36RrYdBt7CXLRyu8eM6PXRUPgo5l58IUCkrhKCg0h/pQwmSL+ReKTM00NVtvyM0jxj72YUXmU=; ASP.NET_SessionId=4jpwwmmujmqrjgsts1jxdj0c; sqlAuthCookie=BDEBC6A3C3B13C5AF0C72EE655572F0903655301E85B0EADD66824F265748D549C24F4C1B374A28C2CBD3948E1F2192126419719C629A4F7FA7A56448E80BB29E241A9A9BFDFCFE58C518331262E3085F75C294FBF6F0522129AA60B67A25AC179FAB85540314063BCE729A6E50045758E39422E&#xD;&#xA;Host: aswvnwks103&#xD;&#xA;Referer: https://aswvnwks103/dart/dashboard/level2?reportpath=/emreporting/reports/tmf_awc_level2&amp;Type=agency&amp;ReportType=1-2&#xD;&#xA;User-Agent: Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36&#xD;&#xA;Origin: https://aswvnwks103&#xD;&#xA;X-Requested-With: XMLHttpRequest&#xD;&#xA;" />
+    </item>
+    <item name="APPL_MD_PATH">
+      <value string="/LM/W3SVC/1/ROOT/Dart" />
+    </item>
+    <item name="APPL_PHYSICAL_PATH">
+      <value string="D:\Work\Project\Dart\branches\WebAppProject\EM_Report\" />
+    </item>
+    <item name="AUTH_TYPE">
+      <value string="" />
+    </item>
+    <item name="AUTH_USER">
+      <value string="" />
+    </item>
+    <item name="AUTH_PASSWORD">
+      <value string="" />
+    </item>
+    <item name="LOGON_USER">
+      <value string="" />
+    </item>
+    <item name="REMOTE_USER">
+      <value string="" />
+    </item>
+    <item name="CERT_COOKIE">
+      <value string="" />
+    </item>
+    <item name="CERT_FLAGS">
+      <value string="" />
+    </item>
+    <item name="CERT_ISSUER">
+      <value string="" />
+    </item>
+    <item name="CERT_KEYSIZE">
+      <value string="128" />
+    </item>
+    <item name="CERT_SECRETKEYSIZE">
+      <value string="2048" />
+    </item>
+    <item name="CERT_SERIALNUMBER">
+      <value string="" />
+    </item>
+    <item name="CERT_SERVER_ISSUER">
+      <value string="CN=ASWVNWKS103.aswigsyd.int" />
+    </item>
+    <item name="CERT_SERVER_SUBJECT">
+      <value string="CN=ASWVNWKS103.aswigsyd.int" />
+    </item>
+    <item name="CERT_SUBJECT">
+      <value string="" />
+    </item>
+    <item name="CONTENT_LENGTH">
+      <value string="419" />
+    </item>
+    <item name="CONTENT_TYPE">
+      <value string="application/x-www-form-urlencoded; charset=UTF-8" />
+    </item>
+    <item name="GATEWAY_INTERFACE">
+      <value string="CGI/1.1" />
+    </item>
+    <item name="HTTPS">
+      <value string="on" />
+    </item>
+    <item name="HTTPS_KEYSIZE">
+      <value string="128" />
+    </item>
+    <item name="HTTPS_SECRETKEYSIZE">
+      <value string="2048" />
+    </item>
+    <item name="HTTPS_SERVER_ISSUER">
+      <value string="CN=ASWVNWKS103.aswigsyd.int" />
+    </item>
+    <item name="HTTPS_SERVER_SUBJECT">
+      <value string="CN=ASWVNWKS103.aswigsyd.int" />
+    </item>
+    <item name="INSTANCE_ID">
+      <value string="1" />
+    </item>
+    <item name="INSTANCE_META_PATH">
+      <value string="/LM/W3SVC/1" />
+    </item>
+    <item name="LOCAL_ADDR">
+      <value string="10.9.1.147" />
+    </item>
+    <item name="PATH_INFO">
+      <value string="/Dart/Dashboard_TimeAccess/Details" />
+    </item>
+    <item name="PATH_TRANSLATED">
+      <value string="D:\Work\Project\Dart\branches\WebAppProject\EM_Report\Dashboard_TimeAccess\Details" />
+    </item>
+    <item name="QUERY_STRING">
+      <value string="" />
+    </item>
+    <item name="REMOTE_ADDR">
+      <value string="10.9.1.161" />
+    </item>
+    <item name="REMOTE_HOST">
+      <value string="10.9.1.161" />
+    </item>
+    <item name="REMOTE_PORT">
+      <value string="5786" />
+    </item>
+    <item name="REQUEST_METHOD">
+      <value string="POST" />
+    </item>
+    <item name="SCRIPT_NAME">
+      <value string="/Dart/Dashboard_TimeAccess/Details" />
+    </item>
+    <item name="SERVER_NAME">
+      <value string="aswvnwks103" />
+    </item>
+    <item name="SERVER_PORT">
+      <value string="443" />
+    </item>
+    <item name="SERVER_PORT_SECURE">
+      <value string="1" />
+    </item>
+    <item name="SERVER_PROTOCOL">
+      <value string="HTTP/1.1" />
+    </item>
+    <item name="SERVER_SOFTWARE">
+      <value string="Microsoft-IIS/7.5" />
+    </item>
+    <item name="URL">
+      <value string="/Dart/Dashboard_TimeAccess/Details" />
+    </item>
+    <item name="HTTP_CONNECTION">
+      <value string="keep-alive" />
+    </item>
+    <item name="HTTP_CONTENT_LENGTH">
+      <value string="419" />
+    </item>
+    <item name="HTTP_CONTENT_TYPE">
+      <value string="application/x-www-form-urlencoded; charset=UTF-8" />
+    </item>
+    <item name="HTTP_ACCEPT">
+      <value string="*/*" />
+    </item>
+    <item name="HTTP_ACCEPT_ENCODING">
+      <value string="gzip,deflate,sdch" />
+    </item>
+    <item name="HTTP_ACCEPT_LANGUAGE">
+      <value string="en-US,en;q=0.8,vi;q=0.6,en-GB;q=0.4" />
+    </item>
+    <item name="HTTP_COOKIE">
+      <value string="SystemId_admin=2; __RequestVerificationToken_L0RhcnQ_=+o6gbRbxyJqkoZ/MOnka6oemaVtiMD7Ihn9HURdwjoebzWtB5CtGaYUi4asWMJ7ttqkr4/54cc63QBIvi5XU2l2bQJFTr0SHMW36RrYdBt7CXLRyu8eM6PXRUPgo5l58IUCkrhKCg0h/pQwmSL+ReKTM00NVtvyM0jxj72YUXmU=; ASP.NET_SessionId=4jpwwmmujmqrjgsts1jxdj0c; sqlAuthCookie=BDEBC6A3C3B13C5AF0C72EE655572F0903655301E85B0EADD66824F265748D549C24F4C1B374A28C2CBD3948E1F2192126419719C629A4F7FA7A56448E80BB29E241A9A9BFDFCFE58C518331262E3085F75C294FBF6F0522129AA60B67A25AC179FAB85540314063BCE729A6E50045758E39422E" />
+    </item>
+    <item name="HTTP_HOST">
+      <value string="aswvnwks103" />
+    </item>
+    <item name="HTTP_REFERER">
+      <value string="https://aswvnwks103/dart/dashboard/level2?reportpath=/emreporting/reports/tmf_awc_level2&amp;Type=agency&amp;ReportType=1-2" />
+    </item>
+    <item name="HTTP_USER_AGENT">
+      <value string="Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36" />
+    </item>
+    <item name="HTTP_ORIGIN">
+      <value string="https://aswvnwks103" />
+    </item>
+    <item name="HTTP_X_REQUESTED_WITH">
+      <value string="XMLHttpRequest" />
+    </item>
+  </serverVariables>
+  <form>
+    <item name="url">
+      <value string="https://aswvnwks103/dart/dashboard/level2?reportpath=/emreporting/reports/tmf_awc_level2&amp;Type=agency&amp;ReportType=1-2" />
+    </item>
+    <item name="starttime">
+      <value string="2014-7-18 8:26:42" />
+    </item>
+    <item name="endtime">
+      <value string="2014-7-18 10:59:0" />
+    </item>
+    <item name="__RequestVerificationToken">
+      <value string="3f+tbpiMPPU9vsXRcSmnkIITVRaIianSEisjyWy4QrMvEUc8NzxJKU/ueqkEtexPPMdH6bavHMmJ2ZcC2QNCvLJlLcaFIHI64LrcJw9hcL4rhRsB0kGxfSe2xX3viqlr3oHYcRu+X7QPkXu5y7zvniQt7PKCZns040Ans0R0EQs=" />
+    </item>
+  </form>
+  <cookies>
+    <item name="SystemId_admin">
+      <value string="2" />
+    </item>
+    <item name="__RequestVerificationToken_L0RhcnQ_">
+      <value string="+o6gbRbxyJqkoZ/MOnka6oemaVtiMD7Ihn9HURdwjoebzWtB5CtGaYUi4asWMJ7ttqkr4/54cc63QBIvi5XU2l2bQJFTr0SHMW36RrYdBt7CXLRyu8eM6PXRUPgo5l58IUCkrhKCg0h/pQwmSL+ReKTM00NVtvyM0jxj72YUXmU=" />
+    </item>
+    <item name="ASP.NET_SessionId">
+      <value string="4jpwwmmujmqrjgsts1jxdj0c" />
+    </item>
+    <item name="sqlAuthCookie">
+      <value string="BDEBC6A3C3B13C5AF0C72EE655572F0903655301E85B0EADD66824F265748D549C24F4C1B374A28C2CBD3948E1F2192126419719C629A4F7FA7A56448E80BB29E241A9A9BFDFCFE58C518331262E3085F75C294FBF6F0522129AA60B67A25AC179FAB85540314063BCE729A6E50045758E39422E" />
+    </item>
+  </cookies>
+</error>

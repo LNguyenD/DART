@@ -1,0 +1,68 @@
+﻿@model EM_Report.Models.Report_Data_Object.PolicyModel
+@{
+	Layout = null;
+}
+@using EM_Report.BLL.Commons;
+@using EM_Report.Helpers;
+<div class="Wrapper">
+@using (Ajax.BeginForm("UCPolicy", null, new AjaxOptions { UpdateTargetId = "searchPolicy", OnBegin = "showLoadingPopup", OnComplete = "hideLoadingPopup" }, new { Id = "frmPolicy" }))
+{
+    <div class="BoxHeader">
+            <div class="SearchInput">
+               @Html.Partial("_ShowMessage")
+                <label>Policy No</label>
+                @Html.TextBoxFor(x => x.PolicyNo, new { @class = "Popup" })
+                <label>Employer</label>
+                <input type="text" id="employer" name="employer" value="@ViewBag.Employer" class="Popup" />
+                <label>ABN</label>
+                 @Html.TextBoxFor(x => x.ABN, new { @class="Popup"})
+                <label>ACN</label>
+                @Html.TextBoxFor(x => x.ACN, new { @class="Popup"})
+                <input id="btnSearch" type="image" title="Search" src="@Url.Image("btnSearch.png")"  />
+            </div>                 
+    </div>
+    <div class="BoxContent">
+        <table id="tbGrid" name="tbGrid" class="Grid">
+            <thead>
+			    <tr>
+				    <th style="width: 30px;"><input type="checkbox" id="checkboxall" name="chkAll" /> </th>                               
+				    <th>Policy Number</th>                                
+				    <th>Start Year</th>                                
+				    <th>Status</th>                                
+				    <th>Legal Name</th>   
+                    <th>Trading Name</th>                                 
+			    </tr>
+		    </thead>
+            @if (ViewBag.policymodel != null)
+            {
+                var odd = true; 
+				<tbody>
+					@foreach (var item in ViewBag.PolicyModel)
+             {
+						<tr>
+						<td><input type="checkbox" name="chkItem" value="@(item.PolicyNo)" id="chkId@(item.PolicyNo)"/> </td>
+						<td title="@item.PolicyNo" style="">@item.PolicyNo</td>                                                                                       
+						<td title="@item.StartYear" style="">@item.StartYear</td>                                        
+						<td title="@item.PolicyStatus" style="">@item.PolicyStatus</td>                                        
+						<td title="@item.LegalName" style="width:150px;">@item.LegalName</td>    
+                        <td title="@item.TradingName" style="width:150px;">@item.TradingName</td> 
+						</tr>                                   
+                                                                      odd = !odd;
+            }
+				</tbody>      
+            }
+		</table>
+        <div class="Paging">
+        
+        @Html.Partial("_OkayCancel", new ViewDataDictionary { { "idSearchForm", "#searchPolicy" }, { "policyform", "_HasPolicyForm" } })
+
+            @if (ViewBag.PolicyModel != null)
+            {
+                 @Html.Partial("_UCPaging")                 
+            }  
+        </div>	
+        @Html.Partial("_HiddenAction")	
+</div>
+}
+</div>
+<script src="@Url.Content("~/scripts/iReport.js")" type="text/javascript"></script>

@@ -1,0 +1,3043 @@
+Unit_Type,Unit_Name,Type,TIME_ID,Projection
+EML,EML,Whole-EML,Jan-14,2624.5297
+EML,EML,Whole-EML,Feb-14,2439.7698
+EML,EML,Whole-EML,Mar-14,2256.954
+EML,EML,Whole-EML,Apr-14,2078.7125
+EML,EML,Whole-EML,May-14,1935.0095
+EML,EML,Whole-EML,Jun-14,1818.8983
+EML,EML,Whole-EML,Jul-14,1724.2218
+EML,EML,Whole-EML,Aug-14,1645.8483
+EML,EML,Whole-EML,Sep-14,1579.2561
+EML,EML,Whole-EML,Oct-14,1520.9314
+EML,EML,Whole-EML,Nov-14,1467.9713
+EML,EML,Whole-EML,Dec-14,1418.5057
+EML,EML,Whole-EML,Jan-15,1371.2495
+EML,EML,Whole-EML,Feb-15,1325.9198
+EML,EML,Whole-EML,Mar-15,1283.0592
+EML,EML,Whole-EML,Apr-15,1243.8722
+EML,EML,Whole-EML,May-15,1210.6646
+EML,EML,Whole-EML,Jun-15,1186.2137
+EML,EML,1-Feb,Jan-14,944.529
+EML,EML,1-Feb,Feb-14,811.9503
+EML,EML,1-Feb,Mar-14,679.4793
+EML,EML,1-Feb,Apr-14,549.7008
+EML,EML,1-Feb,May-14,452.6631
+EML,EML,1-Feb,Jun-14,381.3657
+EML,EML,1-Feb,Jul-14,329.6697
+EML,EML,1-Feb,Aug-14,292.5132
+EML,EML,1-Feb,Sep-14,265.2651
+EML,EML,1-Feb,Oct-14,244.479
+EML,EML,1-Feb,Nov-14,227.247
+EML,EML,1-Feb,Dec-14,211.7382
+EML,EML,1-Feb,Jan-15,196.5525
+EML,EML,1-Feb,Feb-15,181.5822
+EML,EML,1-Feb,Mar-15,167.2581
+EML,EML,1-Feb,Apr-15,154.7649
+EML,EML,1-Feb,May-15,146.472
+EML,EML,1-Feb,Jun-15,145.1796
+EML,EML,3-May,Jan-14,606.3693
+EML,EML,3-May,Feb-14,582.721
+EML,EML,3-May,Mar-14,559.9724
+EML,EML,3-May,Apr-14,538.2149
+EML,EML,3-May,May-14,517.368
+EML,EML,3-May,Jun-14,497.5035
+EML,EML,3-May,Jul-14,478.5706
+EML,EML,3-May,Aug-14,460.5737
+EML,EML,3-May,Sep-14,443.5483
+EML,EML,3-May,Oct-14,427.4654
+EML,EML,3-May,Nov-14,412.3185
+EML,EML,3-May,Dec-14,398.1264
+EML,EML,3-May,Jan-15,384.8848
+EML,EML,3-May,Feb-15,372.5857
+EML,EML,3-May,Mar-15,361.2204
+EML,EML,3-May,Apr-15,350.8375
+EML,EML,3-May,May-15,341.4029
+EML,EML,3-May,Jun-15,332.8876
+EML,EML,5-plus,Jan-14,1073.6314
+EML,EML,5-plus,Feb-14,1045.0985
+EML,EML,5-plus,Mar-14,1017.5023
+EML,EML,5-plus,Apr-14,990.7968
+EML,EML,5-plus,May-14,964.9784
+EML,EML,5-plus,Jun-14,940.0291
+EML,EML,5-plus,Jul-14,915.9815
+EML,EML,5-plus,Aug-14,892.7614
+EML,EML,5-plus,Sep-14,870.4427
+EML,EML,5-plus,Oct-14,848.987
+EML,EML,5-plus,Nov-14,828.4058
+EML,EML,5-plus,Dec-14,808.6411
+EML,EML,5-plus,Jan-15,789.8122
+EML,EML,5-plus,Feb-15,771.7519
+EML,EML,5-plus,Mar-15,754.5807
+EML,EML,5-plus,Apr-15,738.2698
+EML,EML,5-plus,May-15,722.7897
+EML,EML,5-plus,Jun-15,708.1465
+Account Manager,DEAN POLLY,Whole-EML,Jan-14,13.6779
+Account Manager,DEAN POLLY,Whole-EML,Feb-14,13.3638
+Account Manager,DEAN POLLY,Whole-EML,Mar-14,13.0579
+Account Manager,DEAN POLLY,Whole-EML,Apr-14,12.7601
+Account Manager,DEAN POLLY,Whole-EML,May-14,12.4697
+Account Manager,DEAN POLLY,Whole-EML,Jun-14,12.1875
+Account Manager,DEAN POLLY,Whole-EML,Jul-14,11.9131
+Account Manager,DEAN POLLY,Whole-EML,Aug-14,11.6467
+Account Manager,DEAN POLLY,Whole-EML,Sep-14,11.3884
+Account Manager,DEAN POLLY,Whole-EML,Oct-14,11.1374
+Account Manager,DEAN POLLY,Whole-EML,Nov-14,10.895
+Account Manager,DEAN POLLY,Whole-EML,Dec-14,10.66
+Account Manager,DEAN POLLY,Whole-EML,Jan-15,10.4335
+Account Manager,DEAN POLLY,Whole-EML,Feb-15,10.2141
+Account Manager,DEAN POLLY,Whole-EML,Mar-15,10.0026
+Account Manager,DEAN POLLY,Whole-EML,Apr-15,9.7994
+Account Manager,DEAN POLLY,Whole-EML,May-15,9.6043
+Account Manager,DEAN POLLY,Whole-EML,Jun-15,9.4164
+Account Manager,DEAN POLLY,3-May,Jan-14,2.9108
+Account Manager,DEAN POLLY,3-May,Feb-14,2.8231
+Account Manager,DEAN POLLY,3-May,Mar-14,2.7369
+Account Manager,DEAN POLLY,3-May,Apr-14,2.6521
+Account Manager,DEAN POLLY,3-May,May-14,2.5686
+Account Manager,DEAN POLLY,3-May,Jun-14,2.4866
+Account Manager,DEAN POLLY,3-May,Jul-14,2.4061
+Account Manager,DEAN POLLY,3-May,Aug-14,2.3269
+Account Manager,DEAN POLLY,3-May,Sep-14,2.2494
+Account Manager,DEAN POLLY,3-May,Oct-14,2.1732
+Account Manager,DEAN POLLY,3-May,Nov-14,2.0983
+Account Manager,DEAN POLLY,3-May,Dec-14,2.025
+Account Manager,DEAN POLLY,3-May,Jan-15,1.9532
+Account Manager,DEAN POLLY,3-May,Feb-15,1.8827
+Account Manager,DEAN POLLY,3-May,Mar-15,1.8136
+Account Manager,DEAN POLLY,3-May,Apr-15,1.746
+Account Manager,DEAN POLLY,3-May,May-15,1.68
+Account Manager,DEAN POLLY,3-May,Jun-15,1.6152
+Account Manager,DEAN POLLY,5-plus,Jan-14,10.7671
+Account Manager,DEAN POLLY,5-plus,Feb-14,10.5407
+Account Manager,DEAN POLLY,5-plus,Mar-14,10.321
+Account Manager,DEAN POLLY,5-plus,Apr-14,10.108
+Account Manager,DEAN POLLY,5-plus,May-14,9.9011
+Account Manager,DEAN POLLY,5-plus,Jun-14,9.7009
+Account Manager,DEAN POLLY,5-plus,Jul-14,9.507
+Account Manager,DEAN POLLY,5-plus,Aug-14,9.3198
+Account Manager,DEAN POLLY,5-plus,Sep-14,9.139
+Account Manager,DEAN POLLY,5-plus,Oct-14,8.9642
+Account Manager,DEAN POLLY,5-plus,Nov-14,8.7967
+Account Manager,DEAN POLLY,5-plus,Dec-14,8.635
+Account Manager,DEAN POLLY,5-plus,Jan-15,8.4803
+Account Manager,DEAN POLLY,5-plus,Feb-15,8.3314
+Account Manager,DEAN POLLY,5-plus,Mar-15,8.189
+Account Manager,DEAN POLLY,5-plus,Apr-15,8.0534
+Account Manager,DEAN POLLY,5-plus,May-15,7.9243
+Account Manager,DEAN POLLY,5-plus,Jun-15,7.8012
+Account Manager,ADAM PEATEY,Whole-EML,Jan-14,136.4006
+Account Manager,ADAM PEATEY,Whole-EML,Feb-14,122.8831
+Account Manager,ADAM PEATEY,Whole-EML,Mar-14,109.4623
+Account Manager,ADAM PEATEY,Whole-EML,Apr-14,96.3658
+Account Manager,ADAM PEATEY,Whole-EML,May-14,86.1846
+Account Manager,ADAM PEATEY,Whole-EML,Jun-14,78.3175
+Account Manager,ADAM PEATEY,Whole-EML,Jul-14,72.2311
+Account Manager,ADAM PEATEY,Whole-EML,Aug-14,67.4889
+Account Manager,ADAM PEATEY,Whole-EML,Sep-14,63.6937
+Account Manager,ADAM PEATEY,Whole-EML,Oct-14,60.5443
+Account Manager,ADAM PEATEY,Whole-EML,Nov-14,57.7922
+Account Manager,ADAM PEATEY,Whole-EML,Dec-14,55.2768
+Account Manager,ADAM PEATEY,Whole-EML,Jan-15,52.8803
+Account Manager,ADAM PEATEY,Whole-EML,Feb-15,50.59
+Account Manager,ADAM PEATEY,Whole-EML,Mar-15,48.444
+Account Manager,ADAM PEATEY,Whole-EML,Apr-15,46.5479
+Account Manager,ADAM PEATEY,Whole-EML,May-15,45.1033
+Account Manager,ADAM PEATEY,Whole-EML,Jun-15,44.3505
+Account Manager,ADAM PEATEY,1-Feb,Jan-14,81.561
+Account Manager,ADAM PEATEY,1-Feb,Feb-14,70.1127
+Account Manager,ADAM PEATEY,1-Feb,Mar-14,58.6737
+Account Manager,ADAM PEATEY,1-Feb,Apr-14,47.4672
+Account Manager,ADAM PEATEY,1-Feb,May-14,39.0879
+Account Manager,ADAM PEATEY,1-Feb,Jun-14,32.9313
+Account Manager,ADAM PEATEY,1-Feb,Jul-14,28.4673
+Account Manager,ADAM PEATEY,1-Feb,Aug-14,25.2588
+Account Manager,ADAM PEATEY,1-Feb,Sep-14,22.9059
+Account Manager,ADAM PEATEY,1-Feb,Oct-14,21.111
+Account Manager,ADAM PEATEY,1-Feb,Nov-14,19.623
+Account Manager,ADAM PEATEY,1-Feb,Dec-14,18.2838
+Account Manager,ADAM PEATEY,1-Feb,Jan-15,16.9725
+Account Manager,ADAM PEATEY,1-Feb,Feb-15,15.6798
+Account Manager,ADAM PEATEY,1-Feb,Mar-15,14.4429
+Account Manager,ADAM PEATEY,1-Feb,Apr-15,13.3641
+Account Manager,ADAM PEATEY,1-Feb,May-15,12.648
+Account Manager,ADAM PEATEY,1-Feb,Jun-15,12.5364
+Account Manager,ADAM PEATEY,3-May,Jan-14,33.5156
+Account Manager,ADAM PEATEY,3-May,Feb-14,32.0973
+Account Manager,ADAM PEATEY,3-May,Mar-14,30.7402
+Account Manager,ADAM PEATEY,3-May,Apr-14,29.4494
+Account Manager,ADAM PEATEY,3-May,May-14,28.221
+Account Manager,ADAM PEATEY,3-May,Jun-14,27.0587
+Account Manager,ADAM PEATEY,3-May,Jul-14,25.9587
+Account Manager,ADAM PEATEY,3-May,Aug-14,24.923
+Account Manager,ADAM PEATEY,3-May,Sep-14,23.9522
+Account Manager,ADAM PEATEY,3-May,Oct-14,23.0449
+Account Manager,ADAM PEATEY,3-May,Nov-14,22.2019
+Account Manager,ADAM PEATEY,3-May,Dec-14,21.4221
+Account Manager,ADAM PEATEY,3-May,Jan-15,20.7073
+Account Manager,ADAM PEATEY,3-May,Feb-15,20.056
+Account Manager,ADAM PEATEY,3-May,Mar-15,19.468
+Account Manager,ADAM PEATEY,3-May,Apr-15,18.9461
+Account Manager,ADAM PEATEY,3-May,May-15,18.4882
+Account Manager,ADAM PEATEY,3-May,Jun-15,18.0929
+Account Manager,ADAM PEATEY,5-plus,Jan-14,21.324
+Account Manager,ADAM PEATEY,5-plus,Feb-14,20.6731
+Account Manager,ADAM PEATEY,5-plus,Mar-14,20.0484
+Account Manager,ADAM PEATEY,5-plus,Apr-14,19.4492
+Account Manager,ADAM PEATEY,5-plus,May-14,18.8757
+Account Manager,ADAM PEATEY,5-plus,Jun-14,18.3275
+Account Manager,ADAM PEATEY,5-plus,Jul-14,17.8051
+Account Manager,ADAM PEATEY,5-plus,Aug-14,17.3071
+Account Manager,ADAM PEATEY,5-plus,Sep-14,16.8356
+Account Manager,ADAM PEATEY,5-plus,Oct-14,16.3884
+Account Manager,ADAM PEATEY,5-plus,Nov-14,15.9673
+Account Manager,ADAM PEATEY,5-plus,Dec-14,15.5709
+Account Manager,ADAM PEATEY,5-plus,Jan-15,15.2005
+Account Manager,ADAM PEATEY,5-plus,Feb-15,14.8542
+Account Manager,ADAM PEATEY,5-plus,Mar-15,14.5331
+Account Manager,ADAM PEATEY,5-plus,Apr-15,14.2377
+Account Manager,ADAM PEATEY,5-plus,May-15,13.9671
+Account Manager,ADAM PEATEY,5-plus,Jun-15,13.7212
+Account Manager,ALLAN COOMBES,Whole-EML,Jan-14,2.8058
+Account Manager,ALLAN COOMBES,Whole-EML,Feb-14,2.6126
+Account Manager,ALLAN COOMBES,Whole-EML,Mar-14,2.4209
+Account Manager,ALLAN COOMBES,Whole-EML,Apr-14,2.2327
+Account Manager,ALLAN COOMBES,Whole-EML,May-14,2.0761
+Account Manager,ALLAN COOMBES,Whole-EML,Jun-14,1.9447
+Account Manager,ALLAN COOMBES,Whole-EML,Jul-14,1.8326
+Account Manager,ALLAN COOMBES,Whole-EML,Aug-14,1.7351
+Account Manager,ALLAN COOMBES,Whole-EML,Sep-14,1.6482
+Account Manager,ALLAN COOMBES,Whole-EML,Oct-14,1.5683
+Account Manager,ALLAN COOMBES,Whole-EML,Nov-14,1.493
+Account Manager,ALLAN COOMBES,Whole-EML,Dec-14,1.4204
+Account Manager,ALLAN COOMBES,Whole-EML,Jan-15,1.3494
+Account Manager,ALLAN COOMBES,Whole-EML,Feb-15,1.2797
+Account Manager,ALLAN COOMBES,Whole-EML,Mar-15,1.2118
+Account Manager,ALLAN COOMBES,Whole-EML,Apr-15,1.1468
+Account Manager,ALLAN COOMBES,Whole-EML,May-15,1.0869
+Account Manager,ALLAN COOMBES,Whole-EML,Jun-15,1.0347
+Account Manager,ALLAN COOMBES,1-Feb,Jan-14,0.877
+Account Manager,ALLAN COOMBES,1-Feb,Feb-14,0.7539
+Account Manager,ALLAN COOMBES,1-Feb,Mar-14,0.6309
+Account Manager,ALLAN COOMBES,1-Feb,Apr-14,0.5104
+Account Manager,ALLAN COOMBES,1-Feb,May-14,0.4203
+Account Manager,ALLAN COOMBES,1-Feb,Jun-14,0.3541
+Account Manager,ALLAN COOMBES,1-Feb,Jul-14,0.3061
+Account Manager,ALLAN COOMBES,1-Feb,Aug-14,0.2716
+Account Manager,ALLAN COOMBES,1-Feb,Sep-14,0.2463
+Account Manager,ALLAN COOMBES,1-Feb,Oct-14,0.227
+Account Manager,ALLAN COOMBES,1-Feb,Nov-14,0.211
+Account Manager,ALLAN COOMBES,1-Feb,Dec-14,0.1966
+Account Manager,ALLAN COOMBES,1-Feb,Jan-15,0.1825
+Account Manager,ALLAN COOMBES,1-Feb,Feb-15,0.1686
+Account Manager,ALLAN COOMBES,1-Feb,Mar-15,0.1553
+Account Manager,ALLAN COOMBES,1-Feb,Apr-15,0.1437
+Account Manager,ALLAN COOMBES,1-Feb,May-15,0.136
+Account Manager,ALLAN COOMBES,1-Feb,Jun-15,0.1348
+Account Manager,ALLAN COOMBES,3-May,Jan-14,0.9699
+Account Manager,ALLAN COOMBES,3-May,Feb-14,0.9402
+Account Manager,ALLAN COOMBES,3-May,Mar-14,0.911
+Account Manager,ALLAN COOMBES,3-May,Apr-14,0.8821
+Account Manager,ALLAN COOMBES,3-May,May-14,0.8536
+Account Manager,ALLAN COOMBES,3-May,Jun-14,0.8255
+Account Manager,ALLAN COOMBES,3-May,Jul-14,0.7978
+Account Manager,ALLAN COOMBES,3-May,Aug-14,0.7705
+Account Manager,ALLAN COOMBES,3-May,Sep-14,0.7437
+Account Manager,ALLAN COOMBES,3-May,Oct-14,0.7172
+Account Manager,ALLAN COOMBES,3-May,Nov-14,0.6911
+Account Manager,ALLAN COOMBES,3-May,Dec-14,0.6654
+Account Manager,ALLAN COOMBES,3-May,Jan-15,0.6402
+Account Manager,ALLAN COOMBES,3-May,Feb-15,0.6153
+Account Manager,ALLAN COOMBES,3-May,Mar-15,0.5908
+Account Manager,ALLAN COOMBES,3-May,Apr-15,0.5667
+Account Manager,ALLAN COOMBES,3-May,May-15,0.5431
+Account Manager,ALLAN COOMBES,3-May,Jun-15,0.5198
+Account Manager,ALLAN COOMBES,5-plus,Jan-14,0.9589
+Account Manager,ALLAN COOMBES,5-plus,Feb-14,0.9185
+Account Manager,ALLAN COOMBES,5-plus,Mar-14,0.879
+Account Manager,ALLAN COOMBES,5-plus,Apr-14,0.8402
+Account Manager,ALLAN COOMBES,5-plus,May-14,0.8022
+Account Manager,ALLAN COOMBES,5-plus,Jun-14,0.7651
+Account Manager,ALLAN COOMBES,5-plus,Jul-14,0.7287
+Account Manager,ALLAN COOMBES,5-plus,Aug-14,0.693
+Account Manager,ALLAN COOMBES,5-plus,Sep-14,0.6582
+Account Manager,ALLAN COOMBES,5-plus,Oct-14,0.6241
+Account Manager,ALLAN COOMBES,5-plus,Nov-14,0.5909
+Account Manager,ALLAN COOMBES,5-plus,Dec-14,0.5584
+Account Manager,ALLAN COOMBES,5-plus,Jan-15,0.5267
+Account Manager,ALLAN COOMBES,5-plus,Feb-15,0.4958
+Account Manager,ALLAN COOMBES,5-plus,Mar-15,0.4657
+Account Manager,ALLAN COOMBES,5-plus,Apr-15,0.4364
+Account Manager,ALLAN COOMBES,5-plus,May-15,0.4078
+Account Manager,ALLAN COOMBES,5-plus,Jun-15,0.3801
+Account Manager,D.HOPKINS,Whole-EML,Jan-14,86.6786
+Account Manager,D.HOPKINS,Whole-EML,Feb-14,78.4178
+Account Manager,D.HOPKINS,Whole-EML,Mar-14,70.2244
+Account Manager,D.HOPKINS,Whole-EML,Apr-14,62.2355
+Account Manager,D.HOPKINS,Whole-EML,May-14,55.9813
+Account Manager,D.HOPKINS,Whole-EML,Jun-14,51.1076
+Account Manager,D.HOPKINS,Whole-EML,Jul-14,47.2984
+Account Manager,D.HOPKINS,Whole-EML,Aug-14,44.2953
+Account Manager,D.HOPKINS,Whole-EML,Sep-14,41.8639
+Account Manager,D.HOPKINS,Whole-EML,Oct-14,39.8262
+Account Manager,D.HOPKINS,Whole-EML,Nov-14,38.0345
+Account Manager,D.HOPKINS,Whole-EML,Dec-14,36.3946
+Account Manager,D.HOPKINS,Whole-EML,Jan-15,34.8361
+Account Manager,D.HOPKINS,Whole-EML,Feb-15,33.3521
+Account Manager,D.HOPKINS,Whole-EML,Mar-15,31.9646
+Account Manager,D.HOPKINS,Whole-EML,Apr-15,30.7369
+Account Manager,D.HOPKINS,Whole-EML,May-15,29.7876
+Account Manager,D.HOPKINS,Whole-EML,Jun-15,29.2586
+Account Manager,D.HOPKINS,1-Feb,Jan-14,48.235
+Account Manager,D.HOPKINS,1-Feb,Feb-14,41.4645
+Account Manager,D.HOPKINS,1-Feb,Mar-14,34.6995
+Account Manager,D.HOPKINS,1-Feb,Apr-14,28.072
+Account Manager,D.HOPKINS,1-Feb,May-14,23.1165
+Account Manager,D.HOPKINS,1-Feb,Jun-14,19.4755
+Account Manager,D.HOPKINS,1-Feb,Jul-14,16.8355
+Account Manager,D.HOPKINS,1-Feb,Aug-14,14.938
+Account Manager,D.HOPKINS,1-Feb,Sep-14,13.5465
+Account Manager,D.HOPKINS,1-Feb,Oct-14,12.485
+Account Manager,D.HOPKINS,1-Feb,Nov-14,11.605
+Account Manager,D.HOPKINS,1-Feb,Dec-14,10.813
+Account Manager,D.HOPKINS,1-Feb,Jan-15,10.0375
+Account Manager,D.HOPKINS,1-Feb,Feb-15,9.273
+Account Manager,D.HOPKINS,1-Feb,Mar-15,8.5415
+Account Manager,D.HOPKINS,1-Feb,Apr-15,7.9035
+Account Manager,D.HOPKINS,1-Feb,May-15,7.48
+Account Manager,D.HOPKINS,1-Feb,Jun-15,7.414
+Account Manager,D.HOPKINS,3-May,Jan-14,29.731
+Account Manager,D.HOPKINS,3-May,Feb-14,28.5167
+Account Manager,D.HOPKINS,3-May,Mar-14,27.3524
+Account Manager,D.HOPKINS,3-May,Apr-14,26.2434
+Account Manager,D.HOPKINS,3-May,May-14,25.1854
+Account Manager,D.HOPKINS,3-May,Jun-14,24.1821
+Account Manager,D.HOPKINS,3-May,Jul-14,23.2305
+Account Manager,D.HOPKINS,3-May,Aug-14,22.3314
+Account Manager,D.HOPKINS,3-May,Sep-14,21.486
+Account Manager,D.HOPKINS,3-May,Oct-14,20.6933
+Account Manager,D.HOPKINS,3-May,Nov-14,19.9531
+Account Manager,D.HOPKINS,3-May,Dec-14,19.2657
+Account Manager,D.HOPKINS,3-May,Jan-15,18.6313
+Account Manager,D.HOPKINS,3-May,Feb-15,18.0496
+Account Manager,D.HOPKINS,3-May,Mar-15,17.52
+Account Manager,D.HOPKINS,3-May,Apr-15,17.0451
+Account Manager,D.HOPKINS,3-May,May-15,16.6228
+Account Manager,D.HOPKINS,3-May,Jun-15,16.2521
+Account Manager,D.HOPKINS,5-plus,Jan-14,8.7126
+Account Manager,D.HOPKINS,5-plus,Feb-14,8.4366
+Account Manager,D.HOPKINS,5-plus,Mar-14,8.1725
+Account Manager,D.HOPKINS,5-plus,Apr-14,7.9201
+Account Manager,D.HOPKINS,5-plus,May-14,7.6794
+Account Manager,D.HOPKINS,5-plus,Jun-14,7.45
+Account Manager,D.HOPKINS,5-plus,Jul-14,7.2324
+Account Manager,D.HOPKINS,5-plus,Aug-14,7.0259
+Account Manager,D.HOPKINS,5-plus,Sep-14,6.8314
+Account Manager,D.HOPKINS,5-plus,Oct-14,6.6479
+Account Manager,D.HOPKINS,5-plus,Nov-14,6.4764
+Account Manager,D.HOPKINS,5-plus,Dec-14,6.3159
+Account Manager,D.HOPKINS,5-plus,Jan-15,6.1673
+Account Manager,D.HOPKINS,5-plus,Feb-15,6.0295
+Account Manager,D.HOPKINS,5-plus,Mar-15,5.9031
+Account Manager,D.HOPKINS,5-plus,Apr-15,5.7883
+Account Manager,D.HOPKINS,5-plus,May-15,5.6848
+Account Manager,D.HOPKINS,5-plus,Jun-15,5.5925
+Account Manager,DANNIELLE P,Whole-EML,Jan-14,196.6462
+Account Manager,DANNIELLE P,Whole-EML,Feb-14,179.4558
+Account Manager,DANNIELLE P,Whole-EML,Mar-14,162.4425
+Account Manager,DANNIELLE P,Whole-EML,Apr-14,145.8702
+Account Manager,DANNIELLE P,Whole-EML,May-14,132.7197
+Account Manager,DANNIELLE P,Whole-EML,Jun-14,122.2986
+Account Manager,DANNIELLE P,Whole-EML,Jul-14,113.9958
+Account Manager,DANNIELLE P,Whole-EML,Aug-14,107.3035
+Account Manager,DANNIELLE P,Whole-EML,Sep-14,101.7725
+Account Manager,DANNIELLE P,Whole-EML,Oct-14,97.0494
+Account Manager,DANNIELLE P,Whole-EML,Nov-14,92.8525
+Account Manager,DANNIELLE P,Whole-EML,Dec-14,88.9965
+Account Manager,DANNIELLE P,Whole-EML,Jan-15,85.3452
+Account Manager,DANNIELLE P,Whole-EML,Feb-15,81.8836
+Account Manager,DANNIELLE P,Whole-EML,Mar-15,78.6537
+Account Manager,DANNIELLE P,Whole-EML,Apr-15,75.7817
+Account Manager,DANNIELLE P,Whole-EML,May-15,73.4972
+Account Manager,DANNIELLE P,Whole-EML,Jun-15,72.0761
+Account Manager,DANNIELLE P,1-Feb,Jan-14,93.839
+Account Manager,DANNIELLE P,1-Feb,Feb-14,80.6673
+Account Manager,DANNIELLE P,1-Feb,Mar-14,67.5063
+Account Manager,DANNIELLE P,1-Feb,Apr-14,54.6128
+Account Manager,DANNIELLE P,1-Feb,May-14,44.9721
+Account Manager,DANNIELLE P,1-Feb,Jun-14,37.8887
+Account Manager,DANNIELLE P,1-Feb,Jul-14,32.7527
+Account Manager,DANNIELLE P,1-Feb,Aug-14,29.0612
+Account Manager,DANNIELLE P,1-Feb,Sep-14,26.3541
+Account Manager,DANNIELLE P,1-Feb,Oct-14,24.289
+Account Manager,DANNIELLE P,1-Feb,Nov-14,22.577
+Account Manager,DANNIELLE P,1-Feb,Dec-14,21.0362
+Account Manager,DANNIELLE P,1-Feb,Jan-15,19.5275
+Account Manager,DANNIELLE P,1-Feb,Feb-15,18.0402
+Account Manager,DANNIELLE P,1-Feb,Mar-15,16.6171
+Account Manager,DANNIELLE P,1-Feb,Apr-15,15.3759
+Account Manager,DANNIELLE P,1-Feb,May-15,14.552
+Account Manager,DANNIELLE P,1-Feb,Jun-15,14.4236
+Account Manager,DANNIELLE P,3-May,Jan-14,55.7879
+Account Manager,DANNIELLE P,3-May,Feb-14,53.6593
+Account Manager,DANNIELLE P,3-May,Mar-14,51.608
+Account Manager,DANNIELLE P,3-May,Apr-14,49.6403
+Account Manager,DANNIELLE P,3-May,May-14,47.7502
+Account Manager,DANNIELLE P,3-May,Jun-14,45.9436
+Account Manager,DANNIELLE P,3-May,Jul-14,44.2163
+Account Manager,DANNIELLE P,3-May,Aug-14,42.5687
+Account Manager,DANNIELLE P,3-May,Sep-14,41.0043
+Account Manager,DANNIELLE P,3-May,Oct-14,39.5195
+Account Manager,DANNIELLE P,3-May,Nov-14,38.1144
+Account Manager,DANNIELLE P,3-May,Dec-14,36.7905
+Account Manager,DANNIELLE P,3-May,Jan-15,35.5481
+Account Manager,DANNIELLE P,3-May,Feb-15,34.3853
+Account Manager,DANNIELLE P,3-May,Mar-15,33.302
+Account Manager,DANNIELLE P,3-May,Apr-15,32.3022
+Account Manager,DANNIELLE P,3-May,May-15,31.3837
+Account Manager,DANNIELLE P,3-May,Jun-15,30.5429
+Account Manager,DANNIELLE P,5-plus,Jan-14,47.0193
+Account Manager,DANNIELLE P,5-plus,Feb-14,45.1292
+Account Manager,DANNIELLE P,5-plus,Mar-14,43.3282
+Account Manager,DANNIELLE P,5-plus,Apr-14,41.6171
+Account Manager,DANNIELLE P,5-plus,May-14,39.9974
+Account Manager,DANNIELLE P,5-plus,Jun-14,38.4663
+Account Manager,DANNIELLE P,5-plus,Jul-14,37.0268
+Account Manager,DANNIELLE P,5-plus,Aug-14,35.6736
+Account Manager,DANNIELLE P,5-plus,Sep-14,34.4141
+Account Manager,DANNIELLE P,5-plus,Oct-14,33.2409
+Account Manager,DANNIELLE P,5-plus,Nov-14,32.1611
+Account Manager,DANNIELLE P,5-plus,Dec-14,31.1698
+Account Manager,DANNIELLE P,5-plus,Jan-15,30.2696
+Account Manager,DANNIELLE P,5-plus,Feb-15,29.4581
+Account Manager,DANNIELLE P,5-plus,Mar-15,28.7346
+Account Manager,DANNIELLE P,5-plus,Apr-15,28.1036
+Account Manager,DANNIELLE P,5-plus,May-15,27.5615
+Account Manager,DANNIELLE P,5-plus,Jun-15,27.1096
+Account Manager,JACLYN DEANE,Whole-EML,Jan-14,1.9345
+Account Manager,JACLYN DEANE,Whole-EML,Feb-14,1.873
+Account Manager,JACLYN DEANE,Whole-EML,Mar-14,1.8153
+Account Manager,JACLYN DEANE,Whole-EML,Apr-14,1.7615
+Account Manager,JACLYN DEANE,Whole-EML,May-14,1.7116
+Account Manager,JACLYN DEANE,Whole-EML,Jun-14,1.6655
+Account Manager,JACLYN DEANE,Whole-EML,Jul-14,1.6233
+Account Manager,JACLYN DEANE,Whole-EML,Aug-14,1.585
+Account Manager,JACLYN DEANE,Whole-EML,Sep-14,1.5506
+Account Manager,JACLYN DEANE,Whole-EML,Oct-14,1.5199
+Account Manager,JACLYN DEANE,Whole-EML,Nov-14,1.4933
+Account Manager,JACLYN DEANE,Whole-EML,Dec-14,1.4705
+Account Manager,JACLYN DEANE,Whole-EML,Jan-15,1.4516
+Account Manager,JACLYN DEANE,Whole-EML,Feb-15,1.4365
+Account Manager,JACLYN DEANE,Whole-EML,Mar-15,1.4252
+Account Manager,JACLYN DEANE,Whole-EML,Apr-15,1.4179
+Account Manager,JACLYN DEANE,Whole-EML,May-15,1.4145
+Account Manager,JACLYN DEANE,Whole-EML,Jun-15,1.4149
+Account Manager,JACLYN DEANE,5-plus,Jan-14,1.9345
+Account Manager,JACLYN DEANE,5-plus,Feb-14,1.873
+Account Manager,JACLYN DEANE,5-plus,Mar-14,1.8153
+Account Manager,JACLYN DEANE,5-plus,Apr-14,1.7615
+Account Manager,JACLYN DEANE,5-plus,May-14,1.7116
+Account Manager,JACLYN DEANE,5-plus,Jun-14,1.6655
+Account Manager,JACLYN DEANE,5-plus,Jul-14,1.6233
+Account Manager,JACLYN DEANE,5-plus,Aug-14,1.585
+Account Manager,JACLYN DEANE,5-plus,Sep-14,1.5506
+Account Manager,JACLYN DEANE,5-plus,Oct-14,1.5199
+Account Manager,JACLYN DEANE,5-plus,Nov-14,1.4933
+Account Manager,JACLYN DEANE,5-plus,Dec-14,1.4705
+Account Manager,JACLYN DEANE,5-plus,Jan-15,1.4516
+Account Manager,JACLYN DEANE,5-plus,Feb-15,1.4365
+Account Manager,JACLYN DEANE,5-plus,Mar-15,1.4252
+Account Manager,JACLYN DEANE,5-plus,Apr-15,1.4179
+Account Manager,JACLYN DEANE,5-plus,May-15,1.4145
+Account Manager,JACLYN DEANE,5-plus,Jun-15,1.4149
+Account Manager,L.CHRISTIANSEN,Whole-EML,Jan-14,216.2438
+Account Manager,L.CHRISTIANSEN,Whole-EML,Feb-14,195.6094
+Account Manager,L.CHRISTIANSEN,Whole-EML,Mar-14,175.1187
+Account Manager,L.CHRISTIANSEN,Whole-EML,Apr-14,155.1132
+Account Manager,L.CHRISTIANSEN,Whole-EML,May-14,139.4941
+Account Manager,L.CHRISTIANSEN,Whole-EML,Jun-14,127.3561
+Account Manager,L.CHRISTIANSEN,Whole-EML,Jul-14,117.8981
+Account Manager,L.CHRISTIANSEN,Whole-EML,Aug-14,110.4595
+Account Manager,L.CHRISTIANSEN,Whole-EML,Sep-14,104.4465
+Account Manager,L.CHRISTIANSEN,Whole-EML,Oct-14,99.4025
+Account Manager,L.CHRISTIANSEN,Whole-EML,Nov-14,94.9545
+Account Manager,L.CHRISTIANSEN,Whole-EML,Dec-14,90.8622
+Account Manager,L.CHRISTIANSEN,Whole-EML,Jan-15,86.9464
+Account Manager,L.CHRISTIANSEN,Whole-EML,Feb-15,83.1885
+Account Manager,L.CHRISTIANSEN,Whole-EML,Mar-15,79.645
+Account Manager,L.CHRISTIANSEN,Whole-EML,Apr-15,76.4762
+Account Manager,L.CHRISTIANSEN,Whole-EML,May-15,73.986
+Account Manager,L.CHRISTIANSEN,Whole-EML,Jun-15,72.5348
+Account Manager,L.CHRISTIANSEN,1-Feb,Jan-14,122.78
+Account Manager,L.CHRISTIANSEN,1-Feb,Feb-14,105.546
+Account Manager,L.CHRISTIANSEN,1-Feb,Mar-14,88.326
+Account Manager,L.CHRISTIANSEN,1-Feb,Apr-14,71.456
+Account Manager,L.CHRISTIANSEN,1-Feb,May-14,58.842
+Account Manager,L.CHRISTIANSEN,1-Feb,Jun-14,49.574
+Account Manager,L.CHRISTIANSEN,1-Feb,Jul-14,42.854
+Account Manager,L.CHRISTIANSEN,1-Feb,Aug-14,38.024
+Account Manager,L.CHRISTIANSEN,1-Feb,Sep-14,34.482
+Account Manager,L.CHRISTIANSEN,1-Feb,Oct-14,31.78
+Account Manager,L.CHRISTIANSEN,1-Feb,Nov-14,29.54
+Account Manager,L.CHRISTIANSEN,1-Feb,Dec-14,27.524
+Account Manager,L.CHRISTIANSEN,1-Feb,Jan-15,25.55
+Account Manager,L.CHRISTIANSEN,1-Feb,Feb-15,23.604
+Account Manager,L.CHRISTIANSEN,1-Feb,Mar-15,21.742
+Account Manager,L.CHRISTIANSEN,1-Feb,Apr-15,20.118
+Account Manager,L.CHRISTIANSEN,1-Feb,May-15,19.04
+Account Manager,L.CHRISTIANSEN,1-Feb,Jun-15,18.872
+Account Manager,L.CHRISTIANSEN,3-May,Jan-14,57.752
+Account Manager,L.CHRISTIANSEN,3-May,Feb-14,55.586
+Account Manager,L.CHRISTIANSEN,3-May,Mar-14,53.496
+Account Manager,L.CHRISTIANSEN,3-May,Apr-14,51.488
+Account Manager,L.CHRISTIANSEN,3-May,May-14,49.556
+Account Manager,L.CHRISTIANSEN,3-May,Jun-14,47.706
+Account Manager,L.CHRISTIANSEN,3-May,Jul-14,45.934
+Account Manager,L.CHRISTIANSEN,3-May,Aug-14,44.24
+Account Manager,L.CHRISTIANSEN,3-May,Sep-14,42.628
+Account Manager,L.CHRISTIANSEN,3-May,Oct-14,41.094
+Account Manager,L.CHRISTIANSEN,3-May,Nov-14,39.638
+Account Manager,L.CHRISTIANSEN,3-May,Dec-14,38.262
+Account Manager,L.CHRISTIANSEN,3-May,Jan-15,36.966
+Account Manager,L.CHRISTIANSEN,3-May,Feb-15,35.748
+Account Manager,L.CHRISTIANSEN,3-May,Mar-15,34.608
+Account Manager,L.CHRISTIANSEN,3-May,Apr-15,33.55
+Account Manager,L.CHRISTIANSEN,3-May,May-15,32.572
+Account Manager,L.CHRISTIANSEN,3-May,Jun-15,31.67
+Account Manager,L.CHRISTIANSEN,5-plus,Jan-14,35.7118
+Account Manager,L.CHRISTIANSEN,5-plus,Feb-14,34.4774
+Account Manager,L.CHRISTIANSEN,5-plus,Mar-14,33.2967
+Account Manager,L.CHRISTIANSEN,5-plus,Apr-14,32.1692
+Account Manager,L.CHRISTIANSEN,5-plus,May-14,31.0961
+Account Manager,L.CHRISTIANSEN,5-plus,Jun-14,30.0761
+Account Manager,L.CHRISTIANSEN,5-plus,Jul-14,29.1101
+Account Manager,L.CHRISTIANSEN,5-plus,Aug-14,28.1955
+Account Manager,L.CHRISTIANSEN,5-plus,Sep-14,27.3365
+Account Manager,L.CHRISTIANSEN,5-plus,Oct-14,26.5285
+Account Manager,L.CHRISTIANSEN,5-plus,Nov-14,25.7765
+Account Manager,L.CHRISTIANSEN,5-plus,Dec-14,25.0762
+Account Manager,L.CHRISTIANSEN,5-plus,Jan-15,24.4304
+Account Manager,L.CHRISTIANSEN,5-plus,Feb-15,23.8365
+Account Manager,L.CHRISTIANSEN,5-plus,Mar-15,23.295
+Account Manager,L.CHRISTIANSEN,5-plus,Apr-15,22.8082
+Account Manager,L.CHRISTIANSEN,5-plus,May-15,22.374
+Account Manager,L.CHRISTIANSEN,5-plus,Jun-15,21.9928
+Account Manager,M. WOODLANDS,Whole-EML,Jan-14,197.7665
+Account Manager,M. WOODLANDS,Whole-EML,Feb-14,179.6435
+Account Manager,M. WOODLANDS,Whole-EML,Mar-14,161.65
+Account Manager,M. WOODLANDS,Whole-EML,Apr-14,144.0839
+Account Manager,M. WOODLANDS,Whole-EML,May-14,130.3131
+Account Manager,M. WOODLANDS,Whole-EML,Jun-14,119.5581
+Account Manager,M. WOODLANDS,Whole-EML,Jul-14,111.125
+Account Manager,M. WOODLANDS,Whole-EML,Aug-14,104.4423
+Account Manager,M. WOODLANDS,Whole-EML,Sep-14,98.9973
+Account Manager,M. WOODLANDS,Whole-EML,Oct-14,94.397
+Account Manager,M. WOODLANDS,Whole-EML,Nov-14,90.316
+Account Manager,M. WOODLANDS,Whole-EML,Dec-14,86.5488
+Account Manager,M. WOODLANDS,Whole-EML,Jan-15,82.9391
+Account Manager,M. WOODLANDS,Whole-EML,Feb-15,79.4716
+Account Manager,M. WOODLANDS,Whole-EML,Mar-15,76.1958
+Account Manager,M. WOODLANDS,Whole-EML,Apr-15,73.2496
+Account Manager,M. WOODLANDS,Whole-EML,May-15,70.8942
+Account Manager,M. WOODLANDS,Whole-EML,Jun-15,69.4427
+Account Manager,M. WOODLANDS,1-Feb,Jan-14,106.117
+Account Manager,M. WOODLANDS,1-Feb,Feb-14,91.2219
+Account Manager,M. WOODLANDS,1-Feb,Mar-14,76.3389
+Account Manager,M. WOODLANDS,1-Feb,Apr-14,61.7584
+Account Manager,M. WOODLANDS,1-Feb,May-14,50.8563
+Account Manager,M. WOODLANDS,1-Feb,Jun-14,42.8461
+Account Manager,M. WOODLANDS,1-Feb,Jul-14,37.0381
+Account Manager,M. WOODLANDS,1-Feb,Aug-14,32.8636
+Account Manager,M. WOODLANDS,1-Feb,Sep-14,29.8023
+Account Manager,M. WOODLANDS,1-Feb,Oct-14,27.467
+Account Manager,M. WOODLANDS,1-Feb,Nov-14,25.531
+Account Manager,M. WOODLANDS,1-Feb,Dec-14,23.7886
+Account Manager,M. WOODLANDS,1-Feb,Jan-15,22.0825
+Account Manager,M. WOODLANDS,1-Feb,Feb-15,20.4006
+Account Manager,M. WOODLANDS,1-Feb,Mar-15,18.7913
+Account Manager,M. WOODLANDS,1-Feb,Apr-15,17.3877
+Account Manager,M. WOODLANDS,1-Feb,May-15,16.456
+Account Manager,M. WOODLANDS,1-Feb,Jun-15,16.3108
+Account Manager,M. WOODLANDS,3-May,Jan-14,55.7945
+Account Manager,M. WOODLANDS,3-May,Feb-14,53.6743
+Account Manager,M. WOODLANDS,3-May,Mar-14,51.6314
+Account Manager,M. WOODLANDS,3-May,Apr-14,49.6751
+Account Manager,M. WOODLANDS,3-May,May-14,47.797
+Account Manager,M. WOODLANDS,3-May,Jun-14,46.0042
+Account Manager,M. WOODLANDS,3-May,Jul-14,44.2925
+Account Manager,M. WOODLANDS,3-May,Aug-14,42.6611
+Account Manager,M. WOODLANDS,3-May,Sep-14,41.1141
+Account Manager,M. WOODLANDS,3-May,Oct-14,39.6491
+Account Manager,M. WOODLANDS,3-May,Nov-14,38.2644
+Account Manager,M. WOODLANDS,3-May,Dec-14,36.9633
+Account Manager,M. WOODLANDS,3-May,Jan-15,35.7437
+Account Manager,M. WOODLANDS,3-May,Feb-15,34.6061
+Account Manager,M. WOODLANDS,3-May,Mar-15,33.5492
+Account Manager,M. WOODLANDS,3-May,Apr-15,32.5776
+Account Manager,M. WOODLANDS,3-May,May-15,31.6879
+Account Manager,M. WOODLANDS,3-May,Jun-15,30.8777
+Account Manager,M. WOODLANDS,5-plus,Jan-14,35.855
+Account Manager,M. WOODLANDS,5-plus,Feb-14,34.7473
+Account Manager,M. WOODLANDS,5-plus,Mar-14,33.6797
+Account Manager,M. WOODLANDS,5-plus,Apr-14,32.6504
+Account Manager,M. WOODLANDS,5-plus,May-14,31.6598
+Account Manager,M. WOODLANDS,5-plus,Jun-14,30.7078
+Account Manager,M. WOODLANDS,5-plus,Jul-14,29.7944
+Account Manager,M. WOODLANDS,5-plus,Aug-14,28.9176
+Account Manager,M. WOODLANDS,5-plus,Sep-14,28.0809
+Account Manager,M. WOODLANDS,5-plus,Oct-14,27.2809
+Account Manager,M. WOODLANDS,5-plus,Nov-14,26.5206
+Account Manager,M. WOODLANDS,5-plus,Dec-14,25.7969
+Account Manager,M. WOODLANDS,5-plus,Jan-15,25.1129
+Account Manager,M. WOODLANDS,5-plus,Feb-15,24.4649
+Account Manager,M. WOODLANDS,5-plus,Mar-15,23.8553
+Account Manager,M. WOODLANDS,5-plus,Apr-15,23.2843
+Account Manager,M. WOODLANDS,5-plus,May-15,22.7503
+Account Manager,M. WOODLANDS,5-plus,Jun-15,22.2542
+Account Manager,NO ACCT MGR,Whole-EML,Jan-14,1528.5265
+Account Manager,NO ACCT MGR,Whole-EML,Feb-14,1443.0241
+Account Manager,NO ACCT MGR,Whole-EML,Mar-14,1358.6315
+Account Manager,NO ACCT MGR,Whole-EML,Apr-14,1276.3872
+Account Manager,NO ACCT MGR,Whole-EML,May-14,1208.2386
+Account Manager,NO ACCT MGR,Whole-EML,Jun-14,1151.4132
+Account Manager,NO ACCT MGR,Whole-EML,Jul-14,1103.4658
+Account Manager,NO ACCT MGR,Whole-EML,Aug-14,1062.3148
+Account Manager,NO ACCT MGR,Whole-EML,Sep-14,1026.1802
+Account Manager,NO ACCT MGR,Whole-EML,Oct-14,993.6592
+Account Manager,NO ACCT MGR,Whole-EML,Nov-14,963.5717
+Account Manager,NO ACCT MGR,Whole-EML,Dec-14,935.1642
+Account Manager,NO ACCT MGR,Whole-EML,Jan-15,907.9729
+Account Manager,NO ACCT MGR,Whole-EML,Feb-15,881.8052
+Account Manager,NO ACCT MGR,Whole-EML,Mar-15,856.9407
+Account Manager,NO ACCT MGR,Whole-EML,Apr-15,833.8385
+Account Manager,NO ACCT MGR,Whole-EML,May-15,813.4097
+Account Manager,NO ACCT MGR,Whole-EML,Jun-15,796.7608
+Account Manager,NO ACCT MGR,1-Feb,Jan-14,377.11
+Account Manager,NO ACCT MGR,1-Feb,Feb-14,324.177
+Account Manager,NO ACCT MGR,1-Feb,Mar-14,271.287
+Account Manager,NO ACCT MGR,1-Feb,Apr-14,219.472
+Account Manager,NO ACCT MGR,1-Feb,May-14,180.729
+Account Manager,NO ACCT MGR,1-Feb,Jun-14,152.263
+Account Manager,NO ACCT MGR,1-Feb,Jul-14,131.623
+Account Manager,NO ACCT MGR,1-Feb,Aug-14,116.788
+Account Manager,NO ACCT MGR,1-Feb,Sep-14,105.909
+Account Manager,NO ACCT MGR,1-Feb,Oct-14,97.61
+Account Manager,NO ACCT MGR,1-Feb,Nov-14,90.73
+Account Manager,NO ACCT MGR,1-Feb,Dec-14,84.538
+Account Manager,NO ACCT MGR,1-Feb,Jan-15,78.475
+Account Manager,NO ACCT MGR,1-Feb,Feb-15,72.498
+Account Manager,NO ACCT MGR,1-Feb,Mar-15,66.779
+Account Manager,NO ACCT MGR,1-Feb,Apr-15,61.791
+Account Manager,NO ACCT MGR,1-Feb,May-15,58.48
+Account Manager,NO ACCT MGR,1-Feb,Jun-15,57.964
+Account Manager,NO ACCT MGR,3-May,Jan-14,289.3818
+Account Manager,NO ACCT MGR,3-May,Feb-14,278.2219
+Account Manager,NO ACCT MGR,3-May,Mar-14,267.4793
+Account Manager,NO ACCT MGR,3-May,Apr-14,257.2007
+Account Manager,NO ACCT MGR,3-May,May-14,247.3446
+Account Manager,NO ACCT MGR,3-May,Jun-14,237.9468
+Account Manager,NO ACCT MGR,3-May,Jul-14,228.9841
+Account Manager,NO ACCT MGR,3-May,Aug-14,220.4555
+Account Manager,NO ACCT MGR,3-May,Sep-14,212.38
+Account Manager,NO ACCT MGR,3-May,Oct-14,204.7448
+Account Manager,NO ACCT MGR,3-May,Nov-14,197.5437
+Account Manager,NO ACCT MGR,3-May,Dec-14,190.7898
+Account Manager,NO ACCT MGR,3-May,Jan-15,184.4764
+Account Manager,NO ACCT MGR,3-May,Feb-15,178.6033
+Account Manager,NO ACCT MGR,3-May,Mar-15,173.1648
+Account Manager,NO ACCT MGR,3-May,Apr-15,168.1846
+Account Manager,NO ACCT MGR,3-May,May-15,163.6454
+Account Manager,NO ACCT MGR,3-May,Jun-15,159.5344
+Account Manager,NO ACCT MGR,5-plus,Jan-14,862.0347
+Account Manager,NO ACCT MGR,5-plus,Feb-14,840.6252
+Account Manager,NO ACCT MGR,5-plus,Mar-14,819.8652
+Account Manager,NO ACCT MGR,5-plus,Apr-14,799.7145
+Account Manager,NO ACCT MGR,5-plus,May-14,780.165
+Account Manager,NO ACCT MGR,5-plus,Jun-14,761.2034
+Account Manager,NO ACCT MGR,5-plus,Jul-14,742.8587
+Account Manager,NO ACCT MGR,5-plus,Aug-14,725.0713
+Account Manager,NO ACCT MGR,5-plus,Sep-14,707.8912
+Account Manager,NO ACCT MGR,5-plus,Oct-14,691.3044
+Account Manager,NO ACCT MGR,5-plus,Nov-14,675.298
+Account Manager,NO ACCT MGR,5-plus,Dec-14,659.8364
+Account Manager,NO ACCT MGR,5-plus,Jan-15,645.0215
+Account Manager,NO ACCT MGR,5-plus,Feb-15,630.7039
+Account Manager,NO ACCT MGR,5-plus,Mar-15,616.9969
+Account Manager,NO ACCT MGR,5-plus,Apr-15,603.8629
+Account Manager,NO ACCT MGR,5-plus,May-15,591.2843
+Account Manager,NO ACCT MGR,5-plus,Jun-15,579.2624
+Account Manager,PETER MEIGHAN,Whole-EML,Jan-14,48.7942
+Account Manager,PETER MEIGHAN,Whole-EML,Feb-14,45.6224
+Account Manager,PETER MEIGHAN,Whole-EML,Mar-14,42.4878
+Account Manager,PETER MEIGHAN,Whole-EML,Apr-14,39.43
+Account Manager,PETER MEIGHAN,Whole-EML,May-14,36.893
+Account Manager,PETER MEIGHAN,Whole-EML,Jun-14,34.776
+Account Manager,PETER MEIGHAN,Whole-EML,Jul-14,32.9852
+Account Manager,PETER MEIGHAN,Whole-EML,Aug-14,31.4442
+Account Manager,PETER MEIGHAN,Whole-EML,Sep-14,30.0878
+Account Manager,PETER MEIGHAN,Whole-EML,Oct-14,28.8626
+Account Manager,PETER MEIGHAN,Whole-EML,Nov-14,27.7258
+Account Manager,PETER MEIGHAN,Whole-EML,Dec-14,26.6496
+Account Manager,PETER MEIGHAN,Whole-EML,Jan-15,25.6142
+Account Manager,PETER MEIGHAN,Whole-EML,Feb-15,24.6166
+Account Manager,PETER MEIGHAN,Whole-EML,Mar-15,23.6642
+Account Manager,PETER MEIGHAN,Whole-EML,Apr-15,22.7754
+Account Manager,PETER MEIGHAN,Whole-EML,May-15,21.9834
+Account Manager,PETER MEIGHAN,Whole-EML,Jun-15,21.3308
+Account Manager,PETER MEIGHAN,1-Feb,Jan-14,14.032
+Account Manager,PETER MEIGHAN,1-Feb,Feb-14,12.0624
+Account Manager,PETER MEIGHAN,1-Feb,Mar-14,10.0944
+Account Manager,PETER MEIGHAN,1-Feb,Apr-14,8.1664
+Account Manager,PETER MEIGHAN,1-Feb,May-14,6.7248
+Account Manager,PETER MEIGHAN,1-Feb,Jun-14,5.6656
+Account Manager,PETER MEIGHAN,1-Feb,Jul-14,4.8976
+Account Manager,PETER MEIGHAN,1-Feb,Aug-14,4.3456
+Account Manager,PETER MEIGHAN,1-Feb,Sep-14,3.9408
+Account Manager,PETER MEIGHAN,1-Feb,Oct-14,3.632
+Account Manager,PETER MEIGHAN,1-Feb,Nov-14,3.376
+Account Manager,PETER MEIGHAN,1-Feb,Dec-14,3.1456
+Account Manager,PETER MEIGHAN,1-Feb,Jan-15,2.92
+Account Manager,PETER MEIGHAN,1-Feb,Feb-15,2.6976
+Account Manager,PETER MEIGHAN,1-Feb,Mar-15,2.4848
+Account Manager,PETER MEIGHAN,1-Feb,Apr-15,2.2992
+Account Manager,PETER MEIGHAN,1-Feb,May-15,2.176
+Account Manager,PETER MEIGHAN,1-Feb,Jun-15,2.1568
+Account Manager,PETER MEIGHAN,3-May,Jan-14,19.2698
+Account Manager,PETER MEIGHAN,3-May,Feb-14,18.5662
+Account Manager,PETER MEIGHAN,3-May,Mar-14,17.8864
+Account Manager,PETER MEIGHAN,3-May,Apr-14,17.2338
+Account Manager,PETER MEIGHAN,3-May,May-14,16.6052
+Account Manager,PETER MEIGHAN,3-May,Jun-14,16.0032
+Account Manager,PETER MEIGHAN,3-May,Jul-14,15.4266
+Account Manager,PETER MEIGHAN,3-May,Aug-14,14.8746
+Account Manager,PETER MEIGHAN,3-May,Sep-14,14.349
+Account Manager,PETER MEIGHAN,3-May,Oct-14,13.849
+Account Manager,PETER MEIGHAN,3-May,Nov-14,13.3736
+Account Manager,PETER MEIGHAN,3-May,Dec-14,12.9246
+Account Manager,PETER MEIGHAN,3-May,Jan-15,12.5006
+Account Manager,PETER MEIGHAN,3-May,Feb-15,12.1022
+Account Manager,PETER MEIGHAN,3-May,Mar-15,11.7288
+Account Manager,PETER MEIGHAN,3-May,Apr-15,11.382
+Account Manager,PETER MEIGHAN,3-May,May-15,11.0606
+Account Manager,PETER MEIGHAN,3-May,Jun-15,10.7638
+Account Manager,PETER MEIGHAN,5-plus,Jan-14,15.4924
+Account Manager,PETER MEIGHAN,5-plus,Feb-14,14.9938
+Account Manager,PETER MEIGHAN,5-plus,Mar-14,14.507
+Account Manager,PETER MEIGHAN,5-plus,Apr-14,14.0298
+Account Manager,PETER MEIGHAN,5-plus,May-14,13.563
+Account Manager,PETER MEIGHAN,5-plus,Jun-14,13.1072
+Account Manager,PETER MEIGHAN,5-plus,Jul-14,12.661
+Account Manager,PETER MEIGHAN,5-plus,Aug-14,12.224
+Account Manager,PETER MEIGHAN,5-plus,Sep-14,11.798
+Account Manager,PETER MEIGHAN,5-plus,Oct-14,11.3816
+Account Manager,PETER MEIGHAN,5-plus,Nov-14,10.9762
+Account Manager,PETER MEIGHAN,5-plus,Dec-14,10.5794
+Account Manager,PETER MEIGHAN,5-plus,Jan-15,10.1936
+Account Manager,PETER MEIGHAN,5-plus,Feb-15,9.8168
+Account Manager,PETER MEIGHAN,5-plus,Mar-15,9.4506
+Account Manager,PETER MEIGHAN,5-plus,Apr-15,9.0942
+Account Manager,PETER MEIGHAN,5-plus,May-15,8.7468
+Account Manager,PETER MEIGHAN,5-plus,Jun-15,8.4102
+Account Manager,S.PARASCHIV,Whole-EML,Jan-14,5.7118
+Account Manager,S.PARASCHIV,Whole-EML,Feb-14,5.4284
+Account Manager,S.PARASCHIV,Whole-EML,Mar-14,5.15
+Account Manager,S.PARASCHIV,Whole-EML,Apr-14,4.879
+Account Manager,S.PARASCHIV,Whole-EML,May-14,4.6431
+Account Manager,S.PARASCHIV,Whole-EML,Jun-14,4.436
+Account Manager,S.PARASCHIV,Whole-EML,Jul-14,4.2519
+Account Manager,S.PARASCHIV,Whole-EML,Aug-14,4.086
+Account Manager,S.PARASCHIV,Whole-EML,Sep-14,3.9344
+Account Manager,S.PARASCHIV,Whole-EML,Oct-14,3.7934
+Account Manager,S.PARASCHIV,Whole-EML,Nov-14,3.6605
+Account Manager,S.PARASCHIV,Whole-EML,Dec-14,3.5339
+Account Manager,S.PARASCHIV,Whole-EML,Jan-15,3.4126
+Account Manager,S.PARASCHIV,Whole-EML,Feb-15,3.296
+Account Manager,S.PARASCHIV,Whole-EML,Mar-15,3.1847
+Account Manager,S.PARASCHIV,Whole-EML,Apr-15,3.08
+Account Manager,S.PARASCHIV,Whole-EML,May-15,2.9841
+Account Manager,S.PARASCHIV,Whole-EML,Jun-15,2.8991
+Account Manager,S.PARASCHIV,1-Feb,Jan-14,0.877
+Account Manager,S.PARASCHIV,1-Feb,Feb-14,0.7539
+Account Manager,S.PARASCHIV,1-Feb,Mar-14,0.6309
+Account Manager,S.PARASCHIV,1-Feb,Apr-14,0.5104
+Account Manager,S.PARASCHIV,1-Feb,May-14,0.4203
+Account Manager,S.PARASCHIV,1-Feb,Jun-14,0.3541
+Account Manager,S.PARASCHIV,1-Feb,Jul-14,0.3061
+Account Manager,S.PARASCHIV,1-Feb,Aug-14,0.2716
+Account Manager,S.PARASCHIV,1-Feb,Sep-14,0.2463
+Account Manager,S.PARASCHIV,1-Feb,Oct-14,0.227
+Account Manager,S.PARASCHIV,1-Feb,Nov-14,0.211
+Account Manager,S.PARASCHIV,1-Feb,Dec-14,0.1966
+Account Manager,S.PARASCHIV,1-Feb,Jan-15,0.1825
+Account Manager,S.PARASCHIV,1-Feb,Feb-15,0.1686
+Account Manager,S.PARASCHIV,1-Feb,Mar-15,0.1553
+Account Manager,S.PARASCHIV,1-Feb,Apr-15,0.1437
+Account Manager,S.PARASCHIV,1-Feb,May-15,0.136
+Account Manager,S.PARASCHIV,1-Feb,Jun-15,0.1348
+Account Manager,S.PARASCHIV,3-May,Jan-14,3.8575
+Account Manager,S.PARASCHIV,3-May,Feb-14,3.7195
+Account Manager,S.PARASCHIV,3-May,Mar-14,3.5858
+Account Manager,S.PARASCHIV,3-May,Apr-14,3.4565
+Account Manager,S.PARASCHIV,3-May,May-14,3.3314
+Account Manager,S.PARASCHIV,3-May,Jun-14,3.2108
+Account Manager,S.PARASCHIV,3-May,Jul-14,3.0945
+Account Manager,S.PARASCHIV,3-May,Aug-14,2.9825
+Account Manager,S.PARASCHIV,3-May,Sep-14,2.8751
+Account Manager,S.PARASCHIV,3-May,Oct-14,2.7719
+Account Manager,S.PARASCHIV,3-May,Nov-14,2.673
+Account Manager,S.PARASCHIV,3-May,Dec-14,2.5785
+Account Manager,S.PARASCHIV,3-May,Jan-15,2.4885
+Account Manager,S.PARASCHIV,3-May,Feb-15,2.4027
+Account Manager,S.PARASCHIV,3-May,Mar-15,2.3212
+Account Manager,S.PARASCHIV,3-May,Apr-15,2.2442
+Account Manager,S.PARASCHIV,3-May,May-15,2.1717
+Account Manager,S.PARASCHIV,3-May,Jun-15,2.1033
+Account Manager,S.PARASCHIV,5-plus,Jan-14,0.9773
+Account Manager,S.PARASCHIV,5-plus,Feb-14,0.955
+Account Manager,S.PARASCHIV,5-plus,Mar-14,0.9333
+Account Manager,S.PARASCHIV,5-plus,Apr-14,0.9121
+Account Manager,S.PARASCHIV,5-plus,May-14,0.8914
+Account Manager,S.PARASCHIV,5-plus,Jun-14,0.8711
+Account Manager,S.PARASCHIV,5-plus,Jul-14,0.8513
+Account Manager,S.PARASCHIV,5-plus,Aug-14,0.8319
+Account Manager,S.PARASCHIV,5-plus,Sep-14,0.813
+Account Manager,S.PARASCHIV,5-plus,Oct-14,0.7945
+Account Manager,S.PARASCHIV,5-plus,Nov-14,0.7765
+Account Manager,S.PARASCHIV,5-plus,Dec-14,0.7588
+Account Manager,S.PARASCHIV,5-plus,Jan-15,0.7416
+Account Manager,S.PARASCHIV,5-plus,Feb-15,0.7247
+Account Manager,S.PARASCHIV,5-plus,Mar-15,0.7082
+Account Manager,S.PARASCHIV,5-plus,Apr-15,0.6921
+Account Manager,S.PARASCHIV,5-plus,May-15,0.6764
+Account Manager,S.PARASCHIV,5-plus,Jun-15,0.661
+Account Manager,WARREN WATKIN,Whole-EML,Jan-14,189.3433
+Account Manager,WARREN WATKIN,Whole-EML,Feb-14,171.8359
+Account Manager,WARREN WATKIN,Whole-EML,Mar-14,154.4927
+Account Manager,WARREN WATKIN,Whole-EML,Apr-14,137.5934
+Account Manager,WARREN WATKIN,Whole-EML,May-14,124.2846
+Account Manager,WARREN WATKIN,Whole-EML,Jun-14,113.8375
+Account Manager,WARREN WATKIN,Whole-EML,Jul-14,105.6015
+Account Manager,WARREN WATKIN,Whole-EML,Aug-14,99.047
+Account Manager,WARREN WATKIN,Whole-EML,Sep-14,93.6926
+Account Manager,WARREN WATKIN,Whole-EML,Oct-14,89.1712
+Account Manager,WARREN WATKIN,Whole-EML,Nov-14,85.1823
+Account Manager,WARREN WATKIN,Whole-EML,Dec-14,81.5282
+Account Manager,WARREN WATKIN,Whole-EML,Jan-15,78.0682
+Account Manager,WARREN WATKIN,Whole-EML,Feb-15,74.7859
+Account Manager,WARREN WATKIN,Whole-EML,Mar-15,71.7269
+Account Manager,WARREN WATKIN,Whole-EML,Apr-15,69.0219
+Account Manager,WARREN WATKIN,Whole-EML,May-15,66.9134
+Account Manager,WARREN WATKIN,Whole-EML,Jun-15,65.6943
+Account Manager,WARREN WATKIN,1-Feb,Jan-14,99.101
+Account Manager,WARREN WATKIN,1-Feb,Feb-14,85.1907
+Account Manager,WARREN WATKIN,1-Feb,Mar-14,71.2917
+Account Manager,WARREN WATKIN,1-Feb,Apr-14,57.6752
+Account Manager,WARREN WATKIN,1-Feb,May-14,47.4939
+Account Manager,WARREN WATKIN,1-Feb,Jun-14,40.0133
+Account Manager,WARREN WATKIN,1-Feb,Jul-14,34.5893
+Account Manager,WARREN WATKIN,1-Feb,Aug-14,30.6908
+Account Manager,WARREN WATKIN,1-Feb,Sep-14,27.8319
+Account Manager,WARREN WATKIN,1-Feb,Oct-14,25.651
+Account Manager,WARREN WATKIN,1-Feb,Nov-14,23.843
+Account Manager,WARREN WATKIN,1-Feb,Dec-14,22.2158
+Account Manager,WARREN WATKIN,1-Feb,Jan-15,20.6225
+Account Manager,WARREN WATKIN,1-Feb,Feb-15,19.0518
+Account Manager,WARREN WATKIN,1-Feb,Mar-15,17.5489
+Account Manager,WARREN WATKIN,1-Feb,Apr-15,16.2381
+Account Manager,WARREN WATKIN,1-Feb,May-15,15.368
+Account Manager,WARREN WATKIN,1-Feb,Jun-15,15.2324
+Account Manager,WARREN WATKIN,3-May,Jan-14,57.3985
+Account Manager,WARREN WATKIN,3-May,Feb-14,54.9165
+Account Manager,WARREN WATKIN,3-May,Mar-14,52.545
+Account Manager,WARREN WATKIN,3-May,Apr-14,50.2935
+Account Manager,WARREN WATKIN,3-May,May-14,48.155
+Account Manager,WARREN WATKIN,3-May,Jun-14,46.136
+Account Manager,WARREN WATKIN,3-May,Jul-14,44.2295
+Account Manager,WARREN WATKIN,3-May,Aug-14,42.4395
+Account Manager,WARREN WATKIN,3-May,Sep-14,40.7665
+Account Manager,WARREN WATKIN,3-May,Oct-14,39.2085
+Account Manager,WARREN WATKIN,3-May,Nov-14,37.767
+Account Manager,WARREN WATKIN,3-May,Dec-14,36.4395
+Account Manager,WARREN WATKIN,3-May,Jan-15,35.2295
+Account Manager,WARREN WATKIN,3-May,Feb-15,34.1345
+Account Manager,WARREN WATKIN,3-May,Mar-15,33.154
+Account Manager,WARREN WATKIN,3-May,Apr-15,32.293
+Account Manager,WARREN WATKIN,3-May,May-15,31.5475
+Account Manager,WARREN WATKIN,3-May,Jun-15,30.9155
+Account Manager,WARREN WATKIN,5-plus,Jan-14,32.8438
+Account Manager,WARREN WATKIN,5-plus,Feb-14,31.7287
+Account Manager,WARREN WATKIN,5-plus,Mar-14,30.656
+Account Manager,WARREN WATKIN,5-plus,Apr-14,29.6247
+Account Manager,WARREN WATKIN,5-plus,May-14,28.6357
+Account Manager,WARREN WATKIN,5-plus,Jun-14,27.6882
+Account Manager,WARREN WATKIN,5-plus,Jul-14,26.7827
+Account Manager,WARREN WATKIN,5-plus,Aug-14,25.9167
+Account Manager,WARREN WATKIN,5-plus,Sep-14,25.0942
+Account Manager,WARREN WATKIN,5-plus,Oct-14,24.3117
+Account Manager,WARREN WATKIN,5-plus,Nov-14,23.5723
+Account Manager,WARREN WATKIN,5-plus,Dec-14,22.8729
+Account Manager,WARREN WATKIN,5-plus,Jan-15,22.2162
+Account Manager,WARREN WATKIN,5-plus,Feb-15,21.5996
+Account Manager,WARREN WATKIN,5-plus,Mar-15,21.024
+Account Manager,WARREN WATKIN,5-plus,Apr-15,20.4908
+Account Manager,WARREN WATKIN,5-plus,May-15,19.9979
+Account Manager,WARREN WATKIN,5-plus,Jun-15,19.5464
+Emoloyer Size,A,Whole-EML,Jan-14,942.8019
+Emoloyer Size,A,Whole-EML,Feb-14,897.1452
+Emoloyer Size,A,Whole-EML,Mar-14,852.1282
+Emoloyer Size,A,Whole-EML,Apr-14,808.2476
+Emoloyer Size,A,Whole-EML,May-14,771.3338
+Emoloyer Size,A,Whole-EML,Jun-14,740.0259
+Emoloyer Size,A,Whole-EML,Jul-14,713.1443
+Emoloyer Size,A,Whole-EML,Aug-14,689.6551
+Emoloyer Size,A,Whole-EML,Sep-14,668.6926
+Emoloyer Size,A,Whole-EML,Oct-14,649.5848
+Emoloyer Size,A,Whole-EML,Nov-14,631.7313
+Emoloyer Size,A,Whole-EML,Dec-14,614.7666
+Emoloyer Size,A,Whole-EML,Jan-15,598.4934
+Emoloyer Size,A,Whole-EML,Feb-15,582.7684
+Emoloyer Size,A,Whole-EML,Mar-15,567.7692
+Emoloyer Size,A,Whole-EML,Apr-15,553.6994
+Emoloyer Size,A,Whole-EML,May-15,541.0045
+Emoloyer Size,A,Whole-EML,Jun-15,530.2237
+Emoloyer Size,A,1-Feb,Jan-14,184.17
+Emoloyer Size,A,1-Feb,Feb-14,158.319
+Emoloyer Size,A,1-Feb,Mar-14,132.489
+Emoloyer Size,A,1-Feb,Apr-14,107.184
+Emoloyer Size,A,1-Feb,May-14,88.263
+Emoloyer Size,A,1-Feb,Jun-14,74.361
+Emoloyer Size,A,1-Feb,Jul-14,64.281
+Emoloyer Size,A,1-Feb,Aug-14,57.036
+Emoloyer Size,A,1-Feb,Sep-14,51.723
+Emoloyer Size,A,1-Feb,Oct-14,47.67
+Emoloyer Size,A,1-Feb,Nov-14,44.31
+Emoloyer Size,A,1-Feb,Dec-14,41.286
+Emoloyer Size,A,1-Feb,Jan-15,38.325
+Emoloyer Size,A,1-Feb,Feb-15,35.406
+Emoloyer Size,A,1-Feb,Mar-15,32.613
+Emoloyer Size,A,1-Feb,Apr-15,30.177
+Emoloyer Size,A,1-Feb,May-15,28.56
+Emoloyer Size,A,1-Feb,Jun-15,28.308
+Emoloyer Size,A,3-May,Jan-14,134.5473
+Emoloyer Size,A,3-May,Feb-14,129.3127
+Emoloyer Size,A,3-May,Mar-14,124.2769
+Emoloyer Size,A,3-May,Apr-14,119.4618
+Emoloyer Size,A,3-May,May-14,114.8482
+Emoloyer Size,A,3-May,Jun-14,110.4527
+Emoloyer Size,A,3-May,Jul-14,106.2641
+Emoloyer Size,A,3-May,Aug-14,102.2826
+Emoloyer Size,A,3-May,Sep-14,98.5165
+Emoloyer Size,A,3-May,Oct-14,94.96
+Emoloyer Size,A,3-May,Nov-14,91.6106
+Emoloyer Size,A,3-May,Dec-14,88.4736
+Emoloyer Size,A,3-May,Jan-15,85.5466
+Emoloyer Size,A,3-May,Feb-15,82.8292
+Emoloyer Size,A,3-May,Mar-15,80.3188
+Emoloyer Size,A,3-May,Apr-15,78.0265
+Emoloyer Size,A,3-May,May-15,75.9441
+Emoloyer Size,A,3-May,Jun-15,74.0658
+Emoloyer Size,A,5-plus,Jan-14,624.0846
+Emoloyer Size,A,5-plus,Feb-14,609.5135
+Emoloyer Size,A,5-plus,Mar-14,595.3623
+Emoloyer Size,A,5-plus,Apr-14,581.6018
+Emoloyer Size,A,5-plus,May-14,568.2226
+Emoloyer Size,A,5-plus,Jun-14,555.2122
+Emoloyer Size,A,5-plus,Jul-14,542.5992
+Emoloyer Size,A,5-plus,Aug-14,530.3365
+Emoloyer Size,A,5-plus,Sep-14,518.4531
+Emoloyer Size,A,5-plus,Oct-14,506.9548
+Emoloyer Size,A,5-plus,Nov-14,495.8107
+Emoloyer Size,A,5-plus,Dec-14,485.007
+Emoloyer Size,A,5-plus,Jan-15,474.6218
+Emoloyer Size,A,5-plus,Feb-15,464.5332
+Emoloyer Size,A,5-plus,Mar-15,454.8374
+Emoloyer Size,A,5-plus,Apr-15,445.4959
+Emoloyer Size,A,5-plus,May-15,436.5004
+Emoloyer Size,A,5-plus,Jun-15,427.8499
+Emoloyer Size,B,Whole-EML,Jan-14,334.9633
+Emoloyer Size,B,Whole-EML,Feb-14,308.1525
+Emoloyer Size,B,Whole-EML,Mar-14,281.593
+Emoloyer Size,B,Whole-EML,Apr-14,255.6954
+Emoloyer Size,B,Whole-EML,May-14,235.0778
+Emoloyer Size,B,Whole-EML,Jun-14,218.6718
+Emoloyer Size,B,Whole-EML,Jul-14,205.5253
+Emoloyer Size,B,Whole-EML,Aug-14,194.8509
+Emoloyer Size,B,Whole-EML,Sep-14,185.9505
+Emoloyer Size,B,Whole-EML,Oct-14,178.281
+Emoloyer Size,B,Whole-EML,Nov-14,171.3985
+Emoloyer Size,B,Whole-EML,Dec-14,165.0184
+Emoloyer Size,B,Whole-EML,Jan-15,158.9289
+Emoloyer Size,B,Whole-EML,Feb-15,153.1051
+Emoloyer Size,B,Whole-EML,Mar-15,147.6171
+Emoloyer Size,B,Whole-EML,Apr-15,142.6562
+Emoloyer Size,B,Whole-EML,May-15,138.5774
+Emoloyer Size,B,Whole-EML,Jun-15,135.8101
+Emoloyer Size,B,1-Feb,Jan-14,145.582
+Emoloyer Size,B,1-Feb,Feb-14,125.1474
+Emoloyer Size,B,1-Feb,Mar-14,104.7294
+Emoloyer Size,B,1-Feb,Apr-14,84.7264
+Emoloyer Size,B,1-Feb,May-14,69.7698
+Emoloyer Size,B,1-Feb,Jun-14,58.7806
+Emoloyer Size,B,1-Feb,Jul-14,50.8126
+Emoloyer Size,B,1-Feb,Aug-14,45.0856
+Emoloyer Size,B,1-Feb,Sep-14,40.8858
+Emoloyer Size,B,1-Feb,Oct-14,37.682
+Emoloyer Size,B,1-Feb,Nov-14,35.026
+Emoloyer Size,B,1-Feb,Dec-14,32.6356
+Emoloyer Size,B,1-Feb,Jan-15,30.295
+Emoloyer Size,B,1-Feb,Feb-15,27.9876
+Emoloyer Size,B,1-Feb,Mar-15,25.7798
+Emoloyer Size,B,1-Feb,Apr-15,23.8542
+Emoloyer Size,B,1-Feb,May-15,22.576
+Emoloyer Size,B,1-Feb,Jun-15,22.3768
+Emoloyer Size,B,3-May,Jan-14,92.3943
+Emoloyer Size,B,3-May,Feb-14,88.9263
+Emoloyer Size,B,3-May,Mar-14,85.5822
+Emoloyer Size,B,3-May,Apr-14,82.3785
+Emoloyer Size,B,3-May,May-14,79.3002
+Emoloyer Size,B,3-May,Jun-14,76.3596
+Emoloyer Size,B,3-May,Jul-14,73.5501
+Emoloyer Size,B,3-May,Aug-14,70.8693
+Emoloyer Size,B,3-May,Sep-14,68.3247
+Emoloyer Size,B,3-May,Oct-14,65.9127
+Emoloyer Size,B,3-May,Nov-14,63.6294
+Emoloyer Size,B,3-May,Dec-14,61.4817
+Emoloyer Size,B,3-May,Jan-15,59.4645
+Emoloyer Size,B,3-May,Feb-15,57.5799
+Emoloyer Size,B,3-May,Mar-15,55.8252
+Emoloyer Size,B,3-May,Apr-15,54.2082
+Emoloyer Size,B,3-May,May-15,52.7229
+Emoloyer Size,B,3-May,Jun-15,51.3657
+Emoloyer Size,B,5-plus,Jan-14,96.987
+Emoloyer Size,B,5-plus,Feb-14,94.0788
+Emoloyer Size,B,5-plus,Mar-14,91.2814
+Emoloyer Size,B,5-plus,Apr-14,88.5905
+Emoloyer Size,B,5-plus,May-14,86.0078
+Emoloyer Size,B,5-plus,Jun-14,83.5316
+Emoloyer Size,B,5-plus,Jul-14,81.1626
+Emoloyer Size,B,5-plus,Aug-14,78.896
+Emoloyer Size,B,5-plus,Sep-14,76.74
+Emoloyer Size,B,5-plus,Oct-14,74.6863
+Emoloyer Size,B,5-plus,Nov-14,72.7431
+Emoloyer Size,B,5-plus,Dec-14,70.9011
+Emoloyer Size,B,5-plus,Jan-15,69.1694
+Emoloyer Size,B,5-plus,Feb-15,67.5376
+Emoloyer Size,B,5-plus,Mar-15,66.0121
+Emoloyer Size,B,5-plus,Apr-15,64.5938
+Emoloyer Size,B,5-plus,May-15,63.2785
+Emoloyer Size,B,5-plus,Jun-15,62.0676
+Emoloyer Size,C,Whole-EML,Jan-14,619.2298
+Emoloyer Size,C,Whole-EML,Feb-14,571.9534
+Emoloyer Size,C,Whole-EML,Mar-14,525.2097
+Emoloyer Size,C,Whole-EML,Apr-14,479.6824
+Emoloyer Size,C,Whole-EML,May-14,443.0502
+Emoloyer Size,C,Whole-EML,Jun-14,413.5387
+Emoloyer Size,C,Whole-EML,Jul-14,389.561
+Emoloyer Size,C,Whole-EML,Aug-14,369.8097
+Emoloyer Size,C,Whole-EML,Sep-14,353.1283
+Emoloyer Size,C,Whole-EML,Oct-14,338.6046
+Emoloyer Size,C,Whole-EML,Nov-14,325.5107
+Emoloyer Size,C,Whole-EML,Dec-14,313.3644
+Emoloyer Size,C,Whole-EML,Jan-15,301.823
+Emoloyer Size,C,Whole-EML,Feb-15,290.8369
+Emoloyer Size,C,Whole-EML,Mar-15,280.5237
+Emoloyer Size,C,Whole-EML,Apr-15,271.207
+Emoloyer Size,C,Whole-EML,May-15,263.4751
+Emoloyer Size,C,Whole-EML,Jun-15,258.0383
+Emoloyer Size,C,1-Feb,Jan-14,242.052
+Emoloyer Size,C,1-Feb,Feb-14,208.0764
+Emoloyer Size,C,1-Feb,Mar-14,174.1284
+Emoloyer Size,C,1-Feb,Apr-14,140.8704
+Emoloyer Size,C,1-Feb,May-14,116.0028
+Emoloyer Size,C,1-Feb,Jun-14,97.7316
+Emoloyer Size,C,1-Feb,Jul-14,84.4836
+Emoloyer Size,C,1-Feb,Aug-14,74.9616
+Emoloyer Size,C,1-Feb,Sep-14,67.9788
+Emoloyer Size,C,1-Feb,Oct-14,62.652
+Emoloyer Size,C,1-Feb,Nov-14,58.236
+Emoloyer Size,C,1-Feb,Dec-14,54.2616
+Emoloyer Size,C,1-Feb,Jan-15,50.37
+Emoloyer Size,C,1-Feb,Feb-15,46.5336
+Emoloyer Size,C,1-Feb,Mar-15,42.8628
+Emoloyer Size,C,1-Feb,Apr-15,39.6612
+Emoloyer Size,C,1-Feb,May-15,37.536
+Emoloyer Size,C,1-Feb,Jun-15,37.2048
+Emoloyer Size,C,3-May,Jan-14,190.2612
+Emoloyer Size,C,3-May,Feb-14,182.8306
+Emoloyer Size,C,3-May,Mar-14,175.683
+Emoloyer Size,C,3-May,Apr-14,168.8458
+Emoloyer Size,C,3-May,May-14,162.2948
+Emoloyer Size,C,3-May,Jun-14,156.052
+Emoloyer Size,C,3-May,Jul-14,150.1014
+Emoloyer Size,C,3-May,Aug-14,144.445
+Emoloyer Size,C,3-May,Sep-14,139.0936
+Emoloyer Size,C,3-May,Oct-14,134.0376
+Emoloyer Size,C,3-May,Nov-14,129.2758
+Emoloyer Size,C,3-May,Dec-14,124.8132
+Emoloyer Size,C,3-May,Jan-15,120.6496
+Emoloyer Size,C,3-May,Feb-15,116.7814
+Emoloyer Size,C,3-May,Mar-15,113.2064
+Emoloyer Size,C,3-May,Apr-15,109.9396
+Emoloyer Size,C,3-May,May-15,106.9708
+Emoloyer Size,C,3-May,Jun-15,104.2904
+Emoloyer Size,C,5-plus,Jan-14,186.9166
+Emoloyer Size,C,5-plus,Feb-14,181.0464
+Emoloyer Size,C,5-plus,Mar-14,175.3983
+Emoloyer Size,C,5-plus,Apr-14,169.9662
+Emoloyer Size,C,5-plus,May-14,164.7526
+Emoloyer Size,C,5-plus,Jun-14,159.7551
+Emoloyer Size,C,5-plus,Jul-14,154.976
+Emoloyer Size,C,5-plus,Aug-14,150.4031
+Emoloyer Size,C,5-plus,Sep-14,146.0559
+Emoloyer Size,C,5-plus,Oct-14,141.915
+Emoloyer Size,C,5-plus,Nov-14,137.9989
+Emoloyer Size,C,5-plus,Dec-14,134.2896
+Emoloyer Size,C,5-plus,Jan-15,130.8034
+Emoloyer Size,C,5-plus,Feb-15,127.5219
+Emoloyer Size,C,5-plus,Mar-15,124.4545
+Emoloyer Size,C,5-plus,Apr-15,121.6062
+Emoloyer Size,C,5-plus,May-15,118.9683
+Emoloyer Size,C,5-plus,Jun-15,116.5431
+Emoloyer Size,D,Whole-EML,Jan-14,727.5347
+Emoloyer Size,D,Whole-EML,Feb-14,662.5187
+Emoloyer Size,D,Whole-EML,Mar-14,598.0231
+Emoloyer Size,D,Whole-EML,Apr-14,535.0871
+Emoloyer Size,D,Whole-EML,May-14,485.5477
+Emoloyer Size,D,Whole-EML,Jun-14,446.6619
+Emoloyer Size,D,Whole-EML,Jul-14,415.9912
+Emoloyer Size,D,Whole-EML,Aug-14,391.5326
+Emoloyer Size,D,Whole-EML,Sep-14,371.4847
+Emoloyer Size,D,Whole-EML,Oct-14,354.461
+Emoloyer Size,D,Whole-EML,Nov-14,339.3308
+Emoloyer Size,D,Whole-EML,Dec-14,325.3563
+Emoloyer Size,D,Whole-EML,Jan-15,312.0042
+Emoloyer Size,D,Whole-EML,Feb-15,299.2094
+Emoloyer Size,D,Whole-EML,Mar-15,287.1492
+Emoloyer Size,D,Whole-EML,Apr-15,276.3096
+Emoloyer Size,D,Whole-EML,May-15,267.6076
+Emoloyer Size,D,Whole-EML,Jun-15,262.1416
+Emoloyer Size,D,1-Feb,Jan-14,372.725
+Emoloyer Size,D,1-Feb,Feb-14,320.4075
+Emoloyer Size,D,1-Feb,Mar-14,268.1325
+Emoloyer Size,D,1-Feb,Apr-14,216.92
+Emoloyer Size,D,1-Feb,May-14,178.6275
+Emoloyer Size,D,1-Feb,Jun-14,150.4925
+Emoloyer Size,D,1-Feb,Jul-14,130.0925
+Emoloyer Size,D,1-Feb,Aug-14,115.43
+Emoloyer Size,D,1-Feb,Sep-14,104.6775
+Emoloyer Size,D,1-Feb,Oct-14,96.475
+Emoloyer Size,D,1-Feb,Nov-14,89.675
+Emoloyer Size,D,1-Feb,Dec-14,83.555
+Emoloyer Size,D,1-Feb,Jan-15,77.5625
+Emoloyer Size,D,1-Feb,Feb-15,71.655
+Emoloyer Size,D,1-Feb,Mar-15,66.0025
+Emoloyer Size,D,1-Feb,Apr-15,61.0725
+Emoloyer Size,D,1-Feb,May-15,57.8
+Emoloyer Size,D,1-Feb,Jun-15,57.29
+Emoloyer Size,D,3-May,Jan-14,189.1665
+Emoloyer Size,D,3-May,Feb-14,181.6514
+Emoloyer Size,D,3-May,Mar-14,174.4303
+Emoloyer Size,D,3-May,Apr-14,167.5288
+Emoloyer Size,D,3-May,May-14,160.9248
+Emoloyer Size,D,3-May,Jun-14,154.6392
+Emoloyer Size,D,3-May,Jul-14,148.655
+Emoloyer Size,D,3-May,Aug-14,142.9768
+Emoloyer Size,D,3-May,Sep-14,137.6135
+Emoloyer Size,D,3-May,Oct-14,132.5551
+Emoloyer Size,D,3-May,Nov-14,127.8027
+Emoloyer Size,D,3-May,Dec-14,123.3579
+Emoloyer Size,D,3-May,Jan-15,119.2241
+Emoloyer Size,D,3-May,Feb-15,115.3952
+Emoloyer Size,D,3-May,Mar-15,111.87
+Emoloyer Size,D,3-May,Apr-15,108.6632
+Emoloyer Size,D,3-May,May-15,105.7651
+Emoloyer Size,D,3-May,Jun-15,103.1657
+Emoloyer Size,D,5-plus,Jan-14,165.6432
+Emoloyer Size,D,5-plus,Feb-14,160.4598
+Emoloyer Size,D,5-plus,Mar-14,155.4603
+Emoloyer Size,D,5-plus,Apr-14,150.6383
+Emoloyer Size,D,5-plus,May-14,145.9954
+Emoloyer Size,D,5-plus,Jun-14,141.5302
+Emoloyer Size,D,5-plus,Jul-14,137.2437
+Emoloyer Size,D,5-plus,Aug-14,133.1258
+Emoloyer Size,D,5-plus,Sep-14,129.1937
+Emoloyer Size,D,5-plus,Oct-14,125.4309
+Emoloyer Size,D,5-plus,Nov-14,121.8531
+Emoloyer Size,D,5-plus,Dec-14,118.4434
+Emoloyer Size,D,5-plus,Jan-15,115.2176
+Emoloyer Size,D,5-plus,Feb-15,112.1592
+Emoloyer Size,D,5-plus,Mar-15,109.2767
+Emoloyer Size,D,5-plus,Apr-15,106.5739
+Emoloyer Size,D,5-plus,May-15,104.0425
+Emoloyer Size,D,5-plus,Jun-15,101.6859
+Group,Group 1,Whole-EML,Jan-14,341.6443
+Group,Group 1,Whole-EML,Feb-14,309.5478
+Group,Group 1,Whole-EML,Mar-14,277.7358
+Group,Group 1,Whole-EML,Apr-14,246.7391
+Group,Group 1,Whole-EML,May-14,222.455
+Group,Group 1,Whole-EML,Jun-14,203.5185
+Group,Group 1,Whole-EML,Jul-14,188.7102
+Group,Group 1,Whole-EML,Aug-14,177.036
+Group,Group 1,Whole-EML,Sep-14,167.5887
+Group,Group 1,Whole-EML,Oct-14,159.687
+Group,Group 1,Whole-EML,Nov-14,152.7588
+Group,Group 1,Whole-EML,Dec-14,146.4398
+Group,Group 1,Whole-EML,Jan-15,140.462
+Group,Group 1,Whole-EML,Feb-15,134.7956
+Group,Group 1,Whole-EML,Mar-15,129.5286
+Group,Group 1,Whole-EML,Apr-15,124.903
+Group,Group 1,Whole-EML,May-15,121.3745
+Group,Group 1,Whole-EML,Jun-15,119.4933
+Group,Group 1,1-Feb,Jan-14,185.924
+Group,Group 1,1-Feb,Feb-14,159.8268
+Group,Group 1,1-Feb,Mar-14,133.7508
+Group,Group 1,1-Feb,Apr-14,108.2048
+Group,Group 1,1-Feb,May-14,89.1036
+Group,Group 1,1-Feb,Jun-14,75.0692
+Group,Group 1,1-Feb,Jul-14,64.8932
+Group,Group 1,1-Feb,Aug-14,57.5792
+Group,Group 1,1-Feb,Sep-14,52.2156
+Group,Group 1,1-Feb,Oct-14,48.124
+Group,Group 1,1-Feb,Nov-14,44.732
+Group,Group 1,1-Feb,Dec-14,41.6792
+Group,Group 1,1-Feb,Jan-15,38.69
+Group,Group 1,1-Feb,Feb-15,35.7432
+Group,Group 1,1-Feb,Mar-15,32.9236
+Group,Group 1,1-Feb,Apr-15,30.4644
+Group,Group 1,1-Feb,May-15,28.832
+Group,Group 1,1-Feb,Jun-15,28.5776
+Group,Group 1,3-May,Jan-14,109.0803
+Group,Group 1,3-May,Feb-14,104.3895
+Group,Group 1,3-May,Mar-14,99.9075
+Group,Group 1,3-May,Apr-14,95.6574
+Group,Group 1,3-May,May-14,91.6218
+Group,Group 1,3-May,Jun-14,87.8151
+Group,Group 1,3-May,Jul-14,84.2241
+Group,Group 1,3-May,Aug-14,80.8542
+Group,Group 1,3-May,Sep-14,77.7075
+Group,Group 1,3-May,Oct-14,74.7822
+Group,Group 1,3-May,Nov-14,72.078
+Group,Group 1,3-May,Dec-14,69.5934
+Group,Group 1,3-May,Jan-15,67.3308
+Group,Group 1,3-May,Feb-15,65.2896
+Group,Group 1,3-May,Mar-15,63.4668
+Group,Group 1,3-May,Apr-15,61.8729
+Group,Group 1,3-May,May-15,60.4983
+Group,Group 1,3-May,Jun-15,59.3412
+Group,Group 1,5-plus,Jan-14,46.64
+Group,Group 1,5-plus,Feb-14,45.3315
+Group,Group 1,5-plus,Mar-14,44.0775
+Group,Group 1,5-plus,Apr-14,42.8769
+Group,Group 1,5-plus,May-14,41.7296
+Group,Group 1,5-plus,Jun-14,40.6342
+Group,Group 1,5-plus,Jul-14,39.5929
+Group,Group 1,5-plus,Aug-14,38.6026
+Group,Group 1,5-plus,Sep-14,37.6656
+Group,Group 1,5-plus,Oct-14,36.7808
+Group,Group 1,5-plus,Nov-14,35.9488
+Group,Group 1,5-plus,Dec-14,35.1672
+Group,Group 1,5-plus,Jan-15,34.4412
+Group,Group 1,5-plus,Feb-15,33.7628
+Group,Group 1,5-plus,Mar-15,33.1382
+Group,Group 1,5-plus,Apr-15,32.5657
+Group,Group 1,5-plus,May-15,32.0442
+Group,Group 1,5-plus,Jun-15,31.5745
+Group,Group 2,Whole-EML,Jan-14,473.4198
+Group,Group 2,Whole-EML,Feb-14,460.1865
+Group,Group 2,Whole-EML,Mar-14,447.3265
+Group,Group 2,Whole-EML,Apr-14,434.8353
+Group,Group 2,Whole-EML,May-14,422.725
+Group,Group 2,Whole-EML,Jun-14,410.9973
+Group,Group 2,Whole-EML,Jul-14,399.6571
+Group,Group 2,Whole-EML,Aug-14,388.6597
+Group,Group 2,Whole-EML,Sep-14,378.049
+Group,Group 2,Whole-EML,Oct-14,367.7917
+Group,Group 2,Whole-EML,Nov-14,357.886
+Group,Group 2,Whole-EML,Dec-14,348.3297
+Group,Group 2,Whole-EML,Jan-15,339.1452
+Group,Group 2,Whole-EML,Feb-15,330.281
+Group,Group 2,Whole-EML,Mar-15,321.7739
+Group,Group 2,Whole-EML,Apr-15,313.6242
+Group,Group 2,Whole-EML,May-15,305.8238
+Group,Group 2,Whole-EML,Jun-15,298.3641
+Group,Group 2,1-Feb,Jan-14,0.877
+Group,Group 2,1-Feb,Feb-14,0.7539
+Group,Group 2,1-Feb,Mar-14,0.6309
+Group,Group 2,1-Feb,Apr-14,0.5104
+Group,Group 2,1-Feb,May-14,0.4203
+Group,Group 2,1-Feb,Jun-14,0.3541
+Group,Group 2,1-Feb,Jul-14,0.3061
+Group,Group 2,1-Feb,Aug-14,0.2716
+Group,Group 2,1-Feb,Sep-14,0.2463
+Group,Group 2,1-Feb,Oct-14,0.227
+Group,Group 2,1-Feb,Nov-14,0.211
+Group,Group 2,1-Feb,Dec-14,0.1966
+Group,Group 2,1-Feb,Jan-15,0.1825
+Group,Group 2,1-Feb,Feb-15,0.1686
+Group,Group 2,1-Feb,Mar-15,0.1553
+Group,Group 2,1-Feb,Apr-15,0.1437
+Group,Group 2,1-Feb,May-15,0.136
+Group,Group 2,1-Feb,Jun-15,0.1348
+Group,Group 2,3-May,Jan-14,118.3772
+Group,Group 2,3-May,Feb-14,114.8256
+Group,Group 2,3-May,Mar-14,111.3373
+Group,Group 2,3-May,Apr-14,107.9213
+Group,Group 2,3-May,May-14,104.5632
+Group,Group 2,3-May,Jun-14,101.2763
+Group,Group 2,3-May,Jul-14,98.0604
+Group,Group 2,3-May,Aug-14,94.9025
+Group,Group 2,3-May,Sep-14,91.8212
+Group,Group 2,3-May,Oct-14,88.8055
+Group,Group 2,3-May,Nov-14,85.8478
+Group,Group 2,3-May,Dec-14,82.9677
+Group,Group 2,3-May,Jan-15,80.1511
+Group,Group 2,3-May,Feb-15,77.4001
+Group,Group 2,3-May,Mar-15,74.7136
+Group,Group 2,3-May,Apr-15,72.0983
+Group,Group 2,3-May,May-15,69.553
+Group,Group 2,3-May,Jun-15,67.0667
+Group,Group 2,5-plus,Jan-14,354.1656
+Group,Group 2,5-plus,Feb-14,344.607
+Group,Group 2,5-plus,Mar-14,335.3583
+Group,Group 2,5-plus,Apr-14,326.4036
+Group,Group 2,5-plus,May-14,317.7415
+Group,Group 2,5-plus,Jun-14,309.3669
+Group,Group 2,5-plus,Jul-14,301.2906
+Group,Group 2,5-plus,Aug-14,293.4856
+Group,Group 2,5-plus,Sep-14,285.9815
+Group,Group 2,5-plus,Oct-14,278.7592
+Group,Group 2,5-plus,Nov-14,271.8272
+Group,Group 2,5-plus,Dec-14,265.1654
+Group,Group 2,5-plus,Jan-15,258.8116
+Group,Group 2,5-plus,Feb-15,252.7123
+Group,Group 2,5-plus,Mar-15,246.905
+Group,Group 2,5-plus,Apr-15,241.3822
+Group,Group 2,5-plus,May-15,236.1348
+Group,Group 2,5-plus,Jun-15,231.1626
+Group,Group 3,Whole-EML,Jan-14,381.8429
+Group,Group 3,Whole-EML,Feb-14,334.8586
+Group,Group 3,Whole-EML,Mar-14,288.1021
+Group,Group 3,Whole-EML,Apr-14,242.4346
+Group,Group 3,Whole-EML,May-14,207.6672
+Group,Group 3,Whole-EML,Jun-14,181.5206
+Group,Group 3,Whole-EML,Jul-14,161.975
+Group,Group 3,Whole-EML,Aug-14,147.3874
+Group,Group 3,Whole-EML,Sep-14,136.2395
+Group,Group 3,Whole-EML,Oct-14,127.4049
+Group,Group 3,Whole-EML,Nov-14,119.9379
+Group,Group 3,Whole-EML,Dec-14,113.2297
+Group,Group 3,Whole-EML,Jan-15,106.8331
+Group,Group 3,Whole-EML,Feb-15,100.7082
+Group,Group 3,Whole-EML,Mar-15,94.9948
+Group,Group 3,Whole-EML,Apr-15,90.0878
+Group,Group 3,Whole-EML,May-15,86.7539
+Group,Group 3,Whole-EML,Jun-15,85.9083
+Group,Group 3,1-Feb,Jan-14,308.704
+Group,Group 3,1-Feb,Feb-14,265.3728
+Group,Group 3,1-Feb,Mar-14,222.0768
+Group,Group 3,1-Feb,Apr-14,179.6608
+Group,Group 3,1-Feb,May-14,147.9456
+Group,Group 3,1-Feb,Jun-14,124.6432
+Group,Group 3,1-Feb,Jul-14,107.7472
+Group,Group 3,1-Feb,Aug-14,95.6032
+Group,Group 3,1-Feb,Sep-14,86.6976
+Group,Group 3,1-Feb,Oct-14,79.904
+Group,Group 3,1-Feb,Nov-14,74.272
+Group,Group 3,1-Feb,Dec-14,69.2032
+Group,Group 3,1-Feb,Jan-15,64.24
+Group,Group 3,1-Feb,Feb-15,59.3472
+Group,Group 3,1-Feb,Mar-15,54.6656
+Group,Group 3,1-Feb,Apr-15,50.5824
+Group,Group 3,1-Feb,May-15,47.872
+Group,Group 3,1-Feb,Jun-15,47.4496
+Group,Group 3,3-May,Jan-14,73.1389
+Group,Group 3,3-May,Feb-14,69.4858
+Group,Group 3,3-May,Mar-14,66.0253
+Group,Group 3,3-May,Apr-14,62.7738
+Group,Group 3,3-May,May-14,59.7216
+Group,Group 3,3-May,Jun-14,56.8774
+Group,Group 3,3-May,Jul-14,54.2278
+Group,Group 3,3-May,Aug-14,51.7842
+Group,Group 3,3-May,Sep-14,49.5419
+Group,Group 3,3-May,Oct-14,47.5009
+Group,Group 3,3-May,Nov-14,45.6659
+Group,Group 3,3-May,Dec-14,44.0265
+Group,Group 3,3-May,Jan-15,42.5931
+Group,Group 3,3-May,Feb-15,41.361
+Group,Group 3,3-May,Mar-15,40.3292
+Group,Group 3,3-May,Apr-15,39.5054
+Group,Group 3,3-May,May-15,38.8819
+Group,Group 3,3-May,Jun-15,38.4587
+Group,Group 4,Whole-EML,Jan-14,171.6716
+Group,Group 4,Whole-EML,Feb-14,151.4294
+Group,Group 4,Whole-EML,Mar-14,131.2949
+Group,Group 4,Whole-EML,Apr-14,111.635
+Group,Group 4,Whole-EML,May-14,96.6005
+Group,Group 4,Whole-EML,Jun-14,85.2282
+Group,Group 4,Whole-EML,Jul-14,76.6626
+Group,Group 4,Whole-EML,Aug-14,70.2074
+Group,Group 4,Whole-EML,Sep-14,65.2211
+Group,Group 4,Whole-EML,Oct-14,61.2267
+Group,Group 4,Whole-EML,Nov-14,57.8229
+Group,Group 4,Whole-EML,Dec-14,54.7535
+Group,Group 4,Whole-EML,Jan-15,51.8278
+Group,Group 4,Whole-EML,Feb-15,49.0298
+Group,Group 4,Whole-EML,Mar-15,46.4181
+Group,Group 4,Whole-EML,Apr-15,44.1608
+Group,Group 4,Whole-EML,May-15,42.5816
+Group,Group 4,Whole-EML,Jun-15,42.0677
+Group,Group 4,1-Feb,Jan-14,130.673
+Group,Group 4,1-Feb,Feb-14,112.3311
+Group,Group 4,1-Feb,Mar-14,94.0041
+Group,Group 4,1-Feb,Apr-14,76.0496
+Group,Group 4,1-Feb,May-14,62.6247
+Group,Group 4,1-Feb,Jun-14,52.7609
+Group,Group 4,1-Feb,Jul-14,45.6089
+Group,Group 4,1-Feb,Aug-14,40.4684
+Group,Group 4,1-Feb,Sep-14,36.6987
+Group,Group 4,1-Feb,Oct-14,33.823
+Group,Group 4,1-Feb,Nov-14,31.439
+Group,Group 4,1-Feb,Dec-14,29.2934
+Group,Group 4,1-Feb,Jan-15,27.1925
+Group,Group 4,1-Feb,Feb-15,25.1214
+Group,Group 4,1-Feb,Mar-15,23.1397
+Group,Group 4,1-Feb,Apr-15,21.4113
+Group,Group 4,1-Feb,May-15,20.264
+Group,Group 4,1-Feb,Jun-15,20.0852
+Group,Group 4,3-May,Jan-14,40.9986
+Group,Group 4,3-May,Feb-14,39.0983
+Group,Group 4,3-May,Mar-14,37.2908
+Group,Group 4,3-May,Apr-14,35.5854
+Group,Group 4,3-May,May-14,33.9758
+Group,Group 4,3-May,Jun-14,32.4673
+Group,Group 4,3-May,Jul-14,31.0537
+Group,Group 4,3-May,Aug-14,29.739
+Group,Group 4,3-May,Sep-14,28.5224
+Group,Group 4,3-May,Oct-14,27.4037
+Group,Group 4,3-May,Nov-14,26.3839
+Group,Group 4,3-May,Dec-14,25.4601
+Group,Group 4,3-May,Jan-15,24.6353
+Group,Group 4,3-May,Feb-15,23.9084
+Group,Group 4,3-May,Mar-15,23.2784
+Group,Group 4,3-May,Apr-15,22.7495
+Group,Group 4,3-May,May-15,22.3176
+Group,Group 4,3-May,Jun-15,21.9825
+Group,Group 5,Whole-EML,Jan-14,256.3142
+Group,Group 5,Whole-EML,Feb-14,235.8046
+Group,Group 5,Whole-EML,Mar-14,215.4916
+Group,Group 5,Whole-EML,Apr-14,195.6865
+Group,Group 5,Whole-EML,May-14,179.8947
+Group,Group 5,Whole-EML,Jun-14,167.3049
+Group,Group 5,Whole-EML,Jul-14,157.1944
+Group,Group 5,Whole-EML,Aug-14,148.9675
+Group,Group 5,Whole-EML,Sep-14,142.0917
+Group,Group 5,Whole-EML,Oct-14,136.1564
+Group,Group 5,Whole-EML,Nov-14,130.8236
+Group,Group 5,Whole-EML,Dec-14,125.8762
+Group,Group 5,Whole-EML,Jan-15,121.1579
+Group,Group 5,Whole-EML,Feb-15,116.6453
+Group,Group 5,Whole-EML,Mar-15,112.3937
+Group,Group 5,Whole-EML,Apr-15,108.5478
+Group,Group 5,Whole-EML,May-15,105.3777
+Group,Group 5,Whole-EML,Jun-15,103.2081
+Group,Group 5,1-Feb,Jan-14,110.502
+Group,Group 5,1-Feb,Feb-14,94.9914
+Group,Group 5,1-Feb,Mar-14,79.4934
+Group,Group 5,1-Feb,Apr-14,64.3104
+Group,Group 5,1-Feb,May-14,52.9578
+Group,Group 5,1-Feb,Jun-14,44.6166
+Group,Group 5,1-Feb,Jul-14,38.5686
+Group,Group 5,1-Feb,Aug-14,34.2216
+Group,Group 5,1-Feb,Sep-14,31.0338
+Group,Group 5,1-Feb,Oct-14,28.602
+Group,Group 5,1-Feb,Nov-14,26.586
+Group,Group 5,1-Feb,Dec-14,24.7716
+Group,Group 5,1-Feb,Jan-15,22.995
+Group,Group 5,1-Feb,Feb-15,21.2436
+Group,Group 5,1-Feb,Mar-15,19.5678
+Group,Group 5,1-Feb,Apr-15,18.1062
+Group,Group 5,1-Feb,May-15,17.136
+Group,Group 5,1-Feb,Jun-15,16.9848
+Group,Group 5,3-May,Jan-14,74.9152
+Group,Group 5,3-May,Feb-14,71.9552
+Group,Group 5,3-May,Mar-14,69.1101
+Group,Group 5,3-May,Apr-14,66.3905
+Group,Group 5,3-May,May-14,63.7872
+Group,Group 5,3-May,Jun-14,61.3087
+Group,Group 5,3-May,Jul-14,58.9484
+Group,Group 5,3-May,Aug-14,56.7077
+Group,Group 5,3-May,Sep-14,54.5904
+Group,Group 5,3-May,Oct-14,52.5927
+Group,Group 5,3-May,Nov-14,50.7146
+Group,Group 5,3-May,Dec-14,48.9573
+Group,Group 5,3-May,Jan-15,47.3215
+Group,Group 5,3-May,Feb-15,45.8053
+Group,Group 5,3-May,Mar-15,44.408
+Group,Group 5,3-May,Apr-15,43.1355
+Group,Group 5,3-May,May-15,41.9838
+Group,Group 5,3-May,Jun-15,40.9491
+Group,Group 5,5-plus,Jan-14,70.897
+Group,Group 5,5-plus,Feb-14,68.858
+Group,Group 5,5-plus,Mar-14,66.8881
+Group,Group 5,5-plus,Apr-14,64.9856
+Group,Group 5,5-plus,May-14,63.1497
+Group,Group 5,5-plus,Jun-14,61.3796
+Group,Group 5,5-plus,Jul-14,59.6774
+Group,Group 5,5-plus,Aug-14,58.0382
+Group,Group 5,5-plus,Sep-14,56.4675
+Group,Group 5,5-plus,Oct-14,54.9617
+Group,Group 5,5-plus,Nov-14,53.523
+Group,Group 5,5-plus,Dec-14,52.1473
+Group,Group 5,5-plus,Jan-15,50.8414
+Group,Group 5,5-plus,Feb-15,49.5964
+Group,Group 5,5-plus,Mar-15,48.4179
+Group,Group 5,5-plus,Apr-15,47.3061
+Group,Group 5,5-plus,May-15,46.2579
+Group,Group 5,5-plus,Jun-15,45.2742
+Group,Group 6,Whole-EML,Jan-14,388.3384
+Group,Group 6,Whole-EML,Feb-14,352.9073
+Group,Group 6,Whole-EML,Mar-14,317.7421
+Group,Group 6,Whole-EML,Apr-14,283.4302
+Group,Group 6,Whole-EML,May-14,256.5666
+Group,Group 6,Whole-EML,Jun-14,235.6239
+Group,Group 6,Whole-EML,Jul-14,219.2409
+Group,Group 6,Whole-EML,Aug-14,206.3028
+Group,Group 6,Whole-EML,Sep-14,195.7983
+Group,Group 6,Whole-EML,Oct-14,186.9655
+Group,Group 6,Whole-EML,Nov-14,179.1632
+Group,Group 6,Whole-EML,Dec-14,171.9851
+Group,Group 6,Whole-EML,Jan-15,165.1311
+Group,Group 6,Whole-EML,Feb-15,158.5679
+Group,Group 6,Whole-EML,Mar-15,152.3944
+Group,Group 6,Whole-EML,Apr-15,146.8797
+Group,Group 6,Whole-EML,May-15,142.5334
+Group,Group 6,Whole-EML,Jun-15,139.9705
+Group,Group 6,1-Feb,Jan-14,207.849
+Group,Group 6,1-Feb,Feb-14,178.6743
+Group,Group 6,1-Feb,Mar-14,149.5233
+Group,Group 6,1-Feb,Apr-14,120.9648
+Group,Group 6,1-Feb,May-14,99.6111
+Group,Group 6,1-Feb,Jun-14,83.9217
+Group,Group 6,1-Feb,Jul-14,72.5457
+Group,Group 6,1-Feb,Aug-14,64.3692
+Group,Group 6,1-Feb,Sep-14,58.3731
+Group,Group 6,1-Feb,Oct-14,53.799
+Group,Group 6,1-Feb,Nov-14,50.007
+Group,Group 6,1-Feb,Dec-14,46.5942
+Group,Group 6,1-Feb,Jan-15,43.2525
+Group,Group 6,1-Feb,Feb-15,39.9582
+Group,Group 6,1-Feb,Mar-15,36.8061
+Group,Group 6,1-Feb,Apr-15,34.0569
+Group,Group 6,1-Feb,May-15,32.232
+Group,Group 6,1-Feb,Jun-15,31.9476
+Group,Group 6,3-May,Jan-14,103.4973
+Group,Group 6,3-May,Feb-14,99.1963
+Group,Group 6,3-May,Mar-14,95.0781
+Group,Group 6,3-May,Apr-14,91.165
+Group,Group 6,3-May,May-14,87.4394
+Group,Group 6,3-May,Jun-14,83.9155
+Group,Group 6,3-May,Jul-14,80.5821
+Group,Group 6,3-May,Aug-14,77.4418
+Group,Group 6,3-May,Sep-14,74.4985
+Group,Group 6,3-May,Oct-14,71.7504
+Group,Group 6,3-May,Nov-14,69.1954
+Group,Group 6,3-May,Dec-14,66.8352
+Group,Group 6,3-May,Jan-15,64.669
+Group,Group 6,3-May,Feb-15,62.698
+Group,Group 6,3-May,Mar-15,60.9188
+Group,Group 6,3-May,Apr-15,59.3413
+Group,Group 6,3-May,May-15,57.9565
+Group,Group 6,3-May,Jun-15,56.7626
+Group,Group 6,5-plus,Jan-14,76.9921
+Group,Group 6,5-plus,Feb-14,75.0367
+Group,Group 6,5-plus,Mar-14,73.1407
+Group,Group 6,5-plus,Apr-14,71.3004
+Group,Group 6,5-plus,May-14,69.5161
+Group,Group 6,5-plus,Jun-14,67.7867
+Group,Group 6,5-plus,Jul-14,66.1131
+Group,Group 6,5-plus,Aug-14,64.4918
+Group,Group 6,5-plus,Sep-14,62.9267
+Group,Group 6,5-plus,Oct-14,61.4161
+Group,Group 6,5-plus,Nov-14,59.9608
+Group,Group 6,5-plus,Dec-14,58.5557
+Group,Group 6,5-plus,Jan-15,57.2096
+Group,Group 6,5-plus,Feb-15,55.9117
+Group,Group 6,5-plus,Mar-15,54.6695
+Group,Group 6,5-plus,Apr-15,53.4815
+Group,Group 6,5-plus,May-15,52.3449
+Group,Group 6,5-plus,Jun-15,51.2603
+Group,Group 7,Whole-EML,Jan-14,610.3275
+Group,Group 7,Whole-EML,Feb-14,594.0929
+Group,Group 7,Whole-EML,Mar-14,578.3461
+Group,Group 7,Whole-EML,Apr-14,563.0639
+Group,Group 7,Whole-EML,May-14,548.2391
+Group,Group 7,Whole-EML,Jun-14,533.8693
+Group,Group 7,Whole-EML,Jul-14,519.9711
+Group,Group 7,Whole-EML,Aug-14,506.5016
+Group,Group 7,Whole-EML,Sep-14,493.5058
+Group,Group 7,Whole-EML,Oct-14,480.9604
+Group,Group 7,Whole-EML,Nov-14,468.8628
+Group,Group 7,Whole-EML,Dec-14,457.1975
+Group,Group 7,Whole-EML,Jan-15,446.0196
+Group,Group 7,Whole-EML,Feb-15,435.2399
+Group,Group 7,Whole-EML,Mar-15,424.9237
+Group,Group 7,Whole-EML,Apr-15,415.0563
+Group,Group 7,Whole-EML,May-15,405.6259
+Group,Group 7,Whole-EML,Jun-15,396.6261
+Group,Group 7,3-May,Jan-14,85.3908
+Group,Group 7,3-May,Feb-14,82.8276
+Group,Group 7,3-May,Mar-14,80.3084
+Group,Group 7,3-May,Apr-14,77.8336
+Group,Group 7,3-May,May-14,75.3976
+Group,Group 7,3-May,Jun-14,73.0076
+Group,Group 7,3-May,Jul-14,70.6636
+Group,Group 7,3-May,Aug-14,68.3584
+Group,Group 7,3-May,Sep-14,66.1044
+Group,Group 7,3-May,Oct-14,63.8912
+Group,Group 7,3-May,Nov-14,61.7168
+Group,Group 7,3-May,Dec-14,59.592
+Group,Group 7,3-May,Jan-15,57.5112
+Group,Group 7,3-May,Feb-15,55.4712
+Group,Group 7,3-May,Mar-15,53.4736
+Group,Group 7,3-May,Apr-15,51.522
+Group,Group 7,3-May,May-15,49.618
+Group,Group 7,3-May,Jun-15,47.7512
+Group,Group 7,5-plus,Jan-14,524.9367
+Group,Group 7,5-plus,Feb-14,511.2653
+Group,Group 7,5-plus,Mar-14,498.0377
+Group,Group 7,5-plus,Apr-14,485.2303
+Group,Group 7,5-plus,May-14,472.8415
+Group,Group 7,5-plus,Jun-14,460.8617
+Group,Group 7,5-plus,Jul-14,449.3075
+Group,Group 7,5-plus,Aug-14,438.1432
+Group,Group 7,5-plus,Sep-14,427.4014
+Group,Group 7,5-plus,Oct-14,417.0692
+Group,Group 7,5-plus,Nov-14,407.146
+Group,Group 7,5-plus,Dec-14,397.6055
+Group,Group 7,5-plus,Jan-15,388.5084
+Group,Group 7,5-plus,Feb-15,379.7687
+Group,Group 7,5-plus,Mar-15,371.4501
+Group,Group 7,5-plus,Apr-15,363.5343
+Group,Group 7,5-plus,May-15,356.0079
+Group,Group 7,5-plus,Jun-15,348.8749
+Group,Other,Whole-EML,Jan-14,0.971
+Group,Other,Whole-EML,Feb-14,0.9427
+Group,Other,Whole-EML,Mar-14,0.9149
+Group,Other,Whole-EML,Apr-14,0.8879
+Group,Other,Whole-EML,May-14,0.8614
+Group,Other,Whole-EML,Jun-14,0.8356
+Group,Other,Whole-EML,Jul-14,0.8105
+Group,Other,Whole-EML,Aug-14,0.7859
+Group,Other,Whole-EML,Sep-14,0.762
+Group,Other,Whole-EML,Oct-14,0.7388
+Group,Other,Whole-EML,Nov-14,0.7161
+Group,Other,Whole-EML,Dec-14,0.6942
+Group,Other,Whole-EML,Jan-15,0.6728
+Group,Other,Whole-EML,Feb-15,0.6521
+Group,Other,Whole-EML,Mar-15,0.632
+Group,Other,Whole-EML,Apr-15,0.6126
+Group,Other,Whole-EML,May-15,0.5938
+Group,Other,Whole-EML,Jun-15,0.5756
+Group,Other,3-May,Jan-14,0.971
+Group,Other,3-May,Feb-14,0.9427
+Group,Other,3-May,Mar-14,0.9149
+Group,Other,3-May,Apr-14,0.8879
+Group,Other,3-May,May-14,0.8614
+Group,Other,3-May,Jun-14,0.8356
+Group,Other,3-May,Jul-14,0.8105
+Group,Other,3-May,Aug-14,0.7859
+Group,Other,3-May,Sep-14,0.762
+Group,Other,3-May,Oct-14,0.7388
+Group,Other,3-May,Nov-14,0.7161
+Group,Other,3-May,Dec-14,0.6942
+Group,Other,3-May,Jan-15,0.6728
+Group,Other,3-May,Feb-15,0.6521
+Group,Other,3-May,Mar-15,0.632
+Group,Other,3-May,Apr-15,0.6126
+Group,Other,3-May,May-15,0.5938
+Group,Other,3-May,Jun-15,0.5756
+Team,WCNSW,Whole-EML,Jan-14,0.971
+Team,WCNSW,Whole-EML,Feb-14,0.9427
+Team,WCNSW,Whole-EML,Mar-14,0.9149
+Team,WCNSW,Whole-EML,Apr-14,0.8879
+Team,WCNSW,Whole-EML,May-14,0.8614
+Team,WCNSW,Whole-EML,Jun-14,0.8356
+Team,WCNSW,Whole-EML,Jul-14,0.8105
+Team,WCNSW,Whole-EML,Aug-14,0.7859
+Team,WCNSW,Whole-EML,Sep-14,0.762
+Team,WCNSW,Whole-EML,Oct-14,0.7388
+Team,WCNSW,Whole-EML,Nov-14,0.7161
+Team,WCNSW,Whole-EML,Dec-14,0.6942
+Team,WCNSW,Whole-EML,Jan-15,0.6728
+Team,WCNSW,Whole-EML,Feb-15,0.6521
+Team,WCNSW,Whole-EML,Mar-15,0.632
+Team,WCNSW,Whole-EML,Apr-15,0.6126
+Team,WCNSW,Whole-EML,May-15,0.5938
+Team,WCNSW,Whole-EML,Jun-15,0.5756
+Team,WCNSW,3-May,Jan-14,0.971
+Team,WCNSW,3-May,Feb-14,0.9427
+Team,WCNSW,3-May,Mar-14,0.9149
+Team,WCNSW,3-May,Apr-14,0.8879
+Team,WCNSW,3-May,May-14,0.8614
+Team,WCNSW,3-May,Jun-14,0.8356
+Team,WCNSW,3-May,Jul-14,0.8105
+Team,WCNSW,3-May,Aug-14,0.7859
+Team,WCNSW,3-May,Sep-14,0.762
+Team,WCNSW,3-May,Oct-14,0.7388
+Team,WCNSW,3-May,Nov-14,0.7161
+Team,WCNSW,3-May,Dec-14,0.6942
+Team,WCNSW,3-May,Jan-15,0.6728
+Team,WCNSW,3-May,Feb-15,0.6521
+Team,WCNSW,3-May,Mar-15,0.632
+Team,WCNSW,3-May,Apr-15,0.6126
+Team,WCNSW,3-May,May-15,0.5938
+Team,WCNSW,3-May,Jun-15,0.5756
+Team,WCNSW1A,Whole-EML,Jan-14,125.9536
+Team,WCNSW1A,Whole-EML,Feb-14,111.9904
+Team,WCNSW1A,Whole-EML,Mar-14,98.122
+Team,WCNSW1A,Whole-EML,Apr-14,84.5955
+Team,WCNSW1A,Whole-EML,May-14,74.1663
+Team,WCNSW1A,Whole-EML,Jun-14,66.1963
+Team,WCNSW1A,Whole-EML,Jul-14,60.1156
+Team,WCNSW1A,Whole-EML,Aug-14,55.4619
+Team,WCNSW1A,Whole-EML,Sep-14,51.8093
+Team,WCNSW1A,Whole-EML,Oct-14,48.841
+Team,WCNSW1A,Whole-EML,Nov-14,46.2899
+Team,WCNSW1A,Whole-EML,Dec-14,43.986
+Team,WCNSW1A,Whole-EML,Jan-15,41.8023
+Team,WCNSW1A,Whole-EML,Feb-15,39.7287
+Team,WCNSW1A,Whole-EML,Mar-15,37.8035
+Team,WCNSW1A,Whole-EML,Apr-15,36.1397
+Team,WCNSW1A,Whole-EML,May-15,34.951
+Team,WCNSW1A,Whole-EML,Jun-15,34.4948
+Team,WCNSW1A,1-Feb,Jan-14,86.823
+Team,WCNSW1A,1-Feb,Feb-14,74.6361
+Team,WCNSW1A,1-Feb,Mar-14,62.4591
+Team,WCNSW1A,1-Feb,Apr-14,50.5296
+Team,WCNSW1A,1-Feb,May-14,41.6097
+Team,WCNSW1A,1-Feb,Jun-14,35.0559
+Team,WCNSW1A,1-Feb,Jul-14,30.3039
+Team,WCNSW1A,1-Feb,Aug-14,26.8884
+Team,WCNSW1A,1-Feb,Sep-14,24.3837
+Team,WCNSW1A,1-Feb,Oct-14,22.473
+Team,WCNSW1A,1-Feb,Nov-14,20.889
+Team,WCNSW1A,1-Feb,Dec-14,19.4634
+Team,WCNSW1A,1-Feb,Jan-15,18.0675
+Team,WCNSW1A,1-Feb,Feb-15,16.6914
+Team,WCNSW1A,1-Feb,Mar-15,15.3747
+Team,WCNSW1A,1-Feb,Apr-15,14.2263
+Team,WCNSW1A,1-Feb,May-15,13.464
+Team,WCNSW1A,1-Feb,Jun-15,13.3452
+Team,WCNSW1A,3-May,Jan-14,39.1306
+Team,WCNSW1A,3-May,Feb-14,37.3543
+Team,WCNSW1A,3-May,Mar-14,35.6629
+Team,WCNSW1A,3-May,Apr-14,34.0659
+Team,WCNSW1A,3-May,May-14,32.5566
+Team,WCNSW1A,3-May,Jun-14,31.1404
+Team,WCNSW1A,3-May,Jul-14,29.8117
+Team,WCNSW1A,3-May,Aug-14,28.5735
+Team,WCNSW1A,3-May,Sep-14,27.4256
+Team,WCNSW1A,3-May,Oct-14,26.368
+Team,WCNSW1A,3-May,Nov-14,25.4009
+Team,WCNSW1A,3-May,Dec-14,24.5226
+Team,WCNSW1A,3-May,Jan-15,23.7348
+Team,WCNSW1A,3-May,Feb-15,23.0373
+Team,WCNSW1A,3-May,Mar-15,22.4288
+Team,WCNSW1A,3-May,Apr-15,21.9134
+Team,WCNSW1A,3-May,May-15,21.487
+Team,WCNSW1A,3-May,Jun-15,21.1496
+Team,WCNSW1B,Whole-EML,Jan-14,129.6409
+Team,WCNSW1B,Whole-EML,Feb-14,118.3676
+Team,WCNSW1B,Whole-EML,Mar-14,107.1914
+Team,WCNSW1B,Whole-EML,Apr-14,96.2972
+Team,WCNSW1B,Whole-EML,May-14,87.7422
+Team,WCNSW1B,Whole-EML,Jun-14,81.0506
+Team,WCNSW1B,Whole-EML,Jul-14,75.7967
+Team,WCNSW1B,Whole-EML,Aug-14,71.6335
+Team,WCNSW1B,Whole-EML,Sep-14,68.243
+Team,WCNSW1B,Whole-EML,Oct-14,65.3899
+Team,WCNSW1B,Whole-EML,Nov-14,62.8719
+Team,WCNSW1B,Whole-EML,Dec-14,60.5623
+Team,WCNSW1B,Whole-EML,Jan-15,58.3693
+Team,WCNSW1B,Whole-EML,Feb-15,56.2794
+Team,WCNSW1B,Whole-EML,Mar-15,54.3268
+Team,WCNSW1B,Whole-EML,Apr-15,52.5935
+Team,WCNSW1B,Whole-EML,May-15,51.2386
+Team,WCNSW1B,Whole-EML,Jun-15,50.4549
+Team,WCNSW1B,1-Feb,Jan-14,64.898
+Team,WCNSW1B,1-Feb,Feb-14,55.7886
+Team,WCNSW1B,1-Feb,Mar-14,46.6866
+Team,WCNSW1B,1-Feb,Apr-14,37.7696
+Team,WCNSW1B,1-Feb,May-14,31.1022
+Team,WCNSW1B,1-Feb,Jun-14,26.2034
+Team,WCNSW1B,1-Feb,Jul-14,22.6514
+Team,WCNSW1B,1-Feb,Aug-14,20.0984
+Team,WCNSW1B,1-Feb,Sep-14,18.2262
+Team,WCNSW1B,1-Feb,Oct-14,16.798
+Team,WCNSW1B,1-Feb,Nov-14,15.614
+Team,WCNSW1B,1-Feb,Dec-14,14.5484
+Team,WCNSW1B,1-Feb,Jan-15,13.505
+Team,WCNSW1B,1-Feb,Feb-15,12.4764
+Team,WCNSW1B,1-Feb,Mar-15,11.4922
+Team,WCNSW1B,1-Feb,Apr-15,10.6338
+Team,WCNSW1B,1-Feb,May-15,10.064
+Team,WCNSW1B,1-Feb,Jun-15,9.9752
+Team,WCNSW1B,3-May,Jan-14,35.3681
+Team,WCNSW1B,3-May,Feb-14,33.815
+Team,WCNSW1B,3-May,Mar-14,32.3333
+Team,WCNSW1B,3-May,Apr-14,30.9318
+Team,WCNSW1B,3-May,May-14,29.604
+Team,WCNSW1B,3-May,Jun-14,28.355
+Team,WCNSW1B,3-May,Jul-14,27.1802
+Team,WCNSW1B,3-May,Aug-14,26.0814
+Team,WCNSW1B,3-May,Sep-14,25.0591
+Team,WCNSW1B,3-May,Oct-14,24.1133
+Team,WCNSW1B,3-May,Nov-14,23.2435
+Team,WCNSW1B,3-May,Dec-14,22.4493
+Team,WCNSW1B,3-May,Jan-15,21.7311
+Team,WCNSW1B,3-May,Feb-15,21.0894
+Team,WCNSW1B,3-May,Mar-15,20.5228
+Team,WCNSW1B,3-May,Apr-15,20.035
+Team,WCNSW1B,3-May,May-15,19.6223
+Team,WCNSW1B,3-May,Jun-15,19.2847
+Team,WCNSW1B,5-plus,Jan-14,29.3748
+Team,WCNSW1B,5-plus,Feb-14,28.764
+Team,WCNSW1B,5-plus,Mar-14,28.1715
+Team,WCNSW1B,5-plus,Apr-14,27.5958
+Team,WCNSW1B,5-plus,May-14,27.036
+Team,WCNSW1B,5-plus,Jun-14,26.4922
+Team,WCNSW1B,5-plus,Jul-14,25.9651
+Team,WCNSW1B,5-plus,Aug-14,25.4537
+Team,WCNSW1B,5-plus,Sep-14,24.9577
+Team,WCNSW1B,5-plus,Oct-14,24.4786
+Team,WCNSW1B,5-plus,Nov-14,24.0144
+Team,WCNSW1B,5-plus,Dec-14,23.5646
+Team,WCNSW1B,5-plus,Jan-15,23.1332
+Team,WCNSW1B,5-plus,Feb-15,22.7136
+Team,WCNSW1B,5-plus,Mar-15,22.3118
+Team,WCNSW1B,5-plus,Apr-15,21.9247
+Team,WCNSW1B,5-plus,May-15,21.5523
+Team,WCNSW1B,5-plus,Jun-15,21.195
+Team,WCNSW1C,Whole-EML,Jan-14,86.0498
+Team,WCNSW1C,Whole-EML,Feb-14,79.1898
+Team,WCNSW1C,Whole-EML,Mar-14,72.4224
+Team,WCNSW1C,Whole-EML,Apr-14,65.8464
+Team,WCNSW1C,Whole-EML,May-14,60.5465
+Team,WCNSW1C,Whole-EML,Jun-14,56.2716
+Team,WCNSW1C,Whole-EML,Jul-14,52.7979
+Team,WCNSW1C,Whole-EML,Aug-14,49.9406
+Team,WCNSW1C,Whole-EML,Sep-14,47.5364
+Team,WCNSW1C,Whole-EML,Oct-14,45.4561
+Team,WCNSW1C,Whole-EML,Nov-14,43.597
+Team,WCNSW1C,Whole-EML,Dec-14,41.8915
+Team,WCNSW1C,Whole-EML,Jan-15,40.2904
+Team,WCNSW1C,Whole-EML,Feb-15,38.7875
+Team,WCNSW1C,Whole-EML,Mar-15,37.3983
+Team,WCNSW1C,Whole-EML,Apr-15,36.1698
+Team,WCNSW1C,Whole-EML,May-15,35.1849
+Team,WCNSW1C,Whole-EML,Jun-15,34.5436
+Team,WCNSW1C,1-Feb,Jan-14,34.203
+Team,WCNSW1C,1-Feb,Feb-14,29.4021
+Team,WCNSW1C,1-Feb,Mar-14,24.6051
+Team,WCNSW1C,1-Feb,Apr-14,19.9056
+Team,WCNSW1C,1-Feb,May-14,16.3917
+Team,WCNSW1C,1-Feb,Jun-14,13.8099
+Team,WCNSW1C,1-Feb,Jul-14,11.9379
+Team,WCNSW1C,1-Feb,Aug-14,10.5924
+Team,WCNSW1C,1-Feb,Sep-14,9.6057
+Team,WCNSW1C,1-Feb,Oct-14,8.853
+Team,WCNSW1C,1-Feb,Nov-14,8.229
+Team,WCNSW1C,1-Feb,Dec-14,7.6674
+Team,WCNSW1C,1-Feb,Jan-15,7.1175
+Team,WCNSW1C,1-Feb,Feb-15,6.5754
+Team,WCNSW1C,1-Feb,Mar-15,6.0567
+Team,WCNSW1C,1-Feb,Apr-15,5.6043
+Team,WCNSW1C,1-Feb,May-15,5.304
+Team,WCNSW1C,1-Feb,Jun-15,5.2572
+Team,WCNSW1C,3-May,Jan-14,34.5816
+Team,WCNSW1C,3-May,Feb-14,33.2202
+Team,WCNSW1C,3-May,Mar-14,31.9113
+Team,WCNSW1C,3-May,Apr-14,30.6597
+Team,WCNSW1C,3-May,May-14,29.4612
+Team,WCNSW1C,3-May,Jun-14,28.3197
+Team,WCNSW1C,3-May,Jul-14,27.2322
+Team,WCNSW1C,3-May,Aug-14,26.1993
+Team,WCNSW1C,3-May,Sep-14,25.2228
+Team,WCNSW1C,3-May,Oct-14,24.3009
+Team,WCNSW1C,3-May,Nov-14,23.4336
+Team,WCNSW1C,3-May,Dec-14,22.6215
+Team,WCNSW1C,3-May,Jan-15,21.8649
+Team,WCNSW1C,3-May,Feb-15,21.1629
+Team,WCNSW1C,3-May,Mar-15,20.5152
+Team,WCNSW1C,3-May,Apr-15,19.9245
+Team,WCNSW1C,3-May,May-15,19.389
+Team,WCNSW1C,3-May,Jun-15,18.9069
+Team,WCNSW1C,5-plus,Jan-14,17.2652
+Team,WCNSW1C,5-plus,Feb-14,16.5675
+Team,WCNSW1C,5-plus,Mar-14,15.906
+Team,WCNSW1C,5-plus,Apr-14,15.2811
+Team,WCNSW1C,5-plus,May-14,14.6936
+Team,WCNSW1C,5-plus,Jun-14,14.142
+Team,WCNSW1C,5-plus,Jul-14,13.6278
+Team,WCNSW1C,5-plus,Aug-14,13.1489
+Team,WCNSW1C,5-plus,Sep-14,12.7079
+Team,WCNSW1C,5-plus,Oct-14,12.3022
+Team,WCNSW1C,5-plus,Nov-14,11.9344
+Team,WCNSW1C,5-plus,Dec-14,11.6026
+Team,WCNSW1C,5-plus,Jan-15,11.308
+Team,WCNSW1C,5-plus,Feb-15,11.0492
+Team,WCNSW1C,5-plus,Mar-15,10.8264
+Team,WCNSW1C,5-plus,Apr-15,10.641
+Team,WCNSW1C,5-plus,May-15,10.4919
+Team,WCNSW1C,5-plus,Jun-15,10.3795
+Team,WCNSW2,Whole-EML,Jan-14,50.522
+Team,WCNSW2,Whole-EML,Feb-14,49.0878
+Team,WCNSW2,Whole-EML,Mar-14,47.6984
+Team,WCNSW2,Whole-EML,Apr-14,46.3559
+Team,WCNSW2,Whole-EML,May-14,45.0562
+Team,WCNSW2,Whole-EML,Jun-14,43.801
+Team,WCNSW2,Whole-EML,Jul-14,42.5918
+Team,WCNSW2,Whole-EML,Aug-14,41.423
+Team,WCNSW2,Whole-EML,Sep-14,40.3011
+Team,WCNSW2,Whole-EML,Oct-14,39.2225
+Team,WCNSW2,Whole-EML,Nov-14,38.1867
+Team,WCNSW2,Whole-EML,Dec-14,37.1955
+Team,WCNSW2,Whole-EML,Jan-15,36.2479
+Team,WCNSW2,Whole-EML,Feb-15,35.3419
+Team,WCNSW2,Whole-EML,Mar-15,34.4793
+Team,WCNSW2,Whole-EML,Apr-15,33.6613
+Team,WCNSW2,Whole-EML,May-15,32.8857
+Team,WCNSW2,Whole-EML,Jun-15,32.1515
+Team,WCNSW2,3-May,Jan-14,14.5639
+Team,WCNSW2,3-May,Feb-14,14.138
+Team,WCNSW2,3-May,Mar-14,13.7196
+Team,WCNSW2,3-May,Apr-14,13.3127
+Team,WCNSW2,3-May,May-14,12.9132
+Team,WCNSW2,3-May,Jun-14,12.5239
+Team,WCNSW2,3-May,Jul-14,12.1448
+Team,WCNSW2,3-May,Aug-14,11.7731
+Team,WCNSW2,3-May,Sep-14,11.4117
+Team,WCNSW2,3-May,Oct-14,11.0604
+Team,WCNSW2,3-May,Nov-14,10.7165
+Team,WCNSW2,3-May,Dec-14,10.3842
+Team,WCNSW2,3-May,Jan-15,10.0594
+Team,WCNSW2,3-May,Feb-15,9.7447
+Team,WCNSW2,3-May,Mar-15,9.4388
+Team,WCNSW2,3-May,Apr-15,9.1431
+Team,WCNSW2,3-May,May-15,8.8563
+Team,WCNSW2,3-May,Jun-15,8.5782
+Team,WCNSW2,5-plus,Jan-14,35.9581
+Team,WCNSW2,5-plus,Feb-14,34.9498
+Team,WCNSW2,5-plus,Mar-14,33.9788
+Team,WCNSW2,5-plus,Apr-14,33.0432
+Team,WCNSW2,5-plus,May-14,32.143
+Team,WCNSW2,5-plus,Jun-14,31.2771
+Team,WCNSW2,5-plus,Jul-14,30.447
+Team,WCNSW2,5-plus,Aug-14,29.6499
+Team,WCNSW2,5-plus,Sep-14,28.8894
+Team,WCNSW2,5-plus,Oct-14,28.1621
+Team,WCNSW2,5-plus,Nov-14,27.4702
+Team,WCNSW2,5-plus,Dec-14,26.8113
+Team,WCNSW2,5-plus,Jan-15,26.1885
+Team,WCNSW2,5-plus,Feb-15,25.5972
+Team,WCNSW2,5-plus,Mar-15,25.0405
+Team,WCNSW2,5-plus,Apr-15,24.5182
+Team,WCNSW2,5-plus,May-15,24.0294
+Team,WCNSW2,5-plus,Jun-15,23.5733
+Team,WCNSW2A,Whole-EML,Jan-14,189.563
+Team,WCNSW2A,Whole-EML,Feb-14,184.2707
+Team,WCNSW2A,Whole-EML,Mar-14,179.1325
+Team,WCNSW2A,Whole-EML,Apr-14,174.1481
+Team,WCNSW2A,Whole-EML,May-14,169.3097
+Team,WCNSW2A,Whole-EML,Jun-14,164.62
+Team,WCNSW2A,Whole-EML,Jul-14,160.0857
+Team,WCNSW2A,Whole-EML,Aug-14,155.6881
+Team,WCNSW2A,Whole-EML,Sep-14,151.4477
+Team,WCNSW2A,Whole-EML,Oct-14,147.353
+Team,WCNSW2A,Whole-EML,Nov-14,143.4026
+Team,WCNSW2A,Whole-EML,Dec-14,139.5983
+Team,WCNSW2A,Whole-EML,Jan-15,135.949
+Team,WCNSW2A,Whole-EML,Feb-15,132.4336
+Team,WCNSW2A,Whole-EML,Mar-15,129.0668
+Team,WCNSW2A,Whole-EML,Apr-15,125.8487
+Team,WCNSW2A,Whole-EML,May-15,122.7748
+Team,WCNSW2A,Whole-EML,Jun-15,119.8408
+Team,WCNSW2A,3-May,Jan-14,42.7042
+Team,WCNSW2A,3-May,Feb-14,41.4338
+Team,WCNSW2A,3-May,Mar-14,40.1854
+Team,WCNSW2A,3-May,Apr-14,38.9632
+Team,WCNSW2A,3-May,May-14,37.7612
+Team,WCNSW2A,3-May,Jun-14,36.5846
+Team,WCNSW2A,3-May,Jul-14,35.4334
+Team,WCNSW2A,3-May,Aug-14,34.3024
+Team,WCNSW2A,3-May,Sep-14,33.1986
+Team,WCNSW2A,3-May,Oct-14,32.1184
+Team,WCNSW2A,3-May,Nov-14,31.0584
+Team,WCNSW2A,3-May,Dec-14,30.0264
+Team,WCNSW2A,3-May,Jan-15,29.0164
+Team,WCNSW2A,3-May,Feb-15,28.03
+Team,WCNSW2A,3-May,Mar-15,27.0664
+Team,WCNSW2A,3-May,Apr-15,26.1282
+Team,WCNSW2A,3-May,May-15,25.2146
+Team,WCNSW2A,3-May,Jun-15,24.322
+Team,WCNSW2A,5-plus,Jan-14,146.8588
+Team,WCNSW2A,5-plus,Feb-14,142.8369
+Team,WCNSW2A,5-plus,Mar-14,138.9471
+Team,WCNSW2A,5-plus,Apr-14,135.1849
+Team,WCNSW2A,5-plus,May-14,131.5485
+Team,WCNSW2A,5-plus,Jun-14,128.0354
+Team,WCNSW2A,5-plus,Jul-14,124.6523
+Team,WCNSW2A,5-plus,Aug-14,121.3857
+Team,WCNSW2A,5-plus,Sep-14,118.2491
+Team,WCNSW2A,5-plus,Oct-14,115.2346
+Team,WCNSW2A,5-plus,Nov-14,112.3442
+Team,WCNSW2A,5-plus,Dec-14,109.5719
+Team,WCNSW2A,5-plus,Jan-15,106.9326
+Team,WCNSW2A,5-plus,Feb-15,104.4036
+Team,WCNSW2A,5-plus,Mar-15,102.0004
+Team,WCNSW2A,5-plus,Apr-15,99.7205
+Team,WCNSW2A,5-plus,May-15,97.5602
+Team,WCNSW2A,5-plus,Jun-15,95.5188
+Team,WCNSW2B,Whole-EML,Jan-14,178.8478
+Team,WCNSW2B,Whole-EML,Feb-14,173.8247
+Team,WCNSW2B,Whole-EML,Mar-14,168.9415
+Team,WCNSW2B,Whole-EML,Apr-14,164.1926
+Team,WCNSW2B,Whole-EML,May-14,159.5745
+Team,WCNSW2B,Whole-EML,Jun-14,155.0904
+Team,WCNSW2B,Whole-EML,Jul-14,150.7426
+Team,WCNSW2B,Whole-EML,Aug-14,146.5176
+Team,WCNSW2B,Whole-EML,Sep-14,142.4338
+Team,WCNSW2B,Whole-EML,Oct-14,138.4777
+Team,WCNSW2B,Whole-EML,Nov-14,134.6524
+Team,WCNSW2B,Whole-EML,Dec-14,130.9555
+Team,WCNSW2B,Whole-EML,Jan-15,127.3977
+Team,WCNSW2B,Whole-EML,Feb-15,123.9584
+Team,WCNSW2B,Whole-EML,Mar-15,120.6517
+Team,WCNSW2B,Whole-EML,Apr-15,117.4771
+Team,WCNSW2B,Whole-EML,May-15,114.4318
+Team,WCNSW2B,Whole-EML,Jun-15,111.5107
+Team,WCNSW2B,3-May,Jan-14,49.4659
+Team,WCNSW2B,3-May,Feb-14,47.9614
+Team,WCNSW2B,3-May,Mar-14,46.4847
+Team,WCNSW2B,3-May,Apr-14,45.037
+Team,WCNSW2B,3-May,May-14,43.6144
+Team,WCNSW2B,3-May,Jun-14,42.2214
+Team,WCNSW2B,3-May,Jul-14,40.8578
+Team,WCNSW2B,3-May,Aug-14,39.5194
+Team,WCNSW2B,3-May,Sep-14,38.2133
+Team,WCNSW2B,3-May,Oct-14,36.9339
+Team,WCNSW2B,3-May,Nov-14,35.6797
+Team,WCNSW2B,3-May,Dec-14,34.4571
+Team,WCNSW2B,3-May,Jan-15,33.2625
+Team,WCNSW2B,3-May,Feb-15,32.0946
+Team,WCNSW2B,3-May,Mar-15,30.954
+Team,WCNSW2B,3-May,Apr-15,29.843
+Team,WCNSW2B,3-May,May-15,28.7621
+Team,WCNSW2B,3-May,Jun-15,27.7057
+Team,WCNSW2B,5-plus,Jan-14,129.3819
+Team,WCNSW2B,5-plus,Feb-14,125.8633
+Team,WCNSW2B,5-plus,Mar-14,122.4568
+Team,WCNSW2B,5-plus,Apr-14,119.1556
+Team,WCNSW2B,5-plus,May-14,115.9601
+Team,WCNSW2B,5-plus,Jun-14,112.869
+Team,WCNSW2B,5-plus,Jul-14,109.8848
+Team,WCNSW2B,5-plus,Aug-14,106.9982
+Team,WCNSW2B,5-plus,Sep-14,104.2205
+Team,WCNSW2B,5-plus,Oct-14,101.5438
+Team,WCNSW2B,5-plus,Nov-14,98.9727
+Team,WCNSW2B,5-plus,Dec-14,96.4984
+Team,WCNSW2B,5-plus,Jan-15,94.1352
+Team,WCNSW2B,5-plus,Feb-15,91.8638
+Team,WCNSW2B,5-plus,Mar-15,89.6977
+Team,WCNSW2B,5-plus,Apr-15,87.6341
+Team,WCNSW2B,5-plus,May-15,85.6697
+Team,WCNSW2B,5-plus,Jun-15,83.805
+Team,WCNSW2C,Whole-EML,Jan-14,54.487
+Team,WCNSW2C,Whole-EML,Feb-14,53.0033
+Team,WCNSW2C,Whole-EML,Mar-14,51.5541
+Team,WCNSW2C,Whole-EML,Apr-14,50.1387
+Team,WCNSW2C,Whole-EML,May-14,48.7846
+Team,WCNSW2C,Whole-EML,Jun-14,47.4859
+Team,WCNSW2C,Whole-EML,Jul-14,46.237
+Team,WCNSW2C,Whole-EML,Aug-14,45.031
+Team,WCNSW2C,Whole-EML,Sep-14,43.8664
+Team,WCNSW2C,Whole-EML,Oct-14,42.7385
+Team,WCNSW2C,Whole-EML,Nov-14,41.6443
+Team,WCNSW2C,Whole-EML,Dec-14,40.5804
+Team,WCNSW2C,Whole-EML,Jan-15,39.5506
+Team,WCNSW2C,Whole-EML,Feb-15,38.5471
+Team,WCNSW2C,Whole-EML,Mar-15,37.5761
+Team,WCNSW2C,Whole-EML,Apr-15,36.6371
+Team,WCNSW2C,Whole-EML,May-15,35.7315
+Team,WCNSW2C,Whole-EML,Jun-15,34.8611
+Team,WCNSW2C,1-Feb,Jan-14,0.877
+Team,WCNSW2C,1-Feb,Feb-14,0.7539
+Team,WCNSW2C,1-Feb,Mar-14,0.6309
+Team,WCNSW2C,1-Feb,Apr-14,0.5104
+Team,WCNSW2C,1-Feb,May-14,0.4203
+Team,WCNSW2C,1-Feb,Jun-14,0.3541
+Team,WCNSW2C,1-Feb,Jul-14,0.3061
+Team,WCNSW2C,1-Feb,Aug-14,0.2716
+Team,WCNSW2C,1-Feb,Sep-14,0.2463
+Team,WCNSW2C,1-Feb,Oct-14,0.227
+Team,WCNSW2C,1-Feb,Nov-14,0.211
+Team,WCNSW2C,1-Feb,Dec-14,0.1966
+Team,WCNSW2C,1-Feb,Jan-15,0.1825
+Team,WCNSW2C,1-Feb,Feb-15,0.1686
+Team,WCNSW2C,1-Feb,Mar-15,0.1553
+Team,WCNSW2C,1-Feb,Apr-15,0.1437
+Team,WCNSW2C,1-Feb,May-15,0.136
+Team,WCNSW2C,1-Feb,Jun-15,0.1348
+Team,WCNSW2C,3-May,Jan-14,11.6432
+Team,WCNSW2C,3-May,Feb-14,11.2924
+Team,WCNSW2C,3-May,Mar-14,10.9476
+Team,WCNSW2C,3-May,Apr-14,10.6084
+Team,WCNSW2C,3-May,May-14,10.2744
+Team,WCNSW2C,3-May,Jun-14,9.9464
+Team,WCNSW2C,3-May,Jul-14,9.6244
+Team,WCNSW2C,3-May,Aug-14,9.3076
+Team,WCNSW2C,3-May,Sep-14,8.9976
+Team,WCNSW2C,3-May,Oct-14,8.6928
+Team,WCNSW2C,3-May,Nov-14,8.3932
+Team,WCNSW2C,3-May,Dec-14,8.1
+Team,WCNSW2C,3-May,Jan-15,7.8128
+Team,WCNSW2C,3-May,Feb-15,7.5308
+Team,WCNSW2C,3-May,Mar-15,7.2544
+Team,WCNSW2C,3-May,Apr-15,6.984
+Team,WCNSW2C,3-May,May-15,6.72
+Team,WCNSW2C,3-May,Jun-15,6.4608
+Team,WCNSW2C,5-plus,Jan-14,41.9668
+Team,WCNSW2C,5-plus,Feb-14,40.957
+Team,WCNSW2C,5-plus,Mar-14,39.9756
+Team,WCNSW2C,5-plus,Apr-14,39.0199
+Team,WCNSW2C,5-plus,May-14,38.0899
+Team,WCNSW2C,5-plus,Jun-14,37.1854
+Team,WCNSW2C,5-plus,Jul-14,36.3065
+Team,WCNSW2C,5-plus,Aug-14,35.4518
+Team,WCNSW2C,5-plus,Sep-14,34.6225
+Team,WCNSW2C,5-plus,Oct-14,33.8187
+Team,WCNSW2C,5-plus,Nov-14,33.0401
+Team,WCNSW2C,5-plus,Dec-14,32.2838
+Team,WCNSW2C,5-plus,Jan-15,31.5553
+Team,WCNSW2C,5-plus,Feb-15,30.8477
+Team,WCNSW2C,5-plus,Mar-15,30.1664
+Team,WCNSW2C,5-plus,Apr-15,29.5094
+Team,WCNSW2C,5-plus,May-15,28.8755
+Team,WCNSW2C,5-plus,Jun-15,28.2655
+Team,WCNSW3A,Whole-EML,Jan-14,72.8898
+Team,WCNSW3A,Whole-EML,Feb-14,63.8148
+Team,WCNSW3A,Whole-EML,Mar-14,54.7858
+Team,WCNSW3A,Whole-EML,Apr-14,45.9688
+Team,WCNSW3A,Whole-EML,May-14,39.2596
+Team,WCNSW3A,Whole-EML,Jun-14,34.2176
+Team,WCNSW3A,Whole-EML,Jul-14,30.4524
+Team,WCNSW3A,Whole-EML,Aug-14,27.6472
+Team,WCNSW3A,Whole-EML,Sep-14,25.5082
+Team,WCNSW3A,Whole-EML,Oct-14,23.8178
+Team,WCNSW3A,Whole-EML,Nov-14,22.3938
+Team,WCNSW3A,Whole-EML,Dec-14,21.1178
+Team,WCNSW3A,Whole-EML,Jan-15,19.9042
+Team,WCNSW3A,Whole-EML,Feb-15,18.7448
+Team,WCNSW3A,Whole-EML,Mar-15,17.6668
+Team,WCNSW3A,Whole-EML,Apr-15,16.7464
+Team,WCNSW3A,Whole-EML,May-15,16.1318
+Team,WCNSW3A,Whole-EML,Jun-15,15.9998
+Team,WCNSW3A,1-Feb,Jan-14,59.636
+Team,WCNSW3A,1-Feb,Feb-14,51.2652
+Team,WCNSW3A,1-Feb,Mar-14,42.9012
+Team,WCNSW3A,1-Feb,Apr-14,34.7072
+Team,WCNSW3A,1-Feb,May-14,28.5804
+Team,WCNSW3A,1-Feb,Jun-14,24.0788
+Team,WCNSW3A,1-Feb,Jul-14,20.8148
+Team,WCNSW3A,1-Feb,Aug-14,18.4688
+Team,WCNSW3A,1-Feb,Sep-14,16.7484
+Team,WCNSW3A,1-Feb,Oct-14,15.436
+Team,WCNSW3A,1-Feb,Nov-14,14.348
+Team,WCNSW3A,1-Feb,Dec-14,13.3688
+Team,WCNSW3A,1-Feb,Jan-15,12.41
+Team,WCNSW3A,1-Feb,Feb-15,11.4648
+Team,WCNSW3A,1-Feb,Mar-15,10.5604
+Team,WCNSW3A,1-Feb,Apr-15,9.7716
+Team,WCNSW3A,1-Feb,May-15,9.248
+Team,WCNSW3A,1-Feb,Jun-15,9.1664
+Team,WCNSW3A,3-May,Jan-14,13.2538
+Team,WCNSW3A,3-May,Feb-14,12.5496
+Team,WCNSW3A,3-May,Mar-14,11.8846
+Team,WCNSW3A,3-May,Apr-14,11.2616
+Team,WCNSW3A,3-May,May-14,10.6792
+Team,WCNSW3A,3-May,Jun-14,10.1388
+Team,WCNSW3A,3-May,Jul-14,9.6376
+Team,WCNSW3A,3-May,Aug-14,9.1784
+Team,WCNSW3A,3-May,Sep-14,8.7598
+Team,WCNSW3A,3-May,Oct-14,8.3818
+Team,WCNSW3A,3-May,Nov-14,8.0458
+Team,WCNSW3A,3-May,Dec-14,7.749
+Team,WCNSW3A,3-May,Jan-15,7.4942
+Team,WCNSW3A,3-May,Feb-15,7.28
+Team,WCNSW3A,3-May,Mar-15,7.1064
+Team,WCNSW3A,3-May,Apr-15,6.9748
+Team,WCNSW3A,3-May,May-15,6.8838
+Team,WCNSW3A,3-May,Jun-15,6.8334
+Team,WCNSW3B,Whole-EML,Jan-14,172.7316
+Team,WCNSW3B,Whole-EML,Feb-14,149.4708
+Team,WCNSW3B,Whole-EML,Mar-14,126.2524
+Team,WCNSW3B,Whole-EML,Apr-14,103.5229
+Team,WCNSW3B,Whole-EML,May-14,86.4421
+Team,WCNSW3B,Whole-EML,Jun-14,73.8089
+Team,WCNSW3B,Whole-EML,Jul-14,64.5672
+Team,WCNSW3B,Whole-EML,Aug-14,57.8485
+Team,WCNSW3B,Whole-EML,Sep-14,52.8571
+Team,WCNSW3B,Whole-EML,Oct-14,49.001
+Team,WCNSW3B,Whole-EML,Nov-14,45.7809
+Team,WCNSW3B,Whole-EML,Dec-14,42.8816
+Team,WCNSW3B,Whole-EML,Jan-15,40.0633
+Team,WCNSW3B,Whole-EML,Feb-15,37.3073
+Team,WCNSW3B,Whole-EML,Mar-15,34.6873
+Team,WCNSW3B,Whole-EML,Apr-15,32.4079
+Team,WCNSW3B,Whole-EML,May-15,30.875
+Team,WCNSW3B,Whole-EML,Jun-15,30.5696
+Team,WCNSW3B,1-Feb,Jan-14,162.245
+Team,WCNSW3B,1-Feb,Feb-14,139.4715
+Team,WCNSW3B,1-Feb,Mar-14,116.7165
+Team,WCNSW3B,1-Feb,Apr-14,94.424
+Team,WCNSW3B,1-Feb,May-14,77.7555
+Team,WCNSW3B,1-Feb,Jun-14,65.5085
+Team,WCNSW3B,1-Feb,Jul-14,56.6285
+Team,WCNSW3B,1-Feb,Aug-14,50.246
+Team,WCNSW3B,1-Feb,Sep-14,45.5655
+Team,WCNSW3B,1-Feb,Oct-14,41.995
+Team,WCNSW3B,1-Feb,Nov-14,39.035
+Team,WCNSW3B,1-Feb,Dec-14,36.371
+Team,WCNSW3B,1-Feb,Jan-15,33.7625
+Team,WCNSW3B,1-Feb,Feb-15,31.191
+Team,WCNSW3B,1-Feb,Mar-15,28.7305
+Team,WCNSW3B,1-Feb,Apr-15,26.5845
+Team,WCNSW3B,1-Feb,May-15,25.16
+Team,WCNSW3B,1-Feb,Jun-15,24.938
+Team,WCNSW3B,3-May,Jan-14,10.4866
+Team,WCNSW3B,3-May,Feb-14,9.9993
+Team,WCNSW3B,3-May,Mar-14,9.5359
+Team,WCNSW3B,3-May,Apr-14,9.0989
+Team,WCNSW3B,3-May,May-14,8.6866
+Team,WCNSW3B,3-May,Jun-14,8.3004
+Team,WCNSW3B,3-May,Jul-14,7.9387
+Team,WCNSW3B,3-May,Aug-14,7.6025
+Team,WCNSW3B,3-May,Sep-14,7.2916
+Team,WCNSW3B,3-May,Oct-14,7.006
+Team,WCNSW3B,3-May,Nov-14,6.7459
+Team,WCNSW3B,3-May,Dec-14,6.5106
+Team,WCNSW3B,3-May,Jan-15,6.3008
+Team,WCNSW3B,3-May,Feb-15,6.1163
+Team,WCNSW3B,3-May,Mar-15,5.9568
+Team,WCNSW3B,3-May,Apr-15,5.8234
+Team,WCNSW3B,3-May,May-15,5.715
+Team,WCNSW3B,3-May,Jun-15,5.6316
+Team,WCNSW3C,Whole-EML,Jan-14,136.2215
+Team,WCNSW3C,Whole-EML,Feb-14,121.573
+Team,WCNSW3C,Whole-EML,Mar-14,107.0639
+Team,WCNSW3C,Whole-EML,Apr-14,92.9429
+Team,WCNSW3C,Whole-EML,May-14,81.9655
+Team,WCNSW3C,Whole-EML,Jun-14,73.4941
+Team,WCNSW3C,Whole-EML,Jul-14,66.9554
+Team,WCNSW3C,Whole-EML,Aug-14,61.8917
+Team,WCNSW3C,Whole-EML,Sep-14,57.8742
+Team,WCNSW3C,Whole-EML,Oct-14,54.5861
+Team,WCNSW3C,Whole-EML,Nov-14,51.7632
+Team,WCNSW3C,Whole-EML,Dec-14,49.2303
+Team,WCNSW3C,Whole-EML,Jan-15,46.8656
+Team,WCNSW3C,Whole-EML,Feb-15,44.6561
+Team,WCNSW3C,Whole-EML,Mar-15,42.6407
+Team,WCNSW3C,Whole-EML,Apr-15,40.9335
+Team,WCNSW3C,Whole-EML,May-15,39.7471
+Team,WCNSW3C,Whole-EML,Jun-15,39.3389
+Team,WCNSW3C,1-Feb,Jan-14,86.823
+Team,WCNSW3C,1-Feb,Feb-14,74.6361
+Team,WCNSW3C,1-Feb,Mar-14,62.4591
+Team,WCNSW3C,1-Feb,Apr-14,50.5296
+Team,WCNSW3C,1-Feb,May-14,41.6097
+Team,WCNSW3C,1-Feb,Jun-14,35.0559
+Team,WCNSW3C,1-Feb,Jul-14,30.3039
+Team,WCNSW3C,1-Feb,Aug-14,26.8884
+Team,WCNSW3C,1-Feb,Sep-14,24.3837
+Team,WCNSW3C,1-Feb,Oct-14,22.473
+Team,WCNSW3C,1-Feb,Nov-14,20.889
+Team,WCNSW3C,1-Feb,Dec-14,19.4634
+Team,WCNSW3C,1-Feb,Jan-15,18.0675
+Team,WCNSW3C,1-Feb,Feb-15,16.6914
+Team,WCNSW3C,1-Feb,Mar-15,15.3747
+Team,WCNSW3C,1-Feb,Apr-15,14.2263
+Team,WCNSW3C,1-Feb,May-15,13.464
+Team,WCNSW3C,1-Feb,Jun-15,13.3452
+Team,WCNSW3C,3-May,Jan-14,49.3985
+Team,WCNSW3C,3-May,Feb-14,46.9369
+Team,WCNSW3C,3-May,Mar-14,44.6048
+Team,WCNSW3C,3-May,Apr-14,42.4133
+Team,WCNSW3C,3-May,May-14,40.3558
+Team,WCNSW3C,3-May,Jun-14,38.4382
+Team,WCNSW3C,3-May,Jul-14,36.6515
+Team,WCNSW3C,3-May,Aug-14,35.0033
+Team,WCNSW3C,3-May,Sep-14,33.4905
+Team,WCNSW3C,3-May,Oct-14,32.1131
+Team,WCNSW3C,3-May,Nov-14,30.8742
+Team,WCNSW3C,3-May,Dec-14,29.7669
+Team,WCNSW3C,3-May,Jan-15,28.7981
+Team,WCNSW3C,3-May,Feb-15,27.9647
+Team,WCNSW3C,3-May,Mar-15,27.266
+Team,WCNSW3C,3-May,Apr-15,26.7072
+Team,WCNSW3C,3-May,May-15,26.2831
+Team,WCNSW3C,3-May,Jun-15,25.9937
+Team,WCNSW4A,Whole-EML,Jan-14,54.191
+Team,WCNSW4A,Whole-EML,Feb-14,49.4543
+Team,WCNSW4A,Whole-EML,Mar-14,44.7892
+Team,WCNSW4A,Whole-EML,Apr-14,40.2673
+Team,WCNSW4A,Whole-EML,May-14,36.6373
+Team,WCNSW4A,Whole-EML,Jun-14,33.7276
+Team,WCNSW4A,Whole-EML,Jul-14,31.3797
+Team,WCNSW4A,Whole-EML,Aug-14,29.4697
+Team,WCNSW4A,Whole-EML,Sep-14,27.8809
+Team,WCNSW4A,Whole-EML,Oct-14,26.5267
+Team,WCNSW4A,Whole-EML,Nov-14,25.335
+Team,WCNSW4A,Whole-EML,Dec-14,24.2577
+Team,WCNSW4A,Whole-EML,Jan-15,23.262
+Team,WCNSW4A,Whole-EML,Feb-15,22.3443
+Team,WCNSW4A,Whole-EML,Mar-15,21.5147
+Team,WCNSW4A,Whole-EML,Apr-15,20.806
+Team,WCNSW4A,Whole-EML,May-15,20.2746
+Team,WCNSW4A,Whole-EML,Jun-15,19.9905
+Team,WCNSW4A,1-Feb,Jan-14,23.679
+Team,WCNSW4A,1-Feb,Feb-14,20.3553
+Team,WCNSW4A,1-Feb,Mar-14,17.0343
+Team,WCNSW4A,1-Feb,Apr-14,13.7808
+Team,WCNSW4A,1-Feb,May-14,11.3481
+Team,WCNSW4A,1-Feb,Jun-14,9.5607
+Team,WCNSW4A,1-Feb,Jul-14,8.2647
+Team,WCNSW4A,1-Feb,Aug-14,7.3332
+Team,WCNSW4A,1-Feb,Sep-14,6.6501
+Team,WCNSW4A,1-Feb,Oct-14,6.129
+Team,WCNSW4A,1-Feb,Nov-14,5.697
+Team,WCNSW4A,1-Feb,Dec-14,5.3082
+Team,WCNSW4A,1-Feb,Jan-15,4.9275
+Team,WCNSW4A,1-Feb,Feb-15,4.5522
+Team,WCNSW4A,1-Feb,Mar-15,4.1931
+Team,WCNSW4A,1-Feb,Apr-15,3.8799
+Team,WCNSW4A,1-Feb,May-15,3.672
+Team,WCNSW4A,1-Feb,Jun-15,3.6396
+Team,WCNSW4A,3-May,Jan-14,30.512
+Team,WCNSW4A,3-May,Feb-14,29.099
+Team,WCNSW4A,3-May,Mar-14,27.7549
+Team,WCNSW4A,3-May,Apr-14,26.4865
+Team,WCNSW4A,3-May,May-14,25.2892
+Team,WCNSW4A,3-May,Jun-14,24.1669
+Team,WCNSW4A,3-May,Jul-14,23.115
+Team,WCNSW4A,3-May,Aug-14,22.1365
+Team,WCNSW4A,3-May,Sep-14,21.2308
+Team,WCNSW4A,3-May,Oct-14,20.3977
+Team,WCNSW4A,3-May,Nov-14,19.638
+Team,WCNSW4A,3-May,Dec-14,18.9495
+Team,WCNSW4A,3-May,Jan-15,18.3345
+Team,WCNSW4A,3-May,Feb-15,17.7921
+Team,WCNSW4A,3-May,Mar-15,17.3216
+Team,WCNSW4A,3-May,Apr-15,16.9261
+Team,WCNSW4A,3-May,May-15,16.6026
+Team,WCNSW4A,3-May,Jun-15,16.3509
+Team,WCNSW4B,Whole-EML,Jan-14,117.4806
+Team,WCNSW4B,Whole-EML,Feb-14,101.9751
+Team,WCNSW4B,Whole-EML,Mar-14,86.5057
+Team,WCNSW4B,Whole-EML,Apr-14,71.3677
+Team,WCNSW4B,Whole-EML,May-14,59.9632
+Team,WCNSW4B,Whole-EML,Jun-14,51.5006
+Team,WCNSW4B,Whole-EML,Jul-14,45.2829
+Team,WCNSW4B,Whole-EML,Aug-14,40.7377
+Team,WCNSW4B,Whole-EML,Sep-14,37.3402
+Team,WCNSW4B,Whole-EML,Oct-14,34.7
+Team,WCNSW4B,Whole-EML,Nov-14,32.4879
+Team,WCNSW4B,Whole-EML,Dec-14,30.4958
+Team,WCNSW4B,Whole-EML,Jan-15,28.5658
+Team,WCNSW4B,Whole-EML,Feb-15,26.6855
+Team,WCNSW4B,Whole-EML,Mar-15,24.9034
+Team,WCNSW4B,Whole-EML,Apr-15,23.3548
+Team,WCNSW4B,Whole-EML,May-15,22.307
+Team,WCNSW4B,Whole-EML,Jun-15,22.0772
+Team,WCNSW4B,1-Feb,Jan-14,106.994
+Team,WCNSW4B,1-Feb,Feb-14,91.9758
+Team,WCNSW4B,1-Feb,Mar-14,76.9698
+Team,WCNSW4B,1-Feb,Apr-14,62.2688
+Team,WCNSW4B,1-Feb,May-14,51.2766
+Team,WCNSW4B,1-Feb,Jun-14,43.2002
+Team,WCNSW4B,1-Feb,Jul-14,37.3442
+Team,WCNSW4B,1-Feb,Aug-14,33.1352
+Team,WCNSW4B,1-Feb,Sep-14,30.0486
+Team,WCNSW4B,1-Feb,Oct-14,27.694
+Team,WCNSW4B,1-Feb,Nov-14,25.742
+Team,WCNSW4B,1-Feb,Dec-14,23.9852
+Team,WCNSW4B,1-Feb,Jan-15,22.265
+Team,WCNSW4B,1-Feb,Feb-15,20.5692
+Team,WCNSW4B,1-Feb,Mar-15,18.9466
+Team,WCNSW4B,1-Feb,Apr-15,17.5314
+Team,WCNSW4B,1-Feb,May-15,16.592
+Team,WCNSW4B,1-Feb,Jun-15,16.4456
+Team,WCNSW4B,3-May,Jan-14,10.4866
+Team,WCNSW4B,3-May,Feb-14,9.9993
+Team,WCNSW4B,3-May,Mar-14,9.5359
+Team,WCNSW4B,3-May,Apr-14,9.0989
+Team,WCNSW4B,3-May,May-14,8.6866
+Team,WCNSW4B,3-May,Jun-14,8.3004
+Team,WCNSW4B,3-May,Jul-14,7.9387
+Team,WCNSW4B,3-May,Aug-14,7.6025
+Team,WCNSW4B,3-May,Sep-14,7.2916
+Team,WCNSW4B,3-May,Oct-14,7.006
+Team,WCNSW4B,3-May,Nov-14,6.7459
+Team,WCNSW4B,3-May,Dec-14,6.5106
+Team,WCNSW4B,3-May,Jan-15,6.3008
+Team,WCNSW4B,3-May,Feb-15,6.1163
+Team,WCNSW4B,3-May,Mar-15,5.9568
+Team,WCNSW4B,3-May,Apr-15,5.8234
+Team,WCNSW4B,3-May,May-15,5.715
+Team,WCNSW4B,3-May,Jun-15,5.6316
+Team,WCNSW5,Whole-EML,Jan-14,14.3962
+Team,WCNSW5,Whole-EML,Feb-14,13.808
+Team,WCNSW5,Whole-EML,Mar-14,13.2354
+Team,WCNSW5,Whole-EML,Apr-14,12.6818
+Team,WCNSW5,Whole-EML,May-14,12.1738
+Team,WCNSW5,Whole-EML,Jun-14,11.706
+Team,WCNSW5,Whole-EML,Jul-14,11.2721
+Team,WCNSW5,Whole-EML,Aug-14,10.867
+Team,WCNSW5,Whole-EML,Sep-14,10.4872
+Team,WCNSW5,Whole-EML,Oct-14,10.1293
+Team,WCNSW5,Whole-EML,Nov-14,9.7902
+Team,WCNSW5,Whole-EML,Dec-14,9.4683
+Team,WCNSW5,Whole-EML,Jan-15,9.1628
+Team,WCNSW5,Whole-EML,Feb-15,8.8728
+Team,WCNSW5,Whole-EML,Mar-15,8.5992
+Team,WCNSW5,Whole-EML,Apr-15,8.3435
+Team,WCNSW5,Whole-EML,May-15,8.107
+Team,WCNSW5,Whole-EML,Jun-15,7.8926
+Team,WCNSW5,1-Feb,Jan-14,0.877
+Team,WCNSW5,1-Feb,Feb-14,0.7539
+Team,WCNSW5,1-Feb,Mar-14,0.6309
+Team,WCNSW5,1-Feb,Apr-14,0.5104
+Team,WCNSW5,1-Feb,May-14,0.4203
+Team,WCNSW5,1-Feb,Jun-14,0.3541
+Team,WCNSW5,1-Feb,Jul-14,0.3061
+Team,WCNSW5,1-Feb,Aug-14,0.2716
+Team,WCNSW5,1-Feb,Sep-14,0.2463
+Team,WCNSW5,1-Feb,Oct-14,0.227
+Team,WCNSW5,1-Feb,Nov-14,0.211
+Team,WCNSW5,1-Feb,Dec-14,0.1966
+Team,WCNSW5,1-Feb,Jan-15,0.1825
+Team,WCNSW5,1-Feb,Feb-15,0.1686
+Team,WCNSW5,1-Feb,Mar-15,0.1553
+Team,WCNSW5,1-Feb,Apr-15,0.1437
+Team,WCNSW5,1-Feb,May-15,0.136
+Team,WCNSW5,1-Feb,Jun-15,0.1348
+Team,WCNSW5,3-May,Jan-14,6.723
+Team,WCNSW5,3-May,Feb-14,6.4575
+Team,WCNSW5,3-May,Mar-14,6.2024
+Team,WCNSW5,3-May,Apr-14,5.959
+Team,WCNSW5,3-May,May-14,5.7262
+Team,WCNSW5,3-May,Jun-14,5.5049
+Team,WCNSW5,3-May,Jul-14,5.2945
+Team,WCNSW5,3-May,Aug-14,5.095
+Team,WCNSW5,3-May,Sep-14,4.9068
+Team,WCNSW5,3-May,Oct-14,4.7297
+Team,WCNSW5,3-May,Nov-14,4.5635
+Team,WCNSW5,3-May,Dec-14,4.4085
+Team,WCNSW5,3-May,Jan-15,4.2645
+Team,WCNSW5,3-May,Feb-15,4.1316
+Team,WCNSW5,3-May,Mar-15,4.0096
+Team,WCNSW5,3-May,Apr-15,3.8991
+Team,WCNSW5,3-May,May-15,3.7996
+Team,WCNSW5,3-May,Jun-15,3.7109
+Team,WCNSW5,5-plus,Jan-14,6.7962
+Team,WCNSW5,5-plus,Feb-14,6.5966
+Team,WCNSW5,5-plus,Mar-14,6.4021
+Team,WCNSW5,5-plus,Apr-14,6.2124
+Team,WCNSW5,5-plus,May-14,6.0273
+Team,WCNSW5,5-plus,Jun-14,5.847
+Team,WCNSW5,5-plus,Jul-14,5.6715
+Team,WCNSW5,5-plus,Aug-14,5.5004
+Team,WCNSW5,5-plus,Sep-14,5.3341
+Team,WCNSW5,5-plus,Oct-14,5.1726
+Team,WCNSW5,5-plus,Nov-14,5.0157
+Team,WCNSW5,5-plus,Dec-14,4.8632
+Team,WCNSW5,5-plus,Jan-15,4.7158
+Team,WCNSW5,5-plus,Feb-15,4.5726
+Team,WCNSW5,5-plus,Mar-15,4.4343
+Team,WCNSW5,5-plus,Apr-15,4.3007
+Team,WCNSW5,5-plus,May-15,4.1714
+Team,WCNSW5,5-plus,Jun-15,4.0469
+Team,WCNSW5A,Whole-EML,Jan-14,91.7103
+Team,WCNSW5A,Whole-EML,Feb-14,83.4906
+Team,WCNSW5A,Whole-EML,Mar-14,75.3473
+Team,WCNSW5A,Whole-EML,Apr-14,67.4129
+Team,WCNSW5A,Whole-EML,May-14,61.1617
+Team,WCNSW5A,Whole-EML,Jun-14,56.2523
+Team,WCNSW5A,Whole-EML,Jul-14,52.3806
+Team,WCNSW5A,Whole-EML,Aug-14,49.2968
+Team,WCNSW5A,Whole-EML,Sep-14,46.7761
+Team,WCNSW5A,Whole-EML,Oct-14,44.6459
+Team,WCNSW5A,Whole-EML,Nov-14,42.7644
+Team,WCNSW5A,Whole-EML,Dec-14,41.041
+Team,WCNSW5A,Whole-EML,Jan-15,39.4078
+Team,WCNSW5A,Whole-EML,Feb-15,37.8578
+Team,WCNSW5A,Whole-EML,Mar-15,36.4122
+Team,WCNSW5A,Whole-EML,Apr-15,35.1326
+Team,WCNSW5A,Whole-EML,May-15,34.1328
+Team,WCNSW5A,Whole-EML,Jun-15,33.5492
+Team,WCNSW5A,1-Feb,Jan-14,46.481
+Team,WCNSW5A,1-Feb,Feb-14,39.9567
+Team,WCNSW5A,1-Feb,Mar-14,33.4377
+Team,WCNSW5A,1-Feb,Apr-14,27.0512
+Team,WCNSW5A,1-Feb,May-14,22.2759
+Team,WCNSW5A,1-Feb,Jun-14,18.7673
+Team,WCNSW5A,1-Feb,Jul-14,16.2233
+Team,WCNSW5A,1-Feb,Aug-14,14.3948
+Team,WCNSW5A,1-Feb,Sep-14,13.0539
+Team,WCNSW5A,1-Feb,Oct-14,12.031
+Team,WCNSW5A,1-Feb,Nov-14,11.183
+Team,WCNSW5A,1-Feb,Dec-14,10.4198
+Team,WCNSW5A,1-Feb,Jan-15,9.6725
+Team,WCNSW5A,1-Feb,Feb-15,8.9358
+Team,WCNSW5A,1-Feb,Mar-15,8.2309
+Team,WCNSW5A,1-Feb,Apr-15,7.6161
+Team,WCNSW5A,1-Feb,May-15,7.208
+Team,WCNSW5A,1-Feb,Jun-15,7.1444
+Team,WCNSW5A,3-May,Jan-14,27.7901
+Team,WCNSW5A,3-May,Feb-14,26.6338
+Team,WCNSW5A,3-May,Mar-14,25.5265
+Team,WCNSW5A,3-May,Apr-14,24.4734
+Team,WCNSW5A,3-May,May-14,23.4704
+Team,WCNSW5A,3-May,Jun-14,22.521
+Team,WCNSW5A,3-May,Jul-14,21.6222
+Team,WCNSW5A,3-May,Aug-14,20.775
+Team,WCNSW5A,3-May,Sep-14,19.9803
+Team,WCNSW5A,3-May,Oct-14,19.2373
+Team,WCNSW5A,3-May,Nov-14,18.5459
+Team,WCNSW5A,3-May,Dec-14,17.9061
+Team,WCNSW5A,3-May,Jan-15,17.3183
+Team,WCNSW5A,3-May,Feb-15,16.7822
+Team,WCNSW5A,3-May,Mar-15,16.2972
+Team,WCNSW5A,3-May,Apr-15,15.8658
+Team,WCNSW5A,3-May,May-15,15.4859
+Team,WCNSW5A,3-May,Jun-15,15.1567
+Team,WCNSW5A,5-plus,Jan-14,17.4392
+Team,WCNSW5A,5-plus,Feb-14,16.9001
+Team,WCNSW5A,5-plus,Mar-14,16.3831
+Team,WCNSW5A,5-plus,Apr-14,15.8883
+Team,WCNSW5A,5-plus,May-14,15.4154
+Team,WCNSW5A,5-plus,Jun-14,14.964
+Team,WCNSW5A,5-plus,Jul-14,14.5351
+Team,WCNSW5A,5-plus,Aug-14,14.127
+Team,WCNSW5A,5-plus,Sep-14,13.7419
+Team,WCNSW5A,5-plus,Oct-14,13.3776
+Team,WCNSW5A,5-plus,Nov-14,13.0355
+Team,WCNSW5A,5-plus,Dec-14,12.7151
+Team,WCNSW5A,5-plus,Jan-15,12.417
+Team,WCNSW5A,5-plus,Feb-15,12.1398
+Team,WCNSW5A,5-plus,Mar-15,11.8841
+Team,WCNSW5A,5-plus,Apr-15,11.6507
+Team,WCNSW5A,5-plus,May-15,11.4389
+Team,WCNSW5A,5-plus,Jun-15,11.2481
+Team,WCNSW5B,Whole-EML,Jan-14,59.7873
+Team,WCNSW5B,Whole-EML,Feb-14,55.6234
+Team,WCNSW5B,Whole-EML,Mar-14,51.512
+Team,WCNSW5B,Whole-EML,Apr-14,47.5066
+Team,WCNSW5B,Whole-EML,May-14,44.2196
+Team,WCNSW5B,Whole-EML,Jun-14,41.5102
+Team,WCNSW5B,Whole-EML,Jul-14,39.251
+Team,WCNSW5B,Whole-EML,Aug-14,37.3384
+Team,WCNSW5B,Whole-EML,Sep-14,35.6806
+Team,WCNSW5B,Whole-EML,Oct-14,34.204
+Team,WCNSW5B,Whole-EML,Nov-14,32.8509
+Team,WCNSW5B,Whole-EML,Dec-14,31.5826
+Team,WCNSW5B,Whole-EML,Jan-15,30.373
+Team,WCNSW5B,Whole-EML,Feb-15,29.2167
+Team,WCNSW5B,Whole-EML,Mar-15,28.1237
+Team,WCNSW5B,Whole-EML,Apr-15,27.12
+Team,WCNSW5B,Whole-EML,May-15,26.2525
+Team,WCNSW5B,Whole-EML,Jun-15,25.5772
+Team,WCNSW5B,1-Feb,Jan-14,19.294
+Team,WCNSW5B,1-Feb,Feb-14,16.5858
+Team,WCNSW5B,1-Feb,Mar-14,13.8798
+Team,WCNSW5B,1-Feb,Apr-14,11.2288
+Team,WCNSW5B,1-Feb,May-14,9.2466
+Team,WCNSW5B,1-Feb,Jun-14,7.7902
+Team,WCNSW5B,1-Feb,Jul-14,6.7342
+Team,WCNSW5B,1-Feb,Aug-14,5.9752
+Team,WCNSW5B,1-Feb,Sep-14,5.4186
+Team,WCNSW5B,1-Feb,Oct-14,4.994
+Team,WCNSW5B,1-Feb,Nov-14,4.642
+Team,WCNSW5B,1-Feb,Dec-14,4.3252
+Team,WCNSW5B,1-Feb,Jan-15,4.015
+Team,WCNSW5B,1-Feb,Feb-15,3.7092
+Team,WCNSW5B,1-Feb,Mar-15,3.4166
+Team,WCNSW5B,1-Feb,Apr-15,3.1614
+Team,WCNSW5B,1-Feb,May-15,2.992
+Team,WCNSW5B,1-Feb,Jun-15,2.9656
+Team,WCNSW5B,3-May,Jan-14,25.0152
+Team,WCNSW5B,3-May,Feb-14,24.066
+Team,WCNSW5B,3-May,Mar-14,23.1505
+Team,WCNSW5B,3-May,Apr-14,22.2701
+Team,WCNSW5B,3-May,May-14,21.4232
+Team,WCNSW5B,3-May,Jun-14,20.6119
+Team,WCNSW5B,3-May,Jul-14,19.8344
+Team,WCNSW5B,3-May,Aug-14,19.0913
+Team,WCNSW5B,3-May,Sep-14,18.384
+Team,WCNSW5B,3-May,Oct-14,17.7103
+Team,WCNSW5B,3-May,Nov-14,17.071
+Team,WCNSW5B,3-May,Dec-14,16.4661
+Team,WCNSW5B,3-May,Jan-15,15.8967
+Team,WCNSW5B,3-May,Feb-15,15.3609
+Team,WCNSW5B,3-May,Mar-15,14.8592
+Team,WCNSW5B,3-May,Apr-15,14.3931
+Team,WCNSW5B,3-May,May-15,13.9622
+Team,WCNSW5B,3-May,Jun-15,13.5643
+Team,WCNSW5B,5-plus,Jan-14,15.4781
+Team,WCNSW5B,5-plus,Feb-14,14.9716
+Team,WCNSW5B,5-plus,Mar-14,14.4817
+Team,WCNSW5B,5-plus,Apr-14,14.0077
+Team,WCNSW5B,5-plus,May-14,13.5498
+Team,WCNSW5B,5-plus,Jun-14,13.1081
+Team,WCNSW5B,5-plus,Jul-14,12.6824
+Team,WCNSW5B,5-plus,Aug-14,12.2719
+Team,WCNSW5B,5-plus,Sep-14,11.878
+Team,WCNSW5B,5-plus,Oct-14,11.4997
+Team,WCNSW5B,5-plus,Nov-14,11.1379
+Team,WCNSW5B,5-plus,Dec-14,10.7913
+Team,WCNSW5B,5-plus,Jan-15,10.4613
+Team,WCNSW5B,5-plus,Feb-15,10.1466
+Team,WCNSW5B,5-plus,Mar-15,9.8479
+Team,WCNSW5B,5-plus,Apr-15,9.5655
+Team,WCNSW5B,5-plus,May-15,9.2983
+Team,WCNSW5B,5-plus,Jun-15,9.0473
+Team,WCNSW5C,Whole-EML,Jan-14,90.4204
+Team,WCNSW5C,Whole-EML,Feb-14,82.8826
+Team,WCNSW5C,Whole-EML,Mar-14,75.3969
+Team,WCNSW5C,Whole-EML,Apr-14,68.0852
+Team,WCNSW5C,Whole-EML,May-14,62.3396
+Team,WCNSW5C,Whole-EML,Jun-14,57.8364
+Team,WCNSW5C,Whole-EML,Jul-14,54.2907
+Team,WCNSW5C,Whole-EML,Aug-14,51.4653
+Team,WCNSW5C,Whole-EML,Sep-14,49.1478
+Team,WCNSW5C,Whole-EML,Oct-14,47.1772
+Team,WCNSW5C,Whole-EML,Nov-14,45.4181
+Team,WCNSW5C,Whole-EML,Dec-14,43.7843
+Team,WCNSW5C,Whole-EML,Jan-15,42.2143
+Team,WCNSW5C,Whole-EML,Feb-15,40.698
+Team,WCNSW5C,Whole-EML,Mar-15,39.2586
+Team,WCNSW5C,Whole-EML,Apr-15,37.9517
+Team,WCNSW5C,Whole-EML,May-15,36.8854
+Team,WCNSW5C,Whole-EML,Jun-15,36.1891
+Team,WCNSW5C,1-Feb,Jan-14,43.85
+Team,WCNSW5C,1-Feb,Feb-14,37.695
+Team,WCNSW5C,1-Feb,Mar-14,31.545
+Team,WCNSW5C,1-Feb,Apr-14,25.52
+Team,WCNSW5C,1-Feb,May-14,21.015
+Team,WCNSW5C,1-Feb,Jun-14,17.705
+Team,WCNSW5C,1-Feb,Jul-14,15.305
+Team,WCNSW5C,1-Feb,Aug-14,13.58
+Team,WCNSW5C,1-Feb,Sep-14,12.315
+Team,WCNSW5C,1-Feb,Oct-14,11.35
+Team,WCNSW5C,1-Feb,Nov-14,10.55
+Team,WCNSW5C,1-Feb,Dec-14,9.83
+Team,WCNSW5C,1-Feb,Jan-15,9.125
+Team,WCNSW5C,1-Feb,Feb-15,8.43
+Team,WCNSW5C,1-Feb,Mar-15,7.765
+Team,WCNSW5C,1-Feb,Apr-15,7.185
+Team,WCNSW5C,1-Feb,May-15,6.8
+Team,WCNSW5C,1-Feb,Jun-15,6.74
+Team,WCNSW5C,3-May,Jan-14,15.3869
+Team,WCNSW5C,3-May,Feb-14,14.7979
+Team,WCNSW5C,3-May,Mar-14,14.2307
+Team,WCNSW5C,3-May,Apr-14,13.688
+Team,WCNSW5C,3-May,May-14,13.1674
+Team,WCNSW5C,3-May,Jun-14,12.6709
+Team,WCNSW5C,3-May,Jul-14,12.1973
+Team,WCNSW5C,3-May,Aug-14,11.7464
+Team,WCNSW5C,3-May,Sep-14,11.3193
+Team,WCNSW5C,3-May,Oct-14,10.9154
+Team,WCNSW5C,3-May,Nov-14,10.5342
+Team,WCNSW5C,3-May,Dec-14,10.1766
+Team,WCNSW5C,3-May,Jan-15,9.842
+Team,WCNSW5C,3-May,Feb-15,9.5306
+Team,WCNSW5C,3-May,Mar-15,9.242
+Team,WCNSW5C,3-May,Apr-15,8.9775
+Team,WCNSW5C,3-May,May-15,8.7361
+Team,WCNSW5C,3-May,Jun-15,8.5172
+Team,WCNSW5C,5-plus,Jan-14,31.1835
+Team,WCNSW5C,5-plus,Feb-14,30.3897
+Team,WCNSW5C,5-plus,Mar-14,29.6212
+Team,WCNSW5C,5-plus,Apr-14,28.8772
+Team,WCNSW5C,5-plus,May-14,28.1572
+Team,WCNSW5C,5-plus,Jun-14,27.4605
+Team,WCNSW5C,5-plus,Jul-14,26.7884
+Team,WCNSW5C,5-plus,Aug-14,26.1389
+Team,WCNSW5C,5-plus,Sep-14,25.5135
+Team,WCNSW5C,5-plus,Oct-14,24.9118
+Team,WCNSW5C,5-plus,Nov-14,24.3339
+Team,WCNSW5C,5-plus,Dec-14,23.7777
+Team,WCNSW5C,5-plus,Jan-15,23.2473
+Team,WCNSW5C,5-plus,Feb-15,22.7374
+Team,WCNSW5C,5-plus,Mar-15,22.2516
+Team,WCNSW5C,5-plus,Apr-15,21.7892
+Team,WCNSW5C,5-plus,May-15,21.3493
+Team,WCNSW5C,5-plus,Jun-15,20.9319
+Team,WCNSW6A,Whole-EML,Jan-14,160.985
+Team,WCNSW6A,Whole-EML,Feb-14,142.0538
+Team,WCNSW6A,Whole-EML,Mar-14,123.226
+Team,WCNSW6A,Whole-EML,Apr-14,104.8445
+Team,WCNSW6A,Whole-EML,May-14,90.7811
+Team,WCNSW6A,Whole-EML,Jun-14,80.1375
+Team,WCNSW6A,Whole-EML,Jul-14,72.1154
+Team,WCNSW6A,Whole-EML,Aug-14,66.0653
+Team,WCNSW6A,Whole-EML,Sep-14,61.3887
+Team,WCNSW6A,Whole-EML,Oct-14,57.6408
+Team,WCNSW6A,Whole-EML,Nov-14,54.4471
+Team,WCNSW6A,Whole-EML,Dec-14,51.5686
+Team,WCNSW6A,Whole-EML,Jan-15,48.8273
+Team,WCNSW6A,Whole-EML,Feb-15,46.2085
+Team,WCNSW6A,Whole-EML,Mar-15,43.7667
+Team,WCNSW6A,Whole-EML,Apr-15,41.6589
+Team,WCNSW6A,Whole-EML,May-15,40.1868
+Team,WCNSW6A,Whole-EML,Jun-15,39.7118
+Team,WCNSW6A,1-Feb,Jan-14,121.903
+Team,WCNSW6A,1-Feb,Feb-14,104.7921
+Team,WCNSW6A,1-Feb,Mar-14,87.6951
+Team,WCNSW6A,1-Feb,Apr-14,70.9456
+Team,WCNSW6A,1-Feb,May-14,58.4217
+Team,WCNSW6A,1-Feb,Jun-14,49.2199
+Team,WCNSW6A,1-Feb,Jul-14,42.5479
+Team,WCNSW6A,1-Feb,Aug-14,37.7524
+Team,WCNSW6A,1-Feb,Sep-14,34.2357
+Team,WCNSW6A,1-Feb,Oct-14,31.553
+Team,WCNSW6A,1-Feb,Nov-14,29.329
+Team,WCNSW6A,1-Feb,Dec-14,27.3274
+Team,WCNSW6A,1-Feb,Jan-15,25.3675
+Team,WCNSW6A,1-Feb,Feb-15,23.4354
+Team,WCNSW6A,1-Feb,Mar-15,21.5867
+Team,WCNSW6A,1-Feb,Apr-15,19.9743
+Team,WCNSW6A,1-Feb,May-15,18.904
+Team,WCNSW6A,1-Feb,Jun-15,18.7372
+Team,WCNSW6A,3-May,Jan-14,39.082
+Team,WCNSW6A,3-May,Feb-14,37.2617
+Team,WCNSW6A,3-May,Mar-14,35.5309
+Team,WCNSW6A,3-May,Apr-14,33.8989
+Team,WCNSW6A,3-May,May-14,32.3594
+Team,WCNSW6A,3-May,Jun-14,30.9176
+Team,WCNSW6A,3-May,Jul-14,29.5675
+Team,WCNSW6A,3-May,Aug-14,28.3129
+Team,WCNSW6A,3-May,Sep-14,27.153
+Team,WCNSW6A,3-May,Oct-14,26.0878
+Team,WCNSW6A,3-May,Nov-14,25.1181
+Team,WCNSW6A,3-May,Dec-14,24.2412
+Team,WCNSW6A,3-May,Jan-15,23.4598
+Team,WCNSW6A,3-May,Feb-15,22.7731
+Team,WCNSW6A,3-May,Mar-15,22.18
+Team,WCNSW6A,3-May,Apr-15,21.6846
+Team,WCNSW6A,3-May,May-15,21.2828
+Team,WCNSW6A,3-May,Jun-15,20.9746
+Team,WCNSW6B,Whole-EML,Jan-14,111.9891
+Team,WCNSW6B,Whole-EML,Feb-14,103.078
+Team,WCNSW6B,Whole-EML,Mar-14,94.2713
+Team,WCNSW6B,Whole-EML,Apr-14,85.7
+Team,WCNSW6B,Whole-EML,May-14,78.8096
+Team,WCNSW6B,Whole-EML,Jun-14,73.2674
+Team,WCNSW6B,Whole-EML,Jul-14,68.7724
+Team,WCNSW6B,Whole-EML,Aug-14,65.0801
+Team,WCNSW6B,Whole-EML,Sep-14,61.9717
+Team,WCNSW6B,Whole-EML,Oct-14,59.2754
+Team,WCNSW6B,Whole-EML,Nov-14,56.8548
+Team,WCNSW6B,Whole-EML,Dec-14,54.6184
+Team,WCNSW6B,Whole-EML,Jan-15,52.5015
+Team,WCNSW6B,Whole-EML,Feb-15,50.4959
+Team,WCNSW6B,Whole-EML,Mar-15,48.6226
+Team,WCNSW6B,Whole-EML,Apr-15,46.9434
+Team,WCNSW6B,Whole-EML,May-15,45.569
+Team,WCNSW6B,Whole-EML,Jun-15,44.6331
+Team,WCNSW6B,1-Feb,Jan-14,45.604
+Team,WCNSW6B,1-Feb,Feb-14,39.2028
+Team,WCNSW6B,1-Feb,Mar-14,32.8068
+Team,WCNSW6B,1-Feb,Apr-14,26.5408
+Team,WCNSW6B,1-Feb,May-14,21.8556
+Team,WCNSW6B,1-Feb,Jun-14,18.4132
+Team,WCNSW6B,1-Feb,Jul-14,15.9172
+Team,WCNSW6B,1-Feb,Aug-14,14.1232
+Team,WCNSW6B,1-Feb,Sep-14,12.8076
+Team,WCNSW6B,1-Feb,Oct-14,11.804
+Team,WCNSW6B,1-Feb,Nov-14,10.972
+Team,WCNSW6B,1-Feb,Dec-14,10.2232
+Team,WCNSW6B,1-Feb,Jan-15,9.49
+Team,WCNSW6B,1-Feb,Feb-15,8.7672
+Team,WCNSW6B,1-Feb,Mar-15,8.0756
+Team,WCNSW6B,1-Feb,Apr-15,7.4724
+Team,WCNSW6B,1-Feb,May-15,7.072
+Team,WCNSW6B,1-Feb,Jun-15,7.0096
+Team,WCNSW6B,3-May,Jan-14,43.1748
+Team,WCNSW6B,3-May,Feb-14,41.4267
+Team,WCNSW6B,3-May,Mar-14,39.7494
+Team,WCNSW6B,3-May,Apr-14,38.1498
+Team,WCNSW6B,3-May,May-14,36.6222
+Team,WCNSW6B,3-May,Jun-14,35.1717
+Team,WCNSW6B,3-May,Jul-14,33.7941
+Team,WCNSW6B,3-May,Aug-14,32.4906
+Team,WCNSW6B,3-May,Sep-14,31.263
+Team,WCNSW6B,3-May,Oct-14,30.1095
+Team,WCNSW6B,3-May,Nov-14,29.0301
+Team,WCNSW6B,3-May,Dec-14,28.0251
+Team,WCNSW6B,3-May,Jan-15,27.0951
+Team,WCNSW6B,3-May,Feb-15,26.2392
+Team,WCNSW6B,3-May,Mar-15,25.4568
+Team,WCNSW6B,3-May,Apr-15,24.7515
+Team,WCNSW6B,3-May,May-15,24.1206
+Team,WCNSW6B,3-May,Jun-15,23.5623
+Team,WCNSW6B,5-plus,Jan-14,23.2103
+Team,WCNSW6B,5-plus,Feb-14,22.4485
+Team,WCNSW6B,5-plus,Mar-14,21.7151
+Team,WCNSW6B,5-plus,Apr-14,21.0094
+Team,WCNSW6B,5-plus,May-14,20.3318
+Team,WCNSW6B,5-plus,Jun-14,19.6825
+Team,WCNSW6B,5-plus,Jul-14,19.0611
+Team,WCNSW6B,5-plus,Aug-14,18.4663
+Team,WCNSW6B,5-plus,Sep-14,17.9011
+Team,WCNSW6B,5-plus,Oct-14,17.3619
+Team,WCNSW6B,5-plus,Nov-14,16.8527
+Team,WCNSW6B,5-plus,Dec-14,16.3701
+Team,WCNSW6B,5-plus,Jan-15,15.9164
+Team,WCNSW6B,5-plus,Feb-15,15.4895
+Team,WCNSW6B,5-plus,Mar-15,15.0902
+Team,WCNSW6B,5-plus,Apr-15,14.7195
+Team,WCNSW6B,5-plus,May-15,14.3764
+Team,WCNSW6B,5-plus,Jun-15,14.0612
+Team,WCNSW6C,Whole-EML,Jan-14,115.3643
+Team,WCNSW6C,Whole-EML,Feb-14,107.7755
+Team,WCNSW6C,Whole-EML,Mar-14,100.2448
+Team,WCNSW6C,Whole-EML,Apr-14,92.8857
+Team,WCNSW6C,Whole-EML,May-14,86.9759
+Team,WCNSW6C,Whole-EML,Jun-14,82.219
+Team,WCNSW6C,Whole-EML,Jul-14,78.3531
+Team,WCNSW6C,Whole-EML,Aug-14,75.1574
+Team,WCNSW6C,Whole-EML,Sep-14,72.4379
+Team,WCNSW6C,Whole-EML,Oct-14,70.0493
+Team,WCNSW6C,Whole-EML,Nov-14,67.8613
+Team,WCNSW6C,Whole-EML,Dec-14,65.7981
+Team,WCNSW6C,Whole-EML,Jan-15,63.8023
+Team,WCNSW6C,Whole-EML,Feb-15,61.8635
+Team,WCNSW6C,Whole-EML,Mar-15,60.0051
+Team,WCNSW6C,Whole-EML,Apr-15,58.2774
+Team,WCNSW6C,Whole-EML,May-15,56.7776
+Team,WCNSW6C,Whole-EML,Jun-15,55.6256
+Team,WCNSW6C,1-Feb,Jan-14,40.342
+Team,WCNSW6C,1-Feb,Feb-14,34.6794
+Team,WCNSW6C,1-Feb,Mar-14,29.0214
+Team,WCNSW6C,1-Feb,Apr-14,23.4784
+Team,WCNSW6C,1-Feb,May-14,19.3338
+Team,WCNSW6C,1-Feb,Jun-14,16.2886
+Team,WCNSW6C,1-Feb,Jul-14,14.0806
+Team,WCNSW6C,1-Feb,Aug-14,12.4936
+Team,WCNSW6C,1-Feb,Sep-14,11.3298
+Team,WCNSW6C,1-Feb,Oct-14,10.442
+Team,WCNSW6C,1-Feb,Nov-14,9.706
+Team,WCNSW6C,1-Feb,Dec-14,9.0436
+Team,WCNSW6C,1-Feb,Jan-15,8.395
+Team,WCNSW6C,1-Feb,Feb-15,7.7556
+Team,WCNSW6C,1-Feb,Mar-15,7.1438
+Team,WCNSW6C,1-Feb,Apr-15,6.6102
+Team,WCNSW6C,1-Feb,May-15,6.256
+Team,WCNSW6C,1-Feb,Jun-15,6.2008
+Team,WCNSW6C,3-May,Jan-14,21.2405
+Team,WCNSW6C,3-May,Feb-14,20.5079
+Team,WCNSW6C,3-May,Mar-14,19.7978
+Team,WCNSW6C,3-May,Apr-14,19.1163
+Team,WCNSW6C,3-May,May-14,18.4578
+Team,WCNSW6C,3-May,Jun-14,17.8262
+Team,WCNSW6C,3-May,Jul-14,17.2205
+Team,WCNSW6C,3-May,Aug-14,16.6383
+Team,WCNSW6C,3-May,Sep-14,16.0825
+Team,WCNSW6C,3-May,Oct-14,15.5531
+Team,WCNSW6C,3-May,Nov-14,15.0472
+Team,WCNSW6C,3-May,Dec-14,14.5689
+Team,WCNSW6C,3-May,Jan-15,14.1141
+Team,WCNSW6C,3-May,Feb-15,13.6857
+Team,WCNSW6C,3-May,Mar-15,13.282
+Team,WCNSW6C,3-May,Apr-15,12.9052
+Team,WCNSW6C,3-May,May-15,12.5531
+Team,WCNSW6C,3-May,Jun-15,12.2257
+Team,WCNSW6C,5-plus,Jan-14,53.7818
+Team,WCNSW6C,5-plus,Feb-14,52.5882
+Team,WCNSW6C,5-plus,Mar-14,51.4256
+Team,WCNSW6C,5-plus,Apr-14,50.291
+Team,WCNSW6C,5-plus,May-14,49.1843
+Team,WCNSW6C,5-plus,Jun-14,48.1042
+Team,WCNSW6C,5-plus,Jul-14,47.052
+Team,WCNSW6C,5-plus,Aug-14,46.0255
+Team,WCNSW6C,5-plus,Sep-14,45.0256
+Team,WCNSW6C,5-plus,Oct-14,44.0542
+Team,WCNSW6C,5-plus,Nov-14,43.1081
+Team,WCNSW6C,5-plus,Dec-14,42.1856
+Team,WCNSW6C,5-plus,Jan-15,41.2932
+Team,WCNSW6C,5-plus,Feb-15,40.4222
+Team,WCNSW6C,5-plus,Mar-15,39.5793
+Team,WCNSW6C,5-plus,Apr-15,38.762
+Team,WCNSW6C,5-plus,May-15,37.9685
+Team,WCNSW6C,5-plus,Jun-15,37.1991
+Team,WCNSW7A,Whole-EML,Jan-14,221.8566
+Team,WCNSW7A,Whole-EML,Feb-14,215.8644
+Team,WCNSW7A,Whole-EML,Mar-14,210.0404
+Team,WCNSW7A,Whole-EML,Apr-14,204.3773
+Team,WCNSW7A,Whole-EML,May-14,198.8696
+Team,WCNSW7A,Whole-EML,Jun-14,193.5209
+Team,WCNSW7A,Whole-EML,Jul-14,188.3342
+Team,WCNSW7A,Whole-EML,Aug-14,183.2944
+Team,WCNSW7A,Whole-EML,Sep-14,178.42
+Team,WCNSW7A,Whole-EML,Oct-14,173.7003
+Team,WCNSW7A,Whole-EML,Nov-14,169.1341
+Team,WCNSW7A,Whole-EML,Dec-14,164.7195
+Team,WCNSW7A,Whole-EML,Jan-15,160.4715
+Team,WCNSW7A,Whole-EML,Feb-15,156.3619
+Team,WCNSW7A,Whole-EML,Mar-15,152.4127
+Team,WCNSW7A,Whole-EML,Apr-15,148.6188
+Team,WCNSW7A,Whole-EML,May-15,144.9761
+Team,WCNSW7A,Whole-EML,Jun-15,141.4822
+Team,WCNSW7A,3-May,Jan-14,49.4924
+Team,WCNSW7A,3-May,Feb-14,48.0127
+Team,WCNSW7A,3-May,Mar-14,46.5585
+Team,WCNSW7A,3-May,Apr-14,45.1321
+Team,WCNSW7A,3-May,May-14,43.7286
+Team,WCNSW7A,3-May,Jun-14,42.353
+Team,WCNSW7A,3-May,Jul-14,41.0053
+Team,WCNSW7A,3-May,Aug-14,39.6805
+Team,WCNSW7A,3-May,Sep-14,38.3862
+Team,WCNSW7A,3-May,Oct-14,37.1172
+Team,WCNSW7A,3-May,Nov-14,35.8711
+Team,WCNSW7A,3-May,Dec-14,34.6554
+Team,WCNSW7A,3-May,Jan-15,33.4652
+Team,WCNSW7A,3-May,Feb-15,32.3003
+Team,WCNSW7A,3-May,Mar-15,31.1608
+Team,WCNSW7A,3-May,Apr-15,30.0492
+Team,WCNSW7A,3-May,May-15,28.9656
+Team,WCNSW7A,3-May,Jun-15,27.9048
+Team,WCNSW7A,5-plus,Jan-14,172.3642
+Team,WCNSW7A,5-plus,Feb-14,167.8517
+Team,WCNSW7A,5-plus,Mar-14,163.4819
+Team,WCNSW7A,5-plus,Apr-14,159.2452
+Team,WCNSW7A,5-plus,May-14,155.141
+Team,WCNSW7A,5-plus,Jun-14,151.1679
+Team,WCNSW7A,5-plus,Jul-14,147.3289
+Team,WCNSW7A,5-plus,Aug-14,143.6139
+Team,WCNSW7A,5-plus,Sep-14,140.0338
+Team,WCNSW7A,5-plus,Oct-14,136.5831
+Team,WCNSW7A,5-plus,Nov-14,133.263
+Team,WCNSW7A,5-plus,Dec-14,130.0641
+Team,WCNSW7A,5-plus,Jan-15,127.0063
+Team,WCNSW7A,5-plus,Feb-15,124.0616
+Team,WCNSW7A,5-plus,Mar-15,121.2519
+Team,WCNSW7A,5-plus,Apr-15,118.5696
+Team,WCNSW7A,5-plus,May-15,116.0105
+Team,WCNSW7A,5-plus,Jun-15,113.5774
+Team,WCNSW7B,Whole-EML,Jan-14,223.0764
+Team,WCNSW7B,Whole-EML,Feb-14,217.309
+Team,WCNSW7B,Whole-EML,Mar-14,211.7153
+Team,WCNSW7B,Whole-EML,Apr-14,206.2882
+Team,WCNSW7B,Whole-EML,May-14,201.0249
+Team,WCNSW7B,Whole-EML,Jun-14,195.9223
+Team,WCNSW7B,Whole-EML,Jul-14,190.9896
+Team,WCNSW7B,Whole-EML,Aug-14,186.2099
+Team,WCNSW7B,Whole-EML,Sep-14,181.5988
+Team,WCNSW7B,Whole-EML,Oct-14,177.149
+Team,WCNSW7B,Whole-EML,Nov-14,172.8581
+Team,WCNSW7B,Whole-EML,Dec-14,168.7214
+Team,WCNSW7B,Whole-EML,Jan-15,164.76
+Team,WCNSW7B,Whole-EML,Feb-15,160.9399
+Team,WCNSW7B,Whole-EML,Mar-15,157.2845
+Team,WCNSW7B,Whole-EML,Apr-15,153.7898
+Team,WCNSW7B,Whole-EML,May-15,150.4514
+Team,WCNSW7B,Whole-EML,Jun-15,147.2645
+Team,WCNSW7B,3-May,Jan-14,21.3444
+Team,WCNSW7B,3-May,Feb-14,20.6994
+Team,WCNSW7B,3-May,Mar-14,20.0654
+Team,WCNSW7B,3-May,Apr-14,19.441
+Team,WCNSW7B,3-May,May-14,18.826
+Team,WCNSW7B,3-May,Jun-14,18.2216
+Team,WCNSW7B,3-May,Jul-14,17.6278
+Team,WCNSW7B,3-May,Aug-14,17.0434
+Team,WCNSW7B,3-May,Sep-14,16.4712
+Team,WCNSW7B,3-May,Oct-14,15.908
+Team,WCNSW7B,3-May,Nov-14,15.3542
+Team,WCNSW7B,3-May,Dec-14,14.8116
+Team,WCNSW7B,3-May,Jan-15,14.28
+Team,WCNSW7B,3-May,Feb-15,13.7574
+Team,WCNSW7B,3-May,Mar-15,13.2448
+Team,WCNSW7B,3-May,Apr-15,12.7428
+Team,WCNSW7B,3-May,May-15,12.2524
+Team,WCNSW7B,3-May,Jun-15,11.7704
+Team,WCNSW7B,5-plus,Jan-14,201.732
+Team,WCNSW7B,5-plus,Feb-14,196.6096
+Team,WCNSW7B,5-plus,Mar-14,191.6499
+Team,WCNSW7B,5-plus,Apr-14,186.8472
+Team,WCNSW7B,5-plus,May-14,182.1989
+Team,WCNSW7B,5-plus,Jun-14,177.7007
+Team,WCNSW7B,5-plus,Jul-14,173.3618
+Team,WCNSW7B,5-plus,Aug-14,169.1665
+Team,WCNSW7B,5-plus,Sep-14,165.1276
+Team,WCNSW7B,5-plus,Oct-14,161.241
+Team,WCNSW7B,5-plus,Nov-14,157.5039
+Team,WCNSW7B,5-plus,Dec-14,153.9098
+Team,WCNSW7B,5-plus,Jan-15,150.48
+Team,WCNSW7B,5-plus,Feb-15,147.1825
+Team,WCNSW7B,5-plus,Mar-15,144.0397
+Team,WCNSW7B,5-plus,Apr-15,141.047
+Team,WCNSW7B,5-plus,May-15,138.199
+Team,WCNSW7B,5-plus,Jun-15,135.4941
+Team,WCNSW7C,Whole-EML,Jan-14,165.3945
+Team,WCNSW7C,Whole-EML,Feb-14,160.9195
+Team,WCNSW7C,Whole-EML,Mar-14,156.5904
+Team,WCNSW7C,Whole-EML,Apr-14,152.3984
+Team,WCNSW7C,Whole-EML,May-14,148.3446
+Team,WCNSW7C,Whole-EML,Jun-14,144.4261
+Team,WCNSW7C,Whole-EML,Jul-14,140.6473
+Team,WCNSW7C,Whole-EML,Aug-14,136.9973
+Team,WCNSW7C,Whole-EML,Sep-14,133.487
+Team,WCNSW7C,Whole-EML,Oct-14,130.1111
+Team,WCNSW7C,Whole-EML,Nov-14,126.8706
+Team,WCNSW7C,Whole-EML,Dec-14,123.7566
+Team,WCNSW7C,Whole-EML,Jan-15,120.7881
+Team,WCNSW7C,Whole-EML,Feb-15,117.9381
+Team,WCNSW7C,Whole-EML,Mar-15,115.2265
+Team,WCNSW7C,Whole-EML,Apr-15,112.6477
+Team,WCNSW7C,Whole-EML,May-15,110.1984
+Team,WCNSW7C,Whole-EML,Jun-15,107.8794
+Team,WCNSW7C,3-May,Jan-14,14.554
+Team,WCNSW7C,3-May,Feb-14,14.1155
+Team,WCNSW7C,3-May,Mar-14,13.6845
+Team,WCNSW7C,3-May,Apr-14,13.2605
+Team,WCNSW7C,3-May,May-14,12.843
+Team,WCNSW7C,3-May,Jun-14,12.433
+Team,WCNSW7C,3-May,Jul-14,12.0305
+Team,WCNSW7C,3-May,Aug-14,11.6345
+Team,WCNSW7C,3-May,Sep-14,11.247
+Team,WCNSW7C,3-May,Oct-14,10.866
+Team,WCNSW7C,3-May,Nov-14,10.4915
+Team,WCNSW7C,3-May,Dec-14,10.125
+Team,WCNSW7C,3-May,Jan-15,9.766
+Team,WCNSW7C,3-May,Feb-15,9.4135
+Team,WCNSW7C,3-May,Mar-15,9.068
+Team,WCNSW7C,3-May,Apr-15,8.73
+Team,WCNSW7C,3-May,May-15,8.4
+Team,WCNSW7C,3-May,Jun-15,8.076
+Team,WCNSW7C,5-plus,Jan-14,150.8405
+Team,WCNSW7C,5-plus,Feb-14,146.804
+Team,WCNSW7C,5-plus,Mar-14,142.9059
+Team,WCNSW7C,5-plus,Apr-14,139.1379
+Team,WCNSW7C,5-plus,May-14,135.5016
+Team,WCNSW7C,5-plus,Jun-14,131.9931
+Team,WCNSW7C,5-plus,Jul-14,128.6168
+Team,WCNSW7C,5-plus,Aug-14,125.3628
+Team,WCNSW7C,5-plus,Sep-14,122.24
+Team,WCNSW7C,5-plus,Oct-14,119.2451
+Team,WCNSW7C,5-plus,Nov-14,116.3791
+Team,WCNSW7C,5-plus,Dec-14,113.6316
+Team,WCNSW7C,5-plus,Jan-15,111.0221
+Team,WCNSW7C,5-plus,Feb-15,108.5246
+Team,WCNSW7C,5-plus,Mar-15,106.1585
+Team,WCNSW7C,5-plus,Apr-15,103.9177
+Team,WCNSW7C,5-plus,May-15,101.7984
+Team,WCNSW7C,5-plus,Jun-15,99.8034

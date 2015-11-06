@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="EM_Report.Service.ServiceImplementations.ActionService" Factory="EM_Report.Service.ServiceImplementations.InitHostFactory" %>

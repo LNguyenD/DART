@@ -1,0 +1,174 @@
+#tabs
+{
+    border:none;
+}
+.ui-widget-header
+{
+    
+}
+.FormWrapper {
+    border: 1px solid #DDD !important;
+    padding: 10px 10px 30px 50px;
+    -moz-border-radius-bottomleft: 0px !important/*{cornerRadius}*/;
+    -webkit-border-bottom-left-radius: 0px !important/*{cornerRadius}*/;
+    border-bottom-left-radius: 0px !important/*{cornerRadius}*/;
+    -moz-border-radius-bottomright: 0px !important/*{cornerRadius}*/;
+    -webkit-border-bottom-right-radius: 0px !important/*{cornerRadius}*/;
+    border-bottom-right-radius: 0px !important/*{cornerRadius}*/;
+}
+ul.BoxHeader li {
+   margin-right:0 !important;
+   font-weight:bold !important;   
+}
+ul.BoxHeader li:hover    
+{   
+    border:none !important;
+   -moz-box-shadow: none !important; 
+	-webkit-box-shadow: none !important; 
+	box-shadow:  none !important; 
+   -moz-border-radius-bottomleft: 0px !important/*{cornerRadius}*/;
+    -webkit-border-bottom-left-radius: 0px !important/*{cornerRadius}*/;
+    border-bottom-left-radius: 0px !important/*{cornerRadius}*/;
+    -moz-border-radius-bottomright: 0px !important/*{cornerRadius}*/;
+    -webkit-border-bottom-right-radius: 0px !important/*{cornerRadius}*/;
+    border-bottom-right-radius: 0px !important/*{cornerRadius}*/;
+}
+ul.BoxHeader li:focus {   
+   border:none !important;
+   -moz-box-shadow: none !important; 
+	-webkit-box-shadow: none !important; 
+	box-shadow:  none !important; 
+   -moz-border-radius-bottomleft: 0px !important/*{cornerRadius}*/;
+    -webkit-border-bottom-left-radius: 0px !important/*{cornerRadius}*/;
+    border-bottom-left-radius: 0px !important/*{cornerRadius}*/;
+    -moz-border-radius-bottomright: 0px !important/*{cornerRadius}*/;
+    -webkit-border-bottom-right-radius: 0px !important/*{cornerRadius}*/;
+    border-bottom-right-radius: 0px !important/*{cornerRadius}*/;
+}
+ul.BoxHeader li:active {   
+   border:none !important;
+   -moz-box-shadow: none !important; 
+	-webkit-box-shadow: none !important; 
+	box-shadow:  none !important; 
+   -moz-border-radius-bottomleft: 0px !important/*{cornerRadius}*/;
+    -webkit-border-bottom-left-radius: 0px !important/*{cornerRadius}*/;
+    border-bottom-left-radius: 0px !important/*{cornerRadius}*/;
+    -moz-border-radius-bottomright: 0px !important/*{cornerRadius}*/;
+    -webkit-border-bottom-right-radius: 0px !important/*{cornerRadius}*/;
+    border-bottom-right-radius: 0px !important/*{cornerRadius}*/;
+}
+ul.BoxHeader li a {
+   padding: 0 !important;
+}
+
+.FormWrapper ul li {  
+   background: none !important;
+}
+
+.ui-widget-content {   
+    background: none !important;
+}
+.ui-corner-all
+{
+    border-radius:0 !important;
+    -webkit-border-radius:0 !important;
+    -moz-border-radius: 0 !important;
+}
+.ui-tabs .ui-tabs-nav li
+{
+    top: 0 !important;
+    border: none !important;
+}
+.level-list
+{
+    font-size:1.3em !important;
+    font-weight:bold;
+    padding: 0 !important;
+    height: 59px !important;
+    background:url('../../images/hem/bg-level.png') repeat transparent top left !important;   
+    
+    background-color:#E3E3E3 !important;
+    border-top-left-radius: 5px !important;
+    border-top-right-radius: 5px !important;
+    -moz-border-radius-topleft: 5px !important;
+    -moz-border-radius-topright: 5px !important;
+    width: auto;
+    padding: 15px 15px 0px 15px;
+    height: 35px;
+    position: relative;
+    border: 1px solid #C8C8C8 !important;
+    -webkit-border-radius: none !important;   
+}
+.level-arrow-select-left
+{
+    float:left !important;    
+    display: inline-block;padding: 20px 10px 0 30px !important;height: 60px !important;
+    background:url('../../images/hem/level-arrow-select-left.png') no-repeat white top left!important;
+    border:none !important;    
+}
+.level-arrow-select-right
+{   
+    float:left !important;
+    display: inline-block;padding: 20px 10px 0 30px !important;height: 39px !important;
+    background:url('../../images/hem/level-arrow-select-right.png') no-repeat transparent top left!important;
+    border:none !important;
+}
+.level-arrow
+{   
+    float:left !important;
+    display: inline-block;padding: 20px 10px 0 30px !important;height: 39px !important;
+    background:url('../../images/hem/level-arrow.png') no-repeat transparent top left !important;
+    border:none !important;
+}
+.level-arrow-last
+{
+    display: inline-block;padding: 20px 10px 0 30px !important;height: 39px !important;
+    background:url('../../images/hem/level-arrow.png') no-repeat transparent top left !important;
+    border:none !important;
+}
+.level-arrow-first
+{
+    float:left !important;
+    display: inline-block;padding: 20px 10px 0 30px !important;
+    height: 39px;
+    border:none !important;
+    background: none !important;
+}
+.level-role-title
+{
+    margin-top: 10px;
+    padding-bottom:30px !important;
+    width:370px !important;
+    border-bottom: 1px solid #F1222A !important;     
+}
+.level-role
+{
+    width:350px;
+    padding:5px 0px 5px 20px;
+    border-bottom: 1px solid #F1222A !important;   
+    border-left: 0px !important;
+    border-right: 0px !important;
+    color:Black;
+}
+.role-wrapper
+{
+    padding-left: 60px !important;
+    font-size:1.3em;
+    font-weight:bold;
+    text-transform:uppercase;
+}
+.role-wrapper a
+{    
+    color:Black;    
+    font-weight:bold;
+    text-transform:uppercase;
+}
+.level-role-title a
+{
+    font-size:1.4em;
+    color:#F1222A !important;   
+}
+.level-list li:first-child
+{
+    margin-left:40px !important;
+}

@@ -1,0 +1,181 @@
+﻿@model EM_Report.Domain.Organisation_Roles
+@using EM_Report.Common.Utilities;
+@using EM_Report.Helpers;
+@{
+    ViewBag.Title = "Organisation";
+    Layout = Request.IsAjaxRequest() ? null : "~/Views/Shared/_Master.cshtml";
+}
+<div class="wrapper">
+    <div class="w_100p">
+        @using (Html.BeginForm())
+        { 
+            @Html.AntiForgeryToken()
+            <div class="formWrap">
+                @if (Model != null)
+                {
+                    @Html.HiddenFor(e => e.Organisation_RoleId)
+                }
+                <h1>@(Model != null ? "Edit Organisation" : "Add Organisation")</h1>
+                @Html.Partial("_ShowMessage")
+                <div class="formInline">
+                    <label>Organisation Name</label>
+                    @Html.TextBoxFor(e => e.Name, new { id = "txtName", name = "txtName", @class = "Text" })
+                    <span class="field-validation-error" style="display: none">*</span>
+                </div>
+                <div class="clear">
+                </div>
+                <div class="formInline">
+                    <label>Description</label>
+                    @Html.TextAreaFor(e => e.Description, new { id = "txtDescription", @class = "Text" })
+                </div>
+                <div class="clear">
+                </div>
+                <div class="formInline">
+                    <label>Status</label>
+                    @Html.DropDownListFor(e => e.Status, new SelectList(ViewBag.cboStatus, "Value", "Text"))
+                </div>
+                <div class="clear">
+                </div>
+                @if (Model != null && Model.Organisation_RoleId > 0)
+                {
+                    <div class="formInline">
+                        <label>System</label>
+                        @Html.DropDownList("cboSystemSite", (SelectList)ViewBag.cboSystemType, new { id = "cboSystemSite", @name = "cboSystemSite" })
+                    </div>
+                    <div class="clear">
+                    </div>
+                    <div class="formInline">
+                        <label>Level</label>
+                        @Html.DropDownList("cbolevel", (SelectList)ViewBag.LevelList, "--Select --", new { id = "cbolevel", @name = "cbolevel" })
+                        <span class="field-validation-error" style="margin-left: 11px; display: none">*</span>
+                    </div>
+                    <div class="clear">
+                    </div>
+                    <div class="formInline">
+                        <label>Create Date</label>
+                        @Html.TextBoxFor(e => e.Create_Date, new { @class = "Text Disabled", @readonly = true })
+                    </div>
+                    <div class="clear">
+                    </div>
+                    <div class="formInline">
+                        <label>Created By</label>
+                        @Html.TextBoxFor(e => e.OwnerName, new { @class = "Text Disabled", @readonly = true })
+                    </div>                
+                }
+                else
+                {
+                    <div class="formInline">
+                        <label>TMF level</label>
+                        @Html.DropDownList("cbolevelTMF", (SelectList)ViewBag.LevelListTMF, "--Select --", new { id = "cbolevel_TMF", @name = "cbolevelTMF" })
+                        <span class="field-validation-error" style="margin-left: 11px; display: none">*</span>
+                    </div>
+                    <span class="field-validation-error" style="margin-left: 10px; display: none;">*</span>	
+                    <div class="clear">
+                    </div>
+                    <div class="formInline">
+                        <label>Hospitality level</label>
+                        @Html.DropDownList("cbolevelHEM", (SelectList)ViewBag.LevelListHEM, "--Select --", new { id = "cbolevel_HEM", @name = "cbolevelHEM" })
+                    </div>
+                    <div class="clear">
+                    </div>
+                    <div class="formInline">
+                        <label>WCNSW level</label>
+                        @Html.DropDownList("cbolevelEML", (SelectList)ViewBag.LevelListEML, "--Select --", new { id = "cbolevel_EML", @name = "cbolevelEML" })
+                    </div>               
+                }
+                <div class="clear">
+                </div>
+                <div class="formInline formInlineBtn">
+                    @if (Login.AuthorizeSystemPermission(ResourcesHelper.System_Group, ResourcesHelper.Permission_Add))
+                    {
+                        <span class="btnPurple">
+                        <input type="button" name="btnSave" value="Save" onclick="SubmitOrganisation();" /></span>
+                    }
+                    <span class="btnPurple">
+                    <input type="button" value="Back To List" onclick="window.location = ('@Url.Action("index", "organisation_level", new { systemid = Request["systemid"] })')" /></span>
+                </div>
+                <div class="clear">
+                </div>
+            </div>
+        }
+    </div>
+</div>
+<script type="text/javascript" language="javascript">
+    function SubmitOrganisation() {
+        if (isValidOrganisation() == true)
+        {
+            actionClick('save', false);
+        }
+    }
+
+    function isValidOrganisation() {
+        var isValid = true;
+
+        if ($("#txtName").val() == "") {
+            $("#txtName").addClass("input-validation-error");
+            $("#txtName").parent().parent().parent().parent().next().show();
+            isValid = false;
+        }
+        else {
+            $("#txtName").parent().parent().parent().parent().next().hide();
+        }
+
+        var generateNum = $("#cbolevel_TMF").attr('sb');
+        if ($("#cbolevel_TMF option:selected").val() == "" && $("#cbolevel_HEM option:selected").val() == "" && $("#cbolevel_EML option:selected").val() == "") {
+            $("#sbHolder_" + generateNum + "").next().show();
+            isValid = false;
+        }
+        else
+        {
+            $("#sbHolder_" + generateNum + "").next().hide();
+        }
+
+        generateNum = $("#cbolevel").attr('sb');
+        if($("#cbolevel option:selected").val() == "") {
+            $("#sbHolder_" + generateNum + "").next().show();
+            isValid = false;
+        }
+        else 
+        {
+            $("#sbHolder_" + generateNum + "").next().hide();
+        }
+
+        return isValid;
+    }
+
+    $(document).ready(function () {
+
+     //Change HEM to Hospitality and EML to WCNSW
+        $('select[id="cboSystemSite"] option').each(function () {
+            if ($(this).html() == 'HEM') {
+                $(this).html('Hospitality');
+            }
+            else if ($(this).html() == 'EML') {
+                $(this).html('WCNSW');
+            }
+        });
+
+        $("#cboSystemSite").change(function () {
+            var systemSite = $('#cboSystemSite option:selected').val();
+           $.ajax({
+              type: "GET",
+              url: "@Url.Action("LevelList", "Organisation")",
+              data: { systemId: systemSite },
+              cache: false,
+              success: function (data) {
+                   var systemLevel = $.parseJSON(data);
+                  var ddllevel = $("#cbolevel");
+                   // clear all previous options
+                 $("#cbolevel > option").remove(); 
+                  
+                   for (i = 0; i < systemLevel.length; i++) {	 
+	                    ddllevel.append($("<option />").val(systemLevel[i].Value).text(systemLevel[i].Text));
+	                }           
+              },
+              error: function (data) {
+                  alert("Cannot start .");
+              }
+          });
+        });
+    });
+</script>

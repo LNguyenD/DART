@@ -1,0 +1,8 @@
+EXEs -- Tools for this release tool (cygwin commands)
+versionNo.ini -- update at the end of version, that's the lastest version of the HEAD at the time of release
+DBrelease.bat -- the batch file to run the release, try DBrelease.bat /? for more detail 
+
+quick example: 
+DBrelease.bat -name username -pwd "my password" -url https://192.168.18.151/svn/syd/utils/sql  -fromTag R1.0.1 -to HEAD -dest SQLoutput -tag R1.0.6
+
+Any question you can contact me by y.huang@employersmutual.com.au

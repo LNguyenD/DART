@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SharedDataSet xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner" xmlns="http://schemas.microsoft.com/sqlserver/reporting/2010/01/shareddatasetdefinition">
+  <DataSet Name="">
+    <Query>
+      <DataSourceReference>DART</DataSourceReference>
+      <CommandText>="select * from dbo.TMF_RTW_Target_Base"</CommandText>
+    </Query>
+    <Fields>
+      <Field Name="Type">
+        <DataField>Type</DataField>
+        <rd:UserDefined>true</rd:UserDefined>
+      </Field>
+      <Field Name="Value">
+        <DataField>Value</DataField>
+        <rd:UserDefined>true</rd:UserDefined>
+      </Field>
+      <Field Name="Sub_Value">
+        <DataField>Sub_Value</DataField>
+        <rd:UserDefined>true</rd:UserDefined>
+      </Field>
+      <Field Name="Measure">
+        <DataField>Measure</DataField>
+        <rd:UserDefined>true</rd:UserDefined>
+      </Field>
+      <Field Name="Target">
+        <DataField>Target</DataField>
+        <rd:UserDefined>true</rd:UserDefined>
+      </Field>
+      <Field Name="Base">
+        <DataField>Base</DataField>
+        <rd:UserDefined>true</rd:UserDefined>
+      </Field>
+      <Field Name="Remuneration">
+        <DataField>Remuneration</DataField>
+        <rd:UserDefined>true</rd:UserDefined>
+      </Field>
+    </Fields>
+    <Filters>
+      <Filter>
+        <FilterExpression>=Fields!Remuneration.Value</FilterExpression>
+        <Operator>Equal</Operator>
+        <FilterValues>
+          <FilterValue>=Year(Today) &amp; "M12"</FilterValue>
+        </FilterValues>
+      </Filter>
+    </Filters>
+  </DataSet>
+</SharedDataSet>

@@ -1,0 +1,13 @@
+﻿@using EM_Report.Helpers;
+<div id="header">
+    <ul class="HeaderMenu">
+        <li class="LastItem"><a href="@VirtualPathUtility.ToAbsolute("~/account/changepassword")">Change password</a></li>
+        <li><a href="@VirtualPathUtility.ToAbsolute("~/account/login?logout=true")">Log out</a></li>
+       <li>Last login on @Base.LoginSession.strLastLoginTime</li>
+        <li>Hello: @Base.LoginSession.strUserName</li>
+    </ul>
+    <div id="logo">
+        <h1>Employer Mutual</h1>
+    </div>
+    <div class="HdBox"><h3>@ViewBag.Heading</h3></div>
+</div>

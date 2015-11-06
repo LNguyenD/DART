@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SharedDataSet xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner" xmlns="http://schemas.microsoft.com/sqlserver/reporting/2010/01/shareddatasetdefinition">
+  <DataSet Name="">
+    <Query>
+      <DataSourceReference>DART</DataSourceReference>
+      <CommandText>select * from uv_EML_CPR_ClaimOfficer_Summary</CommandText>
+    </Query>
+    <Fields>
+      <Field Name="Type">
+        <DataField>Type</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="EmployerSize_Group">
+        <DataField>EmployerSize_Group</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Team_Sub">
+        <DataField>Team_Sub</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="ClaimOfficer">
+        <DataField>ClaimOfficer</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="No_Of_New_Claims">
+        <DataField>No_Of_New_Claims</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+      <Field Name="No_Of_Open_Claims">
+        <DataField>No_Of_Open_Claims</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+      <Field Name="No_Of_Claim_Closures">
+        <DataField>No_Of_Claim_Closures</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+    </Fields>
+  </DataSet>
+</SharedDataSet>

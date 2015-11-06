@@ -1,0 +1,194 @@
+﻿<error errorId="fe5b62e6-79fb-4f07-8591-b3ee8d82144b" application="/LM/W3SVC/1/ROOT/Dart" host="ASWVNWKS103" type="Microsoft.Reporting.WebForms.AspNetSessionExpiredException" message="ASP.NET session has expired or could not be found" source="Microsoft.ReportViewer.WebForms" detail="Microsoft.Reporting.WebForms.AspNetSessionExpiredException: ASP.NET session has expired or could not be found&#xD;&#xA;   at Microsoft.Reporting.WebForms.ViewerDataOperation..ctor()&#xD;&#xA;   at Microsoft.Reporting.WebForms.HttpHandler.GetHandler(String operationType)&#xD;&#xA;   at Microsoft.Reporting.WebForms.HttpHandler.ProcessRequest(HttpContext context)&#xD;&#xA;   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()&#xD;&#xA;   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean&amp; completedSynchronously)" time="2014-07-21T03:30:43.8195057Z">
+  <serverVariables>
+    <item name="ALL_HTTP">
+      <value string="HTTP_CONNECTION:keep-alive&#xD;&#xA;HTTP_CONTENT_LENGTH:0&#xD;&#xA;HTTP_CONTENT_TYPE:application/x-www-form-urlencoded; charset=UTF-8&#xD;&#xA;HTTP_ACCEPT:*/*&#xD;&#xA;HTTP_ACCEPT_ENCODING:gzip,deflate,sdch&#xD;&#xA;HTTP_ACCEPT_LANGUAGE:en-US,en;q=0.8,vi;q=0.6,en-GB;q=0.4&#xD;&#xA;HTTP_COOKIE:SystemId_admin=2; __RequestVerificationToken_L0RhcnQ_=lsDhEqUA43PEo0ctd5zz/XA90BsNRfKK4PF3RDIqmVTbwj8VKLGIql6czh45kYq5dScFQDi0GVXHILQtQkcnUejZTl++M7XFM2LjNW5Y9KYNWDINubJVFtd9cDA+X1W20oD6Vn/y+15Ow5ryAeDYw50y+1avj9CL3tVWri1oBW0=; ASP.NET_SessionId=zdobomgtgkphoyzjgbx4fl2v; UserInfoSecurity=S.Niven@employersmutual.com.au|x/r4zsVD2y5FTpKYCQGMUw==#####|3237; sqlAuthCookie=A05F8E82B12C13E69374D2CC10BA6374A4C8EC5702843C0A4A3BD6EBF3B300A5356524E5CDDF7F2067B3CE7C8ACFFC80385677CDF2CF349F4B51FCCFBCF68166C52C39FF222AC9767EAD0DD58B504FF1F89A0ED5D7F29D069193BAB48FB3AEEDCCFAC9D2E8EC89645C97B81622C7BD30836CE53A&#xD;&#xA;HTTP_HOST:aswvnwks103&#xD;&#xA;HTTP_REFERER:https://aswvnwks103/Dart/EMReports/Report.aspx?System=tmf&amp;Type=group&amp;reportpath=/emreporting/reports/PORT&#xD;&#xA;HTTP_USER_AGENT:Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36&#xD;&#xA;HTTP_ORIGIN:https://aswvnwks103&#xD;&#xA;HTTP_X_REQUESTED_WITH:XMLHttpRequest&#xD;&#xA;" />
+    </item>
+    <item name="ALL_RAW">
+      <value string="Connection: keep-alive&#xD;&#xA;Content-Length: 0&#xD;&#xA;Content-Type: application/x-www-form-urlencoded; charset=UTF-8&#xD;&#xA;Accept: */*&#xD;&#xA;Accept-Encoding: gzip,deflate,sdch&#xD;&#xA;Accept-Language: en-US,en;q=0.8,vi;q=0.6,en-GB;q=0.4&#xD;&#xA;Cookie: SystemId_admin=2; __RequestVerificationToken_L0RhcnQ_=lsDhEqUA43PEo0ctd5zz/XA90BsNRfKK4PF3RDIqmVTbwj8VKLGIql6czh45kYq5dScFQDi0GVXHILQtQkcnUejZTl++M7XFM2LjNW5Y9KYNWDINubJVFtd9cDA+X1W20oD6Vn/y+15Ow5ryAeDYw50y+1avj9CL3tVWri1oBW0=; ASP.NET_SessionId=zdobomgtgkphoyzjgbx4fl2v; UserInfoSecurity=S.Niven@employersmutual.com.au|x/r4zsVD2y5FTpKYCQGMUw==#####|3237; sqlAuthCookie=A05F8E82B12C13E69374D2CC10BA6374A4C8EC5702843C0A4A3BD6EBF3B300A5356524E5CDDF7F2067B3CE7C8ACFFC80385677CDF2CF349F4B51FCCFBCF68166C52C39FF222AC9767EAD0DD58B504FF1F89A0ED5D7F29D069193BAB48FB3AEEDCCFAC9D2E8EC89645C97B81622C7BD30836CE53A&#xD;&#xA;Host: aswvnwks103&#xD;&#xA;Referer: https://aswvnwks103/Dart/EMReports/Report.aspx?System=tmf&amp;Type=group&amp;reportpath=/emreporting/reports/PORT&#xD;&#xA;User-Agent: Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36&#xD;&#xA;Origin: https://aswvnwks103&#xD;&#xA;X-Requested-With: XMLHttpRequest&#xD;&#xA;" />
+    </item>
+    <item name="APPL_MD_PATH">
+      <value string="/LM/W3SVC/1/ROOT/Dart" />
+    </item>
+    <item name="APPL_PHYSICAL_PATH">
+      <value string="D:\Work\Project\Dart\branches\WebAppProject\EM_Report\" />
+    </item>
+    <item name="AUTH_TYPE">
+      <value string="" />
+    </item>
+    <item name="AUTH_USER">
+      <value string="" />
+    </item>
+    <item name="AUTH_PASSWORD">
+      <value string="" />
+    </item>
+    <item name="LOGON_USER">
+      <value string="" />
+    </item>
+    <item name="REMOTE_USER">
+      <value string="" />
+    </item>
+    <item name="CERT_COOKIE">
+      <value string="" />
+    </item>
+    <item name="CERT_FLAGS">
+      <value string="" />
+    </item>
+    <item name="CERT_ISSUER">
+      <value string="" />
+    </item>
+    <item name="CERT_KEYSIZE">
+      <value string="128" />
+    </item>
+    <item name="CERT_SECRETKEYSIZE">
+      <value string="2048" />
+    </item>
+    <item name="CERT_SERIALNUMBER">
+      <value string="" />
+    </item>
+    <item name="CERT_SERVER_ISSUER">
+      <value string="CN=ASWVNWKS103.aswigsyd.int" />
+    </item>
+    <item name="CERT_SERVER_SUBJECT">
+      <value string="CN=ASWVNWKS103.aswigsyd.int" />
+    </item>
+    <item name="CERT_SUBJECT">
+      <value string="" />
+    </item>
+    <item name="CONTENT_LENGTH">
+      <value string="0" />
+    </item>
+    <item name="CONTENT_TYPE">
+      <value string="application/x-www-form-urlencoded; charset=UTF-8" />
+    </item>
+    <item name="GATEWAY_INTERFACE">
+      <value string="CGI/1.1" />
+    </item>
+    <item name="HTTPS">
+      <value string="on" />
+    </item>
+    <item name="HTTPS_KEYSIZE">
+      <value string="128" />
+    </item>
+    <item name="HTTPS_SECRETKEYSIZE">
+      <value string="2048" />
+    </item>
+    <item name="HTTPS_SERVER_ISSUER">
+      <value string="CN=ASWVNWKS103.aswigsyd.int" />
+    </item>
+    <item name="HTTPS_SERVER_SUBJECT">
+      <value string="CN=ASWVNWKS103.aswigsyd.int" />
+    </item>
+    <item name="INSTANCE_ID">
+      <value string="1" />
+    </item>
+    <item name="INSTANCE_META_PATH">
+      <value string="/LM/W3SVC/1" />
+    </item>
+    <item name="LOCAL_ADDR">
+      <value string="10.9.1.147" />
+    </item>
+    <item name="PATH_INFO">
+      <value string="/Dart/Reserved.ReportViewerWebControl.axd" />
+    </item>
+    <item name="PATH_TRANSLATED">
+      <value string="D:\Work\Project\Dart\branches\WebAppProject\EM_Report\Reserved.ReportViewerWebControl.axd" />
+    </item>
+    <item name="QUERY_STRING">
+      <value string="OpType=SessionKeepAlive&amp;ControlID=c084183399ff4e46a7bff1d263289440" />
+    </item>
+    <item name="REMOTE_ADDR">
+      <value string="10.9.1.161" />
+    </item>
+    <item name="REMOTE_HOST">
+      <value string="10.9.1.161" />
+    </item>
+    <item name="REMOTE_PORT">
+      <value string="27386" />
+    </item>
+    <item name="REQUEST_METHOD">
+      <value string="POST" />
+    </item>
+    <item name="SCRIPT_NAME">
+      <value string="/Dart/Reserved.ReportViewerWebControl.axd" />
+    </item>
+    <item name="SERVER_NAME">
+      <value string="aswvnwks103" />
+    </item>
+    <item name="SERVER_PORT">
+      <value string="443" />
+    </item>
+    <item name="SERVER_PORT_SECURE">
+      <value string="1" />
+    </item>
+    <item name="SERVER_PROTOCOL">
+      <value string="HTTP/1.1" />
+    </item>
+    <item name="SERVER_SOFTWARE">
+      <value string="Microsoft-IIS/7.5" />
+    </item>
+    <item name="URL">
+      <value string="/Dart/Reserved.ReportViewerWebControl.axd" />
+    </item>
+    <item name="HTTP_CONNECTION">
+      <value string="keep-alive" />
+    </item>
+    <item name="HTTP_CONTENT_LENGTH">
+      <value string="0" />
+    </item>
+    <item name="HTTP_CONTENT_TYPE">
+      <value string="application/x-www-form-urlencoded; charset=UTF-8" />
+    </item>
+    <item name="HTTP_ACCEPT">
+      <value string="*/*" />
+    </item>
+    <item name="HTTP_ACCEPT_ENCODING">
+      <value string="gzip,deflate,sdch" />
+    </item>
+    <item name="HTTP_ACCEPT_LANGUAGE">
+      <value string="en-US,en;q=0.8,vi;q=0.6,en-GB;q=0.4" />
+    </item>
+    <item name="HTTP_COOKIE">
+      <value string="SystemId_admin=2; __RequestVerificationToken_L0RhcnQ_=lsDhEqUA43PEo0ctd5zz/XA90BsNRfKK4PF3RDIqmVTbwj8VKLGIql6czh45kYq5dScFQDi0GVXHILQtQkcnUejZTl++M7XFM2LjNW5Y9KYNWDINubJVFtd9cDA+X1W20oD6Vn/y+15Ow5ryAeDYw50y+1avj9CL3tVWri1oBW0=; ASP.NET_SessionId=zdobomgtgkphoyzjgbx4fl2v; UserInfoSecurity=S.Niven@employersmutual.com.au|x/r4zsVD2y5FTpKYCQGMUw==#####|3237; sqlAuthCookie=A05F8E82B12C13E69374D2CC10BA6374A4C8EC5702843C0A4A3BD6EBF3B300A5356524E5CDDF7F2067B3CE7C8ACFFC80385677CDF2CF349F4B51FCCFBCF68166C52C39FF222AC9767EAD0DD58B504FF1F89A0ED5D7F29D069193BAB48FB3AEEDCCFAC9D2E8EC89645C97B81622C7BD30836CE53A" />
+    </item>
+    <item name="HTTP_HOST">
+      <value string="aswvnwks103" />
+    </item>
+    <item name="HTTP_REFERER">
+      <value string="https://aswvnwks103/Dart/EMReports/Report.aspx?System=tmf&amp;Type=group&amp;reportpath=/emreporting/reports/PORT" />
+    </item>
+    <item name="HTTP_USER_AGENT">
+      <value string="Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36" />
+    </item>
+    <item name="HTTP_ORIGIN">
+      <value string="https://aswvnwks103" />
+    </item>
+    <item name="HTTP_X_REQUESTED_WITH">
+      <value string="XMLHttpRequest" />
+    </item>
+  </serverVariables>
+  <queryString>
+    <item name="OpType">
+      <value string="SessionKeepAlive" />
+    </item>
+    <item name="ControlID">
+      <value string="c084183399ff4e46a7bff1d263289440" />
+    </item>
+  </queryString>
+  <cookies>
+    <item name="SystemId_admin">
+      <value string="2" />
+    </item>
+    <item name="__RequestVerificationToken_L0RhcnQ_">
+      <value string="lsDhEqUA43PEo0ctd5zz/XA90BsNRfKK4PF3RDIqmVTbwj8VKLGIql6czh45kYq5dScFQDi0GVXHILQtQkcnUejZTl++M7XFM2LjNW5Y9KYNWDINubJVFtd9cDA+X1W20oD6Vn/y+15Ow5ryAeDYw50y+1avj9CL3tVWri1oBW0=" />
+    </item>
+    <item name="ASP.NET_SessionId">
+      <value string="zdobomgtgkphoyzjgbx4fl2v" />
+    </item>
+    <item name="UserInfoSecurity">
+      <value string="S.Niven@employersmutual.com.au|x/r4zsVD2y5FTpKYCQGMUw==#####|3237" />
+    </item>
+    <item name="sqlAuthCookie">
+      <value string="A05F8E82B12C13E69374D2CC10BA6374A4C8EC5702843C0A4A3BD6EBF3B300A5356524E5CDDF7F2067B3CE7C8ACFFC80385677CDF2CF349F4B51FCCFBCF68166C52C39FF222AC9767EAD0DD58B504FF1F89A0ED5D7F29D069193BAB48FB3AEEDCCFAC9D2E8EC89645C97B81622C7BD30836CE53A" />
+    </item>
+  </cookies>
+</error>

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="07353a82fa634b1ab34fe5ec0ae2964c" Name="Diagram1" ZoomLevel="133">
+        <EntityTypeShape EntityType="DartModel.Dashboard_FavourDO" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DartModel.Dashboard_Graph_DescriptionDO" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DartModel.Dashboard_LevelDO" Width="1.5" PointX="0.75" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="DartModel.Dashboard_OrganisationRole_LevelDO" Width="1.5" PointX="3" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DartModel.Dashboard_TimeAccessDO" Width="1.5" PointX="8.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DartModel.Dashboard_Traffic_Light_RuleDO" Width="1.5" PointX="10.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DartModel.DashboardDO" Width="1.5" PointX="0.75" PointY="9.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DartModel.EML_AWC_ProjectionDO" Width="1.5" PointX="10.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DartModel.EML_PortfolioDO" Width="1.5" PointX="10.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DartModel.EML_RTW_Target_BaseDO" Width="1.5" PointX="12.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DartModel.External_GroupDO" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="DartModel.HEM_AWC_ProjectionDO" Width="1.5" PointX="12.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DartModel.HEM_PortfolioDO" Width="1.5" PointX="12.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DartModel.HEM_RTW_Target_BaseDO" Width="1.5" PointX="5.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DartModel.Organisation_LevelDO" Width="1.5" PointX="0.75" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DartModel.Organisation_RoleDO" Width="1.5" PointX="3" PointY="8.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DartModel.PermissionDO" Width="1.5" PointX="3.75" PointY="28.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DartModel.Report_CategoryDO" Width="1.5" PointX="1.5" PointY="13.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DartModel.Report_External_AccessDO" Width="1.5" PointX="8" PointY="8.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DartModel.Report_FavoriteDO" Width="1.5" PointX="7.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DartModel.Report_Organisation_LevelDO" Width="1.5" PointX="6" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DartModel.ReportDO" Width="1.5" PointX="3.75" PointY="13.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DartModel.ReportUserDO" Width="1.5" PointX="5.25" PointY="8.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DartModel.StatusDO" Width="1.5" PointX="14.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DartModel.System_PermissionDO" Width="1.5" PointX="3.75" PointY="30.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DartModel.System_Role_PermissionDO" Width="1.5" PointX="6" PointY="22.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DartModel.System_RoleDO" Width="1.5" PointX="0.75" PointY="23.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DartModel.SystemDO" Width="1.5" PointX="14.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DartModel.TeamDO" Width="1.5" PointX="3" PointY="18.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DartModel.TMF_AWC_ProjectionDO" Width="1.5" PointX="14.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DartModel.TMF_PortfolioDO" Width="1.5" PointX="14.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DartModel.TMF_RTW_Target_BaseDO" Width="1.5" PointX="7.75" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DartModel.UserDO" Width="1.5" PointX="3" PointY="22" IsExpanded="true" />
+        <AssociationConnector Association="DartModel.FK_Dashboard_OrganisationRole_Levels_Dashboard_Levels" ManuallyRouted="false" />
+        <AssociationConnector Association="DartModel.FK_Dashboard_OrganisationRole_Levels_Dashboards" ManuallyRouted="false" />
+        <AssociationConnector Association="DartModel.FK_Dashboard_OrganisationRole_Levels_Organisation_Levels" ManuallyRouted="false" />
+        <AssociationConnector Association="DartModel.FK_Report_External_Access_External_Groups" ManuallyRouted="false" />
+        <AssociationConnector Association="DartModel.FK_ReportUsers_External_Groups" ManuallyRouted="false" />
+        <AssociationConnector Association="DartModel.FK_Organisation_Roles_OrganisationRole_Levels" ManuallyRouted="false" />
+        <AssociationConnector Association="DartModel.FK_Report_Organisation_Roles_OrganistaionRole_Levels" ManuallyRouted="false" />
+        <AssociationConnector Association="DartModel.FK_ReportUsers_Organisation_Roles" ManuallyRouted="false" />
+        <AssociationConnector Association="DartModel.FK_System_Role_Permissions_Permissions1" ManuallyRouted="false" />
+        <AssociationConnector Association="DartModel.FK_TBL_Reports_TBL_Categories" ManuallyRouted="false" />
+        <AssociationConnector Association="DartModel.FK_Report_External_Access_Reports" ManuallyRouted="false" />
+        <AssociationConnector Association="DartModel.FK_TBL_Report_Group_Permissions_TBL_Reports" ManuallyRouted="false" />
+        <AssociationConnector Association="DartModel.FK_ReportUsers_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="DartModel.FK_Users_Teams" ManuallyRouted="false" />
+        <AssociationConnector Association="DartModel.FK_System_Role_Permissions_System_Permissions" ManuallyRouted="false" />
+        <AssociationConnector Association="DartModel.FK_System_Role_Permissions_System_Roles1" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="DartModel.Report_RecentlyDO" Width="1.5" PointX="17.375" PointY="7.75" />
+        <EntityTypeShape EntityType="DartModel.TMF_Agencies_Sub_CategoryDO" Width="1.5" PointX="17.375" PointY="10.75" />
+        <EntityTypeShape EntityType="DartModel.SystemUserDO" Width="1.5" PointX="17.375" PointY="13.75" />
+        <AssociationConnector Association="DartModel.SystemUserDOUserDO" />
+        <AssociationConnector Association="DartModel.SystemUserDOSystem_RoleDO" />
+        <EntityTypeShape EntityType="DartModel.CONTROLDO" Width="1.5" PointX="17.375" PointY="16.75" />
+        <EntityTypeShape EntityType="DartModel.DashboardExternal_GroupsDO" Width="3" PointX="5.375" PointY="19.75" />
+        <EntityTypeShape EntityType="DartModel.WOW_PortfolioDO" Width="1.5" PointX="19.375" PointY="0.75" />
+        <EntityTypeShape EntityType="DartModel.Dashboard_Claim_Liability_IndicatorDO" Width="1.5" PointX="17.375" PointY="19.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,201 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D8C0B1E8-E19B-4C98-830F-6C552FFD07BE}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>EM_Report.BLL</RootNamespace>
+    <AssemblyName>EM_Report.BLL</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <UseIISExpress>false</UseIISExpress>
+    <SccProjectName>Svn</SccProjectName>
+    <SccLocalPath>Svn</SccLocalPath>
+    <SccAuxPath>Svn</SccAuxPath>
+    <SccProvider>SubversionScc</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Ionic.Zip">
+      <HintPath>..\Libraries\Ionic.Zip\Ionic.Zip.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net">
+      <HintPath>..\Libraries\log4net-1.2.11\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Libraries\ReportViewer\Microsoft.ReportViewer.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Runtime.Caching" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Mvc, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Web.WebPages, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Commons\Commons.cs" />
+    <Compile Include="Commons\Constants.cs" />
+    <Compile Include="Commons\CryptMD5.cs" />
+    <Compile Include="Commons\Extensions.cs" />
+    <Compile Include="Commons\I_LoginSession.cs" />
+    <Compile Include="Commons\PredicateBuilder.cs" />
+    <Compile Include="Commons\ReportViewerCredentials.cs" />
+    <Compile Include="Commons\ResourcesHelper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Commons\SSRSExportHelper.cs" />
+    <Compile Include="Logger\I_Logger.cs" />
+    <Compile Include="Pager\IPagedList.cs" />
+    <Compile Include="Pager\PagedList.cs" />
+    <Compile Include="Pager\PageLinqExtensions.cs" />
+    <Compile Include="Pager\PagerBuilder.cs" />
+    <Compile Include="Pager\PagerHelper.cs" />
+    <Compile Include="Pager\PagerItem.cs" />
+    <Compile Include="Pager\PagerOptions.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Control.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Control.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Resource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Services\AccountService.cs" />
+    <Compile Include="Services\AddressBookService.cs" />
+    <Compile Include="Services\Audit\External_Groups_AuditService.cs" />
+    <Compile Include="Services\Audit\Organisation_Roles_AuditService.cs" />
+    <Compile Include="Services\Report Data\BrokerService.cs" />
+    <Compile Include="Services\Report Data\CreditorService.cs" />
+    <Compile Include="Services\ExportService.cs" />
+    <Compile Include="Services\Report Data\PaymentService.cs" />
+    <Compile Include="Services\Report Data\PolicyService.cs" />
+    <Compile Include="Services\Report Data\ProviderService.cs" />
+    <Compile Include="Services\ReportService.cs" />
+    <Compile Include="Services\Audit\Report_External_Access_AuditService.cs" />
+    <Compile Include="Services\RS_SubscriptionService.cs" />
+    <Compile Include="Services\Audit\Teams_AuditService.cs" />
+    <Compile Include="Services\Audit\OrganisationRole_Levels_AuditService.cs" />
+    <Compile Include="Services\Audit\Report_Categories_AuditService.cs" />
+    <Compile Include="Services\Audit\Report_Organisation_Roles_AuditService.cs" />
+    <Compile Include="Services\Audit\Reports_AuditService.cs" />
+    <Compile Include="Services\Audit\Subscriptions_AuditService.cs" />
+    <Compile Include="Services\Audit\System_Role_Permissions_AuditService.cs" />
+    <Compile Include="Services\Organisation_Levels_Service.cs" />
+    <Compile Include="Services\ReportCategoriesService.cs" />
+    <Compile Include="Services\ReportParameterService.cs" />
+    <Compile Include="Services\ScheduleService.cs" />
+    <Compile Include="Services\SubscriptionService.cs" />
+    <Compile Include="Services\System_Role_PermissionsService.cs" />
+    <Compile Include="Services\I_Service.cs" />
+    <Compile Include="Services\PermissionService.cs" />
+    <Compile Include="Services\ServiceBase.cs" />
+    <Compile Include="Services\StatusService.cs" />
+    <Compile Include="Services\System_PermissionService.cs" />
+    <Compile Include="Services\System_RolesService.cs" />
+    <Compile Include="Services\Organisation_RolesService.cs" />
+    <Compile Include="Services\TeamService.cs" />
+    <Compile Include="Services\External_GroupService.cs" />
+    <Compile Include="Services\UserService.cs" />
+    <Compile Include="Services\Audit\Users_AuditService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\EM_Report.DAL\EM_Report.DAL.csproj">
+      <Project>{BB471C0C-ADD8-4FC1-B032-373F3E5AABBD}</Project>
+      <Name>EM_Report.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EM_Report.Models\EM_Report.Models.csproj">
+      <Project>{FEC1454F-61C9-4D4D-97BD-C2E8D97A3569}</Project>
+      <Name>EM_Report.Models</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Control.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Control.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Resource.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resource.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>57189</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,390 @@
+﻿@model EM_Report.Models.RS_SubscriptionModel
+@using EM_Report.Models.RS2005
+@using EM_Report.Helpers
+@{    
+    Layout = "~/Views/Shared/_Master.cshtml";
+    ViewBag.Heading = "Report Subscription";  
+}
+<link href="@Url.Stylesheet("subscription.css")" rel="stylesheet" type="text/css" />
+@using (Html.BeginForm())
+{
+    <div class="Wrapper">
+        <div class="">
+            <ul class="tabs">
+                <li><a href="#">Subscription</a></li>
+                <li><a href="#">Report Parameters</a></li>
+                <li><a href="#">Schedule</a></li>
+            </ul>
+        </div>
+        <div class="BoxContent">
+            <div class="FormWrapper" id="wrapper">
+                <div class="panes">
+                    <div class="tab1">
+                        @Html.HiddenFor(m => m.SubscriptionID)
+                        @Html.HiddenFor(m => m.Priority)
+                        @Html.HiddenFor(m => m.Status)
+                        @Html.HiddenFor(m => m.DeliveryMethod)
+                        @Html.HiddenFor(m => m.FileName)
+                        @Html.HiddenFor(m => m.Path)
+                        @Html.HiddenFor(m => m.CC)
+                        @Html.HiddenFor(m => m.BCC)
+                        @Html.HiddenFor(m => m.ReplyTo)
+                        @Html.HiddenFor(m => m.ReportPath)
+                        @Html.Hidden("ReportParameterValue", "")
+                        @Html.Partial("_ShowMessage")
+                        <div class="LineWrapper SameLine">
+                            <label>
+                                Report Format</label>
+                            <div class="WrapperSelectBox SelectForm">
+                                @Html.DropDownListFor(m => m.Format, new SelectList(ViewBag.RenderFormats, "Value", "Text", Model.Format), new { @class = "form-field dropdown-parameter" })
+                            </div>
+                        </div>
+                        <div class="LineWrapper SameLine">
+                            <span>Include Report</span>
+                            @Html.CheckBoxFor(m => m.IncludeReport, new { id = "chkIncludeReport", @style = "position:related;top:6px;" })
+                            <span for="chkIncludeLink" class="" style="margin-left: 20px">Include Link</span>
+                            @Html.CheckBoxFor(m => m.IncludeLink, new { id = "chkIncludeLink", @style = "position:related;top:6px;" })
+                        </div>
+                        <div class="LineWrapper SameLine">
+                            <label>
+                                <span title="multiple email: separate by ;">To...</span>
+                            </label>
+                            @Html.TextBoxFor(m => m.ToEmail, new { @id = "txtMailTo", @class = "Text", @title = "multiple email: separate by ;" })
+                            @*<span class="error-mess em-require display-none">*</span>
+                        @Html.ValidationMessageFor(m => m.ToEmail)*@
+                        </div>
+                        <div class="LineWrapper SameLine">
+                            <label>
+                                Subject</label>
+                            @Html.TextBoxFor(m => m.Subject, new { @class = "Text" })
+                            @*<span class="error-mess em-require display-none">*</span>
+                        @Html.ValidationMessageFor(m=>m.Subject)*@
+                        </div>
+                        <div class="LineWrapper SameLine">
+                            <label>
+                                Body</label>
+                            @Html.TextAreaFor(m => m.Comment, new { @class = "Text" })
+                            @*@Html.ValidationMessageFor(m=>m.Comment)*@
+                        </div>
+                    </div>
+                    <div class="tab2">
+                        @if (ViewBag.Action == "Edit")
+                        {
+                            <div class="LineWrapper First SameLine">
+                                @Html.HiddenFor(m => m.ReportId)
+                                <label>
+                                    Report</label>
+                                @Html.TextBoxFor(m => m.ReportName, new { @class = "Text", @disabled = "" })
+                            </div>
+                        }
+                        else
+                        {                    
+                            <div class="LineWrapper First SameLine">
+                                @Html.HiddenFor(m => m.ReportName)
+                                <label>
+                                    Report</label>
+                                <div class="WrapperSelectBox SelectForm">
+                                    @Html.DropDownListFor(m => m.ReportId, new SelectList(ViewBag.ReportList, "ReportId", "Name"), new { @class = "dropdown-parameter" })
+                                </div>
+                            </div>
+                        }
+                        <div id="ReportParameterFrame">
+                            @if (Model.rptParamterModel != null && Model.rptParamterModel.lstRSParameters != null)
+                            {
+                                @Html.Partial("ReportParameter", Model.rptParamterModel)
+                            }
+                        </div>
+                        <input id="ReportId" type="hidden" value="@ViewBag.ReportId" />
+                        @Html.Hidden("ReportParameterValue", "")
+                    </div>
+                    <div class="tab3">
+                        @Html.HiddenFor(m => m.ScheduleId)
+                        @Html.Hidden("evn")
+                        <div class="head-desc">
+                            <input type="hidden" id="hddScheduleXML" name="hddScheduleXML" />
+                            <span>Choose whether to run the report on an hourly, daily, weekly, monthly, or one
+                                time basic.</span>
+                        </div>
+                        <div class="left-pan">
+                            @Html.RadioButtonListFor(m => m.ScheduleDefType, new SelectList(ViewBag.ScheduleTypes, "Value", "Text"))
+                        </div>
+                        <div class="right-pan">
+                            <div class="time-view" id="Hour-Schedule" style="display:@(Model.ScheduleDefType == "Hour" ? "block" : "none")">
+                                <span class="time-type-title">Hourly Schedule</span>
+                                <div class="time-view-details">
+                                    Run the schedule every:<br />
+                                    <br />                                    
+                                    @Html.TextBoxFor(m => m.Hour, new { @class = "time-input-1", @style = "margin:0px 0px 0px 20px" })
+                                    hours
+                                    @Html.TextBoxFor(m => m.Minute, new { @class = "time-input-1" }) minutes @*@Html.ValidationMessageFor(m => m.Hour)
+                                    @Html.ValidationMessageFor(m => m.Minute)*@
+                                </div>
+                            </div>
+                            <div class="time-view" id="Day-Schedule" style="display:@(Model.ScheduleDefType == "Day" ? "block" : "none")">
+                                <span class="time-type-title">Daily Schedule</span>
+                                <div class="time-view-details">
+                                    <label>
+                                        Repeat after this number of days:</label>                                   
+                                    @Html.TextBoxFor(m => m.DaysInterval, new { @class = "time-input-1" })
+                                    @*@Html.ValidationMessageFor(m => m.DaysInterval)*@
+                                </div>
+                            </div>
+                            <div class="time-view" id="Week-Schedule" style="display:@(Model.ScheduleDefType == "Week" ? "block" : "none")">
+                                <span class="time-type-title">Weekly Schedule</span>
+                                <div class="time-view-details">
+                                    Repeat after this number of weeks:                                    
+                                    @Html.TextBoxFor(m => m.WeeksInterval, new { @class = "time-input-1" })
+                                    @*@html.validationmessagefor(m => m.weeksinterval)*@
+                                    <div class="clear space">
+                                    </div>
+                                    <table class="tb-day-of-week">
+                                        <tr>
+                                            <td valign="top">
+                                                On day(s):
+                                            </td>
+                                            <td>
+                                                <input type="checkbox" value="true" @(Model.wDaysOfWeek.Sunday ? "checked='checked'" : "") name="wDaysOfWeek.Sunday" id="wDaysOfWeek_Sunday" class="check-box" /><label>Sun</label>
+                                                <input type="checkbox" value="true" @(Model.wDaysOfWeek.Monday ? "checked='checked'" : "") name="wDaysOfWeek.Monday" id="wDaysOfWeek_Monday" class="check-box" /><label>Mon</label>
+                                                <input type="checkbox" value="true" @(Model.wDaysOfWeek.Tuesday ? "checked='checked'" : "") name="wDaysOfWeek.Tuesday" id="wDaysOfWeek_Tuesday" class="check-box" /><label>Tue</label>
+                                                <input type="checkbox" value="true" @(Model.wDaysOfWeek.Wednesday ? "checked='checked'" : "") name="wDaysOfWeek.Wednesday" id="wDaysOfWeek_Wednesday" class="check-box" /><label>Wed</label>
+                                                <input type="checkbox" value="true" @(Model.wDaysOfWeek.Thursday ? "checked='checked'" : "") name="wDaysOfWeek.Thursday" id="wDaysOfWeek_Thursday" class="check-box" /><label>Thu</label>
+                                                <input type="checkbox" value="true" @(Model.wDaysOfWeek.Friday ? "checked='checked'" : "") name="wDaysOfWeek.Friday" id="wDaysOfWeek_Friday" class="check-box" /><label>Fri</label>
+                                                <input type="checkbox" value="true" @(Model.wDaysOfWeek.Saturday ? "checked='checked'" : "") name="wDaysOfWeek.Saturday" id="wDaysOfWeek_Saturday" class="check-box" /><label>Sat</label>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="time-view" id="Month-Schedule" style="display:@(Model.ScheduleDefType == "Month" ? "block" : "none")">
+                                <span class="time-type-title">Monthly Schedule</span>
+                                <div class="time-view-details">
+                                    <table class="tb-month-of-year">
+                                        <tr>
+                                            <td valign="top">
+                                         @*   <table width="100%">
+                                                <tbody>
+                                                  <tr>
+                                                    
+                                                  </tr>
+                                                </tbody>
+                                            </table>*@
+                                                Months:
+                                            </td>
+                                            <td>
+                                                <input type="checkbox" value="true" @(Model.MonthsOfYear.January ? "checked='checked'" : "") name="MonthsOfYear.January" id="MonthsOfYear_January" class="check-box" /><label>Jan</label>
+                                                <input type="checkbox" value="true" @(Model.MonthsOfYear.February ? "checked='checked'" : "") name="MonthsOfYear.February" id="MonthsOfYear_February" class="check-box" /><label>Feb</label>
+                                                <input type="checkbox" value="true" @(Model.MonthsOfYear.March ? "checked='checked'" : "") name="MonthsOfYear.March" id="MonthsOfYear_March" class="check-box" /><label>Mar</label>
+                                                <input type="checkbox" value="true" @(Model.MonthsOfYear.April ? "checked='checked'" : "") name="MonthsOfYear.April" id="MonthsOfYear_April" class="check-box" /><label>Apr</label>
+                                                <br />
+                                                <input type="checkbox" value="true" @(Model.MonthsOfYear.May ? "checked='checked'" : "") name="MonthsOfYear.May" id="MonthsOfYear_May" class="check-box" /><label style="padding-right: 7px;">May</label>
+                                                <input type="checkbox" value="true" @(Model.MonthsOfYear.June ? "checked='checked'" : "") name="MonthsOfYear.June" id="MonthsOfYear_June" class="check-box" /><label>Jun</label>
+                                                <input type="checkbox" value="true" @(Model.MonthsOfYear.July ? "checked='checked'" : "") name="MonthsOfYear.July" id="MonthsOfYear_July" class="check-box" /><label style="padding-right: 16px;">Jul</label>
+                                                <input type="checkbox" value="true" @(Model.MonthsOfYear.August ? "checked='checked'" : "") name="MonthsOfYear.August" id="MonthsOfYear_August" class="check-box" /><label>Aug</label>
+                                                <br />
+                                                <input type="checkbox" value="true" @(Model.MonthsOfYear.September ? "checked='checked'" : "") name="MonthsOfYear.September" id="MonthsOfYear_September" class="check-box" /><label style="padding-right: 8px;">Sep</label>
+                                                <input type="checkbox" value="true" @(Model.MonthsOfYear.October ? "checked='checked'" : "") name="MonthsOfYear.October" id="MonthsOfYear_October" class="check-box" /><label>Oct</label>
+                                                <input type="checkbox" value="true" @(Model.MonthsOfYear.November ? "checked='checked'" : "") name="MonthsOfYear.November" id="MonthsOfYear_November" class="check-box" /><label style="padding-right: 8px;">Nov</label>
+                                                <input type="checkbox" value="true" @(Model.MonthsOfYear.December ? "checked='checked'" : "") name="MonthsOfYear.December" id="MonthsOfYear_December" class="check-box" /><label>Dec</label>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    <div class="clear space">
+                                    </div>
+                                    @Html.RadioButtonListFor(m => m.MonthlyType, new SelectList(ViewBag.MonthType, "Value", "Text"))                                    
+                                    @Html.DropDownListFor(m=>m.WeekOfMonth, new SelectList(ViewBag.WeeksOfMonth, "Value", "Text"), new {  style = "border: 1px solid #AAA;-webkit-appearance:menulist-button;" })
+                                   @* @Html.DropDownList("WeekOfMonth", new SelectList(ViewBag.WeeksOfMonth, "Value", "Text"), new { @class = "wewe" })*@
+                                    <br />
+                                    <table class="tb-day-of-week">
+                                        <tr>
+                                            <td valign="top">
+                                                On day(s):
+                                            </td>
+                                            <td>
+                                                <input type="checkbox" value="true" @(Model.mDaysOfWeek.Sunday ? "checked='checked'" : "") name="mDaysOfWeek.Sunday" id="mDaysOfWeek_Sunday" class="check-box" /><label>Sun</label>
+                                                <input type="checkbox" value="true" @(Model.mDaysOfWeek.Monday ? "checked='checked'" : "") name="mDaysOfWeek.Monday" id="mDaysOfWeek_Monday" class="check-box" /><label>Mon</label>
+                                                <input type="checkbox" value="true" @(Model.mDaysOfWeek.Tuesday ? "checked='checked'" : "") name="mDaysOfWeek.Tuesday" id="mDaysOfWeek_Tuesday" class="check-box" /><label>Tue</label>
+                                                <input type="checkbox" value="true" @(Model.mDaysOfWeek.Wednesday ? "checked='checked'" : "") name="mDaysOfWeek.Wednesday" id="mDaysOfWeek_Wednesday" class="check-box" /><label>Wed</label>
+                                                <input type="checkbox" value="true" @(Model.mDaysOfWeek.Thursday ? "checked='checked'" : "") name="mDaysOfWeek.Thursday" id="mDaysOfWeek_Thursday" class="check-box" /><label>Thu</label>
+                                                <input type="checkbox" value="true" @(Model.mDaysOfWeek.Friday ? "checked='checked'" : "") name="mDaysOfWeek.Friday" id="mDaysOfWeek_Friday" class="check-box" /><label>Fri</label>
+                                                <input type="checkbox" value="true" @(Model.mDaysOfWeek.Saturday ? "checked='checked'" : "") name="mDaysOfWeek.Saturday" id="mDaysOfWeek_Saturday"  class="check-box" /><label>Sat</label>
+                                            </td>
+                                        </tr>
+                                    </table>                                    
+                                    @Html.TextBoxFor(m => m.MonthDays)
+                                </div>
+                            </div>
+
+                            <div class="time-view" id="Once-Schedule" style="display:@(ViewBag.Action == "Create" || Model.ScheduleDefType == "Once" ? "block" : "none")">
+                                <span class="time-type-title">One-time Schedule</span>
+                                <div class="time-view-details">
+                                    Runs only once on below start time.
+                                    <br />
+                                    <span style="color: Blue">Note: This subscripton will be automatically deleted when
+                                        it expired</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div style="clear: both">
+                        </div>
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+                        <div class="foot-pan">
+                       
+                            <div class="start-time">
+                                <div>
+
+                                    <!--[if IE 8]>
+                                    <style type="text/css">
+                                        .start-time div
+                                        {
+                                            margin-bottom: 10px;    
+                                        }
+                                    </style>
+                                    <![endif]-->
+
+                                    <span style="font-weight: bold;">Start time of day: </span>
+                                    @Html.TextBoxFor(m => m.StartHour, new { @class = "time-input-1" }) :
+                                    @Html.TextBoxFor(m => m.StartMinute, new { @class = "time-input-1" })
+                                </div>
+                                <div>
+                                    @Html.RadioButtonListFor(m => m.IsAM, new SelectList(ViewBag.DaySegment, "value", "text", Model.IsAM))
+                                    @*@Html.ValidationMessageFor(m => m.StartHour)
+                                    @Html.ValidationMessageFor(m => m.StartMinute)*@
+                                </div>
+                            </div>
+                            <div class="clear space">
+                            </div>
+                            <div id="wrapper-start-end-date">
+                                <h3 style="font-weight: bold; margin: 20px 0px 10px 0;">
+                                    Start and End dates</h3>
+                                <div class="start-end-date">
+                                    <div>
+                                        <div style="float: left; width: 180px;">
+                                            Begin running his schedule on:
+                                        </div>
+                                        <div>
+                                            @Html.TextBoxFor(m => m.StartDate, new { @class = "DatePicker-Schedule" })
+                                            @Html.ValidationMessageFor(m => m.StartDate)
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div style="float: left; width: 180px;">
+                                            @Html.CheckBoxFor(m => m.HasEndDate, new { @class = "end-date", @style = "padding-left:0;margin-left:0;height:15px;" })
+                                            <label for="HasEndDate">
+                                                Stop this schedule on:
+                                            </label>
+                                        </div>
+                                        <div>
+                                            @Html.TextBoxFor(m => m.EndDate, new { @class = "DatePicker-Schedule" })
+                                            @Html.ValidationMessageFor(m => m.EndDate)
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="CommandWrapper">
+                <a id="btnSave" class="ButtonSave" onclick="SubmitForm(this);">Save</a> <a href="@Url.Action("index", "subscription")" class="ButtonBack">
+                    Back To List</a>
+            </div>
+        </div>
+    </div>
+}
+@Html.HiddenFor(m => m.StartDate)
+<div id="searchPolicy" class="Overlay">
+</div>
+<div id="searchPaymentType" class="Overlay">
+</div>
+<div id="searchCreditor" class="Overlay">
+</div>
+<div id="searchBroker" class="Overlay">
+</div>
+<div id="searchProvider" class="Overlay">
+</div>
+<script type="text/javascript" language="javascript">
+    // perform JavaScript after the document is scriptable.
+    $(document).ready(function () {
+        RefixCheckBoxListLayOut();
+        $("input[name=ScheduleDefType]").click(ScheduleTypeChange);
+
+        // setup ul.tabs to work as tabs for each div directly under div.panes
+        $("ul.tabs").tabs("div.panes > div");
+        //create dialog - overlay
+        CreateOverlay("#searchPolicy");
+        CreateOverlay("#searchPaymentType");
+        CreateOverlay("#searchCreditor");
+        CreateOverlay("#searchBroker");
+        CreateOverlay("#searchProvider");
+
+        $("#StartDate").val(formatDate($("#StartDate").val()));
+        $("#EndDate").val(formatDate($("#EndDate").val()));
+        if ($.browser.webkit) {
+            jQuery.validator.methods["date"] = function (value, element) { return true; }
+        }
+
+        $("#StartDate").dateinput({ trigger: true, format: 'dd/mm/yyyy', min: -1 })
+        $("#EndDate").dateinput({ trigger: true, format: 'dd/mm/yyyy', min: 0 })
+
+        $("#StartDate").data("dateinput").change(function () {
+            // we use it's value for the seconds input min option
+            var d = this.getValue().getDate();
+            var m = this.getValue().getMonth();
+            var y = this.getValue().getFullYear();
+            var edate = new Date(y, m, d + 1);
+            $("#EndDate").data("dateinput").setMin(edate, true);
+        });
+        $("#EndDate").data("dateinput").change(function () {
+            $("#StartDate").data("dateinput").setMax(this.getValue(), true);
+        });
+
+        ResetDefaultValue();
+    });
+
+    function ResetDefaultValue() {
+        $("#ScheduleDefType_Hour").click(function () {
+            $("#DaysInterval").val("1");
+            $("#WeeksInterval").val("1");  
+            $("#MonthDays").val("1, 3-5");  
+        });
+
+        $("#ScheduleDefType_Day").click(function () {
+            $("#Hour").val("1");
+            $("#Minute").val("0");
+            $("#WeeksInterval").val("1");
+            $("#MonthDays").val("1, 3-5"); 
+        });
+
+        $("#ScheduleDefType_Week").click(function () {
+            $("#Hour").val("1");
+            $("#Minute").val("0");
+            $("#DaysInterval").val("1");
+            $("#MonthDays").val("1, 3-5"); 
+        });
+
+        $("#ScheduleDefType_Month").click(function () {
+            $("#Hour").val("1");
+            $("#Minute").val("0");
+            $("#DaysInterval").val("1");
+            $("#WeeksInterval").val("1");
+        });
+
+        $("#ScheduleDefType_Once").click(function () {
+            $("#Hour").val("1");
+            $("#Minute").val("0");
+            $("#DaysInterval").val("1");
+            $("#WeeksInterval").val("1");
+            $("#MonthDays").val("1, 3-5");
+        });
+//        $("#ScheduleDefType_Month").click(function () {
+//            $("div.foot-pan")
+//            $("div.foot-pan br").prepend(" <br/><br/><br/><br />");
+//        });
+
+    }
+</script>

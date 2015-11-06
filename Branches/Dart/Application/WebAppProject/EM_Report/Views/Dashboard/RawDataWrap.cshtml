@@ -1,0 +1,24 @@
+﻿<div class="viewRawData">
+    <div class="viewRawDataContent reveal-modal"></div>
+    <div class="clear"></div>
+</div>
+@if (Request.Url.PathAndQuery.ToLower().IndexOf("_level1") < 0)
+{    
+    <div class="viewDesc">
+        <!-- VIEW DESCRIPTION -->   
+        <div class="viewDescContent" id="viewDescContentUpdated">
+            <h1></h1>
+            <p></p>
+            @if (Request.Url.PathAndQuery.ToLower().IndexOf("level0") < 0)
+            {
+                Html.RenderAction("GetAllDescription", "Dashboard_Graph_Description", new { systemId = ViewData["systemId"], type = "" });
+            }
+            else
+            {
+                Html.RenderAction("GetAllDescription", "Dashboard_Graph_Description");
+            }
+        </div>
+        <!-- VIEW DESCRIPTION END -->
+        <div class="clear"></div>
+    </div>
+}

@@ -1,0 +1,624 @@
+﻿@using EM_Report.Helpers;
+@using EM_Report.Domain.Resources;
+@Html.AntiForgeryToken()
+
+<script src="@Url.ContentV("~/Scripts/iCabinet.js")" type="text/javascript"></script>
+@Html.Partial("~/Views/Report/FileCabinetWrap.cshtml")
+<div class="boxBdr_tl_000">
+    <div class="boxBdr_tr_000">
+        <div class="boxBdr_bl_000">
+            <div class="boxBdr_br_000">
+                <div class="breadcrum_02" id="breadcrum_02ID">
+                    <div id="guidebarbox" style="padding-top: 7px">
+                        <a class="current" style="color: #FFF">Dashboard</a>
+                        @if (ViewBag.HasLevel0 == true)
+                        {
+                            var strLevel0URL = "~/dashboard/level0?reportpath=/emreporting/reports/Level0";
+                            <a href="@Base.AbsoluteUrl(strLevel0URL)">Executive view</a>
+                        }
+                        
+                        @if (Base.GetController.ToLower() == "dashboard")
+                        {
+                            var STR_RTW = "Return to work";
+                            var STR_AWC = "Active weekly claims";
+                            var STR_CPR = "Claims portfolio report";
+                            var strRouteAction = Base.GetAction.ToLower();
+                            var systemName = Base.GetSystemNameByUrl(Request.Url.PathAndQuery) == "EML" ? "WCNSW" : Base.GetSystemNameByUrl(Request.Url.PathAndQuery) == "HEM" ? "Hospitality" : Base.GetSystemNameByUrl(Request.Url.PathAndQuery) == "WOW" ? "WOW"
+                                              : Base.GetSystemNameByUrl(Request.Url.PathAndQuery);                            
+                            
+                            if (strRouteAction.StartsWith("level"))
+                            {
+                                // extract System name from report path
+                                var reportPath = Request["reportpath"];
+                                var strReportName = reportPath.Substring(reportPath.LastIndexOf("/") + 1);
+                                if (strReportName.IndexOf("_") >= 0)
+                                {
+                                    var strSystemName = Base.GetSystemNameByUrl(Request.Url.PathAndQuery);
+
+                                    var strType = Request["Type"] ?? string.Empty;
+
+                                    if (strSystemName == "WOW" && strType == "account_manager")
+                                    {
+                                        strType = "division";
+                                    }
+                                    else if (strSystemName == "WOW" && strType == "employer_size")
+                                    {
+                                        strType = "state";
+                                    }
+                                    
+                                    //var strTypeCrumbtrail = (strType == "employer_size" ? "employer size" :
+                                    //    (strType == "account_manager" ? "account manager" : strType));
+                                    //var strTypeCrumbtrailSub = (strType == "account_manager" || strType == "portfolio" ? "employer size" : 
+                                    //    (strType == "agency" ? "subcategory" : "team"));
+
+                                    var strTypeCrumbtrail = (strType == "employer_size" ? "employer size" :
+                                        (strType == "state" ? "state" : (strType == "account_manager" ? "account manager" : strType)));
+
+                                    var strTypeCrumbtrailSub = (strType == "account_manager" || strType == "portfolio" ? "employer size" :
+                                        (strType == "state" ? "division" : (strType == "division" ? "state" : (strType == "agency" ? "subcategory" : "team"))));
+                                    
+                                    if (strType != string.Empty)
+                                    {
+                                        strType = strType.ToLower().Trim();
+                                    }
+
+                                    var strValue = Request["Value"] ?? string.Empty;
+                                    if (strValue != string.Empty)
+                                    {
+                                        strValue = (strType != "account_manager" ? strValue.ToLower().Trim() : strValue.Trim());
+                                        strValue = strValue.Replace("@@@", " & ").Replace("___", "?").ToLower().Trim();
+                                    }
+
+                                    var strSubValue = Request["SubValue"] ?? string.Empty;
+                                    if (strSubValue != string.Empty)
+                                    {
+                                        strSubValue = strSubValue.Replace("@@@", "&").Replace("___", "?").ToLower().Trim();
+                                    }
+                                    
+                                    var strSubSubValue = Request["SubSubValue"] ?? string.Empty;
+                                    if (strSubSubValue != string.Empty)
+                                    {
+                                        strSubSubValue = strSubSubValue.Replace("@@@", "&").Replace("___", "?").ToLower().Trim();
+                                    }
+
+                                    var strMeasureRTW = Request["Measure"] ?? string.Empty;
+                                    var strReportTypeAWC = Request["ReportType"] ?? string.Empty;
+
+                                    var strLevel1URL = "~/dashboard/level1?reportpath=/emreporting/reports/"
+                                        + strSystemName + "_Level1";
+                                    var strLevelNoURL = string.Empty;
+                                    var strCPRSummaryLevelNoURL = string.Empty;
+                                    if (strMeasureRTW != string.Empty)
+                                    {
+                                        // RTW Dashboard
+                                        strLevelNoURL = "~/dashboard/level{0}?Type=" + strType + "&Measure=" + strMeasureRTW
+                                            + "&reportpath=/emreporting/reports/" + strSystemName + "_rtw_level{0}";
+                                    }
+                                    else if(strReportTypeAWC != string.Empty)
+                                    {
+                                        var reportType = Request["ReportType"] ?? string.Empty;
+
+                                        // AWC Dashboard
+                                        strLevelNoURL = "~/dashboard/level{0}?Type=" + strType + "&ReportType=" + reportType
+                                            + "&reportpath=/emreporting/reports/" + strSystemName + "_awc_level{0}";
+                                    }
+                                    else
+                                    {
+                                        // CPR Dashboard
+                                        strLevelNoURL = "~/dashboard/level{0}?Type=" + strType + "&reportpath=/emreporting/reports/" + strSystemName + "_cpr_week_month_summary";
+                                        strCPRSummaryLevelNoURL = "~/dashboard/level{0}?Type=" + strType + "&reportpath=/emreporting/reports/cpr_summary";
+                                    }
+
+                                    var dashboardType = (strMeasureRTW != string.Empty ? STR_RTW : (strReportTypeAWC != string.Empty ? STR_AWC : STR_CPR));
+
+                                    var intLevel = 0;
+                                    if (int.TryParse(strRouteAction.Substring(5), out intLevel))
+                                    {
+                                        if (intLevel == 1)
+                                        {
+                                            <a class="current">Home</a>
+                                        }
+                                        else
+                                        {
+                                            <a href="@Base.AbsoluteUrl(strLevel1URL)">Home</a>
+                                            for (int i = 2; i <= intLevel; i++)
+                                            {
+                                                if (intLevel == 2)
+                                                {
+                                                    // Current Level: 2
+                                                    
+                                                    if (strMeasureRTW != string.Empty)
+                                                    {
+                                                        // RTW Dashboard
+                                                        <a id="level2CrumbtrailsRTW" class="current">@(dashboardType + " comparison by " + strTypeCrumbtrail)</a>
+                                                    }
+                                                    else if(strReportTypeAWC != string.Empty)
+                                                    {
+                                                        // AWC Dashboard
+                                                        <a id="level2CrumbtrailsAWC" class="current">@(dashboardType + " in " + systemName + " " + strTypeCrumbtrail + " view")</a>
+                                                    }
+                                                    else
+                                                    {
+                                                        // CPR Dashboard
+                                                        <a id="level2CrumbtrailsCPR" class="current">@(dashboardType + " in " + systemName + " " + strTypeCrumbtrail + " view")</a>
+                                                    }
+                                                }
+                                                else
+                                                {
+                                                    // Current Level: 3, 4 or 5
+                                                    
+                                                    var _strLevelNoURL = strLevelNoURL;
+                                                    var _strCPRSummaryLevelNoURL = strCPRSummaryLevelNoURL;
+
+                                                    if (i == 2)
+                                                    {
+                                                        if (strMeasureRTW != string.Empty)
+                                                        {
+                                                            // RTW Level 2
+                                                            // for snapshots
+                                                            _strLevelNoURL += "_" + strType;
+                                                            _strLevelNoURL += "&IsVisible=all";
+                                                            <a href="@Base.AbsoluteUrl(string.Format(_strLevelNoURL, i))">@(dashboardType
+                                                                 + " comparison by " + strTypeCrumbtrail)</a>
+                                                        }
+                                                        else if(strReportTypeAWC != string.Empty)
+                                                        {
+                                                            // AWC Level 2
+                                                            <a href="@Base.AbsoluteUrl(string.Format(_strLevelNoURL, i))">@(dashboardType
+                                                                + " in " + systemName + " " + strTypeCrumbtrail + " view ")</a>
+                                                        }
+                                                        else
+                                                        {
+                                                            // CPR Level 2
+                                                            
+                                                            <a href="@Base.AbsoluteUrl(string.Format(_strLevelNoURL, i))">@(dashboardType
+                                                                    + " in " + systemName + " " + strTypeCrumbtrail + " view")</a>
+                                                        }
+                                                    }
+                                                    else
+                                                    {
+                                                        var strByClause = string.Empty;
+                                                        var midleText = string.Empty;
+                                                        _strLevelNoURL += "&Value=" + strValue;
+                                                        _strCPRSummaryLevelNoURL += "&Value=" + strValue;
+
+                                                        if (i == 3)
+                                                        {
+                                                            if (strMeasureRTW != string.Empty || strReportTypeAWC != string.Empty)
+                                                            {
+                                                                // RTW / AWC Level 3 Url
+                                                                
+                                                                strByClause += strTypeCrumbtrail + " " + strValue;
+                                                                midleText = strMeasureRTW == string.Empty ? " detail for " : " detail by ";
+                                                            }
+                                                            else
+                                                            {
+                                                                // CPR Level 3 Url
+
+                                                                _strCPRSummaryLevelNoURL += "&System=" + strSystemName;
+
+                                                                strByClause = strTypeCrumbtrailSub + " view by " + strType.Replace('_', ' ') + " " + strValue.Replace('_', ' ');
+                                                                midleText = " in " + systemName + " ";
+                                                            }
+                                                        }
+                                                        else if (i == 4)
+                                                        {
+                                                            if (strReportTypeAWC != string.Empty)
+                                                            {
+                                                                // AWC
+                                                                    
+                                                                _strLevelNoURL += "&SubValue=" + strSubValue;
+                                                                   
+                                                                strByClause += String.Format((strType == "account_manager" || strType == "portfolio" ? "employer size {0}" :
+                                                                    strType == "agency" ? "subcategory {0}" : "team {0}"), strSubValue);
+                                                                midleText = " detail for ";
+                                                            }
+                                                            else if (strMeasureRTW != string.Empty)
+                                                            {
+                                                                // RTW
+
+                                                                _strLevelNoURL += "&SubValue=&IsVisible=all";
+
+                                                                strByClause = (strType == "account_manager" || strType == "portfolio" ? "employer size" : (strType == "employer_size" || strType == "agency") ? "subcategory" : "team");
+                                                                midleText = " comparison by ";
+                                                            }
+                                                            else
+                                                            {
+                                                                // CPR
+
+                                                                _strCPRSummaryLevelNoURL += "&SubValue=" + strSubValue;
+
+                                                                strByClause = "claim officer view by team " + strSubValue.Replace('_', ' ');
+                                                                midleText = " in " + systemName + " ";
+                                                            }
+                                                        }
+                                                        else if (i == 5)
+                                                        {
+                                                            // RTW only
+
+                                                            strByClause = (strType == "account_manager" || strType == "portfolio" ? "employer size" : (strType == "employer_size" || strType == "agency") ? "subcategory" : "team") + " " + strSubValue;
+                                                            midleText = strMeasureRTW == string.Empty ? "  " : " detail by ";
+                                                        }
+
+                                                        if (i == intLevel)
+                                                        {
+                                                            <a class="current">@(dashboardType + midleText + strByClause)</a>
+                                                        }
+                                                        else
+                                                        {
+                                                            if (strReportTypeAWC != string.Empty || strMeasureRTW != string.Empty)
+                                                            {
+                                                                // RTW / AWC
+                                                                
+                                                                <a href="@Base.AbsoluteUrl(string.Format(_strLevelNoURL, i))">@(dashboardType + midleText + strByClause)</a>
+                                                            }
+                                                            else
+                                                            {
+                                                                // CPR
+                                                                
+                                                                if(i != 2)
+                                                                {
+                                                                    <a href="@Base.AbsoluteUrl(string.Format(_strCPRSummaryLevelNoURL, i))">@(dashboardType + midleText + strByClause)</a>
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+
+                                            // set look ahead URLs
+                                            if (intLevel == 2 || intLevel == 3)
+                                            {
+                                                if (strMeasureRTW == string.Empty)
+                                                {
+                                                    if (intLevel == 2)
+                                                    {
+                                                        if (strReportTypeAWC != string.Empty)
+                                                        {
+                                                            // look ahead URL for AWC Levels 3, 4
+                                                            <a id="lookaheadLevel3CrumbtrailsAWC" class="lookahead">@(dashboardType + " detail for " + strTypeCrumbtrail)</a>
+                                                            <a id="lookaheadLevel4CrumbtrailsAWC" class="lookahead">@(dashboardType + " " 
+                                                                + ((strType == "account_manager" || strType == "portfolio") ? "detail for employer size" : 
+                                                                (strType == "employer_size" || strType == "agency") ? "detail for subcategory" : "detail for team"))</a>
+                                                        }
+                                                        else
+                                                        {                                                             
+                                                            // look ahead URL for CPR Levels 3, 4
+                                                            <a id="lookaheadLevel3CrumbtrailsCPR" class="lookahead">@(dashboardType + " in " + systemName + " " + strTypeCrumbtrailSub + " view ")</a>
+                                                            <a id="lookaheadLevel4CrumbtrailsCPR" class="lookahead">@(dashboardType + " in " + systemName + " claim officer view ")</a>                                                            
+                                                        }
+                                                    }
+                                                    else if (intLevel == 3)
+                                                    {
+                                                        if (strReportTypeAWC != string.Empty)
+                                                        {
+                                                            if (strValue != systemName.ToLower()
+                                                            && strValue.ToLower() != "health & other"
+                                                            && strValue.ToLower() != "police & emergency services")
+                                                            {
+                                                                // look ahead URL for AWC Level 4
+                                                                <a id="lookaheadLevel4CrumbtrailsAWC" class="lookahead">@(dashboardType + " "
+                                                                + ((strType == "account_manager" || strType == "portfolio") ? "detail for employer size" : 
+                                                                (strType == "employer_size" || strType == "agency") ? "detail for subcategory" : "detail for team"))</a>
+                                                            }                                                                                                                                                                                     
+                                                        }
+                                                        else 
+                                                        {
+                                                            // look ahead URL for CPR Level 4
+                                                            <a id="lookaheadLevel4CrumbtrailsCPR" class="lookahead">@(dashboardType + " in " + systemName + " claim officer view ")</a>
+                                                        }
+                                                    }
+                                                }
+                                                else
+                                                {
+                                                    if (intLevel == 2)
+                                                    {
+                                                        <a id="lookaheadLevel3CrumbtrailsRTW" class="lookahead">@(dashboardType + " detail by " + strTypeCrumbtrail)</a>
+                                                        <a id="lookaheadLevel4CrumbtrailsRTW" class="lookahead">
+                                                            @(dashboardType + " comparison by "
+                                                            + ((strType == "account_manager" || strType == "portfolio") ? "employer size" :
+                                                            (strType == "employer_size" || strType == "agency") ? "subcategory" : "team"))
+                                                        </a>
+                                                        <a id="lookaheadLevel5CrumbtrailsRTW" class="lookahead">
+                                                            @(dashboardType + " detail by "
+                                                            + ((strType == "account_manager" || strType == "portfolio") ? "employer size" :
+                                                            (strType == "employer_size" || strType == "agency") ? "subcategory" : "team"))
+                                                        </a>
+                                                    }
+                                                    else
+                                                    {
+                                                        // detect system Total and Grouping logic in level 3
+                                                        if (strValue != systemName.ToLower()
+                                                            && strValue.ToLower() != "health & other"                                                            
+                                                            && strValue.ToLower() != "police & emergency services"
+                                                            && strValue.ToLower() != "hotel")
+                                                        {
+                                                            <a id="lookaheadLevel4CrumbtrailsRTW" class="lookahead">
+                                                                @(dashboardType + " comparison by "
+                                                                + ((strType == "account_manager" || strType == "portfolio") ? "employer size" :
+                                                                (strType == "employer_size" || strType == "agency") ? "subcategory" : "team"))
+                                                            </a>
+                                                            <a id="lookaheadLevel5CrumbtrailsRTW" class="lookahead">
+                                                                @(dashboardType + " detail by "
+                                                                + ((strType == "account_manager" || strType == "portfolio") ? "employer size" :
+                                                                (strType == "employer_size" || strType == "agency") ? "subcategory" : "team"))
+                                                            </a>
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                            else if (intLevel == 4)
+                                            {
+                                                if (strMeasureRTW != string.Empty)
+                                                {
+                                                    // look ahead URL for RTW Level 5
+                                                    <a id="lookaheadLevel5CrumbtrailsRTW" class="lookahead">@(dashboardType + " detail by " 
+                                                        + ((strType == "account_manager" || strType == "portfolio") ? "employer size" : 
+                                                        (strType == "employer_size" || strType == "agency") ? "subcategory" : "team"))</a>
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    </div>
+                    <div class="right" id="showBM" style="width: 278px;">                        
+                        @if (Request["reportpath"].ToLower().IndexOf("cpr") < 0 && Request["reportpath"].ToLower().IndexOf("awc") < 0 && Request["reportpath"].ToLower().IndexOf("wow") < 0 && ("level0,level1,level2,level3".Contains(Base.GetAction.ToLower())
+                            || ("level4".Contains(Base.GetAction.ToLower()) && Request["reportpath"] != null && Request["reportpath"].ToLower().IndexOf("_rtw_") >= 0)) )
+                        {
+                            if (!(Base.GetAction.ToLower() == "level3" && Request["Type"].ToLower() == "group" && Request["reportpath"].ToLower().IndexOf("hem") >= 0)
+                                && !(Base.GetAction.ToLower() == "level3" && Request["Type"].ToLower() == "employer_size" && Request["reportpath"].ToLower().IndexOf("eml") >= 0)
+                                && !(Base.GetAction.ToLower() == "level3" && Request["Type"].ToLower() == "group" && Request["reportpath"].ToLower().IndexOf("tmf") >= 0))
+                            {                                
+                                <a style="cursor: pointer;" class="trafficIcon">Show traffic light</a>
+                            }
+                        }
+                        <a style="cursor: pointer;" class="bookmark">@Resource.Show_Bookmark</a>
+                        @Html.Action("Details", "Dashboard_Favour")
+                        @{
+                            var strRouteAction2 = Base.GetAction.ToLower();
+                            if (strRouteAction2.StartsWith("level"))
+                            {
+                                var intLevel = 0;
+                                if (int.TryParse(strRouteAction2.Substring(5), out intLevel))
+                                {
+                                    if (intLevel != 0)
+                                    {
+                                        // extract System name from report path
+                                        var reportPath = Request["reportpath"];
+                                        var strReportName = reportPath.Substring(reportPath.LastIndexOf("/") + 1);
+                                        if (strReportName.IndexOf("_") >= 0)
+                                        {
+                                            var strSystemName = strReportName.Substring(0, strReportName.IndexOf("_")).ToLower();
+
+                                            var strMeasureRTW = Request["Measure"] ?? string.Empty;
+                                            var strReportTypeAWC = Request["ReportType"] ?? string.Empty;
+                                            var strDashboard = (strMeasureRTW != string.Empty ? "rtw" : (strReportTypeAWC != string.Empty ? "awc" : "cpr"));
+
+                                            var strType = Request["Type"] ?? string.Empty;
+                                            if (strType != string.Empty)
+                                            {
+                                                strType = strType.ToLower().Trim();
+                                            }
+
+                                            var strValue = Request["Value"] ?? string.Empty;
+                                            if (strValue != string.Empty)
+                                            {
+                                                strValue = (strType != "account_manager" ? strValue.Trim() : strValue.Trim());
+                                                strValue = strValue.Replace("@@@", " & ").Replace("___", "?").Trim();
+                                            }
+
+                                            var strSubValue = Request["SubValue"] ?? string.Empty;
+                                            if (strSubValue != string.Empty)
+                                            {
+                                                strSubValue = strSubValue.Replace("@@@", "&").Replace("___", "?").Trim();
+                                            }
+
+                                            var strSubSubValue = Request["SubSubValue"] ?? string.Empty;
+                                            if (strSubSubValue != string.Empty)
+                                            {
+                                                strSubSubValue = strSubSubValue.Replace("@@@", "&").Replace("___", "?").ToLower().Trim();
+                                            }
+
+                                            if (intLevel == 1)
+                                            {
+                                                // set default type for each systems
+                                                var defaultType = string.Empty;
+
+                                                if (strSystemName == "tmf")
+                                                {
+                                                    defaultType = "agency";
+                                                }
+                                                else if (strSystemName == "eml")
+                                                {
+                                                    defaultType = "employer_size";
+                                                }
+                                                else if (strSystemName == "hem")
+                                                {
+                                                    defaultType = "portfolio";
+                                                }
+                                                strType = defaultType;
+                                            }
+                                            <input type="hidden" id="grpName" name="grpName" value=@Base.LoginSession.External_GroupName.Replace(" ", "") />
+                                            <input type="hidden" id="hddSystem" name="hddSystem" value="@strSystemName" />
+                                            <input type="hidden" id="hddDashboard" name="hddDashboard" value="@strDashboard" />
+                                            <input type="hidden" id="hddDashboardLevel" name="hddDashboardLevel" value="@intLevel" />
+                                            <input type="hidden" id="hddDashboardType" name="hddDashboardType" value="@strType" />
+                                            <input type="hidden" id="hddDashboardValue" name="hddDashboardValue" value="@strValue" />
+                                            <input type="hidden" id="hddDashboardSubValue" name="hddDashboardSubValue" value="@strSubValue"/>
+                                            <input type="hidden" id="hddDashboardSubSubValue" name="hddDashboardSubSubValue" value="@strSubSubValue"/>
+                                            <a id="portfolioURLCrumbtrails" style="cursor: pointer;" class="file-cabinet" title="Open file cabinet"></a>
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@*Adjust the guidebar to Center *@
+<script type="text/javascript" language="javascript">
+    $(document).ready(function () {
+        var grpName = $('#grpName', window.parent.document).val();
+        if (document.URL.toLowerCase().indexOf('level2?type=group') >= 0 && grpName == "WOWExternal")
+        {                        
+            $("#lookaheadLevel3CrumbtrailsCPR").hide();
+            $("#lookaheadLevel4CrumbtrailsCPR").hide();
+        }
+
+        var systemName = $('#wrapper .breadcrum_01 a:eq(0)').html().trim();
+
+        $('a#portfolioURLCrumbtrails').click(function () {
+            openCabinetPopup();
+        });
+
+        // hide guide bar look ahead in level 3 _ group
+        if ((document.URL.toLowerCase().indexOf("tmf") >= 0 && document.URL.toLowerCase().indexOf("level3") >= 0 ||
+            //hide guide bar look ahead in level 2 group
+            (document.URL.toLowerCase().indexOf("tmf") >= 0 && document.URL.toLowerCase().indexOf("level2") >= 0
+            && $("#tab_group").hasClass("tab_current")))
+            && document.URL.toLowerCase().indexOf("type=group") >= 0) {
+            $("#lookaheadLevel4CrumbtrailsRTW").hide();
+            $("#lookaheadLevel5CrumbtrailsRTW").hide();
+            $("#lookaheadLevel4CrumbtrailsAWC").hide();
+        }
+
+        // hide EML RTW L4,5 on guidebar if click WCNSW on EML RTW L2 account manager
+        if (document.URL.indexOf("EML_rtw_level3&Value=WCNSW&Type=account_manager") >= 0
+             || document.URL.indexOf("HEM_rtw_level3&Value=HOSPITALITY&Type=account_manager") >= 0) {
+            // RTW
+            $("#lookaheadLevel4CrumbtrailsRTW").hide();
+            $("#lookaheadLevel5CrumbtrailsRTW").hide();
+
+            // CPR
+            $("#lookaheadLevel3CrumbtrailsCPR").hide();
+            $("#lookaheadLevel4CrumbtrailsCPR").hide();
+        }
+
+        // hide guidebar look ahead level 4,5 for employer size or account manager
+        if (systemName == "WCNSW") {
+            if ((document.URL.toLowerCase().indexOf("level3") >= 0 ||
+                (document.URL.toLowerCase().indexOf("level2") >= 0
+                    && ($("#tab_employer_size").hasClass("tab_current") || $("#tab_agencies").hasClass("tab_current"))))
+                && document.URL.toLowerCase().indexOf("type=employer_size") >= 0) {
+                // RTW
+                $("#lookaheadLevel4CrumbtrailsRTW").hide();
+                $("#lookaheadLevel5CrumbtrailsRTW").hide();
+
+                // AWC
+                $("#lookaheadLevel4CrumbtrailsAWC").hide();
+
+                // CPR
+                $("#lookaheadLevel3CrumbtrailsCPR").hide();
+                $("#lookaheadLevel4CrumbtrailsCPR").hide();
+            }
+        }
+
+        var strValue = getParameterByName("Value").toLowerCase();
+        var strReportPath = getParameterByName("reportpath").toLowerCase();
+        var strType = getParameterByName("Type").toLowerCase();
+      
+        if (strReportPath.indexOf("_level3") >= 0
+            && strValue.indexOf("police") >= 0 && strValue.indexOf("fire") >= 0
+            || strValue.indexOf("health") >= 0 && strValue.indexOf("other") >= 0
+            || strValue == "hotel"
+            || strValue.toLowerCase() == systemName.toLowerCase()) {
+            // RTW
+            $("#lookaheadLevel4CrumbtrailsRTW").hide();
+            $("#lookaheadLevel5CrumbtrailsRTW").hide();
+
+            // AWC
+            $("#lookaheadLevel4CrumbtrailsAWC").hide();
+
+            // CPR
+            $("#lookaheadLevel3CrumbtrailsCPR").hide();
+            $("#lookaheadLevel4CrumbtrailsCPR").hide();
+        }
+		
+		//hide level 4, 5 on the guidebar for HEM-group
+        if (strReportPath.indexOf("hem_") >= 0 && strType == "group"
+            && (strReportPath.indexOf("level3") >= 0 || strReportPath.indexOf("level2") >= 0)) {
+            // RTW
+            $("#lookaheadLevel4CrumbtrailsRTW").hide();
+            $("#lookaheadLevel5CrumbtrailsRTW").hide();
+
+            // AWC
+            $("#lookaheadLevel4CrumbtrailsAWC").hide();
+        }
+
+        //hide level 6 on the guidebar for CPR <> group
+        if (document.URL.toLowerCase().indexOf("cpr") >= 0 && document.URL.toLowerCase().indexOf("type=group") < 0) {
+            $("#lookaheadLevel4CrumbtrailsCPR").hide();
+        }
+		
+        // remove style for portfolio button in level 0
+        if (strReportPath.indexOf("level0") >= 0) {
+            $("#showBM").removeAttr("style");
+        }
+
+        // don't have "Show traffic light" icon: reset showBM width
+        if ($(".trafficIcon").html() == null) {
+            $("#showBM").css("width", "140px");
+        }
+
+        adjustGuideBar();
+
+        // Hide traficlightdef for specific group
+        Hidespecifictraficlight();
+
+    });
+
+    $(window).resize(function () {
+        adjustGuideBar()
+    });
+
+    function adjustGuideBar() {
+        if ($('#showBM').width() > 180) {
+            $('#guidebarbox').width($('#breadcrum_02ID').width() - 300);
+        } else {
+            $('#guidebarbox').width($('#breadcrum_02ID').width() - 157);
+        }
+
+        if ($('#guidebarbox').height() > 20) {
+            if ($.browser.msie) {
+                if ($.browser.version.substr(0, 1) < 8) {
+                    // IE 7 and smaller version
+                    $('#showBM').css('margin-top', '-28px');
+                }
+                else {
+                    // IE and greater than 7 version
+                    $('#showBM').css('margin-top', '-28px');
+                }
+            }
+            else {
+                $('#showBM').css('margin-top', '-28px');
+            }
+        }
+        else {
+            $('#showBM').css('margin-top', '-20px');
+        }
+    }
+
+    function Hidespecifictraficlight() {               
+
+        if (document.URL.toLowerCase().indexOf("emergency") >= 0
+            || document.URL.toLowerCase().replace('@@@@@@').indexOf("healthundefined") >= 0
+            || document.URL.toLowerCase().indexOf("WCNSW") >= 0
+            || document.URL.toLowerCase().indexOf("value=hospitality") >= 0
+            || document.URL.toLowerCase().indexOf("hotel") >= 0) {
+
+            // Hide traffic light defination
+            $(".trafficIcon").hide();
+            // adjust container
+            $("#showBM").css('width', '');
+            $("#showBM").css('width', '180px');
+        }        
+
+    }
+
+
+</script>

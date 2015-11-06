@@ -1,0 +1,195 @@
+﻿@model EM_Report.Domain.Report    
+@using EM_Report.Common.Utilities;    
+@using EM_Report.Helpers;
+@using EM_Report.Domain;
+@using EM_Report.Repositories;
+@using EM_Report.Common.Utilities;
+@using System.Collections;
+@{    
+    ViewBag.Title = "Report";
+    Layout = Request.IsAjaxRequest() ? null : "~/Views/Shared/_Master.cshtml";
+}
+@functions {  
+    public bool IsNew()
+    {
+        return (Model != null && Model.ReportId > 0) ? false : true;
+    }
+}
+<div class="wrapper">
+	<div class="w_100p">
+		@using (Html.BeginForm())
+        {  
+		    @Html.AntiForgeryToken()
+        <div class="formWrap">
+            @Html.Hidden("action")
+			@if (!IsNew())
+            {
+                @Html.HiddenFor(e => e.ReportId)
+                @Html.HiddenFor(e => e.Owner)
+            }			
+			<h1>@(IsNew() ? "Report List Add" : "Report List Edit")</h1>
+            @Html.Partial("_ShowMessage")
+			<div class="formInline formReportDetails">
+                <label style="width:173px!important">Report Name</label>
+                @Html.TextBoxFor(e => e.Name, new { id = "txtName", name = "txtName", @class = "Text" })
+				<span class="field-validation-error" style="display: none">*</span>
+			</div>
+			<div class="clear"></div>
+			<div class="formInline">
+				<label style="width:173px!important">Short Name</label>
+                @Html.TextBoxFor(e => e.ShortName, new { id = "txtShortName", @class = "Text" })
+				@Html.ValidationMessageFor(e => e.ShortName)
+			</div>
+            <div class="clear"></div>
+            <div class="formInline">
+                <label style="width:173px!important">Url</label>
+                @Html.TextBoxFor(e => e.Url, new { id = "txtUrl", @class = "Text" })					                
+            </div>
+            <div class="clear"></div>
+			<div class="formInline">
+                <label style="width:173px!important">Description</label>
+                @Html.TextAreaFor(e => e.Description, new { id = "txtDescription", @class = "Text" })
+				@Html.ValidationMessageFor(e => e.Description)
+			</div>
+			<div class="clear"></div>
+			<div class="formInline">
+                <label for="ddlStatus" style="width:173px!important">Status</label>
+                @Html.DropDownListFor(m => m.Status, (SelectList)ViewBag.cboStatus, new { id = "cboStatus", name = "ddlStatus" })
+			</div>
+			<div class="clear"></div>   
+			<div class="formInline">
+				<label for="ddlCategory" style="width:173px!important">Category</label>
+                @Html.DropDownListFor(e => e.CategoryId, (SelectList)ViewBag.CategoryList, new { name = "ddlCategorys" })
+			</div>
+			<div class="clear"></div>
+            <div>
+                <span style="display: none; color: red; margin-left: 220px; position: relative; top: 10px;" id="msgIsOrgLevelSelected">*
+                    You must assign Level for at least 1 system</span>
+            @{                        
+                foreach (var s in (Systems[])ViewBag.Systems)
+                {
+                    var levelList = (from p in (List<Organisation_Levels>)ViewBag.Levels
+                                        where p.SystemId == s.SystemId
+                                        select new { p.LevelId, p.Name }).ToList();
+                    levelList.Insert(0, new { LevelId = 0, Name = "--Select--" });
+
+                    var strLevel = levelList.Select(o => "{&quot;LevelId&quot;:" + o.LevelId + ",&quot;Name&quot;:&quot;" + o.Name + "&quot;}");
+                    
+                    var selectedLevelId = 0;
+                    if (Model != null && Model.Report_OrganisationRole_Levels.Any())
+                    {
+                        foreach (var reportOrgLevel in Model.Report_OrganisationRole_Levels)
+                        {
+                            var systemId = (from p in (List<Organisation_Levels>)ViewBag.Levels
+                                            where p.LevelId == reportOrgLevel.LevelId
+                                            select p.SystemId).FirstOrDefault();
+                            if (systemId == s.SystemId)
+                            {
+                                selectedLevelId = reportOrgLevel.LevelId;
+                            }
+                        }
+                    }
+                            
+                    <input type='hidden' value='@("[" + string.Join(",", strLevel) + "]")' id='@("hddLevel_" + s.SystemId)' />;
+                    <div class="formInline" style="padding-bottom:20px;">
+                        <label style="text-indent:30px; width:173px!important">@(s.Name == "HEM" ? "Hospitality" : s.Name == "EML" ? "WCNSW" : s.Name) >> Assign level</label>
+                        @Html.DropDownList("cboLevels_" + s.Name, new SelectList((IEnumerable)levelList, "LevelId", "Name", selectedLevelId),
+                            new { id = "cboLevels_" + s.Name, @name = "cboLevels_" + s.Name, style = "left:7px!important" })
+                    </div>
+                }
+            }
+            </div>
+			
+            @if (!IsNew())
+            {
+                <div class="formInline">
+                    <label style="width:173px!important">Create Date</label>
+                    @Html.TextBoxFor(e => e.Create_Date, new { @class = "Text Disabled", @readonly = true })
+                </div>
+                <div class="clear"></div>
+                <div class="formInline">
+                    <label style="width:173px!important">Created By</label>                        
+                    @Html.TextBoxFor(e => e.OwnerName, new { @class = "Text Disabled", @readonly = true })
+                </div>
+                <div class="clear"></div>
+            }
+			<div class="formInline formInlineBtn">
+                @if (Login.AuthorizeSystemPermission(ResourcesHelper.System_Report, ResourcesHelper.Permission_Add))
+                {
+				<span class="btnPurple"><input type="button" name="btnSave" value="Save" onclick="SubmitReport();" /></span>
+                }
+                <span class="btnPurple"><input type="button" value="Back To List" onclick="window.location = ('@Url.Action("index", "report", new { systemid = Request["systemid"] })')"/></span>
+			</div>
+			<div class="clear"></div>
+		</div>
+        }
+	</div>
+</div>
+<script type="text/javascript" language="javascript">
+    function SubmitReport() {
+        if (isValidRequiredReport() == true) {
+            actionClick('save', false);
+        }
+    }
+
+    function isValidRequiredReport() {
+        var isValid = true;
+
+        if ($("#txtName").val() == "") {
+            $("#txtName").addClass("input-validation-error");
+            $("#txtName").parent().parent().parent().parent().next().show();
+            isValid = false;
+        }
+        else {
+            $("#txtName").parent().parent().parent().parent().next().hide();
+        }
+        
+        var hasAssigned = false;
+        $("select[id*=cboLevels_]").next().find("a[id*=sbSelector_]").each(function (i, e) {
+            var selectedLevel = $(this).html();
+            if (selectedLevel != "--Select--")
+                hasAssigned = true;
+        });
+
+        if (!hasAssigned) {
+            isValid = false;
+            $("#msgIsOrgLevelSelected").show();
+        }
+        else {
+            $("#msgIsOrgLevelSelected").hide();
+        }
+
+        return isValid;
+    }
+
+    $(document).ready(function () {
+        $("[id*=chkSystem]").prev().click(function () {
+            if ($(this).children("img").attr("src") == "/images/form_element/checkboxChecked.gif") {
+                $(this).next().attr("value", "0");
+                $(this).parent().parent().parent().parent().parent().next().next().hide();
+                $(this).parent().parent().parent().parent().parent().next().next().next().next().hide();
+            }
+            else {
+                $(this).next().attr("value", "1");
+                $(this).parent().parent().parent().parent().parent().next().next().show();
+                $(this).parent().parent().parent().parent().parent().next().next().next().next().show();
+            }
+        });
+
+        $("#cboSystem").change(function () {
+            LoadLevelFollowSystem($(this).val());
+        });
+
+        function LoadLevelFollowSystem(systemid) {
+            if ($("#cboLevel").length > 0) {
+                $("#cboLevel option").remove();
+                var hddRoles = $("#hddLevel_" + systemid);
+                if (hddRoles.length >= 0) {
+                    $.each($.parseJSON(hddRoles.val()), function () {
+                        $("#cboLevel").append("<option value='" + this.LevelId + "'>" + this.Name + "</option>");
+                    });
+                }
+            }
+        }
+    });    
+</script>

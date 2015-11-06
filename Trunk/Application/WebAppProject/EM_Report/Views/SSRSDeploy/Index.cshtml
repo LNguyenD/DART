@@ -1,0 +1,382 @@
+﻿@using EM_Report.Helpers;
+@{
+    ViewBag.Title = "SSRS Deploy";
+    Layout = "~/Views/Shared/_Master.cshtml";
+}
+<header>
+    <style type="text/css">
+        .setting
+        {
+            margin: 20px;
+        }
+        
+        .settingContainer
+        {
+            float: left;
+            border: solid black;
+            margin-right: 20px
+        }
+        
+        .hour
+        {
+            width:50px !important;
+            height:15px;
+        }
+        
+        .minute
+        {
+            width:50px !important;
+            height:15px;
+        }
+    </style>
+</header>
+<body>
+    @using (Html.BeginForm("Index", "SSRSDeploy", FormMethod.Post))
+    {
+        @Html.AntiForgeryToken()
+
+        <!-- AWC-->
+        <div class="settingContainer">
+            <div class="setting">
+                <label style="color: purple; font-weight: bold" class="type">AWC</label>
+                <br />
+                <div>
+                    <label style="color: purple;">
+                        SSRS Cache Schedule
+                    </label>
+                    <br />
+                    <label>
+                        At Hour: &nbsp;
+                    </label>
+                    <div>
+                        <input id = "txtSSRSCacheAtHour_AWC" class = "hour" title = "Please input any valid value from 0 to 23" Value = "4"/>
+                    </div>
+                    <br />
+                    <br />
+                    <label>
+                        At Minute:
+                    </label>
+                    <div>
+                        <input id = "txtSSRSCacheAtMin_AWC" class = "minute" title = "Please input any valid value from 0 to 59" Value = "0"/>
+                    </div>
+                </div>
+                <br />
+                <br />
+                <div>
+                    <label style="color: purple;">
+                        Refresh SSRS Cache Schedule</label>
+                    <br />
+                    <label>
+                        At Hour: &nbsp;&nbsp;
+                    </label>
+                    <div>
+                        <input id = "txtRefreshSSRSCacheAtHour_AWC" class = "hour" title = "Please input any valid value from 0 to 23" Value = "4" />
+                    </div>
+                    <br />
+                    <br />
+                    <label>
+                        At Minute:
+                    </label>
+                    <div>
+                        <input id = "txtRefreshSSRSCacheAtMin_AWC" class = "minute" title = "Please input any valid value from 0 to 59" Value = "5" />
+                    </div>
+                </div>
+                <br />
+                <br />
+                <div>
+                    <label style="color: purple;">
+                        SSRS Snapshot Cache Schedule</label>
+                    <br />
+                    <label>
+                        At Hour:
+                    </label>
+                    <div>
+                        <input id = "txtSSRSSnapshotCacheAtHour_AWC" class = "hour" title = "Please input any valid value from 0 to 23" Value = "6" />
+                    </div>
+                    <br />
+                    <br />
+                    <label>
+                        At Minute:
+                    </label>
+                    <div>
+                        <input id = "txtSSRSSnapshotCacheAtMin_AWC" class = "minute" title = "Please input any valid value from 0 to 59" Value = "30" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+       
+        <!-- RTW-->
+        <div class="settingContainer">
+            <div class="setting">
+                <label style="color: purple; font-weight: bold" class="type">RTW</label>
+                <br />
+                <div>
+                    <label style="color: purple;">
+                        SSRS Cache Schedule
+                    </label>
+                    <br />
+                    <label>
+                        At Hour: &nbsp;
+                    </label>
+                    <div>
+                        <input id = "txtSSRSCacheAtHour_RTW" class = "hour" title = "Please input any valid value from 0 to 23" Value = "4"/>
+                    </div>
+                    <br />
+                    <br />
+                    <label>
+                        At Minute:
+                    </label>
+                    <div>
+                        <input id = "txtSSRSCacheAtMin_RTW" class = "minute" title = "Please input any valid value from 0 to 59" Value = "0"/>
+                    </div>
+                </div>
+                <br />
+                <br />
+                <div>
+                    <label style="color: purple;">
+                        Refresh SSRS Cache Schedule</label>
+                    <br />
+                    <label>
+                        At Hour: &nbsp;&nbsp;
+                    </label>
+                    <div>
+                        <input id = "txtRefreshSSRSCacheAtHour_RTW" class = "hour" title = "Please input any valid value from 0 to 23" Value = "4" />
+                    </div>
+                    <br />
+                    <br />
+                    <label>
+                        At Minute:
+                    </label>
+                    <div>
+                        <input id = "txtRefreshSSRSCacheAtMin_RTW" class = "minute" title = "Please input any valid value from 0 to 59" Value = "5" />
+                    </div>
+                </div>
+                <br />
+                <br />
+                <div>
+                    <label style="color: purple;">
+                        SSRS Snapshot Cache Schedule</label>
+                    <br />
+                    <label>
+                        At Hour:
+                    </label>
+                    <div>
+                        <input id = "txtSSRSSnapshotCacheAtHour_RTW" class = "hour" title = "Please input any valid value from 0 to 23" Value = "6" />
+                    </div>
+                    <br />
+                    <br />
+                    <label>
+                        At Minute:
+                    </label>
+                    <div>
+                        <input id = "txtSSRSSnapshotCacheAtMin_RTW" class = "minute" title = "Please input any valid value from 0 to 59" Value = "30" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        
+        <!-- CPR-->
+        <div class="settingContainer">
+            <div class="setting">
+                <label style="color: purple; font-weight: bold" class="type">CPR</label>
+                <br />
+                <div>
+                    <label style="color: purple;">
+                        SSRS Cache Schedule
+                    </label>
+                    <br />
+                    <label>
+                        At Hour: &nbsp;
+                    </label>
+                    <div>
+                        <input id = "txtSSRSCacheAtHour_CPR" class = "hour" title = "Please input any valid value from 0 to 23" Value = "4"/>
+                    </div>
+                    <br />
+                    <br />
+                    <label>
+                        At Minute:
+                    </label>
+                    <div>
+                        <input id = "txtSSRSCacheAtMin_CPR" class = "minute" title = "Please input any valid value from 0 to 59" Value = "0"/>
+                    </div>
+                </div>
+                <br />
+                <br />
+                <div>
+                    <label style="color: purple;">
+                        Refresh SSRS Cache Schedule</label>
+                    <br />
+                    <label>
+                        At Hour: &nbsp;&nbsp;
+                    </label>
+                    <div>
+                        <input id = "txtRefreshSSRSCacheAtHour_CPR" class = "hour" title = "Please input any valid value from 0 to 23" Value = "4" />
+                    </div>
+                    <br />
+                    <br />
+                    <label>
+                        At Minute:
+                    </label>
+                    <div>
+                        <input id = "txtRefreshSSRSCacheAtMin_CPR" class = "minute" title = "Please input any valid value from 0 to 59" Value = "5" />
+                    </div>
+                </div>
+                <br />
+                <br />
+                <div>
+                    <label style="color: purple;">
+                        SSRS Snapshot Cache Schedule</label>
+                    <br />
+                    <label>
+                        At Hour:
+                    </label>
+                    <div>
+                        <input id = "txtSSRSSnapshotCacheAtHour_CPR" class = "hour" title = "Please input any valid value from 0 to 23" Value = "6" />
+                    </div>
+                    <br />
+                    <br />
+                    <label>
+                        At Minute:
+                    </label>
+                    <div>
+                        <input id = "txtSSRSSnapshotCacheAtMin_CPR" class = "minute" title = "Please input any valid value from 0 to 59" Value = "30" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Others-->
+        <div class="settingContainer">
+            <div class="setting">
+                <label style="color: purple; font-weight: bold" class="type">Others</label>
+                <br />
+                <div>
+                    <label style="color: purple;">
+                        SSRS Cache Schedule
+                    </label>
+                    <br />
+                    <label>
+                        At Hour: &nbsp;
+                    </label>
+                    <div>
+                        <input id = "txtSSRSCacheAtHour_Others" class = "hour" title = "Please input any valid value from 0 to 23" Value = "4"/>
+                    </div>
+                    <br />
+                    <br />
+                    <label>
+                        At Minute:
+                    </label>
+                    <div>
+                        <input id = "txtSSRSCacheAtMin_Others" class = "minute" title = "Please input any valid value from 0 to 59" Value = "0"/>
+                    </div>
+                </div>
+                <br />
+                <br />
+                <div>
+                    <label style="color: purple;">
+                        Refresh SSRS Cache Schedule</label>
+                    <br />
+                    <label>
+                        At Hour: &nbsp;&nbsp;
+                    </label>
+                    <div>
+                        <input id = "txtRefreshSSRSCacheAtHour_Others" class = "hour" title = "Please input any valid value from 0 to 23" Value = "4" />
+                    </div>
+                    <br />
+                    <br />
+                    <label>
+                        At Minute:
+                    </label>
+                    <div>
+                        <input id = "txtRefreshSSRSCacheAtMin_Others" class = "minute" title = "Please input any valid value from 0 to 59" Value = "5" />
+                    </div>
+                </div>
+                <br />
+                <br />
+                <div>
+                    <label style="color: purple;">
+                        SSRS Snapshot Cache Schedule</label>
+                    <br />
+                    <label>
+                        At Hour:
+                    </label>
+                    <div>
+                        <input id = "txtSSRSSnapshotCacheAtHour_Others" class = "hour" title = "Please input any valid value from 0 to 23" Value = "6" />
+                    </div>
+                    <br />
+                    <br />
+                    <label>
+                        At Minute:
+                    </label>
+                    <div>
+                        <input id = "txtSSRSSnapshotCacheAtMin_Others" class = "minute" title = "Please input any valid value from 0 to 59" Value = "30" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div>
+            <span class="btnPurple">
+                <input type="button" id="btnApply" value="Apply" onclick="apply()"/>
+            </span>
+            <br />
+            <span id="lblStatus" style="font-size: 20px"></span>
+        </div>
+    }
+</body>
+<script type="text/javascript" language="javascript">
+    function apply() {
+        $('#lblStatus').text('Applying...');
+
+        var settings = new Array;
+        $(".setting").each(function () {
+            var type = $(this).find('.type').text();
+            var setting = {
+                DashboardType: type,
+                SSRSCacheAtHour: $("#txtSSRSCacheAtHour_" + type).val(),
+                SSRSCacheAtMinute: $("#txtSSRSCacheAtMin_" + type).val(),
+                RefreshSSRSCacheAtHour: $("#txtRefreshSSRSCacheAtHour_" + type).val(),
+                RefreshSSRSCacheAtMinute: $("#txtRefreshSSRSCacheAtMin_" + type).val(),
+                SSRSSnapshotAtHour: $("#txtSSRSSnapshotCacheAtHour_" + type).val(),
+                SSRSSnapshotAtMinute: $("#txtSSRSSnapshotCacheAtMin_" + type).val()
+            };
+
+            settings.push(setting);
+        });
+
+        var data = JSON.stringify({ model: settings });
+
+        $.ajax({
+            contentType: 'application/json; charset=utf-8',
+            headers: generateAntiForgeryTokenHeader(),
+            dataType: 'json',
+            type: 'POST',
+            url: window.g_baseUrl + "/SSRSDeploy/Index",
+            data: data,
+            success: function (data) {
+                $('#lblStatus').text('Completed');
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                $('#lblStatus').text('Error');
+            }
+        });
+    }
+
+    $(".hour").change(function () {
+        var val = $(this).val();
+        if (val === '' || val < 0 || val > 23) {
+            alert('Invalid value');
+            $(this).focus();
+        }
+    })
+
+    $(".minute").change(function () {
+        var val = $(this).val();
+        if (val === '' || val < 0 || val > 59) {
+            alert('Invalid value');
+            $(this).focus();
+        }
+    })
+</script>

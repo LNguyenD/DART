@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SharedDataSet xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner" xmlns="http://schemas.microsoft.com/sqlserver/reporting/2010/01/shareddatasetdefinition">
+  <DataSet Name="">
+    <Query>
+      <DataSourceReference>DART</DataSourceReference>
+      <CommandText>="select * from dbo.uv_HEM_AWC_Whole_HEM where transaction_year&gt;=2005 and transaction_year&lt; year(getdate())"</CommandText>
+    </Query>
+    <Fields>
+      <Field Name="UnitType">
+        <DataField>UnitType</DataField>
+        <rd:UserDefined>true</rd:UserDefined>
+      </Field>
+      <Field Name="Unit">
+        <DataField>Unit</DataField>
+        <rd:UserDefined>true</rd:UserDefined>
+      </Field>
+      <Field Name="Primary">
+        <DataField>Primary</DataField>
+        <rd:UserDefined>true</rd:UserDefined>
+      </Field>
+      <Field Name="Transaction_Year">
+        <DataField>Transaction_Year</DataField>
+        <rd:UserDefined>true</rd:UserDefined>
+      </Field>
+      <Field Name="Type">
+        <DataField>Type</DataField>
+        <rd:UserDefined>true</rd:UserDefined>
+      </Field>
+      <Field Name="No_of_Active_Weekly_Claims">
+        <DataField>No_of_Active_Weekly_Claims</DataField>
+        <rd:UserDefined>true</rd:UserDefined>
+      </Field>
+    </Fields>
+  </DataSet>
+</SharedDataSet>

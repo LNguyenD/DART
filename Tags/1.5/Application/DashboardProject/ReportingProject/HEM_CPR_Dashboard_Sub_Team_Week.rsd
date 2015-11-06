@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SharedDataSet xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner" xmlns="http://schemas.microsoft.com/sqlserver/reporting/2010/01/shareddatasetdefinition">
+  <DataSet Name="">
+    <Query>
+      <DataSourceReference>DART</DataSourceReference>
+      <CommandText>EXEC	[dbo].[usp_CPR_Dashboard_Period] 'hem', 'sub_team', 'last_two_weeks'</CommandText>
+    </Query>
+    <Fields>
+      <Field Name="Unit">
+        <DataField>Unit</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="UnitType">
+        <DataField>UnitType</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Primary">
+        <DataField>Primary</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Claim_type">
+        <DataField>Claim_type</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="overall">
+        <DataField>overall</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+      <Field Name="med_only">
+        <DataField>med_only</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+      <Field Name="d_d">
+        <DataField>d_d</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+      <Field Name="lum_sum_in">
+        <DataField>lum_sum_in</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+      <Field Name="totally_unfit">
+        <DataField>totally_unfit</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+      <Field Name="ffsd_at_work_15_less">
+        <DataField>ffsd_at_work_15_less</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+      <Field Name="ffsd_at_work_15_more">
+        <DataField>ffsd_at_work_15_more</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+      <Field Name="ffsd_not_at_work">
+        <DataField>ffsd_not_at_work</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+      <Field Name="pid">
+        <DataField>pid</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+      <Field Name="therapy_treat">
+        <DataField>therapy_treat</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+      <Field Name="ncmm_this_week">
+        <DataField>ncmm_this_week</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+      <Field Name="ncmm_next_week">
+        <DataField>ncmm_next_week</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+    </Fields>
+  </DataSet>
+</SharedDataSet>

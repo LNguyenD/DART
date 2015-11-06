@@ -1,0 +1,40 @@
+﻿<div class="CPRformInline" style="float:right; width:31%;">
+@{
+    if (((string)(ViewBag.ReportPath)).ToLower().Contains("cpr"))
+    {
+        Dictionary<string, string> viewTypeList = new Dictionary<string, string>();
+        viewTypeList.Add("week", "Last 2 weeks");
+        var firstDayOfLastMonth = (new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1)).AddMonths(-1);
+        var lastDayOfLastMonth = firstDayOfLastMonth.AddMonths(1).AddDays(-1);
+        viewTypeList.Add("month", firstDayOfLastMonth.ToString("dd MMM yyyy") + " to " + lastDayOfLastMonth.ToString("dd MMM yyyy"));
+        
+        SelectList viewTypeSelectList = new SelectList(viewTypeList, "key", "value", "week");
+        <table style="float:right; width:100%; margin-right: 20px;">
+            <tr>
+                <td style="width:30%">
+                    <label>CPR View Type</label>
+                </td>
+                <td>
+                    @Html.DropDownList("CPRViewType", viewTypeSelectList, new { id = "cboCPRViewType" })
+                </td>
+                <td>
+                    <a id="goToCPRReportIcon" style="margin-left:10px" href="#"><img src="@Url.ContentV("~/images/bullet_raw_data.png")" alt="Go to CPR report" title="Go to CPR report" /></a>
+                </td>
+            </tr>
+        </table>
+    }
+}
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        //alert($("#cboCPRViewType").next("div").html());
+        $(".sbHolder").css("width", "150px!important");
+        $(".formInline .sbHolder").css("width", "150px!important");
+        $("#cboCPRViewType").next('div').find(".sbOptions").css("width", "150px !important");
+
+        if (document.URL.toLowerCase().indexOf('cpr') < 0) {
+            $(".CPRformInline").hide();
+        }
+    });
+</script>

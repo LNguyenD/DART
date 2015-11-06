@@ -1,0 +1,230 @@
+﻿.panes
+{
+    font: 1.2em "Tahoma",sans-serif;    
+}
+.left-pan
+{
+    float:left;
+    width:80px;
+    height:170px;
+    margin-top:10px;
+    font-weight: bold;
+}
+.left-pan .RadioButton
+{
+    padding:4px 0 4px 10px;
+}
+.left-pan div.RadioButton label
+{
+    padding-right: 1px;
+    position: relative;
+    top: 7px;
+}
+.right-pan
+{
+    float:right;
+    width:430px;
+    height:170px;
+    margin-top:10px;
+}
+.foot-pan
+{
+    margin-top:10px;
+}
+.foot-pan .start-time, .foot-pan .start-end-date
+{
+    margin-bottom:10px;
+}
+.foot-pan .start-end-date div
+{
+    padding: 5px 5px 0px 0px;
+}
+.time-input-1
+{
+    width:28px;
+}
+.time-view
+{
+    padding:15px;
+}
+.time-view-details
+{
+    border:1px solid #AAA;
+    padding:10px;
+}
+.time-view-details label
+{
+    padding-right: 1px;
+    position: relative;
+    top: 6px;
+}
+.time-type-title
+{
+    font-weight:bold;
+}
+.cblDayDays
+{
+    margin:0 0 0 20px;
+}
+.days-of-week , .months-of-year
+{
+    display:none;
+}
+.my-days-of-week , .my-months-of-year
+{
+    padding:10px 10px 10px 20px;
+}
+
+.my-days-of-week .checkbox, .my-months-of-year .checkbox
+{
+    float:left;
+    width:40px !important;
+}
+.clear.space
+{
+    clear:both;
+    margin-bottom:10px;
+}
+table td
+{
+    padding:2px;
+    font-size:12px;
+}
+.editor-label
+{
+    float:left;
+    width:28px;
+    padding-left:2px;
+}
+.editor-field
+{
+    float:left;
+}
+.start-time div.RadioButton
+{
+    float:left;
+    position: relative;
+    left:10px;
+    margin-right:10px;
+}
+.start-time div
+{
+    float:left;
+}
+.display-none
+{
+    display:none;
+}
+.field-validation-error
+{
+    padding-left:16px;
+    background:url('../../images/tmf/erroricon.jpg') left center no-repeat !important;
+}
+input[type=checkbox].end-date
+{
+    margin-right:10px;
+}
+
+/* ----Schedule---- */
+.foot-pan
+{
+    margin-top:45px;
+    padding-left:20px;
+}
+/*.foot-pan input
+{
+    height:auto !important;
+        
+}  */
+.foot-pan input
+{
+    height: 20px;  
+}  
+.tab3 input[type=radio]
+{
+    position: relative !important;
+    top: 5px !important;
+}
+.tb-month-of-year td
+{
+    vertical-align:top !important;
+}
+.tab3 .editor-label
+{
+    position: relative !important;
+    top: 3px !important;
+}
+.right-pan
+{
+    float:left !important;
+    width: 740px !important;
+}   
+.right-pan table,tr,td
+{
+    vertical-align:top;
+}    
+.time-view-details
+{
+    margin-top:5px !important;
+    width:790px;
+    border-radius: 5px 5px 5px 5px;
+    box-shadow: 0 1px 1px #CCCCCC inset;
+}   
+table.tb-day-of-week td label
+{
+    position:relative;
+    top:-4px;
+    padding-right:10px;
+}
+table.tb-month-of-year td label
+{
+    position:relative;
+    top:-4px;
+    padding-right:10px;
+}  
+div.foot-pan div.start-time div div.RadioButton 
+{
+    position : relative !important;
+    top: -3px !important;
+}
+div.foot-pan div.start-time div div.RadioButton label
+{
+    padding-right: 1px;
+    position: relative;
+    top: 7px;
+}  
+table.tb-day-of-week td input[type=checkbox]
+{
+    position:relative;
+    top:-5px;
+    margin-right:5px;
+}
+table.tb-month-of-year td input[type=checkbox]
+{
+    position:relative;
+    top:-5px;
+    margin-right:5px;
+} 
+div.start-time div.RadioButton
+{
+    position:relative;
+    top:-5px;        
+} 
+
+.WrapperSelectBox .ui-widget{font-size: 0.9em;}
+
+.ui-menu-item {
+    font-size: 1.2em;
+}
+
+.LineWrapper span{
+    font-size: 0.9em;
+}
+
+.LineWrapper.SameLine label {
+    font-size: 0.9em;
+}
+
+.LineWrapper.SameLine .Text {
+    font-size: 1em;
+}

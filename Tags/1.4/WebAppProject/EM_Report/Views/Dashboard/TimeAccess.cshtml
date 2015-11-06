@@ -1,0 +1,48 @@
+﻿@*Start-Count time to access Dashboard Level*@
+<script type="text/javascript" language="javascript">   
+    var count = 0; 
+    var starttime;
+    var endtime;
+    var url = $(location).attr('href');
+    $(window).load(function () {
+        var time = new Date();
+        var year = time.getFullYear().toString();
+        var month = (time.getMonth() + 1).toString();
+        var day = time.getDate().toString();
+        var hour = time.getHours().toString();
+        var minutes = time.getMinutes().toString();
+        var seconds = time.getSeconds().toString();
+        starttime = year + "-" + month + "-" + day + " " + hour + ":" + minutes + ":" + seconds;
+    });
+
+
+    $(window).bind('beforeunload', function () { 
+        count++;
+        if(count == 1)
+        {
+            var time = new Date();
+            var year = time.getFullYear().toString();
+            var month = (time.getMonth() + 1).toString();
+            var day = time.getDate().toString();
+            var hour = time.getHours().toString();
+            var minutes = time.getMinutes().toString();
+            var seconds = time.getSeconds().toString();
+            endtime = year + "-" + month + "-" + day + " " + hour + ":" + minutes + ":" + seconds;       
+            $.ajax({
+                async: false,
+                type: 'POST',
+                url: '@Url.Action("Details", "Dashboard_TimeAccess")',
+                data:
+                    {
+                        url: url,
+                        starttime: starttime,
+                        endtime: endtime,
+                        "__RequestVerificationToken": $('input[name="__RequestVerificationToken"]').val()
+                    },
+                success: function () { }               
+            });
+        }
+    });
+
+</script>
+@*End-Count time to access Dashboard Level*@

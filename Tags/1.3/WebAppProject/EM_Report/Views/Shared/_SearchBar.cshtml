@@ -1,0 +1,39 @@
+﻿<div class="BoxHeader">
+    <div class="DisplayEntry">
+        <div>
+            <label>
+                Show:</label>&nbsp;</div>
+        <div class="WrapperSelectBox">
+            @Html.DropDownList("cboDisplayEntry", (SelectList)ViewBag.DisplayEntry) @EM_Report.BLL.Resources.Resource.txtItems
+        </div>
+        <div>
+            &nbsp;&nbsp;<label>items</label>
+        </div>
+    </div>
+    <div class="SearchBox">
+        @if (HttpContext.Current.Request.RequestContext.RouteData.Values["controller"].ToString().ToLower() == "report" && HttpContext.Current.Request.RequestContext.RouteData.Values["action"].ToString().ToLower() == "index")
+        {
+            <div>
+                <label>
+                    Module:</label>&nbsp;</div>
+            <div class="WrapperSelectBox SelectCategory">
+                @Html.DropDownList("cboCategory", (SelectList)ViewBag.CategoryList)
+            </div>
+        }
+        <div>
+            <label>
+                &nbsp;&nbsp;&nbsp;&nbsp;Search:</label></div>
+        <div class="SearchInput">
+            <input type="text" id="txtInput" name="search_input" value="@ViewBag.SearchValue" />
+        </div>
+        <div>
+            <input id="btnSearch" type="image" title="Search" src="@Url.Image("btnSearch.png")" />
+        </div>
+    </div>
+</div>
+@{
+    if (Request.IsAjaxRequest())
+    {
+    @Html.Partial("_HackIE7")
+    }
+}

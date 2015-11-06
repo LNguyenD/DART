@@ -1,0 +1,56 @@
+﻿@model IEnumerable<EM_Report.Domain.ActuarialItem> 
+@using EM_Report.Domain.Enums;
+<table id="actuarialReportFolder" class="tblPopup" cellspacing="0" cellpadding="0">
+    <thead>
+        <tr>
+            <td class="col_55">
+                External reports
+            </td>
+            <td class="col_45">
+                Modified date
+            </td>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model.Any() && Model.ElementAt(0).Type == ActuarialItemType.File || ViewBag.HasItems == false)
+        {
+            <tr>
+                <td>
+                    <a class="actuarialFolderPath" data-type="backToFolder" style="cursor: pointer;">...</a>
+                </td>
+                <td>
+                </td>
+            </tr>
+        }
+        @if (Model.Any())
+        {
+            for (int i = 0; i < Model.Count(); i++)
+            {
+                var item = Model.ElementAt(i);
+                var trClass = i % 2 == 0 ? "even" : "odd";
+                <tr class='@trClass'>
+                    <td>
+                        @if (item.Type == ActuarialItemType.File)
+                        {
+                            @Html.ActionLink(item.Name, "DownloadActuarialReport", "Report", new { reportPath = item.Path }, null)
+                        }
+                        else
+                        {
+                            <a style="cursor: pointer;" class="actuarialFolderPath" data-type="@item.Type" data-path="@item.Path">@item.Name</a>
+                        }
+                    </td>
+                    <td>@item.ModifiedDate
+                    </td>
+                </tr>
+            }
+        }
+        else
+        {
+            <tr>
+                <td colspan='2'>
+                    <span>No items</span>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

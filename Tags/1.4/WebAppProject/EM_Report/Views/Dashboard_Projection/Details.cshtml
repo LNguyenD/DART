@@ -1,0 +1,97 @@
+﻿@model EM_Report.Domain.Dashboard_Projection          
+@using EM_Report.Common.Utilities;
+@using EM_Report.Helpers;
+@using EM_Report.Repositories;
+@using EM_Report.Domain;
+@{    
+    ViewBag.Title = "Projection Details";
+    Layout = Request.IsAjaxRequest() ? null : "~/Views/Shared/_Master.cshtml";
+}
+@functions {  
+	public bool IsNew()
+	{
+		return (Model != null && Model.Id > 0) ? false : true;
+	}
+
+	public string AddButtonText()
+	{
+		return IsNew() ? "add" : "save";
+	}
+}
+<link href="@Url.ContentV("~/Css/calendar.css")" rel="stylesheet" type="text/css" />
+<div class="wrapper">
+    <div class="w_100p">
+    @using(Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        <div class="formWrap">
+            @Html.Hidden("action")
+            @if (!IsNew())
+            {
+                @Html.HiddenFor(e => e.Id)
+            }              
+            <h1>@(IsNew() ? "Projection List Add" : "Projection List Edit")</h1>
+            @Html.Partial("_ShowMessage")  
+            <div class="formInline">
+                <label>Unit Type</label>
+                @Html.TextBoxFor(e => e.Unit_Type, new { id = "txtUnit_Type", name = "txtUnit_Type", @class = "Text" })
+                @Html.ValidationMessageFor(e => e.Unit_Type) 
+                <div class="clear"></div>    
+            </div>   
+                    
+            <div class="formInline">
+                <label>Unit Name</label>
+                @Html.TextBoxFor(e => e.Unit_Name, new { id = "txtUnit_Name", @class = "Text" })
+	            @Html.ValidationMessageFor(e => e.Unit_Name) 
+                <div class="clear"></div>
+            </div>
+            
+            <div class="formInline">
+                <label>Type</label>
+                @Html.TextBoxFor(e => e.Type, new { id = "txtType", @class = "Text" })
+	            @Html.ValidationMessageFor(e => e.Type) 
+                <div class="clear"></div>
+            </div>  
+            
+            <div class="formInline">
+                <label>Time Id</label>
+                @Html.TextBoxFor(e => e.Time_Id, new { id = "txtTime_Id", @class = "Text" })
+	            @Html.ValidationMessageFor(e => e.Time_Id)
+                <div class="clear"></div>
+            </div>  
+            
+            <div class="formInline">
+                <label>Projection</label>
+                @Html.TextBoxFor(e => e.Projection, new { id = "txtProjection", @class = "Text" })
+	            @Html.ValidationMessageFor(e => e.Projection) 
+                <div class="clear"></div>
+            </div>  
+            
+            <div class="formInline formInlineBtn">      
+                @if (Login.AuthorizeSystemPermission(ResourcesHelper.System_Report, ResourcesHelper.Permission_Add))
+                {
+                    <span class="btnPurple"><input type="button" id="cmdSave" value="Save" onclick="actionClick('save', false);"/></span>
+                }
+                 <span class="btnPurple"><input type="button" value="Back To List" onclick="window.location = ('@Url.Action("index", "Dashboard_Projection", new { systemid = Request["systemid"] })')"/></span>
+            </div>
+            <div class="clear"></div>
+        </div>
+    }            
+    </div>
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#txtTime_Id").dateinput({
+            format: 'dd/mm/yyyy', // the format displayed for the user
+            selectors: true,
+            speed: 'fast',  // calendar reveal speed 
+            value: 'dd/mm/yyyy',
+            onShow: function () {
+                $("#calroot").css('z-index', 1000000);
+                $("#calmonth").show(); $("#calmonth").next("div").remove(); $("#calmonth").width(60);
+                $("#calyear").show(); $("#calyear").next("div").remove(); $("#calyear").width(60);
+            }
+        });
+    });
+</script>

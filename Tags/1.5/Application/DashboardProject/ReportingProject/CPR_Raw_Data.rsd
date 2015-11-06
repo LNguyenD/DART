@@ -1,0 +1,327 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SharedDataSet xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner" xmlns="http://schemas.microsoft.com/sqlserver/reporting/2010/01/shareddatasetdefinition">
+  <DataSet Name="">
+    <Query>
+      <DataSourceReference>DART</DataSourceReference>
+      <CommandText>select * from dbo.uv_CPR_Raw</CommandText>
+    </Query>
+    <Fields>
+      <Field Name="System">
+        <DataField>System</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Id">
+        <DataField>Id</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+      <Field Name="Group">
+        <DataField>Group</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Team">
+        <DataField>Team</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Case_Manager">
+        <DataField>Case_Manager</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Agency_Name">
+        <DataField>Agency_Name</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Agency_Id">
+        <DataField>Agency_Id</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Policy_No">
+        <DataField>Policy_No</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Sub_Category">
+        <DataField>Sub_Category</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="EMPL_SIZE">
+        <DataField>EMPL_SIZE</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Account_Manager">
+        <DataField>Account_Manager</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Portfolio">
+        <DataField>Portfolio</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Reporting_Date">
+        <DataField>Reporting_Date</DataField>
+        <rd:TypeName>System.DateTime</rd:TypeName>
+      </Field>
+      <Field Name="Claim_No">
+        <DataField>Claim_No</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="WIC_Code">
+        <DataField>WIC_Code</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Company_Name">
+        <DataField>Company_Name</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Worker_Name">
+        <DataField>Worker_Name</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Employee_Number">
+        <DataField>Employee_Number</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Worker_Phone_Number">
+        <DataField>Worker_Phone_Number</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Claims_Officer_Name">
+        <DataField>Claims_Officer_Name</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Date_Of_Birth">
+        <DataField>Date_Of_Birth</DataField>
+        <rd:TypeName>System.DateTime</rd:TypeName>
+      </Field>
+      <Field Name="Date_Of_Injury">
+        <DataField>Date_Of_Injury</DataField>
+        <rd:TypeName>System.DateTime</rd:TypeName>
+      </Field>
+      <Field Name="Date_Of_Notification">
+        <DataField>Date_Of_Notification</DataField>
+        <rd:TypeName>System.DateTime</rd:TypeName>
+      </Field>
+      <Field Name="Notification_Lag">
+        <DataField>Notification_Lag</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+      <Field Name="Entered_Lag">
+        <DataField>Entered_Lag</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+      <Field Name="Claim_Liability_Indicator_Group">
+        <DataField>Claim_Liability_Indicator_Group</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Investigation_Incurred">
+        <DataField>Investigation_Incurred</DataField>
+        <rd:TypeName>System.Decimal</rd:TypeName>
+      </Field>
+      <Field Name="Total_Paid">
+        <DataField>Total_Paid</DataField>
+        <rd:TypeName>System.Decimal</rd:TypeName>
+      </Field>
+      <Field Name="Claim_Closed_Flag">
+        <DataField>Claim_Closed_Flag</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Is_Time_Lost">
+        <DataField>Is_Time_Lost</DataField>
+        <rd:TypeName>System.Boolean</rd:TypeName>
+      </Field>
+      <Field Name="Date_Claim_Closed">
+        <DataField>Date_Claim_Closed</DataField>
+        <rd:TypeName>System.DateTime</rd:TypeName>
+      </Field>
+      <Field Name="Date_Claim_Entered">
+        <DataField>Date_Claim_Entered</DataField>
+        <rd:TypeName>System.DateTime</rd:TypeName>
+      </Field>
+      <Field Name="Date_Claim_Received">
+        <DataField>Date_Claim_Received</DataField>
+        <rd:TypeName>System.DateTime</rd:TypeName>
+      </Field>
+      <Field Name="Date_Claim_Reopened">
+        <DataField>Date_Claim_Reopened</DataField>
+        <rd:TypeName>System.DateTime</rd:TypeName>
+      </Field>
+      <Field Name="Result_Of_Injury_Code">
+        <DataField>Result_Of_Injury_Code</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+      <Field Name="WPI">
+        <DataField>WPI</DataField>
+        <rd:TypeName>System.Double</rd:TypeName>
+      </Field>
+      <Field Name="Common_Law">
+        <DataField>Common_Law</DataField>
+        <rd:TypeName>System.Boolean</rd:TypeName>
+      </Field>
+      <Field Name="Total_Recoveries">
+        <DataField>Total_Recoveries</DataField>
+        <rd:TypeName>System.Double</rd:TypeName>
+      </Field>
+      <Field Name="Med_Cert_Status">
+        <DataField>Med_Cert_Status</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Is_Working">
+        <DataField>Is_Working</DataField>
+        <rd:TypeName>System.Boolean</rd:TypeName>
+      </Field>
+      <Field Name="Physio_Paid">
+        <DataField>Physio_Paid</DataField>
+        <rd:TypeName>System.Double</rd:TypeName>
+      </Field>
+      <Field Name="Chiro_Paid">
+        <DataField>Chiro_Paid</DataField>
+        <rd:TypeName>System.Double</rd:TypeName>
+      </Field>
+      <Field Name="Massage_Paid">
+        <DataField>Massage_Paid</DataField>
+        <rd:TypeName>System.Double</rd:TypeName>
+      </Field>
+      <Field Name="Osteopathy_Paid">
+        <DataField>Osteopathy_Paid</DataField>
+        <rd:TypeName>System.Double</rd:TypeName>
+      </Field>
+      <Field Name="Acupuncture_Paid">
+        <DataField>Acupuncture_Paid</DataField>
+        <rd:TypeName>System.Double</rd:TypeName>
+      </Field>
+      <Field Name="Create_Date">
+        <DataField>Create_Date</DataField>
+        <rd:TypeName>System.DateTime</rd:TypeName>
+      </Field>
+      <Field Name="Is_Stress">
+        <DataField>Is_Stress</DataField>
+        <rd:TypeName>System.Boolean</rd:TypeName>
+      </Field>
+      <Field Name="Is_Inactive_Claims">
+        <DataField>Is_Inactive_Claims</DataField>
+        <rd:TypeName>System.Boolean</rd:TypeName>
+      </Field>
+      <Field Name="Is_Medically_Discharged">
+        <DataField>Is_Medically_Discharged</DataField>
+        <rd:TypeName>System.Boolean</rd:TypeName>
+      </Field>
+      <Field Name="Is_Exempt">
+        <DataField>Is_Exempt</DataField>
+        <rd:TypeName>System.Boolean</rd:TypeName>
+      </Field>
+      <Field Name="Is_Reactive">
+        <DataField>Is_Reactive</DataField>
+        <rd:TypeName>System.Boolean</rd:TypeName>
+      </Field>
+      <Field Name="Grouping">
+        <DataField>Grouping</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Is_Medical_Only">
+        <DataField>Is_Medical_Only</DataField>
+        <rd:TypeName>System.Boolean</rd:TypeName>
+      </Field>
+      <Field Name="Is_D_D">
+        <DataField>Is_D_D</DataField>
+        <rd:TypeName>System.Boolean</rd:TypeName>
+      </Field>
+      <Field Name="NCMM_Actions_This_Week">
+        <DataField>NCMM_Actions_This_Week</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="NCMM_Actions_Next_Week">
+        <DataField>NCMM_Actions_Next_Week</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="HoursPerWeek">
+        <DataField>HoursPerWeek</DataField>
+        <rd:TypeName>System.Decimal</rd:TypeName>
+      </Field>
+      <Field Name="Action_Required">
+        <DataField>Action_Required</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Is_Industrial_Deafness">
+        <DataField>Is_Industrial_Deafness</DataField>
+        <rd:TypeName>System.Boolean</rd:TypeName>
+      </Field>
+      <Field Name="RTW_Impacting">
+        <DataField>RTW_Impacting</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Rehab_Paid">
+        <DataField>Rehab_Paid</DataField>
+        <rd:TypeName>System.Double</rd:TypeName>
+      </Field>
+      <Field Name="Weeks_In">
+        <DataField>Weeks_In</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+      <Field Name="Weeks_Band">
+        <DataField>Weeks_Band</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Hindsight">
+        <DataField>Hindsight</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Active_Weekly">
+        <DataField>Active_Weekly</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Active_Medical">
+        <DataField>Active_Medical</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Cost_Code">
+        <DataField>Cost_Code</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Cost_Code2">
+        <DataField>Cost_Code2</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="CC_Injury">
+        <DataField>CC_Injury</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="CC_Current">
+        <DataField>CC_Current</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Med_Cert_Status_This_Week">
+        <DataField>Med_Cert_Status_This_Week</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Med_Cert_Status_Next_Week">
+        <DataField>Med_Cert_Status_Next_Week</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Capacity">
+        <DataField>Capacity</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Entitlement_Weeks">
+        <DataField>Entitlement_Weeks</DataField>
+        <rd:UserDefined>true</rd:UserDefined>
+      </Field>
+      <Field Name="Med_Cert_Status_Prev_1_Week">
+        <DataField>Med_Cert_Status_Prev_1_Week</DataField>
+        <rd:UserDefined>true</rd:UserDefined>
+      </Field>
+      <Field Name="Med_Cert_Status_Prev_2_Week">
+        <DataField>Med_Cert_Status_Prev_2_Week</DataField>
+        <rd:UserDefined>true</rd:UserDefined>
+      </Field>
+      <Field Name="Med_Cert_Status_Prev_3_Week">
+        <DataField>Med_Cert_Status_Prev_3_Week</DataField>
+        <rd:UserDefined>true</rd:UserDefined>
+      </Field>
+      <Field Name="Med_Cert_Status_Prev_4_Week">
+        <DataField>Med_Cert_Status_Prev_4_Week</DataField>
+        <rd:UserDefined>true</rd:UserDefined>
+      </Field>
+      <Field Name="Is_Last_Month">
+        <DataField>Is_Last_Month</DataField>
+        <rd:TypeName>System.Boolean</rd:TypeName>
+      </Field>
+    </Fields>
+  </DataSet>
+</SharedDataSet>

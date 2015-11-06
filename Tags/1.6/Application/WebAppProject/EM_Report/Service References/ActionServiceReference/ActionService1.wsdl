@@ -1,0 +1,1084 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ActionService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="CustomBinding_IActionService_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <wsrm:RMAssertion xmlns:wsrm="http://schemas.xmlsoap.org/ws/2005/02/rm/policy">
+          <wsrm:InactivityTimeout Milliseconds="600000" />
+          <wsrm:AcknowledgementInterval Milliseconds="200" />
+        </wsrm:RMAssertion>
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <sp:HttpsToken RequireClientCertificate="false" />
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256 />
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict />
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="https://localhost/dart.service/ActionService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="https://localhost/dart.service/ActionService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="https://localhost/dart.service/ActionService.svc?xsd=xsd2" namespace="http://www.yourcompany.com/types/" />
+      <xsd:import schemaLocation="https://localhost/dart.service/ActionService.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="https://localhost/dart.service/ActionService.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/EM_Report.Domain.Enums" />
+      <xsd:import schemaLocation="https://localhost/dart.service/ActionService.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/EM_Report.Domain" />
+      <xsd:import schemaLocation="https://localhost/dart.service/ActionService.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/EM_Report.Service.Messages" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IActionService_GetToken_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetToken" />
+  </wsdl:message>
+  <wsdl:message name="IActionService_GetToken_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTokenResponse" />
+  </wsdl:message>
+  <wsdl:message name="IActionService_Login_InputMessage">
+    <wsdl:part name="parameters" element="tns:Login" />
+  </wsdl:message>
+  <wsdl:message name="IActionService_Login_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="IActionService_Logout_InputMessage">
+    <wsdl:part name="parameters" element="tns:Logout" />
+  </wsdl:message>
+  <wsdl:message name="IActionService_Logout_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LogoutResponse" />
+  </wsdl:message>
+  <wsdl:message name="IActionService_AutoLogin_InputMessage">
+    <wsdl:part name="parameters" element="tns:AutoLogin" />
+  </wsdl:message>
+  <wsdl:message name="IActionService_AutoLogin_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AutoLoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="IActionService_ChangePassword_InputMessage">
+    <wsdl:part name="parameters" element="tns:ChangePassword" />
+  </wsdl:message>
+  <wsdl:message name="IActionService_ChangePassword_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ChangePasswordResponse" />
+  </wsdl:message>
+  <wsdl:message name="IActionService_ResetPassword_InputMessage">
+    <wsdl:part name="parameters" element="tns:ResetPassword" />
+  </wsdl:message>
+  <wsdl:message name="IActionService_ResetPassword_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ResetPasswordResponse" />
+  </wsdl:message>
+  <wsdl:message name="IActionService_GetUsers_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUsers" />
+  </wsdl:message>
+  <wsdl:message name="IActionService_GetUsers_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUsersResponse" />
+  </wsdl:message>
+  <wsdl:message name="IActionService_SetUsers_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetUsers" />
+  </wsdl:message>
+  <wsdl:message name="IActionService_SetUsers_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetUsersResponse" />
+  </wsdl:message>
+  <wsdl:message name="IActionService_GetOrganisationRoles_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOrganisationRoles" />
+  </wsdl:message>
+  <wsdl:message name="IActionService_GetOrganisationRoles_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOrganisationRolesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IActionService_SetOrganisationRoles_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetOrganisationRoles" />
+  </wsdl:message>
+  <wsdl:message name="IActionService_SetOrganisationRoles_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetOrganisationRolesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IActionService_GetTeams_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTeams" />
+  </wsdl:message>
+  <wsdl:message name="IActionService_GetTeams_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTeamsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IActionService_SetTeams_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetTeams" />
+  </wsdl:message>
+  <wsdl:message name="IActionService_SetTeams_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetTeamsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IActionService_GetRptCategories_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRptCategories" />
+  </wsdl:message>
+  <wsdl:message name="IActionService_GetRptCategories_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRptCategoriesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IActionService_SetRptCategories_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetRptCategories" />
+  </wsdl:message>
+  <wsdl:message name="IActionService_SetRptCategories_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetRptCategoriesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IActionService_GetOrganisationLevels_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOrganisationLevels" />
+  </wsdl:message>
+  <wsdl:message name="IActionService_GetOrganisationLevels_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOrganisationLevelsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IActionService_SetOrganisationLevels_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetOrganisationLevels" />
+  </wsdl:message>
+  <wsdl:message name="IActionService_SetOrganisationLevels_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetOrganisationLevelsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IActionService_GetSystemRoles_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSystemRoles" />
+  </wsdl:message>
+  <wsdl:message name="IActionService_GetSystemRoles_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSystemRolesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IActionService_SetSystemRoles_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetSystemRoles" />
+  </wsdl:message>
+  <wsdl:message name="IActionService_SetSystemRoles_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetSystemRolesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IActionService_GetExternal_Groups_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetExternal_Groups" />
+  </wsdl:message>
+  <wsdl:message name="IActionService_GetExternal_Groups_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetExternal_GroupsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IActionService_SetExternal_Groups_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetExternal_Groups" />
+  </wsdl:message>
+  <wsdl:message name="IActionService_SetExternal_Groups_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetExternal_GroupsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IActionService_GetStatus_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetStatus" />
+  </wsdl:message>
+  <wsdl:message name="IActionService_GetStatus_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="IActionService_SetStatus_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetStatus" />
+  </wsdl:message>
+  <wsdl:message name="IActionService_SetStatus_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="IActionService_GetPermissions_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPermissions" />
+  </wsdl:message>
+  <wsdl:message name="IActionService_GetPermissions_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPermissionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IActionService_SetPermissions_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetPermissions" />
+  </wsdl:message>
+  <wsdl:message name="IActionService_SetPermissions_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetPermissionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IActionService_GetSystemRolePermissions_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSystemRolePermissions" />
+  </wsdl:message>
+  <wsdl:message name="IActionService_GetSystemRolePermissions_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSystemRolePermissionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IActionService_SetSystemRolePermissions_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetSystemRolePermissions" />
+  </wsdl:message>
+  <wsdl:message name="IActionService_SetSystemRolePermissions_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetSystemRolePermissionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IActionService_GetReports_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetReports" />
+  </wsdl:message>
+  <wsdl:message name="IActionService_GetReports_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetReportsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IActionService_SetReports_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetReports" />
+  </wsdl:message>
+  <wsdl:message name="IActionService_SetReports_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetReportsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IActionService_GetSystemPermissions_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSystemPermissions" />
+  </wsdl:message>
+  <wsdl:message name="IActionService_GetSystemPermissions_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSystemPermissionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IActionService_SetSystemPermissions_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetSystemPermissions" />
+  </wsdl:message>
+  <wsdl:message name="IActionService_SetSystemPermissions_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetSystemPermissionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IActionService_GetReportPermissions_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetReportPermissions" />
+  </wsdl:message>
+  <wsdl:message name="IActionService_GetReportPermissions_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetReportPermissionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IActionService_SetReportPermissions_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetReportPermissions" />
+  </wsdl:message>
+  <wsdl:message name="IActionService_SetReportPermissions_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetReportPermissionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IActionService_GetDashBoards_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDashBoards" />
+  </wsdl:message>
+  <wsdl:message name="IActionService_GetDashBoards_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDashBoardsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IActionService_SetDashBoards_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetDashBoards" />
+  </wsdl:message>
+  <wsdl:message name="IActionService_SetDashBoards_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetDashBoardsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IActionService_GetDashboard_OrganisationRole_Levels_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDashboard_OrganisationRole_Levels" />
+  </wsdl:message>
+  <wsdl:message name="IActionService_GetDashboard_OrganisationRole_Levels_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDashboard_OrganisationRole_LevelsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IActionService_GetReport_Organisation_Levels_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetReport_Organisation_Levels" />
+  </wsdl:message>
+  <wsdl:message name="IActionService_GetReport_Organisation_Levels_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetReport_Organisation_LevelsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IActionService_SetDashboard_OrganisationRole_Levels_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetDashboard_OrganisationRole_Levels" />
+  </wsdl:message>
+  <wsdl:message name="IActionService_SetDashboard_OrganisationRole_Levels_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetDashboard_OrganisationRole_LevelsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IActionService_GetDashBoardLevels_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDashBoardLevels" />
+  </wsdl:message>
+  <wsdl:message name="IActionService_GetDashBoardLevels_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDashBoardLevelsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IActionService_SetDashBoardLevels_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetDashBoardLevels" />
+  </wsdl:message>
+  <wsdl:message name="IActionService_SetDashBoardLevels_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetDashBoardLevelsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IActionService_GetDashboard_Favours_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDashboard_Favours" />
+  </wsdl:message>
+  <wsdl:message name="IActionService_GetDashboard_Favours_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDashboard_FavoursResponse" />
+  </wsdl:message>
+  <wsdl:message name="IActionService_setDashboard_Favours_InputMessage">
+    <wsdl:part name="parameters" element="tns:setDashboard_Favours" />
+  </wsdl:message>
+  <wsdl:message name="IActionService_setDashboard_Favours_OutputMessage">
+    <wsdl:part name="parameters" element="tns:setDashboard_FavoursResponse" />
+  </wsdl:message>
+  <wsdl:message name="IActionService_GetDashboard_Graph_Description_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDashboard_Graph_Description" />
+  </wsdl:message>
+  <wsdl:message name="IActionService_GetDashboard_Graph_Description_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDashboard_Graph_DescriptionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IActionService_SetDashboard_Graph_Description_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetDashboard_Graph_Description" />
+  </wsdl:message>
+  <wsdl:message name="IActionService_SetDashboard_Graph_Description_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetDashboard_Graph_DescriptionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IActionService_GetDashboard_Traffic_Light_Rules_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDashboard_Traffic_Light_Rules" />
+  </wsdl:message>
+  <wsdl:message name="IActionService_GetDashboard_Traffic_Light_Rules_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDashboard_Traffic_Light_RulesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IActionService_SetDashboard_Traffic_Light_Rules_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetDashboard_Traffic_Light_Rules" />
+  </wsdl:message>
+  <wsdl:message name="IActionService_SetDashboard_Traffic_Light_Rules_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetDashboard_Traffic_Light_RulesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IActionService_GetDashboard_Projection_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDashboard_Projection" />
+  </wsdl:message>
+  <wsdl:message name="IActionService_GetDashboard_Projection_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDashboard_ProjectionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IActionService_SetDashboard_Projection_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetDashboard_Projection" />
+  </wsdl:message>
+  <wsdl:message name="IActionService_SetDashboard_Projection_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetDashboard_ProjectionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IActionService_GetDashboard_TimeAccess_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDashboard_TimeAccess" />
+  </wsdl:message>
+  <wsdl:message name="IActionService_GetDashboard_TimeAccess_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDashboard_TimeAccessResponse" />
+  </wsdl:message>
+  <wsdl:message name="IActionService_SetDashboard_TimeAccess_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetDashboard_TimeAccess" />
+  </wsdl:message>
+  <wsdl:message name="IActionService_SetDashboard_TimeAccess_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetDashboard_TimeAccessResponse" />
+  </wsdl:message>
+  <wsdl:message name="IActionService_GetDashboard_Target_Base_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDashboard_Target_Base" />
+  </wsdl:message>
+  <wsdl:message name="IActionService_GetDashboard_Target_Base_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDashboard_Target_BaseResponse" />
+  </wsdl:message>
+  <wsdl:message name="IActionService_SetDashboard_Target_Base_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetDashboard_Target_Base" />
+  </wsdl:message>
+  <wsdl:message name="IActionService_SetDashboard_Target_Base_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetDashboard_Target_BaseResponse" />
+  </wsdl:message>
+  <wsdl:message name="IActionService_GetPortfolio_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPortfolio" />
+  </wsdl:message>
+  <wsdl:message name="IActionService_GetPortfolio_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPortfolioResponse" />
+  </wsdl:message>
+  <wsdl:message name="IActionService_EncryptConnectionStrings_InputMessage">
+    <wsdl:part name="parameters" element="tns:EncryptConnectionStrings" />
+  </wsdl:message>
+  <wsdl:message name="IActionService_EncryptConnectionStrings_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EncryptConnectionStringsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IActionService_SignalProjectionImport_InputMessage">
+    <wsdl:part name="parameters" element="tns:SignalProjectionImport" />
+  </wsdl:message>
+  <wsdl:message name="IActionService_SignalProjectionImport_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SignalProjectionImportResponse" />
+  </wsdl:message>
+  <wsdl:portType msc:usingSession="true" name="IActionService">
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="GetToken">
+      <wsdl:input wsaw:Action="http://tempuri.org/IActionService/GetToken" message="tns:IActionService_GetToken_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IActionService/GetTokenResponse" message="tns:IActionService_GetToken_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="Login">
+      <wsdl:input wsaw:Action="http://tempuri.org/IActionService/Login" message="tns:IActionService_Login_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IActionService/LoginResponse" message="tns:IActionService_Login_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="Logout">
+      <wsdl:input wsaw:Action="http://tempuri.org/IActionService/Logout" message="tns:IActionService_Logout_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IActionService/LogoutResponse" message="tns:IActionService_Logout_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="AutoLogin">
+      <wsdl:input wsaw:Action="http://tempuri.org/IActionService/AutoLogin" message="tns:IActionService_AutoLogin_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IActionService/AutoLoginResponse" message="tns:IActionService_AutoLogin_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="ChangePassword">
+      <wsdl:input wsaw:Action="http://tempuri.org/IActionService/ChangePassword" message="tns:IActionService_ChangePassword_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IActionService/ChangePasswordResponse" message="tns:IActionService_ChangePassword_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="ResetPassword">
+      <wsdl:input wsaw:Action="http://tempuri.org/IActionService/ResetPassword" message="tns:IActionService_ResetPassword_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IActionService/ResetPasswordResponse" message="tns:IActionService_ResetPassword_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="GetUsers">
+      <wsdl:input wsaw:Action="http://tempuri.org/IActionService/GetUsers" message="tns:IActionService_GetUsers_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IActionService/GetUsersResponse" message="tns:IActionService_GetUsers_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="SetUsers">
+      <wsdl:input wsaw:Action="http://tempuri.org/IActionService/SetUsers" message="tns:IActionService_SetUsers_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IActionService/SetUsersResponse" message="tns:IActionService_SetUsers_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="GetOrganisationRoles">
+      <wsdl:input wsaw:Action="http://tempuri.org/IActionService/GetOrganisationRoles" message="tns:IActionService_GetOrganisationRoles_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IActionService/GetOrganisationRolesResponse" message="tns:IActionService_GetOrganisationRoles_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="SetOrganisationRoles">
+      <wsdl:input wsaw:Action="http://tempuri.org/IActionService/SetOrganisationRoles" message="tns:IActionService_SetOrganisationRoles_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IActionService/SetOrganisationRolesResponse" message="tns:IActionService_SetOrganisationRoles_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="GetTeams">
+      <wsdl:input wsaw:Action="http://tempuri.org/IActionService/GetTeams" message="tns:IActionService_GetTeams_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IActionService/GetTeamsResponse" message="tns:IActionService_GetTeams_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="SetTeams">
+      <wsdl:input wsaw:Action="http://tempuri.org/IActionService/SetTeams" message="tns:IActionService_SetTeams_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IActionService/SetTeamsResponse" message="tns:IActionService_SetTeams_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="GetRptCategories">
+      <wsdl:input wsaw:Action="http://tempuri.org/IActionService/GetRptCategories" message="tns:IActionService_GetRptCategories_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IActionService/GetRptCategoriesResponse" message="tns:IActionService_GetRptCategories_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="SetRptCategories">
+      <wsdl:input wsaw:Action="http://tempuri.org/IActionService/SetRptCategories" message="tns:IActionService_SetRptCategories_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IActionService/SetRptCategoriesResponse" message="tns:IActionService_SetRptCategories_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="GetOrganisationLevels">
+      <wsdl:input wsaw:Action="http://tempuri.org/IActionService/GetOrganisationLevels" message="tns:IActionService_GetOrganisationLevels_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IActionService/GetOrganisationLevelsResponse" message="tns:IActionService_GetOrganisationLevels_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="SetOrganisationLevels">
+      <wsdl:input wsaw:Action="http://tempuri.org/IActionService/SetOrganisationLevels" message="tns:IActionService_SetOrganisationLevels_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IActionService/SetOrganisationLevelsResponse" message="tns:IActionService_SetOrganisationLevels_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="GetSystemRoles">
+      <wsdl:input wsaw:Action="http://tempuri.org/IActionService/GetSystemRoles" message="tns:IActionService_GetSystemRoles_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IActionService/GetSystemRolesResponse" message="tns:IActionService_GetSystemRoles_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="SetSystemRoles">
+      <wsdl:input wsaw:Action="http://tempuri.org/IActionService/SetSystemRoles" message="tns:IActionService_SetSystemRoles_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IActionService/SetSystemRolesResponse" message="tns:IActionService_SetSystemRoles_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="GetExternal_Groups">
+      <wsdl:input wsaw:Action="http://tempuri.org/IActionService/GetExternal_Groups" message="tns:IActionService_GetExternal_Groups_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IActionService/GetExternal_GroupsResponse" message="tns:IActionService_GetExternal_Groups_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="SetExternal_Groups">
+      <wsdl:input wsaw:Action="http://tempuri.org/IActionService/SetExternal_Groups" message="tns:IActionService_SetExternal_Groups_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IActionService/SetExternal_GroupsResponse" message="tns:IActionService_SetExternal_Groups_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="GetStatus">
+      <wsdl:input wsaw:Action="http://tempuri.org/IActionService/GetStatus" message="tns:IActionService_GetStatus_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IActionService/GetStatusResponse" message="tns:IActionService_GetStatus_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="SetStatus">
+      <wsdl:input wsaw:Action="http://tempuri.org/IActionService/SetStatus" message="tns:IActionService_SetStatus_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IActionService/SetStatusResponse" message="tns:IActionService_SetStatus_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="GetPermissions">
+      <wsdl:input wsaw:Action="http://tempuri.org/IActionService/GetPermissions" message="tns:IActionService_GetPermissions_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IActionService/GetPermissionsResponse" message="tns:IActionService_GetPermissions_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="SetPermissions">
+      <wsdl:input wsaw:Action="http://tempuri.org/IActionService/SetPermissions" message="tns:IActionService_SetPermissions_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IActionService/SetPermissionsResponse" message="tns:IActionService_SetPermissions_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="GetSystemRolePermissions">
+      <wsdl:input wsaw:Action="http://tempuri.org/IActionService/GetSystemRolePermissions" message="tns:IActionService_GetSystemRolePermissions_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IActionService/GetSystemRolePermissionsResponse" message="tns:IActionService_GetSystemRolePermissions_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="SetSystemRolePermissions">
+      <wsdl:input wsaw:Action="http://tempuri.org/IActionService/SetSystemRolePermissions" message="tns:IActionService_SetSystemRolePermissions_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IActionService/SetSystemRolePermissionsResponse" message="tns:IActionService_SetSystemRolePermissions_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="GetReports">
+      <wsdl:input wsaw:Action="http://tempuri.org/IActionService/GetReports" message="tns:IActionService_GetReports_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IActionService/GetReportsResponse" message="tns:IActionService_GetReports_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="SetReports">
+      <wsdl:input wsaw:Action="http://tempuri.org/IActionService/SetReports" message="tns:IActionService_SetReports_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IActionService/SetReportsResponse" message="tns:IActionService_SetReports_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="GetSystemPermissions">
+      <wsdl:input wsaw:Action="http://tempuri.org/IActionService/GetSystemPermissions" message="tns:IActionService_GetSystemPermissions_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IActionService/GetSystemPermissionsResponse" message="tns:IActionService_GetSystemPermissions_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="SetSystemPermissions">
+      <wsdl:input wsaw:Action="http://tempuri.org/IActionService/SetSystemPermissions" message="tns:IActionService_SetSystemPermissions_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IActionService/SetSystemPermissionsResponse" message="tns:IActionService_SetSystemPermissions_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="GetReportPermissions">
+      <wsdl:input wsaw:Action="http://tempuri.org/IActionService/GetReportPermissions" message="tns:IActionService_GetReportPermissions_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IActionService/GetReportPermissionsResponse" message="tns:IActionService_GetReportPermissions_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="SetReportPermissions">
+      <wsdl:input wsaw:Action="http://tempuri.org/IActionService/SetReportPermissions" message="tns:IActionService_SetReportPermissions_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IActionService/SetReportPermissionsResponse" message="tns:IActionService_SetReportPermissions_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="GetDashBoards">
+      <wsdl:input wsaw:Action="http://tempuri.org/IActionService/GetDashBoards" message="tns:IActionService_GetDashBoards_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IActionService/GetDashBoardsResponse" message="tns:IActionService_GetDashBoards_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="SetDashBoards">
+      <wsdl:input wsaw:Action="http://tempuri.org/IActionService/SetDashBoards" message="tns:IActionService_SetDashBoards_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IActionService/SetDashBoardsResponse" message="tns:IActionService_SetDashBoards_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="GetDashboard_OrganisationRole_Levels">
+      <wsdl:input wsaw:Action="http://tempuri.org/IActionService/GetDashboard_OrganisationRole_Levels" message="tns:IActionService_GetDashboard_OrganisationRole_Levels_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IActionService/GetDashboard_OrganisationRole_LevelsResponse" message="tns:IActionService_GetDashboard_OrganisationRole_Levels_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="GetReport_Organisation_Levels">
+      <wsdl:input wsaw:Action="http://tempuri.org/IActionService/GetReport_Organisation_Levels" message="tns:IActionService_GetReport_Organisation_Levels_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IActionService/GetReport_Organisation_LevelsResponse" message="tns:IActionService_GetReport_Organisation_Levels_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="SetDashboard_OrganisationRole_Levels">
+      <wsdl:input wsaw:Action="http://tempuri.org/IActionService/SetDashboard_OrganisationRole_Levels" message="tns:IActionService_SetDashboard_OrganisationRole_Levels_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IActionService/SetDashboard_OrganisationRole_LevelsResponse" message="tns:IActionService_SetDashboard_OrganisationRole_Levels_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="GetDashBoardLevels">
+      <wsdl:input wsaw:Action="http://tempuri.org/IActionService/GetDashBoardLevels" message="tns:IActionService_GetDashBoardLevels_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IActionService/GetDashBoardLevelsResponse" message="tns:IActionService_GetDashBoardLevels_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="SetDashBoardLevels">
+      <wsdl:input wsaw:Action="http://tempuri.org/IActionService/SetDashBoardLevels" message="tns:IActionService_SetDashBoardLevels_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IActionService/SetDashBoardLevelsResponse" message="tns:IActionService_SetDashBoardLevels_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="GetDashboard_Favours">
+      <wsdl:input wsaw:Action="http://tempuri.org/IActionService/GetDashboard_Favours" message="tns:IActionService_GetDashboard_Favours_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IActionService/GetDashboard_FavoursResponse" message="tns:IActionService_GetDashboard_Favours_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="setDashboard_Favours">
+      <wsdl:input wsaw:Action="http://tempuri.org/IActionService/setDashboard_Favours" message="tns:IActionService_setDashboard_Favours_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IActionService/setDashboard_FavoursResponse" message="tns:IActionService_setDashboard_Favours_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="GetDashboard_Graph_Description">
+      <wsdl:input wsaw:Action="http://tempuri.org/IActionService/GetDashboard_Graph_Description" message="tns:IActionService_GetDashboard_Graph_Description_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IActionService/GetDashboard_Graph_DescriptionResponse" message="tns:IActionService_GetDashboard_Graph_Description_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="SetDashboard_Graph_Description">
+      <wsdl:input wsaw:Action="http://tempuri.org/IActionService/SetDashboard_Graph_Description" message="tns:IActionService_SetDashboard_Graph_Description_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IActionService/SetDashboard_Graph_DescriptionResponse" message="tns:IActionService_SetDashboard_Graph_Description_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="GetDashboard_Traffic_Light_Rules">
+      <wsdl:input wsaw:Action="http://tempuri.org/IActionService/GetDashboard_Traffic_Light_Rules" message="tns:IActionService_GetDashboard_Traffic_Light_Rules_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IActionService/GetDashboard_Traffic_Light_RulesResponse" message="tns:IActionService_GetDashboard_Traffic_Light_Rules_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="SetDashboard_Traffic_Light_Rules">
+      <wsdl:input wsaw:Action="http://tempuri.org/IActionService/SetDashboard_Traffic_Light_Rules" message="tns:IActionService_SetDashboard_Traffic_Light_Rules_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IActionService/SetDashboard_Traffic_Light_RulesResponse" message="tns:IActionService_SetDashboard_Traffic_Light_Rules_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="GetDashboard_Projection">
+      <wsdl:input wsaw:Action="http://tempuri.org/IActionService/GetDashboard_Projection" message="tns:IActionService_GetDashboard_Projection_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IActionService/GetDashboard_ProjectionResponse" message="tns:IActionService_GetDashboard_Projection_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="SetDashboard_Projection">
+      <wsdl:input wsaw:Action="http://tempuri.org/IActionService/SetDashboard_Projection" message="tns:IActionService_SetDashboard_Projection_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IActionService/SetDashboard_ProjectionResponse" message="tns:IActionService_SetDashboard_Projection_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="GetDashboard_TimeAccess">
+      <wsdl:input wsaw:Action="http://tempuri.org/IActionService/GetDashboard_TimeAccess" message="tns:IActionService_GetDashboard_TimeAccess_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IActionService/GetDashboard_TimeAccessResponse" message="tns:IActionService_GetDashboard_TimeAccess_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="SetDashboard_TimeAccess">
+      <wsdl:input wsaw:Action="http://tempuri.org/IActionService/SetDashboard_TimeAccess" message="tns:IActionService_SetDashboard_TimeAccess_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IActionService/SetDashboard_TimeAccessResponse" message="tns:IActionService_SetDashboard_TimeAccess_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="GetDashboard_Target_Base">
+      <wsdl:input wsaw:Action="http://tempuri.org/IActionService/GetDashboard_Target_Base" message="tns:IActionService_GetDashboard_Target_Base_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IActionService/GetDashboard_Target_BaseResponse" message="tns:IActionService_GetDashboard_Target_Base_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="SetDashboard_Target_Base">
+      <wsdl:input wsaw:Action="http://tempuri.org/IActionService/SetDashboard_Target_Base" message="tns:IActionService_SetDashboard_Target_Base_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IActionService/SetDashboard_Target_BaseResponse" message="tns:IActionService_SetDashboard_Target_Base_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="GetPortfolio">
+      <wsdl:input wsaw:Action="http://tempuri.org/IActionService/GetPortfolio" message="tns:IActionService_GetPortfolio_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IActionService/GetPortfolioResponse" message="tns:IActionService_GetPortfolio_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="EncryptConnectionStrings">
+      <wsdl:input wsaw:Action="http://tempuri.org/IActionService/EncryptConnectionStrings" message="tns:IActionService_EncryptConnectionStrings_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IActionService/EncryptConnectionStringsResponse" message="tns:IActionService_EncryptConnectionStrings_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="SignalProjectionImport">
+      <wsdl:input wsaw:Action="http://tempuri.org/IActionService/SignalProjectionImport" message="tns:IActionService_SignalProjectionImport_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IActionService/SignalProjectionImportResponse" message="tns:IActionService_SignalProjectionImport_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="CustomBinding_IActionService" type="tns:IActionService">
+    <wsp:PolicyReference URI="#CustomBinding_IActionService_policy" />
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetToken">
+      <soap12:operation soapAction="http://tempuri.org/IActionService/GetToken" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Login">
+      <soap12:operation soapAction="http://tempuri.org/IActionService/Login" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Logout">
+      <soap12:operation soapAction="http://tempuri.org/IActionService/Logout" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AutoLogin">
+      <soap12:operation soapAction="http://tempuri.org/IActionService/AutoLogin" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangePassword">
+      <soap12:operation soapAction="http://tempuri.org/IActionService/ChangePassword" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ResetPassword">
+      <soap12:operation soapAction="http://tempuri.org/IActionService/ResetPassword" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUsers">
+      <soap12:operation soapAction="http://tempuri.org/IActionService/GetUsers" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetUsers">
+      <soap12:operation soapAction="http://tempuri.org/IActionService/SetUsers" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOrganisationRoles">
+      <soap12:operation soapAction="http://tempuri.org/IActionService/GetOrganisationRoles" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetOrganisationRoles">
+      <soap12:operation soapAction="http://tempuri.org/IActionService/SetOrganisationRoles" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTeams">
+      <soap12:operation soapAction="http://tempuri.org/IActionService/GetTeams" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetTeams">
+      <soap12:operation soapAction="http://tempuri.org/IActionService/SetTeams" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRptCategories">
+      <soap12:operation soapAction="http://tempuri.org/IActionService/GetRptCategories" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetRptCategories">
+      <soap12:operation soapAction="http://tempuri.org/IActionService/SetRptCategories" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOrganisationLevels">
+      <soap12:operation soapAction="http://tempuri.org/IActionService/GetOrganisationLevels" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetOrganisationLevels">
+      <soap12:operation soapAction="http://tempuri.org/IActionService/SetOrganisationLevels" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSystemRoles">
+      <soap12:operation soapAction="http://tempuri.org/IActionService/GetSystemRoles" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetSystemRoles">
+      <soap12:operation soapAction="http://tempuri.org/IActionService/SetSystemRoles" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetExternal_Groups">
+      <soap12:operation soapAction="http://tempuri.org/IActionService/GetExternal_Groups" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetExternal_Groups">
+      <soap12:operation soapAction="http://tempuri.org/IActionService/SetExternal_Groups" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStatus">
+      <soap12:operation soapAction="http://tempuri.org/IActionService/GetStatus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetStatus">
+      <soap12:operation soapAction="http://tempuri.org/IActionService/SetStatus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPermissions">
+      <soap12:operation soapAction="http://tempuri.org/IActionService/GetPermissions" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetPermissions">
+      <soap12:operation soapAction="http://tempuri.org/IActionService/SetPermissions" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSystemRolePermissions">
+      <soap12:operation soapAction="http://tempuri.org/IActionService/GetSystemRolePermissions" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetSystemRolePermissions">
+      <soap12:operation soapAction="http://tempuri.org/IActionService/SetSystemRolePermissions" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetReports">
+      <soap12:operation soapAction="http://tempuri.org/IActionService/GetReports" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetReports">
+      <soap12:operation soapAction="http://tempuri.org/IActionService/SetReports" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSystemPermissions">
+      <soap12:operation soapAction="http://tempuri.org/IActionService/GetSystemPermissions" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetSystemPermissions">
+      <soap12:operation soapAction="http://tempuri.org/IActionService/SetSystemPermissions" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetReportPermissions">
+      <soap12:operation soapAction="http://tempuri.org/IActionService/GetReportPermissions" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetReportPermissions">
+      <soap12:operation soapAction="http://tempuri.org/IActionService/SetReportPermissions" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDashBoards">
+      <soap12:operation soapAction="http://tempuri.org/IActionService/GetDashBoards" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetDashBoards">
+      <soap12:operation soapAction="http://tempuri.org/IActionService/SetDashBoards" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDashboard_OrganisationRole_Levels">
+      <soap12:operation soapAction="http://tempuri.org/IActionService/GetDashboard_OrganisationRole_Levels" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetReport_Organisation_Levels">
+      <soap12:operation soapAction="http://tempuri.org/IActionService/GetReport_Organisation_Levels" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetDashboard_OrganisationRole_Levels">
+      <soap12:operation soapAction="http://tempuri.org/IActionService/SetDashboard_OrganisationRole_Levels" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDashBoardLevels">
+      <soap12:operation soapAction="http://tempuri.org/IActionService/GetDashBoardLevels" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetDashBoardLevels">
+      <soap12:operation soapAction="http://tempuri.org/IActionService/SetDashBoardLevels" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDashboard_Favours">
+      <soap12:operation soapAction="http://tempuri.org/IActionService/GetDashboard_Favours" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setDashboard_Favours">
+      <soap12:operation soapAction="http://tempuri.org/IActionService/setDashboard_Favours" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDashboard_Graph_Description">
+      <soap12:operation soapAction="http://tempuri.org/IActionService/GetDashboard_Graph_Description" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetDashboard_Graph_Description">
+      <soap12:operation soapAction="http://tempuri.org/IActionService/SetDashboard_Graph_Description" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDashboard_Traffic_Light_Rules">
+      <soap12:operation soapAction="http://tempuri.org/IActionService/GetDashboard_Traffic_Light_Rules" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetDashboard_Traffic_Light_Rules">
+      <soap12:operation soapAction="http://tempuri.org/IActionService/SetDashboard_Traffic_Light_Rules" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDashboard_Projection">
+      <soap12:operation soapAction="http://tempuri.org/IActionService/GetDashboard_Projection" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetDashboard_Projection">
+      <soap12:operation soapAction="http://tempuri.org/IActionService/SetDashboard_Projection" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDashboard_TimeAccess">
+      <soap12:operation soapAction="http://tempuri.org/IActionService/GetDashboard_TimeAccess" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetDashboard_TimeAccess">
+      <soap12:operation soapAction="http://tempuri.org/IActionService/SetDashboard_TimeAccess" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDashboard_Target_Base">
+      <soap12:operation soapAction="http://tempuri.org/IActionService/GetDashboard_Target_Base" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetDashboard_Target_Base">
+      <soap12:operation soapAction="http://tempuri.org/IActionService/SetDashboard_Target_Base" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPortfolio">
+      <soap12:operation soapAction="http://tempuri.org/IActionService/GetPortfolio" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EncryptConnectionStrings">
+      <soap12:operation soapAction="http://tempuri.org/IActionService/EncryptConnectionStrings" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SignalProjectionImport">
+      <soap12:operation soapAction="http://tempuri.org/IActionService/SignalProjectionImport" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ActionService">
+    <wsdl:port name="CustomBinding_IActionService" binding="tns:CustomBinding_IActionService">
+      <soap12:address location="https://localhost/dart.service/ActionService.svc" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>https://localhost/dart.service/ActionService.svc</wsa10:Address>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

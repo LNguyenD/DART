@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 12.125, 8.5" name="EmicsModel">
+  <DataContextMoniker Name="/EmicsModelDataContext" />
+  <nestedChildShapes>
+    <classShape Id="01f0c223-d910-4bf4-909d-1c7e62a88e53" absoluteBounds="5.25, 0.5, 2, 1.5891951497395827">
+      <DataClassMoniker Name="/EmicsModelDataContext/BROKER" />
+      <nestedChildShapes>
+        <elementListCompartment Id="5194c7c1-7b52-4e3e-a659-d40e2f8a6d58" absoluteBounds="5.265, 0.96, 1.9700000000000002, 1.0291951497395833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="eae515fb-4e33-4a9f-84cd-17bcbae22584" absoluteBounds="0.5, 0.5, 2, 1.9178898111979166">
+      <DataClassMoniker Name="/EmicsModelDataContext/POLICY_TERM_DETAIL" />
+      <nestedChildShapes>
+        <elementListCompartment Id="9dcb1d5b-bc77-4960-980f-e2905a9b38a2" absoluteBounds="0.51499999999999968, 0.96, 1.9700000000000002, 1.3578898111979165" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="827be460-fba0-431b-a71f-4bc55f7c415c" absoluteBounds="2.75, 0.625, 2, 1.4248478190104166">
+      <DataClassMoniker Name="/EmicsModelDataContext/PAYMENT_TYPE" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c0c6de39-9f37-4f97-b33b-7fcc50ccba4e" absoluteBounds="2.7649999999999997, 1.085, 1.9700000000000002, 0.86484781901041663" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="23fb28e4-58e1-46f9-b536-100ddad3b877" absoluteBounds="7.625, 0.5, 2, 1.9178898111979166">
+      <DataClassMoniker Name="/EmicsModelDataContext/provider" />
+      <nestedChildShapes>
+        <elementListCompartment Id="6073c3cf-1cd7-4643-a113-445961da6074" absoluteBounds="7.64, 0.96, 1.9700000000000002, 1.3578898111979165" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="8ca7825a-e037-48e5-8c44-decabb242cc7" absoluteBounds="9.875, 0.5, 2, 2.7396264648437496">
+      <DataClassMoniker Name="/EmicsModelDataContext/Payment_Recovery" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ba44c851-7d88-459d-ba9b-29c99298d1f1" absoluteBounds="9.89, 0.96, 1.9700000000000002, 2.17962646484375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="1c39f428-2abf-4760-a5e9-56bae05984e0" absoluteBounds="7.625, 2.75, 2, 1.2605004882812496">
+      <DataClassMoniker Name="/EmicsModelDataContext/person" />
+      <nestedChildShapes>
+        <elementListCompartment Id="73922656-d27a-43e6-9df4-965c3e950d5f" absoluteBounds="7.6400000000000006, 3.21, 1.9700000000000002, 0.70050048828125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="4214d7a9-c358-4b01-a8b4-aa8d1e6d7a71" absoluteBounds="5.25, 2.75, 2, 1.4248478190104166">
+      <DataClassMoniker Name="/EmicsModelDataContext/contact_extension" />
+      <nestedChildShapes>
+        <elementListCompartment Id="70cdebdd-6c6d-4039-a59b-c8de2af87e11" absoluteBounds="5.265, 3.21, 1.9700000000000002, 0.86484781901041663" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="e80b36bd-2819-4f0f-bb20-4100d32dc88f" absoluteBounds="2.875, 2.75, 2, 1.4248478190104168">
+      <DataClassMoniker Name="/EmicsModelDataContext/Payment_Description" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a12bd0c2-fc56-4444-abc4-ab97019982a8" absoluteBounds="2.8899999999999997, 3.21, 1.9700000000000002, 0.86484781901041674" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="9b2fdcac-9591-497d-9dbd-13435e62d762" absoluteBounds="0.5, 2.75, 2, 2.5752791341145826">
+      <DataClassMoniker Name="/EmicsModelDataContext/CREDITOR" />
+      <nestedChildShapes>
+        <elementListCompartment Id="9ea9d8e7-ff92-4b16-ac5b-7d923f4e11f1" absoluteBounds="0.51500000000000012, 3.21, 1.9700000000000002, 2.015279134114583" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

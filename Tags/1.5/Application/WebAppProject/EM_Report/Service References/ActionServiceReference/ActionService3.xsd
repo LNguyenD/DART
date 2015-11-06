@@ -1,0 +1,1251 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://www.yourcompany.com/types/" elementFormDefault="qualified" targetNamespace="http://www.yourcompany.com/types/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://localhost/dart.service/ActionService.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import schemaLocation="https://localhost/dart.service/ActionService.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/EM_Report.Domain.Enums" />
+  <xs:import schemaLocation="https://localhost/dart.service/ActionService.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/EM_Report.Domain" />
+  <xs:import schemaLocation="https://localhost/dart.service/ActionService.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/EM_Report.Service.Messages" />
+  <xs:complexType name="TokenRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:RequestBase">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TokenRequest" nillable="true" type="tns:TokenRequest" />
+  <xs:complexType name="RequestBase">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AccessToken" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Action" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ClientTag" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Criteria" nillable="true" type="tns:Criteria" />
+      <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="LoadOptions" nillable="true" type="q1:ArrayOfstring" />
+      <xs:element minOccurs="0" name="RequestId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Version" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RequestBase" nillable="true" type="tns:RequestBase" />
+  <xs:complexType name="Criteria">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="PageIndex" type="xs:int" />
+      <xs:element minOccurs="0" name="PageSize" type="xs:int" />
+      <xs:element minOccurs="0" name="SearchKeyWord" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SortExpression" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Status" type="xs:short" />
+      <xs:element minOccurs="0" name="SystemId" type="xs:int" />
+      <xs:element minOccurs="0" name="SystemName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Criteria" nillable="true" type="tns:Criteria" />
+  <xs:complexType name="TokenResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ResponseBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AccessToken" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TokenResponse" nillable="true" type="tns:TokenResponse" />
+  <xs:complexType name="ResponseBase">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Acknowledge" type="tns:AcknowledgeType" />
+      <xs:element minOccurs="0" name="Build" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CorrelationId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ReservationExpires" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ReservationId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RowsAffected" type="xs:int" />
+      <xs:element minOccurs="0" name="TotalItemCount" type="xs:long" />
+      <xs:element minOccurs="0" name="Version" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ResponseBase" nillable="true" type="tns:ResponseBase" />
+  <xs:simpleType name="AcknowledgeType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Failure" />
+      <xs:enumeration value="Success" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="AcknowledgeType" nillable="true" type="tns:AcknowledgeType" />
+  <xs:complexType name="LoginRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:RequestBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Is_RememberMe" type="xs:boolean" />
+          <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/EM_Report.Domain.Enums" minOccurs="0" name="LoginType" type="q2:LoginType" />
+          <xs:element minOccurs="0" name="Password" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SystemId" type="xs:int" />
+          <xs:element minOccurs="0" name="UserId" type="xs:int" />
+          <xs:element minOccurs="0" name="UserName" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="LoginRequest" nillable="true" type="tns:LoginRequest" />
+  <xs:complexType name="LoginResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ResponseBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="SessionId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="System_Role_Permissions" nillable="true" type="tns:ArrayOfSystem_Role_Permissions" />
+          <xs:element minOccurs="0" name="Uri" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="User" nillable="true" type="tns:User" />
+          <xs:element minOccurs="0" name="defaultSystemName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="returnValue" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="LoginResponse" nillable="true" type="tns:LoginResponse" />
+  <xs:complexType name="ArrayOfSystem_Role_Permissions">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="System_Role_Permissions" nillable="true" type="tns:System_Role_Permissions" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSystem_Role_Permissions" nillable="true" type="tns:ArrayOfSystem_Role_Permissions" />
+  <xs:complexType name="System_Role_Permissions">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Create_Date" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Owner" type="xs:int" />
+      <xs:element minOccurs="0" name="OwnerName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PermissionId" type="xs:int" />
+      <xs:element minOccurs="0" name="PermissionName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Status" type="xs:short" />
+      <xs:element minOccurs="0" name="StatusName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="System_PermissionId" type="xs:int" />
+      <xs:element minOccurs="0" name="System_PermissionName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="System_RoleId" type="xs:int" />
+      <xs:element minOccurs="0" name="System_RoleName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UpdatedBy" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="System_Role_Permissions" nillable="true" type="tns:System_Role_Permissions" />
+  <xs:complexType name="User">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Address" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ConfirmPassword" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Create_Date" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Default_System_Id" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="External_GroupId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="FirstName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Is_External_User" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Is_System_User" type="xs:boolean" />
+      <xs:element minOccurs="0" name="LandingPage_Url" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LastName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Last_Online_Login_Date" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="LevelId" type="xs:int" />
+      <xs:element minOccurs="0" name="Online_Locked_Until_Datetime" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Online_No_Of_Login_Attempts" nillable="true" type="xs:short" />
+      <xs:element xmlns:q3="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Organisation_LevelIdList" nillable="true" type="q3:ArrayOfKeyValueOfstringint" />
+      <xs:element xmlns:q4="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Organisation_RoleIdList" nillable="true" type="q4:ArrayOfKeyValueOfstringint" />
+      <xs:element minOccurs="0" name="Owner" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="OwnerName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Password" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Phone" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Status" type="xs:short" />
+      <xs:element minOccurs="0" name="StatusName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SystemId" type="xs:int" />
+      <xs:element minOccurs="0" name="System_RoleId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Systems" nillable="true" type="tns:ArrayOfSystems" />
+      <xs:element xmlns:q5="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="TeamIdList" nillable="true" type="q5:ArrayOfKeyValueOfstringint" />
+      <xs:element minOccurs="0" name="UpdatedBy" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="UserId" type="xs:int" />
+      <xs:element minOccurs="0" name="UserName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="User" nillable="true" type="tns:User" />
+  <xs:complexType name="ArrayOfSystems">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Systems" nillable="true" type="tns:Systems" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSystems" nillable="true" type="tns:ArrayOfSystems" />
+  <xs:complexType name="Systems">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Create_Date" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LevelId" type="xs:int" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Owner" type="xs:int" />
+      <xs:element minOccurs="0" name="Status" type="xs:short" />
+      <xs:element minOccurs="0" name="SystemId" type="xs:int" />
+      <xs:element minOccurs="0" name="UpdatedBy" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Systems" nillable="true" type="tns:Systems" />
+  <xs:complexType name="LogoutRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:RequestBase">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="LogoutRequest" nillable="true" type="tns:LogoutRequest" />
+  <xs:complexType name="LogoutResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ResponseBase">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="LogoutResponse" nillable="true" type="tns:LogoutResponse" />
+  <xs:complexType name="ChangePasswordRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:RequestBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ConfirmPassword" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="NewPassword" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="OldPassword" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="UserId" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ChangePasswordRequest" nillable="true" type="tns:ChangePasswordRequest" />
+  <xs:complexType name="ChangePasswordResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ResponseBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="returnValue" type="xs:boolean" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ChangePasswordResponse" nillable="true" type="tns:ChangePasswordResponse" />
+  <xs:complexType name="ResetPasswordRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:RequestBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Password" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="UserName_Email" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ResetPasswordRequest" nillable="true" type="tns:ResetPasswordRequest" />
+  <xs:complexType name="ResetPasswordResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ResponseBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="returnValue" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ResetPasswordResponse" nillable="true" type="tns:ResetPasswordResponse" />
+  <xs:complexType name="UserRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:RequestBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="User" nillable="true" type="tns:User" />
+          <xs:element minOccurs="0" name="UserId" type="xs:int" />
+          <xs:element minOccurs="0" name="UserName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="UserType" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="UserRequest" nillable="true" type="tns:UserRequest" />
+  <xs:complexType name="UserResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ResponseBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Systems" nillable="true" type="tns:ArrayOfSystems" />
+          <xs:element minOccurs="0" name="User" nillable="true" type="tns:User" />
+          <xs:element minOccurs="0" name="Users" nillable="true" type="tns:ArrayOfUser" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="UserResponse" nillable="true" type="tns:UserResponse" />
+  <xs:complexType name="ArrayOfUser">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="User" nillable="true" type="tns:User" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfUser" nillable="true" type="tns:ArrayOfUser" />
+  <xs:complexType name="Organisation_RolesRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:RequestBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="LevelId" type="xs:int" />
+          <xs:element minOccurs="0" name="RoleId" type="xs:int" />
+          <xs:element minOccurs="0" name="Roles" nillable="true" type="tns:Organisation_Roles" />
+          <xs:element minOccurs="0" name="UserId" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Organisation_RolesRequest" nillable="true" type="tns:Organisation_RolesRequest" />
+  <xs:complexType name="Organisation_Roles">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Create_Date" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LevelId" type="xs:int" />
+      <xs:element minOccurs="0" name="LevelName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Organisation_RoleId" type="xs:int" />
+      <xs:element minOccurs="0" name="Owner" type="xs:int" />
+      <xs:element minOccurs="0" name="OwnerName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Status" type="xs:short" />
+      <xs:element minOccurs="0" name="StatusName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SystemId" type="xs:int" />
+      <xs:element minOccurs="0" name="UpdatedBy" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Organisation_Roles" nillable="true" type="tns:Organisation_Roles" />
+  <xs:complexType name="Organisation_RolesResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ResponseBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="IsTeamLeaderOrAbove" type="xs:boolean" />
+          <xs:element minOccurs="0" name="Role" nillable="true" type="tns:Organisation_Roles" />
+          <xs:element minOccurs="0" name="Roles" nillable="true" type="tns:ArrayOfOrganisation_Roles" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Organisation_RolesResponse" nillable="true" type="tns:Organisation_RolesResponse" />
+  <xs:complexType name="ArrayOfOrganisation_Roles">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Organisation_Roles" nillable="true" type="tns:Organisation_Roles" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfOrganisation_Roles" nillable="true" type="tns:ArrayOfOrganisation_Roles" />
+  <xs:complexType name="TeamRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:RequestBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Site" nillable="true" type="xs:string" />
+          <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/EM_Report.Domain" minOccurs="0" name="Team" nillable="true" type="q6:Team" />
+          <xs:element minOccurs="0" name="TeamId" type="xs:int" />
+          <xs:element minOccurs="0" name="UserName" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TeamRequest" nillable="true" type="tns:TeamRequest" />
+  <xs:complexType name="TeamResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ResponseBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="IsRig" type="xs:boolean" />
+          <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/EM_Report.Domain" minOccurs="0" name="Team" nillable="true" type="q7:Team" />
+          <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/EM_Report.Domain" minOccurs="0" name="Teams" nillable="true" type="q8:ArrayOfTeam" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TeamResponse" nillable="true" type="tns:TeamResponse" />
+  <xs:complexType name="ReportCategoryRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:RequestBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CategoryId" type="xs:int" />
+          <xs:element minOccurs="0" name="ReportCategory" nillable="true" type="tns:Report_Categories" />
+          <xs:element minOccurs="0" name="UserId" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ReportCategoryRequest" nillable="true" type="tns:ReportCategoryRequest" />
+  <xs:complexType name="Report_Categories">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CategoryId" type="xs:int" />
+      <xs:element minOccurs="0" name="Create_Date" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Owner" type="xs:int" />
+      <xs:element minOccurs="0" name="OwnerName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Status" type="xs:short" />
+      <xs:element minOccurs="0" name="StatusName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TotalAccessItem" type="xs:int" />
+      <xs:element minOccurs="0" name="UpdatedBy" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Report_Categories" nillable="true" type="tns:Report_Categories" />
+  <xs:complexType name="ReportCategoryResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ResponseBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ReportCategories" nillable="true" type="tns:ArrayOfReport_Categories" />
+          <xs:element minOccurs="0" name="ReportCategory" nillable="true" type="tns:Report_Categories" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ReportCategoryResponse" nillable="true" type="tns:ReportCategoryResponse" />
+  <xs:complexType name="ArrayOfReport_Categories">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Report_Categories" nillable="true" type="tns:Report_Categories" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfReport_Categories" nillable="true" type="tns:ArrayOfReport_Categories" />
+  <xs:complexType name="Organisation_LevelsRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:RequestBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Data" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Level" nillable="true" type="tns:Organisation_Levels" />
+          <xs:element minOccurs="0" name="LevelId" type="xs:int" />
+          <xs:element minOccurs="0" name="UpdatedBy" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Organisation_LevelsRequest" nillable="true" type="tns:Organisation_LevelsRequest" />
+  <xs:complexType name="Organisation_Levels">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Create_Date" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LevelId" type="xs:int" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Owner" type="xs:int" />
+      <xs:element minOccurs="0" name="OwnerName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ParentLevelName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Sort" type="xs:int" />
+      <xs:element minOccurs="0" name="Status" type="xs:short" />
+      <xs:element minOccurs="0" name="StatusName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SystemId" type="xs:int" />
+      <xs:element minOccurs="0" name="UpdatedBy" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Organisation_Levels" nillable="true" type="tns:Organisation_Levels" />
+  <xs:complexType name="Organisation_LevelsResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ResponseBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Level" nillable="true" type="tns:Organisation_Levels" />
+          <xs:element minOccurs="0" name="Levels" nillable="true" type="tns:ArrayOfOrganisation_Levels" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Organisation_LevelsResponse" nillable="true" type="tns:Organisation_LevelsResponse" />
+  <xs:complexType name="ArrayOfOrganisation_Levels">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Organisation_Levels" nillable="true" type="tns:Organisation_Levels" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfOrganisation_Levels" nillable="true" type="tns:ArrayOfOrganisation_Levels" />
+  <xs:complexType name="System_RolesRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:RequestBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="SystemRole" nillable="true" type="tns:System_Roles" />
+          <xs:element minOccurs="0" name="SystemRoles" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="System_RoleId" type="xs:long" />
+          <xs:element minOccurs="0" name="UpdatedBy" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="System_RolesRequest" nillable="true" type="tns:System_RolesRequest" />
+  <xs:complexType name="System_Roles">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="System_RoleId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="System_Roles" nillable="true" type="tns:System_Roles" />
+  <xs:complexType name="System_RolesResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ResponseBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="IsSaveSuccess" type="xs:boolean" />
+          <xs:element minOccurs="0" name="SystemRole" nillable="true" type="tns:System_Roles" />
+          <xs:element minOccurs="0" name="SystemRoles" nillable="true" type="tns:ArrayOfSystem_Roles" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="System_RolesResponse" nillable="true" type="tns:System_RolesResponse" />
+  <xs:complexType name="ArrayOfSystem_Roles">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="System_Roles" nillable="true" type="tns:System_Roles" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSystem_Roles" nillable="true" type="tns:ArrayOfSystem_Roles" />
+  <xs:complexType name="External_GroupRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:RequestBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="External_Group" nillable="true" type="tns:External_Group" />
+          <xs:element minOccurs="0" name="External_GroupId" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="External_GroupRequest" nillable="true" type="tns:External_GroupRequest" />
+  <xs:complexType name="External_Group">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Create_Date" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="External_GroupId" type="xs:int" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Owner" type="xs:int" />
+      <xs:element minOccurs="0" name="OwnerName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Status" type="xs:short" />
+      <xs:element minOccurs="0" name="StatusName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UpdatedBy" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="External_Group" nillable="true" type="tns:External_Group" />
+  <xs:complexType name="External_GroupResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ResponseBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="External_Group" nillable="true" type="tns:External_Group" />
+          <xs:element minOccurs="0" name="External_Groups" nillable="true" type="tns:ArrayOfExternal_Group" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="External_GroupResponse" nillable="true" type="tns:External_GroupResponse" />
+  <xs:complexType name="ArrayOfExternal_Group">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="External_Group" nillable="true" type="tns:External_Group" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfExternal_Group" nillable="true" type="tns:ArrayOfExternal_Group" />
+  <xs:complexType name="StatusRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:RequestBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Criteria" nillable="true" type="tns:Criteria" />
+          <xs:element minOccurs="0" name="Status" nillable="true" type="tns:Status" />
+          <xs:element minOccurs="0" name="StatusId" type="xs:short" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="StatusRequest" nillable="true" type="tns:StatusRequest" />
+  <xs:complexType name="Status">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StatusId" type="xs:short" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Status" nillable="true" type="tns:Status" />
+  <xs:complexType name="StatusResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ResponseBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Status" nillable="true" type="tns:Status" />
+          <xs:element minOccurs="0" name="Statuses" nillable="true" type="tns:ArrayOfStatus" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="StatusResponse" nillable="true" type="tns:StatusResponse" />
+  <xs:complexType name="ArrayOfStatus">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Status" nillable="true" type="tns:Status" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfStatus" nillable="true" type="tns:ArrayOfStatus" />
+  <xs:complexType name="PermissionRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:RequestBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Permission" nillable="true" type="tns:Permission" />
+          <xs:element minOccurs="0" name="PermissionId" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PermissionRequest" nillable="true" type="tns:PermissionRequest" />
+  <xs:complexType name="Permission">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PermissionId" type="xs:int" />
+      <xs:element minOccurs="0" name="Status" nillable="true" type="xs:short" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Permission" nillable="true" type="tns:Permission" />
+  <xs:complexType name="PermissionResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ResponseBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Permission" nillable="true" type="tns:Permission" />
+          <xs:element minOccurs="0" name="Permissions" nillable="true" type="tns:ArrayOfPermission" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PermissionResponse" nillable="true" type="tns:PermissionResponse" />
+  <xs:complexType name="ArrayOfPermission">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Permission" nillable="true" type="tns:Permission" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPermission" nillable="true" type="tns:ArrayOfPermission" />
+  <xs:complexType name="SystemRole_PermissionsRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:RequestBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="PermissionId" type="xs:int" />
+          <xs:element minOccurs="0" name="SysRolePermission" nillable="true" type="tns:System_Role_Permissions" />
+          <xs:element minOccurs="0" name="System_PermissionId" type="xs:int" />
+          <xs:element minOccurs="0" name="System_RoleId" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SystemRole_PermissionsRequest" nillable="true" type="tns:SystemRole_PermissionsRequest" />
+  <xs:complexType name="SystemRole_PermissionsResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ResponseBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="SystemRolePermission" nillable="true" type="tns:System_Role_Permissions" />
+          <xs:element minOccurs="0" name="SystemRolePermissions" nillable="true" type="tns:ArrayOfSystem_Role_Permissions" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SystemRole_PermissionsResponse" nillable="true" type="tns:SystemRole_PermissionsResponse" />
+  <xs:complexType name="ReportRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:RequestBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CategoryId" type="xs:int" />
+          <xs:element minOccurs="0" name="IsForSubscription" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsSystemUser" type="xs:boolean" />
+          <xs:element minOccurs="0" name="Report" nillable="true" type="tns:Report" />
+          <xs:element minOccurs="0" name="ReportId" type="xs:int" />
+          <xs:element minOccurs="0" name="Url" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="UserId" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ReportRequest" nillable="true" type="tns:ReportRequest" />
+  <xs:complexType name="Report">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CategoryId" type="xs:int" />
+      <xs:element minOccurs="0" name="CategoryName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Create_Date" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element xmlns:q9="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ExcludeUserList" nillable="true" type="q9:ArrayOfanyType" />
+      <xs:element minOccurs="0" name="ForSubscription" type="xs:boolean" />
+      <xs:element xmlns:q10="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="IncludeUserList" nillable="true" type="q10:ArrayOfanyType" />
+      <xs:element minOccurs="0" name="Is_Favorite" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Owner" type="xs:int" />
+      <xs:element minOccurs="0" name="OwnerName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ReportId" type="xs:int" />
+      <xs:element minOccurs="0" name="Report_OrganisationRole_Levels" nillable="true" type="tns:ArrayOfReport_Organisation_Levels" />
+      <xs:element minOccurs="0" name="ShortName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Status" type="xs:short" />
+      <xs:element minOccurs="0" name="StatusName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UpdatedBy" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Url" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Report" nillable="true" type="tns:Report" />
+  <xs:complexType name="ArrayOfReport_Organisation_Levels">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Report_Organisation_Levels" nillable="true" type="tns:Report_Organisation_Levels" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfReport_Organisation_Levels" nillable="true" type="tns:ArrayOfReport_Organisation_Levels" />
+  <xs:complexType name="Report_Organisation_Levels">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Create_Date" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="LevelId" type="xs:int" />
+      <xs:element minOccurs="0" name="LevelName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Owner" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="OwnerName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ReportId" type="xs:int" />
+      <xs:element minOccurs="0" name="ReportName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UpdatedBy" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Report_Organisation_Levels" nillable="true" type="tns:Report_Organisation_Levels" />
+  <xs:complexType name="ReportResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ResponseBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Report" nillable="true" type="tns:Report" />
+          <xs:element minOccurs="0" name="Reports" nillable="true" type="tns:ArrayOfReport" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ReportResponse" nillable="true" type="tns:ReportResponse" />
+  <xs:complexType name="ArrayOfReport">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Report" nillable="true" type="tns:Report" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfReport" nillable="true" type="tns:ArrayOfReport" />
+  <xs:complexType name="System_PermissionRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:RequestBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="SystemPermission" nillable="true" type="tns:System_Permission" />
+          <xs:element minOccurs="0" name="System_PermissionId" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="System_PermissionRequest" nillable="true" type="tns:System_PermissionRequest" />
+  <xs:complexType name="System_Permission">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Status" nillable="true" type="xs:short" />
+      <xs:element minOccurs="0" name="System_PermissionId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="System_Permission" nillable="true" type="tns:System_Permission" />
+  <xs:complexType name="System_PermissionResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ResponseBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="SystemPermission" nillable="true" type="tns:System_Permission" />
+          <xs:element minOccurs="0" name="SystemPermissions" nillable="true" type="tns:ArrayOfSystem_Permission" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="System_PermissionResponse" nillable="true" type="tns:System_PermissionResponse" />
+  <xs:complexType name="ArrayOfSystem_Permission">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="System_Permission" nillable="true" type="tns:System_Permission" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSystem_Permission" nillable="true" type="tns:ArrayOfSystem_Permission" />
+  <xs:complexType name="ReportPermissionRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:RequestBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ReportExternalAccess" nillable="true" type="tns:Report_External_Access" />
+          <xs:element minOccurs="0" name="ReportExternalAccesses" nillable="true" type="tns:ArrayOfReport_External_Access" />
+          <xs:element minOccurs="0" name="ReportId" type="xs:int" />
+          <xs:element minOccurs="0" name="ReportOrganisationLevel" nillable="true" type="tns:Report_Organisation_Levels" />
+          <xs:element minOccurs="0" name="ReportPermission" nillable="true" type="tns:ReportPermission" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ReportPermissionRequest" nillable="true" type="tns:ReportPermissionRequest" />
+  <xs:complexType name="Report_External_Access">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Create_Date" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ExternalGroupName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="External_GroupId" type="xs:int" />
+      <xs:element minOccurs="0" name="Owner" type="xs:int" />
+      <xs:element minOccurs="0" name="OwnerName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ReportId" type="xs:int" />
+      <xs:element minOccurs="0" name="ReportName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UpdatedBy" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Report_External_Access" nillable="true" type="tns:Report_External_Access" />
+  <xs:complexType name="ArrayOfReport_External_Access">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Report_External_Access" nillable="true" type="tns:Report_External_Access" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfReport_External_Access" nillable="true" type="tns:ArrayOfReport_External_Access" />
+  <xs:complexType name="ReportPermission">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ReportExternalAccessList" nillable="true" type="tns:ArrayOfReport_External_Access" />
+      <xs:element minOccurs="0" name="ReportId" type="xs:int" />
+      <xs:element minOccurs="0" name="ReportOrganisationLevelList" nillable="true" type="tns:ArrayOfReport_Organisation_Levels" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ReportPermission" nillable="true" type="tns:ReportPermission" />
+  <xs:complexType name="ReportPermissionResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ResponseBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ReportPermission" nillable="true" type="tns:ReportPermission" />
+          <xs:element minOccurs="0" name="ReportPermissions" nillable="true" type="tns:ArrayOfReportPermission" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ReportPermissionResponse" nillable="true" type="tns:ReportPermissionResponse" />
+  <xs:complexType name="ArrayOfReportPermission">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ReportPermission" nillable="true" type="tns:ReportPermission" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfReportPermission" nillable="true" type="tns:ArrayOfReportPermission" />
+  <xs:complexType name="DashboardRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:RequestBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Dashboard" nillable="true" type="tns:Dashboard" />
+          <xs:element minOccurs="0" name="DashboardId" type="xs:int" />
+          <xs:element minOccurs="0" name="IsSystemUser" type="xs:boolean" />
+          <xs:element minOccurs="0" name="SystemsId" type="xs:int" />
+          <xs:element minOccurs="0" name="Url" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="UserId" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DashboardRequest" nillable="true" type="tns:DashboardRequest" />
+  <xs:complexType name="Dashboard">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Create_Date" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DashboardId" type="xs:int" />
+      <xs:element minOccurs="0" name="Dashboard_OrganisationRole_Levels" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Owner" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="OwnerName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Status" nillable="true" type="xs:short" />
+      <xs:element minOccurs="0" name="StatusName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SystemId" type="xs:int" />
+      <xs:element minOccurs="0" name="UpdatedBy" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Url" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Dashboard" nillable="true" type="tns:Dashboard" />
+  <xs:complexType name="DashboardResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ResponseBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Dashboard" nillable="true" type="tns:Dashboard" />
+          <xs:element minOccurs="0" name="Dashboard_Traffic_Light_Rules" nillable="true" type="tns:ArrayOfDashboard_Traffic_Light_Rule" />
+          <xs:element minOccurs="0" name="Dashboards" nillable="true" type="tns:ArrayOfDashboard" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DashboardResponse" nillable="true" type="tns:DashboardResponse" />
+  <xs:complexType name="ArrayOfDashboard_Traffic_Light_Rule">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Dashboard_Traffic_Light_Rule" nillable="true" type="tns:Dashboard_Traffic_Light_Rule" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDashboard_Traffic_Light_Rule" nillable="true" type="tns:ArrayOfDashboard_Traffic_Light_Rule" />
+  <xs:complexType name="Dashboard_Traffic_Light_Rule">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Color" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Create_Date" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DashboardType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FromValue" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="ImageUrl" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Measure" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Owner" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Status" nillable="true" type="xs:short" />
+      <xs:element minOccurs="0" name="Sub_Value" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SystemId" type="xs:int" />
+      <xs:element minOccurs="0" name="ToValue" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="Type" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UpdatedBy" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Value" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Dashboard_Traffic_Light_Rule" nillable="true" type="tns:Dashboard_Traffic_Light_Rule" />
+  <xs:complexType name="ArrayOfDashboard">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Dashboard" nillable="true" type="tns:Dashboard" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDashboard" nillable="true" type="tns:ArrayOfDashboard" />
+  <xs:complexType name="Dashboard_OrganisationRole_LevelsRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:RequestBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DashboardId" type="xs:int" />
+          <xs:element minOccurs="0" name="DashboardLevelId" type="xs:int" />
+          <xs:element minOccurs="0" name="DashboardOrganisationlevelId" type="xs:int" />
+          <xs:element minOccurs="0" name="Dashboard_OrganisationRole_Level" nillable="true" type="tns:Dashboard_OrganisationRole_Levels" />
+          <xs:element minOccurs="0" name="LevelId" type="xs:int" />
+          <xs:element xmlns:q11="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="LevelIdList" nillable="true" type="q11:ArrayOfint" />
+          <xs:element minOccurs="0" name="Url" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Dashboard_OrganisationRole_LevelsRequest" nillable="true" type="tns:Dashboard_OrganisationRole_LevelsRequest" />
+  <xs:complexType name="Dashboard_OrganisationRole_Levels">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Create_Date" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DashboardId" type="xs:int" />
+      <xs:element minOccurs="0" name="DashboardLevelId" type="xs:int" />
+      <xs:element minOccurs="0" name="DashboardOrganisationlevelId" type="xs:int" />
+      <xs:element minOccurs="0" name="LevelId" type="xs:int" />
+      <xs:element minOccurs="0" name="Owner" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="UpdatedBy" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Dashboard_OrganisationRole_Levels" nillable="true" type="tns:Dashboard_OrganisationRole_Levels" />
+  <xs:complexType name="Dashboard_OrganisationRole_LevelsResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ResponseBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Dashboard_OrganisationRole_Level" nillable="true" type="tns:Dashboard_OrganisationRole_Levels" />
+          <xs:element minOccurs="0" name="Dashboard_OrganisationRole_Levels" nillable="true" type="tns:ArrayOfDashboard_OrganisationRole_Levels" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Dashboard_OrganisationRole_LevelsResponse" nillable="true" type="tns:Dashboard_OrganisationRole_LevelsResponse" />
+  <xs:complexType name="ArrayOfDashboard_OrganisationRole_Levels">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Dashboard_OrganisationRole_Levels" nillable="true" type="tns:Dashboard_OrganisationRole_Levels" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDashboard_OrganisationRole_Levels" nillable="true" type="tns:ArrayOfDashboard_OrganisationRole_Levels" />
+  <xs:complexType name="Report_Organisation_LevelsRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:RequestBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="LevelId" type="xs:int" />
+          <xs:element minOccurs="0" name="ReportOrganisationLevel" nillable="true" type="tns:Report_Organisation_Levels" />
+          <xs:element minOccurs="0" name="Url" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Report_Organisation_LevelsRequest" nillable="true" type="tns:Report_Organisation_LevelsRequest" />
+  <xs:complexType name="Report_Organisation_LevelsResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ResponseBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Report_Organisation_Level" nillable="true" type="tns:Report_Organisation_Levels" />
+          <xs:element minOccurs="0" name="Report_Organisation_Levels" nillable="true" type="tns:ArrayOfReport_Organisation_Levels" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Report_Organisation_LevelsResponse" nillable="true" type="tns:Report_Organisation_LevelsResponse" />
+  <xs:complexType name="Dashboard_LevelsRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:RequestBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DashboardLevelId" type="xs:int" />
+          <xs:element minOccurs="0" name="DashboardLevels" nillable="true" type="tns:Dashboard_Levels" />
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Value" type="xs:short" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Dashboard_LevelsRequest" nillable="true" type="tns:Dashboard_LevelsRequest" />
+  <xs:complexType name="Dashboard_Levels">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Create_Date" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DashboardLevelId" type="xs:int" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Owner" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="OwnerName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Sort" type="xs:short" />
+      <xs:element minOccurs="0" name="Status" nillable="true" type="xs:short" />
+      <xs:element minOccurs="0" name="StatusName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UpdatedBy" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Dashboard_Levels" nillable="true" type="tns:Dashboard_Levels" />
+  <xs:complexType name="Dashboard_LevelsResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ResponseBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DashboardLevels" nillable="true" type="tns:Dashboard_Levels" />
+          <xs:element minOccurs="0" name="DashboardLevelses" nillable="true" type="tns:ArrayOfDashboard_Levels" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Dashboard_LevelsResponse" nillable="true" type="tns:Dashboard_LevelsResponse" />
+  <xs:complexType name="ArrayOfDashboard_Levels">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Dashboard_Levels" nillable="true" type="tns:Dashboard_Levels" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDashboard_Levels" nillable="true" type="tns:ArrayOfDashboard_Levels" />
+  <xs:complexType name="Dashboard_FavoursRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:RequestBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Dashboard_Favours" nillable="true" type="tns:Dashboard_Favours" />
+          <xs:element minOccurs="0" name="FavourId" type="xs:int" />
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="UpdatedBy" type="xs:int" />
+          <xs:element minOccurs="0" name="UserId" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Dashboard_FavoursRequest" nillable="true" type="tns:Dashboard_FavoursRequest" />
+  <xs:complexType name="Dashboard_Favours">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Create_Date" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FavourId" type="xs:int" />
+      <xs:element minOccurs="0" name="Is_Landing_Page" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Owner" type="xs:int" />
+      <xs:element minOccurs="0" name="OwnerName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Status" type="xs:short" />
+      <xs:element minOccurs="0" name="StatusName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UpdateBy" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Url" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UserId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Dashboard_Favours" nillable="true" type="tns:Dashboard_Favours" />
+  <xs:complexType name="Dashboard_FavoursResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ResponseBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Dashboard_Favour" nillable="true" type="tns:Dashboard_Favours" />
+          <xs:element minOccurs="0" name="Dashboard_Favours" nillable="true" type="tns:ArrayOfDashboard_Favours" />
+          <xs:element minOccurs="0" name="IsSaveSuccess" type="xs:boolean" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Dashboard_FavoursResponse" nillable="true" type="tns:Dashboard_FavoursResponse" />
+  <xs:complexType name="ArrayOfDashboard_Favours">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Dashboard_Favours" nillable="true" type="tns:Dashboard_Favours" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDashboard_Favours" nillable="true" type="tns:ArrayOfDashboard_Favours" />
+  <xs:complexType name="Dashboard_Graph_DescriptionRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:RequestBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Dashboard_Graph_Descriptions" nillable="true" type="tns:Dashboard_Graph_Description" />
+          <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DescriptionId" type="xs:int" />
+          <xs:element minOccurs="0" name="SystemId" type="xs:int" />
+          <xs:element minOccurs="0" name="Type" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Dashboard_Graph_DescriptionRequest" nillable="true" type="tns:Dashboard_Graph_DescriptionRequest" />
+  <xs:complexType name="Dashboard_Graph_Description">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Create_Date" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DescriptionId" type="xs:int" />
+      <xs:element minOccurs="0" name="Owner" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Status" nillable="true" type="xs:short" />
+      <xs:element minOccurs="0" name="SystemId" type="xs:int" />
+      <xs:element minOccurs="0" name="Type" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UpdatedBy" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Dashboard_Graph_Description" nillable="true" type="tns:Dashboard_Graph_Description" />
+  <xs:complexType name="Dashboard_Graph_DescriptionResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ResponseBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Dashboard_Graph_Description" nillable="true" type="tns:Dashboard_Graph_Description" />
+          <xs:element minOccurs="0" name="Dashboard_Graph_Descriptions" nillable="true" type="tns:ArrayOfDashboard_Graph_Description" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Dashboard_Graph_DescriptionResponse" nillable="true" type="tns:Dashboard_Graph_DescriptionResponse" />
+  <xs:complexType name="ArrayOfDashboard_Graph_Description">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Dashboard_Graph_Description" nillable="true" type="tns:Dashboard_Graph_Description" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDashboard_Graph_Description" nillable="true" type="tns:ArrayOfDashboard_Graph_Description" />
+  <xs:complexType name="Dashboard_Traffic_Light_RulesRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:RequestBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DashboardType" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Dashboard_Traffic_Light_Rules" nillable="true" type="tns:Dashboard_Traffic_Light_Rule" />
+          <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="FromValue" nillable="true" type="xs:double" />
+          <xs:element minOccurs="0" name="Id" type="xs:int" />
+          <xs:element minOccurs="0" name="Measure" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Sub_Value" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SystemId" type="xs:int" />
+          <xs:element minOccurs="0" name="ToValue" nillable="true" type="xs:double" />
+          <xs:element minOccurs="0" name="Type" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="UpdatedBy" type="xs:int" />
+          <xs:element minOccurs="0" name="Value" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="filteredFlag" type="xs:boolean" />
+          <xs:element minOccurs="0" name="parseString" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Dashboard_Traffic_Light_RulesRequest" nillable="true" type="tns:Dashboard_Traffic_Light_RulesRequest" />
+  <xs:complexType name="Dashboard_Traffic_Light_RulesResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ResponseBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Dashboard_Traffic_Light_Rule" nillable="true" type="tns:Dashboard_Traffic_Light_Rule" />
+          <xs:element minOccurs="0" name="Dashboard_Traffic_Light_Rules" nillable="true" type="tns:ArrayOfDashboard_Traffic_Light_Rule" />
+          <xs:element minOccurs="0" name="parseString" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Dashboard_Traffic_Light_RulesResponse" nillable="true" type="tns:Dashboard_Traffic_Light_RulesResponse" />
+  <xs:complexType name="Dashboard_ProjectionRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:RequestBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Dashboard_Projection" nillable="true" type="tns:Dashboard_Projection" />
+          <xs:element minOccurs="0" name="Id" type="xs:int" />
+          <xs:element minOccurs="0" name="ProjectionDataPath" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Time_Id" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Type" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Unit_Name" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Unit_Type" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Dashboard_ProjectionRequest" nillable="true" type="tns:Dashboard_ProjectionRequest" />
+  <xs:complexType name="Dashboard_Projection">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Projection" type="xs:double" />
+      <xs:element minOccurs="0" name="Time_Id" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Type" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Unit_Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Unit_Type" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Dashboard_Projection" nillable="true" type="tns:Dashboard_Projection" />
+  <xs:complexType name="Dashboard_ProjectionResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ResponseBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Dashboard_Projection" nillable="true" type="tns:Dashboard_Projection" />
+          <xs:element minOccurs="0" name="Dashboard_Projections" nillable="true" type="tns:ArrayOfDashboard_Projection" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Dashboard_ProjectionResponse" nillable="true" type="tns:Dashboard_ProjectionResponse" />
+  <xs:complexType name="ArrayOfDashboard_Projection">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Dashboard_Projection" nillable="true" type="tns:Dashboard_Projection" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDashboard_Projection" nillable="true" type="tns:ArrayOfDashboard_Projection" />
+  <xs:complexType name="Dashboard_TimeAccessRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:RequestBase">
+        <xs:sequence>
+          <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/EM_Report.Domain" minOccurs="0" name="Dashboard_TimeAccess" nillable="true" type="q12:Dashboard_TimeAccess" />
+          <xs:element minOccurs="0" name="Id" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Dashboard_TimeAccessRequest" nillable="true" type="tns:Dashboard_TimeAccessRequest" />
+  <xs:complexType name="Dashboard_TimeAccessResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ResponseBase">
+        <xs:sequence>
+          <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/EM_Report.Domain" minOccurs="0" name="Dashboard_TimeAccess" nillable="true" type="q13:Dashboard_TimeAccess" />
+          <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/EM_Report.Domain" minOccurs="0" name="Dashboard_TimeAccesss" nillable="true" type="q14:ArrayOfDashboard_TimeAccess" />
+          <xs:element minOccurs="0" name="IsRig" type="xs:boolean" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Dashboard_TimeAccessResponse" nillable="true" type="tns:Dashboard_TimeAccessResponse" />
+  <xs:complexType name="Dashboard_Target_BaseRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:RequestBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Base" nillable="true" type="xs:double" />
+          <xs:element minOccurs="0" name="Dashboard_Target_Base" nillable="true" type="tns:Dashboard_Target_Base" />
+          <xs:element minOccurs="0" name="Id" type="xs:int" />
+          <xs:element minOccurs="0" name="Measure" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="Remuneration" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Sub_Value" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Target" nillable="true" type="xs:double" />
+          <xs:element minOccurs="0" name="Type" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="UpdatedBy" type="xs:int" />
+          <xs:element minOccurs="0" name="Value" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="filteredFlag" type="xs:boolean" />
+          <xs:element minOccurs="0" name="parseString" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Dashboard_Target_BaseRequest" nillable="true" type="tns:Dashboard_Target_BaseRequest" />
+  <xs:complexType name="Dashboard_Target_Base">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Base" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="Create_Date" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Measure" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Remuneration" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Status" nillable="true" type="xs:short" />
+      <xs:element minOccurs="0" name="Sub_Value" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Target" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="Type" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UpdatedBy" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Value" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Dashboard_Target_Base" nillable="true" type="tns:Dashboard_Target_Base" />
+  <xs:complexType name="Dashboard_Target_BaseResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ResponseBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Dashboard_Target_Base" nillable="true" type="tns:Dashboard_Target_Base" />
+          <xs:element minOccurs="0" name="Dashboard_Target_Bases" nillable="true" type="tns:ArrayOfDashboard_Target_Base" />
+          <xs:element minOccurs="0" name="parseString" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Dashboard_Target_BaseResponse" nillable="true" type="tns:Dashboard_Target_BaseResponse" />
+  <xs:complexType name="ArrayOfDashboard_Target_Base">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Dashboard_Target_Base" nillable="true" type="tns:Dashboard_Target_Base" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDashboard_Target_Base" nillable="true" type="tns:ArrayOfDashboard_Target_Base" />
+  <xs:complexType name="PortfolioRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:RequestBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="SystemName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Team" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Value" nillable="true" type="xs:string" />
+          <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/EM_Report.Service.Messages" minOccurs="0" name="ValueType" type="q15:SystemValueType" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PortfolioRequest" nillable="true" type="tns:PortfolioRequest" />
+  <xs:complexType name="PortfolioResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ResponseBase">
+        <xs:sequence>
+          <xs:element xmlns:q16="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ClaimLiabilityIndicators" nillable="true" type="q16:ArrayOfstring" />
+          <xs:element xmlns:q17="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ClaimOfficers" nillable="true" type="q17:ArrayOfstring" />
+          <xs:element xmlns:q18="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="SubValues" nillable="true" type="q18:ArrayOfstring" />
+          <xs:element xmlns:q19="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Values" nillable="true" type="q19:ArrayOfstring" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PortfolioResponse" nillable="true" type="tns:PortfolioResponse" />
+</xs:schema>

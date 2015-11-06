@@ -1,0 +1,1 @@
+DBrelease.bat -name lle -pwd "House 25 Run" -url https://10.9.1.1/svn/repo/Projects/Dart/Branches/Dart -branchName /DB -urlpath EMI_Database -from 44294 -to HEAD -dest D:\Work\Project\Dart\Branches\Dart\Tool\DBRelease\EMI\SQLoutput 

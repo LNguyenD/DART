@@ -1,0 +1,12 @@
+﻿@using EM_Report.Common.Pager;
+@Ajax.Pager((long)(ViewBag.TotalItemCount), (int)(ViewBag.PageSize), (int)(ViewBag.CurrentPage), null, null, null,
+    new PagerOptions
+    {
+        PageIndexParameterName = "page",
+        ShowMorePagerItems = true,
+        NumericPagerItemCount = 3,
+
+    },null,
+    new AjaxOptions { UpdateTargetId = "content" }, null
+)
+<div class="clear"></div>

@@ -1,0 +1,599 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Dart" Class="ReportModelDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=10.9.0.21;Initial Catalog=Dart;Persist Security Info=True;User ID=vnteam" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="EM_ReportConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.CONTROL" Member="CONTROLDOs">
+    <Type Name="CONTROLDO">
+      <Column Name="TYPE" Type="System.String" DbType="Char(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ITEM" Type="System.String" DbType="Char(20) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="VALUE" Type="System.String" DbType="VarChar(1024)" CanBeNull="true" />
+      <Column Name="TEXT_VALUE" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+    </Type>
+  </Table>
+  <Table Name="dbo.External_Groups" Member="External_GroupDOs">
+    <Type Name="External_GroupDO">
+      <Column Name="External_GroupId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(256)" CanBeNull="true" />
+      <Column Name="Status" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="Create_Date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Owner" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="UpdatedBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(256)" CanBeNull="true" />
+      <Association Name="External_GroupDO_Report_External_AccessDO" Member="Report_External_AccessDOs" Storage="_Report_External_Accesses" ThisKey="External_GroupId" OtherKey="External_GroupId" Type="Report_External_AccessDO" />
+      <Association Name="External_GroupDO_ReportUserDO" Member="ReportUserDOs" ThisKey="External_GroupId" OtherKey="External_GroupId" Type="ReportUserDO" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Organisation_Roles" Member="Organisation_RoleDOs">
+    <Type Name="Organisation_RoleDO">
+      <Column Name="Organisation_RoleId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(256)" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(256)" CanBeNull="true" />
+      <Column Name="Status" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="Create_Date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Owner" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="UpdatedBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="LevelId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Organisation_RoleDO_ReportUserDO" Member="ReportUserDOs" ThisKey="Organisation_RoleId" OtherKey="Organisation_RoleId" Type="ReportUserDO" />
+      <Association Name="Organisation_LevelDO_Organisation_RoleDO" Member="Organisation_LevelDO" ThisKey="LevelId" OtherKey="LevelId" Type="Organisation_LevelDO" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Permissions" Member="PermissionDOs">
+    <Type Name="PermissionDO">
+      <Column Name="PermissionId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(256) NOT NULL" CanBeNull="false" />
+      <Column Name="Status" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Association Name="PermissionDO_System_Role_PermissionDO" Member="System_Role_PermissionDOs" Storage="_System_Role_Permissions" ThisKey="PermissionId" OtherKey="PermissionId" Type="System_Role_PermissionDO" />
+    </Type>
+  </Table>
+  <Table Name="dbo.RELEASE_VERSION" Member="RELEASE_VERSIONDOs">
+    <Type Name="RELEASE_VERSIONDO">
+      <Column Name="Release_Version_No" Type="System.String" DbType="Char(8) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Object_Code" Type="System.String" DbType="Char(20) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Object_Version_No" Type="System.String" DbType="Char(8) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="LastModifiedDate" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="Owner" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Report_Categories" Member="Report_CategoryDOs">
+    <Type Name="Report_CategoryDO">
+      <Column Name="CategoryId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(256)" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(256)" CanBeNull="true" />
+      <Column Name="Status" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="Create_Date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Owner" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="UpdatedBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Report_CategoryDO_ReportDO" Member="ReportDOs" ThisKey="CategoryId" OtherKey="CategoryId" Type="ReportDO" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Report_External_Access" Member="Report_External_AccessDOs">
+    <Type Name="Report_External_AccessDO">
+      <Column Name="ReportId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="External_GroupId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Create_Date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Owner" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="UpdatedBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="External_GroupDO_Report_External_AccessDO" Member="External_GroupDO" Storage="_External_Group" ThisKey="External_GroupId" OtherKey="External_GroupId" Type="External_GroupDO" IsForeignKey="true" />
+      <Association Name="ReportDO_Report_External_AccessDO" Member="ReportDO" ThisKey="ReportId" OtherKey="ReportId" Type="ReportDO" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Report_Favorite" Member="Report_FavoriteDOs">
+    <Type Name="Report_FavoriteDO">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ReportId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="UserId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Create_Date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Report_Organisation_Levels" Member="Report_Organisation_LevelDOs">
+    <Type Name="Report_Organisation_LevelDO">
+      <Column Name="ReportId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="LevelId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="Create_Date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="Owner" Type="System.Int32" DbType="Int" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="UpdatedBy" Type="System.Int32" DbType="Int" CanBeNull="true" UpdateCheck="Never" />
+      <Association Name="ReportDO_Report_Organisation_LevelDO" Member="ReportDO" ThisKey="ReportId" OtherKey="ReportId" Type="ReportDO" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+      <Association Name="Organisation_LevelDO_Report_Organisation_LevelDO" Member="Organisation_LevelDO" ThisKey="LevelId" OtherKey="LevelId" Type="Organisation_LevelDO" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Report_Recently" Member="Report_RecentlyDOs">
+    <Type Name="Report_RecentlyDO">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ReportId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="UserId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Create_Date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Status" Member="StatusDOs">
+    <Type Name="StatusDO">
+      <Column Name="StatusId" Type="System.Int16" DbType="SmallInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Subscriptions" Member="SubscriptionDOs">
+    <Type Name="SubscriptionDO">
+      <Column Name="ReportId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SubscriptionID" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Owner" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(256)" CanBeNull="true" />
+      <Column Name="Status" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="ScheduleID" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ScheduleType" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="UpdatedBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="ReportDO_SubscriptionDO" Member="ReportDO" ThisKey="ReportId" OtherKey="ReportId" Type="ReportDO" IsForeignKey="true" DeleteRule="CASCADE" />
+    </Type>
+  </Table>
+  <Table Name="dbo.System_Permissions" Member="System_PermissionDOs">
+    <Type Name="System_PermissionDO">
+      <Column Name="System_PermissionId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(256) NOT NULL" CanBeNull="false" />
+      <Column Name="Status" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Association Name="System_PermissionDO_System_Role_PermissionDO" Member="System_Role_PermissionDOs" Storage="_System_Role_Permissions" ThisKey="System_PermissionId" OtherKey="System_PermissionId" Type="System_Role_PermissionDO" />
+    </Type>
+  </Table>
+  <Table Name="dbo.System_Role_Permissions" Member="System_Role_PermissionDOs">
+    <Type Name="System_Role_PermissionDO">
+      <Column Name="System_RoleId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="PermissionId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="System_PermissionId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Status" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="Create_Date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Owner" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="UpdatedBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="PermissionDO_System_Role_PermissionDO" Member="PermissionDO" Storage="_Permission" ThisKey="PermissionId" OtherKey="PermissionId" Type="PermissionDO" IsForeignKey="true" />
+      <Association Name="System_PermissionDO_System_Role_PermissionDO" Member="System_PermissionDO" Storage="_System_Permission" ThisKey="System_PermissionId" OtherKey="System_PermissionId" Type="System_PermissionDO" IsForeignKey="true" />
+      <Association Name="System_RoleDO_System_Role_PermissionDO" Member="System_RoleDO" Storage="_System_Role" ThisKey="System_RoleId" OtherKey="System_RoleId" Type="System_RoleDO" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.System_Roles" Member="System_RoleDOs">
+    <Type Name="System_RoleDO">
+      <Column Name="System_RoleId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(256)" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(256)" CanBeNull="true" />
+      <Association Name="System_RoleDO_System_Role_PermissionDO" Member="System_Role_PermissionDOs" Storage="_System_Role_Permissions" ThisKey="System_RoleId" OtherKey="System_RoleId" Type="System_Role_PermissionDO" />
+      <Association Name="System_RoleDO_SystemUserDO" Member="SystemUserDOs" Storage="_SystemUsers" ThisKey="System_RoleId" OtherKey="System_RoleId" Type="SystemUserDO" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SystemUsers" Member="SystemUserDOs">
+    <Type Name="SystemUserDO">
+      <Column Name="UserId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="System_RoleId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="System_RoleDO_SystemUserDO" Member="System_RoleDO" Storage="_System_Role" ThisKey="System_RoleId" OtherKey="System_RoleId" Type="System_RoleDO" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+      <Association Name="UserDO_SystemUserDO" Member="UserDO" ThisKey="UserId" OtherKey="UserId" Type="UserDO" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Reports" Member="ReportDOs">
+    <Type Name="ReportDO">
+      <Column Name="ReportId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CategoryId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(256)" CanBeNull="true" />
+      <Column Name="ShortName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Url" Type="System.String" DbType="NVarChar(300)" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(256)" CanBeNull="true" />
+      <Column Name="Status" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="Create_Date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Owner" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="UpdatedBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ForSubscription" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="ReportDO_Report_External_AccessDO" Member="Report_External_AccessDOs" ThisKey="ReportId" OtherKey="ReportId" Type="Report_External_AccessDO" />
+      <Association Name="ReportDO_Report_Organisation_LevelDO" Member="Report_Organisation_LevelDOs" ThisKey="ReportId" OtherKey="ReportId" Type="Report_Organisation_LevelDO" />
+      <Association Name="ReportDO_SubscriptionDO" Member="SubscriptionDOs" ThisKey="ReportId" OtherKey="ReportId" Type="SubscriptionDO" />
+      <Association Name="Report_CategoryDO_ReportDO" Member="Report_CategoryDO" ThisKey="CategoryId" OtherKey="CategoryId" Type="Report_CategoryDO" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Organisation_Levels" Member="Organisation_LevelDOs">
+    <Type Name="Organisation_LevelDO">
+      <Column Name="LevelId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="SystemId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(256)" CanBeNull="true" />
+      <Column Name="Sort" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(256)" CanBeNull="true" />
+      <Column Name="Create_Date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Owner" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="UpdatedBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Status" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Association Name="Organisation_LevelDO_Organisation_RoleDO" Member="Organisation_RoleDOs" ThisKey="LevelId" OtherKey="LevelId" Type="Organisation_RoleDO" />
+      <Association Name="Organisation_LevelDO_Report_Organisation_LevelDO" Member="Report_Organisation_LevelDOs" ThisKey="LevelId" OtherKey="LevelId" Type="Report_Organisation_LevelDO" />
+      <Association Name="Organisation_LevelDO_Dashboard_OrganisationRole_LevelDO" Member="Dashboard_OrganisationRole_LevelDOs" ThisKey="LevelId" OtherKey="LevelId" Type="Dashboard_OrganisationRole_LevelDO" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Systems" Member="SystemDOs">
+    <Type Name="SystemDO">
+      <Column Name="SystemId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(256) NOT NULL" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(256)" CanBeNull="true" />
+      <Column Name="Owner" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="UpdatedBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Create_Date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Status" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Teams" Member="TeamDOs">
+    <Type Name="TeamDO">
+      <Column Name="TeamId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="SystemId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(256)" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(256)" CanBeNull="true" />
+      <Column Name="Status" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="Create_Date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Owner" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="UpdatedBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="TeamDO_ReportUserDO" Member="ReportUserDOs" ThisKey="TeamId" OtherKey="TeamId" Type="ReportUserDO" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Dashboards" Member="DashboardDOs">
+    <Type Name="DashboardDO">
+      <Column Name="DashboardId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="SystemId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(256) NOT NULL" CanBeNull="false" />
+      <Column Name="Url" Type="System.String" DbType="NVarChar(300)" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(256)" CanBeNull="true" />
+      <Column Name="Owner" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="UpdatedBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Create_Date" Storage="_CreateDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Status" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Association Name="DashboardDO_Dashboard_OrganisationRole_LevelDO" Member="Dashboard_OrganisationRole_LevelDOs" ThisKey="DashboardId" OtherKey="DashboardId" Type="Dashboard_OrganisationRole_LevelDO" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Dashboard_OrganisationRole_Levels" Member="Dashboard_OrganisationRole_LevelDOs">
+    <Type Name="Dashboard_OrganisationRole_LevelDO">
+      <Column Name="DashboardOrganisationlevelId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="DashboardId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DashboardLevelId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="LevelId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Create_Date" Storage="_CreateDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Owner" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="UpdatedBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="DashboardDO_Dashboard_OrganisationRole_LevelDO" Member="DashboardDO" ThisKey="DashboardId" OtherKey="DashboardId" Type="DashboardDO" IsForeignKey="true" />
+      <Association Name="Organisation_LevelDO_Dashboard_OrganisationRole_LevelDO" Member="Organisation_LevelDO" ThisKey="LevelId" OtherKey="LevelId" Type="Organisation_LevelDO" IsForeignKey="true" />
+      <Association Name="Dashboard_LevelDO_Dashboard_OrganisationRole_LevelDO" Member="Dashboard_LevelDO" ThisKey="DashboardLevelId" OtherKey="DashboardLevelId" Type="Dashboard_LevelDO" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Dashboard_Levels" Member="Dashboard_LevelDOs">
+    <Type Name="Dashboard_LevelDO">
+      <Column Name="DashboardLevelId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(256) NOT NULL" CanBeNull="false" />
+      <Column Name="Sort" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(256)" CanBeNull="true" />
+      <Column Name="Create_Date" Storage="_CreateDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Owner" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="UpdatedBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Status" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Association Name="Dashboard_LevelDO_Dashboard_OrganisationRole_LevelDO" Member="Dashboard_OrganisationRole_LevelDOs" ThisKey="DashboardLevelId" OtherKey="DashboardLevelId" Type="Dashboard_OrganisationRole_LevelDO" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Dashboard_Graph_Description" Member="Dashboard_Graph_DescriptionDOs">
+    <Type Name="Dashboard_Graph_DescriptionDO">
+      <Column Name="DescriptionId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="SystemId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Type" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="Status" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="Create_Date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Owner" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="UpdatedBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ReportUsers" Member="ReportUserDOs">
+    <Type Name="ReportUserDO">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="UserId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Is_External_User" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="TeamId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Organisation_RoleId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="External_GroupId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="External_GroupDO_ReportUserDO" Member="External_GroupDO" ThisKey="External_GroupId" OtherKey="External_GroupId" Type="External_GroupDO" IsForeignKey="true" />
+      <Association Name="Organisation_RoleDO_ReportUserDO" Member="Organisation_RoleDO" ThisKey="Organisation_RoleId" OtherKey="Organisation_RoleId" Type="Organisation_RoleDO" IsForeignKey="true" />
+      <Association Name="TeamDO_ReportUserDO" Member="TeamDO" ThisKey="TeamId" OtherKey="TeamId" Type="TeamDO" IsForeignKey="true" />
+      <Association Name="UserDO_ReportUserDO" Member="UserDO" ThisKey="UserId" OtherKey="UserId" Type="UserDO" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Dashboard_TimeAccess" Member="Dashboard_TimeAccessDOs">
+    <Type Name="Dashboard_TimeAccessDO">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="DashboardId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DashboardLevelId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="UserId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="StartTime" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="EndTime" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Status" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="Create_Date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Owner" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="UpdatedBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Dashboard_Traffic_Light_Rules" Member="Dashboard_Traffic_Light_RuleDOs">
+    <Type Name="Dashboard_Traffic_Light_RuleDO">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="SystemId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DashboardType" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Type" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Value" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Sub_Value" Type="System.String" DbType="VarChar(256)" CanBeNull="true" />
+      <Column Name="Measure" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Color" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(256)" CanBeNull="true" />
+      <Column Name="ImageUrl" Type="System.String" DbType="VarChar(256)" CanBeNull="true" />
+      <Column Name="FromValue" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="ToValue" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Status" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="Create_Date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Owner" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="UpdatedBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Users" Member="UserDOs">
+    <Type Name="UserDO">
+      <Column Name="UserId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="UserName" Type="System.String" DbType="NVarChar(256) NOT NULL" CanBeNull="false" />
+      <Column Name="Password" Type="System.String" DbType="NVarChar(256) NOT NULL" CanBeNull="false" />
+      <Column Name="FirstName" Type="System.String" DbType="NVarChar(256)" CanBeNull="true" />
+      <Column Name="LastName" Type="System.String" DbType="NVarChar(256)" CanBeNull="true" />
+      <Column Name="Address" Type="System.String" DbType="NVarChar(256)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="NVarChar(256)" CanBeNull="true" />
+      <Column Name="Status" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="Phone" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="Online_Locked_Until_Datetime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Online_No_Of_Login_Attempts" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="Last_Online_Login_Date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Create_Date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Owner" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="UpdatedBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Is_System_User" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Default_System_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="UserDO_SystemUserDO" Member="SystemUserDO" ThisKey="UserId" OtherKey="UserId" Type="SystemUserDO" Cardinality="One" />
+      <Association Name="UserDO_ReportUserDO" Member="ReportUserDOs" ThisKey="UserId" OtherKey="UserId" Type="ReportUserDO" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Dashboard_Favours" Member="Dashboard_FavourDOs">
+    <Type Name="Dashboard_FavourDO">
+      <Column Name="FavourId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(256) NOT NULL" CanBeNull="false" />
+      <Column Name="Url" Type="System.String" DbType="NVarChar(300) NOT NULL" CanBeNull="false" />
+      <Column Name="UserId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Status" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="Create_Date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Owner" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="UpdatedBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Is_Landing_Page" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.EML_AWC_Projections" Member="EML_AWC_ProjectionDOs">
+    <Type Name="EML_AWC_ProjectionDO">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Unit_Type" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Unit_Name" Type="System.String" DbType="VarChar(256) NOT NULL" CanBeNull="false" />
+      <Column Name="Type" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Time_Id" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Projection" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.EML_RTW_Target_Base" Member="EML_RTW_Target_BaseDOs">
+    <Type Name="EML_RTW_Target_BaseDO">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Type" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Value" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Sub_Value" Type="System.String" DbType="VarChar(256)" CanBeNull="true" />
+      <Column Name="Measure" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Target" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Base" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="UpdatedBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Create_Date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Status" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="Remuneration" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.HEM_AWC_Projections" Member="HEM_AWC_ProjectionDOs">
+    <Type Name="HEM_AWC_ProjectionDO">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Unit_Type" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Unit_Name" Type="System.String" DbType="VarChar(256) NOT NULL" CanBeNull="false" />
+      <Column Name="Type" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Time_Id" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Projection" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.HEM_RTW_Target_Base" Member="HEM_RTW_Target_BaseDOs">
+    <Type Name="HEM_RTW_Target_BaseDO">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Type" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Value" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Sub_Value" Type="System.String" DbType="VarChar(256)" CanBeNull="true" />
+      <Column Name="Measure" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Target" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Base" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="UpdatedBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Create_Date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Status" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="Remuneration" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TMF_AWC_Projections" Member="TMF_AWC_ProjectionDOs">
+    <Type Name="TMF_AWC_ProjectionDO">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Unit_Type" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Unit_Name" Type="System.String" DbType="VarChar(256) NOT NULL" CanBeNull="false" />
+      <Column Name="Type" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Time_Id" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Projection" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TMF_RTW_Target_Base" Member="TMF_RTW_Target_BaseDOs">
+    <Type Name="TMF_RTW_Target_BaseDO">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Type" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Value" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Sub_Value" Type="System.String" DbType="VarChar(256)" CanBeNull="true" />
+      <Column Name="Measure" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Target" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Base" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="UpdatedBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Create_Date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Status" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="Remuneration" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.EML_Portfolio" Member="EML_PortfolioDOs">
+    <Type Name="EML_PortfolioDO">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="[Group]" Member="Group" Type="System.String" DbType="Char(20)" CanBeNull="true" />
+      <Column Name="Team" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Case_Manager" Type="System.String" DbType="VarChar(81)" CanBeNull="true" />
+      <Column Name="Agency_Name" Type="System.String" DbType="Char(20)" CanBeNull="true" />
+      <Column Name="Agency_Id" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Policy_No" Type="System.String" DbType="Char(19)" CanBeNull="true" />
+      <Column Name="Sub_Category" Type="System.String" DbType="VarChar(256)" CanBeNull="true" />
+      <Column Name="EMPL_SIZE" Type="System.String" DbType="VarChar(256)" CanBeNull="true" />
+      <Column Name="Account_Manager" Type="System.String" DbType="VarChar(256)" CanBeNull="true" />
+      <Column Name="Portfolio" Type="System.String" DbType="VarChar(256)" CanBeNull="true" />
+      <Column Name="Reporting_Date" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Claim_Closed_Flag" Storage="_Is_Open_Claim" Type="System.String" DbType="NChar(1)" CanBeNull="false" />
+      <Column Name="Claim_No" Type="System.String" DbType="VarChar(19)" CanBeNull="true" />
+      <Column Name="WIC_Code" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Company_Name" Type="System.String" DbType="VarChar(256)" CanBeNull="true" />
+      <Column Name="Current_Cost_Code" Type="System.String" DbType="VarChar(256)" CanBeNull="true" />
+      <Column Name="Worker_Name" Type="System.String" DbType="VarChar(256)" CanBeNull="true" />
+      <Column Name="Employee_Number" Type="System.String" DbType="VarChar(256)" CanBeNull="true" />
+      <Column Name="Worker_Phone_Number" Type="System.String" DbType="VarChar(256)" CanBeNull="true" />
+      <Column Name="Claims_Officer_Name" Type="System.String" DbType="VarChar(256)" CanBeNull="true" />
+      <Column Name="Date_Of_Birth" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Date_Of_Injury" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Date_Of_Notification" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Notification_Lag" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Entered_Lag" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Claim_Liability_Indicator_Group" Type="System.String" DbType="VarChar(256)" CanBeNull="true" />
+      <Column Name="Investigation_Incurred" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="Total_Paid" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="Is_Time_Lost" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Date_Claim_Closed" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Date_Claim_Received" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Date_Claim_Reopened" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Result_Of_Injury_Code" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="WPI" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Common_Law" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Total_Recoveries" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Med_Cert_Status" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Is_Working" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Physio_Paid" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Chiro_Paid" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Massage_Paid" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Osteopathy_Paid" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Acupuncture_Paid" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Create_Date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Is_Stress" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Is_Inactive_Claims" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Is_Medically_Discharged" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Is_Exempt" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Is_Reactive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.HEM_Portfolio" Member="HEM_PortfolioDOs">
+    <Type Name="HEM_PortfolioDO">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="[Group]" Member="Group" Type="System.String" DbType="Char(20)" CanBeNull="true" />
+      <Column Name="Team" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Case_Manager" Type="System.String" DbType="VarChar(81)" CanBeNull="true" />
+      <Column Name="Agency_Name" Type="System.String" DbType="Char(20)" CanBeNull="true" />
+      <Column Name="Agency_Id" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Policy_No" Type="System.String" DbType="Char(19)" CanBeNull="true" />
+      <Column Name="Sub_Category" Type="System.String" DbType="VarChar(256)" CanBeNull="true" />
+      <Column Name="EMPL_SIZE" Type="System.String" DbType="VarChar(256)" CanBeNull="true" />
+      <Column Name="Account_Manager" Type="System.String" DbType="VarChar(256)" CanBeNull="true" />
+      <Column Name="Portfolio" Type="System.String" DbType="VarChar(256)" CanBeNull="true" />
+      <Column Name="Reporting_Date" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Claim_Closed_Flag" Storage="_Is_Open_Claim" Type="System.String" DbType="NChar(1)" CanBeNull="false" />
+      <Column Name="Claim_No" Type="System.String" DbType="VarChar(19)" CanBeNull="true" />
+      <Column Name="WIC_Code" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Company_Name" Type="System.String" DbType="VarChar(256)" CanBeNull="true" />
+      <Column Name="Current_Cost_Code" Type="System.String" DbType="VarChar(256)" CanBeNull="true" />
+      <Column Name="Worker_Name" Type="System.String" DbType="VarChar(256)" CanBeNull="true" />
+      <Column Name="Employee_Number" Type="System.String" DbType="VarChar(256)" CanBeNull="true" />
+      <Column Name="Worker_Phone_Number" Type="System.String" DbType="VarChar(256)" CanBeNull="true" />
+      <Column Name="Claims_Officer_Name" Type="System.String" DbType="VarChar(256)" CanBeNull="true" />
+      <Column Name="Date_Of_Birth" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Date_Of_Injury" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Date_Of_Notification" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Notification_Lag" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Entered_Lag" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Claim_Liability_Indicator_Group" Type="System.String" DbType="VarChar(256)" CanBeNull="true" />
+      <Column Name="Investigation_Incurred" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="Total_Paid" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="Is_Time_Lost" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Date_Claim_Closed" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Date_Claim_Received" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Date_Claim_Reopened" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Result_Of_Injury_Code" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="WPI" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Common_Law" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Total_Recoveries" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Med_Cert_Status" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Is_Working" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Physio_Paid" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Chiro_Paid" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Massage_Paid" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Osteopathy_Paid" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Acupuncture_Paid" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Create_Date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Is_Stress" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Is_Inactive_Claims" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Is_Medically_Discharged" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Is_Exempt" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Is_Reactive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TMF_Portfolio" Member="TMF_PortfolioDOs">
+    <Type Name="TMF_PortfolioDO">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="[Group]" Member="Group" Type="System.String" DbType="Char(20)" CanBeNull="true" />
+      <Column Name="Team" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Case_Manager" Type="System.String" DbType="VarChar(81)" CanBeNull="true" />
+      <Column Name="Agency_Name" Type="System.String" DbType="Char(20)" CanBeNull="true" />
+      <Column Name="Agency_Id" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Policy_No" Type="System.String" DbType="Char(19)" CanBeNull="true" />
+      <Column Name="Sub_Category" Type="System.String" DbType="VarChar(256)" CanBeNull="true" />
+      <Column Name="EMPL_SIZE" Type="System.String" DbType="VarChar(256)" CanBeNull="true" />
+      <Column Name="Account_Manager" Type="System.String" DbType="VarChar(256)" CanBeNull="true" />
+      <Column Name="Portfolio" Type="System.String" DbType="VarChar(256)" CanBeNull="true" />
+      <Column Name="Reporting_Date" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Claim_Closed_Flag" Storage="_Is_Open_Claim" Type="System.String" DbType="NChar(1)" CanBeNull="false" />
+      <Column Name="Claim_No" Type="System.String" DbType="VarChar(19)" CanBeNull="true" />
+      <Column Name="WIC_Code" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Company_Name" Type="System.String" DbType="VarChar(256)" CanBeNull="true" />
+      <Column Name="Current_Cost_Code" Type="System.String" DbType="VarChar(256)" CanBeNull="true" />
+      <Column Name="Worker_Name" Type="System.String" DbType="VarChar(256)" CanBeNull="true" />
+      <Column Name="Employee_Number" Type="System.String" DbType="VarChar(256)" CanBeNull="true" />
+      <Column Name="Worker_Phone_Number" Type="System.String" DbType="VarChar(256)" CanBeNull="true" />
+      <Column Name="Claims_Officer_Name" Type="System.String" DbType="VarChar(256)" CanBeNull="true" />
+      <Column Name="Date_Of_Birth" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Date_Of_Injury" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Date_Of_Notification" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Notification_Lag" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Entered_Lag" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Claim_Liability_Indicator_Group" Type="System.String" DbType="VarChar(256)" CanBeNull="true" />
+      <Column Name="Investigation_Incurred" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="Total_Paid" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="Is_Time_Lost" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Date_Claim_Closed" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Date_Claim_Received" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Date_Claim_Reopened" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Result_Of_Injury_Code" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="WPI" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Common_Law" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Total_Recoveries" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Med_Cert_Status" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Is_Working" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Physio_Paid" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Chiro_Paid" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Massage_Paid" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Osteopathy_Paid" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Acupuncture_Paid" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Create_Date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Is_Stress" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Is_Inactive_Claims" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Is_Medically_Discharged" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Is_Exempt" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Is_Reactive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>

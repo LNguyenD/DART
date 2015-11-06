@@ -1,0 +1,322 @@
+﻿@{
+    Layout = null;
+}
+@using (Ajax.BeginForm("RawData", null, new AjaxOptions { UpdateTargetId = "RawData" }, new { Id = "frmRawData" }))
+{
+    <ul class="tab" style="width: 99.85%" id="rawDataTab">
+        <li id="tab_graph" class="tab_current"><a style="cursor: default">Graph data</a></li>
+        <li id="tab_claim"><a>Claim data</a></li>
+        <li id="tab_all_claim"><a>All claim data</a></li>
+        @*<li style="float: right; bottom: 7px;" id="printRawData"><a href="javascript:print()"
+            class="printRawData" id="printRawDataButton"></a></li>*@
+        <li style="float: right; bottom: 7px;" id="exportExcel">
+            <a href="javascript:saveAllAsExcel()"
+               class="exportExcel" id="exportExcelButton"></a>
+        </li>
+        <li style="float: right; bottom: 7px;" id="closePopup">
+            <a href="javascript:closedPopup('0')"
+               class="close-reveal-modal" id="closePopupButton">&#215;</a>
+        </li>
+    </ul>
+
+    var strReportName = Request["reportname"] ?? string.Empty;
+    var paramsBuilder = new System.Text.StringBuilder();
+
+    foreach (String key in Request.QueryString.AllKeys)
+    {
+        if (key.ToLower().IndexOf("reportname") < 0)
+        {
+            paramsBuilder.Append("&" + key + "=" + Request.QueryString[key]);
+        }
+    }
+    <div id="ifRawCover" style="height: auto">
+        <iframe id="ifRaw" src="@Url.Content("~/Reports/Dashboards/RawDashboardReport.aspx?reportpath=/emreporting/reports/" + @strReportName + @paramsBuilder.ToString())"
+                width="100%" height="100%" frameborder="0" scrolling="no" style="margin-top: 0px; display: inline;"></iframe>
+    </div>
+}
+<script type="text/javascript">
+    var canTabClick_RawData = false;
+
+    var RawDataContentTab1;
+    var RawDataContentTab2;
+    var RawDataContentTab3;
+
+    var loadedTab1 = false;
+    var loadedTab2 = false;
+
+    var HideContentTab2 = 0;
+    var HideContentTab3 = 0;
+
+    var windowHeight = $(window).height();
+    var windowWidth = $(window).width();
+    var popupHeight = 0;
+
+    //resize the raw data pop up
+    $(function () {
+        $(window).resize(function () {
+            var windowHeight = $(window).height();
+            $("#ifRaw").contents().find("#divViewer").css("height", windowHeight - 100 + 'px');
+            $("#ifRaw").contents().find('body').css("height", windowHeight - 100 + 'px');
+            $("#ifRaw").css("height", windowHeight - 100 + 'px');
+
+            $("#ifRaw2").contents().find("#divViewer").css("height", windowHeight - 100 + 'px');
+            $("#ifRaw2").contents().find('body').css("height", windowHeight - 100 + 'px');
+            $("#ifRaw2").css("height", windowHeight - 100 + 'px')
+
+            $("#ifRaw3").contents().find("#divViewer").css("height", windowHeight - 100 + 'px');
+            $("#ifRaw3").contents().find('body').css("height", windowHeight - 100 + 'px');
+            $("#ifRaw3").css("height", windowHeight - 100 + 'px')
+        });
+
+        if (isLastLevel()) {
+            $('li#tab_all_claim').hide();
+        }
+    });
+
+    $(document).ready(function () {
+        // set tooltips
+        $("#printRawDataButton").attr('title', 'Print this page');
+        $("#exportExcelButton").attr('title', 'Export all as excel');
+        $("#closePopupButton").attr('title', 'Close');
+    });
+
+    function openMetricLight() {
+        //Show tab 3
+        if (!isLastLevel()) {
+            $("#ifRaw3").css("visibility", "visible");
+            $("#ifRaw3Cover").css("height", "auto");
+            $("#ifRaw3Cover").show();
+            //$("#ifRaw2Cover").hide();
+            //$("#ifRawCover").hide();
+        }
+        
+        //hide tab 1
+        $("#ifRaw").css("visibility", "hidden");
+        $("#ifRawCover").css("height", "0px");
+        $("#ifRawCover").hide();
+
+        //hide tab 2
+        $("#ifRaw2").css("visibility", "hidden");
+        $("#ifRaw2Cover").css("height", "0px");
+        $("#ifRaw2Cover").hide();
+    }
+
+    function openGraph() {
+        //show tab 1
+        $("#ifRaw").css("visibility", "visible");
+        $("#ifRawCover").css("height", "auto");
+        $("#ifRawCover").show();
+        
+        //hide tab 2
+        $("#ifRaw2").css("visibility", "hidden");
+        $("#ifRaw2Cover").css("height", "0px");
+        $("#ifRaw2Cover").hide();
+
+        if (!isLastLevel()) {
+            //hide tab 3
+            $("#ifRaw3").css("visibility", "hidden");
+            $("#ifRaw3Cover").css("height", "0px");
+
+            $("#ifRaw3Cover").hide();
+            //$("#ifRaw2Cover").hide();
+            //$("#ifRawCover").show();
+        }      
+    }
+
+    function openGraphRawData() {
+        //show tab 2
+        $("#ifRaw2").css("visibility", "visible");
+        $("#ifRaw2Cover").css("height", "auto");
+        $("#ifRaw2Cover").show();
+
+        //hide tab 1
+        $("#ifRawCover").css("height", "0px");
+        $("#ifRaw").css("visibility", "hidden");
+        $("#ifRawCover").hide();
+
+        //hide tab 3
+        if (!isLastLevel()) {
+            $("#ifRaw3Cover").css("height", "0px");
+            $("#ifRaw3").css("visibility", "hidden");
+
+            $("#ifRaw3Cover").hide();
+            //$("#ifRaw2Cover").show();
+            //$("#ifRawCover").hide();
+        }    
+    }
+
+    function saveAllAsExcel() {
+        if ($.browser.msie || isIE11()) {
+            // export report viewer 1
+            window.frames['ifRaw'].saveAsExcel();
+
+            // export report viewer 2
+            window.frames['ifRaw2'].saveAsExcel();
+
+            // export report viewer 3
+            if (!isLastLevel()) {
+                window.frames['ifRaw3'].saveAsExcel();
+            }
+        }
+        else {
+            var ifRaw1 = window.frames['ifRaw'];
+            var ifRaw2 = window.frames['ifRaw2'];
+            var ifRaw3 = window.frames['ifRaw3'];
+
+            if (typeof (ifRaw1) !== 'undefined') {
+                if ($("iframe#export1").length <= 0) {
+                    $("iframe#ifRaw").after('<iframe id="export1" style="display:none"></iframe>');
+                }
+                var ifRaw1ReportViewer = ifRaw1.contentWindow.$find("rvwReportViewerRawData");
+
+                if (ifRaw1ReportViewer != null) {
+                    $("iframe#export1").attr('src', ifRaw1ReportViewer._getInternalViewer().ExportUrlBase + "EXCEL");
+                }
+            }
+            if (typeof (ifRaw2) !== 'undefined') {
+                if ($("iframe#export2").length <= 0) {
+                    $("iframe#ifRaw2").after('<iframe id="export2" style="display:none"></iframe>');
+                }
+                var ifRaw2ReportViewer = ifRaw2.contentWindow.$find("rvwReportViewerRawData");
+
+                if (ifRaw2ReportViewer != null) {
+                    $("iframe#export2").attr('src', ifRaw2ReportViewer._getInternalViewer().ExportUrlBase + "EXCEL");
+                }
+            }
+            if (typeof (ifRaw3) !== 'undefined' && !isLastLevel()) {
+                if ($("iframe#export3").length <= 0) {
+                    $("iframe#ifRaw3").after('<iframe id="export3" style="display:none"></iframe>');
+                }
+                var ifRaw3ReportViewer = ifRaw3.contentWindow.$find("rvwReportViewerRawData");
+
+                if (ifRaw3ReportViewer != null) {
+                    $("iframe#export3").attr('src', ifRaw3ReportViewer._getInternalViewer().ExportUrlBase + "EXCEL");
+                }
+            }              
+        }
+    }
+
+    function print() {
+        openPrintPopup(true);
+    }
+
+    $("#rawDataTab > li:not('#exportExcel'):not('#closePopup'):not('#printRawData')").each(function () {
+        $(this).click(function () {
+            // in case can't load third Tab on RawData when second Tab in Level 2 is loading.
+            if (RawDataContentTab1 != null && RawDataContentTab2 != null && loadedTab2 == false) {
+                canTabClick_RawData = true;
+                if (!isLastLevel()) {
+                    Load_Thirth_Tab_RawData();
+                }               
+            }
+
+            //Prevent clicking when the first tab is loading. CHANGE THEN LENGTH IF ADD MORE IFRAME
+            if ($(this).attr("class") == "tab_current" || $('iframe').length <= 2 || !canTabClick_RawData)
+                return false;
+
+            var id_name = $(this).attr('id');
+
+            if (id_name == "tab_all_claim" && RawDataContentTab2 == null)
+                return false;
+
+            // keep track start time, end time of each page/tab
+            submitTimeInfo($('.tab_current'));
+            saveStartTime();
+
+            $(this).attr('class', 'tab_current');
+            $(this).children('a').bind('click', false);
+            $(this).children('a').css("cursor", "default");
+
+            $(this).siblings().attr('class', '');
+            $(this).siblings().children('a').unbind('click', false);
+            $(this).siblings().children('a').css("cursor", "pointer");
+
+            $('div.' + id_name).fadeIn("slow");
+
+            if (id_name == "tab_graph") {
+                openGraph();
+            }
+            else if (id_name == "tab_claim") {
+                if (RawDataContentTab2 == null)
+                    canTabClick_RawData = false;
+
+                openGraphRawData();
+            }
+            else if (id_name == "tab_all_claim") {
+                if (RawDataContentTab3 == null)
+                    canTabClick_RawData = false;
+
+                openMetricLight();
+            }
+        });
+    });
+
+    function Load_Second_Tab_RawData() {
+        var graphRawDataHref = $("#ifRaw").attr('src');
+
+        // set url for report viewer 2
+        if (graphRawDataHref.indexOf("Graph") >= 0) {
+            var subString = graphRawDataHref.substring(graphRawDataHref.indexOf("Graph"));
+
+            // detect for the average & target graph
+            if (subString.indexOf("_at") >= 0)
+                graphRawDataHref = graphRawDataHref.replace(subString, "Graph=Raw_at");
+            else
+                graphRawDataHref = graphRawDataHref.replace(subString, "Graph=Raw");
+        }
+        else if (graphRawDataHref.indexOf("ReportType") >= 0) {
+            graphRawDataHref = graphRawDataHref.replace("ReportType=", "ReportType=raw-");
+        }
+
+        if ($("#ifRaw2").length <= 0) {
+            $("#ifRaw").parent().parent().append('<div id="ifRaw2Cover" style="height:0px;"><iframe id="ifRaw2" src="'
+                + graphRawDataHref
+                + '" width="100%" height="100%" frameborder="0" scrolling="no" style="margin-top: 0px;visibility:hidden;"></iframe></div>');
+        }
+    }
+
+    function Load_Thirth_Tab_RawData() {
+        var folderName = '@Url.Content("~/Reports/Dashboards/RawDashboardReport.aspx?reportpath=/emreporting/reports/")';
+
+        //get metric light href from parent
+        var metLightHref = metricLightHref;
+        metLightHref = metLightHref.replace("javascript:openRawDataPopup('reportname=", "");
+        metLightHref = metLightHref.replace("')", "");
+
+
+        // detect for the average & target graph
+        var graphRawDataHref = $("#ifRaw").attr('src');
+        if (graphRawDataHref.indexOf("Graph") >= 0) {
+            var subString = graphRawDataHref.substring(graphRawDataHref.indexOf("Graph"));
+            if (subString.indexOf("_at") >= 0) {
+                metLightHref = metLightHref.replace("Graph=Metric", "Graph=Metric_at");
+            }
+        }
+
+        metLightHref = folderName + metLightHref + "&rdr=" + Math.random();
+
+
+        if ($("#ifRaw3").length <= 0) {
+            $("#ifRaw").parent().parent().append('<div id="ifRaw3Cover" style="height:0px;"><iframe id="ifRaw3" src="'
+                + metLightHref
+                + '" width="100%" height="100%" frameborder="0" scrolling="no" style="margin-top: 0px;visibility:hidden;"></iframe></div>');
+            $("#ifRaw").parent().parent().append('<div class="clear"></div>');
+        }
+    }
+
+    function isLastLevel() {
+        var url = window.location.href.toLowerCase();
+        var value = '@Request.QueryString["value"]'.toLowerCase();
+        var type = '@Request.QueryString["type"]'.toLowerCase();
+        if (((value == 'tmf' || value == 'wcnsw' || value == 'hospitality') && url.indexOf('level3') >= 0)
+            || ((url.indexOf('tmf_rtw_level3') >= 0 || url.indexOf('tmf_awc_level3') >= 0) && (type == 'group' || value == 'health@@@@@@other' || value == 'police@@@@@@fire'))
+            || ((url.indexOf('eml_rtw_level3') >= 0 || url.indexOf('eml_awc_level3') >= 0) && type == 'employer_size')
+            || ((url.indexOf('hem_rtw_level3') >= 0 || url.indexOf('hem_awc_level3') >= 0) && (type == 'group' || value == 'hotel'))
+            || (url.indexOf('rtw_level5') >= 0)
+            || (url.indexOf('awc_level4') >= 0)) {
+            return true;
+        }
+
+        return false;
+    }
+</script>

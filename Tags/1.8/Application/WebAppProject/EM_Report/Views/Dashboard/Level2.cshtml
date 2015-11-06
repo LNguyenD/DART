@@ -1,0 +1,277 @@
+﻿@using EM_Report.Domain;
+@using EM_Report.Helpers;
+@using EM_Report.SSRS;
+@{
+    ViewBag.Title = "DashBoard";
+    ViewBag.Heading = "Report >> Dashboard >> Level 2";
+    Layout = Request.IsAjaxRequest() ? null : "~/Views/Shared/_Master.cshtml";
+}
+<div class="w_100p" style="margin: 0 !important;">
+    <!-- TAB -->
+    @Html.Hidden("System", (string)ViewBag.SystemName)
+    <ul class="tab">
+        @{
+            var systemName = ViewBag.SystemName == "EML" ? "WCNSW" : ViewBag.SystemName == "HEM" ? "Hospitality" : ViewBag.SystemName == "TMF" ? "TMF" : "WOW";
+            var systemSub = systemName == "TMF" ? "agencies" : systemName == "Hospitality" ? "portfolios" : systemName == "WCNSW" ? "employer sizes" : systemName == "WOW" ? "divisions" : "divisions";
+            var reportPath = ViewBag.ReportPath ?? string.Empty;
+            var type = Request["Type"] ?? string.Empty;
+
+            var isAgencyType = (reportPath.ToLower().IndexOf("employer") > 0 || type == "employer_size") || (reportPath.ToLower().Contains("agency") || type == "agency") || (reportPath.ToLower().Contains("portfolio") || type == "portfolio") || (reportPath.ToLower().Contains("division") || type == "division");
+            var isGroupType = (reportPath.ToLower().Contains("group") || type == "group");
+            var isAccountManagerType = (reportPath.ToLower().Contains("account_manager") || type == "account_manager") || (reportPath.ToLower().Contains("state") || type == "state");
+
+            string dashboard;
+            string url;
+            if (((string)(ViewBag.ReportPath)).ToLower().Contains("cpr") || ((string)(ViewBag.ReportPath)).ToLower().Contains("wow"))
+            {
+                url = "~/Reports/Dashboards/CPRDashboardReport.aspx";
+                dashboard = "cpr";
+            }
+            else if (((string)(ViewBag.ReportPath)).ToLower().Contains("rtw"))
+            {
+                url = "~/Reports/Dashboards/RTWDashboardReport.aspx";
+                dashboard = "rtw";
+            }
+            else
+            {
+                url = "~/Reports/Dashboards/AWCDashboardReport.aspx";
+                dashboard = "awc";
+            }
+        }
+
+        @*<li @(isGroupType ? "class=tab_current" : "") id="tab_group">
+            @if (systemName == "WOW")
+            {
+                <a>@systemName by groups</a>
+            }
+        </li>*@
+        @if (systemName == "WOW")
+        {
+            <li @(isGroupType ? "class=tab_current" : "") id="tab_group">            
+                <a>@systemName by groups</a>            
+            </li>
+        }
+
+        <li @(isAgencyType ? "class=tab_current" : "") id="@(dashboard == "rtw" ? "tab_agencies" : (systemName == "TMF" ? "tab_agency" : (systemName == "WCNSW" ? "tab_employer_size" : "tab_portfolio")))">
+            <a>
+                @systemName by
+                @systemSub
+            </a>
+        </li>
+        <li @(isGroupType ? "class=tab_current" : "") id="tab_group">
+            @if (systemName != "WOW")
+            {
+                <a>@systemName by groups</a>
+            }
+        </li>
+        @if (systemName == "WCNSW")
+        {
+            <li @(isAccountManagerType ? "class=tab_current" : "") id="tab_account_manager">
+                <a>
+                    @systemName
+                    by account managers
+                </a>
+            </li>
+        }
+        @if (systemName == "WOW")
+        {
+            <li @(isAccountManagerType ? "class=tab_current" : "") id="tab_account_manager">
+                <a>
+                    @systemName
+                    by states
+                </a>
+            </li>
+        }
+    </ul>
+
+    <input type="hidden" id="grpName" name="grpName" value=@Base.LoginSession.External_GroupName.Replace(" ", "") />
+
+    <div class="tab_content">
+        @Html.Partial("~/Views/Dashboard/CPRViewType.cshtml")
+        @{
+            string strQuery = "";
+            foreach (String key in Request.QueryString.AllKeys)
+            {
+                strQuery = strQuery + "&" + key + "=" + Request.QueryString[key];
+            }
+            strQuery = "?" + strQuery.TrimStart('&');
+            url = url + strQuery;
+        }
+
+        <div class="clear">
+        </div>
+
+        <div id="@(dashboard != "rtw" ? "ifReportCover_Agency" : (isAgencyType ? "ifReportCover_Agency" : isGroupType ? "ifReportCover_Group" : "ifReportCover_AccountManager"))" style="height:auto">
+            <iframe id="@(dashboard != "rtw" ? "ifReport_Agency" : (isAgencyType ? "ifReport_Agency" : isGroupType ? "ifReport_Group" : "ifReport_AccountManager"))"
+                    src="@Url.Content(@url)" width="100%" height="100%" frameborder="0" scrolling="no" style="display:inline"></iframe>
+        </div>
+    </div>
+    <div class="clear"></div>
+</div>
+
+<script src="@Url.ContentV("~/Scripts/iCPRReportParameters.js")" type="text/javascript"></script>
+
+<script type="text/javascript" language="javascript">
+    var loadedL2Tab1 = false;
+    var loadedL2SecondTab = 0;
+    var loadedL2EndTab = 0;
+
+    var canTabClick = true;
+    var DataContentL2Tab1;
+    var DataContentL2Tab2;
+    var DataContentL2Tab3;
+
+    var loadedDescriptionCount = 0;
+    var systemSub = "";
+    var systemName = $('#wrapper .breadcrum_01 a:eq(0)').html().trim();
+    var iframeHeight;
+
+    $(document).ready(function () {
+        //FixCalendar();
+        //hide group from wow external view
+        var grpName = $('#grpName', window.parent.document).val();
+        if (document.URL.toLowerCase().indexOf('wow') >= 1 && grpName == 'WOWExternal') {
+            $("#tab_group", window.parent.document).remove();
+        }
+    });
+
+    function Load_Second_Tab() {
+        var Href_2 = $('iframe:eq(0)').attr('src');
+
+        if (Href_2.toLowerCase().indexOf("cpr") < 0) {
+            $(".CPRformInline").hide();
+        }
+
+        //determine agency or employer_size or porfolio base on system name
+        if (Href_2.toLowerCase().indexOf("tmf") >= 0) {
+            systemSub = "agency";
+        }
+        else if (Href_2.toLowerCase().indexOf("eml") >= 0) {
+            systemSub = "employer_size";
+        }
+        else if (Href_2.toLowerCase().indexOf("hem") >= 0) {
+            systemSub = "portfolio";
+        }
+
+        var ifReportCount = 0;
+        $('iframe').each(function (i, e) {
+            if ($(this).attr("id").indexOf("_Agency") >= 0
+                || $(this).attr("id").indexOf("_Group") >= 0
+                || $(this).attr("id").indexOf("_AccountManager") >= 0) {
+                ifReportCount++;
+            }
+        });
+
+        // set url for TMF Groups Tab
+        if (Href_2.indexOf("Type=" + systemSub) >= 0) {
+            Href_2 = Href_2.replace("Type=" + systemSub, "Type=group");
+
+            // change snapshots in CPR Level 2
+            Href_2 = Href_2.replace("cpr_level2_" + systemSub, "cpr_level2_group");
+            // change snapshots in RTW Level 2
+            Href_2 = Href_2.replace("rtw_level2_" + systemSub, "rtw_level2_group");
+
+            if (ifReportCount == 1) {
+                var appendContent = '<div id="' + (Href_2.indexOf("Type=" + systemSub) >= 0 ? "ifReportCover_Agency" : "ifReportCover_Group")
+                    + '" style="height:0px;"><iframe id="' + (Href_2.indexOf("Type=" + systemSub) >= 0 ? "ifReport_Agency" : "ifReport_Group")
+                    + '" src="' + Href_2 + '" width="100%" height="100%" frameborder="0" scrolling="no" style="visibility:hidden;"></iframe></div>';
+                $(".CPRformInline").after(appendContent);
+                $(".tab_content").append('<div class="clear" style="height:10px;"></div>');
+            }
+        }
+        else if (Href_2.indexOf("Type=group") >= 0) {
+            Href_2 = Href_2.replace("Type=group", "Type=" + systemSub);
+
+            // change snapshots in CPR Level 2
+            Href_2 = Href_2.replace("cpr_level2_group", "cpr_level2_" + systemSub);
+            // change snapshots in RTW Level 2
+            Href_2 = Href_2.replace("rtw_level2_group", "rtw_level2_" + systemSub);
+
+            if (ifReportCount == 1) {
+                var appendContent = '<div id="' + (Href_2.indexOf("Type=" + systemSub) >= 0 ? "ifReportCover_Agency" : "ifReportCover_Group")
+                    + '" style="height:0px;"><iframe id="' + (Href_2.indexOf("Type=" + systemSub) >= 0 ? "ifReport_Agency" : "ifReport_Group")
+                    + '" src="' + Href_2 + '" width="100%" height="100%" frameborder="0" scrolling="no" style="visibility:hidden;"></iframe></div>';
+                $(".CPRformInline").after(appendContent);
+                $(".tab_content").append('<div class="clear" style="height:10px;"></div>');
+            }
+        }
+        else if (Href_2.indexOf("Type=account_manager") >= 0) {
+            Href_2 = Href_2.replace("Type=account_manager", "Type=group");
+
+            // change snapshots in CPR Level 2
+            Href_2 = Href_2.replace("cpr_level2_account_manager", "cpr_level2_group");
+            // change snapshots in RTW Level 2
+            Href_2 = Href_2.replace("rtw_level2_account_manager", "rtw_level2_group");
+
+            if (ifReportCount == 1) {
+                var appendContent = '<div id="ifReportCover_Group" style="height:0px;"><iframe id="ifReport_Group" src="'
+                    + Href_2 + '" width="100%" height="100%" frameborder="0" scrolling="no" style="visibility:hidden;"></iframe></div>';
+                $(".CPRformInline").after(appendContent);
+                $(".tab_content").append('<div class="clear" style="height:10px;"></div>');
+            }
+        }
+    }
+
+    function Load_Third_Tab() {
+
+        var Href_3 = $('iframe:eq(0)').attr('src');
+
+        if (Href_3.toLowerCase().indexOf("cpr") < 0) {
+            $(".CPRformInline").hide();
+        }
+
+        //determine agency or employer_size or porfolio base on system name
+        if (Href_3.toLowerCase().indexOf("tmf") >= 0) {
+            systemSub = "agency";
+        }
+        else if (Href_3.toLowerCase().indexOf("eml") >= 0) {
+            systemSub = "employer_size";
+        }
+        else if (Href_3.toLowerCase().indexOf("hem") >= 0) {
+            systemSub = "portfolio";
+        }
+
+        if (Href_3.indexOf("Type=" + systemSub) >= 0) {
+            Href_3 = Href_3.replace("Type=" + systemSub, "Type=account_manager");
+
+            // change snapshots in CPR Level 2
+            Href_3 = Href_3.replace("cpr_level2_" + systemSub, "cpr_level2_account_manager");
+            // change snapshots in RTW Level 2
+            Href_3 = Href_3.replace("rtw_level2_" + systemSub, "rtw_level2_account_manager");
+
+            var appendContent = '<div id="ifReportCover_AccountManager" style="height:0px;"><iframe id="ifReport_AccountManager" src="'
+                + Href_3 + '" width="100%" height="100%" frameborder="0" scrolling="no" style="visibility:hidden;"></iframe></div>';
+            $(".CPRformInline").after(appendContent);
+            $(".tab_content").append('<div class="clear" style="height:10px;"></div>');
+        }
+        else if (Href_3.indexOf("Type=group") >= 0) {
+
+            if ($("div#ifReportCover_Agency").length > 0) {
+                Href_3 = Href_3.replace("Type=group", "Type=account_manager");
+
+                // change snapshots in CPR Level 2
+                Href_3 = Href_3.replace("cpr_level2_group", "cpr_level2_account_manager");
+                // change snapshots in RTW Level 2
+                Href_3 = Href_3.replace("rtw_level2_group", "rtw_level2_account_manager");
+
+                var appendContent = '<div id="ifReportCover_AccountManager" style="height:0px;"><iframe id="ifReport_AccountManager" src="'
+                    + Href_3 + '" width="100%" height="100%" frameborder="0" scrolling="no" style="visibility:hidden;"></iframe></div>';
+                $(".CPRformInline").after(appendContent);
+                $(".tab_content").append('<div class="clear" style="height:10px;"></div>');
+            }
+            else if ($("div#ifReportCover_AccountManager").length > 0) {
+                Href_3 = Href_3.replace("Type=group", "Type=" + systemSub);
+
+                // change snapshots in CPR Level 2
+                Href_3 = Href_3.replace("cpr_level2_group", "cpr_level2_" + systemSub);
+                // change snapshots in RTW Level 2
+                Href_3 = Href_3.replace("rtw_level2_group", "rtw_level2_" + systemSub);
+
+                var appendContent = '<div id="ifReportCover_Agency" style="height:0px;"><iframe id="ifReport_Agency" src="'
+                    + Href_3 + '" width="100%" height="100%" frameborder="0" scrolling="no" style="visibility:hidden;"></iframe></div>';
+                $(".CPRformInline").after(appendContent);
+                $(".tab_content").append('<div class="clear" style="height:10px;"></div>');
+            }
+        }
+    }
+</script>

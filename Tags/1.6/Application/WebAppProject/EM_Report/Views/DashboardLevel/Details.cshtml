@@ -1,0 +1,78 @@
+﻿@model EM_Report.Domain.Dashboard_Levels  
+@using EM_Report.Common.Utilities;
+@using EM_Report.Helpers;
+@using EM_Report.Domain;
+@using EM_Report.Repositories;
+@using System.Collections;
+@{    
+    ViewBag.Title = "Dashboard";
+    Layout = Request.IsAjaxRequest() ? null : "~/Views/Shared/_Master.cshtml";
+}
+<script src="@Url.ContentV("~/scripts/iReport.js")" type="text/javascript"></script>
+@functions {  
+    public bool IsNew()
+    {
+        return (Model != null && Model.DashboardLevelId > 0) ? false : true;
+    }
+}
+<div class="wrapper">
+    <div class="w_100p">
+        @using (Html.BeginForm())
+        {            
+            @Html.AntiForgeryToken()
+            <div class="formWrap">
+                @Html.Hidden("action")
+                @if (!IsNew())
+                {
+                    @Html.HiddenFor(e => e.DashboardLevelId)
+                    @Html.HiddenFor(e => e.Owner)
+                }               
+                <h1>@(IsNew() ? "Dashboard Level List Add" : "Dashboard Level List Edit")</h1>
+                @Html.Partial("_ShowMessage")
+                <div class="formInline">
+                    <label>Level Name</label>
+                    @Html.TextBoxFor(e => e.Name, new { id = "txtName", name = "txtName", @class = "Text" })
+                    @Html.ValidationMessageFor(e => e.Name)
+                </div>
+                <div class="clear"></div>
+                <div class="formInline">
+                    <label>Description</label>
+                    @Html.TextAreaFor(e => e.Description, new { id = "txtDescription", @class = "Text" })
+                    @Html.ValidationMessageFor(e => e.Description)
+                </div>
+                <div class="clear"></div>
+                <div class="formInline">
+                    <label>Sort</label>
+                    @Html.TextBoxFor(e => e.Sort, new { id = "txtSort", @class = "Text" })
+                    @Html.ValidationMessageFor(e => e.Sort)
+                </div>
+                <div class="clear"></div>
+                <div class="formInline">
+                    <label>Status</label>
+                    @Html.DropDownListFor(m => m.Status, (SelectList)ViewBag.cboStatus, new { id = "cboStatus" })
+                </div>
+                <div class="clear"></div>
+                @if (!IsNew())
+                {
+                    <div class="formInline">
+                        <label>Create Date</label>
+                        @Html.TextBoxFor(e => e.Create_Date, new { @class = "Text Disabled", @readonly = true })
+                    </div> 
+                    <div class="clear"></div>
+                    <div class="formInline">
+                        <label>Created By</label>
+                        @Html.TextBoxFor(e => e.OwnerName, new { @class = "Text Disabled", @readonly = true })
+                    </div>      
+                    <div class="clear"></div>
+                }           
+                <div class="formInline formInlineBtn">     
+                @if (Login.AuthorizeSystemPermission(ResourcesHelper.System_Report, ResourcesHelper.Permission_Add))
+                {
+                    <span class="btnPurple"><input type="button" onclick="actionClick('save', false);" value="Save" /></span>
+                }
+                <span class="btnPurple"><input type="button" onclick="window.location = ('@Url.Action("Index", "DashboardLevel")')" value="Back To List" /></span>
+            </div>
+            </div>   
+        }
+     </div>
+</div>

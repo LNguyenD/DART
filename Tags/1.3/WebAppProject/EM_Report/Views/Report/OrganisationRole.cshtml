@@ -1,0 +1,133 @@
+﻿@model EM_Report.Models.ReportPermissionModel
+@using EM_Report.BLL.Commons;  
+@using EM_Report.Helpers;
+@{
+    ViewBag.Title = "Organisation Role Level";
+    Layout = Request.IsAjaxRequest() ? null : "~/Views/Shared/_Layout.cshtml";
+}
+<script src="@Url.Content("~/scripts/jsReport.js")" type="text/javascript"></script>
+ <div class="column full ui-sortable">
+    <div class="box">
+        <h2 class="box-header">Report</h2>
+        <div class="box-content">
+            @using (Ajax.BeginForm("OrganisationRole", "Report", new AjaxOptions { UpdateTargetId = "content", OnComplete = "CompleteFunction", OnBegin = "showLoading" }))
+            {
+                @Html.Partial("_ShowMessage")  
+                @Html.HiddenFor(e => e.ReportId)                
+                <br />
+                <div class="dataTables_wrapper" id="tabledata_wrapper">
+                    <h3 class="box-header">Organisation Levels</h3>
+                    <div class="fg-toolbar ui-widget-header ui-corner-tl ui-corner-tr ui-helper-clearfix">
+                        <div id="tabledata_length" class="dataTables_length">Show @Html.DropDownList("cboDisplayEntry", (SelectList)ViewBag.DisplayEntry) entries</div>
+                    </div>
+                    <table id="tbOrganisationRoleLevel" name="tbGrid" class="display">
+                    <thead>
+                        <tr>
+                            <th class="first tc center"><input type="checkbox" id="checkboxall" name="chkAll" /> </th>
+                            <th class="" sortby="LevelId" sortdir=""><span class="css_right ui-icon ui-icon-carat-2-n-s"></span>Level Id</th>
+                            <th class="" sortby="Name" sortdir=""><span class="css_right ui-icon ui-icon-carat-2-n-s"></span>Name</th>
+                            <th class="" sortby="Sort" sortdir=""><span class="css_right ui-icon ui-icon-carat-2-n-s"></span>Parent Level Id</th>
+                            <th class="" sortby="Description" sortdir=""><span class="css_right ui-icon ui-icon-carat-2-n-s"></span>description</th>
+                            <th class="" sortby="Create_Date" sortdir=""><span class="css_right ui-icon ui-icon-carat-2-n-s"></span>created on</th>
+                            <th class="" sortby="Owner" sortdir=""><span class="css_right ui-icon ui-icon-carat-2-n-s"></span>created by</th>
+                            <th class="tc actions hide"><span class="css_right ui-icon"></span>actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in ViewBag.OrganisationRoles)
+                        {
+                            <tr>
+                                <td class="first tc"><input type="checkbox" name="chkItem" value="@(item.LevelId)" id="chkId@(item.LevelId)"/> </td>
+                                <td>@item.LevelId</td>
+                                <td class="sorting_1"><a href="@Url.Action("create", "level", new { id = item.LevelId })">@item.Name</a></td>
+                                <td>@item.Sort</td>
+                                <td>@item.Description</td>
+                                <td>@Base.GetDatetimeText(@item.Create_Date)</td>
+                                <td>@item.OwnerName</td>
+                                <td class="tc hide">
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                    </table>
+                    @Html.Partial("UCPager")
+                </div>
+                <br />
+                if (Login.AuthorizeSystemPermission(ResourcesHelper.System_Report, ResourcesHelper.Permission_Update))
+                {
+                    <label class="form-label">description</label>
+                    <div class="ui-wrapper">
+                        @Html.TextArea("txtDescription", new { cols = 100, @class = "form-field half ui-resizable" })
+                            
+                    </div>
+                    <a id="cmdAssign" value="assign" class="button white"><span class="icon_text active2"></span>Assign to report</a>
+                }
+                <hr />
+                if (Model != null && !Model.ReportOrganisationLevelList.IsNullOrEmpty())
+                {
+                    <div class="dataTables_wrapper" id="">
+                        <h3 class="box-header">Report Organisation Role</h3>
+                        <table id="tbExternalAccess" name="" class="display">
+                        <thead>
+                            <tr>
+                                <th class="first tc center"><input type="checkbox" name="chkAllSecondList" /> </th>
+                                <th class="" sortby="LevelName" sortdir=""><span class="css_right ui-icon ui-icon-carat-2-n-s"></span>organisation level</th>
+                                @*<th class="" sortby="Status" sortdir=""><span class="css_right ui-icon ui-icon-carat-2-n-s"></span>status</th>*@
+                                <th class="" sortby="Create_Date" sortdir=""><span class="css_right ui-icon ui-icon-carat-2-n-s"></span>created on</th>
+                                <th class="" sortby="OwnerName" sortdir=""><span class="css_right ui-icon ui-icon-carat-2-n-s"></span>created by</th>
+                                <th class="tc actions hide"><span class="css_right ui-icon"></span>actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model.ReportOrganisationLevelList)
+                            {
+                                <tr>
+                                    <td class="first tc"><input type="checkbox" name="chkItemSecondList" value="@(item.LevelId)" id="chkAccessId@(item.LevelId)"/> </td>
+                                    <td>@item.LevelName</td>
+                                    <td>@Base.GetDatetimeText(@item.Create_Date)</td>
+                                    <td>@item.OwnerName</td>
+                                    <td class="tc hide">
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                        </table>
+                    </div>
+                }
+                else
+                {
+                    <div class="dataTables_wrapper" id="">
+                        <h3 class="box-header">External Accesses</h3>
+                        <table class="display">
+                            <thead>
+                                <tr>
+                                    <th class="first tc center"><input type="checkbox" name="chkAllSecondList" /> </th>
+                                    <th><span class="css_right ui-icon ui-icon-carat-2-n-s"></span>organisation level</th>
+                                    <th><span class="css_right ui-icon ui-icon-carat-2-n-s"></span>description</th>
+                                    <th><span class="css_right ui-icon ui-icon-carat-2-n-s"></span>created on</th>
+                                    <th><span class="css_right ui-icon ui-icon-carat-2-n-s"></span>created by</th>
+                                    <th class="tc actions hide"><span class="css_right ui-icon"></span>actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                    <tr>
+                                        <td colspan="2">No items</td>
+                                    </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                }
+                if (Login.AuthorizeSystemPermission(ResourcesHelper.System_Report, ResourcesHelper.Permission_Delete))
+                {
+                    <a id="cmdUnAssign" value="unassign" class="button white"><span class="icon_text inactive2" onclick="actionClick('unassign', true, false);"></span>Unassign from report</a>
+                }
+                <a href="@Url.Action("details", "report", new { id=Model.ReportId })" class="button white"><span class="icon_text back"></span>back to report</a>
+                @Html.Hidden("action")
+                <input type="hidden" id="hddSort" name="hddSort" value="@ViewBag.SortValue" />
+                <input type="hidden" id="hddAction" name="hddAction" />
+                <input type="hidden" id="hddPaging" name="hddPaging" value="@ViewBag.PagingValue" />
+            }
+        </div>
+    </div>
+</div>
+

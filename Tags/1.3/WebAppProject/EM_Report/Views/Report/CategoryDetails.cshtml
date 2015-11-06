@@ -1,0 +1,68 @@
+﻿@model EM_Report.Models.Report_CategoriesModel
+@using EM_Report.BLL.Commons;
+@using EM_Report.Helpers;
+@{
+    ViewBag.Title = "Report Category";
+    Layout = Request.IsAjaxRequest() ? null : "~/Views/Shared/_Master.cshtml";
+}
+@functions {  
+    public bool IsNew()
+    {
+        return (Model != null && Model.CategoryId > 0) ? false : true;
+    }
+
+    public string AddButtonText()
+    {
+        return IsNew() ? "add" : "save";
+    }
+} 
+<div class="Wrapper">
+    <div class="BoxHeader">
+        <span>Report >> Report Category >> @(IsNew()?"Add Report":"Edit Report")</span>
+    </div>
+    <div class="BoxContent">
+       @using (Html.BeginForm())
+       {            
+            <div class="FormWrapper">
+                @Html.Hidden("action")
+                @Html.HiddenFor(e => e.CategoryId)
+                @Html.HiddenFor(e => e.Owner)
+			    @Html.Partial("_ShowMessage")       
+                <div class="LineWrapper First SameLine">
+                    <label>Category Name</label>                    
+                    @Html.TextBoxFor(e => e.Name, new { id = "txtName", name = "txtName", @class = "Text" })
+					@Html.ValidationMessageFor(e => e.Name) 
+                </div>
+                <div class="LineWrapper SameLine">
+                    <label>Description</label>
+                    @Html.TextAreaFor(e => e.Description, new { id = "txtDescription", @class = "Text" })
+					@Html.ValidationMessageFor(e => e.Description)  
+                </div>                
+                <div class="LineWrapper SameLine">
+                    <label>Status</label>
+                    <div class="WrapperSelectBox SelectForm">
+                          @Html.DropDownListFor(e => e.Status, new SelectList(Base.StatusList(), "StatusId", "Name"))
+                    </div>
+                </div>
+                @if (!IsNew())
+                {
+                    <div class="LineWrapper SameLine">
+                        <label>Create Date</label>                        
+                        @Html.TextBoxFor(e => e.Create_Date, new { @class = "Text", @readonly = true, @disabled = "disable" })
+                    </div>
+                    <div class="LineWrapper SameLine">
+                        <label>Created By</label>                        
+                        @Html.TextBoxFor(e => e.OwnerName, new { @class = "Text", @readonly = true, @disabled = "disable" })
+                    </div>      
+                }
+            </div>
+            <div class="CommandWrapper">                
+                @if (Login.AuthorizeSystemPermission(ResourcesHelper.System_Report, ResourcesHelper.Permission_Add))
+                {
+				<a id="btnSave" class="ButtonSave" onclick="actionClick('save', false, 'formCategory');">Save</a>
+                }
+                <a class="ButtonBack" href="@Url.Action("category", "report")">Back To List</a>                
+            </div>
+       }
+    </div>  
+</div>

@@ -1,0 +1,266 @@
+﻿@model EM_Report.Domain.Dashboard_Favours
+@using EM_Report.Common.Utilities;
+@using EM_Report.Helpers;
+@using EM_Report.Repositories;
+@using EM_Report.Domain;
+@{
+    ViewBag.Title = "Dashboard_Favour";
+}
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+<div class="bookmarkContent">
+    <a style="cursor:pointer;" class="show">Hide bookmark list</a>
+    <div class="showBookmark">         
+        @Html.Action("index", "Dashboard_Favour", new { userId = Base.LoginSession.intUserId })
+    </div>
+    @Html.HiddenFor(e => e.FavourId)
+    @Html.HiddenFor(e => e.Owner)
+    <table cellspacing="0" cellpadding="0" class="addTextbox">
+        <tr>
+            <td>Name</td>
+            <td>
+                @Html.TextBoxFor(e => e.Name, new { id = "txtNameAdd", name = "txtNameAdd", @class = "Text" })
+                @Html.ValidationMessageFor(e => e.Name)
+            </td>
+            <td class="favourButton">
+                <span class="btnPurple"><input type="button" id="cmdfSave" value="Add" /></span>
+            </td>
+        </tr>
+    </table>
+    <div class="clear"></div>
+</div>
+}
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $(".bookmarkSave").hide();
+        landingPageAfterPageLoaded();
+    });
+
+    $(document).undelegate(".bookmarkEdit", 'click').delegate(".bookmarkEdit", 'click', function (e) {
+        e.preventDefault();
+        var parent = $(this).parents(".showBookmarkItems");
+
+        parent.find(".bookmarkEditContent").fadeIn('fast');
+        parent.find(".link").hide();
+        parent.find(".bookmarkEdit").hide();      
+        parent.find(".bookmarkSave").show()
+        parent.find(".bookmarkFunc").css("margin-top", "7px")
+
+        parent.siblings(".showBookmarkItems").each(function (index) {
+            $(this).find(".bookmarkEditContent").hide();
+            $(this).find(".link").fadeIn('fast');
+            $(this).find(".bookmarkEdit").show();
+            $(this).find(".bookmarkSave").hide();
+            $(this).find(".bookmarkFunc").css("margin-top", "0px");
+        });
+    });
+
+    $(document).undelegate(".bookmarkRemove", 'click').delegate(".bookmarkRemove", 'click', function (e) {
+        e.preventDefault();
+        var parent = $(this).parents(".showBookmarkItems");
+        var id = parent.find("#id").val();
+        $("#btnOkModalFavour").show();
+        confirmSubmit('Warning!', 'Are you sure want to delete this item?');
+        $("#btnOkModalFavour").click(function (event) {
+            event.preventDefault();
+            $.ajax({
+                type: 'POST',
+                headers: generateAntiForgeryTokenHeader(),
+                url: '@Url.Action("index", "Dashboard_Favour")',
+                data: {
+                    favourId: id, flag: "delete"
+                },
+                success: function () {
+                    parent.hide();
+                    $("#btnOkModal").show();
+                    $("#btnOkModalFavour").hide();
+                    $("#yesno").overlay().close();
+                },
+                error: function () {
+                    confirmOK("Warning!", "Error");
+                }
+            });
+            return false;
+        });
+    });
+
+    $(document).undelegate(".bookmarkSave", 'click').delegate(".bookmarkSave", 'click', function (e) {
+        e.preventDefault();
+        var parent = $(this).parents(".showBookmarkItems");
+        var parentParent = $(this).parent(".bookmarkFunc").next().next();
+        var name = parentParent.find("#txtName").val();
+        var id = parent.find("#id").val();
+        var isLoadingPage = parent.find("#isLandingPage").val();
+        var userId = '@Base.LoginSession.intUserId'.toString();
+        if (parentParent.find("#txtName").valid()) {
+            $.ajax({
+                type: 'POST',
+                url: '@Url.Action("details", "Dashboard_Favour")',
+                headers: generateAntiForgeryTokenHeader(),
+                data:
+                {
+                    favourId: id
+                    , name: name
+                    , userId: userId
+                    , isLoadingPage: isLoadingPage
+                },
+                success: function () {
+                    parent.find(".bookmarkEditContent").hide();
+                    parent.find(".link").show();
+                    parent.find(".link").html(name);
+                    parent.find(".bookmarkEdit").show();
+                    parent.find(".bookmarkSave").hide();
+                    parent.find(".bookmarkFunc").css("margin-top", "0px");
+                    landingPageAfterPageLoaded();
+                },
+                error: function () {
+                    confirmOK("Warning!", "Error");
+                }
+            });
+        }
+    });
+
+    $(document).undelegate(".bookmarkLandingPage", 'click').delegate(".bookmarkLandingPage", 'click', function (e) {
+        e.preventDefault();
+        var parent = $(this).parents(".showBookmarkItems");
+        var parentParent = $(this).parent(".bookmarkFunc").next().next();
+        var removeLandingPage = parent.find(".bookmarkRemoveLandingPage");
+        var addLandingPage = $(this);
+        var name = parentParent.find("#txtName").val();
+        var id = parent.find("#id").val();
+        var isLoadingPage = parent.find("#isLandingPage");
+        var otherIsLadingPage = parent.parents(".showBookmark").find("#isLandingPage");
+        var userId = '@Base.LoginSession.intUserId'.toString();
+
+        //hide and show other landing page buttons
+        $(".bookmarkRemoveLandingPage").hide();
+        $(".bookmarkLandingPage").show();
+        //hide and show selected landing page button
+        removeLandingPage.show();
+        addLandingPage.hide();
+
+        $.ajax({
+            type: 'POST',
+            headers: generateAntiForgeryTokenHeader(),
+            url: '@Url.Action("details", "Dashboard_Favour")',
+            data:
+            {
+                favourId: id
+                , userId: userId
+                , name: name
+                , isLoadingPage: true
+            },
+            success: function () {
+                otherIsLadingPage.val('False');
+                isLoadingPage.val('True');
+            },
+            error: function () {
+                confirmOK("Warning!", "Error");
+            }
+        });
+    });
+
+    $(document).undelegate(".bookmarkRemoveLandingPage", 'click').delegate(".bookmarkRemoveLandingPage", 'click', function (e) {
+        e.preventDefault();
+        var parent = $(this).parents(".showBookmarkItems");
+        var addLandingPage = parent.find(".bookmarkLandingPage");
+        var removeLandingPage = $(this);
+        var parentParent = $(this).parent(".bookmarkFunc").next().next();
+        var name = parentParent.find("#txtName").val();
+        var id = parent.find("#id").val();
+        var isLoadingPage = parent.find("#isLandingPage");
+        var userId = '@Base.LoginSession.intUserId'.toString();
+
+        removeLandingPage.hide();
+        addLandingPage.show();
+
+        $.ajax({
+            type: 'POST',
+            headers: generateAntiForgeryTokenHeader(),
+            url: '@Url.Action("details", "Dashboard_Favour")',
+            data:
+            {
+                favourId: id
+                , userId: userId
+                , name: name
+                , isLoadingPage: false
+            },
+            success: function () {
+                isLoadingPage.val('false');
+            },
+            error: function () {
+                confirmOK("Warning!", "Error");
+            }
+        });
+    });
+
+    $("#cmdfSave").click(function () {
+        var form = $(this).parents("form");
+        if (form.valid()) {
+            var name = $(this).parents(".bookmarkContent").find("#txtNameAdd").val();
+            var AbsolutePath = '@Request.Url.AbsolutePath';
+            AbsolutePath = AbsolutePath.toLowerCase().substring(AbsolutePath.indexOf("/dashboard"));
+            var favourUrl = AbsolutePath + '@Request.Url.Query';           
+            favourUrl = favourUrl.replace(/&amp;/g, '&');
+            var userId = '@Base.LoginSession.intUserId'.toString();
+            $.ajax({
+                type: 'POST',
+                headers: generateAntiForgeryTokenHeader(),
+                url: '@Url.Action("details", "Dashboard_Favour")',
+                data:
+                {
+                    userId: userId,
+                    favourId: "0",
+                    favourUrl: favourUrl,
+                    name: name,
+                    isLoadingPage: false,
+                },
+                success: function (data) {
+                    $(".showBookmark").replaceWith($(data).find('.showBookmark'));
+                    $(".showBookmark").find(".showBookmarkItems:last").hide().slideDown(400);
+                    $(".showBookmark").find('input[type=text]').each(function () { prettyFormsForTextBoxes(this) });
+                    $(".bookmarkSave").hide();
+                    $("#cmdfSave").parents(".bookmarkContent").find("#txtNameAdd").val("");
+                    $(".show").text("Hide bookmark list");
+                    $(".bookmarkRemoveLandingPage").hide();
+
+                    $(".link").each(function () {
+                        var a = $(this).attr("href");
+                        a = a.replace("/Dashboard_Favour", "");
+                        $(this).attr("href", a);
+                    });
+
+                    landingPageAfterPageLoaded();         
+                },
+                error: function () {
+                    confirmOK("Warning!", "Error");
+                }
+            });
+        }
+    });
+
+    function prettyFormsForTextBoxes(element) {
+        if ((element.type == "text" || element.type == "password" || element.type == "email") && element.className != "searchTxt") {
+            appendParentsTo(element);
+        }
+    }
+
+
+    //hide show landing page option after the page is loaded
+    function landingPageAfterPageLoaded() {
+        $(".bookmarkRemoveLandingPage").each(function () {
+            if ($(this).parents(".showBookmarkItems").find("#isLandingPage").val() == 'True') {
+                $(this).show();
+                $(this).prev('a').hide();
+            }
+            else {
+                $(this).hide();
+                $(this).prev('a').show();
+            }
+        });
+    }
+
+</script>

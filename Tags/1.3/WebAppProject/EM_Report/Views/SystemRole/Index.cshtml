@@ -1,0 +1,61 @@
+﻿@model IEnumerable<EM_Report.Models.System_RolesModel>
+@using EM_Report.BLL.Pager;
+@using EM_Report.BLL.Commons;
+@using EM_Report.Helpers;
+@{
+    ViewBag.Title = "System Role";
+    ViewBag.Heading = "System Role List";
+    Layout = Request.IsAjaxRequest() ? null : "~/Views/Shared/_Master.cshtml";
+}
+<div class="Wrapper">
+   @using (Ajax.BeginForm("Index", new AjaxOptions { UpdateTargetId = "content", OnBegin = "showLoading", OnComplete = "hideLoading" }))
+   {
+        <script src="@Url.Content("~/scripts/iReport.js")" type="text/javascript"></script>
+        <link href="@Url.Stylesheet("report.css")" rel="stylesheet" type="text/css" />    
+        @Html.Partial("_SearchBar")
+        <div class="BoxContent">
+            <table id="tbGrid" name="tbGrid" class="Grid">
+                <thead>
+                   <tr>
+                        <th class="center"><input type="checkbox" name="chkAll" /> </th>
+                        <th sortby="Name" sortdir=""><span class="css_right ui-icon ui-icon-carat-2-n-s"></span>Name</th>
+                        <th class="last-column" sortby="Description" sortdir=""><span class="css_right ui-icon ui-icon-carat-2-n-s"></span>Description</th>                                        
+                    </tr>
+                </thead>
+                @if (!ViewData.Model.IsNullOrEmpty())
+                {               
+                    <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td class="center" style="width:30px;"><input type="checkbox" name="chkItem" value="@item.System_RoleId" /> </td>
+                                    <td title="@item.Name" style="width:*%"><a href="@Url.Action("details/" + @item.System_RoleId + "", "systemrole")">@item.Name</a></td>
+                                    <td class="last-column" title="@item.Description" style="width:40%">@item.Description</td>                                                                 
+                                </tr>	                         
+                            }
+                    </tbody>                        
+                }            
+            </table>        
+        </div>
+        <div class="Paging">
+            <div style="float:right">
+                @if (Login.AuthorizeSystemPermission(int.Parse(EM_Report.BLL.Resources.Control.System_Role), int.Parse(EM_Report.BLL.Resources.Control.Permission_Add)))
+                {
+                <a class="CmdButton Add" href="@Url.Action("details", "systemrole")">Add New</a>
+                }
+                @if (Login.AuthorizeSystemPermission(int.Parse(EM_Report.BLL.Resources.Control.System_Role), int.Parse(EM_Report.BLL.Resources.Control.Permission_Delete)))
+                {
+                <a id="cmdDelete" class="CmdButton Delete" value="@EM_Report.BLL.Resources.Control.Status_InActive">Delete</a>                
+                }
+            </div>
+            @if (!Model.IsNullOrEmpty())
+            {
+                @Html.Partial("_UCPaging")                                          
+            }
+        
+        </div>    
+        @Html.Partial("_HiddenAction")
+   }   
+</div>
+
+

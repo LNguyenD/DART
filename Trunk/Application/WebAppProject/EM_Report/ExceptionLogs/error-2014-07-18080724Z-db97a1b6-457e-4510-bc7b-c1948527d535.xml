@@ -1,0 +1,170 @@
+﻿<error errorId="db97a1b6-457e-4510-bc7b-c1948527d535" application="/LM/W3SVC/1/ROOT/Dart" host="ASWVNWKS103" type="System.Web.HttpException" message="The controller for path '/dart/images/favicon.ico' was not found or does not implement IController." source="System.Web.Mvc" detail="System.Web.HttpException (0x80004005): The controller for path '/dart/images/favicon.ico' was not found or does not implement IController.&#xD;&#xA;   at System.Web.Mvc.DefaultControllerFactory.GetControllerInstance(RequestContext requestContext, Type controllerType)&#xD;&#xA;   at System.Web.Mvc.DefaultControllerFactory.CreateController(RequestContext requestContext, String controllerName)&#xD;&#xA;   at System.Web.Mvc.MvcHandler.ProcessRequestInit(HttpContextBase httpContext, IController&amp; controller, IControllerFactory&amp; factory)&#xD;&#xA;   at System.Web.Mvc.MvcHandler.&lt;&gt;c__DisplayClass6.&lt;BeginProcessRequest&gt;b__2()&#xD;&#xA;   at System.Web.Mvc.SecurityUtil.&lt;&gt;c__DisplayClassb`1.&lt;ProcessInApplicationTrust&gt;b__a()&#xD;&#xA;   at System.Web.Mvc.SecurityUtil.ProcessInApplicationTrust[TResult](Func`1 func)&#xD;&#xA;   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()&#xD;&#xA;   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean&amp; completedSynchronously)" time="2014-07-18T08:07:24.5556507Z" statusCode="404">
+  <serverVariables>
+    <item name="ALL_HTTP">
+      <value string="HTTP_CONNECTION:Keep-Alive&#xD;&#xA;HTTP_ACCEPT:*/*&#xD;&#xA;HTTP_ACCEPT_ENCODING:gzip, deflate&#xD;&#xA;HTTP_COOKIE:__RequestVerificationToken_L0RhcnQ_=Y+rMKDKAwTqrfyZqeHUFsVWX6AJU0RDkaYl7483TBkU9Ca4upRU4TPAkfQFdXJdD3yezEvmJURRxYLzN8OwFrPSom0Qg0iKcq7CDHMDUZ44i6QjYJjBpFFJmU4NsPia2zbA2FGiDaS0lbuDTMb9VETHp1MvAJqj7UwfdQYIPE6c=; ASP.NET_SessionId=omsn1strtxefpg4nerhj0dlj; UserInfoSecurity=admin@aswigsolutions.com|x/r4zsVD2y5FTpKYCQGMUw==#####|179; sqlAuthCookie=EBEF0AA1B190ACBDF74764CFEB7936F91895C869138373A0C6E4CE8761A66856145E75A87BB62837A52189BB10EAFB54A0AC4E1C8D76B9017D9F83BA769570B41EE2E4C0EC78896CA56FC2E1619678383FFD676032D45C4550DE1B65DD32FFD7D9796EF635EA54CA06B33293E937A78C040C336E&#xD;&#xA;HTTP_HOST:localhost&#xD;&#xA;HTTP_USER_AGENT:Mozilla/5.0 (Windows NT 6.1; WOW64; Trident/7.0; rv:11.0) like Gecko&#xD;&#xA;" />
+    </item>
+    <item name="ALL_RAW">
+      <value string="Connection: Keep-Alive&#xD;&#xA;Accept: */*&#xD;&#xA;Accept-Encoding: gzip, deflate&#xD;&#xA;Cookie: __RequestVerificationToken_L0RhcnQ_=Y+rMKDKAwTqrfyZqeHUFsVWX6AJU0RDkaYl7483TBkU9Ca4upRU4TPAkfQFdXJdD3yezEvmJURRxYLzN8OwFrPSom0Qg0iKcq7CDHMDUZ44i6QjYJjBpFFJmU4NsPia2zbA2FGiDaS0lbuDTMb9VETHp1MvAJqj7UwfdQYIPE6c=; ASP.NET_SessionId=omsn1strtxefpg4nerhj0dlj; UserInfoSecurity=admin@aswigsolutions.com|x/r4zsVD2y5FTpKYCQGMUw==#####|179; sqlAuthCookie=EBEF0AA1B190ACBDF74764CFEB7936F91895C869138373A0C6E4CE8761A66856145E75A87BB62837A52189BB10EAFB54A0AC4E1C8D76B9017D9F83BA769570B41EE2E4C0EC78896CA56FC2E1619678383FFD676032D45C4550DE1B65DD32FFD7D9796EF635EA54CA06B33293E937A78C040C336E&#xD;&#xA;Host: localhost&#xD;&#xA;User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; Trident/7.0; rv:11.0) like Gecko&#xD;&#xA;" />
+    </item>
+    <item name="APPL_MD_PATH">
+      <value string="/LM/W3SVC/1/ROOT/Dart" />
+    </item>
+    <item name="APPL_PHYSICAL_PATH">
+      <value string="D:\Work\Project\Dart\branches\WebAppProject\EM_Report\" />
+    </item>
+    <item name="AUTH_TYPE">
+      <value string="" />
+    </item>
+    <item name="AUTH_USER">
+      <value string="" />
+    </item>
+    <item name="AUTH_PASSWORD">
+      <value string="" />
+    </item>
+    <item name="LOGON_USER">
+      <value string="" />
+    </item>
+    <item name="REMOTE_USER">
+      <value string="" />
+    </item>
+    <item name="CERT_COOKIE">
+      <value string="" />
+    </item>
+    <item name="CERT_FLAGS">
+      <value string="" />
+    </item>
+    <item name="CERT_ISSUER">
+      <value string="" />
+    </item>
+    <item name="CERT_KEYSIZE">
+      <value string="128" />
+    </item>
+    <item name="CERT_SECRETKEYSIZE">
+      <value string="2048" />
+    </item>
+    <item name="CERT_SERIALNUMBER">
+      <value string="" />
+    </item>
+    <item name="CERT_SERVER_ISSUER">
+      <value string="CN=ASWVNWKS103.aswigsyd.int" />
+    </item>
+    <item name="CERT_SERVER_SUBJECT">
+      <value string="CN=ASWVNWKS103.aswigsyd.int" />
+    </item>
+    <item name="CERT_SUBJECT">
+      <value string="" />
+    </item>
+    <item name="CONTENT_LENGTH">
+      <value string="0" />
+    </item>
+    <item name="CONTENT_TYPE">
+      <value string="" />
+    </item>
+    <item name="GATEWAY_INTERFACE">
+      <value string="CGI/1.1" />
+    </item>
+    <item name="HTTPS">
+      <value string="on" />
+    </item>
+    <item name="HTTPS_KEYSIZE">
+      <value string="128" />
+    </item>
+    <item name="HTTPS_SECRETKEYSIZE">
+      <value string="2048" />
+    </item>
+    <item name="HTTPS_SERVER_ISSUER">
+      <value string="CN=ASWVNWKS103.aswigsyd.int" />
+    </item>
+    <item name="HTTPS_SERVER_SUBJECT">
+      <value string="CN=ASWVNWKS103.aswigsyd.int" />
+    </item>
+    <item name="INSTANCE_ID">
+      <value string="1" />
+    </item>
+    <item name="INSTANCE_META_PATH">
+      <value string="/LM/W3SVC/1" />
+    </item>
+    <item name="LOCAL_ADDR">
+      <value string="::1" />
+    </item>
+    <item name="PATH_INFO">
+      <value string="/dart/images/favicon.ico" />
+    </item>
+    <item name="PATH_TRANSLATED">
+      <value string="D:\Work\Project\Dart\branches\WebAppProject\EM_Report\images\favicon.ico" />
+    </item>
+    <item name="QUERY_STRING">
+      <value string="v=635412928388669446" />
+    </item>
+    <item name="REMOTE_ADDR">
+      <value string="::1" />
+    </item>
+    <item name="REMOTE_HOST">
+      <value string="::1" />
+    </item>
+    <item name="REMOTE_PORT">
+      <value string="1495" />
+    </item>
+    <item name="REQUEST_METHOD">
+      <value string="GET" />
+    </item>
+    <item name="SCRIPT_NAME">
+      <value string="/dart/images/favicon.ico" />
+    </item>
+    <item name="SERVER_NAME">
+      <value string="localhost" />
+    </item>
+    <item name="SERVER_PORT">
+      <value string="443" />
+    </item>
+    <item name="SERVER_PORT_SECURE">
+      <value string="1" />
+    </item>
+    <item name="SERVER_PROTOCOL">
+      <value string="HTTP/1.1" />
+    </item>
+    <item name="SERVER_SOFTWARE">
+      <value string="Microsoft-IIS/7.5" />
+    </item>
+    <item name="URL">
+      <value string="/dart/images/favicon.ico" />
+    </item>
+    <item name="HTTP_CONNECTION">
+      <value string="Keep-Alive" />
+    </item>
+    <item name="HTTP_ACCEPT">
+      <value string="*/*" />
+    </item>
+    <item name="HTTP_ACCEPT_ENCODING">
+      <value string="gzip, deflate" />
+    </item>
+    <item name="HTTP_COOKIE">
+      <value string="__RequestVerificationToken_L0RhcnQ_=Y+rMKDKAwTqrfyZqeHUFsVWX6AJU0RDkaYl7483TBkU9Ca4upRU4TPAkfQFdXJdD3yezEvmJURRxYLzN8OwFrPSom0Qg0iKcq7CDHMDUZ44i6QjYJjBpFFJmU4NsPia2zbA2FGiDaS0lbuDTMb9VETHp1MvAJqj7UwfdQYIPE6c=; ASP.NET_SessionId=omsn1strtxefpg4nerhj0dlj; UserInfoSecurity=admin@aswigsolutions.com|x/r4zsVD2y5FTpKYCQGMUw==#####|179; sqlAuthCookie=EBEF0AA1B190ACBDF74764CFEB7936F91895C869138373A0C6E4CE8761A66856145E75A87BB62837A52189BB10EAFB54A0AC4E1C8D76B9017D9F83BA769570B41EE2E4C0EC78896CA56FC2E1619678383FFD676032D45C4550DE1B65DD32FFD7D9796EF635EA54CA06B33293E937A78C040C336E" />
+    </item>
+    <item name="HTTP_HOST">
+      <value string="localhost" />
+    </item>
+    <item name="HTTP_USER_AGENT">
+      <value string="Mozilla/5.0 (Windows NT 6.1; WOW64; Trident/7.0; rv:11.0) like Gecko" />
+    </item>
+  </serverVariables>
+  <queryString>
+    <item name="v">
+      <value string="635412928388669446" />
+    </item>
+  </queryString>
+  <cookies>
+    <item name="__RequestVerificationToken_L0RhcnQ_">
+      <value string="Y+rMKDKAwTqrfyZqeHUFsVWX6AJU0RDkaYl7483TBkU9Ca4upRU4TPAkfQFdXJdD3yezEvmJURRxYLzN8OwFrPSom0Qg0iKcq7CDHMDUZ44i6QjYJjBpFFJmU4NsPia2zbA2FGiDaS0lbuDTMb9VETHp1MvAJqj7UwfdQYIPE6c=" />
+    </item>
+    <item name="ASP.NET_SessionId">
+      <value string="omsn1strtxefpg4nerhj0dlj" />
+    </item>
+    <item name="UserInfoSecurity">
+      <value string="admin@aswigsolutions.com|x/r4zsVD2y5FTpKYCQGMUw==#####|179" />
+    </item>
+    <item name="sqlAuthCookie">
+      <value string="EBEF0AA1B190ACBDF74764CFEB7936F91895C869138373A0C6E4CE8761A66856145E75A87BB62837A52189BB10EAFB54A0AC4E1C8D76B9017D9F83BA769570B41EE2E4C0EC78896CA56FC2E1619678383FFD676032D45C4550DE1B65DD32FFD7D9796EF635EA54CA06B33293E937A78C040C336E" />
+    </item>
+  </cookies>
+</error>

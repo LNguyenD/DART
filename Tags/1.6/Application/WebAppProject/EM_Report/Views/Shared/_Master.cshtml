@@ -1,0 +1,121 @@
+﻿@using EM_Report.Helpers;
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=11; IE=10; IE=9; IE=8; IE=7; IE=EDGE" />
+    <title>@ViewBag.Title</title>
+    <script src="@Url.Content("~/Scripts/jquery-1.7.2.min.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/jquery.unobtrusive-ajax.min.js")"></script>
+    <script language="javascript" type="text/javascript" src="@Url.Content("~/Scripts/MicrosoftAjax.js")"></script>
+    <script language="javascript" type="text/javascript" src="@Url.Content("~/Scripts/MicrosoftMvcAjax.js")"></script>
+
+    <script src="@Url.Content("~/Scripts/jquery-v1.2.7.tools.min.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/jquery-ui-1.11.3.custom.min.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/jquery.cookie.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/jquery.reveal.js")" type="text/javascript"></script>
+    <script src="@Url.ContentV("~/Scripts/iMain.js")" type="text/javascript"></script>
+
+
+    <link href="@Url.ContentV("~/Css/main.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.ContentV("~/Css/custom_main.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Css/prettyForms.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.ContentV("~/Css/jquery.selectbox.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Css/reveal.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Css/jquery-ui-1.11.3.custom.min.css")" rel="stylesheet" type="text/css" />
+
+    @if ((Base.GetController.ToLower() == "report" && Base.GetAction.ToLower() == "viewinfo"))
+    {
+        <link href="@Url.ContentV("~/Css/calendar.css")" rel="stylesheet" type="text/css" />		
+    }
+
+    <script type="text/javascript">
+        window.g_baseUrl = '@Url.Content("~")';
+        window.g_baseUrl = window.g_baseUrl.substring(0, window.g_baseUrl.length - 1);
+
+        $(document).ready(function () {
+            $(window).resize(function () {
+                if (document.URL.toLowerCase().indexOf('cpr') > -1) {
+                    if (document.URL.toLowerCase().indexOf('_level2') >= 0
+                        || document.URL.toLowerCase().indexOf('_level4') >= 0
+                        || document.URL.toLowerCase().indexOf('_level6') >= 0) {
+                        var bodyWidth = $('#content').width();
+                        $('iframe').each(function () {
+                            var iframe = $(this);
+                            iframe.contents().find("table[alt*='portfolio']").each(function () {
+                                $(this).parents('div:lt(2)').css({ 'width': (bodyWidth - 49) + 'px' });
+                            });
+
+                            iframe.contents().find("table[alt*='portfolio']").width(bodyWidth - 51);
+                            iframe.contents().find("table[id*='tbMetric']").width(bodyWidth - 50);
+                            iframe.width(bodyWidth - 29);
+
+                            iframe.contents().find('div#VisibleReportContentrvwReportViewer_ctl09').css('width', '100%');
+                        });                    
+
+                        // fix right white space in IE
+                        if ($.browser.msie) {
+                            $('#content').css('width', '');
+                        }
+                    }
+
+                }
+                else if (document.URL.toLowerCase().indexOf('rtw') > -1 || document.URL.toLowerCase().indexOf('awc') > -1) {
+                    $('iframe').each(function () {
+                        if ($.browser.msie && (document.documentMode == 7 || document.documentMode == 8)) {
+                            var iframe = $(this);
+                            iframe.contents().find('div#VisibleReportContentrvwReportViewer_ctl09').css('width', '100%');
+                        }
+                    });
+                }
+            });
+        })
+    </script>
+    <script src="@Url.Content("~/Scripts/prettyForms.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/jquery.selectbox-0.2.js")" type="text/javascript"></script>
+</head>
+<body>
+    @Html.Hidden("SystemId", Request["systemid"])
+    @Html.Partial("_Top")
+    @Html.Partial("_Menu")
+
+    <div id="wrapper">
+        @Html.Partial("_Header")
+        <div id="content" class="container">
+            @RenderBody()
+        </div>
+    </div>
+
+    <script type="text/javascript" src="@Url.Content("~/scripts/slideDock.js")"></script>
+    <script type="text/javascript" src="@Url.ContentV("~/scripts/custom_javascript.js")"></script>
+    <!-- DASHBOARD -->
+    @{
+        var reportPath = (string)ViewBag.ReportPath;
+        if (reportPath != null)
+        {
+            if (reportPath.ToLower().Contains("cpr"))
+            {
+        <script src="@Url.ContentV("~/Scripts/iCPRDashboard.js")" type="text/javascript"></script>
+            }
+            else if (reportPath.ToLower().Contains("rtw"))
+            {
+        <script src="@Url.ContentV("~/Scripts/iRTWDashboard.js")" type="text/javascript"></script>
+            }
+            else if (reportPath.ToLower().Contains("awc"))
+            {
+        <script src="@Url.ContentV("~/Scripts/iAWCDashboard.js")" type="text/javascript"></script>
+            }
+        }
+    }
+    <!-- END DASHBOARD -->
+
+    @Html.Partial("_Dialog")
+    @Html.Partial("_Loading")
+
+    @if (Base.GetController.ToLower() == "dashboard" && Base.GetAction.ToLower().Contains("level"))
+    {      
+        @Html.Partial("~/Views/Shared/_Friendly_Printing.cshtml")
+    }
+</body>
+</html>

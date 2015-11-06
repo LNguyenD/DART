@@ -1,0 +1,33 @@
+﻿<div class="viewPrint">
+    <div class="viewPrintContent reveal-modal" style="margin:auto">        
+        <div id="printInstruction" style="width:100%; text-align:center; padding-top: 10px"><p style="color: #ff0000">To copy or save. Please right click on the graph</p></div>
+        <iframe id="printContent" class="printContent" frameborder="0" scrolling="auto" style="height:450px; overflow:auto;"></iframe>                        
+        <a class="print_action" onclick="printFriendly()">                           
+            <img src="@Url.ContentV("~/images/ico_print.png")" alt="Print" title="Print this page" />
+        </a>        
+        <a class="close-reveal-modal" onclick="closePrintPopup()" title="Close">&#215;</a>
+    </div>
+</div>
+<script type="text/javascript">               
+   
+
+    //resize the raw data pop up
+    $(function () {
+        adjustPrintPreviewPopup();
+
+        $(window).resize(function () {
+            adjustPrintPreviewPopup();
+        });
+    });
+
+    function adjustPrintPreviewPopup(){
+        var windowHeight = $(window).height();
+        var windowWidth = $(window).width();
+        $(".viewPrintContent").css("width", "");
+        $(".viewPrintContent").css("height", "");
+        $(".viewPrintContent").css("height", windowHeight - 110 + 'px');
+        $(".viewPrintContent").css("width", windowWidth - 200 + 'px');
+        $("#printContent").css("height", windowHeight - 150 + 'px');        
+
+    }
+</script>

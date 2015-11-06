@@ -1,0 +1,50 @@
+﻿@model List<EM_Report.Domain.Dashboard_Favours>
+@using EM_Report.Common.Utilities;
+@using EM_Report.Helpers;
+@using EM_Report.Repositories;
+@using EM_Report.Domain;
+@{
+    ViewBag.Title = "Dashboard_Favour";
+}
+@{  
+ 
+    var i = 0;
+    if (!ViewData.Model.IsNullOrEmpty())
+    {
+        foreach (var item in Model)
+        {            
+            var path = Request.Url.LocalPath.ToLower();
+            var action = '/' + Base.GetAction.ToLower();
+            var controller = '/' + Base.GetController.ToLower();
+            path = path.Replace(action,"");
+            path = path.Replace(controller, "");
+            path = path + item.Url;
+            
+            <div class="showBookmarkItems">
+                <div class="bookmarkFunc">
+                    @Html.Hidden("id", item.FavourId.ToString())
+                    @Html.Hidden("isLandingPage", item.Is_Landing_Page.ToString())
+                    <a href="#" class="bookmarkLandingPage"><img src="@Url.ContentV("~/images/icon_landing.png.png")" alt="Choose to be Landing Page" title="Choose to be Landing Page" /></a>
+                    <a href="#" class="bookmarkRemoveLandingPage"><img src="@Url.ContentV("~/images/icon_landing_off.png")" alt="Remove the Landing Page from this link" title="Remove the Landing Page from this link" /></a>
+                    <a href="#" class="bookmarkSave"><img src="@Url.ContentV("~/images/ico_save.png")" alt="Save bookmark" title="Save bookmark" /></a>
+                    <a href="#" class="bookmarkEdit"><img src="@Url.ContentV("~/images/ico_edit.png")" alt="Edit bookmark" title="Edit bookmark" /></a>
+                    <a href="#" class="bookmarkRemove"><img src="@Url.ContentV("~/images/ico_bookmark_remove.png")" alt="Remove this url" title="Remove this url" /></a>
+                </div>
+                <div class="bookmarkUrl">
+                    <a class="link" href="@path" >@item.Name</a>
+                </div>
+                <table style="display:none"  class="bookmarkEditContent" cellspacing="0" cellpadding="0">
+                    <tr>
+                        <td>
+                            @Html.TextBoxFor(e => item.Name, new { id = "txtName", name = "txtName", @class = "Text" })
+                            @Html.ValidationMessageFor(e => item.Name)
+                        </td>
+                    </tr>
+                </table>
+                <div class="clear">
+                </div>
+            </div>  
+            i++;
+        }
+    }
+}

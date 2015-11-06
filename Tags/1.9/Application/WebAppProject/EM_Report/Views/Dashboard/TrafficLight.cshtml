@@ -1,0 +1,203 @@
+﻿@using EM_Report.Domain;
+@using EM_Report.Helpers;
+<div class="traffic">
+    <div class="boxBdr_tl">
+        <div class="boxBdr_tr">
+            <div class="boxBdr_bl">
+                <div class="boxBdr_br">
+                    <div class="trafficContents">
+                        @{
+                            var lstTrafficLight = (List<Dashboard_Traffic_Light_Rule>)ViewBag.List_TrafficLight;
+                            if (lstTrafficLight != null)
+                            {
+                                var distinctDashboardType = (from p in lstTrafficLight select p.DashboardType).Distinct();
+                                var i = 0;
+
+                                if (Request["reportpath"] == null || Request["reportpath"].ToLower().Contains("level0")
+                                    || Request["reportpath"].ToLower().Contains("level1"))
+                                {
+                                    <div class="trafficSelect">
+                                        Define Traffic Light
+                                        <div class="trafficSelectContent">
+                                            <ul>
+                                                @{
+                                    foreach (var s in distinctDashboardType)
+                                    {
+                                        if(!s.Equals("AWC", StringComparison.InvariantCultureIgnoreCase))
+                                        {
+                                            <li id="@s" class="dashboardTypeSelect" @(i == 0 ? "style=background:#DFD6D6;" : "")><a>@s</a></li>
+                                        }
+                                        
+                                        i++;
+                                    }
+                                                }
+                                            </ul>
+                                        </div>
+                                    </div>
+                                }
+                                else
+                                {
+                                    <div class="trafficText">Define Traffic Light for @(Request["Measure"] != null ? "RTW" : "AWC")</div>
+                                }
+
+                                i = 0;
+                                foreach (var s in distinctDashboardType)
+                                {
+                                    var lstByType = lstTrafficLight.Where(l => l.DashboardType == s);
+
+                                    if (Request["reportpath"] == null || Request["reportpath"].ToLower().Contains("level0") || Request["reportpath"].ToLower().Contains("level1"))
+                                    {
+                                        <div id="dashboardType@(s)" class="dashboardType" @(i == 0 ? "style=display:inline" : "style=display:none")>
+                                            @foreach (var q in lstByType)
+                                            {
+                                                <div class="trafficLight @(q.Name)">
+                                                    <div class="trafficImg"><img name="@(q.DashboardType)_@(q.Name)" fromval="@q.FromValue" toval="@q.ToValue" src="@("../" + q.ImageUrl)" alt="" title="" /></div>
+                                                    <h2>@q.Name</h2>
+                                                    @switch (q.Name)
+                                                    {
+                                                        case "Superb":
+                                                            <p class="txtBlue">@q.Description</p>
+                                                            break;
+                                                        case "Better":
+                                                        <p class="txtGreen">@q.Description</p>
+                                                            break;
+                                                        case "Neutral":
+                                                        <p class="txtYellow">@q.Description</p>
+                                                            break;
+                                                        case "Warning":
+                                                        <p class="txtOrg">@q.Description</p>
+                                                            break;
+                                                        case "Worse":
+                                                        <p class="txtRed">@q.Description</p>
+                                                            break;
+                                                        default:
+                                                        <p>@q.Description</p>
+                                                            break;
+                                                    }
+                                                </div>                                                                                                                                               
+                                            }
+                                            <div class="trafficLight">
+                                                <div class="trafficImg">
+                                                    <img name="rtw_openrpt" fromval="0" toval="0" src="../images/light_gray.png" alt="" title="" />
+                                                </div>
+                                                <h2>For AWC</h2>
+                                            </div>
+                                            <div class="trafficLight">
+                                                <div class="trafficImg">
+                                                    <img name="rtw_openrpt" fromval="0" toval="0" src="../images/light_violet.png" alt="" title="" />
+                                                </div>
+                                                <h2>Open report</h2>
+                                            </div>
+
+                                        </div>
+                            
+                            
+                            
+                                    }
+                                    else
+                                    {
+                                        if (Request["Measure"] != null && s == "RTW")
+                                        {
+                                            <div id="dashboardTypeRTW" class="dashboardType">
+                                                @foreach (var q in lstByType)
+                                                {
+                                                    <div class="trafficLight">
+                                                        <div class="trafficImg"><img name="@(q.DashboardType)_@(q.Name)" fromval="@q.FromValue" toval="@q.ToValue" src="@("../" + q.ImageUrl)" alt="" title="" /></div>
+                                                        <h2>@q.Name</h2>
+                                                        @switch (q.Name)
+                                                        {
+                                                            case "Superb":
+                                                                <p class="txtBlue">@q.Description</p>
+                                                                break;
+                                                            case "Better":
+                                                            <p class="txtGreen">@q.Description</p>
+                                                                break;
+                                                            case "Neutral":
+                                                            <p class="txtYellow">@q.Description</p>
+                                                                break;
+                                                            case "Warning":
+                                                            <p class="txtOrg">@q.Description</p>
+                                                                break;
+                                                            case "Worse":
+                                                            <p class="txtRed">@q.Description</p>
+                                                                break;
+                                                            default:
+                                                            <p>@q.Description</p>
+                                                                break;
+                                                        }
+                                                    </div>
+                                                }
+                                            </div>
+                                                <div class="trafficLight">
+                                                    <div class="trafficImg">
+                                                        <img name="rtw_openrpt" fromval="0" toval="0" src="../images/light_violet.png" alt="" title="" />
+                                                    </div>
+                                                    <h2>Open report</h2>
+                                                </div>
+                                        }
+
+                                        if (Request["Measure"] == null && s == "AWC")
+                                        {
+                                            <div id="dashboardTypeAWC" class="dashboardType">
+                                                @foreach (var q in lstByType)
+                                                {
+                                                    <div class="trafficLight">
+                                                        <div class="trafficImg"><img name="@(q.DashboardType)_@(q.Name)" fromval="@q.FromValue" toval="@q.ToValue" src="@("../" + q.ImageUrl)" alt="" title="" /></div>
+                                                        <h2>@q.Name</h2>
+                                                        @switch (q.Name)
+                                                        {
+                                                            case "Superb":
+                                                                <p class="txtBlue">@q.Description</p>
+                                                                break;
+                                                            case "Better":
+                                                            <p class="txtGreen">@q.Description</p>
+                                                                break;
+                                                            case "Neutral":
+                                                            <p class="txtYellow">@q.Description</p>
+                                                                break;
+                                                            case "Warning":
+                                                            <p class="txtOrg">@q.Description</p>
+                                                                break;
+                                                            case "Worse":
+                                                            <p class="txtRed">@q.Description</p>
+                                                                break;
+                                                            default:
+                                                            <p>@q.Description</p>
+                                                                break;
+                                                        }
+                                                    </div>
+                                                }
+
+                                                <div class="trafficLight">
+                                                    <div class="trafficImg">
+                                                        <img name="awc_openrpt" fromval="0" toval="0" src="../images/light_violet.png" alt="" title="" />
+                                                    </div>
+                                                    <h2>Open report</h2>
+                                                </div>
+
+                                            </div>
+                                        }
+                                    }
+                                    i++;
+                                }
+                            }                                                                                    
+                        }
+
+                        @*<div class="dashboardType">
+                            <div class="trafficLight">
+                                <div class="trafficImg">
+                                    <img name="rtw_openrpt" fromval="0" toval="0" src="../images/light_violet.png" alt="" title="" />
+                                </div>
+                                <h2>Open report</h2>
+                            </div>
+                        </div>*@                                                                      
+
+                        <div class="clear"></div>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+            </div>
+        </div>
+    </div>    
+</div>
+

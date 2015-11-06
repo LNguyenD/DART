@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="91c44473-6b17-4a45-ab94-ec6059b2cec0" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="https://localhost/dart.service/Actionservice.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="ActionService1.wsdl" MetadataType="Wsdl" ID="1707f603-e2cd-46a9-8281-856ce7f42561" SourceId="1" SourceUrl="https://localhost/dart.service/ActionService.svc?wsdl" />
+    <MetadataFile FileName="ActionService7.xsd" MetadataType="Schema" ID="feef5d31-4152-4ab1-81e4-5225d34f6e20" SourceId="1" SourceUrl="https://localhost/dart.service/ActionService.svc?xsd=xsd4" />
+    <MetadataFile FileName="ActionService8.xsd" MetadataType="Schema" ID="9b4d48cb-2eb1-42ed-b039-1ab0b598ace3" SourceId="1" SourceUrl="https://localhost/dart.service/ActionService.svc?xsd=xsd0" />
+    <MetadataFile FileName="ActionService9.xsd" MetadataType="Schema" ID="37c7f97f-3bd6-467e-b788-5daa9d1627d8" SourceId="1" SourceUrl="https://localhost/dart.service/ActionService.svc?xsd=xsd1" />
+    <MetadataFile FileName="ActionService10.xsd" MetadataType="Schema" ID="89b5cc11-88a5-4807-a8d7-21dcd7b88e4b" SourceId="1" SourceUrl="https://localhost/dart.service/ActionService.svc?xsd=xsd2" />
+    <MetadataFile FileName="ActionService11.xsd" MetadataType="Schema" ID="14f7b01c-c378-451c-bd96-cd60731af06c" SourceId="1" SourceUrl="https://localhost/dart.service/ActionService.svc?xsd=xsd3" />
+    <MetadataFile FileName="ActionService1.disco" MetadataType="Disco" ID="40573d23-1886-46e9-b569-34af6e881b3a" SourceId="1" SourceUrl="https://localhost/dart.service/ActionService.svc?disco" />
+    <MetadataFile FileName="ActionService12.xsd" MetadataType="Schema" ID="c3cf1d8f-673f-4a87-a804-835d523fded9" SourceId="1" SourceUrl="https://localhost/dart.service/ActionService.svc?xsd=xsd5" />
+    <MetadataFile FileName="ActionService13.xsd" MetadataType="Schema" ID="e7a110d0-16d1-4bee-aa0e-3a3b71b48b4c" SourceId="1" SourceUrl="https://localhost/dart.service/ActionService.svc?xsd=xsd6" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

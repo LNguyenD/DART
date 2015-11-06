@@ -1,0 +1,54 @@
+﻿@if (Request["reportpath"] != null && (Request["reportpath"].ToString().ToLower().IndexOf("_rtw_level2") >= 0 || Request["reportpath"].ToString().ToLower().IndexOf("_rtw_level4") >= 0))
+    {
+        <div class="serverContent" style="display:none;top:@(Request.Url.AbsolutePath.ToLower().IndexOf("level2") >=0?"240px !important":"200px !important")">
+            <p>Show selected items only! </p>
+            <a style="cursor:pointer;" class="btnServer">Click here</a>
+        </div>
+    }
+    <script type="text/javascript" language="javascript">
+        function ShowHide_Unit() {
+            $(".serverContent").fadeOut("slow");
+            var lstVisible = "";
+            var ifReport;
+            var current_tab_id = "";
+            if (document.URL.toLowerCase().indexOf("_level2") >= 0) {
+                current_tab_id = $("li.tab_current").attr("id");
+                ifReport = current_tab_id.indexOf("tab_agencies") >= 0 ? $('#ifReport_Agency') : $('#ifReport_Group');
+                if (current_tab_id.indexOf("tab_agencies") >= 0) {
+                    ifReport = $('#ifReport_Agency');
+                }
+                else if (current_tab_id.indexOf("tab_group") >= 0) {
+                    ifReport = $('#ifReport_Group');
+                }
+                else if (current_tab_id.indexOf("tab_account_manager") >= 0) {
+                    ifReport = $('#ifReport_AccountManager');
+                }
+            }
+            else {
+                ifReport = $('#ifReport');
+            }
+            
+            ifReport.contents().find("input[id*='chkUnit_']").each(function (index, value) {
+                if ($(this).attr("checked")) {
+                    lstVisible = lstVisible + "," + $(this).attr("id").replace("chkUnit_", "");
+                }
+            });
+            lstVisible = lstVisible.replace(",", "");
+            var currSrc = ifReport.attr("src");
+            if (lstVisible != "") {
+                var currDis = "";
+                if (currSrc.indexOf("?IsVisible") > 0) {
+                    currDis = currSrc.substring(currSrc.indexOf("?IsVisible"), currSrc.indexOf("&"));
+                }
+                if (currDis != "") {
+                    currSrc = currSrc.replace(currDis + "&", "?");
+                }
+
+                currSrc = currSrc.replace("?", "?" + "IsVisible=" + lstVisible + "&");
+                ifReport.attr("src", currSrc);             
+            }
+        }
+        $(".btnServer").click(function () {            
+            ShowHide_Unit();
+        });           
+</script>

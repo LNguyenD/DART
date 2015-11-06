@@ -1,0 +1,6 @@
+﻿@model IEnumerable<EM_Report.Models.AddressBookModel>
+@{
+    ViewBag.Title = "AddressBook";
+    Layout = Request.IsAjaxRequest() ? null : "~/Views/Shared/_Layout.cshtml";
+}
+@Html.Partial("UCIndex", Model)

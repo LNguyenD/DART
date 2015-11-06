@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<project name="EM_Report_DeployTMF" default="all" xmlns="http://nant.sf.net/release/0.91/nant.xsd">
+  <property name="framework-get-assembly-directory" value="${framework::get-assembly-directory('net-4.0')}" />
+  <property name="dotNetReferenceAssemblyPath" value="${framework-get-assembly-directory}\" />
+  <property name="nant.settings.currentframework" value="net-4.0" />
+
+  <property name="solution.configuration" value="PreQA" overwrite="true" />
+
+  <property name="solution.name" value="EM_Report"/>
+  <property name="solution.Common.project.name" value="Common"/>
+  <property name="solution.CustomSecurity.project.name" value="CustomSecurity"/>
+  <property name="solution.EM_Report.Domain.project.name" value="EM_Report.Domain"/>
+  <property name="solution.EM_Report.DAL.project.name" value="EM_Report.DAL"/>
+  <property name="solution.EM_Report.BLL.project.name" value="EM_Report.BLL"/>
+  <property name="solution.EM_Report.Service.project.name" value="EM_Report.Service"/>
+  <property name="solution.EM_Report.Tests.project.name" value="EM_Report.Tests"/>
+  <property name="solution.EM_Report.WCFServer.project.name" value="EM_Report.WCFServer"/>
+  <property name="solution.EM_Report.project.name" value="EM_Report"/>
+  <property name="solution.deploymentProject.name" value="${solution.EM_Report.project.name}"/>
+
+  <property name="solution.EM_Report.appSettings.name" value="appSettings.${solution.configuration}.config"/>
+  <property name="solution.EM_Report.WCFServer.credentials.name" value="credentials.config"/>
+
+  <property name="iis.webapp.name" value="Default Web Site/Dart"/>
+  <property name="iis.wcf.name" value="Default Web Site/Dart.Service"/>
+  <property name="DartConnectionString" value="m+X1KhqbXB0PXAuWTmawTjCRXGPSn4JRDO0NKznlvdjlwXUiJUvhqrXYi1Sea5ZMY9uuCIpqzn5kuyb9s0PwZc87h16Am7xPOT51rdgOEX1H6aOGKm+3RsG2yhamZd5LQianHptLt/riIFBH+S8dJw==#####"/>
+  <!--<property name="rsServer" value="https://aswvnsql01.aswigsyd.int/ReportServer"/>
+  <property name="rsDomain" value="aswvnsql01.aswigsyd.int"/>
+  <property name="informationTipBox.text" value="trunk build"/>-->
+
+  <property name="deploymentPackages.directory.name" value="DeploymentPackages"/>
+  <property name="deploymentPackages.directory.path" value="${path::get-full-path(deploymentPackages.directory.name)}"/>
+  <property name="deploymentPackages.EM_Report.scriptFile.path" value="${deploymentPackages.directory.path}\_PublishedWebsites\${solution.EM_Report.project.name}_Package\${solution.EM_Report.project.name}.deploy.cmd"/>
+  <property name="deploymentPackages.EM_Report.parameterFile.path" value="${deploymentPackages.directory.path}\_PublishedWebsites\${solution.EM_Report.project.name}_Package\${solution.EM_Report.project.name}.SetParameters.xml"/>
+  <property name="deploymentPackages.WCFServer.scriptFile.path" value="${deploymentPackages.directory.path}\_PublishedWebsites\${solution.EM_Report.WCFServer.project.name}_Package\${solution.EM_Report.WCFServer.project.name}.deploy.cmd"/>
+  <property name="deploymentPackages.WCFServer.parameterFile.path" value="${deploymentPackages.directory.path}\_PublishedWebsites\${solution.EM_Report.WCFServer.project.name}_Package\${solution.EM_Report.WCFServer.project.name}.SetParameters.xml"/>
+
+  <!-- a dummy test target -->
+  <target name="dummy">
+    <echo message="${project::get-name()} is located at: ${nant::get-base-directory()}"/>
+    <echo message="${solution.name}.sln"/>
+  </target>
+
+	<target name="clean">
+		<delete dir="${solution.Common.project.name}/bin" failonerror="true" />
+		<delete dir="${solution.Common.project.name}/obj" failonerror="true" />
+
+		<delete dir="${solution.CustomSecurity.project.name}/bin" failonerror="true" />
+		<delete dir="${solution.CustomSecurity.project.name}/obj" failonerror="true" />
+
+		<delete dir="${solution.EM_Report.project.name}/bin" failonerror="true" />
+		<delete dir="${solution.EM_Report.project.name}/obj" failonerror="true" />
+
+		<delete dir="${solution.EM_Report.BLL.project.name}/bin" failonerror="true" />
+		<delete dir="${solution.EM_Report.BLL.project.name}/obj" failonerror="true" />
+
+		<delete dir="${solution.EM_Report.DAL.project.name}/bin" failonerror="true" />
+		<delete dir="${solution.EM_Report.DAL.project.name}/obj" failonerror="true" />
+
+		<delete dir="${solution.EM_Report.Domain.project.name}/bin" failonerror="true" />
+		<delete dir="${solution.EM_Report.Domain.project.name}/obj" failonerror="true" />
+
+		<delete dir="${solution.EM_Report.Service.project.name}/bin" failonerror="true" />
+		<delete dir="${solution.EM_Report.Service.project.name}/obj" failonerror="true" />
+
+		<delete dir="${solution.EM_Report.Tests.project.name}/bin" failonerror="true" />
+		<delete dir="${solution.EM_Report.Tests.project.name}/obj" failonerror="true" />
+
+		<delete dir="${solution.EM_Report.WCFServer.project.name}/bin" failonerror="true" />
+		<delete dir="${solution.EM_Report.WCFServer.project.name}/obj" failonerror="true" />
+	</target>
+
+  <target name="build" depends="clean">
+    <!--<xmlpoke file="${solution.EM_Report.WCFServer.project.name}/${solution.EM_Report.WCFServer.credentials.name}"
+              xpath="/connectionStrings/add[@name = 'DartConnectionString']/@connectionString"
+              value="${DartConnectionString}"/>-->
+    <!--<solution configuration="${solution.configuration}" solutionfile="${solution.name}.sln" />-->
+    <msbuild target="build" project="${solution.name}.sln">
+      <property name="configuration" value="${solution.configuration}"/>
+      <property name="Platform" value="Any CPU"/>
+    </msbuild>
+  </target>
+
+	<target name="runtest">
+		<if test="${property::exists('solution.EM_Report.Tests.project.name') and string::trim(solution.EM_Report.Tests.project.name) != ''}">
+			<!-- define connection string for nunit tests-->
+			<xmlpoke file="${solution.EM_Report.Tests.project.name}/App.config"
+                    xpath="/configuration/connectionStrings/add[@name = 'EM_ReportConnectionString']/@connectionString"
+                    value="${DartConnectionString}"/>
+			<copy file="${solution.EM_Report.Tests.project.name}/App.config" tofile="${solution.EM_Report.Tests.project.name}/${solution.EM_Report.Tests.project.name}.config"></copy>
+			<!-- execute tests -->
+			<exec program="nunit-console.exe">
+				<arg file="${solution.EM_Report.Tests.project.name}/${solution.EM_Report.Tests.project.name}.csproj"/>
+				<arg value="/config=${solution.configuration}"/>
+			</exec>
+		</if>
+		<if test="${not (property::exists('solution.EM_Report.Tests.project.name') and string::trim(solution.EM_Report.Tests.project.name) != '') }">
+			<echo message="no test case to execute"/>
+		</if>
+	</target>
+
+  <target name="deploy">
+    <!-- delete deployment package directory -->
+    <delete dir="${deploymentPackages.directory.name}"/>
+    
+    <!-- WEB EXTERNAL -->
+    <echo message="PACKAGING WEB EXTERNAL:"/>
+    <xmlpoke file="${solution.EM_Report.project.name}/AppConfigurations/${solution.EM_Report.appSettings.name}" xpath="/appSettings/add[@key = 'LoginType']/@value" value="External" />
+    <!-- invoke msbuild -->
+    <msbuild target="package" project="${solution.EM_Report.project.name}/${solution.EM_Report.project.name}.csproj">
+      <property name="configuration" value="${solution.configuration}"/>
+      <property name="outputpath" value="${deploymentPackages.directory.path}"/>
+    </msbuild>
+    <!-- define application name on IIS before deploying -->
+    <xmlpoke file="${deploymentPackages.EM_Report.parameterFile.path}" xpath="/parameters/setParameter[@name = 'IIS Web Application Name']/@value" value="${iis.webapp.name}" />
+    
+    <echo message="DEPLOYING WEB EXTERNAL:"/>
+    <xmlpoke file="${solution.EM_Report.project.name}/obj/${solution.configuration}/Package/PackageTmp/AppConfigurations/${solution.EM_Report.appSettings.name}" xpath="/appSettings/add[@key = 'LoginType']/@value" value="External" />
+    <!--<exec program="net">
+      <arg value="use"/>
+      <arg value="*"/>
+      <arg line="/DELETE /YES"/>
+    </exec>-->
+	<exec program="net">
+      <arg value="use"/>
+      <arg value="Z:"/>
+      <arg value="\\syddmzweb001\DART_new"/>
+      <arg value="password"/>
+      <arg value="/USER:syddmzweb001\dart1"/>
+      <arg value="/PERSISTENT:no"/>
+    </exec>
+    <exec program="xcopy">
+      <arg value="${path::get-full-path(solution.EM_Report.project.name)}\obj\${solution.configuration}\Package\PackageTmp"/>
+      <arg value="Z:"/>
+      <arg line="/s /e /y"/>
+    </exec>
+    <exec program="net">
+      <arg value="use"/>
+      <arg value="Z:"/>
+      <arg value="/DELETE"/>
+    </exec>
+    <!-- END WEB EXTERNAL -->
+    
+    <!-- WEB INTERNAL -->
+    <!--<echo message="PACKAGING WEB INTERNAL:"/>
+    <xmlpoke file="${solution.EM_Report.project.name}/AppConfigurations/${solution.EM_Report.appSettings.name}" xpath="/appSettings/add[@key = 'LoginType']/@value" value="Internal" />-->
+    <!-- invoke msbuild -->
+    <!--<msbuild target="package" project="${solution.EM_Report.project.name}/${solution.EM_Report.project.name}.csproj">
+      <property name="configuration" value="${solution.configuration}"/>
+      <property name="outputpath" value="${deploymentPackages.directory.path}"/>
+    </msbuild>-->
+    <!-- define application name on IIS before deploying -->
+    <!--<xmlpoke file="${deploymentPackages.EM_Report.parameterFile.path}" xpath="/parameters/setParameter[@name = 'IIS Web Application Name']/@value" value="${iis.webapp.name}_Ad" />
+
+    <echo message="DEPLOYING WEB INTERNAL:"/>
+    <xmlpoke file="${solution.EM_Report.project.name}/obj/${solution.configuration}/Package/PackageTmp/AppConfigurations/${solution.EM_Report.appSettings.name}" xpath="/appSettings/add[@key = 'LoginType']/@value" value="Internal" />
+    <exec program="net">
+      <arg value="use"/>
+      <arg value="Z:"/>
+      <arg value="\\sydiis001\Dart_Ad"/>
+      <arg value="password"/>
+      <arg value="/USER:mnlaswig\dart"/>
+      <arg value="/PERSISTENT:no"/>
+    </exec>
+    <exec program="xcopy">
+      <arg value="${path::get-full-path(solution.EM_Report.project.name)}\obj\${solution.configuration}\Package\PackageTmp"/>
+      <arg value="Z:\"/>
+      <arg line="/s /e /y"/>
+    </exec>
+    <exec program="net">
+      <arg value="use"/>
+      <arg value="Z:"/>
+      <arg value="/DELETE"/>
+    </exec>-->
+    <!-- END WEB INTERNAL -->
+    
+    <!-- WCF -->
+    <echo message="PACKAGING WCF:"/>
+    <!-- invoke msbuild -->
+    <msbuild target="package" project="${solution.EM_Report.WCFServer.project.name}/${solution.EM_Report.WCFServer.project.name}.csproj">
+      <property name="configuration" value="${solution.configuration}"/>
+      <property name="outputpath" value="${deploymentPackages.directory.path}"/>
+    </msbuild>
+    <!-- define application name on IIS before deploying -->
+    <xmlpoke file="${deploymentPackages.WCFServer.parameterFile.path}" xpath="/parameters/setParameter[@name = 'IIS Web Application Name']/@value" value="${iis.wcf.name}" />
+
+    <echo message="DEPLOYING WCF:"/>
+    <!--<exec program="robocopy">
+      <arg value="${path::get-full-path(solution.EM_Report.WCFServer.project.name)}\obj\${solution.configuration}\Package\PackageTmp"/>
+      <arg value="\\sydiis001\Dart.Service"/>
+      <arg value="*.*"/>
+      <arg value="/mir"/>
+      <arg value="exit 0"/>
+    </exec>-->
+    <exec program="net">
+      <arg value="use"/>
+      <arg value="Z:"/>
+      <arg value="\\sydiis001\Dart.Service_1.7"/>
+      <arg value="password"/>
+      <arg value="/USER:mnlaswig\dart"/>
+      <arg value="/PERSISTENT:no"/>
+    </exec>
+    <exec program="xcopy">
+      <arg value="${path::get-full-path(solution.EM_Report.WCFServer.project.name)}\obj\${solution.configuration}\Package\PackageTmp"/>
+      <arg value="Z:\"/>
+      <arg line="/s /e /y"/>
+    </exec>
+    <exec program="net">
+      <arg value="use"/>
+      <arg value="Z:"/>
+      <arg value="/DELETE"/>
+    </exec>
+    <!-- END WCF -->
+  </target>
+  
+  <target name="all" depends="build, runtest, deploy">
+  </target>
+</project>

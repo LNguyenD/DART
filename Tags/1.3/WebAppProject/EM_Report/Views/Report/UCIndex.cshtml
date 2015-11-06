@@ -1,0 +1,73 @@
+﻿@model IEnumerable<EM_Report.Models.ReportModel>
+@using EM_Report.BLL.Commons;
+@using EM_Report.Helpers;
+
+<div class="Wrapper">
+   @using (Ajax.BeginForm("Index", new AjaxOptions { UpdateTargetId = "content", OnBegin = "showLoading", OnComplete = "hideLoading" }))
+    {
+        <script src="@Url.Content("~/scripts/iReport.js")" type="text/javascript"></script>
+        <link href="@Url.Stylesheet("report.css")" rel="stylesheet" type="text/css" />    
+        @Html.Partial("_SearchBar")
+        <div class="BoxContent">
+            <table id="tbGrid" name="tbGrid" class="Grid">
+                <thead>
+                    <tr>                                                                  
+                        <th class="center"><input type="checkbox" id="checkboxall" name="chkAll" /> </th>                               
+                        <th sortby="Name" sortdir=""><span class="css_right ui-icon ui-icon-carat-2-n-s"></span>report name</th>                                
+                        <th sortby="CategoryName" sortdir=""><span class="css_right ui-icon ui-icon-carat-2-n-s"></span>category name</th>                                
+                        <th sortby="Url" sortdir=""><span class="css_right ui-icon ui-icon-carat-2-n-s"></span>url</th>                                
+                        <th sortby="Description" sortdir=""><span class="css_right ui-icon ui-icon-carat-2-n-s"></span>description</th>                                
+                        <th class="center" sortby="StatusName" sortdir=""><span class="css_right ui-icon ui-icon-carat-2-n-s"></span>status</th>
+                        <th class="center" sortby="Create_Date" sortdir=""><span class="css_right ui-icon ui-icon-carat-2-n-s"></span>@EM_Report.BLL.Resources.Resource.txtCreatedOn</th>
+                        <th sortby="OwnerName" sortdir=""><span class="css_right ui-icon ui-icon-carat-2-n-s"></span>@EM_Report.BLL.Resources.Resource.txtOwner</th>                                
+                        <th class="action last-column"><span class="css_right"></span>Actions</th>
+                    </tr>
+                </thead>
+                @if (!ViewData.Model.IsNullOrEmpty())
+                {               
+                    <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td class="center" style="width:30px;"><input type="checkbox" name="chkItem" value="@(item.ReportId)" id="chkId@(item.ReportId)"/> </td>
+                                    <td title="@item.Name" style="width:*%;"><a href="@Url.Action("details", "report", new { id = item.ReportId })">@item.Name</a></td>                                                                                       
+                                    <td title="@item.CategoryName" style="width:13%;"></td>                                        
+                                    <td title="@item.Url" style="width:13%;">@item.Url</td>                                        
+                                    <td title="@item.Description" style="width:13%;"></td>                                       
+                                    <td class="center" style="width:10%;">@item.StatusName</td>
+                                    <td class="center" style="width:12%;">@Base.GetDatetimeText(@item.Create_Date)</td>
+                                    <td title="@item.OwnerName" style="width:10%;">@item.OwnerName</td>                                       
+                                    <td class="action last-column">
+                                        <a href="@Url.Action("index", "subscription", new { reportid = item.ReportId })" title="view subscription">
+                                            <img src="@Url.Image("btnSubscription.png")" alt=""/>
+                                        </a>                                             
+                                        <a title="view report" href="@Url.Action("viewinfo", "report", new { reportpath = item.UrlFullPath, rId = item.ReportId })">
+                                            <img src="@Url.Image("btnReport.png")"  alt=""/>
+                                        </a>
+                                    </td>                                          
+                                </tr>                           
+                            }
+                    </tbody>                        
+                }            
+            </table>        
+        </div>
+        <div class="Paging">
+            <div style="float:right">
+                @if (Login.AuthorizeSystemPermission(ResourcesHelper.System_Report, ResourcesHelper.Permission_Add))
+                {
+                <a class="CmdButton Add" href="@Url.Action("details", "report")">Add New</a>
+                }
+                @if (Login.AuthorizeSystemPermission(ResourcesHelper.System_Report, ResourcesHelper.Permission_Update))
+                {
+                <a id="cmdActive" class="CmdButton Active" value="@ResourcesHelper.StatusActive">Active</a>
+                <a id="cmdInActive" class="CmdButton InActive" value="@ResourcesHelper.StatusInactive">InActive</a>
+                }
+            </div>
+            @if (!Model.IsNullOrEmpty())
+            {
+                @Html.Partial("_UCPaging")                                          
+            }        
+        </div>    
+        @Html.Partial("_HiddenAction")
+    }   
+</div>

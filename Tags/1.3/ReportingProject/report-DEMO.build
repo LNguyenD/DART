@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<project name="EM_Report" default="all" xmlns="http://nant.sf.net/release/0.91/nant.xsd">
+  <property name="framework-get-assembly-directory" value="${framework::get-assembly-directory('net-3.5')}" />
+  <property name="dotNetReferenceAssemblyPath" value="${framework-get-assembly-directory}\" />
+  <property name="nant.settings.currentframework" value="net-3.5" />
+  <property name="solution.configuration" value="Debug" overwrite="false" />
+  <property name="solution.name" value="ReportingProject"/>
+  <property name="solution.ReportingProject.project.name" value="ReportingProject"/>
+
+  <property name="sql.server" value="10.9.0.26"/>
+  <property name="sql.user" value="vnteam"/>
+  <property name="sql.password" value="vnteam"/>
+
+  <property name="sql.working.folder" value="C:\Apps\DEMO"/>
+  <property name="sql.file.path" value="${sql.working.folder}\executedSQL.txt" />
+  <property name="sql.folder.path" value="${directory::get-parent-directory(solution.name)}\DB\SchemaChange" />
+  
+  <target name="deploy">
+    <exec program="${directory::get-parent-directory(solution.name)}\SSRSMSBuildTask-DEMO.cmd">
+      <arg value="http://10.9.0.26/ReportServer"/>
+	  <arg value="/EMReportingDEMO"/>
+      <arg value="${directory::get-parent-directory(solution.name)}"/>
+    </exec>
+    <exec program="C:\DeploySupportTool\deploy2-DEMO.bat">
+    </exec>
+  </target>
+
+  <target name="execSQL">
+    <exec program="${directory::get-parent-directory(solution.name)}\deploySQL.bat">
+      <arg value="${directory::get-parent-directory(solution.name)}\DB\StoredProcedure"/>      
+      <arg value="All_StorePrecedure.sql"/>
+      <arg value="${directory::get-parent-directory(solution.name)}\DB\UserDefinedFunction"/>
+      <arg value="All_UDF.sql"/>
+	  <arg value="${directory::get-parent-directory(solution.name)}\DB\View"/>
+      <arg value="All_View.sql"/>
+      <arg value="${sql.working.folder}" />
+      <arg value="${sql.server}"/>
+      <arg value="${sql.user}"/>
+      <arg value="${sql.password}"/>
+    </exec>    
+  </target>
+
+  <target name="execSQLOnce">
+    <loadfile file="${sql.file.path}" property="sql.file.contents" />
+    <property name="sql.file.contents" value="${string::trim(sql.file.contents)}" />
+
+    <foreach item="File" in ="${sql.folder.path}" property="FileName">
+      <if test="${string::contains(sql.file.contents, path::get-file-name(FileName)) == false}">
+        <exec program="${directory::get-parent-directory(solution.name)}\execSQL.bat">
+          <arg value="${sql.server}"/>
+          <arg value="${sql.user}"/>
+          <arg value="${sql.password}"/>
+          <arg value="${FileName}"/>         
+        </exec>
+        <echo append="true" file="${sql.file.path}" message="${environment::newline()}${path::get-file-name(FileName)}" />
+        <echo message="New file: ${FileName}"/>
+      </if>      
+    </foreach>
+
+  </target>
+  
+  <target name="all" depends="deploy, execSQLOnce, execSQL">
+  </target>
+</project>

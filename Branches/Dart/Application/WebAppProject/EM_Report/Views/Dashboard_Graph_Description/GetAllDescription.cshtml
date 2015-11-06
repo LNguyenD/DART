@@ -1,0 +1,17 @@
+﻿@model List<EM_Report.Domain.Dashboard_Graph_Description>
+@using EM_Report.Common.Utilities;
+@using EM_Report.Helpers;
+@using EM_Report.Repositories;
+@using EM_Report.Domain;
+
+@{
+    var userRepository = new EM_Report.Repositories.UserRepository();
+    if (!ViewData.Model.IsNullOrEmpty())
+    {
+        foreach (var item in Model)
+        {
+            <input id="@item.Type" value="@item.Description" title="@item.SystemName" type="hidden" />
+        }
+    }
+    
+ }

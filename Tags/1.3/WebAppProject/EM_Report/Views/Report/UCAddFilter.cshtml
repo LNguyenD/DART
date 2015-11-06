@@ -1,0 +1,24 @@
+﻿@{
+    Layout = null;
+}
+
+@using EM_Report.BLL.Commons;
+@using EM_Report.Helpers;
+
+<div class="Wrapper">
+@*@using (Ajax.BeginForm("UCAddFilter", null, new AjaxOptions { OnBegin = "showLoadingPopup", OnComplete = "showLoadingPopup" }, new { Id = "frmFilter" }))*@
+@*{*@
+    <div class="BoxContent">        
+        <div class="BoxHeader">
+            <div id="msgFilterError" class="field-validation-error" style="float: left;"></div>
+            <span class="Button Right "><a id="btnAddFilter" onclick="ExpandAddFilter();"> Add Filter </a></span>
+        </div>  
+        @Html.Partial("Filter")
+        @Html.Hidden("sqlString")
+    </div>
+    <div class="LineWrapper SameLine" style="font-size: 1.0em; ">
+        <div class="Paging">    
+        @Html.Partial("_OkayCancel", new ViewDataDictionary { { "idSearchForm", "#filter" } })        
+    </div></div>
+@*}*@
+</div>

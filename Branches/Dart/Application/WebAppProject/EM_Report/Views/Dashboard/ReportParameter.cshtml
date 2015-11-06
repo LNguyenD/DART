@@ -1,0 +1,182 @@
+﻿@model  EM_Report.SSRS.ItemParameter
+@using EM_Report.Helpers
+@using EM_Report.Common.Utilities
+@using EM_Report
+@{
+    Layout = null;
+    string dateTimeValidation = string.Empty;
+    string quaterYearValidation = string.Empty;
+    string searchValidation = string.Empty;
+    string quaterValidation = string.Empty;
+    List<string> dependancies = new List<string>();
+    List<string> names = new List<string>();
+    //var max = string.Empty;
+    //foreach (var p in Model.lstRSParameters)
+    //{
+    //    dependancies.AddRange(p.Dependencies ?? new string[] { });
+    //    if (p.Name == "End_Date")
+    //    {
+    //        max = p.DefaultValues[0].ToString();
+    //    }
+    //    names.Add(p.Name);
+    //}
+    var repo = new EM_Report.Repositories.PortfolioReportRepository();
+    var system = Request["System"].ToUpper();
+    var max = repo.GetMaxRptDate(system);
+}
+<script src="@Url.Content("~/Scripts/jquery-ui-1.11.3.custom.min.js")" type="text/javascript"></script>
+<link href="@Url.Content("~/Css/jquery-ui-1.11.3.custom.min.css")" rel="stylesheet" type="text/css" />
+
+@Html.Hidden("reportParameterNames", string.Join(",", names))
+@Html.Hidden("maxReportingDate", max)
+@{
+    var idx = 0;
+    var param = Model.lstRSParameters.ElementAt(idx);    
+    <table style="width: 100%">
+        @for (idx = 0; idx < Model.lstRSParameters.Count(); )
+        {
+
+            <tr>
+                @for (int j = 0; j < 3; j++)
+                {
+                    if (idx >= Model.lstRSParameters.Count())
+                    {
+                        break;
+                    }
+                    else
+                    {
+                        param = Model.lstRSParameters.ElementAt(idx);
+                    }
+                    var systemid = ViewBag.SystemId;
+                    var label = !string.IsNullOrEmpty(param.Prompt) ? param.Prompt : param.Name;
+                    var id = "prm" + param.Name;
+                    string requireClass = (param.AllowBlank || param.Nullable) ? "" : " require ";
+                    IEnumerable<string> values = null;
+                    string[] defaultValues = null;
+                    if (ViewBag.Action == "Edit")
+                    {
+                        values = Model.lstRSValues.Where(v => v.Name == param.Name).Select(v => v.Value);
+                    }
+                    else
+                    {
+                        defaultValues = param.DefaultValues != null ? param.DefaultValues : new string[] { };
+                    }
+
+                    if (param.ValidValues != null && param.ParameterTypeName != "Boolean")
+                    {
+                        // Multi select
+                        if (param.MultiValue == true)
+                        {
+                            <td>
+                                <label for="@id">@(label)</label>
+                            </td>        
+                            <td>@Html.CheckBoxListDropDown(@id, new MultiSelectList(param.ValidValues, "Value", "Label", ViewBag.Action == "Edit" ? values : param.DefaultValues),
+                            new
+                            {
+                                @onchange = "ParameterValueChange(this);",
+                                @class = "cbl-parameter .rpt-parameter-multiselect" + requireClass + (dependancies.Contains(param.Name) ? " prm-dependency" : "")
+                            })
+                            </td>
+                        }
+                        // Dropdownlist
+                        else
+                        {
+                            if (id.ToLower().Contains("year") || id.ToLower().Contains("years"))
+                            {
+                                quaterYearValidation = quaterYearValidation + id.ToString() + ";";
+                            }
+                            string[] words = id.ToLower().Split('_');
+                            if (words[words.Length - 1] == "quarter" || words[words.Length - 1] == "month")
+                            {
+                                quaterValidation = quaterValidation + id.ToString() + ";";
+                            }
+                            if (!(Request.Url.ToString().ToLower().IndexOf("wow") >= 0 && id == "prmExempt_From_Reform")) { 
+                                <td>
+                                    <label for="@id">@(label)</label>
+                                </td>
+                                <td>@Html.DropDownList(@id,
+                                new SelectList(param.ValidValues, "Value", "Label", ViewBag.Action == "Edit" ? (values != null ? values.FirstOrDefault() : "") : defaultValues.FirstOrDefault()),
+                                new
+                                {
+                                    @onchange = "ParameterValueChange(this);",
+                                    @class = "form-field rpt-parameter-select" + (dependancies.Contains(param.Name) ? " prm-dependency" : "")
+                                })
+                                </td>
+                           }
+                        }
+                    }
+                    else
+                    {
+                        if (param.ParameterTypeName == "Boolean")
+                        {
+                            <td>
+                                <label class="Long" for="@id">@(label)</label>
+                            </td>               
+                                    // checkbox                  
+                            <td>@Html.CheckBox(@id, bool.Parse(ViewBag.Action == "Edit" ? (values != null ? values.FirstOrDefault() : "false") : defaultValues.FirstOrDefault()),
+                            new
+                            {
+                                @onclick = "ParameterValueChange(this);",
+                                @class = "rpt-parameter" + (dependancies.Contains(param.Name) ? " prm-dependency" : "")
+                            })
+                            </td>
+                        }
+                        else if (param.ParameterTypeName == "DateTime")
+                        {
+                            // Date Time
+                            dateTimeValidation = dateTimeValidation + id.ToString() + ";";
+                            <td>
+                                <label for="@id">@(label)</label>
+                            </td>
+                            var datetime = DateTime.Parse(ViewBag.Action == "Edit" ? (values != null ? values.FirstOrDefault() : "") : defaultValues.FirstOrDefault(), System.Globalization.CultureInfo.CurrentCulture);  
+       
+                            <td>@Html.TextBox(id, datetime.ToString("dd/MM/yyyy"), new { @class = "Text date", @onchange = "ParameterValueChange(this);" })
+                            </td>                 
+                        }
+                        else if(param.ParameterTypeName.Equals("Text") && param.ParameterStateName.Equals("ReadOnly"))
+                        {
+                            <td>
+                                <label for="@id">@(label)</label>
+                            </td>
+                            
+                            <td>
+                                <label for="@id">@(defaultValues.FirstOrDefault())</label>
+                            </td>
+                        }
+                        else
+                        {
+                            var isLongClass = param.Name.Contains("Form") ? " Long " : string.Empty;
+                            if (id.ToLower().Contains("haspolicyform") || id.ToLower().Contains("haspaymenttypeform") || id.ToLower().Contains("hascreditorform") || id.ToLower().Contains("hasproviderform"))
+                            {
+                                searchValidation = searchValidation + id.ToString() + ";";
+                            }
+
+                            string strDataBaseCompare = "prmDatabaseParam_Hidden";
+                            string strUserCompare = "prmUserName_Hidden";
+                            if (id.ToString().ToUpper() != strDataBaseCompare.ToUpper() && id.ToString().ToUpper() != strUserCompare.ToUpper())
+                            {
+                                <td>
+                                    <label for="@id">@(label)</label>
+                                </td>
+                                // textbox                    
+                                <td>@Html.TextBox(@id, ViewBag.Action == "Edit" ? (values != null ? values.FirstOrDefault() : "") : EM_Report.Common.Utilities.Commons.MergeStringArray(defaultValues),
+                                    new
+                                    {
+                                        @onchange = "ParameterValueChange(this);",
+                                        @class = "Text" + requireClass + isLongClass + (dependancies.Contains(param.Name) ? " prm-dependency" : "")
+                                    })
+                                </td>
+                            }
+                        }
+                    }
+                    idx++;
+                }
+            </tr>                  
+        }
+    </table>
+    
+    @Html.Hidden("dateTimeItems", dateTimeValidation);
+    @Html.Hidden("quaterYearItems", quaterYearValidation);
+    @Html.Hidden("quaterItems", quaterValidation);
+    @Html.Hidden("searchParaItems", searchValidation);
+}

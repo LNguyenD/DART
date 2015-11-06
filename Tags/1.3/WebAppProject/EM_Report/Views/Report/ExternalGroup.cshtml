@@ -1,0 +1,113 @@
+﻿@model EM_Report.Models.ReportPermissionModel
+@using EM_Report.BLL.Commons;  
+@using EM_Report.Helpers;
+@{
+    ViewBag.Title = "Externalgroup";
+    ViewBag.Heading = "Report";
+    Layout = Request.IsAjaxRequest() ? null : "~/Views/Shared/_Master.cshtml";
+}
+<div class="Wrapper">
+   @using (Ajax.BeginForm("ExternalGroup", "Report", new AjaxOptions { UpdateTargetId = "content", OnBegin = "showLoading", OnComplete = "hideLoading" }))
+   {
+        <script src="@Url.Content("~/scripts/iReport.js")" type="text/javascript"></script>
+        <link href="@Url.Stylesheet("report.css")" rel="stylesheet" type="text/css" />    
+        @Html.Partial("_ShowMessage")  
+        @Html.HiddenFor(e => e.ReportId) 
+        @Html.Partial("_SearchBar")
+        <div class="BoxHeader">
+            <span>External groups</span>
+        </div> 
+       <div class="BoxContent">
+            <table id="tbGrid" name="tbGrid" class="Grid">
+                <thead>
+                     <tr>
+                        <th class="center"><input type="checkbox" id="checkboxall" name="chkAll" /> </th>
+                        <th sortby="External_GroupId" sortdir=""><span class="css_right ui-icon ui-icon-carat-2-n-s"></span>external group Id</th>
+                        <th sortby="Name" sortdir=""><span class="css_right ui-icon ui-icon-carat-2-n-s"></span>group name</th>
+                        <th sortby="Description" sortdir=""><span class="css_right ui-icon ui-icon-carat-2-n-s"></span>description</th>
+                        <th sortby="Status" sortdir=""><span class="css_right ui-icon ui-icon-carat-2-n-s"></span>status</th>
+                        <th sortby="Create_Date" sortdir=""><span class="css_right ui-icon ui-icon-carat-2-n-s"></span>created on</th>
+                        <th class="last-column" sortby="Owner" sortdir=""><span class="css_right ui-icon ui-icon-carat-2-n-s"></span>created by</th>                        
+                    </tr>
+                </thead>
+                <tbody>
+                        @foreach (var item in ViewBag.ExternalGroups)
+                        {
+                            <tr>
+                                <td class="center" style="width:30px;"><input type="checkbox" name="chkItem" value="@(item.External_GroupId)" id="chkId@(item.External_GroupId)"/> </td>
+                                <td>@item.External_GroupId</td>
+                                <td>@item.Name</td>
+                                <td>@item.Description</td>
+                                <td>@item.StatusName</td>
+                                <td>@item.Create_Date.ToShortDateString()</td>
+                                <td class="last-column">@item.OwnerName</td>                                
+                            </tr>
+                        }
+                </tbody>         
+            </table>        
+        </div>
+        <div class="Paging">
+            <div style="float:right">
+                @if (Login.AuthorizeSystemPermission(ResourcesHelper.System_Report, ResourcesHelper.Permission_Update))
+                {
+                    <a id="cmdAssign" class="CmdButton ButtonAssignExternal" value="assign">Assign to report</a>                   
+                }                         
+            </div>            
+            @if (Model != null)
+            {
+                @Html.Partial("_UCPaging")                                          
+            }        
+        </div>
+            if (Login.AuthorizeSystemPermission(ResourcesHelper.System_Report, ResourcesHelper.Permission_Update))
+            {
+       <div class="LineWrapper SameLine">
+            <label>Description</label>     
+            @Html.TextArea("txtDescription", new { cols = 100, @class = "Text", @style = "width:700px;" })
+        </div>    
+            }
+       
+        <div class="LineWrapper SameLine"></div>
+        <div class="BoxHeader">
+            <span>External Accesses</span>
+        </div> 
+       <div class="BoxContent">
+            <table id="tbExternalAccess" name="" class="Grid">
+                <thead>
+                     <tr>
+                        <th class="center" style="width:30px;"><input type="checkbox" name="chkAllSecondList" /> </th>
+                        <th sortby="ExternalGroupName" sortdir=""><span class="css_right ui-icon ui-icon-carat-2-n-s"></span>external group</th>                        
+                        <th sortby="Create_Date" sortdir=""><span class="css_right ui-icon ui-icon-carat-2-n-s"></span>created on</th>
+                        <th class="last-column" sortby="OwnerName" sortdir=""><span class="css_right ui-icon ui-icon-carat-2-n-s"></span>created by</th>                        
+                    </tr>
+                </thead>
+                <tbody>
+                        @if (Model != null && !Model.ReportExternalAccessList.IsNullOrEmpty())
+                        {
+                            foreach (var item in Model.ReportExternalAccessList)
+                            {
+                                <tr>
+                                    <td class="center" style="width:30px !important"><input type="checkbox" name="chkItemSecondList" value="@(item.External_GroupId)" id="chkAccessId@(item.External_GroupId)"/> </td>
+                                    <td>@item.ExternalGroupName</td>                                    
+                                    <td>@Base.GetDatetimeText(@item.Create_Date)</td>
+                                    <td class="last-column">@item.OwnerName</td>                                
+                                </tr>
+                            }
+                        }
+                        else
+                        { 
+                            <tr><td class="last-column" colspan="4" style="height:80px;color:red;text-align:center !important;">No items found!</td></tr>
+                        }
+                </tbody>         
+            </table>        
+        </div>
+       <div class="CommandWrapper">
+            @if (Login.AuthorizeSystemPermission(ResourcesHelper.System_Report, ResourcesHelper.Permission_Delete))
+            {
+                <a id="cmdUnAssign" value="unassign" class="CmdButton Delete" onclick="actionClick('unassign', true, false);">Unassign from report</a>
+            }
+            <a href="@Url.Action("details", "report", new { id = Model.ReportId })" class="ButtonBack">Back To List</a>
+        </div>
+       @Html.Hidden("action")
+       @Html.Partial("_HiddenAction")
+   }   
+</div>

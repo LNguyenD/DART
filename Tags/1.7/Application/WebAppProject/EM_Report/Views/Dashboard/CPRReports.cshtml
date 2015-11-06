@@ -1,0 +1,29 @@
+﻿@{
+    string url = "~/Reports/Dashboards/CPRDashboardReport.aspx";
+
+    var date = DateTime.Now;
+    var yesterdayDate = date.AddDays(-1);
+    var last2WeeksDate = yesterdayDate.AddDays(-14);
+
+    var lastMonthDate = DateTime.Now.AddMonths(-1);
+    var lastMonthFirstDate = new DateTime(lastMonthDate.Year, lastMonthDate.Month, 1);
+    var lastMonthEndDate = lastMonthFirstDate.AddMonths(1).AddDays(-1);
+
+    string strQuery = "";
+    foreach (String key in Request.QueryString.AllKeys)
+    {
+        strQuery = strQuery + "&" + key + "=" + Request.QueryString[key];
+    }
+    strQuery = "?" + strQuery.TrimStart('&');
+    url = url + strQuery;
+
+    var weekUrl = url + "&Start_Date=" + last2WeeksDate.ToString("dd/MM/yyyy") + "&End_Date=" + yesterdayDate.ToString("dd/MM/yyyy");
+    //var monthUrl = url + "&Start_Date=" + lastMonthFirstDate.ToString("dd/MM/yyyy") + "&End_Date=" + lastMonthEndDate.ToString("dd/MM/yyyy");
+}
+
+<div id="ifReportCover_week">
+    <iframe id="ifReport_week" src="@Url.Content(@weekUrl)" width="100%" height="100%" frameborder="0" scrolling="no"></iframe>
+</div>
+
+<div id="ifReportCover_month" style="display: none">
+</div>

@@ -1,0 +1,12 @@
+﻿@using EM_Report.BLL.Pager;
+ @Ajax.Pager((IPagedList)ViewBag.Pager,
+    new PagerOptions
+    {
+        PageIndexParameterName = "page",
+        ShowMorePagerItems = true,
+        NumericPagerItemCount = 3,
+
+    },
+    new AjaxOptions { UpdateTargetId = "content" }
+)
+<div class="ClearItem"></div>

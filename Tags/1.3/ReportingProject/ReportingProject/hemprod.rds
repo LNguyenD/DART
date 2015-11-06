@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RptDataSource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="HEMPROD">
+  <ConnectionProperties>
+    <Extension>SQL</Extension>
+    <ConnectString>Data Source=10.9.0.21;Initial Catalog=hemprod</ConnectString>
+  </ConnectionProperties>
+  <DataSourceID>929ba50d-2c91-45cc-885d-6dd172a162ce</DataSourceID>
+</RptDataSource>

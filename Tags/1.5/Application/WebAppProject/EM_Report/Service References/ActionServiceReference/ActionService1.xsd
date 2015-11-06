@@ -1,0 +1,756 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://localhost/dart.service/ActionService.svc?xsd=xsd2" namespace="http://www.yourcompany.com/types/" />
+  <xs:element name="GetToken">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://www.yourcompany.com/types/" minOccurs="0" name="request" nillable="true" type="q1:TokenRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTokenResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://www.yourcompany.com/types/" minOccurs="0" name="GetTokenResult" nillable="true" type="q2:TokenResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Login">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://www.yourcompany.com/types/" minOccurs="0" name="request" nillable="true" type="q3:LoginRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LoginResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://www.yourcompany.com/types/" minOccurs="0" name="LoginResult" nillable="true" type="q4:LoginResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Logout">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://www.yourcompany.com/types/" minOccurs="0" name="request" nillable="true" type="q5:LogoutRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LogoutResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://www.yourcompany.com/types/" minOccurs="0" name="LogoutResult" nillable="true" type="q6:LogoutResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AutoLogin">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://www.yourcompany.com/types/" minOccurs="0" name="request" nillable="true" type="q7:LoginRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AutoLoginResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://www.yourcompany.com/types/" minOccurs="0" name="AutoLoginResult" nillable="true" type="q8:LoginResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ChangePassword">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://www.yourcompany.com/types/" minOccurs="0" name="request" nillable="true" type="q9:ChangePasswordRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ChangePasswordResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://www.yourcompany.com/types/" minOccurs="0" name="ChangePasswordResult" nillable="true" type="q10:ChangePasswordResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ResetPassword">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://www.yourcompany.com/types/" minOccurs="0" name="request" nillable="true" type="q11:ResetPasswordRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ResetPasswordResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://www.yourcompany.com/types/" minOccurs="0" name="ResetPasswordResult" nillable="true" type="q12:ResetPasswordResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUsers">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://www.yourcompany.com/types/" minOccurs="0" name="request" nillable="true" type="q13:UserRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUsersResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q14="http://www.yourcompany.com/types/" minOccurs="0" name="GetUsersResult" nillable="true" type="q14:UserResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetUsers">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q15="http://www.yourcompany.com/types/" minOccurs="0" name="request" nillable="true" type="q15:UserRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetUsersResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q16="http://www.yourcompany.com/types/" minOccurs="0" name="SetUsersResult" nillable="true" type="q16:UserResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetOrganisationRoles">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q17="http://www.yourcompany.com/types/" minOccurs="0" name="request" nillable="true" type="q17:Organisation_RolesRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetOrganisationRolesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q18="http://www.yourcompany.com/types/" minOccurs="0" name="GetOrganisationRolesResult" nillable="true" type="q18:Organisation_RolesResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetOrganisationRoles">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q19="http://www.yourcompany.com/types/" minOccurs="0" name="request" nillable="true" type="q19:Organisation_RolesRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetOrganisationRolesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q20="http://www.yourcompany.com/types/" minOccurs="0" name="SetOrganisationRolesResult" nillable="true" type="q20:Organisation_RolesResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTeams">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q21="http://www.yourcompany.com/types/" minOccurs="0" name="request" nillable="true" type="q21:TeamRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTeamsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q22="http://www.yourcompany.com/types/" minOccurs="0" name="GetTeamsResult" nillable="true" type="q22:TeamResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetTeams">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q23="http://www.yourcompany.com/types/" minOccurs="0" name="request" nillable="true" type="q23:TeamRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetTeamsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q24="http://www.yourcompany.com/types/" minOccurs="0" name="SetTeamsResult" nillable="true" type="q24:TeamResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRptCategories">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q25="http://www.yourcompany.com/types/" minOccurs="0" name="request" nillable="true" type="q25:ReportCategoryRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRptCategoriesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q26="http://www.yourcompany.com/types/" minOccurs="0" name="GetRptCategoriesResult" nillable="true" type="q26:ReportCategoryResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetRptCategories">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q27="http://www.yourcompany.com/types/" minOccurs="0" name="request" nillable="true" type="q27:ReportCategoryRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetRptCategoriesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q28="http://www.yourcompany.com/types/" minOccurs="0" name="SetRptCategoriesResult" nillable="true" type="q28:ReportCategoryResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetOrganisationLevels">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q29="http://www.yourcompany.com/types/" minOccurs="0" name="request" nillable="true" type="q29:Organisation_LevelsRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetOrganisationLevelsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q30="http://www.yourcompany.com/types/" minOccurs="0" name="GetOrganisationLevelsResult" nillable="true" type="q30:Organisation_LevelsResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetOrganisationLevels">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q31="http://www.yourcompany.com/types/" minOccurs="0" name="request" nillable="true" type="q31:Organisation_LevelsRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetOrganisationLevelsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q32="http://www.yourcompany.com/types/" minOccurs="0" name="SetOrganisationLevelsResult" nillable="true" type="q32:Organisation_LevelsResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSystemRoles">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q33="http://www.yourcompany.com/types/" minOccurs="0" name="request" nillable="true" type="q33:System_RolesRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSystemRolesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q34="http://www.yourcompany.com/types/" minOccurs="0" name="GetSystemRolesResult" nillable="true" type="q34:System_RolesResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetSystemRoles">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q35="http://www.yourcompany.com/types/" minOccurs="0" name="request" nillable="true" type="q35:System_RolesRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetSystemRolesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q36="http://www.yourcompany.com/types/" minOccurs="0" name="SetSystemRolesResult" nillable="true" type="q36:System_RolesResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetExternal_Groups">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q37="http://www.yourcompany.com/types/" minOccurs="0" name="request" nillable="true" type="q37:External_GroupRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetExternal_GroupsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q38="http://www.yourcompany.com/types/" minOccurs="0" name="GetExternal_GroupsResult" nillable="true" type="q38:External_GroupResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetExternal_Groups">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q39="http://www.yourcompany.com/types/" minOccurs="0" name="request" nillable="true" type="q39:External_GroupRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetExternal_GroupsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q40="http://www.yourcompany.com/types/" minOccurs="0" name="SetExternal_GroupsResult" nillable="true" type="q40:External_GroupResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetStatus">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q41="http://www.yourcompany.com/types/" minOccurs="0" name="request" nillable="true" type="q41:StatusRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetStatusResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q42="http://www.yourcompany.com/types/" minOccurs="0" name="GetStatusResult" nillable="true" type="q42:StatusResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetStatus">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q43="http://www.yourcompany.com/types/" minOccurs="0" name="request" nillable="true" type="q43:StatusRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetStatusResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q44="http://www.yourcompany.com/types/" minOccurs="0" name="SetStatusResult" nillable="true" type="q44:StatusResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPermissions">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q45="http://www.yourcompany.com/types/" minOccurs="0" name="request" nillable="true" type="q45:PermissionRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPermissionsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q46="http://www.yourcompany.com/types/" minOccurs="0" name="GetPermissionsResult" nillable="true" type="q46:PermissionResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetPermissions">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q47="http://www.yourcompany.com/types/" minOccurs="0" name="request" nillable="true" type="q47:PermissionRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetPermissionsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q48="http://www.yourcompany.com/types/" minOccurs="0" name="SetPermissionsResult" nillable="true" type="q48:PermissionResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSystemRolePermissions">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q49="http://www.yourcompany.com/types/" minOccurs="0" name="request" nillable="true" type="q49:SystemRole_PermissionsRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSystemRolePermissionsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q50="http://www.yourcompany.com/types/" minOccurs="0" name="GetSystemRolePermissionsResult" nillable="true" type="q50:SystemRole_PermissionsResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetSystemRolePermissions">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q51="http://www.yourcompany.com/types/" minOccurs="0" name="request" nillable="true" type="q51:SystemRole_PermissionsRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetSystemRolePermissionsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q52="http://www.yourcompany.com/types/" minOccurs="0" name="SetSystemRolePermissionsResult" nillable="true" type="q52:SystemRole_PermissionsResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetReports">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q53="http://www.yourcompany.com/types/" minOccurs="0" name="request" nillable="true" type="q53:ReportRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetReportsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q54="http://www.yourcompany.com/types/" minOccurs="0" name="GetReportsResult" nillable="true" type="q54:ReportResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetReports">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q55="http://www.yourcompany.com/types/" minOccurs="0" name="request" nillable="true" type="q55:ReportRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetReportsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q56="http://www.yourcompany.com/types/" minOccurs="0" name="SetReportsResult" nillable="true" type="q56:ReportResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSystemPermissions">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q57="http://www.yourcompany.com/types/" minOccurs="0" name="request" nillable="true" type="q57:System_PermissionRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSystemPermissionsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q58="http://www.yourcompany.com/types/" minOccurs="0" name="GetSystemPermissionsResult" nillable="true" type="q58:System_PermissionResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetSystemPermissions">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q59="http://www.yourcompany.com/types/" minOccurs="0" name="request" nillable="true" type="q59:System_PermissionRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetSystemPermissionsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q60="http://www.yourcompany.com/types/" minOccurs="0" name="SetSystemPermissionsResult" nillable="true" type="q60:System_PermissionResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetReportPermissions">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q61="http://www.yourcompany.com/types/" minOccurs="0" name="request" nillable="true" type="q61:ReportPermissionRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetReportPermissionsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q62="http://www.yourcompany.com/types/" minOccurs="0" name="GetReportPermissionsResult" nillable="true" type="q62:ReportPermissionResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetReportPermissions">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q63="http://www.yourcompany.com/types/" minOccurs="0" name="request" nillable="true" type="q63:ReportPermissionRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetReportPermissionsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q64="http://www.yourcompany.com/types/" minOccurs="0" name="SetReportPermissionsResult" nillable="true" type="q64:ReportPermissionResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDashBoards">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q65="http://www.yourcompany.com/types/" minOccurs="0" name="request" nillable="true" type="q65:DashboardRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDashBoardsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q66="http://www.yourcompany.com/types/" minOccurs="0" name="GetDashBoardsResult" nillable="true" type="q66:DashboardResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetDashBoards">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q67="http://www.yourcompany.com/types/" minOccurs="0" name="request" nillable="true" type="q67:DashboardRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetDashBoardsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q68="http://www.yourcompany.com/types/" minOccurs="0" name="SetDashBoardsResult" nillable="true" type="q68:DashboardResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDashboard_OrganisationRole_Levels">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q69="http://www.yourcompany.com/types/" minOccurs="0" name="request" nillable="true" type="q69:Dashboard_OrganisationRole_LevelsRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDashboard_OrganisationRole_LevelsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q70="http://www.yourcompany.com/types/" minOccurs="0" name="GetDashboard_OrganisationRole_LevelsResult" nillable="true" type="q70:Dashboard_OrganisationRole_LevelsResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetReport_Organisation_Levels">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q71="http://www.yourcompany.com/types/" minOccurs="0" name="request" nillable="true" type="q71:Report_Organisation_LevelsRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetReport_Organisation_LevelsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q72="http://www.yourcompany.com/types/" minOccurs="0" name="GetReport_Organisation_LevelsResult" nillable="true" type="q72:Report_Organisation_LevelsResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetDashboard_OrganisationRole_Levels">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q73="http://www.yourcompany.com/types/" minOccurs="0" name="request" nillable="true" type="q73:Dashboard_OrganisationRole_LevelsRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetDashboard_OrganisationRole_LevelsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q74="http://www.yourcompany.com/types/" minOccurs="0" name="SetDashboard_OrganisationRole_LevelsResult" nillable="true" type="q74:Dashboard_OrganisationRole_LevelsResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDashBoardLevels">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q75="http://www.yourcompany.com/types/" minOccurs="0" name="request" nillable="true" type="q75:Dashboard_LevelsRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDashBoardLevelsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q76="http://www.yourcompany.com/types/" minOccurs="0" name="GetDashBoardLevelsResult" nillable="true" type="q76:Dashboard_LevelsResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetDashBoardLevels">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q77="http://www.yourcompany.com/types/" minOccurs="0" name="request" nillable="true" type="q77:Dashboard_LevelsRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetDashBoardLevelsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q78="http://www.yourcompany.com/types/" minOccurs="0" name="SetDashBoardLevelsResult" nillable="true" type="q78:Dashboard_LevelsResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDashboard_Favours">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q79="http://www.yourcompany.com/types/" minOccurs="0" name="request" nillable="true" type="q79:Dashboard_FavoursRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDashboard_FavoursResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q80="http://www.yourcompany.com/types/" minOccurs="0" name="GetDashboard_FavoursResult" nillable="true" type="q80:Dashboard_FavoursResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="setDashboard_Favours">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q81="http://www.yourcompany.com/types/" minOccurs="0" name="request" nillable="true" type="q81:Dashboard_FavoursRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="setDashboard_FavoursResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q82="http://www.yourcompany.com/types/" minOccurs="0" name="setDashboard_FavoursResult" nillable="true" type="q82:Dashboard_FavoursResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDashboard_Graph_Description">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q83="http://www.yourcompany.com/types/" minOccurs="0" name="request" nillable="true" type="q83:Dashboard_Graph_DescriptionRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDashboard_Graph_DescriptionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q84="http://www.yourcompany.com/types/" minOccurs="0" name="GetDashboard_Graph_DescriptionResult" nillable="true" type="q84:Dashboard_Graph_DescriptionResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetDashboard_Graph_Description">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q85="http://www.yourcompany.com/types/" minOccurs="0" name="request" nillable="true" type="q85:Dashboard_Graph_DescriptionRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetDashboard_Graph_DescriptionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q86="http://www.yourcompany.com/types/" minOccurs="0" name="SetDashboard_Graph_DescriptionResult" nillable="true" type="q86:Dashboard_Graph_DescriptionResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDashboard_Traffic_Light_Rules">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q87="http://www.yourcompany.com/types/" minOccurs="0" name="request" nillable="true" type="q87:Dashboard_Traffic_Light_RulesRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDashboard_Traffic_Light_RulesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q88="http://www.yourcompany.com/types/" minOccurs="0" name="GetDashboard_Traffic_Light_RulesResult" nillable="true" type="q88:Dashboard_Traffic_Light_RulesResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetDashboard_Traffic_Light_Rules">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q89="http://www.yourcompany.com/types/" minOccurs="0" name="request" nillable="true" type="q89:Dashboard_Traffic_Light_RulesRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetDashboard_Traffic_Light_RulesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q90="http://www.yourcompany.com/types/" minOccurs="0" name="SetDashboard_Traffic_Light_RulesResult" nillable="true" type="q90:Dashboard_Traffic_Light_RulesResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDashboard_Projection">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q91="http://www.yourcompany.com/types/" minOccurs="0" name="request" nillable="true" type="q91:Dashboard_ProjectionRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDashboard_ProjectionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q92="http://www.yourcompany.com/types/" minOccurs="0" name="GetDashboard_ProjectionResult" nillable="true" type="q92:Dashboard_ProjectionResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetDashboard_Projection">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q93="http://www.yourcompany.com/types/" minOccurs="0" name="request" nillable="true" type="q93:Dashboard_ProjectionRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetDashboard_ProjectionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q94="http://www.yourcompany.com/types/" minOccurs="0" name="SetDashboard_ProjectionResult" nillable="true" type="q94:Dashboard_ProjectionResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDashboard_TimeAccess">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q95="http://www.yourcompany.com/types/" minOccurs="0" name="request" nillable="true" type="q95:Dashboard_TimeAccessRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDashboard_TimeAccessResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q96="http://www.yourcompany.com/types/" minOccurs="0" name="GetDashboard_TimeAccessResult" nillable="true" type="q96:Dashboard_TimeAccessResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetDashboard_TimeAccess">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q97="http://www.yourcompany.com/types/" minOccurs="0" name="request" nillable="true" type="q97:Dashboard_TimeAccessRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetDashboard_TimeAccessResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q98="http://www.yourcompany.com/types/" minOccurs="0" name="SetDashboard_TimeAccessResult" nillable="true" type="q98:Dashboard_TimeAccessResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDashboard_Target_Base">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q99="http://www.yourcompany.com/types/" minOccurs="0" name="request" nillable="true" type="q99:Dashboard_Target_BaseRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDashboard_Target_BaseResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q100="http://www.yourcompany.com/types/" minOccurs="0" name="GetDashboard_Target_BaseResult" nillable="true" type="q100:Dashboard_Target_BaseResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetDashboard_Target_Base">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q101="http://www.yourcompany.com/types/" minOccurs="0" name="request" nillable="true" type="q101:Dashboard_Target_BaseRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetDashboard_Target_BaseResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q102="http://www.yourcompany.com/types/" minOccurs="0" name="SetDashboard_Target_BaseResult" nillable="true" type="q102:Dashboard_Target_BaseResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPortfolio">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q103="http://www.yourcompany.com/types/" minOccurs="0" name="request" nillable="true" type="q103:PortfolioRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPortfolioResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q104="http://www.yourcompany.com/types/" minOccurs="0" name="GetPortfolioResult" nillable="true" type="q104:PortfolioResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EncryptConnectionStrings">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EncryptConnectionStringsResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SignalProjectionImport">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q105="http://www.yourcompany.com/types/" minOccurs="0" name="request" nillable="true" type="q105:Dashboard_ProjectionRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SignalProjectionImportResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q106="http://www.yourcompany.com/types/" minOccurs="0" name="SignalProjectionImportResult" nillable="true" type="q106:Dashboard_ProjectionResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

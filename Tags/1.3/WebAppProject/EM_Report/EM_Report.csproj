@@ -1,0 +1,878 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{2EAAB77F-45E8-4FDE-BE6C-9883E5E213DC}</ProjectGuid>
+    <ProjectTypeGuids>{E53F8FEA-EAE0-44A6-8774-FFD645390401};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>EM_Report</RootNamespace>
+    <AssemblyName>EM_Report</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>false</UseIISExpress>
+    <SccProjectName>Svn</SccProjectName>
+    <SccLocalPath>Svn</SccLocalPath>
+    <SccAuxPath>Svn</SccAuxPath>
+    <SccProvider>SubversionScc</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <FilesToIncludeForPublish>OnlyFilesToRunTheApp</FilesToIncludeForPublish>
+    <DeployIisAppPath>EM_ReportTest</DeployIisAppPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Ionic.Zip, Version=1.9.1.8, Culture=neutral, PublicKeyToken=edbe51ad942a3f5c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Libraries\Ionic.Zip\Ionic.Zip.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.11.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Libraries\log4net-1.2.11\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.ReportViewer.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Libraries\ReportViewer\Microsoft.ReportViewer.WebForms.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Runtime.Caching" />
+    <Reference Include="System.Web.Mvc, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Web.WebPages, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Web.Helpers, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AddressBookController.cs" />
+    <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Controllers\AuditTrailController.cs" />
+    <Compile Include="Controllers\ControllerExtension.cs" />
+    <Compile Include="Controllers\Organisation_LevelController.cs" />
+    <Compile Include="Controllers\ErrorController.cs" />
+    <Compile Include="Controllers\LevelController.cs" />
+    <Compile Include="Controllers\ReportController.cs" />
+    <Compile Include="Controllers\SubscriptionController.cs" />
+    <Compile Include="Controllers\TeamController.cs" />
+    <Compile Include="Controllers\OrganisationController.cs" />
+    <Compile Include="Controllers\ExternalController.cs" />
+    <Compile Include="Controllers\SystemRoleController.cs" />
+    <Compile Include="Controllers\UserController.cs" />
+    <Compile Include="EMReports\Report.aspx.cs">
+      <DependentUpon>Report.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EMReports\Report.aspx.designer.cs">
+      <DependentUpon>Report.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\Base.cs" />
+    <Compile Include="Helpers\LeftNavigationReportHelper.cs" />
+    <Compile Include="Helpers\Login.cs" />
+    <Compile Include="Helpers\LoginSession.cs" />
+    <Compile Include="Helpers\MainMenuHelper.cs" />
+    <Compile Include="Helpers\HtmlHelpers\InputExtensions.cs" />
+    <Compile Include="Helpers\HtmlHelpers\ViewHelpers.cs" />
+    <Compile Include="Helpers\UrlHelperExtension.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Css\EML\calendar.css" />
+    <Content Include="Css\EML\subscription.css" />
+    <Content Include="Css\EML\level.css" />
+    <Content Include="Css\EML\images\ajax-loader.gif" />
+    <Content Include="Css\EML\images\checkbox_0.gif" />
+    <Content Include="Css\EML\images\checkbox_1.gif" />
+    <Content Include="Css\EML\images\checkbox_2.gif" />
+    <Content Include="Css\EML\images\file.gif" />
+    <Content Include="Css\EML\images\folder-closed.gif" />
+    <Content Include="Css\EML\images\folder.gif" />
+    <Content Include="Css\EML\images\minus.gif" />
+    <Content Include="Css\EML\images\plus.gif" />
+    <Content Include="Css\EML\images\treeview-black-line.gif" />
+    <Content Include="Css\EML\images\treeview-black.gif" />
+    <Content Include="Css\EML\images\treeview-default-line.gif" />
+    <Content Include="Css\EML\images\treeview-default.gif" />
+    <Content Include="Css\EML\images\treeview-famfamfam-line.gif" />
+    <Content Include="Css\EML\images\treeview-famfamfam.gif" />
+    <Content Include="Css\EML\images\treeview-gray-line.gif" />
+    <Content Include="Css\EML\images\treeview-gray.gif" />
+    <Content Include="Css\EML\images\treeview-red-line.gif" />
+    <Content Include="Css\EML\images\treeview-red.gif" />
+    <Content Include="Css\EML\jquery\images\icons\add.png" />
+    <Content Include="Css\EML\jquery\images\icons\addStep.gif" />
+    <Content Include="Css\EML\jquery\images\icons\addStep_dsbl.gif" />
+    <Content Include="Css\EML\jquery\images\icons\btn-arrow.gif" />
+    <Content Include="Css\EML\jquery\images\icons\Btn.Close.gif" />
+    <Content Include="Css\EML\jquery\images\icons\Btn.Refresh.gif" />
+    <Content Include="Css\EML\jquery\images\icons\cal.gif" />
+    <Content Include="Css\EML\jquery\images\icons\checkbox_0.gif" />
+    <Content Include="Css\EML\jquery\images\icons\checkbox_1.gif" />
+    <Content Include="Css\EML\jquery\images\icons\checkbox_2.gif" />
+    <Content Include="Css\EML\jquery\images\icons\circle_animation.gif" />
+    <Content Include="Css\EML\jquery\images\icons\delete.png" />
+    <Content Include="Css\EML\jquery\images\icons\delItem.gif" />
+    <Content Include="Css\EML\jquery\images\icons\delItem_dsbl.gif" />
+    <Content Include="Css\EML\jquery\images\icons\edit.png" />
+    <Content Include="Css\EML\jquery\images\icons\folder_close.gif" />
+    <Content Include="Css\EML\jquery\images\icons\ico1.gif" />
+    <Content Include="Css\EML\jquery\images\icons\ico2.gif" />
+    <Content Include="Css\EML\jquery\images\icons\ico3.gif" />
+    <Content Include="Css\EML\jquery\images\icons\ico4-1-1.gif" />
+    <Content Include="Css\EML\jquery\images\icons\ico4-1.gif" />
+    <Content Include="Css\EML\jquery\images\icons\ico4-2.gif" />
+    <Content Include="Css\EML\jquery\images\icons\ico4-3.gif" />
+    <Content Include="Css\EML\jquery\images\icons\ico4-4.gif" />
+    <Content Include="Css\EML\jquery\images\icons\ico4.gif" />
+    <Content Include="Css\EML\jquery\images\icons\ico5.gif" />
+    <Content Include="Css\EML\jquery\images\icons\ico6-1.gif" />
+    <Content Include="Css\EML\jquery\images\icons\ico6-2.gif" />
+    <Content Include="Css\EML\jquery\images\icons\ico6.gif" />
+    <Content Include="Css\EML\jquery\images\icons\indicator.gif" />
+    <Content Include="Css\EML\jquery\images\icons\information.png" />
+    <Content Include="Css\EML\jquery\images\icons\Item.Add.gif" />
+    <Content Include="Css\EML\jquery\images\icons\Item.Delete.gif" />
+    <Content Include="Css\EML\jquery\images\icons\Item.Edit.gif" />
+    <Content Include="Css\EML\jquery\images\icons\Item.Input.gif" />
+    <Content Include="Css\EML\jquery\images\icons\Item.Save.gif" />
+    <Content Include="Css\EML\jquery\images\icons\Item.Search.gif" />
+    <Content Include="Css\EML\jquery\images\icons\none.gif" />
+    <Content Include="Css\EML\jquery\images\icons\note.gif" />
+    <Content Include="Css\EML\jquery\images\icons\rowdelete.png" />
+    <Content Include="Css\EML\jquery\images\icons\s.gif" />
+    <Content Include="Css\EML\jquery\images\icons\table_refresh.png" />
+    <Content Include="Css\EML\jquery\images\icons\view.png" />
+    <Content Include="Css\EML\jquery\images\share\glass-bg.gif" />
+    <Content Include="Css\EML\jquery\images\share\hd-sprite.gif" />
+    <Content Include="Css\EML\jquery\images\share\left-btn.gif" />
+    <Content Include="Css\EML\jquery\images\share\right-btn.gif" />
+    <Content Include="Css\EML\jquery\images\share\tool-sprites.gif" />
+    <Content Include="Css\EML\jquery\images\tree\arrows.gif" />
+    <Content Include="Css\EML\jquery\images\tree\cbs.gif" />
+    <Content Include="Css\EML\jquery\images\tree\drop-yes.gif" />
+    <Content Include="Css\EML\jquery\images\tree\elbow-end-minus-nl.gif" />
+    <Content Include="Css\EML\jquery\images\tree\elbow-end-minus.gif" />
+    <Content Include="Css\EML\jquery\images\tree\elbow-end-plus-nl.gif" />
+    <Content Include="Css\EML\jquery\images\tree\elbow-end-plus.gif" />
+    <Content Include="Css\EML\jquery\images\tree\elbow-end.gif" />
+    <Content Include="Css\EML\jquery\images\tree\elbow-line.gif" />
+    <Content Include="Css\EML\jquery\images\tree\elbow-minus-nl.gif" />
+    <Content Include="Css\EML\jquery\images\tree\elbow-minus.gif" />
+    <Content Include="Css\EML\jquery\images\tree\elbow-plus-nl.gif" />
+    <Content Include="Css\EML\jquery\images\tree\elbow-plus.gif" />
+    <Content Include="Css\EML\jquery\images\tree\elbow.gif" />
+    <Content Include="Css\EML\jquery\images\tree\folder-open.gif" />
+    <Content Include="Css\EML\jquery\images\tree\folder.gif" />
+    <Content Include="Css\EML\jquery\images\tree\leaf.gif" />
+    <Content Include="Css\EML\jquery\images\tree\loading.gif" />
+    <Content Include="Css\EML\login.css" />
+    <Content Include="Css\HEM\calendar.css" />
+    <Content Include="Css\EML\main.css" />
+    <Content Include="Css\EML\report.css" />
+    <Content Include="Css\HEM\jquery.selectBox.css" />
+    <Content Include="Css\HEM\level.css" />
+    <Content Include="Css\HEM\login.css" />
+    <Content Include="Css\HEM\main.css" />
+    <Content Include="Css\HEM\report.css" />
+    <Content Include="Css\TMF\calendar.css" />
+    <Content Include="Css\TMF\level.css" />
+    <Content Include="Css\TMF\login.css" />
+    <Content Include="Css\TMF\main.css" />
+    <Content Include="Css\TMF\report.css" />
+    <Content Include="Css\TMF\subscription.css" />
+    <Content Include="EMReports\Report.aspx" />
+    <Content Include="Images\EML\address-book-icon.png" />
+    <Content Include="Images\EML\arrow-h.png" />
+    <Content Include="Images\EML\arrow-v.png" />
+    <Content Include="Images\EML\back-logo.png" />
+    <Content Include="Images\EML\bg-box-center.gif" />
+    <Content Include="Images\EML\bg-box-right.gif" />
+    <Content Include="Images\EML\bg-btn-assign.png" />
+    <Content Include="Images\EML\bg-btn-backtolist.png" />
+    <Content Include="Images\EML\bg-btn-save.png" />
+    <Content Include="Images\EML\bg.png" />
+    <Content Include="Images\EML\bg_box_left.png" />
+    <Content Include="Images\EML\bg-level.png" />
+    <Content Include="Images\EML\black_menu_background.png" />
+    <Content Include="Images\EML\blending-bg.png" />
+    <Content Include="Images\EML\btn-drl.png" />
+    <Content Include="Images\EML\btnActive.png" />
+    <Content Include="Images\EML\btnAdd.png" />
+    <Content Include="Images\EML\btnDelete.png" />
+    <Content Include="Images\EML\btnInActive.png" />
+    <Content Include="Images\EML\btnReport.png" />
+    <Content Include="Images\EML\btnSearch.png" />
+    <Content Include="Images\EML\btnSelect.png" />
+    <Content Include="Images\EML\btnSubscription.png" />
+    <Content Include="Images\EML\checkbox_0.gif" />
+    <Content Include="Images\EML\checkbox_1.gif" />
+    <Content Include="Images\EML\checkbox_2.gif" />
+    <Content Include="Images\EML\collapse.png" />
+    <Content Include="Images\EML\container-bg.png" />
+    <Content Include="Images\EML\d.png" />
+    <Content Include="Images\EML\divider.png" />
+    <Content Include="Images\EML\dropdown-button.png" />
+    <Content Include="Images\EML\erroricon.jpg" />
+    <Content Include="Images\EML\expanded.png" />
+    <Content Include="Images\EML\expand.png" />
+    <Content Include="Images\EML\expand_.png" />
+    <Content Include="Images\EML\expanded_.png" />
+    <Content Include="Images\EML\expand_arrow.png" />
+    <Content Include="Images\EML\goto.png" />
+    <Content Include="Images\EML\header-bg.jpg" />
+    <Content Include="Images\EML\icon-addfavorite.png" />
+    <Content Include="Images\EML\icon-group.png" />
+    <Content Include="Images\EML\icon-removefavorite.png" />
+    <Content Include="Images\EML\icon-report.png" />
+    <Content Include="Images\EML\icon-role.png" />
+    <Content Include="Images\EML\icon-user.png" />
+    <Content Include="Images\EML\incollapse.png" />
+    <Content Include="Images\EML\info.png" />
+    <Content Include="Images\EML\left.png" />
+    <Content Include="Images\EML\level-arrow-select-right.png" />
+    <Content Include="Images\EML\level-arrow.png" />
+    <Content Include="Images\EML\li-separate.gif" />
+    <Content Include="Images\EML\logo.png" />
+    <Content Include="Images\EML\log_in_bg.png" />
+    <Content Include="Images\EML\next.gif" />
+    <Content Include="Images\EML\no-avatar.png" />
+    <Content Include="Images\EML\prev.gif" />
+    <Content Include="Images\EML\report-favorite-icon.png" />
+    <Content Include="Images\EML\report-recently-icon.png" />
+    <Content Include="Images\EML\Reserved.ReportViewerWebControl.gif" />
+    <Content Include="Images\EML\right.png" />
+    <Content Include="Images\EML\role-icon.png" />
+    <Content Include="Images\EML\sub-divider.png" />
+    <Content Include="Images\EML\ui-icons_256x240.png" />
+    <Content Include="Images\EML\view-report.png" />
+    <Content Include="Images\HEM\address-book-icon.png" />
+    <Content Include="Images\HEM\arrow-h.png" />
+    <Content Include="Images\HEM\arrow-v.png" />
+    <Content Include="Images\HEM\audit-icon1.png" />
+    <Content Include="Images\HEM\back-logo.png" />
+    <Content Include="Images\HEM\bg-box-center.gif" />
+    <Content Include="Images\HEM\bg-box-right.gif" />
+    <Content Include="Images\HEM\bg-btn-assign.png" />
+    <Content Include="Images\HEM\bg-btn-backtolist.png" />
+    <Content Include="Images\HEM\bg-btn-save.png" />
+    <Content Include="Images\HEM\bg-level.png" />
+    <Content Include="Images\HEM\bg.png" />
+    <Content Include="Images\HEM\bg_box_left.png" />
+    <Content Include="Images\HEM\black_menu_background.png" />
+    <Content Include="Images\HEM\blending-bg.png" />
+    <Content Include="Images\HEM\btn-drl.png" />
+    <Content Include="Images\HEM\btnActive.png" />
+    <Content Include="Images\HEM\btnAdd.png" />
+    <Content Include="Images\HEM\btnDelete.png" />
+    <Content Include="Images\HEM\btnInActive.png" />
+    <Content Include="Images\HEM\btnReport.png" />
+    <Content Include="Images\HEM\btnSearch.png" />
+    <Content Include="Images\HEM\btnSelect.png" />
+    <Content Include="Images\HEM\btnSubscription.png" />
+    <Content Include="Images\HEM\checkbox_0.gif" />
+    <Content Include="Images\HEM\checkbox_1.gif" />
+    <Content Include="Images\HEM\checkbox_2.gif" />
+    <Content Include="Images\HEM\collapse.png" />
+    <Content Include="Images\HEM\container-bg.png" />
+    <Content Include="Images\HEM\d.png" />
+    <Content Include="Images\HEM\divider.png" />
+    <Content Include="Images\HEM\dropdown-button.png" />
+    <Content Include="Images\HEM\erroricon.jpg" />
+    <Content Include="Images\HEM\expand.png" />
+    <Content Include="Images\HEM\expanded.png" />
+    <Content Include="Images\HEM\expanded_.png" />
+    <Content Include="Images\HEM\expand_.png" />
+    <Content Include="Images\HEM\expand_arrow.png" />
+    <Content Include="Images\HEM\goto.png" />
+    <Content Include="Images\HEM\header-bg.jpg" />
+    <Content Include="Images\HEM\icon-addfavorite.png" />
+    <Content Include="Images\HEM\icon-group.png" />
+    <Content Include="Images\HEM\icon-removefavorite.png" />
+    <Content Include="Images\HEM\icon-report.png" />
+    <Content Include="Images\HEM\icon-role.png" />
+    <Content Include="Images\HEM\icon-user.png" />
+    <Content Include="Images\HEM\incollapse.png" />
+    <Content Include="Images\HEM\info.png" />
+    <Content Include="Images\HEM\left.png" />
+    <Content Include="Images\HEM\left0.png" />
+    <Content Include="Images\HEM\level-arrow-select-left.png" />
+    <Content Include="Images\HEM\level-arrow-select-right.png" />
+    <Content Include="Images\HEM\level-arrow.png" />
+    <Content Include="Images\HEM\li-separate.gif" />
+    <Content Include="Images\HEM\logo.png" />
+    <Content Include="Images\HEM\log_in_bg.png" />
+    <Content Include="Images\HEM\next.gif" />
+    <Content Include="Images\HEM\no-avatar.png" />
+    <Content Include="Images\HEM\prev.gif" />
+    <Content Include="Images\HEM\report-favorite-icon.png" />
+    <Content Include="Images\HEM\report-recently-icon.png" />
+    <Content Include="Images\HEM\Reserved.ReportViewerWebControl.gif" />
+    <Content Include="Images\HEM\right.png" />
+    <Content Include="Images\HEM\right0.png" />
+    <Content Include="Images\HEM\role-icon.png" />
+    <Content Include="Images\HEM\sub-divider.png" />
+    <Content Include="Images\HEM\ui-icons_256x240.png" />
+    <Content Include="Images\HEM\view-report.png" />
+    <Content Include="Images\EML\level-arrow-select-left.png" />
+    <Content Include="Images\TMF\address-book-icon.png" />
+    <Content Include="Images\TMF\arrow-h.png" />
+    <Content Include="Images\TMF\arrow-v.png" />
+    <Content Include="Images\TMF\audit-icon1.png" />
+    <Content Include="Images\TMF\back-logo.png" />
+    <Content Include="Images\TMF\back_h2_box_blue.jpg" />
+    <Content Include="Images\TMF\back_logo.png" />
+    <Content Include="Images\TMF\bg-box-center.gif" />
+    <Content Include="Images\TMF\bg-box-right.gif" />
+    <Content Include="Images\TMF\bg-btn-assign.png" />
+    <Content Include="Images\TMF\bg-btn-backtolist.png" />
+    <Content Include="Images\TMF\bg-btn-save.png" />
+    <Content Include="Images\TMF\bg-level.png" />
+    <Content Include="Images\TMF\bg.png" />
+    <Content Include="Images\TMF\bg_box_left.png" />
+    <Content Include="Images\TMF\bg_home.jpg" />
+    <Content Include="Images\TMF\black_menu_background.png" />
+    <Content Include="Images\TMF\blending-bg.png" />
+    <Content Include="Images\TMF\btn-drl.png" />
+    <Content Include="Images\TMF\btnActive.png" />
+    <Content Include="Images\TMF\btnAdd.png" />
+    <Content Include="Images\TMF\btnDelete.png" />
+    <Content Include="Images\TMF\btnInActive.png" />
+    <Content Include="Images\TMF\btnReport.png" />
+    <Content Include="Images\TMF\btnSearch.png" />
+    <Content Include="Images\TMF\btnSelect.png" />
+    <Content Include="Images\TMF\btnSubscription.png" />
+    <Content Include="Images\TMF\checkbox_0.gif" />
+    <Content Include="Images\TMF\checkbox_1.gif" />
+    <Content Include="Images\TMF\checkbox_2.gif" />
+    <Content Include="Images\TMF\collapse.png" />
+    <Content Include="Images\TMF\container-bg.png" />
+    <Content Include="Images\TMF\d.png" />
+    <Content Include="Images\TMF\divider.png" />
+    <Content Include="Images\TMF\dropdown-button.png" />
+    <Content Include="Images\TMF\erroricon.jpg" />
+    <Content Include="Images\TMF\expand.png" />
+    <Content Include="Images\TMF\expanded.png" />
+    <Content Include="Images\TMF\expanded_.png" />
+    <Content Include="Images\TMF\expand_.png" />
+    <Content Include="Images\TMF\expand_arrow.png" />
+    <Content Include="Images\TMF\goto.png" />
+    <Content Include="Images\TMF\header-bg.jpg" />
+    <Content Include="Images\TMF\icon-addfavorite.png" />
+    <Content Include="Images\TMF\icon-group.png" />
+    <Content Include="Images\TMF\icon-removefavorite.png" />
+    <Content Include="Images\TMF\icon-report.png" />
+    <Content Include="Images\TMF\icon-role.png" />
+    <Content Include="Images\TMF\icon-user.png" />
+    <Content Include="Images\TMF\incollapse.png" />
+    <Content Include="Images\TMF\info.png" />
+    <Content Include="Images\TMF\left.png" />
+    <Content Include="Images\TMF\left0.png" />
+    <Content Include="Images\TMF\level-arrow-select-left.png" />
+    <Content Include="Images\TMF\level-arrow-select-right.png" />
+    <Content Include="Images\TMF\level-arrow.png" />
+    <Content Include="Images\TMF\li-separate.gif" />
+    <Content Include="Images\TMF\logo.png" />
+    <Content Include="Images\TMF\log_in_bg.png" />
+    <Content Include="Images\TMF\next.gif" />
+    <Content Include="Images\TMF\no-avatar.png" />
+    <Content Include="Images\TMF\prev.gif" />
+    <Content Include="Images\TMF\report-favorite-icon.png" />
+    <Content Include="Images\TMF\report-recently-icon.png" />
+    <Content Include="Images\TMF\Reserved.ReportViewerWebControl.gif" />
+    <Content Include="Images\TMF\right.png" />
+    <Content Include="Images\TMF\right0.png" />
+    <Content Include="Images\TMF\role-icon.png" />
+    <Content Include="Images\TMF\sub-divider.png" />
+    <Content Include="Images\TMF\ui-icons_256x240.png" />
+    <Content Include="Images\TMF\view-report.png" />
+    <Content Include="obj\Debug\EM_Report.csproj.FileListAbsolute.txt" />
+    <Content Include="obj\Debug\EM_Report.dll" />
+    <Content Include="obj\Debug\EM_Report.pdb" />
+    <Content Include="Scripts\timezone.js" />
+    <Content Include="Scripts\moment.min.js" />
+    <Content Include="Scripts\custom-form-elements.js" />
+    <Content Include="Scripts\jquery.menu.js" />
+    <Content Include="Scripts\jquery.selectBox.js" />
+    <Content Include="Scripts\jquery.ui.mouse.js" />
+    <Content Include="Scripts\jquery.ui.widget.js" />
+    <Content Include="Scripts\jquery.ui.core.js" />
+    <Content Include="Scripts\jquery.ui.droppable.js" />
+    <Content Include="Scripts\jquery.ui.tabs.js" />
+    <Content Include="Scripts\jquery.ui.sortable.js" />
+    <Content Include="Scripts\iSubscription.js" />
+    <Content Include="Scripts\iMain.js" />
+    <Content Include="Scripts\iReport.js" />
+    <Content Include="Scripts\jquery-1.7.2.min.js" />
+    <Content Include="Scripts\jquery-v1.2.7.tools.min.js" />
+    <Content Include="Scripts\jquery.jstree.js" />
+    <Content Include="Scripts\jquery.ui.draggable.js" />
+    <Content Include="Scripts\jquery.ui.dialog.js" />
+    <Content Include="Css\EML\jquery\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Css\EML\jquery\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Css\EML\jquery\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Css\EML\jquery\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Css\EML\jquery\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Css\EML\jquery\images\ui-icon-chamhoi.jpg" />
+    <Content Include="Css\EML\jquery\images\ui-icons.png" />
+    <Content Include="Css\EML\jquery\images\ui-icons_222222_256x240.png" />
+    <Content Include="Css\EML\jquery\images\ui-icons_256x240.png" />
+    <Content Include="Css\EML\jquery\images\ui-icons_888888_256x240.png" />
+    <Content Include="Css\EML\jquery\jquery.multiselect.css" />
+    <Content Include="Css\EML\jquery\jquery.treeview.css" />
+    <Content Include="Css\EML\jquery\jquery.ui.accordion.css" />
+    <Content Include="Css\EML\jquery\jquery.ui.all.css" />
+    <Content Include="Css\EML\jquery\jquery.ui.autocomplete.css" />
+    <Content Include="Css\EML\jquery\jquery.ui.base.css" />
+    <Content Include="Css\EML\jquery\jquery.ui.button.css" />
+    <Content Include="Css\EML\jquery\jquery.ui.core.css" />
+    <Content Include="Css\EML\jquery\jquery.ui.datepicker.css" />
+    <Content Include="Css\EML\jquery\jquery.ui.dialog.css" />
+    <Content Include="Css\EML\jquery\jquery.ui.progressbar.css" />
+    <Content Include="Css\EML\jquery\jquery.ui.resizable.css" />
+    <Content Include="Css\EML\jquery\jquery.ui.selectable.css" />
+    <Content Include="Css\EML\jquery\jquery.ui.slider.css" />
+    <Content Include="Css\EML\jquery\jquery.ui.tabs.css" />
+    <Content Include="Css\EML\jquery\jquery.ui.theme.css" />
+    <Content Include="Scripts\jquery.tree.js" />
+    <Content Include="Css\HEM\jquery\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Css\HEM\jquery\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Css\HEM\jquery\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Css\HEM\jquery\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Css\HEM\jquery\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Css\HEM\jquery\images\ui-icon-chamhoi.jpg" />
+    <Content Include="Css\HEM\jquery\images\ui-icons.png" />
+    <Content Include="Css\HEM\jquery\images\ui-icons_222222_256x240.png" />
+    <Content Include="Css\HEM\jquery\images\ui-icons_256x240.png" />
+    <Content Include="Css\HEM\jquery\images\ui-icons_888888_256x240.png" />
+    <Content Include="Css\HEM\jquery\jquery.multiselect.css" />
+    <Content Include="Css\HEM\jquery\jquery.ui.accordion.css" />
+    <Content Include="Css\HEM\jquery\jquery.ui.all.css" />
+    <Content Include="Css\HEM\jquery\jquery.ui.autocomplete.css" />
+    <Content Include="Css\HEM\jquery\jquery.ui.base.css" />
+    <Content Include="Css\HEM\jquery\jquery.ui.button.css" />
+    <Content Include="Css\HEM\jquery\jquery.ui.core.css" />
+    <Content Include="Css\HEM\jquery\jquery.ui.datepicker.css" />
+    <Content Include="Css\HEM\jquery\jquery.ui.dialog.css" />
+    <Content Include="Css\HEM\jquery\jquery.ui.progressbar.css" />
+    <Content Include="Css\HEM\jquery\jquery.ui.resizable.css" />
+    <Content Include="Css\HEM\jquery\jquery.ui.selectable.css" />
+    <Content Include="Css\HEM\jquery\jquery.ui.slider.css" />
+    <Content Include="Css\HEM\jquery\jquery.ui.tabs.css" />
+    <Content Include="Css\HEM\jquery\jquery.ui.theme.css" />
+    <Content Include="Css\HEM\style.css" />
+    <Content Include="Css\HEM\subscription.css" />
+    <Content Include="Css\TMF\jquery\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Css\TMF\jquery\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Css\TMF\jquery\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Css\TMF\jquery\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Css\TMF\jquery\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Css\TMF\jquery\images\ui-icon-chamhoi.jpg" />
+    <Content Include="Css\TMF\jquery\images\ui-icons.png" />
+    <Content Include="Css\TMF\jquery\images\ui-icons_222222_256x240.png" />
+    <Content Include="Css\TMF\jquery\images\ui-icons_256x240.png" />
+    <Content Include="Css\TMF\jquery\images\ui-icons_888888_256x240.png" />
+    <Content Include="Css\TMF\jquery\jquery.multiselect.css" />
+    <Content Include="Css\TMF\jquery\jquery.ui.accordion.css" />
+    <Content Include="Css\TMF\jquery\jquery.ui.all.css" />
+    <Content Include="Css\TMF\jquery\jquery.ui.autocomplete.css" />
+    <Content Include="Css\TMF\jquery\jquery.ui.base.css" />
+    <Content Include="Css\TMF\jquery\jquery.ui.button.css" />
+    <Content Include="Css\TMF\jquery\jquery.ui.core.css" />
+    <Content Include="Css\TMF\jquery\jquery.ui.datepicker.css" />
+    <Content Include="Css\TMF\jquery\jquery.ui.dialog.css" />
+    <Content Include="Css\TMF\jquery\jquery.ui.progressbar.css" />
+    <Content Include="Css\TMF\jquery\jquery.ui.resizable.css" />
+    <Content Include="Css\TMF\jquery\jquery.ui.selectable.css" />
+    <Content Include="Css\TMF\jquery\jquery.ui.slider.css" />
+    <Content Include="Css\TMF\jquery\jquery.ui.tabs.css" />
+    <Content Include="Css\TMF\jquery\jquery.ui.theme.css" />
+    <Content Include="Css\TMF\style.css" />
+    <Content Include="Images\EML\accept.png" />
+    <Content Include="Images\EML\active-1.png" />
+    <Content Include="Images\EML\active-2.png" />
+    <Content Include="Images\EML\addnew.png" />
+    <Content Include="Images\EML\admin.png" />
+    <Content Include="Images\EML\ajax-loader.gif" />
+    <Content Include="Images\EML\arrow1.gif" />
+    <Content Include="Images\EML\audit-icon.png" />
+    <Content Include="Images\EML\audit-icon1.png" />
+    <Content Include="Images\EML\back-bar-header.png" />
+    <Content Include="Images\EML\back-body.jpg" />
+    <Content Include="Images\EML\back-icon.png" />
+    <Content Include="Images\EML\back-logo_.png" />
+    <Content Include="Images\EML\back-menu-center-selected.png" />
+    <Content Include="Images\EML\back_black.jpg" />
+    <Content Include="Images\EML\back_black_hover.jpg" />
+    <Content Include="Images\EML\back_h2_box_black.jpg" />
+    <Content Include="Images\EML\back_h2_box_blue.jpg" />
+    <Content Include="Images\EML\back_h2_box_white.jpg" />
+    <Content Include="Images\EML\back_header_table.jpg" />
+    <Content Include="Images\EML\back_nav_hover.jpg" />
+    <Content Include="Images\EML\back_red.jpg" />
+    <Content Include="Images\EML\back_white.jpg" />
+    <Content Include="Images\EML\back_white_hover.jpg" />
+    <Content Include="Images\EML\cancel.png" />
+    <Content Include="Images\EML\close.png" />
+    <Content Include="Images\EML\datepicker.png" />
+    <Content Include="Images\EML\delete.png" />
+    <Content Include="Images\EML\edit.png" />
+    <Content Include="Images\EML\error.png" />
+    <Content Include="Images\EML\export.png" />
+    <Content Include="Images\EML\favicon.ico" />
+    <Content Include="Images\EML\favorite.png" />
+    <Content Include="Images\EML\favorite_remove.png" />
+    <Content Include="Images\EML\footer.jpg" />
+    <Content Include="Images\EML\group-icon.png" />
+    <Content Include="Images\EML\inactive-1.png" />
+    <Content Include="Images\EML\inactive-2.png" />
+    <Content Include="Images\EML\information.png" />
+    <Content Include="Images\EML\login.png" />
+    <Content Include="Images\EML\login_error.png" />
+    <Content Include="Images\EML\logout.png" />
+    <Content Include="Images\EML\mailsent.png" />
+    <Content Include="Images\EML\permission-icon.png" />
+    <Content Include="Images\EML\registry.png" />
+    <Content Include="Images\EML\report-icon.png" />
+    <Content Include="Images\EML\reports.png" />
+    <Content Include="Images\EML\save.png" />
+    <Content Include="Images\EML\search_input.png" />
+    <Content Include="Images\EML\ui-icons.png" />
+    <Content Include="Images\EML\user-icon.png" />
+    <Content Include="Images\HEM\accept.png" />
+    <Content Include="Images\HEM\active-1.png" />
+    <Content Include="Images\HEM\active-2.png" />
+    <Content Include="Images\HEM\addnew.png" />
+    <Content Include="Images\HEM\admin.png" />
+    <Content Include="Images\HEM\ajax-loader.gif" />
+    <Content Include="Images\HEM\arrow1.gif" />
+    <Content Include="Images\HEM\audit-icon.png" />
+    <Content Include="Images\HEM\back-bar-header.png" />
+    <Content Include="Images\HEM\back-bar-header1.png" />
+    <Content Include="Images\HEM\back-bar-header2.png" />
+    <Content Include="Images\HEM\back-body.jpg" />
+    <Content Include="Images\HEM\back-icon.png" />
+    <Content Include="Images\HEM\back-logo_.png" />
+    <Content Include="Images\HEM\back-menu-center-selected.png" />
+    <Content Include="Images\HEM\back_black.jpg" />
+    <Content Include="Images\HEM\back_black_hover.jpg" />
+    <Content Include="Images\HEM\back_h2_box_black.jpg" />
+    <Content Include="Images\HEM\back_h2_box_blue.jpg" />
+    <Content Include="Images\HEM\back_h2_box_white.jpg" />
+    <Content Include="Images\HEM\back_header_table.jpg" />
+    <Content Include="Images\HEM\back_nav_hover.jpg" />
+    <Content Include="Images\HEM\back_red.jpg" />
+    <Content Include="Images\HEM\back_white.jpg" />
+    <Content Include="Images\HEM\back_white_hover.jpg" />
+    <Content Include="Images\HEM\cancel.png" />
+    <Content Include="Images\HEM\close.png" />
+    <Content Include="Images\HEM\datepicker.png" />
+    <Content Include="Images\HEM\delete.png" />
+    <Content Include="Images\HEM\edit.png" />
+    <Content Include="Images\HEM\error.png" />
+    <Content Include="Images\HEM\export.png" />
+    <Content Include="Images\HEM\favicon.ico" />
+    <Content Include="Images\HEM\favorite.png" />
+    <Content Include="Images\HEM\favorite_remove.png" />
+    <Content Include="Images\HEM\footer.jpg" />
+    <Content Include="Images\HEM\group-icon.png" />
+    <Content Include="Images\HEM\group-icon1.png" />
+    <Content Include="Images\HEM\hemlogo03.gif" />
+    <Content Include="Images\HEM\inactive-1.png" />
+    <Content Include="Images\HEM\inactive-2.png" />
+    <Content Include="Images\HEM\information.png" />
+    <Content Include="Images\HEM\login.png" />
+    <Content Include="Images\HEM\login_error.png" />
+    <Content Include="Images\HEM\logout.png" />
+    <Content Include="Images\HEM\mailsent.png" />
+    <Content Include="Images\HEM\permission-icon.png" />
+    <Content Include="Images\HEM\registry.png" />
+    <Content Include="Images\HEM\report-icon.png" />
+    <Content Include="Images\HEM\reports.png" />
+    <Content Include="Images\HEM\save.png" />
+    <Content Include="Images\HEM\search_input.png" />
+    <Content Include="Images\HEM\ui-icons.png" />
+    <Content Include="Images\HEM\user-icon.png" />
+    <Content Include="Images\TMF\accept.png" />
+    <Content Include="Images\TMF\active-1.png" />
+    <Content Include="Images\TMF\active-2.png" />
+    <Content Include="Images\TMF\addnew.png" />
+    <Content Include="Images\TMF\admin.png" />
+    <Content Include="Images\TMF\ajax-loader.gif" />
+    <Content Include="Images\TMF\arrow1.gif" />
+    <Content Include="Images\TMF\audit-icon.png" />
+    <Content Include="Images\TMF\back-bar-header.png" />
+    <Content Include="Images\TMF\back-bar-header1.png" />
+    <Content Include="Images\TMF\back-body.jpg" />
+    <Content Include="Images\TMF\back-icon.png" />
+    <Content Include="Images\TMF\back-logo.gif" />
+    <Content Include="Images\TMF\back-logo_.png" />
+    <Content Include="Images\TMF\back-menu-center-selected.png" />
+    <Content Include="Images\TMF\back_black.jpg" />
+    <Content Include="Images\TMF\back_black_hover.jpg" />
+    <Content Include="Images\TMF\back_h2_box_black.jpg" />
+    <Content Include="Images\TMF\back_h2_box_purple.jpg" />
+    <Content Include="Images\TMF\back_h2_box_white.jpg" />
+    <Content Include="Images\TMF\back_header_table.jpg" />
+    <Content Include="Images\TMF\back_nav_hover.jpg" />
+    <Content Include="Images\TMF\back_red.jpg" />
+    <Content Include="Images\TMF\back_white.jpg" />
+    <Content Include="Images\TMF\back_white_hover.jpg" />
+    <Content Include="Images\TMF\cancel.png" />
+    <Content Include="Images\TMF\close.png" />
+    <Content Include="Images\TMF\datepicker.png" />
+    <Content Include="Images\TMF\delete.png" />
+    <Content Include="Images\TMF\edit.png" />
+    <Content Include="Images\TMF\error.png" />
+    <Content Include="Images\TMF\export.png" />
+    <Content Include="Images\TMF\favicon.ico" />
+    <Content Include="Images\TMF\favorite.png" />
+    <Content Include="Images\TMF\favorite_remove.png" />
+    <Content Include="Images\TMF\footer.jpg" />
+    <Content Include="Images\TMF\group-icon.png" />
+    <Content Include="Images\TMF\group-icon1.png" />
+    <Content Include="Images\TMF\inactive-1.png" />
+    <Content Include="Images\TMF\inactive-2.png" />
+    <Content Include="Images\TMF\information.png" />
+    <Content Include="Images\TMF\login.png" />
+    <Content Include="Images\TMF\login_error.png" />
+    <Content Include="Images\TMF\logout.png" />
+    <Content Include="Images\TMF\mailsent.png" />
+    <Content Include="Images\TMF\permission-icon.png" />
+    <Content Include="Images\TMF\registry.png" />
+    <Content Include="Images\TMF\report-icon.png" />
+    <Content Include="Images\TMF\reports.png" />
+    <Content Include="Images\TMF\save.png" />
+    <Content Include="Images\TMF\search_input.png" />
+    <Content Include="Images\TMF\ui-icons.png" />
+    <Content Include="Images\TMF\user-icon.png" />
+    <Content Include="Global.asax" />
+    <Content Include="Scripts\AutocompleteUI.js" />
+    <Content Include="Scripts\jquery-ui-1.8.16.custom.min.js" />
+    <Content Include="Scripts\jquery.blockUI.js" />
+    <Content Include="Scripts\jquery.multiselect.js" />
+    <Content Include="Scripts\jquery.treeview.js" />
+    <Content Include="Scripts\jsAutocomplete.js" />
+    <Content Include="Scripts\jquery-1.5.1-vsdoc.js" />
+    <Content Include="Scripts\jquery-1.5.1.js" />
+    <Content Include="Scripts\jquery-1.5.1.min.js" />
+    <Content Include="Scripts\jquery-ui-1.8.11.js" />
+    <Content Include="Scripts\jquery-ui-1.8.11.min.js" />
+    <Content Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\modernizr-1.7.js" />
+    <Content Include="Scripts\modernizr-1.7.min.js" />
+    <Content Include="Scripts\reportview.js" />
+    <Content Include="Templates\ReportParameters.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Views\Shared\_ShowMessage.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\MicrosoftAjax.js" />
+    <Content Include="Scripts\MicrosoftAjax.debug.js" />
+    <Content Include="Scripts\MicrosoftMvcAjax.js" />
+    <Content Include="Scripts\MicrosoftMvcAjax.debug.js" />
+    <Content Include="Scripts\MicrosoftMvcValidation.js" />
+    <Content Include="Scripts\MicrosoftMvcValidation.debug.js" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Account\ChangePassword.cshtml" />
+    <Content Include="Views\Account\ChangePasswordSuccess.cshtml" />
+    <Content Include="Views\Account\LogIn.cshtml" />
+    <Content Include="Views\Error\Error_404.cshtml" />
+    <Content Include="Views\Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="bin\" />
+    <Folder Include="obj\Debug\TempPE\" />
+    <Folder Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\EM_Report.BLL\EM_Report.BLL.csproj">
+      <Project>{D8C0B1E8-E19B-4C98-830F-6C552FFD07BE}</Project>
+      <Name>EM_Report.BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EM_Report.Models\EM_Report.Models.csproj">
+      <Project>{FEC1454F-61C9-4D4D-97BD-C2E8D97A3569}</Project>
+      <Name>EM_Report.Models</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="credentials.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <None Include="obj\Debug\ResolveAssemblyReference.cache" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Content Include="Views\Account\ResetPassword.cshtml" />
+    <Content Include="Views\Account\ResetPasswordSuccess.cshtml" />
+    <Content Include="Views\Account\AccessDenied.cshtml" />
+    <Content Include="Views\Report\Category.cshtml" />
+    <Content Include="Views\Report\Details.cshtml" />
+    <Content Include="Views\Report\ViewInfo.cshtml" />
+    <Content Include="Views\Report\Index.cshtml" />
+    <Content Include="Views\AuditTrail\Index.cshtml" />
+    <Content Include="Views\AuditTrail\ucIndex.cshtml" />
+    <Content Include="Views\AuditTrail\ucUsersAudit.cshtml" />
+    <Content Include="Views\AuditTrail\ucReportsAudit.cshtml" />
+    <Content Include="Views\AuditTrail\ucReportCategoriesAudit.cshtml" />
+    <Content Include="Views\AuditTrail\ucExternalGroupsAudit.cshtml" />
+    <Content Include="Views\AuditTrail\ucReportOrganisationRolesAudit.cshtml" />
+    <Content Include="Views\AuditTrail\ucReportExternalAccessAudit.cshtml" />
+    <Content Include="Views\AuditTrail\ucOrganisationRoleLevelsAudit.cshtml" />
+    <Content Include="Views\AuditTrail\ucOrganisationRolesAudit.cshtml" />
+    <Content Include="Views\AuditTrail\ucTeamsAudit.cshtml" />
+    <Content Include="Views\AuditTrail\ucSystemRolePermissionsAudit.cshtml" />
+    <Content Include="Views\AuditTrail\ucSubscriptionsAudit.cshtml" />
+    <Content Include="Views\External\Index.cshtml" />
+    <Content Include="Views\Report\UCIndex.cshtml">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="Views\Report\CategoryDetails.cshtml">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="Views\Report\ExternalGroup.cshtml" />
+    <Content Include="Views\Subscription\Index.cshtml" />
+    <Content Include="Views\Report\OrganisationRole.cshtml" />
+    <Content Include="Views\Team\Index.cshtml" />
+    <Content Include="Views\SystemRole\Index.cshtml" />
+    <Content Include="Views\Level\Details.cshtml" />
+    <Content Include="Views\Shared\ReportParameter.cshtml" />
+    <Content Include="Views\Error\Error_500.cshtml" />
+    <Content Include="Views\Subscription\Exclude.cshtml" />
+    <Content Include="Views\Report\UCIndexReport.cshtml" />
+    <Content Include="Views\Organisation_Level\Index.cshtml" />
+    <Content Include="Views\Team\Details.cshtml" />
+    <Content Include="Views\External\Details.cshtml" />
+    <Content Include="Views\Organisation\Details.cshtml" />
+    <Content Include="Views\SystemRole\Details.cshtml" />
+    <Content Include="Views\User\Details.cshtml" />
+    <Content Include="Views\Subscription\Details.cshtml" />
+    <Content Include="Views\Report\ExportFile.cshtml" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\AddressBook\Index.cshtml" />
+    <Content Include="Views\AddressBook\UCIndex.cshtml" />
+    <Content Include="Views\AddressBook\Details.cshtml" />
+    <Content Include="Views\AddressBook\AllContacts.cshtml" />
+    <Content Include="Views\Report\UCPolicy.cshtml" />
+    <Content Include="Views\Report\UCPaymentType.cshtml" />
+    <Content Include="Views\Report\UCCreditor.cshtml" />
+    <Content Include="Views\Report\UCBroker.cshtml" />
+    <Content Include="Views\Report\UCProvider.cshtml" />
+    <Content Include="Views\Shared\_UCPaging.cshtml" />
+    <Content Include="Views\Shared\_Master.cshtml" />
+    <Content Include="Views\Shared\_Menu.cshtml" />
+    <Content Include="Views\User\Index.cshtml" />
+    <Content Include="Views\Shared\_HiddenAction.cshtml" />
+    <Content Include="Views\Shared\_SearchBar.cshtml" />
+    <Content Include="Views\Shared\_Dialog.cshtml" />
+    <Content Include="Views\Shared\_Header.cshtml" />
+    <Content Include="Views\Shared\_HeaderWithoutLogin.cshtml" />
+    <Content Include="Views\Shared\_MasterWithoutLogin.cshtml" />
+    <Content Include="Views\Shared\_MasterReport.cshtml" />
+    <Content Include="Views\Shared\_OkayCancel.cshtml" />
+    <Content Include="Views\Report\SendMail.cshtml" />
+    <Content Include="Views\Report\SendMailLoadingReport.cshtml" />
+    <Content Include="Views\Shared\_HackIE7.cshtml" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>55482</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost/EM_Report</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

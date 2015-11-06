@@ -1,0 +1,165 @@
+﻿@using EM_Report.Domain;
+@{
+    ViewBag.Title = "DashBoard";
+    ViewBag.Heading = "Report >> Dashboard >> Level 2";
+    Layout = Request.IsAjaxRequest() ? null : "~/Views/Shared/_Master.cshtml";
+}
+<div class="w_100p" style="margin: 0 !important;">    
+    <!-- TAB -->
+    <ul class="tab">
+        @{
+            var systemName = ViewBag.SystemName == "EML" ? "WCNSW" : ViewBag.SystemName == "HEM" ? "Hospitality" : ViewBag.SystemName;
+            var systemSub = systemName == "TMF" ? "agencies" : systemName == "Hospitality" ? "portfolios" : "employer sizes";
+            var reportPath = ViewBag.ReportPath ?? string.Empty;
+            var type = Request["Type"] ?? string.Empty;
+
+            var isAgencyType = (reportPath.ToLower().IndexOf("employer") > 0 || type == "employer_size") || (reportPath.ToLower().Contains("agency") || type == "agency") || (reportPath.ToLower().Contains("portfolio") || type == "portfolio");
+            var isGroupType = (reportPath.ToLower().Contains("group") || type == "group");
+            var isAccountManagerType = (reportPath.ToLower().Contains("account_manager") || type == "account_manager");
+        
+        }
+        <li @(isAgencyType ? "class=tab_current" : "") id="tab_agencies"><a>@systemName by
+            @systemSub</a> </li>
+        <li @(isGroupType ? "class=tab_current" : "") id="tab_group"><a>@systemName by groups</a>
+        </li>
+        @if (systemName == "WCNSW")
+        {
+            <li @(isAccountManagerType ? "class=tab_current" : "") id="tab_account_manager"><a>@systemName
+                by account managers</a> </li>
+        }
+    </ul>
+    <div class="tab_content">
+        @{
+            var url = "~/DashboardReports/DashboardReport.aspx";
+            string strQuery = "";
+            foreach (String key in Request.QueryString.AllKeys)
+            {
+                strQuery = strQuery + "&" + key + "=" + Request.QueryString[key];
+            }
+            strQuery = "?" + strQuery.TrimStart('&');
+            url = url + strQuery;
+        }
+        <div id="@(isAgencyType ? "ifReportCover_Agency" : isGroupType ? "ifReportCover_Group" : "ifReportCover_AccountManager")" style="height:auto">
+            <iframe id="@(isAgencyType ? "ifReport_Agency" : isGroupType ? "ifReport_Group" : "ifReport_AccountManager")" 
+                src="@Url.Content(@url)" width="100%" height="100%" frameborder="0" scrolling="no" style="display:inline">
+            </iframe>
+        </div>
+    </div>
+    <div class="clear"></div>    
+</div>
+<script type="text/javascript" language="javascript">
+    var loadedL2Tab1 = false;
+    var loadedL2SecondTab = 0;
+    var loadedL2EndTab = 0;
+
+    var canTabClick = true;
+    var DataContentL2Tab1;
+    var DataContentL2Tab2;
+    var DataContentL2Tab3;
+
+    var loadedDescriptionCount = 0;
+    var systemSub = "";
+    var systemName = $('#wrapper .breadcrum_01 a:eq(0)').html().trim();
+
+    function Load_Second_Tab() {
+
+        var Href_2 = $('iframe:eq(0)').attr('src');
+
+        //determine agency or employer_size or porfolio base on system name
+        if (Href_2.toLowerCase().indexOf("tmf") >= 0) {
+            systemSub = "agency";
+        }
+        else if (Href_2.toLowerCase().indexOf("eml") >= 0) {
+            systemSub = "employer_size";
+        }
+        else if (Href_2.toLowerCase().indexOf("hem") >= 0) {
+            systemSub = "portfolio";
+        }
+
+
+        var ifReportCount = 0;
+        $('iframe').each(function (i, e) {
+            if ($(this).attr("id").indexOf("_Agency") >= 0
+                || $(this).attr("id").indexOf("_Group") >= 0
+                || $(this).attr("id").indexOf("_AccountManager") >= 0) {
+                ifReportCount++;
+            }
+        });
+       
+        // set url for TMF Groups Tab
+        if (Href_2.indexOf("Type=" + systemSub) >= 0) {
+            Href_2 = Href_2.replace("Type=" + systemSub, "Type=group");
+          
+            if (ifReportCount == 1) {
+                var appendContent = '<div id="' + (Href_2.indexOf("Type=" + systemSub) >= 0 ? "ifReportCover_Agency" : "ifReportCover_Group")
+                    + '" style="height:0px;"><iframe id="' + (Href_2.indexOf("Type=" + systemSub) >= 0 ? "ifReport_Agency" : "ifReport_Group")
+                    + '" src="' + Href_2 + '" width="100%" height="100%" frameborder="0" scrolling="no" style="visibility:hidden;"></iframe></div>';
+                $(".tab_content").prepend(appendContent);
+                $(".tab_content").append('<div class="clear" style="height:10px;"></div>');
+            }
+        }
+        else if (Href_2.indexOf("Type=group") >= 0) {
+            Href_2 = Href_2.replace("Type=group", "Type=" + systemSub);
+
+            if (ifReportCount == 1) {
+                var appendContent = '<div id="' + (Href_2.indexOf("Type=" + systemSub) >= 0 ? "ifReportCover_Agency" : "ifReportCover_Group")
+                    + '" style="height:0px;"><iframe id="' + (Href_2.indexOf("Type=" + systemSub) >= 0 ? "ifReport_Agency" : "ifReport_Group")
+                    + '" src="' + Href_2 + '" width="100%" height="100%" frameborder="0" scrolling="no" style="visibility:hidden;"></iframe></div>';
+                $(".tab_content").prepend(appendContent);
+                $(".tab_content").append('<div class="clear" style="height:10px;"></div>');
+            }
+        }
+        else if (Href_2.indexOf("Type=account_manager") >= 0) {
+            Href_2 = Href_2.replace("Type=account_manager", "Type=group");
+
+            if (ifReportCount == 1) {
+                var appendContent = '<div id="ifReportCover_Group" style="height:0px;"><iframe id="ifReport_Group" src="'
+                    + Href_2 + '" width="100%" height="100%" frameborder="0" scrolling="no" style="visibility:hidden;"></iframe></div>';
+                $(".tab_content").prepend(appendContent);
+                $(".tab_content").append('<div class="clear" style="height:10px;"></div>');
+            }
+        }
+    }
+
+    function Load_Third_Tab() {
+
+        var Href_3 = $('iframe:eq(0)').attr('src');
+
+        //determine agency or employer_size or porfolio base on system name
+        if (Href_3.toLowerCase().indexOf("tmf") >= 0) {
+            systemSub = "agency";
+        }
+        else if (Href_3.toLowerCase().indexOf("eml") >= 0) {
+            systemSub = "employer_size";
+        }
+        else if (Href_3.toLowerCase().indexOf("hem") >= 0) {
+            systemSub = "portfolio";
+        }
+
+
+        if (Href_3.indexOf("Type=" + systemSub) >= 0) {
+            Href_3 = Href_3.replace("Type=" + systemSub, "Type=account_manager");
+            var appendContent = '<div id="ifReportCover_AccountManager" style="height:0px;"><iframe id="ifReport_AccountManager" src="'
+                + Href_3 + '" width="100%" height="100%" frameborder="0" scrolling="no" style="visibility:hidden;"></iframe></div>';
+            $(".tab_content").prepend(appendContent);
+            $(".tab_content").append('<div class="clear" style="height:10px;"></div>');
+        }
+        else if (Href_3.indexOf("Type=group") >= 0) {
+
+            if ($("div#ifReportCover_Agency").length > 0) {
+                Href_3 = Href_3.replace("Type=group", "Type=account_manager");
+                var appendContent = '<div id="ifReportCover_AccountManager" style="height:0px;"><iframe id="ifReport_AccountManager" src="'
+                    + Href_3 + '" width="100%" height="100%" frameborder="0" scrolling="no" style="visibility:hidden;"></iframe></div>';
+                $(".tab_content").prepend(appendContent);
+                $(".tab_content").append('<div class="clear" style="height:10px;"></div>');
+            }
+            else if ($("div#ifReportCover_AccountManager").length > 0) {
+                Href_3 = Href_3.replace("Type=group", "Type=" + systemSub);
+                var appendContent = '<div id="ifReportCover_Agency" style="height:0px;"><iframe id="ifReport_Agency" src="'
+                    + Href_3 + '" width="100%" height="100%" frameborder="0" scrolling="no" style="visibility:hidden;"></iframe></div>';
+                $(".tab_content").prepend(appendContent);
+                $(".tab_content").append('<div class="clear" style="height:10px;"></div>');
+            }
+        }
+    }
+</script>

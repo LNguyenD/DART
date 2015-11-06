@@ -1,0 +1,191 @@
+﻿<error errorId="98e563c8-7f4d-4bc1-b48d-7854ece4d896" application="/LM/W3SVC/1/ROOT/Dart" host="ASWVNWKS103" type="Microsoft.Reporting.WebForms.AspNetSessionExpiredException" message="ASP.NET session has expired or could not be found" source="Microsoft.ReportViewer.WebForms" detail="Microsoft.Reporting.WebForms.AspNetSessionExpiredException: ASP.NET session has expired or could not be found&#xD;&#xA;   at Microsoft.Reporting.WebForms.ViewerDataOperation..ctor()&#xD;&#xA;   at Microsoft.Reporting.WebForms.HttpHandler.GetHandler(String operationType)&#xD;&#xA;   at Microsoft.Reporting.WebForms.HttpHandler.ProcessRequest(HttpContext context)&#xD;&#xA;   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()&#xD;&#xA;   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean&amp; completedSynchronously)" time="2014-07-18T04:32:48.2727021Z">
+  <serverVariables>
+    <item name="ALL_HTTP">
+      <value string="HTTP_CONNECTION:keep-alive&#xD;&#xA;HTTP_CONTENT_LENGTH:0&#xD;&#xA;HTTP_CONTENT_TYPE:application/x-www-form-urlencoded; charset=UTF-8&#xD;&#xA;HTTP_ACCEPT:*/*&#xD;&#xA;HTTP_ACCEPT_ENCODING:gzip,deflate,sdch&#xD;&#xA;HTTP_ACCEPT_LANGUAGE:en-US,en;q=0.8&#xD;&#xA;HTTP_COOKIE:__RequestVerificationToken_L0RhcnQ_=YpR3eUDlbwH+WxT1AIpGyePJhjfYmubRy5WkS+AYvLjBf36yna54+yRAEAn/Ln6BTCeAwjf9dKxHPNDvlUVkkUqeb4z6T2l2OoHpPkMu+RM7ja/AQ/5OfCddVJboW713EmxN9XzOb9YcvmbWBGiLk+5v8UWaG4x3qjOJK709l9I=; ASP.NET_SessionId=4evzk0jykmjwiyy53dw4cclh; UserInfoSecurity=S.Niven@employersmutual.com.au|x/r4zsVD2y5FTpKYCQGMUw==#####|3237; sqlAuthCookie=CA9E23F77A33B693C6DE59FEAB3FFAD79140B5D1120DB8D9587F47012A03B0EA53A85817EEAB9BF9A0762721F7516394548758889C038CE6B5A41B6F48B9909D7CDE0F4BB4EAE7069C48B25D767DC369E8604F16B6C71137CF762FFAF06C758EDE7ABC457DE9DFE0390EB1049C201E0042B58DDE&#xD;&#xA;HTTP_HOST:localhost&#xD;&#xA;HTTP_REFERER:https://localhost/Dart/DashboardReports/DashboardReport.aspx?IsVisible=all&amp;Type=agency&amp;Measure=26&amp;reportpath=/emreporting/reports/tmf_rtw_level2&#xD;&#xA;HTTP_USER_AGENT:Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/34.0.1847.11 Safari/537.36&#xD;&#xA;HTTP_ORIGIN:https://localhost&#xD;&#xA;HTTP_X_REQUESTED_WITH:XMLHttpRequest&#xD;&#xA;" />
+    </item>
+    <item name="ALL_RAW">
+      <value string="Connection: keep-alive&#xD;&#xA;Content-Length: 0&#xD;&#xA;Content-Type: application/x-www-form-urlencoded; charset=UTF-8&#xD;&#xA;Accept: */*&#xD;&#xA;Accept-Encoding: gzip,deflate,sdch&#xD;&#xA;Accept-Language: en-US,en;q=0.8&#xD;&#xA;Cookie: __RequestVerificationToken_L0RhcnQ_=YpR3eUDlbwH+WxT1AIpGyePJhjfYmubRy5WkS+AYvLjBf36yna54+yRAEAn/Ln6BTCeAwjf9dKxHPNDvlUVkkUqeb4z6T2l2OoHpPkMu+RM7ja/AQ/5OfCddVJboW713EmxN9XzOb9YcvmbWBGiLk+5v8UWaG4x3qjOJK709l9I=; ASP.NET_SessionId=4evzk0jykmjwiyy53dw4cclh; UserInfoSecurity=S.Niven@employersmutual.com.au|x/r4zsVD2y5FTpKYCQGMUw==#####|3237; sqlAuthCookie=CA9E23F77A33B693C6DE59FEAB3FFAD79140B5D1120DB8D9587F47012A03B0EA53A85817EEAB9BF9A0762721F7516394548758889C038CE6B5A41B6F48B9909D7CDE0F4BB4EAE7069C48B25D767DC369E8604F16B6C71137CF762FFAF06C758EDE7ABC457DE9DFE0390EB1049C201E0042B58DDE&#xD;&#xA;Host: localhost&#xD;&#xA;Referer: https://localhost/Dart/DashboardReports/DashboardReport.aspx?IsVisible=all&amp;Type=agency&amp;Measure=26&amp;reportpath=/emreporting/reports/tmf_rtw_level2&#xD;&#xA;User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/34.0.1847.11 Safari/537.36&#xD;&#xA;Origin: https://localhost&#xD;&#xA;X-Requested-With: XMLHttpRequest&#xD;&#xA;" />
+    </item>
+    <item name="APPL_MD_PATH">
+      <value string="/LM/W3SVC/1/ROOT/Dart" />
+    </item>
+    <item name="APPL_PHYSICAL_PATH">
+      <value string="D:\Work\Project\Dart\branches\WebAppProject\EM_Report\" />
+    </item>
+    <item name="AUTH_TYPE">
+      <value string="" />
+    </item>
+    <item name="AUTH_USER">
+      <value string="" />
+    </item>
+    <item name="AUTH_PASSWORD">
+      <value string="" />
+    </item>
+    <item name="LOGON_USER">
+      <value string="" />
+    </item>
+    <item name="REMOTE_USER">
+      <value string="" />
+    </item>
+    <item name="CERT_COOKIE">
+      <value string="" />
+    </item>
+    <item name="CERT_FLAGS">
+      <value string="" />
+    </item>
+    <item name="CERT_ISSUER">
+      <value string="" />
+    </item>
+    <item name="CERT_KEYSIZE">
+      <value string="128" />
+    </item>
+    <item name="CERT_SECRETKEYSIZE">
+      <value string="2048" />
+    </item>
+    <item name="CERT_SERIALNUMBER">
+      <value string="" />
+    </item>
+    <item name="CERT_SERVER_ISSUER">
+      <value string="CN=ASWVNWKS103.aswigsyd.int" />
+    </item>
+    <item name="CERT_SERVER_SUBJECT">
+      <value string="CN=ASWVNWKS103.aswigsyd.int" />
+    </item>
+    <item name="CERT_SUBJECT">
+      <value string="" />
+    </item>
+    <item name="CONTENT_LENGTH">
+      <value string="0" />
+    </item>
+    <item name="CONTENT_TYPE">
+      <value string="application/x-www-form-urlencoded; charset=UTF-8" />
+    </item>
+    <item name="GATEWAY_INTERFACE">
+      <value string="CGI/1.1" />
+    </item>
+    <item name="HTTPS">
+      <value string="on" />
+    </item>
+    <item name="HTTPS_KEYSIZE">
+      <value string="128" />
+    </item>
+    <item name="HTTPS_SECRETKEYSIZE">
+      <value string="2048" />
+    </item>
+    <item name="HTTPS_SERVER_ISSUER">
+      <value string="CN=ASWVNWKS103.aswigsyd.int" />
+    </item>
+    <item name="HTTPS_SERVER_SUBJECT">
+      <value string="CN=ASWVNWKS103.aswigsyd.int" />
+    </item>
+    <item name="INSTANCE_ID">
+      <value string="1" />
+    </item>
+    <item name="INSTANCE_META_PATH">
+      <value string="/LM/W3SVC/1" />
+    </item>
+    <item name="LOCAL_ADDR">
+      <value string="::1" />
+    </item>
+    <item name="PATH_INFO">
+      <value string="/Dart/Reserved.ReportViewerWebControl.axd" />
+    </item>
+    <item name="PATH_TRANSLATED">
+      <value string="D:\Work\Project\Dart\branches\WebAppProject\EM_Report\Reserved.ReportViewerWebControl.axd" />
+    </item>
+    <item name="QUERY_STRING">
+      <value string="OpType=SessionKeepAlive&amp;ControlID=104b062af0c64197949ab4ee0e54a6e1" />
+    </item>
+    <item name="REMOTE_ADDR">
+      <value string="::1" />
+    </item>
+    <item name="REMOTE_HOST">
+      <value string="::1" />
+    </item>
+    <item name="REMOTE_PORT">
+      <value string="51987" />
+    </item>
+    <item name="REQUEST_METHOD">
+      <value string="POST" />
+    </item>
+    <item name="SCRIPT_NAME">
+      <value string="/Dart/Reserved.ReportViewerWebControl.axd" />
+    </item>
+    <item name="SERVER_NAME">
+      <value string="localhost" />
+    </item>
+    <item name="SERVER_PORT">
+      <value string="443" />
+    </item>
+    <item name="SERVER_PORT_SECURE">
+      <value string="1" />
+    </item>
+    <item name="SERVER_PROTOCOL">
+      <value string="HTTP/1.1" />
+    </item>
+    <item name="SERVER_SOFTWARE">
+      <value string="Microsoft-IIS/7.5" />
+    </item>
+    <item name="URL">
+      <value string="/Dart/Reserved.ReportViewerWebControl.axd" />
+    </item>
+    <item name="HTTP_CONNECTION">
+      <value string="keep-alive" />
+    </item>
+    <item name="HTTP_CONTENT_LENGTH">
+      <value string="0" />
+    </item>
+    <item name="HTTP_CONTENT_TYPE">
+      <value string="application/x-www-form-urlencoded; charset=UTF-8" />
+    </item>
+    <item name="HTTP_ACCEPT">
+      <value string="*/*" />
+    </item>
+    <item name="HTTP_ACCEPT_ENCODING">
+      <value string="gzip,deflate,sdch" />
+    </item>
+    <item name="HTTP_ACCEPT_LANGUAGE">
+      <value string="en-US,en;q=0.8" />
+    </item>
+    <item name="HTTP_COOKIE">
+      <value string="__RequestVerificationToken_L0RhcnQ_=YpR3eUDlbwH+WxT1AIpGyePJhjfYmubRy5WkS+AYvLjBf36yna54+yRAEAn/Ln6BTCeAwjf9dKxHPNDvlUVkkUqeb4z6T2l2OoHpPkMu+RM7ja/AQ/5OfCddVJboW713EmxN9XzOb9YcvmbWBGiLk+5v8UWaG4x3qjOJK709l9I=; ASP.NET_SessionId=4evzk0jykmjwiyy53dw4cclh; UserInfoSecurity=S.Niven@employersmutual.com.au|x/r4zsVD2y5FTpKYCQGMUw==#####|3237; sqlAuthCookie=CA9E23F77A33B693C6DE59FEAB3FFAD79140B5D1120DB8D9587F47012A03B0EA53A85817EEAB9BF9A0762721F7516394548758889C038CE6B5A41B6F48B9909D7CDE0F4BB4EAE7069C48B25D767DC369E8604F16B6C71137CF762FFAF06C758EDE7ABC457DE9DFE0390EB1049C201E0042B58DDE" />
+    </item>
+    <item name="HTTP_HOST">
+      <value string="localhost" />
+    </item>
+    <item name="HTTP_REFERER">
+      <value string="https://localhost/Dart/DashboardReports/DashboardReport.aspx?IsVisible=all&amp;Type=agency&amp;Measure=26&amp;reportpath=/emreporting/reports/tmf_rtw_level2" />
+    </item>
+    <item name="HTTP_USER_AGENT">
+      <value string="Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/34.0.1847.11 Safari/537.36" />
+    </item>
+    <item name="HTTP_ORIGIN">
+      <value string="https://localhost" />
+    </item>
+    <item name="HTTP_X_REQUESTED_WITH">
+      <value string="XMLHttpRequest" />
+    </item>
+  </serverVariables>
+  <queryString>
+    <item name="OpType">
+      <value string="SessionKeepAlive" />
+    </item>
+    <item name="ControlID">
+      <value string="104b062af0c64197949ab4ee0e54a6e1" />
+    </item>
+  </queryString>
+  <cookies>
+    <item name="__RequestVerificationToken_L0RhcnQ_">
+      <value string="YpR3eUDlbwH+WxT1AIpGyePJhjfYmubRy5WkS+AYvLjBf36yna54+yRAEAn/Ln6BTCeAwjf9dKxHPNDvlUVkkUqeb4z6T2l2OoHpPkMu+RM7ja/AQ/5OfCddVJboW713EmxN9XzOb9YcvmbWBGiLk+5v8UWaG4x3qjOJK709l9I=" />
+    </item>
+    <item name="ASP.NET_SessionId">
+      <value string="4evzk0jykmjwiyy53dw4cclh" />
+    </item>
+    <item name="UserInfoSecurity">
+      <value string="S.Niven@employersmutual.com.au|x/r4zsVD2y5FTpKYCQGMUw==#####|3237" />
+    </item>
+    <item name="sqlAuthCookie">
+      <value string="CA9E23F77A33B693C6DE59FEAB3FFAD79140B5D1120DB8D9587F47012A03B0EA53A85817EEAB9BF9A0762721F7516394548758889C038CE6B5A41B6F48B9909D7CDE0F4BB4EAE7069C48B25D767DC369E8604F16B6C71137CF762FFAF06C758EDE7ABC457DE9DFE0390EB1049C201E0042B58DDE" />
+    </item>
+  </cookies>
+</error>

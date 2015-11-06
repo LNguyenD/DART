@@ -1,0 +1,71 @@
+﻿@model IList<EM_Report.Domain.System_Roles>
+@using EM_Report.Common.Utilities;
+@using EM_Report.Helpers;
+@using EM_Report.Domain.Resources;
+@{
+    ViewBag.Title = "System Role";
+    ViewBag.Heading = "System Role List";
+    Layout = Request.IsAjaxRequest() ? null : "~/Views/Shared/_Master.cshtml";
+}
+<div class="wrapper">
+   @using (Ajax.BeginForm("Index", new AjaxOptions { UpdateTargetId = "content", OnBegin = "showLoading", OnComplete = "hideLoading" }))
+   {
+       @Html.AntiForgeryToken()
+       <link href="@Url.ContentV("~/Css/jquery.selectbox.css")" rel="stylesheet" type="text/css" />        
+       <script type="text/javascript" src="@Url.ContentV("~/scripts/custom_javascript.js")"></script> 
+       <script src="@Url.ContentV("~/scripts/iReport.js")" type="text/javascript"></script>
+       <link href="@Url.ContentV("~/Css/report.css")" rel="stylesheet" type="text/css" />
+        @Html.Partial("_SearchBar")
+        <div class="w_100p">
+            @using (Html.BeginForm())
+            {
+            <br />
+            <div class="formWrap">
+                <h1>System Role List</h1>
+                <table name="tbGrid" cellspacing="0" cellpadding="0" class="tbl">
+                    <thead>
+                       <tr>
+                            <th class="col_3 first center"><input type="checkbox" name="chkAll" /></th>
+                            <td sortby="Name" sortdir="" class="col_45"><span class="css_right ui-icon ui-icon-carat-2-n-s"></span>Name</td>
+                            <td sortby="Description" sortdir="" class="col_55"><span class="css_right ui-icon ui-icon-carat-2-n-s"></span>Description</td>                                        
+                        </tr>
+                    </thead>
+                    @if (!ViewData.Model.IsNullOrEmpty())
+                    {
+                        var i = 0;
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr class="@(i % 2 == 0 ? "odd" : "even")">
+                                    <th><input type="checkbox" name="chkItem" value="@item.System_RoleId" id="chkId@(item.System_RoleId)" /></th>
+                                    <td title="@item.Name"><a href="@Url.Action("details", "systemrole", new { id = item.System_RoleId })">@item.Name</a></td>
+                                    <td title="@item.Description">@item.Description</td>
+                                </tr>	
+                                i++;
+                            }
+                        </tbody>
+                    }            
+                </table>  
+                <br />
+                <div class="right">
+                    @if (Login.AuthorizeSystemPermission(ResourcesHelper.System_Role, ResourcesHelper.Permission_Add))
+                    {
+                        <span class="btnPurple"><input type="button" onclick="window.location=('@Url.Action("Details", "SystemRole")')" value="@Resource.Action_AddNew" /></span>
+                    }
+                    @if (Login.AuthorizeSystemPermission(ResourcesHelper.System_Role, ResourcesHelper.Permission_Delete))
+                    {
+                        <span class="btnPurple"><input type="button" id="cmdDelete" value="Delete" /></span>
+                    }
+                </div>
+                <div class="Paging">
+                    @if (!Model.IsNullOrEmpty())
+                    {
+                        @Html.Partial("_UCPaging")                                          
+                    }    
+                </div>
+                 @Html.Partial("_HiddenAction")      
+            </div>
+            }
+        </div>
+   }
+</div>

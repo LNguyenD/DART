@@ -1,0 +1,752 @@
+﻿@model EM_Report.Domain.Dashboard   
+@using EM_Report.Common.Utilities;
+@using EM_Report.Helpers;
+@using EM_Report.Domain;
+@using EM_Report.Repositories;
+@using System.Collections;
+@using EM_Report.Domain.Resources;
+@{
+    ViewBag.Title = "Dashboard";
+    Layout = Request.IsAjaxRequest() ? null : "~/Views/Shared/_Master.cshtml";
+
+    var OrganisationLevelsRepository = new OrganisationLevelsRepository();
+    var Dashboard_OrganisationRole_LevelsRepository = new Dashboard_OrganisationRole_LevelsRepository();
+    var DashboardLevelRepository = new DashboardLevelRepository();
+    var UserRepository = new UserRepository();
+    var OrgLevelList = Model != null ?
+        Dashboard_OrganisationRole_LevelsRepository.GetList(Model.DashboardId).GroupBy(g => g.LevelId).OrderBy(o => o.Key).Select(s => s.Key) : new List<int>();
+    var LevelList = OrganisationLevelsRepository.GetList(string.Empty, string.Empty).AsQueryable().Where(
+                                 p => p.SystemId == int.Parse(Request.QueryString["systemid"])).OrderBy(l => l.Sort);
+    var dashboardLevels = DashboardLevelRepository.GetList().ToList();
+    var cboSystemSite = new SelectList(UserRepository.GetSystemList(), "SystemId", "Name", Request.Form["SystemId"] == null ? int.Parse(Request.QueryString["systemid"]) : int.Parse(Request.Form["SystemId"]));
+
+    //Add dashboard external group information
+    var DashboardExternal_groupRepository = new DashboardExternal_GroupsRepository();
+    var ExternalGroupRepository = new External_GroupRepository();
+    var DashGroupList = Model != null ?
+        DashboardExternal_groupRepository.GetList(Model.DashboardId).GroupBy(l => l.External_GroupId).OrderBy(o => o.Key).Select(s => s.Key) : new List<int>();
+    var GroupList = ExternalGroupRepository.GetList(string.Empty, string.Empty).AsQueryable().Where(p => p.SystemId == int.Parse(Request.QueryString["systemid"]));
+    //var GroupList = ExternalGroupRepository.GetList(string.Empty, string.Empty).AsQueryable();
+}
+@functions{ 
+    
+    public string GetDashLevelByOrgLevel(int orgLevel)
+    {
+        string dasboardLevelName = "";
+        string dashboardLevelId = "";
+        var getDashboardLevelById = new DashboardLevelRepository();
+        var Dashboard_OrganisationRole_LevelsRepository = new Dashboard_OrganisationRole_LevelsRepository();
+        var OrgbyDashLevelList = Dashboard_OrganisationRole_LevelsRepository.GetList(Model.DashboardId);
+        var list = OrgbyDashLevelList.Where(w => w.LevelId == orgLevel).Select(s => s.DashboardLevelId); ;
+        foreach (var item in list)
+        {
+            dasboardLevelName += getDashboardLevelById.GetById(item).Name + ", ";
+            dashboardLevelId += "|" + item;
+        }
+        return dasboardLevelName + dashboardLevelId;
+    }
+
+    // Get all external group belongs to dashboard
+    public string GetExtGroupByDashLevel(int DashLevel)
+    {
+        string dasboardLevelName = "";
+        string dashboardLevelId = "";
+        var getDashboardLevelById = new DashboardLevelRepository();
+        var DashboardExternal_groupRepository = new DashboardExternal_GroupsRepository();
+        var ExtbyDashGroupList = DashboardExternal_groupRepository.GetList(Model.DashboardId);
+        var list = ExtbyDashGroupList.Where(w => w.External_GroupId == DashLevel).Select(s => s.DashboardLevelId); ;
+        foreach (var item in list)
+        {
+            dasboardLevelName += getDashboardLevelById.GetById(item).Name + ", ";
+            dashboardLevelId += "|" + item;
+        }
+        return dasboardLevelName + dashboardLevelId;
+    }
+    
+    }
+<div class="wrapper">
+    <div class="w_100p">
+        @using (Html.BeginForm())
+        {            
+            @Html.AntiForgeryToken()
+            <div class="formWrap">
+                @foreach(var item in ExternalGroupRepository.GetList())
+                {
+                    <input type="hidden" id="grpName" name=@item.External_GroupId value=@item.SystemId alt=@item.Name.Replace(" ","_") />
+                }
+                @Html.HiddenFor(e => e.Dashboard_OrganisationRole_Levels)
+                @Html.HiddenFor(e => e.DashboardExternal_Groups)
+                @if (Model != null)
+                {
+                    @Html.HiddenFor(e => e.DashboardId)
+                }
+                <h1>@(Model != null ? "Edit Dashboard" : "Add Dashboard")</h1>
+                @Html.Partial("_ShowMessage")
+                <div class="formInline" style="padding-top: 5px;">
+                    <label>
+                        Dashboard Name</label>
+                    @Html.TextBoxFor(e => e.Name, new { id = "txtName", name = "txtName", @class = "Text" })
+                    <span class="field-validation-error" style="display: none">*</span>
+                    <input type="hidden" style="display:none" id="dashboardid" value="@ViewBag.DashboardId" />
+                </div>
+                <div class="clear">
+                </div>
+                <div class="formInline">
+                    <label>
+                        System</label>
+                    @Html.DropDownListFor(e => e.SystemId, (SelectList)cboSystemSite)
+                </div>
+                <div class="clear">
+                </div>
+                <div class="clear">
+                </div>
+                <div class="clear">
+                </div>           
+                <div id="OrgLevelAndGroupList">
+                    @Html.Action("OrgLevelAndExtGroupList", "Dashboard")
+                </div>   
+                <div class="clear">
+                </div>
+                @{
+                    int levelCount = 0;
+                    foreach (var s in (List<Dashboard_Levels>)dashboardLevels)
+                    {
+                        try
+                        {
+                            if (Model != null)
+                            {
+                                string[] UrlArr = Model.Url.Split(',');
+                            
+                                <div class="clear">
+                                </div> 
+                                <div class="formInline">
+                                    <label>
+                                        @s.Name URL</label>
+                                    @if (UrlArr.Count() > 1)
+                                    {
+                                        @Html.TextBox("txtUrl_" + s.Sort, (levelCount < UrlArr.Count() ? UrlArr[levelCount] : ""), new { id = "txtUrl_" + levelCount, @class = "Text" })
+                                    }
+                                    else
+                                    {
+                                        <input class="Text" id="txtUrl_"@levelCount />
+                                    }
+                                    <span class="field-validation-error" style="display: none">*</span> <span class="field-validation-error"
+                                        style="display: none">Input contains invalid comma exist</span>
+                                </div>
+                                <div class="clear">
+                                </div> 
+                            }
+                            else
+                            {
+                                <div class="clear">
+                                </div> 
+                                <div class="formInline">
+                                    <label>
+                                        @s.Name URL</label>
+                                    @Html.TextBox("txtUrl_" + s.Sort, "", new { id = "txtUrl_" + levelCount, @class = "Text" })
+                                    <span class="field-validation-error" style="display: none">*</span> <span class="field-validation-error"
+                                        style="display: none">Input contains invalid comma exist</span>
+                                </div>
+                                <div class="clear">
+                                </div> 
+                            }
+                        }
+                        catch (Exception)
+                        {
+                            //UrlVal = string.Empty;
+                        }
+
+                        levelCount = levelCount + 1;
+                    }
+                    @Html.Hidden("levelUrlCount", levelCount);
+                }
+                <div class="clear">
+                </div>
+                <div class="formInline">
+                    <label>
+                        Description</label>
+                    @Html.TextAreaFor(e => e.Description, new { id = "txtDescription", @class = "Text" })
+                    @Html.ValidationMessageFor(e => e.Description)
+                </div>
+                <div class="clear" style="padding-top: 5px;">
+                </div>
+                <div class="formInline">
+                    <label>
+                        Status</label>
+                    @Html.DropDownListFor(m => m.Status, (SelectList)ViewBag.cboStatus, new { id = "cboStatus" })
+                </div>
+                <div class="clear">
+                </div>
+                @if (Model != null && Model.DashboardId > 0)
+                {
+                    <div class="formInline">
+                        <label>
+                            Create Date</label>
+                        @Html.TextBoxFor(e => e.Create_Date, "{0:dd/MM/yyyy}", new { @class = "Text Disabled", @readonly = true })
+                    </div> 
+                    <div class="clear">
+                    </div>
+                    <div class="formInline">
+                        <label>
+                            Created By</label>
+                        @Html.TextBoxFor(e => e.OwnerName, new { @class = "Text Disabled", @readonly = true })
+                    </div>  
+                    <div class="clear">
+                    </div>     
+                }
+                <div class="formInline formInlineBtn">
+                    <span class="btnPurple">
+                        <input type="button" value="@Resource.Action_Save" onclick="SubmitAddDashboard();" /></span>
+                    <span class="btnPurple">
+                        <input type="button" value="Back To List" onclick="window.location = ('@Url.Action("index", "dashboard", new { systemid = Request["systemid"] })')"/></span>
+                </div>
+            </div>                  
+        }
+    </div>
+</div>
+<script type="text/javascript" language="javascript">
+
+    var orgiteminfo = "";
+    var dashiteminfo = "";
+    $(document).ready(function () {
+        $(".orgSave").hide();
+        $(".orgSave_dash").hide();
+    });
+
+    
+
+    // Add new Org Level along with Dash Level
+    $(document).undelegate("#btnAddOrg", 'click').delegate("#btnAddOrg", 'click', function (e) {
+        e.preventDefault();
+        var newitem = true;
+        var levelid = $('#cbolevel option:selected').val();
+        var levelname = $.trim($('#cbolevel option:selected').text());
+        var orgitem = $('.showOrgItems:last');
+        var dashboardlevelname = "";
+        var dashboardlevelid = "";
+
+        //collect new dashboard level id from check box list
+        for (var i = 1; i < parseInt($('#ItemCount').val() + 1); i++) {
+            if ($("#chkSystem_" + i).is(':checked') == true) {
+                dashboardlevelname += $("#chkSystem_" + i).parents('.frmShdwTopLt').prev().html() + ", ";
+                dashboardlevelid += $("#chkSystem_" + i).val() + "|";
+            }
+        }
+        dashboardlevelname = dashboardlevelname.substring(0, dashboardlevelname.length - 2);
+        dashboardlevelid = dashboardlevelid.substring(0, dashboardlevelid.length - 1);
+
+        //check duplicate Org Level name 
+        $(".showOrgItems").each(function (index) {
+            if ($.trim($(this).find('#orgLevelShow').find('#orglevelname').html()) == levelname) { newitem = false };
+        });
+
+        //eligible to add new orglevelitem
+        if (newitem == true && levelid != '' && dashboardlevelid != '') {
+
+            var clonedItem = orgitem.clone();
+
+            // wrap select box
+            clonedItem.find('table div[id=orgLevelEdit] div[id*=sbHolder_]').remove();
+            clonedItem.find('table select[id=cbolevelEdit]').selectbox();
+            clonedItem.find('table div[id=orgLevelEdit] div[id*=sbHolder_]').css('z-index', '9999');
+
+            clonedItem.appendTo('#orgbydashlevelview');
+            orgitem.find('#orgLevelShow').find('#orglevelname').html(levelname);
+            orgitem.find('#orgLevelShow').find('#orglevelid').val(levelid);
+            orgitem.find('#dashLevelShow').find('#dashlevelname').html(dashboardlevelname);
+            orgitem.find('#dashLevelShow').find('#dashlevelid').val(dashboardlevelid);
+            orgitem.show();
+
+            //change checkbox Id
+            for (var i = 1; i < parseInt($('.showOrgItems:last').find('#ItemCountEdit').val()) + 1; i++) {
+                $('.showOrgItems:last').find('input[id^="chkSystemEdit_' + i + '"]').attr('id', 'chkSystemEdit_' + i + '_' + levelid)
+                $('.showOrgItems:last').find('input[id^="chkSystemEdit_' + i + '"]').prev('a').attr('href', 'javascript:toggleCheck("chkSystemEdit_' + i + "_" + levelid + '","fakechkSystemEdit_' + i + '_' + levelid + '")')
+                $('.showOrgItems:last').find('input[id^="chkSystemEdit_' + i + '"]').prev('a').find('img').attr('id', 'fakechkSystemEdit_' + i + '_' + levelid)
+            }
+        }
+        else {
+            $("#btnOkModal").hide();
+            $('#btnCancelModal').parent().hide();
+            $("#btnOkModalFavour").show();
+            confirmSubmit('Warning!', 'Organization Level and Dashboard Level are not selected or Organization Level is duplicated');
+            $("#btnOkModalFavour").click(function (event) {
+                event.preventDefault();
+                $("#yesno").overlay().close();
+            });
+        }
+    });
+
+    //Add new dashboard external groups along with Dash Level
+    $(document).undelegate("#btnAddOrg_dash", 'click').delegate("#btnAddOrg_dash", 'click', function (e) {
+        e.preventDefault();
+        var newitem = true;
+        var levelid = $('#cbolevel_Dash option:selected').val();
+        var levelname = $.trim($('#cbolevel_Dash option:selected').text());
+        var orgitem = $('.showDashItems:last');
+        var dashboardlevelname = "";
+        var dashboardlevelid = "";
+
+        //collect new dashboard level id from check box list
+        for (var i = 1; i < parseInt($('#ItemCount').val() + 1) ; i++) {
+            if ($("#chkSystem_DashExt_" + i).is(':checked') == true) {
+                dashboardlevelname += $("#chkSystem_DashExt_" + i).parents('.frmShdwTopLt').prev().html() + ", ";
+                dashboardlevelid += $("#chkSystem_DashExt_" + i).val() + "|";
+            }
+        }
+        dashboardlevelname = dashboardlevelname.substring(0, dashboardlevelname.length - 2);
+        dashboardlevelid = dashboardlevelid.substring(0, dashboardlevelid.length - 1);
+
+        //check duplicate Org Level name 
+        $(".showDashItems").each(function (index) {
+            if ($.trim($(this).find('#orgLevelShow').find('#orglevelname').html()) == levelname) { newitem = false };
+        });               
+
+        //eligible to add new orglevelitem
+        if (newitem == true && levelid != '' && dashboardlevelid != '') {
+
+            var clonedItem = orgitem.clone();
+
+            // wrap select box
+            clonedItem.find('table div[id=orgLevelEdit] div[id*=sbHolder_]').remove();
+            clonedItem.find('table select[id=cbolevelEdit]').selectbox();
+            clonedItem.find('table div[id=orgLevelEdit] div[id*=sbHolder_]').css('z-index', '9999');
+
+            clonedItem.appendTo('#groupbydashlevelview');
+            orgitem.find('#orgLevelShow').find('#orglevelname').html(levelname);
+            orgitem.find('#orgLevelShow').find('#orglevelid').val(levelid);
+            orgitem.find('#dashLevelShow').find('#dashlevelname').html(dashboardlevelname);
+            orgitem.find('#dashLevelShow').find('#dashlevelid').val(dashboardlevelid);
+            orgitem.show();
+
+            //change checkbox Id
+            for (var i = 1; i < parseInt($('.showDashItems:last').find('#ItemCountEdit').val()) + 1; i++) {
+                $('.showDashItems:last').find('input[id^="chkSystemEdit_' + i + '"]').attr('id', 'chkSystemEdit_' + i + '_' + levelid)
+                $('.showDashItems:last').find('input[id^="chkSystemEdit_' + i + '"]').prev('a').attr('href', 'javascript:toggleCheck("chkSystemEdit_' + i + "_" + levelid + '","fakechkSystemEdit_' + i + '_' + levelid + '")')
+                $('.showDashItems:last').find('input[id^="chkSystemEdit_' + i + '"]').prev('a').find('img').attr('id', 'fakechkSystemEdit_' + i + '_' + levelid)
+            }
+        }
+        else {
+            $("#btnOkModal").hide();
+            $('#btnCancelModal').parent().hide();
+            $("#btnOkModalFavour").show();
+            confirmSubmit('Warning!', 'External Groups and Dashboard Level are not selected or External Groups is duplicated');
+            $("#btnOkModalFavour").click(function (event) {
+                event.preventDefault();
+                $("#yesno").overlay().close();
+            });
+        }
+    });
+
+
+    //Edit Org Level along with Dash Level
+    $(document).undelegate(".orgEdit", 'click').delegate(".orgEdit", 'click', function (e) {
+        e.preventDefault();
+        var orgParent = $(this).parents(".showOrgItems");
+
+        //appear current org level name
+        var orglevelid = orgParent.find('#orgLevelShow').find('#orglevelid').val();
+        var orgleveleditname = orgParent.find("#cbolevelEdit option[value='" + orglevelid + "']").html();
+        orgParent.find('#orgLevelEdit').find('div[id^="sbHolder_"]').find('a[id^="sbSelector_"]').html(orgleveleditname);
+
+        //appear current dash level id on checkbox list        
+        var dashlevelid = orgParent.find('#dashLevelShow').find('#dashlevelid').val().split('|');
+        for (var i = 1; i < parseInt(orgParent.find('#ItemCountEdit').val()) + 1; i++) {
+            for (var e = 0; e < parseInt(dashlevelid.length); e++) {
+                if (orgParent.find('input[id^="chkSystemEdit_' + i + '"]').val() == $.trim(dashlevelid[e])) {
+                    orgParent.find('input[id^="chkSystemEdit_' + i + '"]').prev().find('img').attr('src', '/Dart/images/form_element/checkboxChecked.gif');
+                    orgParent.find('input[id^="chkSystemEdit_' + i + '"]').attr('checked', true);
+                }
+            }
+        }
+
+        $(".orgEdit").hide();
+        $(".orgSave").show();
+        orgParent.find('#orgLevelEdit').show();
+        orgParent.find('#orgLevelShow').hide();
+        orgParent.find('#dashLevelEdit').show();
+        orgParent.find('#dashLevelShow').hide();
+
+        orgParent.siblings(".showOrgItems").each(function (index) {
+            $(this).find(".orgEdit").show();
+            $(this).find(".orgSave").hide();
+            $(this).find('#orgLevelEdit').hide();
+            $(this).find('#orgLevelShow').show();
+            $(this).find('#dashLevelEdit').hide();
+            $(this).find('#dashLevelShow').show();
+
+        });
+    });
+
+    //Edit dashboard external group along with dash level
+    $(document).undelegate(".orgEdit_dash", 'click').delegate(".orgEdit_dash", 'click', function (e) {
+        e.preventDefault();
+        var orgParent = $(this).parents(".showDashItems");
+        
+        //appear current org level name
+        var orglevelid = orgParent.find('#orgLevelShow').find('#orglevelid').val();
+        var orgleveleditname = orgParent.find("#cbolevelEdit option[value='" + orglevelid + "']").html();
+        orgParent.find('#orgLevelEdit').find('div[id^="sbHolder_"]').find('a[id^="sbSelector_"]').html(orgleveleditname);
+        //appear current dash level id on checkbox list        
+        var dashlevelid = orgParent.find('#dashLevelShow').find('#dashlevelid').val().split('|');
+        for (var i = 1; i < parseInt(orgParent.find('#ItemCountEdit').val()) + 1; i++) {
+            for (var e = 0; e < parseInt(dashlevelid.length) ; e++) {
+                if (orgParent.find('input[id^="chkSystemEdit_' + i + '"]').val() == $.trim(dashlevelid[e])) {
+                    orgParent.find('input[id^="chkSystemEdit_' + i + '"]').prev().find('img').attr('src', '/Dart/images/form_element/checkboxChecked.gif');
+                    orgParent.find('input[id^="chkSystemEdit_' + i + '"]').attr('checked', true);
+                }
+            }
+        }
+
+        $(".orgEdit_dash").hide();
+        $(".orgSave_dash").show();
+        orgParent.find('#orgLevelEdit').show();
+        orgParent.find('#orgLevelShow').hide();
+        orgParent.find('#dashLevelEdit').show();
+        orgParent.find('#dashLevelShow').hide();
+
+        orgParent.siblings(".showDashItems").each(function (index) {
+            $(this).find(".orgEdit_dash").show();
+            $(this).find(".orgSave_dash").hide();
+            $(this).find('#orgLevelEdit').hide();
+            $(this).find('#orgLevelShow').show();
+            $(this).find('#dashLevelEdit').hide();
+            $(this).find('#dashLevelShow').show();
+
+        });
+    });
+
+    //Update Org Level along with Dash Level
+    $(document).undelegate(".orgSave", 'click').delegate(".orgSave", 'click', function (e) {
+        e.preventDefault();
+        var orgParent = $(this).parents(".showOrgItems");
+        var levelid = "";
+        var levelname = $.trim(orgParent.find('#orgLevelEdit').find('div[id^="sbHolder_"]').find('a[id^="sbSelector_"]').html());
+        var dashboardlevelname = "";
+        var dashboardlevelid = "";
+        var updateitem = true;
+
+        //get new Org Level Id to update
+        orgParent.find('#cbolevelEdit').find('option').each(function () {
+            if ($.trim($(this).html()) == levelname) {
+                levelid = $(this).val();
+            }
+        });
+
+        //collect new dashboard level id to update
+        for (var i = 1; i < parseInt($('#ItemCountEdit').val() + 1); i++) {
+            if (orgParent.find('input[id^="chkSystemEdit_' + i + '"]').is(':checked') == true) {
+                dashboardlevelname += orgParent.find('input[id^="chkSystemEdit_' + i + '"]').parents('.frmShdwTopLt').prev().html() + ", ";
+                dashboardlevelid += orgParent.find('input[id^="chkSystemEdit_' + i + '"]').val() + "|";
+            }
+        }
+        dashboardlevelname = dashboardlevelname.substring(0, dashboardlevelname.length - 2);
+        dashboardlevelid = dashboardlevelid.substring(0, dashboardlevelid.length - 1);
+
+        //check duplicate new Org Level Id to update
+        orgParent.siblings(".showOrgItems").each(function (index) {
+            if ($.trim($(this).find('#orgLevelShow').find('#orglevelname').html()) == levelname) { updateitem = false };
+        });
+
+        //eligible to update new Org Level along with Dash Level
+        if (updateitem == true && levelid != '' && dashboardlevelid != '') {
+            orgParent.find('#orgLevelShow').find('#orglevelname').html(levelname);
+            orgParent.find('#orgLevelShow').find('#orglevelid').val(levelid);
+            orgParent.find('#dashLevelShow').find('#dashlevelname').html(dashboardlevelname);
+            orgParent.find('#dashLevelShow').find('#dashlevelid').val(dashboardlevelid);
+            orgParent.find('#orgLevelEdit').hide();
+            orgParent.find('#orgLevelShow').show();
+            orgParent.find('#dashLevelEdit').hide();
+            orgParent.find('#dashLevelShow').show();
+            orgParent.find(".orgSave").hide();
+            orgParent.find(".orgEdit").show();
+        }
+        else {
+            $("#btnOkModal").hide();
+            $('#btnCancelModal').parent().hide();
+            $("#btnOkModalFavour").show();
+            confirmSubmit('Warning!', 'Organization Level and Dashboard Level are not selected or Organization Level is duplicated');
+            $("#btnOkModalFavour").click(function (event) {
+                event.preventDefault();
+                $("#yesno").overlay().close();
+            });
+
+        }
+    });
+
+    //Update dashboard external group along with Dash Level
+    $(document).undelegate(".orgSave_dash", 'click').delegate(".orgSave_dash", 'click', function (e) {
+        e.preventDefault();
+        var orgParent = $(this).parents(".showDashItems");
+        var levelid = "";
+        var levelname = $.trim(orgParent.find('#orgLevelEdit').find('div[id^="sbHolder_"]').find('a[id^="sbSelector_"]').html());
+        var dashboardlevelname = "";
+        var dashboardlevelid = "";
+        var updateitem = true;
+
+        //get new Org Level Id to update
+        orgParent.find('#cbolevelEdit').find('option').each(function () {
+            if ($.trim($(this).html()) == levelname) {
+                levelid = $(this).val();
+            }
+        });
+
+        //collect new dashboard level id to update
+        for (var i = 1; i < parseInt($('#ItemCountEdit').val() + 1) ; i++) {
+            if (orgParent.find('input[id^="chkSystemEdit_' + i + '"]').is(':checked') == true) {
+                dashboardlevelname += orgParent.find('input[id^="chkSystemEdit_' + i + '"]').parents('.frmShdwTopLt').prev().html() + ", ";
+                dashboardlevelid += orgParent.find('input[id^="chkSystemEdit_' + i + '"]').val() + "|";
+            }
+        }
+        dashboardlevelname = dashboardlevelname.substring(0, dashboardlevelname.length - 2);
+        dashboardlevelid = dashboardlevelid.substring(0, dashboardlevelid.length - 1);
+
+        //check duplicate new Org Level Id to update
+        orgParent.siblings(".showDashItems").each(function (index) {
+            if ($.trim($(this).find('#orgLevelShow').find('#orglevelname').html()) == levelname) { updateitem = false };
+        });
+
+        //eligible to update new Org Level along with Dash Level
+        if (updateitem == true && levelid != '' && dashboardlevelid != '') {
+            orgParent.find('#orgLevelShow').find('#orglevelname').html(levelname);
+            orgParent.find('#orgLevelShow').find('#orglevelid').val(levelid);
+            orgParent.find('#dashLevelShow').find('#dashlevelname').html(dashboardlevelname);
+            orgParent.find('#dashLevelShow').find('#dashlevelid').val(dashboardlevelid);
+            orgParent.find('#orgLevelEdit').hide();
+            orgParent.find('#orgLevelShow').show();
+            orgParent.find('#dashLevelEdit').hide();
+            orgParent.find('#dashLevelShow').show();
+            orgParent.find(".orgSave_dash").hide();
+            orgParent.find(".orgEdit_dash").show();
+        }
+        else {
+            $("#btnOkModal").hide();
+            $('#btnCancelModal').parent().hide();
+            $("#btnOkModalFavour").show();
+            confirmSubmit('Warning!', 'External Groups and Dashboard Level are not selected or External Groups is duplicated');
+            $("#btnOkModalFavour").click(function (event) {
+                event.preventDefault();
+                $("#yesno").overlay().close();
+            });
+
+        }
+    });
+
+    //Remove Org Level along with Dash Level
+    $(document).undelegate(".orgRemove", 'click').delegate(".orgRemove", 'click', function (e) {
+        e.preventDefault();
+        var orgParent = $(this).parents(".showOrgItems");
+
+        $("#btnOkModal").hide();
+        $("#btnOkModalFavour").show();
+        confirmSubmit('Warning!', 'Are you sure want to delete this item?');
+        $("#btnOkModalFavour").click(function (event) {
+            event.preventDefault();
+            $("#btnOkModal").show();
+            $("#btnOkModalFavour").hide();
+            $("#yesno").overlay().close();
+            orgParent.remove();
+        });
+    });
+
+    //Remove dashboard external group along with Dash Level
+    $(document).undelegate(".orgRemove_dash", 'click').delegate(".orgRemove_dash", 'click', function (e) {
+        e.preventDefault();
+        var orgParent = $(this).parents(".showDashItems");
+
+        $("#btnOkModal").hide();
+        $("#btnOkModalFavour").show();
+        confirmSubmit('Warning!', 'Are you sure want to delete this item?');
+        $("#btnOkModalFavour").click(function (event) {
+            event.preventDefault();
+            $("#btnOkModal").show();
+            $("#btnOkModalFavour").hide();
+            $("#yesno").overlay().close();
+            orgParent.remove();
+        });
+    });
+
+    //Update External Group after changing system
+    $(document).undelegate("#SystemId", 'change').delegate("#SystemId", 'change', function (e) {
+        var sysVal = $(this).val();
+        var dashboardID = sysVal == '@Model.SystemId.ToString()' ? '@Model.DashboardId' : null;
+        $.ajax({
+            type: 'GET',
+            url: '@Url.Action("OrgLevelAndExtGroupList", "Dashboard")',
+            async: false,
+            data: {
+                id : dashboardID,
+                systemId : sysVal
+            },
+            success: function (data) {
+                $("#OrgLevelAndGroupList").html(data);
+                $("#OrgLevelAndGroupList").find('input[type="checkbox"]').each(function () { prettyFormsForCheckbox(this); });
+                $("#OrgLevelAndGroupList").find('select').each(function () { $(this).selectbox() });
+                $("#OrgLevelAndGroupList").find(".orgSave").hide();
+                $("#OrgLevelAndGroupList").find(".orgSave_dash").hide();
+            },
+            statusCode: {
+                403: function () {
+                    // forbidden (when users lost session) -> redirect to login page
+                    window.location.href = window.g_baseUrl + "/account/login";
+                }
+            }
+        });
+    });
+
+    function prettyFormsForCheckbox(element) {
+        imageCheckboxChecked = window.g_baseUrl + "/images/form_element/checkboxChecked.gif";
+        imageCheckboxUnchecked = window.g_baseUrl + "/images/form_element/checkboxUnchecked.gif";
+        appendParentsTo(element);
+        //have shadow box, now replace checkbox with image of check, or no image.
+        //need to create an <a> element AND an <img> element because IE won't happily put an onclick on the img alone
+
+        lnk = document.createElement("a");
+        lnk.style.lineHeight = "12px";
+        lnk.className = "frmShdwCheck checkboxa";
+        img = document.createElement("img");
+
+        if (element.disabled == false) {
+            if (element.checked == true) {
+                img.src = imageCheckboxChecked;
+            } else {
+                img.src = imageCheckboxUnchecked;
+            }
+            //elements created, now pass functionality
+            //give the checkbox an id if it doesn't have one
+            if (element.id) {
+                realId = element.id;
+            } else {
+                realId = "check" + i;
+                element.id = realId;
+            }
+
+            //give the fake check an id
+            fakeId = "fake" + realId;
+            img.id = fakeId
+
+            lnk.href = "javascript:toggleCheck('" + realId + "','" + fakeId + "')";
+        }
+        else if (element.checked == true) {
+            img.src = imageCheckboxChecked;
+        }
+        else if (element.disabled == true) {
+            img.src = imageCheckboxDisabled;
+        }
+
+        //insert the new image into the document
+        if (document.all) {				//IE
+            lnk = element.insertAdjacentElement("BeforeBegin", lnk)
+        } else {
+            inputParent = element.parentNode;
+            lnk = inputParent.insertBefore(lnk, element);
+        }
+        lnk.appendChild(img);
+
+        //remove the actual checkbox
+        element.style.display = "none";
+    }
+
+    function SubmitAddDashboard() {
+
+        //Send All Org Level along with Dash Level to Server
+        $('.showOrgItems').each(function (index) {
+            var orglevelid = $.trim($(this).find('#orgLevelShow').find('#orglevelid').val());
+            var dashboardlevelid = $.trim($(this).find('#dashLevelShow').find('input[type=hidden]').val());
+            orgiteminfo += orglevelid + '=' + dashboardlevelid + '>';
+        });
+        orgiteminfo = orgiteminfo.substring(0, orgiteminfo.length - 3);
+        $('#Dashboard_OrganisationRole_Levels').attr('value', orgiteminfo)        
+
+        //Send All dashboard external groups along with Dash Level to Server
+        $('.showDashItems').each(function (index) {
+            var DashGrpId = $.trim($(this).find('#orgLevelShow').find('#orglevelid').val());
+            var DashGrpIdlist = $.trim($(this).find('#dashLevelShow').find('input[type=hidden]').val());
+            dashiteminfo += DashGrpId + '=' + DashGrpIdlist + '>';
+        });
+               
+        dashiteminfo = dashiteminfo.replace('=>', ''); //.substring(0, dashiteminfo.length - 3);
+        $('#DashboardExternal_Groups').attr('value', dashiteminfo)  
+            
+        //Validate Dashboard Form
+        if (isValidRequiredDashboard() == true) {
+            actionClick('save', false);
+        }
+    }
+
+    function isValidRequiredDashboard() {
+        var generateNum = $("#cbolevel").attr('sb');
+        var isValid = true;
+
+        if ($("#txtName").val() == "") {
+            $("#txtName").addClass("input-validation-error");
+            $("#txtName").parent().parent().parent().parent().next().show();
+            isValid = false;
+        }
+        else {
+            $("#txtName").parent().parent().parent().parent().next().hide();
+        }
+
+        if (parseInt($("#levelUrlCount").val()) != 0) {
+
+            for (var index = 0; index < parseInt($('#levelUrlCount').val()); index++) {
+                if ($("#txtUrl_" + index).val() == "") {
+                    $("#txtUrl_" + index).addClass("input-validation-error");
+                    $("#txtUrl_" + index).parent().parent().parent().parent().next().show();
+                    isValid = false;
+                }
+                else {
+                    if ($("#txtUrl_" + index).val().indexOf(",") > -1) {
+                        $("#txtUrl_" + index).parent().parent().parent().parent().next().next().show();
+                        isValid = false;
+                    }
+                    else {
+                        $("#txtUrl_" + index).parent().parent().parent().parent().next().next().hide();
+                        $("#txtUrl_" + index).parent().parent().parent().parent().next().hide();
+                    }
+
+                }
+            }
+        }
+        else {
+            $("#sbHolder_" + generateNum + "").next().hide();
+        }
+
+        if (IsValidCheckbox()) {
+            $("#chkSystem_" + $('#ItemCount').val()).parent().parent().parent().parent().next().next().hide();
+        }
+        else {
+            $("#chkSystem_" + $('#ItemCount').val()).parent().parent().parent().parent().next().next().show();
+        }
+
+        if (IsValidCheckbox_DashExt()) {
+            $("#chkSystem_DashExt" + $('#ItemCount').val()).parent().parent().parent().parent().next().next().hide();
+        }
+        else {
+            $("#chkSystem_DashExt" + $('#ItemCount').val()).parent().parent().parent().parent().next().next().show();
+        }
+
+
+        return isValid;
+    }
+    function IsValidCheckbox() {
+        var result = false;
+        for (var i = 1; i < parseInt($('#ItemCount').val() + 1); i++) {
+            if ($("#chkSystem_" + i).is(':checked') == true) {
+                result = true;
+
+            }
+        }
+        return result;
+    }
+
+    function IsValidCheckbox_DashExt() {
+        var result = false;
+        for (var i = 1; i < parseInt($('#ItemCount').val() + 1); i++) {
+            if ($("#chkSystem_DashExt" + i).is(':checked') == true) {
+                result = true;
+            }
+        }
+        return result;
+    }
+
+</script>

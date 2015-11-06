@@ -1,0 +1,191 @@
+﻿<error errorId="26fe9b72-e2dd-43b7-9963-323f4f242069" application="/LM/W3SVC/1/ROOT/Dart" host="ASWVNWKS103" type="Microsoft.Reporting.WebForms.AspNetSessionExpiredException" message="ASP.NET session has expired or could not be found" source="Microsoft.ReportViewer.WebForms" detail="Microsoft.Reporting.WebForms.AspNetSessionExpiredException: ASP.NET session has expired or could not be found&#xD;&#xA;   at Microsoft.Reporting.WebForms.ViewerDataOperation..ctor()&#xD;&#xA;   at Microsoft.Reporting.WebForms.HttpHandler.GetHandler(String operationType)&#xD;&#xA;   at Microsoft.Reporting.WebForms.HttpHandler.ProcessRequest(HttpContext context)&#xD;&#xA;   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()&#xD;&#xA;   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean&amp; completedSynchronously)" time="2014-07-21T01:12:13.9285278Z">
+  <serverVariables>
+    <item name="ALL_HTTP">
+      <value string="HTTP_CONNECTION:keep-alive&#xD;&#xA;HTTP_CONTENT_LENGTH:0&#xD;&#xA;HTTP_CONTENT_TYPE:application/x-www-form-urlencoded; charset=UTF-8&#xD;&#xA;HTTP_ACCEPT:*/*&#xD;&#xA;HTTP_ACCEPT_ENCODING:gzip,deflate,sdch&#xD;&#xA;HTTP_ACCEPT_LANGUAGE:en-US,en;q=0.8&#xD;&#xA;HTTP_COOKIE:__RequestVerificationToken_L0RhcnQ_=j1fgSBDRGMrZJkdZ6AL3RxqXxsVerz9e8KDM4JcIsXGZhWeRoYqrlp2MSz+g/Xh2/GampI5NXb0Q+/FTnOgYLAnRKKvfbui+uGlbiFu/nJHvFMJSzDZXks2XLyPelxscgMMqvYweV74JQ4wrjZi5plc3WK6YsEwE0bn3zYCCIRM=; UserInfoSecurity=admin@aswigsolutions.com|x/r4zsVD2y5FTpKYCQGMUw==#####|179; sqlAuthCookie=A703E13A005F52DC07A376C48DB4FBB6F9D34C2BBB3930049F9E44188EC78E20EE8460C08EBA79773CDC47D51AEB2721ECABC3FB1CE55431FB5DA302857248BEDCA7481C69499C3A0D9C4FB71A318662982DD21B313CBE24259024FB92A0E207F791EB5509FDC0D58CFE9BC697F76E1A69FACB51; ASP.NET_SessionId=b4cscbbukw3xzquiz1d5z3m2&#xD;&#xA;HTTP_HOST:localhost&#xD;&#xA;HTTP_REFERER:https://localhost/Dart/EMReports/Report.aspx?System=tmf&amp;Type=group&amp;reportpath=/emreporting/reports/PORT&#xD;&#xA;HTTP_USER_AGENT:Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/34.0.1847.11 Safari/537.36&#xD;&#xA;HTTP_ORIGIN:https://localhost&#xD;&#xA;HTTP_X_REQUESTED_WITH:XMLHttpRequest&#xD;&#xA;" />
+    </item>
+    <item name="ALL_RAW">
+      <value string="Connection: keep-alive&#xD;&#xA;Content-Length: 0&#xD;&#xA;Content-Type: application/x-www-form-urlencoded; charset=UTF-8&#xD;&#xA;Accept: */*&#xD;&#xA;Accept-Encoding: gzip,deflate,sdch&#xD;&#xA;Accept-Language: en-US,en;q=0.8&#xD;&#xA;Cookie: __RequestVerificationToken_L0RhcnQ_=j1fgSBDRGMrZJkdZ6AL3RxqXxsVerz9e8KDM4JcIsXGZhWeRoYqrlp2MSz+g/Xh2/GampI5NXb0Q+/FTnOgYLAnRKKvfbui+uGlbiFu/nJHvFMJSzDZXks2XLyPelxscgMMqvYweV74JQ4wrjZi5plc3WK6YsEwE0bn3zYCCIRM=; UserInfoSecurity=admin@aswigsolutions.com|x/r4zsVD2y5FTpKYCQGMUw==#####|179; sqlAuthCookie=A703E13A005F52DC07A376C48DB4FBB6F9D34C2BBB3930049F9E44188EC78E20EE8460C08EBA79773CDC47D51AEB2721ECABC3FB1CE55431FB5DA302857248BEDCA7481C69499C3A0D9C4FB71A318662982DD21B313CBE24259024FB92A0E207F791EB5509FDC0D58CFE9BC697F76E1A69FACB51; ASP.NET_SessionId=b4cscbbukw3xzquiz1d5z3m2&#xD;&#xA;Host: localhost&#xD;&#xA;Referer: https://localhost/Dart/EMReports/Report.aspx?System=tmf&amp;Type=group&amp;reportpath=/emreporting/reports/PORT&#xD;&#xA;User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/34.0.1847.11 Safari/537.36&#xD;&#xA;Origin: https://localhost&#xD;&#xA;X-Requested-With: XMLHttpRequest&#xD;&#xA;" />
+    </item>
+    <item name="APPL_MD_PATH">
+      <value string="/LM/W3SVC/1/ROOT/Dart" />
+    </item>
+    <item name="APPL_PHYSICAL_PATH">
+      <value string="D:\Work\Project\Dart\branches\WebAppProject\EM_Report\" />
+    </item>
+    <item name="AUTH_TYPE">
+      <value string="" />
+    </item>
+    <item name="AUTH_USER">
+      <value string="" />
+    </item>
+    <item name="AUTH_PASSWORD">
+      <value string="" />
+    </item>
+    <item name="LOGON_USER">
+      <value string="" />
+    </item>
+    <item name="REMOTE_USER">
+      <value string="" />
+    </item>
+    <item name="CERT_COOKIE">
+      <value string="" />
+    </item>
+    <item name="CERT_FLAGS">
+      <value string="" />
+    </item>
+    <item name="CERT_ISSUER">
+      <value string="" />
+    </item>
+    <item name="CERT_KEYSIZE">
+      <value string="128" />
+    </item>
+    <item name="CERT_SECRETKEYSIZE">
+      <value string="2048" />
+    </item>
+    <item name="CERT_SERIALNUMBER">
+      <value string="" />
+    </item>
+    <item name="CERT_SERVER_ISSUER">
+      <value string="CN=ASWVNWKS103.aswigsyd.int" />
+    </item>
+    <item name="CERT_SERVER_SUBJECT">
+      <value string="CN=ASWVNWKS103.aswigsyd.int" />
+    </item>
+    <item name="CERT_SUBJECT">
+      <value string="" />
+    </item>
+    <item name="CONTENT_LENGTH">
+      <value string="0" />
+    </item>
+    <item name="CONTENT_TYPE">
+      <value string="application/x-www-form-urlencoded; charset=UTF-8" />
+    </item>
+    <item name="GATEWAY_INTERFACE">
+      <value string="CGI/1.1" />
+    </item>
+    <item name="HTTPS">
+      <value string="on" />
+    </item>
+    <item name="HTTPS_KEYSIZE">
+      <value string="128" />
+    </item>
+    <item name="HTTPS_SECRETKEYSIZE">
+      <value string="2048" />
+    </item>
+    <item name="HTTPS_SERVER_ISSUER">
+      <value string="CN=ASWVNWKS103.aswigsyd.int" />
+    </item>
+    <item name="HTTPS_SERVER_SUBJECT">
+      <value string="CN=ASWVNWKS103.aswigsyd.int" />
+    </item>
+    <item name="INSTANCE_ID">
+      <value string="1" />
+    </item>
+    <item name="INSTANCE_META_PATH">
+      <value string="/LM/W3SVC/1" />
+    </item>
+    <item name="LOCAL_ADDR">
+      <value string="::1" />
+    </item>
+    <item name="PATH_INFO">
+      <value string="/Dart/Reserved.ReportViewerWebControl.axd" />
+    </item>
+    <item name="PATH_TRANSLATED">
+      <value string="D:\Work\Project\Dart\branches\WebAppProject\EM_Report\Reserved.ReportViewerWebControl.axd" />
+    </item>
+    <item name="QUERY_STRING">
+      <value string="OpType=SessionKeepAlive&amp;ControlID=2dfd88a920c84cce9e1c34b3a6bf36b1" />
+    </item>
+    <item name="REMOTE_ADDR">
+      <value string="::1" />
+    </item>
+    <item name="REMOTE_HOST">
+      <value string="::1" />
+    </item>
+    <item name="REMOTE_PORT">
+      <value string="1466" />
+    </item>
+    <item name="REQUEST_METHOD">
+      <value string="POST" />
+    </item>
+    <item name="SCRIPT_NAME">
+      <value string="/Dart/Reserved.ReportViewerWebControl.axd" />
+    </item>
+    <item name="SERVER_NAME">
+      <value string="localhost" />
+    </item>
+    <item name="SERVER_PORT">
+      <value string="443" />
+    </item>
+    <item name="SERVER_PORT_SECURE">
+      <value string="1" />
+    </item>
+    <item name="SERVER_PROTOCOL">
+      <value string="HTTP/1.1" />
+    </item>
+    <item name="SERVER_SOFTWARE">
+      <value string="Microsoft-IIS/7.5" />
+    </item>
+    <item name="URL">
+      <value string="/Dart/Reserved.ReportViewerWebControl.axd" />
+    </item>
+    <item name="HTTP_CONNECTION">
+      <value string="keep-alive" />
+    </item>
+    <item name="HTTP_CONTENT_LENGTH">
+      <value string="0" />
+    </item>
+    <item name="HTTP_CONTENT_TYPE">
+      <value string="application/x-www-form-urlencoded; charset=UTF-8" />
+    </item>
+    <item name="HTTP_ACCEPT">
+      <value string="*/*" />
+    </item>
+    <item name="HTTP_ACCEPT_ENCODING">
+      <value string="gzip,deflate,sdch" />
+    </item>
+    <item name="HTTP_ACCEPT_LANGUAGE">
+      <value string="en-US,en;q=0.8" />
+    </item>
+    <item name="HTTP_COOKIE">
+      <value string="__RequestVerificationToken_L0RhcnQ_=j1fgSBDRGMrZJkdZ6AL3RxqXxsVerz9e8KDM4JcIsXGZhWeRoYqrlp2MSz+g/Xh2/GampI5NXb0Q+/FTnOgYLAnRKKvfbui+uGlbiFu/nJHvFMJSzDZXks2XLyPelxscgMMqvYweV74JQ4wrjZi5plc3WK6YsEwE0bn3zYCCIRM=; UserInfoSecurity=admin@aswigsolutions.com|x/r4zsVD2y5FTpKYCQGMUw==#####|179; sqlAuthCookie=A703E13A005F52DC07A376C48DB4FBB6F9D34C2BBB3930049F9E44188EC78E20EE8460C08EBA79773CDC47D51AEB2721ECABC3FB1CE55431FB5DA302857248BEDCA7481C69499C3A0D9C4FB71A318662982DD21B313CBE24259024FB92A0E207F791EB5509FDC0D58CFE9BC697F76E1A69FACB51; ASP.NET_SessionId=b4cscbbukw3xzquiz1d5z3m2" />
+    </item>
+    <item name="HTTP_HOST">
+      <value string="localhost" />
+    </item>
+    <item name="HTTP_REFERER">
+      <value string="https://localhost/Dart/EMReports/Report.aspx?System=tmf&amp;Type=group&amp;reportpath=/emreporting/reports/PORT" />
+    </item>
+    <item name="HTTP_USER_AGENT">
+      <value string="Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/34.0.1847.11 Safari/537.36" />
+    </item>
+    <item name="HTTP_ORIGIN">
+      <value string="https://localhost" />
+    </item>
+    <item name="HTTP_X_REQUESTED_WITH">
+      <value string="XMLHttpRequest" />
+    </item>
+  </serverVariables>
+  <queryString>
+    <item name="OpType">
+      <value string="SessionKeepAlive" />
+    </item>
+    <item name="ControlID">
+      <value string="2dfd88a920c84cce9e1c34b3a6bf36b1" />
+    </item>
+  </queryString>
+  <cookies>
+    <item name="__RequestVerificationToken_L0RhcnQ_">
+      <value string="j1fgSBDRGMrZJkdZ6AL3RxqXxsVerz9e8KDM4JcIsXGZhWeRoYqrlp2MSz+g/Xh2/GampI5NXb0Q+/FTnOgYLAnRKKvfbui+uGlbiFu/nJHvFMJSzDZXks2XLyPelxscgMMqvYweV74JQ4wrjZi5plc3WK6YsEwE0bn3zYCCIRM=" />
+    </item>
+    <item name="UserInfoSecurity">
+      <value string="admin@aswigsolutions.com|x/r4zsVD2y5FTpKYCQGMUw==#####|179" />
+    </item>
+    <item name="sqlAuthCookie">
+      <value string="A703E13A005F52DC07A376C48DB4FBB6F9D34C2BBB3930049F9E44188EC78E20EE8460C08EBA79773CDC47D51AEB2721ECABC3FB1CE55431FB5DA302857248BEDCA7481C69499C3A0D9C4FB71A318662982DD21B313CBE24259024FB92A0E207F791EB5509FDC0D58CFE9BC697F76E1A69FACB51" />
+    </item>
+    <item name="ASP.NET_SessionId">
+      <value string="b4cscbbukw3xzquiz1d5z3m2" />
+    </item>
+  </cookies>
+</error>
